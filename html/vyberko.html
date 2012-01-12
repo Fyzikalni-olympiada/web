@@ -1,0 +1,61 @@
+<h2>Pøípravné soustøedìní pøed 43.&nbsp;mezinárodní FO</h2>
+
+<?php
+$GLOBALS['mysql']->query('
+	SELECT termin, misto
+	FROM ' . TABLE_TERMS . '
+	WHERE nazev LIKE \'%Mezinárodní FO%\'
+	AND rocnik="' . AKTUALNI_ROCNIK . '"
+	AND kategorie="1"
+');
+if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
+	$terminMFO = 'èervenec '.AKTUALNI_ROK;
+	$mistoMFO = 'svìta';
+}		
+$GLOBALS['mysql']->query('
+	SELECT termin
+	FROM ' . TABLE_TERMS . '
+	WHERE nazev LIKE \'%soustøedìní pøed MFO%\'
+	AND rocnik="' . AKTUALNI_ROCNIK . '"
+	AND kategorie="1"
+');
+if (!(list($termin) = $GLOBALS['mysql']->fetch_array())) {
+	$termin = 'èerven '.AKTUALNI_ROK;
+}		
+?>
+
+<h3>Organizace</h3>
+
+<p>
+Z&nbsp;vítìzù celostátního kola kategorie&nbsp;A vybere ÚK&nbsp;FO
+jsou na základì výbìrového soustøedìní vybrání
+úèastníci pøípravného soustøedìní poøádaného ÚK&nbsp;FO.
+Zde bude provedena pøíprava 5&nbsp;úèastníkù (a&nbsp;jednoho náhradníka) na
+<!--##############################-->
+<strong>43. mezinárodní fyzikální olympiádu</strong>,
+<!--##############################-->
+která bude uspoøádána v&nbsp;termínu&nbsp;<?php echo $terminMFO ?> ve státì <?php echo $mistoMFO ?>.
+Soustøedìní se koná dva týdny v&nbsp;èervnu (<strong><?php echo $termin ?></strong>)
+na Pedagogické fakultì Univerzity Hradec Králové.
+</p>
+
+<p>
+Pøed zahájením soustøedìní øeší úèastníci úlohy
+ze sbírky úloh pro pøípravu na MFO a prostudují si úlohy minulých mezinárodních fyzikálních olympiád.
+</p>
+
+<p>
+Na pøípravném soustøedìní se pøevážnì dìlají experimenty, dùraz je kladen
+na zpracování výsledkù mìøení. Doporuèujeme prostudovat si studijní text
+<em>Vybíral, B.:</em> <strong>Zpracování dat fyzikálních mìøení</strong>, který si
+mùžete <a href="<?php echo odkaz("texty_arch.html"); ?>" title="archiv studijních textù">stáhnout</a> z&nbsp;archivu studijních textù.
+Dále se na soustøedìní pøednáší a konají semináøe pro rozšíøení znalostí a&nbsp;schopností úèastníkù.
+</p>
+
+<p>
+Na soustøedìní pøed 42.&nbsp;MFO pøednášeli Prof.&nbsp;Vybíral, dr.&nbsp;Køíž, dr.&nbsp;Ouhrabka,
+doc.&nbsp;Hubeòák, Jan Hermann, Pavel Motloch, Lukáš Ledvina,
+Ing.&nbsp;Radocha a&nbsp;RNDr.&nbsp;Jezbera.
+<!--Soustøedìní se zúèastnilo celkem 7&nbsp;olympionikù&nbsp;&ndash; Michal Koutný, Jan Humplík, Richard Polma, Jáchym Sýkora,
+Petr Ryšavý, Jan Nevoral a Michael Hakl.-->
+</p>

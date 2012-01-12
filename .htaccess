@@ -1,0 +1,41 @@
+# pro mod_czech, defaultni charset dokumentu
+#SourceCharset iso-8859-2
+
+# IE funguje divne. Je-li splnena jedna z nasledujicich podminek
+# - server posle Content-Encoding: gzip
+# - server posle Content-Type odpovidajici pripone .<ext> pricemz soubor
+#   se jmenuje .<ext>.gz
+# tak pri ulozeni souboru nezmeni priponu, ale provede dekompresi.
+# Jako nejsnazsi reseni se jevi toto, je treba to ale jeste poradne otestovat.
+RemoveEncoding .gz
+AddType application/x-gzip .gz
+
+# muze se hodit
+# CheckSpelling On
+
+SetEnvIf Host ([^.]*)\.fyzikalniolympiada subdomain=$1
+SetEnvIf Host ^www\.(.*)$ without_www=$1
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  #RewriteBase /
+
+  RewriteCond %{HTTP_HOST} ^www
+  RewriteRule ^(.*)$ http://%{ENV:without_www}/$1 [R,L]
+
+  RewriteCond %{HTTP_HOST} !^(|praha\.|kvary\.)fyzikalniolympiada
+  RewriteRule .* http://fyzikalniolympiada.cz/ [R=404,L]
+
+  RewriteCond %{HTTP_HOST} ^(praha|kvary)
+  RewriteRule ^(.*)$ /%{ENV:subdomain}/$1 [L,QSA]
+
+  RewriteCond %{REQUEST_URI} novinka.php
+  RewriteRule ^novinka.php(.*)$ /novinka$1 [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !(.php)
+  RewriteRule ^(.*)$ /index.php/$1 [L,QSA]
+ 
+</IfModule> 

@@ -1,0 +1,248 @@
+<h2>Krajské kolo <?php echo AKTUALNI_ROCNIK ?>. roèníku FO</h2>
+
+<h3>Organizace</h3>
+
+<?php
+$GLOBALS['mysql']->query('
+        SELECT termin, kategorie
+        FROM ' . TABLE_TERMS . '
+        WHERE nazev LIKE \'%krajské kolo%\'
+        AND rocnik="' . AKTUALNI_ROCNIK . '"
+        ORDER BY kategorie
+');
+while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
+        switch ($kategorie) {
+                        case 1:
+                                $terminA = $termin;
+                                break;
+                        case 2:
+                                $terminBCD = $termin;
+                                break;
+                        default:
+                                break;
+        }
+}                       
+
+if ($kdo == "student") { ?>
+<p>
+Pozvánku (s&nbsp;místem a&nbsp;èasem konání) na krajské kolo obdržíte od svého uèitele fyziky
+nebo øeditele školy, pokud jste úspìšnì vyøešili domácí kolo.
+V&nbsp;krajském kole jsou zadané jen ètyøi teoretické úlohy. Nìkteré
+z&nbsp;nich kontrolují, jak dobøe jste prostudovali zadané <a href="<?php echo odkaz("texty.html"); ?>" title="studijní téma">studijní téma</a>.
+Èas na øešení úloh je 4&nbsp;hodiny èistého èasu. Úspìšný øešitel druhého kola je
+stanoven na základì bodového hodnocení, maximální dosažitelný poèet bodù
+z&nbsp;jedné úlohy je&nbsp;10. Úspìšný je ten, kdo získá alespoò 14&nbsp;bodù a&nbsp;nejménì
+ve dvou úlohách alespoò 5&nbsp;bodù. Krajské kolo v&nbsp;kategorii&nbsp;A probìhne
+v&nbsp;<strong><?php echo $terminA ?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
+v&nbsp;<strong><?php echo $terminBCD ?></strong>.
+</p>
+<p>
+Z&nbsp;nejúspìšnìjších úèastníkù druhého kola kategorie&nbsp;A bude vybráno nejvíce 50&nbsp;úèastníkù do tøetího, celostátního kola soutìže.
+</p>
+<p>
+V&nbsp;krajském kole mùžete používat Matematické,
+fyzikální a&nbsp;chemické tabulky pro støední školy a&nbsp;neprogramovatelné kalkulaèky.
+</p>
+<?php } ?>
+
+<?php if ($kdo == "ucitel") { ?>
+<p>
+Pozvánku na krajské kolo pro své studenty obdržíte od pøíslušné krajské komise FO.
+O&nbsp;postupu rozhodují jejich výsledky v&nbsp;domácím kole. Pozvánky rozdejte studentùm,
+aby vìdìli o&nbsp;místì a&nbsp;èasu konání krajského kola, pøípadnì je tam mùžete pøímo doprovodit.
+V&nbsp;krajském kole jsou zadané ètyøi teoretické úlohy. Nìkteré
+z&nbsp;nich kontrolují, jak vaši studenti prostudovali zadané <a href="<?php echo odkaz("texty.html"); ?>" title="studijní téma">studijní téma</a>.
+Èas na øešení úloh je 4&nbsp;hodiny èistého èasu. Krajské kolo v&nbsp;kategorii&nbsp;A probìhne
+v&nbsp;<strong><?php echo $terminA ?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
+v&nbsp;<strong><?php echo $terminBCD ?></strong>.
+</p>
+<p>
+Z&nbsp;nejúspìšnìjších úèastníkù druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO
+nejvíce 50&nbsp;úèastníkù do tøetího, celostátního kola soutìže.
+</p>
+<p>
+V&nbsp;krajském kole mohou studenti používat Matematické,
+fyzikální a&nbsp;chemické tabulky pro støední školy a&nbsp;neprogramovatelné kalkulaèky.
+</p>
+<?php } ?>
+
+<?php if ($kdo == "organizator") { ?>
+<p>
+V&nbsp;krajském kole, na které zve pøíslušný krajská komise FO soutìžící podle
+výsledkù v&nbsp;domácím kole
+prostøednictvím øeditelù škol, jsou zadané jen ètyøi teoretické úlohy.
+Èas na øešení úloh je 4&nbsp;hodiny èistého èasu. Úspìšný øešitel druhého kola je
+stanoven na základì bodového hodnocení, maximální dosažitelný poèet bodù
+z&nbsp;jedné úlohy je&nbsp;10. Úspìšný je ten, kdo získá alespoò 14&nbsp;bodù a&nbsp;nejménì
+ve dvou úlohách alespoò 5&nbsp;bodù. Krajské kolo v&nbsp;kategorii&nbsp;A probìhne
+v&nbsp;<strong><?php echo $terminA ?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
+v&nbsp;<strong><?php echo $terminBCD ?></strong>.
+</p>
+<p>
+Z&nbsp;nejúspìšnìjších úèastníkù druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh KK&nbsp;FO nejvíce 50&nbsp;úèastníkù do tøetího, celostátního kola soutìže.
+</p>
+<p>
+V&nbsp;krajském kole mohou soutìžící používat Matematické,
+fyzikální a&nbsp;chemické tabulky pro støední školy a&nbsp;neprogramovatelné kalkulaèky.
+</p>
+<?php } ?>
+
+<a name="ulohy"><h3>Texty úloh</h3></a>
+
+<p>
+Texty úloh pro kategorie A, B, C a&nbsp;D obdrží studenti pøed zahájením krajského kola.
+<!--Stáhnout si je mùžete níže ve formátu <code>pdf</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/pdficon.png"> nebo <code>ps</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/psicon.png">, zveøejòujeme je v&nbsp;den konání krajského kola.-->
+</p>
+
+<!--div class="center">
+<table class="centered zadani">
+<tr>
+        <th scope="col">Kategorie A</th>
+        <th scope="col">Kategorie B</th>
+        <th scope="col">Kategorie C</th>
+        <th scope="col">Kategorie D</th>
+</tr>
+<tr>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53a2_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53a2_z.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53b2_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53b2_z.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53c2_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53c2_z.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53d2_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53d2_z.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+</tr>
+</table>
+</div-->
+
+<a name="reseni"><h3>Øešení úloh</h3></a>
+
+<p>
+Øešení úloh kategorií A, B, C a&nbsp;D obdrží soutìžící po skonèení krajského kola.
+<!--V&nbsp;elektronické podobì si je mùžete stáhnout níže.-->
+</p>
+
+<!--div class="center">
+<table class="centered zadani">
+<tr>
+        <th scope="col">Kategorie A</th>
+        <th scope="col">Kategorie B</th>
+        <th scope="col">Kategorie C</th>
+        <th scope="col">Kategorie D</th>
+</tr>
+<tr>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53a2_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53a2_r.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53b2_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53b2_r.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53c2_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53c2_r.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+        <td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53d2_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53d2_r.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+</tr>
+</table>
+</div-->
+
+<a name="vysledky"><h3>Výsledky</h3></a>
+
+<?php if ($kdo == "organizator") { ?>
+<p>
+Výsledky krajského kola zveøejnìte na vašich webových stránkách krajské komise.
+<?php } else { ?>
+</p>
+<p>
+Výsledky krajského kola hledejte na webových <a href="<?php echo odkaz("stranky_regionu.html") ?>" title="Webové stránky krajských komisí">stránkách krajských komisí FO</a>.
+<?php } ?>
+</p>
+
+<!--h4>Seznam úspìšných øešitelù krajského kola kategorie A</h4>
+
+<div class="center">
+<table cellpadding="3" class="centered">
+<colgroup span="3"></colgroup>
+<colgroup align="center" span="4" style="text-align: center"></colgroup>
+<colgroup align="center" span="1" style="font-weight: bold; text-align: center"></colgroup>
+<thead>
+<tr>
+        <th>Kraj</th>
+        <th>Jméno</th>
+        <th>Škola</th>
+        <th>Ú1</th>
+        <th>Ú2</th>
+        <th>Ú3</th>
+        <th>Ú4</th>
+        <th>Celkem</th>
+</tr>
+</thead>
+<tbody>
+		<tr>
+			<td>04-ZÈ</td>
+			<td>Bucháèek Martin</td>
+			<td>G L.Pika, Plzeò</td>
+			<td>10</td>
+			<td>10</td>
+			<td>10</td>
+			<td>10</td>
+			<td>40</td>
+		</tr>
+</tbody>
+</table>
+</div-->
+
+<!--p>
+Kompletní výsledky krajských kol kategorie&nbsp;A v&nbsp;jednotlivých krajích najdete zde:
+(Seznam bude postupnì <strong>aktualizován</strong>, podle toho jak se budou na krajských stránkách objevovat výsledkové listiny.)
+</p>
+<ul>
+        <li><a href="http://www.gybon.cz/~sada/strana2.html">Královéhradecký kraj</a> (5 úspìšných øešitelù)</li>
+        <li><a href="kvary<?php echo odkaz("kvary/content/listina.php"); ?>&rocnik=53&kolo=reg&kategorie=A" title="Karlovy Vary">Karlovarský kraj</a> (žádný úspìšný øešitel)</li>
+        <li><a href="http://fo.upol.cz/index.php?text=30-vysledky-krajskeho-kola-53-rocniku-kategorie-a-predbezne">Olomoucký kraj</a> (4&nbsp;úspìšní øešitelé)</li>
+        <li><a href="http://kof.zcu.cz/fo/2011/A2011.xls">Plzeòský kraj</a> (xls, 5&nbsp;úspìšných øešitelù)</li>
+        <li><a href="http://www.sportgym.cz/public/pdfs/vysledkova-listina-53-rocniku-fo-kategorie-a/FO53A.pdf">Liberecký kraj</a> (pdf, 3 úspìšní øešitelé)</li>
+        <li><a href="praha<?php echo odkaz("praha/content/listina.php"); ?>&rocnik=53&kolo=reg&kategorie=A" title="Praha">Praha</a> (7&nbsp;úspìšných øešitelù)</li>
+        <li><a href="http://www.gypce.cz/files/fo/A_2011.xls">Pardubický kraj</a> (xls, 4&nbsp;úspìšní øešitelé)</li>
+        <li><a href="http://www.pf.jcu.cz/stru/katedry/fyz/fo/53roc_a.php?var=print">Jihoèeský kraj</a> (5&nbsp;úspìšných øešitelù)</li>
+        <li><a href="http://www.jaroska.cz/fo/53/abcd/krajske_kolo#vysledky_krajskeho_kola_kategorie_a">Jihomoravský kraj</a> (5&nbsp;úspìšných øešitelù)</li>
+        <li><a href="http://fo.czechian.net/53foa.htm">Støedoèeský kraj</a> (2&nbsp;úspìšní øešitelé)</li>
+        <li><a href="http://www.viki.sro.cz/obj/fo/view2.php?rocniky=19&kategorie=1">Kraj Vysoèina</a> (9&nbsp;úspìšných øešitelù)</li>
+
+        <li><a href="http://www.calvin.wz.cz/Vys_Kat_A.doc">Zlínský kraj</a> (doc, 2&nbsp;úspìšní øešitelé)</li>
+        <li><a href="http://physics.ujep.cz/~fo/vysl_2007-a.html">Ústecký kraj</a>, 1.&nbsp;2.</li>
+        <li>Moravskoslezský kraj <img src="http://www.anchoredbygrace.com/smileys/1034532530.gif" alt=""></li>
+</ul-->
+
+
+<h3>Studijní témata</h3>
+<p>
+Ke studijním tématùm vyšly následující studijní texty.
+</p>
+<p>
+Kategorie A: Vybíral, B.&nbsp;&ndash; Šedivý, P.: <strong>Mechanika rovinného pohybu tuhého tìlesa</strong><br />
+Kategorie B: Šedivý, P.&nbsp;&ndash; Volf, I.&nbsp;&ndash; Horáková, R.: <strong>Harmonické kmity mechanických soustav</strong><br/>
+Kategorie C: Volf, I.&nbsp;&ndash; Jarešová, M.: <strong>Fyzika je kolem nás (Molekulová fyzika a termika)</strong><br />
+Kategorie D: Šedivý, P.&nbsp;&ndash; Volf, I.: <strong>Rovnomìrnì zrychlené a zpomalené pohyby</strong>
+
+<?php if ($kdo == "student") { ?>
+</p>
+<p>
+Studijní texty si vyžádejte od svého uèitele fyziky! Mùžete si je rovnìž <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">
+stáhnout</a> v&nbsp;elektronické podobì.
+<?php } ?>
+
+<?php if ($kdo == "ucitel") { ?>
+</p>
+<p>
+Studijní texty budou distribuovány na školy sítí FO, rozdejte je svým studentùm!
+Mùžete si je rovnìž <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">
+stáhnout</a> v&nbsp;elektronické podobì.
+<?php } ?>
+
+<?php if ($kdo == "organizator") { ?>
+</p>
+<p>
+Studijní texty budou distribuovány na školy sítí FO, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">v&nbsp;elektronické podobì</a>.
+<?php } ?>
+</p>

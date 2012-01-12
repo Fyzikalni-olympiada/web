@@ -1,0 +1,42 @@
+body
+{
+	background-color: #CC9999;
+	color: #000;
+}
+#bottomColorMask
+{
+	background-color: #CC9999;
+}
+#leftColumnMask
+{
+	background-color:#996666;
+}
+#contentColumnMask
+{
+	background-color: #fff;
+}
+#masthead, #footer
+{
+	background-color: #996666;
+	color: #fff;
+}
+.vnav ul li a
+{
+	color: White;
+	background-color: #CC6666;
+}
+.vnav ul li a:hover, .vnav ul li.current-tab a
+{
+	background-color: #669966;
+	color: #fff;
+}
+.hnav, .hnav ul li a
+{
+	background-color: #CC6666;
+	color: White;
+}
+.hnav ul li a:hover, .hnav ul li.current-tab a
+{
+	background-color:#669966;
+	color: #fff;
+}

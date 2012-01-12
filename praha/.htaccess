@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  RewriteBase /praha
+
+  RewriteCond %{HTTP_HOST} !^praha
+  RewriteRule ^(.*)$ http://praha.fyzikalniolympiada.cz/$1 [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !(.php)
+  RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+</IfModule> 

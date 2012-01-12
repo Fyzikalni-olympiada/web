@@ -1,0 +1,6 @@
+# Nechceme, aby skripty byly videt
+<Files *.php>
+  Order allow,deny
+  Deny from all
+</Files>
+

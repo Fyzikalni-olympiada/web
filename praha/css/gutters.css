@@ -1,0 +1,38 @@
+#pageFrameMask, #pageFrame
+{
+	margin: 0 2em;	/* vertical padding on this will have to be faked by adding borders
+						of the specified width to the masthead and footer. */
+}
+
+/* 0.5em spacing between cells. so content column left and extended column right 
+   should be 1/2 that spacing so the spacing keeps the same throughout. No
+   top margins needed as the masthead will do that for us. */
+#innerLeftColumn
+{
+	margin: 0 0.25em 0 0.5em;
+}
+#innerContentColumn
+{
+	margin: 0 0.5em 0 0.25em;
+}
+#innerLeftColumn, #innerContentColumn
+{
+	padding: 0 1em 0.5em 1em;	/* a little padding for inside the columns */
+}
+#innerMasthead, #innerFooter
+{
+	padding: 1em;
+}
+#masthead h1
+{
+	margin: 0;
+}
+.vnav
+{
+	margin: 1em 0;
+}
+.vnav h3
+{
+	margin-bottom: 0;
+	padding-bottom: 0;
+}

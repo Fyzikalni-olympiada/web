@@ -1,0 +1,26 @@
+#masthead
+{
+	border-top: solid 2em #CC9999;
+}
+#footer
+{
+	border-bottom: solid 2em #CC9999;
+}
+#innerMasthead, #footerBorder
+{
+	border: solid 1px #000;
+}
+#pageFrameMask
+{
+	border-left: solid 1px #000;
+	border-right: solid 1px #000;
+}
+#leftColumnMask
+{
+	border-right: solid 1px #000;
+}
+.hnav
+{
+	border: solid 1px #000;
+	margin-top: -1px;
+}

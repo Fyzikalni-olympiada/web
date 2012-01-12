@@ -1,0 +1,21 @@
+html, body
+{
+	height: 100%;
+	overflow-y: hidden;
+}
+#fixed
+{
+	width: auto;
+	position: absolute;
+	padding-right: 16px;
+}
+#flowing
+{
+	position: relative;
+	height: 100%;
+	overflow-y: scroll;
+}
+#pageFrame
+{
+	height: 1%;	/* holly hack */
+}

@@ -1,0 +1,17 @@
+/*	this familiar hack is used because IE 4/5 have a larger
+	font size for the keyword 'small' than IE6/Moz/Opera. So
+	we want IE 4/5 to use x-small, and IE6/Moz/Opera to use
+	small. Thus we use this hack. */
+body
+{
+	font-family: arial, helvetica, sans-serif;
+	font-size : x-small;
+	voice-family : "\"}\"";
+	voice-family : inherit;
+	font-size : small;
+}
+
+#innerFooter
+{
+	text-align: center;
+}

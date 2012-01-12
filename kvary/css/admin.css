@@ -1,0 +1,73 @@
+h1 {
+	font-size : 22px;
+	font-family : Tahoma, sans-serif;
+	text-align : center;
+}
+
+#form_pridat {
+	color : Black;
+	background-color : White;
+	font-family : Verdana, sans-serif;
+}
+
+#form_pridat h2 {
+	font-size : medium;
+}
+
+#form_pridat h3 {
+	font-size : x-small;
+}
+
+#form_pridat table {
+	border : 2px solid #3E5199;
+	border-collapse : collapse;
+	margin : 10px;
+	padding : 10px;
+}
+
+#form_pridat td {
+	border : none;
+	font-size : x-small;
+	padding : 3px;
+}
+
+#form_pridat input, #form_pridat select, #form_pridat button, #form_pridat textarea {
+	font-size :11px;
+}
+
+#form_pridat input.submit {
+	font-size :14px;
+	width: 60px;
+	height : 25px;
+	font-weight : bold;
+}
+
+#form_pridat input.text {
+	border : 1px solid #3E5199;
+	background-color : #EEEEEE;
+}
+
+#form_pridat input.button, #form_pridat input.submit {
+	border : 1px solid Black;
+	background-color : #AFAFAF;
+	cursor : hand;
+}
+
+#form_pridat select {
+	border : 1px solid #3E5199;
+	background-color : #EEEEEE;
+}
+
+#form_pridat textarea {
+	border : 1px solid #3E5199;
+	background-color : #EEEEEE;
+}
+
+.AdminError {
+	color : Red;
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+div.AdminError {
+	text-align : center;
+}

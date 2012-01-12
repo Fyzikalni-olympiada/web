@@ -1,0 +1,201 @@
+<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK ?>. roèníku FO</h2>
+
+<?php
+$GLOBALS['mysql']->query('
+	SELECT termin, misto
+	FROM ' . TABLE_TERMS . '
+	WHERE nazev LIKE \'%celostátní kolo%\'
+	AND rocnik="' . AKTUALNI_ROCNIK . '"
+	AND kategorie="1"
+');
+if (!(list($termin, $misto) = $GLOBALS['mysql']->fetch_array())) {
+	$termin = AKTUALNI_ROK;
+	$misto = 'Èeské republiky';
+}
+$GLOBALS['mysql']->query('
+	SELECT termin, misto
+	FROM ' . TABLE_TERMS . '
+	WHERE nazev LIKE \'%Mezinárodní FO%\'
+	AND rocnik="' . AKTUALNI_ROCNIK . '"
+	AND kategorie="1"
+');
+if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
+	$terminMFO = 'èervenec '.AKTUALNI_ROK;
+	$mistoMFO = 'svìta';
+}		
+?>
+
+<h3>Organizace</h3>
+<p>
+Z nejúspìšnìjších úèastníkù druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh krajských komisí
+FO nejvíce 50&nbsp;úèastníkù do celostátního kola soutìže.
+Celostátní kolo trvá ètyøi dny, pro všechny úèastníky i&nbsp;organizátory
+je zajištìno ubytování a&nbsp;stravování. První den se koná oficiální zahájení soutìže.
+Druhý den se zadávají ètyøi úlohy teoretické (vèetnì úlohy na studijní téma), na jejich vypracování
+je zpravidla 5&nbsp;hodin èasu. Tøetí den je zadána úloha experimentální.
+Poslední den jsou vyhlášeny výsledky&nbsp;&ndash; vítìzové a&nbsp;úspìšní øešitelé a&nbsp;rozdány
+ceny.
+</p>
+<p>
+V&nbsp;celostátním kole mohou soutìžící používat Matematické,
+fyzikální a&nbsp;chemické tabulky pro støední školy a&nbsp;neprogramovatelné kalkulaèky.
+</p>
+<p>
+Úspìšní øešitelé budou stanoveni na základì bodovacího systému. 
+Za každou teoretickou úlohu je možno získat 10&nbsp;bodù, za experimentální bodù&nbsp;20.
+Nejvíce dvanáct nejlepších øešitelù tøetího kola bude vyhlášeno za vítìze tøetího kola.
+Z&nbsp;desíti nejlepších vítìzù tøetího kola bude s&nbsp;ohledem na jejich pøedcházející výsledky v&nbsp;soutìži i&nbsp;na výbìrovém soustøedìní
+uspoøádaném ÚK&nbsp;FO proveden výbìr 5&nbsp;úèastníkù
+<!--############################################## -->
+<strong>43. mezinárodní fyzikální olympiády</strong>,
+<!-- ############################################## -->
+která bude uspoøádána v&nbsp;termínu <?php echo $terminMFO ?> ve státì <?php echo $mistoMFO ?>.
+
+<h3>Termín a místo konání</h3>
+<p>
+Celostátní kolo se koná v&nbsp;termínu <strong><?php echo $termin ?></strong> (úterý až pátek) ve&nbsp;mìstì <?php echo $misto ?>.
+
+<?php if ($kdo == "student") :?>
+O svém pozvání na celostátní kolo se dozvíte od øeditelství své školy.
+<?php else : ?>
+Pozvání k úèasti ve tøetím kole zašle ÚK&nbsp;FO vybraným žákùm prostøednictvím øeditelství
+školy, kterou navštìvují.
+<?php endif; ?>
+</p>
+
+<!--a name="program"><h3>Program</h3></a>
+
+<h4>Úterý 9.&nbsp;února</h4>
+
+
+<table cellpadding="3" style="width: 100%">
+<tr><td>
+Pøíjezd, prezentace a ubytování 
+  v DM</td>
+  <td style="white-space: nowrap; width:7em;">13.00-17.00</td></tr>
+<tr><td>Veèeøe</td>
+  <td>17.30-18.00</td></tr>
+<tr><td>Slavnostní 
+  zahájení v Mìstském divadle (spoleèný odchod z DM 18.30)</td>
+  <td>19.00</td></tr>
+<tr><td>Organizaèní 
+  schùzka ÚK FO (v divadle po programu)</td>
+  <td>~21.00</td></tr>
+<tr><td> </td>
+  <td> </td></tr>
+</table-->
+
+
+
+<a name="ulohy"><h3>Zadání a øešení úloh</h3></a>
+<p>
+Texty i øešení úloh zveøejníme v prùbìhu konání celostátního kola.
+</p>
+<!--p>
+Texty i øešení úloh si mùžete stáhnout ve formátu <code>pdf</code> nebo <code>ps</code>.
+</p>
+
+<div class="center">
+<table class="zadani centered">
+<tr>
+	<th></th>
+	<th scope="col">Zadání úloh</th>
+	<th scope="col">Øešení úloh</th>
+</tr>
+<tr>
+	<th scope="row">Teorie</th>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_z.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_r.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a></td>
+</tr>
+<tr>
+	<th scope="row">Experiment</th>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_exp_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_exp_z.ps.gz"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png"></a>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_exp_r.pdf"><img border="0" alt="" src="pic/pdficon.png"></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/53/fo53a3_exp_r.ps.gz"><img border="0" alt="" src="pic/psicon.png"></a>
+	</td>
+</tr>
+</table>
+</div-->
+
+<!--a name="vysledky"><h3>Výsledky</h3></a>
+
+<p>
+Výsledky si mùžete rovnìž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/53_A_3.pdf"><img class="icon" border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>.
+</p>
+
+<div class="center">
+<table cellpadding="3" class="centered">
+<thead>
+    <tr>
+        <th style="text-align:center">Poøadí</th>
+        <th>Pøíjmení</th>
+        <th>Jméno</th>
+        <th>Škola</th>
+        <th style="text-align:center">Ú1</th>
+        <th style="text-align:center">Ú2</th>
+        <th style="text-align:center">Ú3</th>
+        <th style="text-align:center">Ú4</th>
+        <th style="text-align:center">Exp</th>
+        <th style="text-align:center">Souèet</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th style="text-align:center" colspan="10">Vítìzové</th>
+    </tr>
+    <tr>
+        <td style="text-align:center">1.</td>
+        <td>Bucháèek</td>
+        <td>Martin</td>
+        <td>Gymnázium L. Pika Plzeò</td>
+        <td style="text-align:center">9</td>
+        <td style="text-align:center">9,5</td>
+        <td style="text-align:center">10</td>
+        <td style="text-align:center">10</td>
+        <td style="text-align:center">20</td>
+        <td style="text-align:center; font-weight:bold">58,5</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
+<p>
+Nejlepší úloha&nbsp;1 a&nbsp;2&nbsp;&ndash; Jakub Vošmera,
+nejlepší úloha&nbsp;3&nbsp;&ndash; Ondøej Bartoš,
+nejlepší úloha&nbsp;4&nbsp;&ndash; Hynek Kasl,
+nejlepší experimentální úloha&nbsp;&ndash; Jan Šimbera.
+</p-->
+
+<!--a name="seznam"><h3>Seznam postupujících</h3></a>
+
+<p>
+U&nbsp;každého postupujícího uvádíme body získané v&nbsp;krajském kole.
+</p>
+
+<div class="center">
+<table cellpadding="3" class="centered">
+<colgroup span="4"></colgroup>
+<colgroup align="center" span="1" style="font-weight: bold; text-align: center"></colgroup>
+<thead>
+<tr>
+	<th>Soutìžní èíslo</th>
+	<th>Kraj</th>
+	<th>Pøíjmení a jméno</th>
+	<th>Škola</th>
+	<th>Body</th>
+</tr>
+</thead>
+<tbody>
+        <tr>
+                <td style="text-align:center">A1</td>
+                <td style="text-align:center">Praha</td>
+                <td>Cvrèek Vojtìch</td>
+                <td>G Na Vítìzné pláni Praha</td>
+                <td style="text-align:center; font-weight:bold">22</td>
+        </tr>
+</tbody>
+</table>
+</div-->

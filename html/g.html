@@ -1,0 +1,134 @@
+<h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?>&nbsp;&ndash; kategorie G fyzikální olympiády</h2>
+
+<h3>Organizace</h3>
+
+<?php
+$GLOBALS['mysql']->query('
+	SELECT termin, nazev
+	FROM ' . TABLE_TERMS . '
+	WHERE kategorie="4"
+	AND rocnik="' . AKTUALNI_ROCNIK . '"
+');
+while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
+	switch ($nazev) {
+			case 'domácí kolo':
+				$termin1 = $termin;
+				break;
+			case 'školní èi okresní kolo':
+				$termin2 = $termin;
+				break;
+			default:
+				break;
+	}
+}		
+
+if ($kdo == "student") { ?>
+<p>
+Soutìž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
+probíhá ve dvou èástech a je urèena žákùm 7.&nbsp;roèníkù základních škol a odpovídajících roèníkù víceletých gymnázií. <strong>První èást soutìže</strong> se uskuteèní v únoru až kvìtnu. Máte za úkol vyøešit pìt úloh, které jsou uvedeny dále. Jejich øešení vyžaduje schopnost fyzikálnì uvažovat, používat jednoduché výpoèty nebo grafy. Nìkteré úlohy pøedpokládají také provést jednoduchý pokus. Øešení úloh zapisujte na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávejte je <strong>nejpozdìji <?php echo $termin1 ?></strong> svému uèiteli fyziky.
+
+</p>
+<p>
+U všech úloh popište své úvahy pøi øešení. Uèitel fyziky vaše øešení opraví, pravdìpodobnì s&nbsp;vámi pohovoøí o&nbsp;øešení, nebo vám alespoò sdìlí správné výsledky a hodnocení vašeho øešení. Úlohy byste mìli øešit struènì, ale protokol o&nbsp;øešení musí být výstižný, doplnìný výpoèty, grafy, tabulkami namìøených hodnot èi jinak získaných údajù. Pøi øešení kreslete obrázky a náèrtky. Staèí obrázky naèrtnout &#8222;od ruky&#8220;, ale grafy peèlivì narýsujte. Pokusy mùžete provádìt doma nebo ve škole, musí však být naèrtnuta a popsána soustava použitých pomùcek, uveden postup mìøení a zpracovány výsledky.
+
+</p>
+<p>
+<strong>Druhá èást soutìže</strong> probìhne <strong><?php echo $termin2 ?></strong> a mùže být organizována jakou soutìž jednotlivcù nebo družstev podle dispozic. Pøesnou podobu soutìže, datum a místo konání vám sdìlí váš uèitel fyziky.
+</p>
+
+<p>
+Doufáme, že nejnižší kategorie naší soutìže fyzikální olympiády&nbsp;&ndash; Archimediáda se i letos bude žákùm líbit; snažili jsme se zaøadit úlohy s výzkumnou èástí, jež povzbudí žáky 7.&nbsp;roèníkù k dalšímu studiu fyziky. Na závìr vás chceme upozornit, že pro zájemce o fyziku je pøipravena soutìž Fyzikální olympiáda v další kategorii&nbsp;F, jež je urèena žákùm 8.&nbsp;roèníkù základních škol a odpovídajících tøíd víceletých gymnázií. Úlohy budou na školy doruèeny zaèátkem záøí, nejdete je i na tìchto stránkách.
+</p>
+<?php } ?>
+
+<?php if ($kdo == "ucitel") { ?>
+</p>
+<p>
+Soutìž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
+probíhá ve dvou èástech a je urèena žákùm 7.&nbsp;roèníkù základních škol a odpovídajících roèníkù víceletých gymnázií. <strong>První èást soutìže</strong> se uskuteèní v únoru až kvìtnu. Soutìžící obdrží k øešení pìt úloh, které jsou uvedeny dále. Jejich øešení vyžaduje schopnost fyzikálnì uvažovat, používat jednoduché výpoèty nebo grafy. Nìkteré úlohy pøedpokládají také provést jednoduchý pokus. Øešení úloh zapisují øešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je <strong>nejpozdìji <?php echo $termin1 ?></strong> vám &ndash; uèiteli fyziky.
+</p>
+
+<p>
+Øešení vašich žákù opravte, pohovoøte s nimi o&nbsp;øešení, a sdìlte jim správné výsledky a hodnocení jejich øešení. Poskytnìte prosím soutìžícím všestrannou pomoc.
+</p>
+
+<p>
+<strong>Druhá èást soutìže</strong> probìhne <strong><?php echo $termin2 ?></strong> a mùže být organizována jakou soutìž jednotlivcù nebo družstev podle dispozic, které obdržíte od OKFO. Formu této èásti soutìže ponecháváme v kompetenci OKFO. Úkolem bude øešit rùzné úlohy, provádìt a vysvìtlovat pokusy, øešit hádanky a rébusy. Organizátor soutìže mùže také povìøit nìkteré øešitele, aby si pøedem pøipravili referát, pokus èi jiné vystoupení. Námìtù získali uèitelé fyziky za dobu trvání soutìže již znaèné množství. Druhé kolo lze organizovat pro soutìžící z jedné školy èi z nìkolika sousedních škol dohromady. Nevyluèuje se ani pøípad, že toto kolo bude organizováno obdobnì jako v kategoriích E, F, tj. øešením úloh pro úèastníky z více škol nebo jako okresní kolo. Pro organizaci školního kola mají okresní výbory k dispozici starší metodickou pøíruèku Archimédiáda, kterou vydalo MAFY v Hradci Králové.
+</p>
+
+<p>
+Doufáme, že nejnižší kategorie naší soutìže fyzikální olympiády&nbsp;&ndash; Archimediáda se i letos bude žákùm líbit; snažili jsme se zaøadit úlohy s výzkumnou èástí, jež povzbudí žáky 7.&nbsp;roèníkù k dalšímu studiu fyziky. Na závìr soutìže je tøeba, abyste žáky upozornili, že pro zájemce o fyziku je pøipravena soutìž Fyzikální olympiáda v další kategorii&nbsp;F, jež je urèena žákùm 8.&nbsp;roèníkù základních škol a odpovídajících tøíd víceletých gymnázií. Úlohy  budou na školy doruèeny zaèátkem záøí, nejdete je i na tìchto stránkách.
+</p>
+<?php } ?>
+
+<?php if ($kdo == "organizator") { ?>
+</p>
+<p>
+Soutìž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
+probíhá ve dvou èástech a je urèena žákùm 7.&nbsp;roèníkù základních škol a odpovídajících roèníkù víceletých gymnázií. <strong>První èást soutìže</strong> se uskuteèní v únoru až kvìtnu. Soutìžící obdrží k øešení pìt úloh, které jsou uvedeny dále. Jejich øešení vyžaduje schopnost fyzikálnì uvažovat, používat jednoduché výpoèty nebo grafy. Nìkteré úlohy pøedpokládají také provést jednoduchý pokus. Øešení úloh zapisují øešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je <strong>nejpozdìji <?php echo $termin1 ?></strong> svému uèiteli fyziky.
+</p>
+
+<p>
+Uèitel fyziky jejich øešení opraví, pravdìpodobnì s&nbsp;nimi pohovoøí o&nbsp;øešení, nebo jim alespoò sdìlí správné výsledky a hodnocení vašeho øešení. Uèitel fyziky poskytne soutìžícím všestrannou pomoc.
+</p>
+
+<p>
+<strong>Druhá èást soutìže</strong> probìhne <strong><?php echo $termin2 ?></strong> a mùže být organizována jakou soutìž jednotlivcù nebo družstev podle dispozic, které obdrží uèitelé od OKFO. Formu této èásti soutìže ponecháváme v kompetenci OKFO. Úkolem bude øešit rùzné úlohy, provádìt a vysvìtlovat pokusy, øešit hádanky a rébusy. Organizátor soutìže mùže také povìøit nìkteré øešitele, aby si pøedem pøipravili referát, pokus èi jiné vystoupení. Námìtù získali uèitelé fyziky za dobu trvání soutìže již znaèné množství. Druhé kolo lze organizovat pro soutìžící z jedné školy èi z nìkolika sousedních škol dohromady. Nevyluèuje se ani pøípad, že toto kolo bude organizováno obdobnì jako v kategoriích E, F, tj. øešením úloh pro úèastníky z více škol nebo jako okresní kolo. Pro organizaci školního kola mají okresní výbory k dispozici starší metodickou pøíruèku Archimédiáda, kterou vydalo MAFY v Hradci Králové.
+</p>
+
+<p>
+Doufáme, že nejnižší kategorie naší soutìže fyzikální olympiády&nbsp;&ndash; Archimediáda se i letos bude žákùm líbit; snažili jsme se zaøadit úlohy s výzkumnou èástí, jež povzbudí žáky 7.&nbsp;roèníkù k dalšímu studiu fyziky. Na závìr soutìže je tøeba úèastníky upozornit, že pro zájemce o fyziku je pøipravena soutìž Fyzikální olympiáda v další kategorii&nbsp;F, jež je urèena žákùm 8.&nbsp;roèníkù základních škol a odpovídajících tøíd víceletých gymnázií. Úlohy  budou na školy doruèeny zaèátkem záøí, nejdete je i na tìchto stránkách.
+</p>
+<?php } ?>
+
+
+<a name="ulohy"><h3>Úlohy domácího kola</h3></a>
+
+<p>
+    Zadání všech úloh domácího kola si mùžete <!--rovnìž -->stáhnout ve formátu <code>pdf</code>.
+</p>
+
+<div class="center">
+<table class="centered zadani">
+<tr>
+    <th rowspan="2">Domácí kolo</th>
+    <th scope="col" style="width: 30%">Zadání úloh</th>
+    <th scope="col" style="width: 30%">Zadání ilustrované barevnými obrázky</th>
+    <th scope="col" style="width: 30%">Øešení úloh</th>
+</tr>
+<tr>
+    <td>
+        <!--Zveøejníme v&nbsp;nejbližší dobì.-->
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53g1_z.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><img border="0" alt="PDF" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+    </td>
+    <td>
+        <a href="<?php echo ROOT_WWW ?>archiv/53/fo53g1_zi.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><img border="0" alt="PDF ilustrované barevnými obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
+    </td>
+    <td>
+        Zveøejníme po termínu odevzdání
+        <!--a href="archiv/53/fo53g1_r.pdf"><img class="icon" src="pic/pdficon.png" alt="" border="0"></a-->
+    </td>
+</tr>
+</table>
+</div>
+
+<!--div style="float: right"><a href="<?php echo ROOT_WWW ?>archiv/53/fo53efg1_zi.pdf" title="Zadání úloh domácího kola ve formátu pdf s obrázky"><img border="0" alt="PDF s obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a></div>
+<p>
+Letos poprvé pøedkládáme uèitelùm fyziky a zájemcùm z øad žákù texty úloh Fyzikální olympiády, ilustrované barevnými
+obrázky. Tento materiál je vhodný pro upoutání pozornosti budoucích øešitelù úloh FO.
+</p-->
+
+
+<?php if ($kdo == "ucitel" || $kdo == "organizator") { ?>
+<!--p>
+Na základì bodování odevzdaných øešení soutìžících mùžeme stanovit jejich poøadí ve tøídì nebo ve škole. Žáci se urèitì tìší na pokraèování – druhé kolo. To mùže probìhnout ve škole pro soutìžící z rùzných paralelních tøíd, školy se mohou dohodnout na spoleèné akci nebo okresní komise uspoøádá okresní kolo. Pro druhé kolo vyšla pøed øadou let publikace ARCHIMÉDIÁDA, obsahující asi 200 námìtù pro úlohy, pokusy, hry a zábavy. 
+</p-->
+<p>
+Dìkujeme všem vyuèujícím, kteøí našli cestu k Fyzikální olympiádì a získali své žáky pro øešení úloh. Vìøíme, že úlohy byly dostateènì zajímavé, dostateènì nároèné i dostateènì pøístupnì žákùm základních škol a jejich kamarádùm z víceletých gymnázií. 
+Pokud máte nìjaký pìkný nápad, zašlete ho prosím na adresu ivo.volf@uhk.cz.
+</p>
+<p>
+S pøáním úspìšného závìru školního roku a pìkných prázdnin se tìšíme na setkání v pøíštím školním roce, v nìmž probìhne 54. roèník Fyzikální olympiády.
+</p>
+<p style="text-align: right">Za ÚKFO prof. RNDr. Ivo Volf, CSc.</p>
+<?php } ?>

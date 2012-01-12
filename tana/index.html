@@ -1,0 +1,130 @@
+<?php
+$GLOBALS['mysql']->query('
+	SELECT termin
+	FROM ' . TABLE_TERMS . '
+	WHERE nazev LIKE \'%celostátní soustøedìní%\'
+	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
+');
+list($termin) = $GLOBALS['mysql']->fetch_array();
+ 
+?> 
+
+ <h2>O co jde?</h2>
+  
+  <p>
+Táòa je soustøedìní poøádané Ústøední komisí Fyzikální olympiády (ÚK&nbsp;FO),
+které se ji tradiènì koná na chatì Táòa v&nbsp;Peci pod&nbsp;Snìkou.
+Soustøedìní je urèeno pro asi 30 nejúspìšnìjších øešitelù v&nbsp;kategorii&nbsp;B a&nbsp;C, tj. zpravidla
+2 a 3 z&nbsp;kraje.
+  </p>
+
+ <h2>Aktuální soustøedìní</h2>
+
+  <p>
+Letošní soustøedìní se koná
+v&nbsp;termínu&nbsp;<strong><?php echo $termin ?></strong>, tj. od soboty do soboty.
+  </p>
+
+
+  <p>
+Úèast na soustøedìní není školní absencí, ale je to akce, spojená s vıukou.
+Pozvánka bude proto zaslána zájemcùm o&nbsp;úèast prostøednictvím øeditelství škol bìhem èervna.
+  </p>
+
+  <p></em>
+Pøeètìte si oficiální <a href="/tana/tana_2011_pozvanka.pdf">pozvánku</a>.
+Pokud jste uspìli v&nbsp;krajském kole kategorie&nbsp;B nebo C (získali jste alespoò 20 bodù),
+èi jste ve školním roce, kterı nebyl váš maturitní, øešili kategorii&nbsp;A, jste
+mezi pozvanımi. Neèekejte a vám pozvánka dorazí oficiální cestou a rovnou
+se ozvìte organizátorùm e-mailem na
+<a href="mailto:jan@houstek.net">jan@houstek.net</a> nebo telefonem na
+724&nbsp;666&nbsp;702.
+  </em></p>
+
+
+
+ <h3>Informace pro pøihlášené</h3>
+
+ <p>
+Nástup na soustøedìní je <strong>v&nbsp;sobotu 10.&nbsp;záøí</strong>, snate
+se dostat na místo <strong>do 17:00</strong> (pozdìji pøíchozím nezaruèíme, e
+dostanou veèeøi). Pokud pøijedete s rodièi autem, zaparkujte v Peci a vydejte
+se k chatì pìšky (na cestì je zákaz vjezdu). Po veèeøi zaèíná první pøednáška
+èi beseda, v nedìli se ji pracuje.
+  </p>
+  <p>
+Soustøedìní konèí <strong>v&nbsp;sobotu 24.&nbsp;záøí</strong> dopoledne,
+opìt si vás mùou vyzvednout rodièe a&nbsp;mùete si s&nbsp;nimi udìlat
+turistickı vılet po okolí Pece.
+  </p>
+  <p>
+Na soustøedìní je plánováno kadı den 6&nbsp;h vıuky (pøednášky a cvièení), ale také experimentální èinnost v pøírodì.
+Vıuka bude kombinována se sportem a turistikou.
+Pøednášky a cvièení
+<a href="<?php echo odkaz("tana/organizatori.html"); ?>" title="Organizátoøi soustøedìní">zajišují</a>
+prof.&nbsp;Ing.&nbsp;Bohumil Vybíral,&nbsp;CSc., Jan Houštìk, RNDr.&nbsp;Jan Køí,&nbsp;PhD., doktorandi z&nbsp;katedry fyziky&nbsp;UHK.
+  </p>
+  <p>
+Pøíspìvek na stravu v letošním roce èiní <strong>1500&nbsp;Kè</strong>, tj.
+107&nbsp;Kè za den, co pøedstavuje asi 30% veškerıch nákladù.
+Po potvrzení vaší pøihlášky, ve kterém vám sdìlíme
+variabilní symbol, jej zaplate na úèet <em>1081764399/0800</em> (Èeská
+spoøitelna). Poadovanou èástku je tøeba uhradit nejpozdìji do 1.&nbsp;záøí.
+Pøíspìvek lze zaplatit vıjimeènì i hotovì pøi nástupu na
+soustøedìní. Je obvyklou praxí, e èást pøíspìvku, nejèastìji polovinu,
+proplatí vaše škola. Ostatní náklady jsou hrazeny z prostøedkù Fyzikální
+olympiády.
+  </p>
+  <p>
+Na soustøedìní si zabalte dostatek obleèení a obuvi, zejména nezapomeòte
+<strong>pøezùvky</strong> na chatu, opalovací krém, vhodnou obuv na vılety po
+Krkonoších, pláštìnku a plavky (u chaty je malı
+<a href="/tana/photos_2002/8c.jpg">bazén</a>). Na odbornı program se kromì
+obligátních psacích potøeb a kalkulaèky budou hodit hodinky se stopkami,
+metr, baterka. Máte-li notebook, mùete ho vyuít pøi zpracování experimentù,
+na chatì je i pøipojení k internetu a tiskárna. Vlastníte-li laserové
+ukazovátko nebo podobnou hraèku, urèitì ji nenechávejte doma, stejnì jako
+hudební nástroj, na kterı hrajete. Hlavnì ale pøivezte dobrou náladu, nadšení
+pro fyziku a chu se nìco nového dozvìdìt.
+  </p>
+  <p>
+V pøípadì jakıchkoliv dotazù neváhejte kontaktovat pøímo
+<a href="<?php echo odkaz("tana/organizatori.html"); ?>" title="Organizátoøi soustøedìní">organizátory</a>. Tìšíme se na vás na Tánì.
+  </p>
+  
+
+ <!--<h2>Probìhlá soustøedìní</h2>
+  
+  <p>
+V roce&nbsp;2008 soustøedìní úspìšnì probìhlo v&nbsp;termínu
+31.&nbsp;5.&ndash;14.&nbsp;6.&nbsp;2008. Zúèastnilo se 20 studentù, z toho 15
+ze tøetího roèníku (èi odpovídajících tøíd víceletıch gymnázií) a 5 druhákù.
+  </p>-->
+
+ <h3>Cesta na chatu</h3>
+  
+  <p>
+Z&nbsp;autobusového nádraí v&nbsp;Peci pod&nbsp;Snìkou se vydejte po hlavní
+silnici zpìt smìrem na Velkou Úpu. Ihned poté, co pøejdete most pøes Úpu,
+zahnìte doleva a&nbsp;vydejte se smìrem nahoru do lesa. U odboèky je dobøe
+viditelnı ukazatel na chatu Irena a pozornému oku neunikne ani ménì vırazná
+šipka na chatu Táòa. Cesta vede do prudkého kopce lesem. Poté les konèí, cesta
+vede støídavì mírnì z&nbsp;kopce a&nbsp;do&nbsp;kopce. Jdìte po této cestì
+stále rovnì, na poslední køiovatce je smìr na Táòu vyznaèen, chata je od
+køiovatky vzdálená asi 100&nbsp;m. Celkem je chata od autobusového nádraí
+vzdálená asi&nbsp;1500&nbsp;m. Viz obrázek, podrobnìji na
+<a href="http://www.mapy.cz/?query=id%3Apremise%201957473&mapType=base">on-line mapì</a>.
+Pro majitele GPS: 50°41'35.8"N, 15°45'18.7"E. Nelze pøíliš doporuèit pøímou
+cestou svahem od penzionu Tetøívek, zejména ne se zavazadly.
+  </p>
+
+  <div align="center"><img src="<?php echo ROOT_WWW ?>pic/cesta.gif" alt="mapa"></div>
+
+  <h3>Další informace</h3>
+
+  <ul>
+  <!--<li><a href="<?php echo odkaz("tana/ucastnici.html"); ?>" title="Úèastníci soustøedìní">Úèastníci soustøedìní</a></li>-->
+  <li><a href="<?php echo odkaz("tana/organizatori.html"); ?>" title="Organizátoøi soustøedìní">Organizátoøi soustøedìní</a></li>
+  <li><a href="<?php echo odkaz("tana/foto.html"); ?>" title="Fotky ze soustøedìní">Fotky ze soustøedìní</a></li>
+  <li><a href="<?php echo odkaz("tana/historie.html"); ?>" title="Historie soustøedìní">Historie soustøedìní</a></li>
+  </ul>
