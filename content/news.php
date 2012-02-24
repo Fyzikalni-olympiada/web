@@ -86,7 +86,7 @@ while ( $row = mysql_fetch_array($result, MYSQL_ASSOC) ) {
 	<img src="' . ROOT_WWW . 'upload/' . $row1["filename"] . '" style="margin:';
 			echo $row1["vspace"] != NULL ? ($row1["vspace"] . "px ") : "5px ";
 			echo $row1["hspace"] != NULL ? ($row1["hspace"] . "px ") : "7px ";
-			echo ';float: '  . $row1["align"] . '; '.($row1['align'] == 'left' ? 'margin-left: 0px;' : 'margin-rigth: 0px;').'" alt="'  . $row1["alt"] . '" />';
+			echo ';float: '  . $row1["align"] . '; '.($row1['align'] == 'left' ? 'margin-left: 0px;' : 'margin-rigth: 0px;').'" alt="'  . $row1["alt"] . '" title="'  . $row1["alt"] . '"/>';
 		}
 	}
 	eval("\$row[\"text\"] = \"$row[text]\";");
