@@ -70,7 +70,7 @@ class db {
         if ( is_null($data) ) {
             return "NULL";
         } else {
-            return "\"" . mysql_escape_string($data) . "\"";
+            return "\"" . mysql_real_escape_string($data) . "\"";
         }
     }
 
@@ -80,7 +80,7 @@ class db {
         if ( is_null($data) ) {
             return " IS NULL";
         } else {
-            return "=\"" . mysql_escape_string($data) . "\"";
+            return "=\"" . mysql_real_escape_string($data) . "\"";
         }
     }
 

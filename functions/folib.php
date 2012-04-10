@@ -531,7 +531,7 @@ function pocitadlo()
         $counter_online_id = $ip_addresses[$_SERVER['REMOTE_ADDR']];
         $GLOBALS['mysql']->query('
             REPLACE INTO ' . TABLE_COUNTER_ONLINE . ' (counter_online_id, path, ip_address, datetime)
-            VALUES ("' . mysql_escape_string($counter_online_id) . '", "' . $path . '", "' . $_SERVER['REMOTE_ADDR'] . '", "' . date('Y-m-d H:i:s') . '")
+            VALUES ("' . mysql_real_escape_string($counter_online_id) . '", "' . $path . '", "' . $_SERVER['REMOTE_ADDR'] . '", "' . date('Y-m-d H:i:s') . '")
         ');
     }
 
