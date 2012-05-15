@@ -226,11 +226,18 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             </div>
 
             <div class="section">
-                <div class="section-title">Partner soutìže</div>
+                <div class="section-title">Partneøi soutìže</div>
                 <div class="section-content">
+                    <div style="margin: 0 0 20px;">
                        <img src="/pic/logo_CEZ.png" alt="Skupina ÈEZ" style="width: 99px; height: 99px; float: right;" />
                        Skupina ÈEZ
                        <br style="clear: right" />
+                    </div>
+                    <div>
+                       <i>Mediální partner</i>
+                       <img src="/pic/logo_ccf.png" alt="Èeskoslovenský èasopis pro fyziku" style="width: 220px; height: 52px; float: right;" />
+                       <br style="clear: right" />
+                    </div>
                 </div>
             </div>
 
