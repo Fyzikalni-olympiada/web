@@ -235,7 +235,9 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                     </div>
                     <div>
                        <i>Mediální partner</i>
-                       <img src="/pic/logo_ccf.png" alt="Èeskoslovenský èasopis pro fyziku" style="width: 220px; height: 52px; float: right;" />
+                       <a href="http://www.cscasfyz.fzu.cz/">
+                        <img src="/pic/logo_ccf.png" alt="Èeskoslovenský èasopis pro fyziku" style="width: 220px; height: 52px; float: right;" />
+                       </a>
                        <br style="clear: right" />
                     </div>
                 </div>
