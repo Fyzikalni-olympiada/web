@@ -3,8 +3,8 @@ $GLOBALS['mysql']->query('
 	SELECT termin
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%celostátní soustøedìní%\'
-	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
-');
+	AND rocnik="' . 53 . '"
+'); // (AKTUALNI_ROCNIK-1)
 list($termin) = $GLOBALS['mysql']->fetch_array();
  
 ?> 
@@ -15,7 +15,7 @@ list($termin) = $GLOBALS['mysql']->fetch_array();
 Táòa je soustøedìní poøádané Ústøední komisí Fyzikální olympiády (ÚK&nbsp;FO),
 které se ji tradiènì koná na chatì Táòa v&nbsp;Peci pod&nbsp;Snìkou.
 Soustøedìní je urèeno pro asi 30 nejúspìšnìjších øešitelù v&nbsp;kategorii&nbsp;B a&nbsp;C, tj. zpravidla
-2 a 3 z&nbsp;kraje.
+2 a 3 úèastníci z&nbsp;kraje.
   </p>
 
  <h2>Aktuální soustøedìní</h2>
@@ -26,54 +26,40 @@ v&nbsp;termínu&nbsp;<strong><?php echo $termin ?></strong>, tj. od soboty do sob
   </p>
 
 
-  <p>
-Úèast na soustøedìní není školní absencí, ale je to akce, spojená s vıukou.
-Pozvánka bude proto zaslána zájemcùm o&nbsp;úèast prostøednictvím øeditelství škol bìhem èervna.
-  </p>
-
-  <p></em>
-Pøeètìte si oficiální <a href="/tana/tana_2011_pozvanka.pdf">pozvánku</a>.
-Pokud jste uspìli v&nbsp;krajském kole kategorie&nbsp;B nebo C (získali jste alespoò 20 bodù),
+<!--  <p>
+Pøeètìte si oficiální <a href="/tana/tana_2012_pozvanka.pdf">pozvánku</a>.
+Pokud jste uspìli v&nbsp;krajském kole kategorie&nbsp;B (získali jste alespoò 20 bodù),
 èi jste ve školním roce, kterı nebyl váš maturitní, øešili kategorii&nbsp;A, jste
 mezi pozvanımi. Neèekejte a vám pozvánka dorazí oficiální cestou a rovnou
 se ozvìte organizátorùm e-mailem na
 <a href="mailto:jan@houstek.net">jan@houstek.net</a> nebo telefonem na
 724&nbsp;666&nbsp;702.
-  </em></p>
+</p> -->
 
 
 
  <h3>Informace pro pøihlášené</h3>
 
  <p>
-Nástup na soustøedìní je <strong>v&nbsp;sobotu 10.&nbsp;záøí</strong>, snate
-se dostat na místo <strong>do 17:00</strong> (pozdìji pøíchozím nezaruèíme, e
+Nástup na soustøedìní je <strong>v&nbsp;sobotu 1.&nbsp;záøí</strong>, snate se
+dostat na místo <strong>do 17:00</strong> (pozdìji pøíchozím nezaruèíme, e
 dostanou veèeøi). Pokud pøijedete s rodièi autem, zaparkujte v Peci a vydejte
 se k chatì pìšky (na cestì je zákaz vjezdu). Po veèeøi zaèíná první pøednáška
-èi beseda, v nedìli se ji pracuje.
+èi beseda, v nedìli se ji pracuje.  Soustøedìní konèí
+<strong>v&nbsp;sobotu 15.&nbsp;záøí</strong> dopoledne.
   </p>
   <p>
-Soustøedìní konèí <strong>v&nbsp;sobotu 24.&nbsp;záøí</strong> dopoledne,
-opìt si vás mùou vyzvednout rodièe a&nbsp;mùete si s&nbsp;nimi udìlat
-turistickı vılet po okolí Pece.
-  </p>
-  <p>
-Na soustøedìní je plánováno kadı den 6&nbsp;h vıuky (pøednášky a cvièení), ale také experimentální èinnost v pøírodì.
-Vıuka bude kombinována se sportem a turistikou.
-Pøednášky a cvièení
-<a href="<?php echo odkaz("tana/organizatori.html"); ?>" title="Organizátoøi soustøedìní">zajišují</a>
-prof.&nbsp;Ing.&nbsp;Bohumil Vybíral,&nbsp;CSc., Jan Houštìk, RNDr.&nbsp;Jan Køí,&nbsp;PhD., doktorandi z&nbsp;katedry fyziky&nbsp;UHK.
+Úèast na soustøedìní není školní absencí, je to akce spojená s vıukou.  Na
+soustøedìní je plánováno kadı den 6&nbsp;h vıuky (pøednášky a cvièení), ale
+také experimentální èinnost v pøírodì. Vıuka bude kombinována se sportem a
+turistikou.
   </p>
   <p>
 Pøíspìvek na stravu v letošním roce èiní <strong>1500&nbsp;Kè</strong>, tj.
-107&nbsp;Kè za den, co pøedstavuje asi 30% veškerıch nákladù.
-Po potvrzení vaší pøihlášky, ve kterém vám sdìlíme
-variabilní symbol, jej zaplate na úèet <em>1081764399/0800</em> (Èeská
-spoøitelna). Poadovanou èástku je tøeba uhradit nejpozdìji do 1.&nbsp;záøí.
-Pøíspìvek lze zaplatit vıjimeènì i hotovì pøi nástupu na
-soustøedìní. Je obvyklou praxí, e èást pøíspìvku, nejèastìji polovinu,
-proplatí vaše škola. Ostatní náklady jsou hrazeny z prostøedkù Fyzikální
-olympiády.
+107&nbsp;Kè za den, co pøedstavuje asi 30% veškerıch nákladù. Pøíspìvek se
+platí hotovì pøímo na chatì proti potvrzení. Je obvyklou praxí, e èást
+pøíspìvku, nejèastìji polovinu, proplatí vaše škola èi pøidruená nadace.
+Ostatní náklady jsou hrazeny z prostøedkù Fyzikální olympiády.
   </p>
   <p>
 Na soustøedìní si zabalte dostatek obleèení a obuvi, zejména nezapomeòte
