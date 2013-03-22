@@ -211,7 +211,7 @@ Dále si mùžete stáhnout <em>výsledky øešení úloh domácího kola jako návody k&nbs
     <th scope="col">Kolo</th>
     <th scope="col" style="width: 25%">Zadání</th>
     <th scope="col" style="width: 25%">Zadání ilustrované barevnými obrázky</th>
-    <th scope="col" style="width: 25%">Výsledky úloh</th>
+    <!--th scope="col" style="width: 25%">Výsledky úloh</th-->
     <th scope="col" style="width: 25%">Øešení</th>
 </tr>
 <tr>
@@ -223,16 +223,20 @@ Dále si mùžete stáhnout <em>výsledky øešení úloh domácího kola jako návody k&nbs
     <td>
         <a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_zi.pdf" title="Zadání úloh domácího kola ve formátu pdf s obrázky"><img border="0" alt="PDF s obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
     </td>
-    <td>
+    <!--td>
         <?php if ($kdo != "student") : ?>
         Zveøejníme na zaèátku roku 2013
-        <!--a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_v.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a-->
+        <a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_v.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
         <? else: ?>
         Zveøejníme po termínu odevzdání
         <? endif; ?>
-    </td>
+    </td-->
     <td>
-        <!--a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a-->
+        <?php if (true) : ?>
+        <a href="<?php echo ROOT_WWW ?>archiv/54/fo54efg1_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <? else: ?>
+        Zveøejníme po termínu odevzdání
+        <? endif; ?>
     </td>
 </tr>
 <!--tr>
