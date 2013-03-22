@@ -38,7 +38,7 @@ while ($row = $mysql->fetch_array()) {
 	$strRSS .= '
 		<item>
 			<title>' . decode($row['subject']) . '</title>
-			<linkhttp://praha.fyzikalniolympiada.cz/novinka?id=' . $row['id'] . '&amp;who=' . $GLOBALS['kdo'] . '</link>
+			<link>http://praha.fyzikalniolympiada.cz/novinka?id=' . $row['id'] . '&amp;who=' . $GLOBALS['kdo'] . '</link>
 			<description>' . decode($row['text']) . '</description>
 			<author>' . $row['email'] . ' (' . $row['name'] . ')</author>';
 	$strRSS .= '
