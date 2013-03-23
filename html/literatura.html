@@ -12,6 +12,29 @@
 </ul>
 <?php } ?>
 
+<h2>Èasopisy</h2>
+
+<ul>
+    <li>
+        <a href="http://www.cscasfyz.fzu.cz/">Èeskoslovenský èasopis pro fyziku</a><br>
+        Pøináší pùvodní i pøeložené referativní èlánky, aktuality, zprávy a recenze knih. Uveøejòuje diskuse o filozofických aspektech fyziky, èlánky z historie fyziky.
+    </li>
+    <li>
+        <a href="http://class.pedf.cuni.cz/NewSUMA/Default.aspx?PorZobr=19&PolozkaID=21&ClanekID=162">Rozhledy matematicko-fyzikální</a><br>
+        Èasopis urèený talentovaným žákùm základních a støedních škol, pøináší èlánky zamìøené na rozšíøení a doplnìní znalostí, zajímavé úlohy, informace o soutìžích a olympiádách.
+    </li>
+<?php if ($kdo == "ucitel" || $kdo == "organizator") { ?>
+    <li>
+        <a href="http://sf.zcu.cz/">Školská fyzika</a><br>
+        Praktický èasopis pro výuku fyziky a práci s talentovanými žáky na základních a støedních školách. Od bøezna 2012 vychází v elektronické podobì.
+    </li>
+    <li>
+        <a href="http://mfi.upol.cz/">Matematika&ndash;fyzika&ndash;informatika</a><br>
+        Èasopis se zabývá problémy výuky na základních a støedních školách. Od 22. roèníku vychází v elektronické podobì a všem zájemcùm je volnì dostupný na internetových adresách redakce i vydavatele.
+    </li>
+<?php } ?>
+</ul>
+
 <?php if ($kdo == "ucitel" || $kdo == "organizator") { ?>
 <h2>Literatura o Fyzikální olympiádì</h2>
 
