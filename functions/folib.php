@@ -617,7 +617,7 @@ function latest_terms()
     $GLOBALS['mysql']->query('
         SELECT nazev, termin, UNIX_TIMESTAMP(date) AS timestamp, duvernost
         FROM ' . TABLE_TERMS . '
-        WHERE kategorie = 3
+        WHERE kategorie IN (0, 3)
         AND rocnik="' . AKTUALNI_ROCNIK . '"
         AND DATE >= NOW()
         AND duvernost="public"
