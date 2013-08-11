@@ -14,7 +14,7 @@ require_once('init.php');
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='cs' lang='cs'>
 <head>
 <!-- ENCODING /--> 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv='Content-language' content='cs' />
 <!-- ENCODING end /-->
 
