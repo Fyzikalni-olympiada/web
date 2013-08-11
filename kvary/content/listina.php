@@ -4,7 +4,7 @@ if (isset($_GET['rocnik']) && isset($_GET['kolo']) && isset($_GET['kategorie']))
 	$kolo = $_GET['kolo'];
 	$kategorie = $_GET['kategorie'];
 } else {
-	echo '<p>Chybý vstup pro výsledkovou listinu.</p>';
+	echo '<p>ChybÃ½ vstup pro vÃ½sledkovou listinu.</p>';
 	exit();
 }
 $test_string = '/'.$rocnik.'_[A-G]*'.$kategorie.'[A-G]*_'.$kolo.'.html/i';
@@ -29,7 +29,7 @@ if (is_dir(ROOT_DIR.DIR_VYSLEDKY)) {
 if (!empty($soubor)) {
 	include(ROOT_DIR.DIR_VYSLEDKY.$soubor);
 } else {
-	echo '<p>Výsledková listina není k dispozici.</p>';
+	echo '<p>VÃ½sledkovÃ¡ listina nenÃ­ k dispozici.</p>';
 }
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 echo '
-<h2>Pøihláška do krajského kola</h2>';
+<h2>PÅ™ihlÃ¡Å¡ka do krajskÃ©ho kola</h2>';
 
 $chyba = '';
 $kategorie_array = array('A'=>'kategorie A','B'=>'kategorie B','C'=>'kategorie C','D'=>'kategorie D');
@@ -16,20 +16,20 @@ if (isset($_POST['participant_count']) && is_numeric($_POST['participant_count']
 	$participant_count = intval($mysql->odstran_problemy($_POST['participant_count']));
 } else {
 	$participant_count = 1;
-	//$chyba .= 'Vyplòte prosím správnı poèet soutìících.<br />';
+	//$chyba .= 'VyplÅˆte prosÃ­m sprÃ¡vnÃ½ poÄet soutÄ›Å¾Ã­cÃ­ch.<br />';
 }
 
-/* Odeslán krok 1 */
+/* OdeslÃ¡n krok 1 */
 if (isset($_POST['step1'])) { //
 	if (isset($_POST['school_name']) && !empty($_POST['school_name'])) {
 		$school_name = $mysql->odstran_problemy($_POST['school_name']);
 	} else {
-		$chyba .= 'Vyplòte prosím název Vaší školy.<br />';
+		$chyba .= 'VyplÅˆte prosÃ­m nÃ¡zev VaÅ¡Ã­ Å¡koly.<br />';
 	}
 	if (isset($_POST['referent_name']) && !empty($_POST['referent_name'])) {
 		$referent_name = $mysql->odstran_problemy($_POST['referent_name']);
 	} else {
-		$chyba .= 'Vyplòte prosím Vaše jméno.<br />';
+		$chyba .= 'VyplÅˆte prosÃ­m VaÅ¡e jmÃ©no.<br />';
 	}
 	if (isset($_POST['referent_phone']) && !empty($_POST['referent_phone'])) {
 		$referent_phone = $mysql->odstran_problemy($_POST['referent_phone']);
@@ -38,7 +38,7 @@ if (isset($_POST['step1'])) { //
 		if (preg_match("/^[[:graph:]]+@[[:graph:]]+(\.[[:graph:]]{2,})$/", $_POST['referent_email'])) {
 			$referent_email = $mysql->odstran_problemy($_POST['referent_email']);
 		} else {
-			$chyba .= 'Vyplnìnı email má neplatnı formát.<br />';
+			$chyba .= 'VyplnÄ›nÃ½ email mÃ¡ neplatnÃ½ formÃ¡t.<br />';
 		}
 	}
 	
@@ -66,7 +66,7 @@ $participant_category = array_fill(1,$participant_count,null);
 $participant_born_year = array_fill(1,$participant_count,null);
 $participant_solution_count = array_fill(1,$participant_count,null);
 
-/* Sníit nebo zvıšit poèet soutìících 2 */
+/* SnÃ­Å¾it nebo zvÃ½Å¡it poÄet soutÄ›Å¾Ã­cÃ­ch 2 */
 if (isset($_POST['step2-increase']) || isset($_POST['step2-decrease'])) { // 
 	if (isset($_POST['participant_name']) && is_array($_POST['participant_name'])) {
 		$participant_name = $mysql->odstran_problemy($_POST['participant_name']);
@@ -118,27 +118,27 @@ if (isset($_POST['step2-increase']) || isset($_POST['step2-decrease'])) { //
 	}
 	
 }
-/* Odeslán krok 2 */
+/* OdeslÃ¡n krok 2 */
 if (isset($_POST['step2'])) { // 
 	if (isset($_POST['participant_name']) && is_array($_POST['participant_name'])) {
 		$participant_name = $mysql->odstran_problemy($_POST['participant_name']);
 		for ($i=1; $i<=$participant_count; $i++) {
 			if (!isset($participant_name[$i]) || empty($participant_name[$i])) {
-				$chyba .= 'Vyplòte jméno soutìícího è.'.$i.'.<br />';
+				$chyba .= 'VyplÅˆte jmÃ©no soutÄ›Å¾Ã­cÃ­ho Ä.'.$i.'.<br />';
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['participant_surname']) && is_array($_POST['participant_surname'])) {
 		$participant_surname = $mysql->odstran_problemy($_POST['participant_surname']);
 		for ($i=1; $i<=$participant_count; $i++) {
 			if (!isset($participant_surname[$i]) || empty($participant_surname[$i])) {
-				$chyba .= 'Vyplòte pøíjmení soutìícího è.'.$i.'.<br />';
+				$chyba .= 'VyplÅˆte pÅ™Ã­jmenÃ­ soutÄ›Å¾Ã­cÃ­ho Ä.'.$i.'.<br />';
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['participant_class']) && is_array($_POST['participant_class'])) {
 		$participant_class = $mysql->odstran_problemy($_POST['participant_class']);
@@ -148,7 +148,7 @@ if (isset($_POST['step2'])) { //
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['participant_teacher']) && is_array($_POST['participant_teacher'])) {
 		$participant_teacher = $mysql->odstran_problemy($_POST['participant_teacher']);
@@ -158,7 +158,7 @@ if (isset($_POST['step2'])) { //
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['participant_email']) && is_array($_POST['participant_email'])) {
 		$participant_email = $mysql->odstran_problemy($_POST['participant_email']);
@@ -168,38 +168,38 @@ if (isset($_POST['step2'])) { //
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['participant_category']) && is_array($_POST['participant_category'])) {
 		$participant_category = $mysql->odstran_problemy($_POST['participant_category']);
 		for ($i=1; $i<=$participant_count; $i++) {
 			if (!isset($participant_category[$i]) || !array_key_exists($participant_category[$i], $kategorie_array)) {
-				$chyba .= 'Chybnì vyplnìná kategorie u soutìícího è.'.$i.'.<br />';
+				$chyba .= 'ChybnÄ› vyplnÄ›nÃ¡ kategorie u soutÄ›Å¾Ã­cÃ­ho Ä.'.$i.'.<br />';
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['participant_born_year']) && is_array($_POST['participant_born_year'])) {
 		$participant_born_year = $mysql->odstran_problemy($_POST['participant_born_year']);
 		for ($i=1; $i<=$participant_count; $i++) {
 			if (!isset($participant_born_year[$i]) || $participant_born_year[$i] < 1990) {
-				$chyba .= 'Chybnì vyplnìnı rok narození u soutìícího è.'.$i.'.<br />';
+				$chyba .= 'ChybnÄ› vyplnÄ›nÃ½ rok narozenÃ­ u soutÄ›Å¾Ã­cÃ­ho Ä.'.$i.'.<br />';
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['participant_solution_count']) && is_array($_POST['participant_solution_count'])) {
 		$participant_solution_count = $mysql->odstran_problemy($_POST['participant_solution_count']);
 		for ($i=1; $i<=$participant_count; $i++) {
 			if (!isset($participant_solution_count[$i]) || !is_numeric($participant_solution_count[$i])) {
 				$participant_solution_count[$i] = intval($participant_solution_count[$i]);
-				$chyba .= 'Vyplòte správnı poèet odevzdanıch úloh soutìícího è.'.$i.'.<br />';
+				$chyba .= 'VyplÅˆte sprÃ¡vnÃ½ poÄet odevzdanÃ½ch Ãºloh soutÄ›Å¾Ã­cÃ­ho Ä.'.$i.'.<br />';
 			}
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	if (isset($_POST['referent_id'])) {
 		$referent_id = $mysql->odstran_problemy($_POST['referent_id']);
@@ -208,12 +208,12 @@ if (isset($_POST['step2'])) { //
 			$school_name = $row['school_name'];
 			$referent_id = $row['id'];
 		} else {
-			$chyba .= 'Omlouváme se, došlo k chybì databáze. Opakujte prosím postup znovu.<br />';
+			$chyba .= 'OmlouvÃ¡me se, doÅ¡lo k chybÄ› databÃ¡ze. Opakujte prosÃ­m postup znovu.<br />';
 			$school_name = '';
 			$referent_id = null;
 		}
 	} else {
-		$chyba .= 'Neoèekávanı vstup.<br />';
+		$chyba .= 'NeoÄekÃ¡vanÃ½ vstup.<br />';
 	}
 	
 	if (empty($chyba)) {
@@ -251,25 +251,25 @@ if ((!isset($_POST['step1']) && !isset($_POST['step2']) && !isset($_POST['step2-
 
 echo '
 <p>
-Vyplòte prosím následující formuláø. ádáme Vás pøedevším o&nbsp;kontakt na Vás a&nbsp;na soutìící
-za úèelem rychlého doruèení pozvánky do druhého kola.
+VyplÅˆte prosÃ­m nÃ¡sledujÃ­cÃ­ formulÃ¡Å™. Å½Ã¡dÃ¡me VÃ¡s pÅ™edevÅ¡Ã­m o&nbsp;kontakt na VÃ¡s a&nbsp;na soutÄ›Å¾Ã­cÃ­
+za ÃºÄelem rychlÃ©ho doruÄenÃ­ pozvÃ¡nky do druhÃ©ho kola.
 </p>
 <h3>Krok 1</h3>
 <form action="' . odkaz('praha/content/prihlaska.php') . '" method="post">
 <div>
-<label for="school_name">Název školy:</label> <input type="text" id="school_name" name="school_name" size="50" value="' . $school_name . '">
+<label for="school_name">NÃ¡zev Å¡koly:</label> <input type="text" id="school_name" name="school_name" size="50" value="' . $school_name . '">
 </div>
 <div>
-<label for="referent_name">Vaše jméno:</label> <input type="text" id="referent_name" name="referent_name" size="20" value="' . $referent_name . '">
+<label for="referent_name">VaÅ¡e jmÃ©no:</label> <input type="text" id="referent_name" name="referent_name" size="20" value="' . $referent_name . '">
 </div>
 <div>
-<label for="referent_phone">Váš telefon:</label> <input type="text" id="referent_phone" name="referent_phone" size="10" value="' . $referent_phone . '">
-<label for="referent_email">Váš email:</label> <input type="text" id="referent_email" name="referent_email" size="20" value="' . $referent_email . '">
+<label for="referent_phone">VÃ¡Å¡ telefon:</label> <input type="text" id="referent_phone" name="referent_phone" size="10" value="' . $referent_phone . '">
+<label for="referent_email">VÃ¡Å¡ email:</label> <input type="text" id="referent_email" name="referent_email" size="20" value="' . $referent_email . '">
 </div>
 <div>
-<label for="participant_count">Poèet soutìících:</label> <input type="text" id="participant_count" name="participant_count" size="2" value="' . $participant_count . '">
+<label for="participant_count">PoÄet soutÄ›Å¾Ã­cÃ­ch:</label> <input type="text" id="participant_count" name="participant_count" size="2" value="' . $participant_count . '">
 </div>
-<input type="submit" value="Pokraèovat" name="step1">
+<input type="submit" value="PokraÄovat" name="step1">
 </form>
 ';
 }
@@ -280,27 +280,27 @@ if ((isset($_POST['step1']) && !isset($_POST['step2']) && empty($chyba)) || isse
 
 echo '
 <p>
-Vyplòte prosím následující formuláø. ádáme Vás pøedevším o&nbsp;kontakt na Vás a&nbsp;na soutìící
-za úèelem rychlého doruèení pozvánky do druhého kola.
+VyplÅˆte prosÃ­m nÃ¡sledujÃ­cÃ­ formulÃ¡Å™. Å½Ã¡dÃ¡me VÃ¡s pÅ™edevÅ¡Ã­m o&nbsp;kontakt na VÃ¡s a&nbsp;na soutÄ›Å¾Ã­cÃ­
+za ÃºÄelem rychlÃ©ho doruÄenÃ­ pozvÃ¡nky do druhÃ©ho kola.
 </p>
 <h3>Krok 2</h3>
 <p>
-Soutìící za ' . $school_name . '.
+SoutÄ›Å¾Ã­cÃ­ za ' . $school_name . '.
 </p>
 <form action="' . odkaz('praha/content/prihlaska.php') . '" method="post">
 <div class="center">
 <table cellpadding="1" class="centered">
 	<thead>
 	<tr>
-		<th>Soutìící</th>
-		<th>Jméno</th>
-		<th>Pøíjmení</th>
-		<th>Tøída</th>
-		<th>Uèitel fyziky</th>
+		<th>SoutÄ›Å¾Ã­cÃ­</th>
+		<th>JmÃ©no</th>
+		<th>PÅ™Ã­jmenÃ­</th>
+		<th>TÅ™Ã­da</th>
+		<th>UÄitel fyziky</th>
 		<th>Email</th>
-		<th>Rok narození</th>
+		<th>Rok narozenÃ­</th>
 		<th>Kategorie</th>
-		<th>Poèet odevzdanıch úloh</th>
+		<th>PoÄet odevzdanÃ½ch Ãºloh</th>
 	</tr>
 	</thead>
 	<tbody>';
@@ -337,9 +337,9 @@ echo '
 </div>
 <input type="hidden" value="' . $participant_count . '" name="participant_count">
 <input type="hidden" value="' . $referent_id . '" name="referent_id">
-<input type="submit" value="Sníit poèet soutìících" name="step2-decrease">
-<input type="submit" value="Zvıšit poèet soutìících" name="step2-increase">
-<input type="submit" value="Pokraèovat" name="step2">
+<input type="submit" value="SnÃ­Å¾it poÄet soutÄ›Å¾Ã­cÃ­ch" name="step2-decrease">
+<input type="submit" value="ZvÃ½Å¡it poÄet soutÄ›Å¾Ã­cÃ­ch" name="step2-increase">
+<input type="submit" value="PokraÄovat" name="step2">
 </form>
 ';
 }
@@ -370,21 +370,21 @@ if (isset($_POST['step2']) && empty($chyba)) {
 	}
 	echo '
 <p>
-Následující seznam mùete vytisknout a pøiloit k&nbsp;odevzdávanım úlohám.
+NÃ¡sledujÃ­cÃ­ seznam mÅ¯Å¾ete vytisknout a pÅ™iloÅ¾it k&nbsp;odevzdÃ¡vanÃ½m ÃºlohÃ¡m.
 </p>
-<h3>Pøihláška do krajského kola ' . $rocnik .'. roèníku FO pro ' . $school_name . '</h3>
+<h3>PÅ™ihlÃ¡Å¡ka do krajskÃ©ho kola ' . $rocnik .'. roÄnÃ­ku FO pro ' . $school_name . '</h3>
 <p>
-Pøihlášku posílá ' . $referent_name . ' ' . $konakt_text . '.
+PÅ™ihlÃ¡Å¡ku posÃ­lÃ¡ ' . $referent_name . ' ' . $konakt_text . '.
 </p>
 <table cellpadding="2">
 	<thead>
 	<tr>
-		<th>Jméno</th>
-		<th>Tøída</th>
-		<th>Uèitel fyziky</th>
+		<th>JmÃ©no</th>
+		<th>TÅ™Ã­da</th>
+		<th>UÄitel fyziky</th>
 		<th>Email</th>
 		<th>Kategorie</th>
-		<th>Poèet odevzdanıch úloh</th>
+		<th>PoÄet odevzdanÃ½ch Ãºloh</th>
 	</tr>
 	</thead>
 	<tbody>';

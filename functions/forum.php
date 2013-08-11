@@ -1,15 +1,15 @@
 <?php
-if(!defined("VALID_ACCESS"))    {die("Neopr·vnÏn˝ p¯Ìstup!");}                         
-//      Ochrana proti neopr·vnÏnÈmu p¯Ìstupu ke skript˘m
+if(!defined("VALID_ACCESS"))    {die("Neopr√°vnƒõn√Ω p≈ô√≠stup!");}                         
+//      Ochrana proti neopr√°vnƒõn√©mu p≈ô√≠stupu ke skript≈Øm
 
 function zpracuj_form()
 {
     $r = ''; //return
 
-    /* Smazat p¯ÌspÏvek - musÌ b˝t p¯ihl·öen */
+    /* Smazat p≈ô√≠spƒõvek - mus√≠ b√Ωt p≈ôihl√°≈°en */
     if (isset($GLOBALS['get']['delete']) && je_opravnen($GLOBALS['get']['forum_id']) && isset($GLOBALS['get']['forum_id'])) {
         $GLOBALS['get']['delete'] = null;
-        /* Kontrola ID v datab·zi */
+        /* Kontrola ID v datab√°zi */
         $GLOBALS['mysql']->query('
             SELECT id, reakcena_id
             FROM ' . TABLE_FORUM . '
@@ -19,10 +19,10 @@ function zpracuj_form()
             $forum_id = $row['id'];
             $reakcena_id = $row['reakcena_id'];
         } else {
-            $GLOBALS['chyba'] .= lng('NeplanÈ ID p¯ÌspÏvku.','Invalid ID.') . '<br />';
+            $GLOBALS['chyba'] .= lng('Neplan√© ID p≈ô√≠spƒõvku.','Invalid ID.') . '<br />';
         }
 
-        /* Smaûe p¯ÌspÏvÏk a potomky p¯epojÌ na p¯edka */
+        /* Sma≈æe p≈ô√≠spƒõvƒõk a potomky p≈ôepoj√≠ na p≈ôedka */
         if ($GLOBALS['chyba'] == "") {
             $result = $GLOBALS['mysql']->query('
                 SELECT id
@@ -44,23 +44,23 @@ function zpracuj_form()
                 LIMIT 1
             ');
             if ($smazano_pocet = mysql_affected_rows($GLOBALS['mysql']->dbc)) {
-                $hlaska = lng('Smaz·n jeden p¯ÌspÏvek','The question was deleted');
+                $hlaska = lng('Smaz√°n jeden p≈ô√≠spƒõvek','The question was deleted');
             } else {
-                $hlaska = lng('Nesmaz·n û·dn˝ p¯ÌspÏvek','No question was deleted');
+                $hlaska = lng('Nesmaz√°n ≈æ√°dn√Ω p≈ô√≠spƒõvek','No question was deleted');
             }
             $r .= '<p class="chyba">' . $hlaska . '</p>';
         }
 
-    /** Odesl·n formul·¯ */
+    /** Odesl√°n formul√°≈ô */
     } elseif (isset($_POST["ok"])) {
 
         if (!empty($_POST["title"])) {
             $_POST["title"] = ucfirst($_POST["title"]);
         } else {
-            $GLOBALS['chyba'] .= lng('ChybÌ nadpis novinky!','Fill in the title!') . '<br />';
+            $GLOBALS['chyba'] .= lng('Chyb√≠ nadpis novinky!','Fill in the title!') . '<br />';
         }
         if (strtolower($_POST["guest_test"]) != GUEST_TEST_TEXT) {
-            $GLOBALS['chyba'] .= lng('1 a 1 nenÌ','The name of our competition is not') . ' ' . strtoupper($_POST["guest_test"]) . lng(', ale 2',' but 2') . '!<br />';
+            $GLOBALS['chyba'] .= lng('1 a 1 nen√≠','The name of our competition is not') . ' ' . strtoupper($_POST["guest_test"]) . lng(', ale 2',' but 2') . '!<br />';
         }
         if (!($err = spam($_POST["text"], $_POST["name"], $_POST["title"], $_POST["email"]))) {
         } else {
@@ -69,7 +69,7 @@ function zpracuj_form()
 
         if ($GLOBALS['chyba'] == "") {
 
-            /** Oöet¯enÌ pole text */
+            /** O≈°et≈ôen√≠ pole text */
             $zaloha_text = $_POST["text"];
             $regex  = '@</?\w+((\s+\w+(\s*=\s*';
             $regex .= '(?:".*?"|\'.*?\'|[^\'">\s]+))?)+';
@@ -79,12 +79,12 @@ function zpracuj_form()
             $_POST["text"] = ucfirst(vlnka($_POST["text"]));
             $_POST["text"] = str_replace("\r\n","<br />",$_POST["text"]);
 
-            /** NastavenÌ cookies, pro automatickÈ vyplnÏnÌ polÌ name a email */
+            /** Nastaven√≠ cookies, pro automatick√© vyplnƒõn√≠ pol√≠ name a email */
             setcookie('fo_forum[name]', $_POST['name'], mktime(0, 0, 0, 12, 31, 2020));
             setcookie('fo_forum[email]', $_POST['email'], mktime(0, 0, 0, 12, 31, 2020));
             setcookie('fo_forum[test]', $_POST['guest_test'], time()+(60*60*24*180));//vyprsi za pul roku
 
-            /** Reakce na p¯ÌspÏvek nebo ˙prava - kontrola ID */
+            /** Reakce na p≈ô√≠spƒõvek nebo √∫prava - kontrola ID */
             $forum_id = null;
             $reakcena_id = 0;
             $news_id = $GLOBALS['news_id'];
@@ -103,7 +103,7 @@ function zpracuj_form()
                     if (isset($GLOBALS['get']['reagovat'])) {
                         $reakcena_id = $row['id'];
                         $news_id = $row['news_id']; /* news_id prevezmeme od predka */
-                    } elseif (isset($_SESSION['id'])) { /* P¯ihl·öen˝ uûivatel edituje p¯ÌspÏvek */
+                    } elseif (isset($_SESSION['id'])) { /* P≈ôihl√°≈°en√Ω u≈æivatel edituje p≈ô√≠spƒõvek */
                         $forum_id = $row['id'];
                     }
                 }
@@ -114,7 +114,7 @@ function zpracuj_form()
                 $_POST["email"] = null;
             }
 
-            /** Nov˝ p¯ÌspÏvek */
+            /** Nov√Ω p≈ô√≠spƒõvek */
             if (empty($forum_id)) {
                 $GLOBALS['mysql']->query("
                     INSERT INTO `" . TABLE_FORUM . "`
@@ -146,7 +146,7 @@ function zpracuj_form()
                     @mail($row['email'], 'Novy diskusni prispevek na ' . SERVER_NAME, $telo, MAIL_HEADERS);
                 }
 
-                /** Reakce na jiny prispevek, tak poöleme email */
+                /** Reakce na jiny prispevek, tak po≈°leme email */
                 if (!empty($reakcena_id)) {
                     $GLOBALS['mysql']->query("
                         SELECT name, email, title, datum_cas
@@ -161,7 +161,7 @@ function zpracuj_form()
                     }
                 }
 
-            /** Editace p¯ÌspÏvku */
+            /** Editace p≈ô√≠spƒõvku */
             } elseif (isset($GLOBALS['get']['upravit']) && je_opravnen($forum_id)) {
                 $GLOBALS['mysql']->query('
                     UPDATE ' . TABLE_FORUM . ' SET
@@ -171,7 +171,7 @@ function zpracuj_form()
                         text=' . db::escape_string(db::odstran_problemy($zaloha_text)) . '
                     WHERE id=' . db::escape_string($forum_id) . '
                 ');
-                /** Zmeni news_id u celeho vlakna - pouze administr·tor */
+                /** Zmeni news_id u celeho vlakna - pouze administr√°tor */
                 if (isset($_POST['news_id']) && je_korenovy_prispevek($forum_id) && (isset($_SESSION['administrator']) && $_SESSION['administrator'] == 1) ) {
                     if ($_POST['news_id'] == 0) {
                         $news_id = null;
@@ -183,9 +183,9 @@ function zpracuj_form()
             }
 
             $r .= '
-    <p style="text-align: center">P¯id·nÌ n·zoru probÏhlo v po¯·dku.</p>';
+    <p style="text-align: center">P≈ôid√°n√≠ n√°zoru probƒõhlo v po≈ô√°dku.</p>';
 
-            /** P¯i zobrazenÌ jedinÈho vl·kna, ponechat $forum_id v GET */
+            /** P≈ôi zobrazen√≠ jedin√©ho vl√°kna, ponechat $forum_id v GET */
             if (!isset($GLOBALS['get']['sort']) || $GLOBALS['get']['sort'] != 'vlakno') {
                 $forum_id = null;
             }
@@ -196,9 +196,9 @@ function zpracuj_form()
         } else {
                 $r .= '
     <p class="chyba">
-        P¯id·nÌ se nezda¯ilo!<br /><br />
+        P≈ôid√°n√≠ se nezda≈ôilo!<br /><br />
         ' . $GLOBALS['chyba'] . '<br />
-        Opravte chyby a odeölete formul·¯ znovu.
+        Opravte chyby a ode≈°lete formul√°≈ô znovu.
     </p>';
         }
     }
@@ -208,7 +208,7 @@ function zpracuj_form()
 
 function vypis_forum_vlakna($reakcena_id,$stranka)
 {
-    /* Nejprve zjistÌme, kolik je reakci*/
+    /* Nejprve zjist√≠me, kolik je reakci*/
     $query = '
         SELECT COUNT(id)
         FROM ' . VIEW_FORUM . '
@@ -223,7 +223,7 @@ function vypis_forum_vlakna($reakcena_id,$stranka)
         return '';
     }
 
-    /* VypÌöeme reakce (rekurzivne) */
+    /* Vyp√≠≈°eme reakce (rekurzivne) */
     $query = '
         SELECT *
         FROM ' . VIEW_FORUM . '
@@ -247,7 +247,7 @@ function vypis_forum_vlakna($reakcena_id,$stranka)
     $GLOBALS['mysql']->query($query);
     $result = $GLOBALS['mysql']->vysledek;
     $pocet = 1;
-    if ( $reakcena_id == 0 ) { //ko¯enovÈ vl·kno
+    if ( $reakcena_id == 0 ) { //ko≈ôenov√© vl√°kno
         $class_ul = ' class="comment-list"';
     } else {
         $class_ul = ' class="children"';
@@ -256,7 +256,7 @@ function vypis_forum_vlakna($reakcena_id,$stranka)
 <ul'.$class_ul.'>';
     while ( $row = mysql_fetch_array($result) ) {
         $vlakno = vypis_forum_vlakna($row["id"],$stranka);
-        if ( $reakcena_id == 0 ) { //ko¯enov˝ p¯ÌspÏvek
+        if ( $reakcena_id == 0 ) { //ko≈ôenov√Ω p≈ô√≠spƒõvek
             $class = 'comment-parent';
         } elseif ($pocet == $pocet_reakci) {
             $class = 'comment'; //posledni
@@ -279,7 +279,7 @@ function vypis_forum_vlakna($reakcena_id,$stranka)
 
 function vypis_forum_chronologicky($stranka)
 {
-    /* Nejprve zjistÌme, kolik je prispevku*/
+    /* Nejprve zjist√≠me, kolik je prispevku*/
     $query = '
         SELECT COUNT(id)
         FROM ' . VIEW_FORUM . '
@@ -336,35 +336,35 @@ function spam($text, $name, $titleline, $mail)
     $text = $text . " " .  $name . " " . $titleline;
     $t_spam = $text . " " .  $name;
     $text = strtolower($text);
-    $text = str_replace("Ï", "e", $text);
-    $text = str_replace("ö", "s", $text);
-    $text = str_replace("Ë", "c", $text);
-    $text = str_replace("¯", "r", $text);
-    $text = str_replace("û", "z", $text);
-    $text = str_replace("˝", "y", $text);
-    $text = str_replace("·", "a", $text);
-    $text = str_replace("Ì", "i", $text);
-    $text = str_replace("È", "e", $text);
-    $text = str_replace("˙", "u", $text);
-    $text = str_replace("˘", "u", $text);
-    $text = str_replace("ù", "t", $text);
-    $text = str_replace("Ú", "n", $text);
-    $text = str_replace("Ô", "d", $text);
+    $text = str_replace("ƒõ", "e", $text);
+    $text = str_replace("≈°", "s", $text);
+    $text = str_replace("ƒç", "c", $text);
+    $text = str_replace("≈ô", "r", $text);
+    $text = str_replace("≈æ", "z", $text);
+    $text = str_replace("√Ω", "y", $text);
+    $text = str_replace("√°", "a", $text);
+    $text = str_replace("√≠", "i", $text);
+    $text = str_replace("√©", "e", $text);
+    $text = str_replace("√∫", "u", $text);
+    $text = str_replace("≈Ø", "u", $text);
+    $text = str_replace("≈•", "t", $text);
+    $text = str_replace("≈à", "n", $text);
+    $text = str_replace("ƒè", "d", $text);
     if (empty($name)) {
-        $r .= lng('UveÔte prosÌm Vaöe jmÈno!','Fill in your name!') . '<br />';
+        $r .= lng('Uveƒète pros√≠m Va≈°e jm√©no!','Fill in your name!') . '<br />';
     }
-    /** Email n·m nevadÌ, kdyû nenÌ vyplnÏn˝. */
+    /** Email n√°m nevad√≠, kdy≈æ nen√≠ vyplnƒõn√Ω. */
     if (!empty($mail) &&!EReg("^[[:graph:]]+@[[:graph:]]+(\.[[:graph:]]{2,})$", $mail)) {
-        $r .= lng('V·ö e-mail m· neplatn˝ form·t!','Your e-mail is invalid!') . '<br />';
+        $r .= lng('V√°≈° e-mail m√° neplatn√Ω form√°t!','Your e-mail is invalid!') . '<br />';
     }
     if (strlen($text) < 3) {
-        $r .= lng('V·ö text je p¯Ìliö kr·tk˝!','Your text is too short!') . '<br />';
+        $r .= lng('V√°≈° text je p≈ô√≠li≈° kr√°tk√Ω!','Your text is too short!') . '<br />';
     }
     if (strlen($text) > 5000) {
-        $r .= lng('V·ö text je p¯Ìliö dlouh˝!','Your text is too long!') . '<br />';
+        $r .= lng('V√°≈° text je p≈ô√≠li≈° dlouh√Ω!','Your text is too long!') . '<br />';
     }
     if (stristr($text, "kurv") || strstr($text, "prdel") || strstr($text, "pica") || strstr($text, "pice") || strstr($text, "pici") || strstr($text, "hajzl") || strstr($text, "debil") || strstr($text, "kokot") || strstr($text, "curak") || strstr($text, "kreten") || strstr($text, "srack") || strstr($text, "srat") || strstr($text, "serte") || strstr($text, "serou") || strstr($text, "srany") || strstr($text, "srani") || strstr($text, "srane") || strstr($text, " kund") || strstr($text, "curac") || strstr($text, "jebat") || strstr($text, "jeban") || strstr($text, "kurev") || strstr($text, "sukat") || strstr($text, " hovn") || strstr($text, "mrd") || strstr($text, "pazdrat") || strstr($text, "sragor") || strstr($text, "prdol") || strstr($text, "chuj") || strstr($text, "klatic") || strstr($text, "honimir") || strstr($text, "hulibrk") || strstr($text, "chcat") || strstr($text, "chcan") || strstr($text, "sulin")) {
-        $r .= lng('NepouûÌvejte prosÌm v textu sprost· slova!','Please, do not use dirty words!') . '<br />';
+        $r .= lng('Nepou≈æ√≠vejte pros√≠m v textu sprost√° slova!','Please, do not use dirty words!') . '<br />';
     }
     return $r;
 }
@@ -376,7 +376,7 @@ function posli_forum_digest()
 
 
 /**
- * UloûÌ do tabulky fykos.users Ëas poslednÌ n·vötÏvy fÛra
+ * Ulo≈æ√≠ do tabulky fykos.users ƒças posledn√≠ n√°v≈°tƒõvy f√≥ra
  */
 function uloz_cas_posledni_navstevy()
 {
@@ -394,7 +394,7 @@ function uloz_cas_posledni_navstevy()
 
 
 /**
-*       Form·t $row
+*       Form√°t $row
 *               * SELECT * FROM V_forum
 */
 function get_html_prispevek($row)
@@ -414,7 +414,7 @@ function get_html_prispevek($row)
     }
     if (!is_null($row['email'])) {
         $row["email"] = str_replace("@", "(zavinac)", $row["email"]);
-        $s_email = '<a href="e-mail:' . $row["email"] . '" title="' . lng('Autor p¯ÌspÏvku','Author of the post') . '">' . nahrad_smajliky($row["name"]) . '</a>';
+        $s_email = '<a href="e-mail:' . $row["email"] . '" title="' . lng('Autor p≈ô√≠spƒõvku','Author of the post') . '">' . nahrad_smajliky($row["name"]) . '</a>';
     } else {
         $s_email = nahrad_smajliky($row["name"]);
     }
@@ -453,7 +453,7 @@ function get_html_prispevek($row)
 }
 
 /**
-*    Smaûe p¯ÌspÏvek i vöechny potomky
+*    Sma≈æe p≈ô√≠spƒõvek i v≈°echny potomky
 */
 function smazat_prispevek_strom($forum_id)
 {
@@ -475,7 +475,7 @@ function smazat_prispevek_strom($forum_id)
 }
 
 /**
-*    ZmÏnÌ news_id u celeho vlakna pripojeneho k $forum_id
+*    Zmƒõn√≠ news_id u celeho vlakna pripojeneho k $forum_id
 *    Pri chybe vrati 0, jinak pocet presunutych prispevku
 */
 function nastav_news_id_strom($forum_id, $news_id)
@@ -517,7 +517,7 @@ function nastav_news_id_strom($forum_id, $news_id)
 }
 
 /**
-*    ZjistÌ, zda je p¯ÌspÏvÏk ko¯enov˝, tedy jestli reakcena_id == 0
+*    Zjist√≠, zda je p≈ô√≠spƒõvƒõk ko≈ôenov√Ω, tedy jestli reakcena_id == 0
 */
 function je_korenovy_prispevek($forum_id)
 {
@@ -540,7 +540,7 @@ function je_korenovy_prispevek($forum_id)
 
 
 /**
- * ZjistÌ, zda m· p¯ihl·öen˝ uûivatel pr·vo UPDATE a DELETE na $forum_id
+ * Zjist√≠, zda m√° p≈ôihl√°≈°en√Ω u≈æivatel pr√°vo UPDATE a DELETE na $forum_id
  */
 function je_opravnen($forum_id)
 {

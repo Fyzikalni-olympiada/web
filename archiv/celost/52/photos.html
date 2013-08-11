@@ -1,4 +1,4 @@
-<h2>Fotogalerie celost·tnÌho kola 52. roËnÌku v Olomouci</h2>
+<h2>Fotogalerie celost√°tn√≠ho kola 52. roƒçn√≠ku v Olomouci</h2>
 
 <script src="js/jquery.lightbox-0.5.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -15,7 +15,7 @@
 			containerBorderSize:	10,			// (integer) If you adjust the padding in the CSS for the container, #lightbox-container-image-box, you will need to update this value
 			containerResizeSpeed:	400,		// (integer) Specify the resize duration of container image. These number are miliseconds. 400 is default.
 			// Configuration related to texts in caption. For example: Image 2 of 8. You can alter either "Image" and "of" texts.
-			txtImage:				'Obr·zek',	// (string) Specify text "Image"
+			txtImage:				'Obr√°zek',	// (string) Specify text "Image"
 			txtOf:					'z'		// (string) Specify text "of"
         	}
         );
@@ -100,7 +100,7 @@ $pocet_stran = ceil( count($soubor) / (POCET_FOTEK_NA_STRANKU) );
 echo '
 <div style="text-align:center; clear:left">';
 if ($strana!=1){
-	echo '<a href="' . odkaz('archiv/celost/52/photos.html') . '?page='.($strana-1).'" title="' . lng('P¯edchozÌ strana','Previous Page') . '">&lt;&ndash;</a> | '; //da predchozi, kdyz nutne
+	echo '<a href="' . odkaz('archiv/celost/52/photos.html') . '?page='.($strana-1).'" title="' . lng('P≈ôedchoz√≠ strana','Previous Page') . '">&lt;&ndash;</a> | '; //da predchozi, kdyz nutne
 }
 for ($i=1; $i<=$pocet_stran; $i++) {
 // cyklus pro zobrazeni navigacni listy
@@ -111,7 +111,7 @@ for ($i=1; $i<=$pocet_stran; $i++) {
 	}
 }
 if ($strana!=$pocet_stran){
-	echo ' <a href="' . odkaz('archiv/celost/52/photos.html') . '?page='.($strana+1).'" title="' . lng('N·sledujÌcÌ strana','Next Page') . '">&ndash;&gt;</a>'; //da nasledujici, kdyz nutne
+	echo ' <a href="' . odkaz('archiv/celost/52/photos.html') . '?page='.($strana+1).'" title="' . lng('N√°sleduj√≠c√≠ strana','Next Page') . '">&ndash;&gt;</a>'; //da nasledujici, kdyz nutne
 }
 echo '
 </div>';

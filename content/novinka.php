@@ -1,14 +1,14 @@
 <?php
-if(!defined("VALID_ACCESS"))	{die("Neoprávnìný pøístup!");}				//	Ochrana proti neoprávnìnému pøístupu ke skriptùm
+if(!defined("VALID_ACCESS"))	{die("NeoprÃ¡vnÄ›nÃ½ pÅ™Ã­stup!");}				//	Ochrana proti neoprÃ¡vnÄ›nÃ©mu pÅ™Ã­stupu ke skriptÅ¯m
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
-    die('<p>Chybný požadavek.</p>');
+    die('<p>ChybnÃ½ poÅ¾adavek.</p>');
 }
 
-$monthz = array('', 'ledna', 'února', 'bøezna', 'dubna', 'kvìtna', 'èervna', 'èervence', 'srpna', 'záøí', 'øíjna', 'listopadu', 'prosince');
-$monthz_short = array('', 'ledna', 'února', 'bøezna', 'dubna', 'kvìtna', 'èervna', 'èerven.', 'srpna', 'záøí', 'øíjna', 'listop.', 'prosin.');
+$monthz = array('', 'ledna', 'Ãºnora', 'bÅ™ezna', 'dubna', 'kvÄ›tna', 'Äervna', 'Äervence', 'srpna', 'zÃ¡Å™Ã­', 'Å™Ã­jna', 'listopadu', 'prosince');
+$monthz_short = array('', 'ledna', 'Ãºnora', 'bÅ™ezna', 'dubna', 'kvÄ›tna', 'Äervna', 'Äerven.', 'srpna', 'zÃ¡Å™Ã­', 'Å™Ã­jna', 'listop.', 'prosin.');
 $rok = date("Y");
 $mesic = date("m");
 
@@ -30,7 +30,7 @@ if ( $row = $mysql->fetch_array() ) {
             <div class="archive-post-title">
                 <h3>' . $row["subject"] . '</h3>
                 <p>';
-	if ($row["pic_id"] != NULL) {       //i obrázek
+	if ($row["pic_id"] != NULL) {       //i obrÃ¡zek
     	$mysql->query('
     		SELECT filename, align, hspace, vspace, alt
     		FROM images
@@ -47,7 +47,7 @@ if ( $row = $mysql->fetch_array() ) {
 	eval("\$row[\"text\"] = \"$row[text]\";");
     echo $row["text"] . '</p>
                 <div class="quiet">
-                    <a href="mailto:' . $row['email'] . '" title="Autor pøíspìvku" class="sign">' . $row['name'] . '</a>
+                    <a href="mailto:' . $row['email'] . '" title="Autor pÅ™Ã­spÄ›vku" class="sign">' . $row['name'] . '</a>
                 </div>
                 <div class="post-date">' . $row["hourmin"] . ', ' . $row["day"] . '. ' . $monthz[$row["month"]] . ' ' . $row["year"] . '</div>
             </div>

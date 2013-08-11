@@ -1,7 +1,7 @@
 <?php
-//    Ochrana proti neopr·vnÏnÈmu p¯Ìstupu ke skript˘m
+//    Ochrana proti neopr√°vnƒõn√©mu p≈ô√≠stupu ke skript≈Øm
 if (!defined("VALID_ACCESS")) {
-    die("Neopr·vnÏn˝ p¯Ìstup!");
+    die("Neopr√°vnƒõn√Ω p≈ô√≠stup!");
 }
 
 
@@ -11,8 +11,8 @@ function datetime()
     $day = date("j");
     $month = date("n");
     $year = date("Y");
-    $monthz = array(1=>'ledna', '˙nora', 'b¯ezna', 'dubna', 'kvÏtna', 'Ëervna', 'Ëervence', 'srpna', 'z·¯Ì', '¯Ìjna', 'listopadu', 'prosince');
-    //$dni = Array('', 'nedÏle','pondÏlÌ','˙ter˝','st¯eda','Ëtvrtek','p·tek','sobota');
+    $monthz = array(1=>'ledna', '√∫nora', 'b≈ôezna', 'dubna', 'kvƒõtna', 'ƒçervna', 'ƒçervence', 'srpna', 'z√°≈ô√≠', '≈ô√≠jna', 'listopadu', 'prosince');
+    //$dni = Array('', 'nedƒõle','pondƒõl√≠','√∫ter√Ω','st≈ôeda','ƒçtvrtek','p√°tek','sobota');
     return $day . '. ' . $monthz[$month] . ' ' . $year;
 }
 
@@ -21,7 +21,7 @@ function datetime()
 
 
 /**
- * NepouûÌvat, jen kv˘li BC
+ * Nepou≈æ√≠vat, jen kv≈Øli BC
  * @deprecated
  * @param string $souborName
  * @param string $kdo
@@ -204,19 +204,19 @@ function menu_kdo()
 
     if ($GLOBALS['who'] == 'student') {
         $strHTML .= '
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce str·nek pro studenty" class="selected">Student</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce str·nek pro uËitele">UËitel</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce str·nek pro organz·tory">Organiz·tor</a></li>';
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce str√°nek pro studenty" class="selected">Student</a></li>
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce str√°nek pro uƒçitele">Uƒçitel</a></li>
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce str√°nek pro organz√°tory">Organiz√°tor</a></li>';
     } elseif ($GLOBALS['who'] == 'ucitel') {
         $strHTML .= '
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce str·nek pro studenty">Student</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce str·nek pro uËitele" class="selected">UËitel</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce str·nek pro organz·tory">Organiz·tor</a></li>';
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce str√°nek pro studenty">Student</a></li>
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce str√°nek pro uƒçitele" class="selected">Uƒçitel</a></li>
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce str√°nek pro organz√°tory">Organiz√°tor</a></li>';
     } elseif ($GLOBALS['who'] == 'organizator') {
         $strHTML .= '
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce str·nek pro studenty">Student</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce str·nek pro uËitele">UËitel</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce str·nek pro organz·tory" class="selected">Organiz·tor</a></li>';
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce str√°nek pro studenty">Student</a></li>
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce str√°nek pro uƒçitele">Uƒçitel</a></li>
+                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce str√°nek pro organz√°tory" class="selected">Organiz√°tor</a></li>';
     }
     $strHTML .= '
                 </ul>';
@@ -227,7 +227,7 @@ function menu_kdo()
 
 function novinka($poradi)
 {
-    $monthz = Array(1 => 'ledna', '˙nora', 'b¯ezna', 'dubna', 'kvÏtna', 'Ëervna', 'Ëervence', 'srpna', 'z·¯Ì', '¯Ìjna', 'listopadu', 'prosince');
+    $monthz = Array(1 => 'ledna', '√∫nora', 'b≈ôezna', 'dubna', 'kvƒõtna', 'ƒçervna', 'ƒçervence', 'srpna', 'z√°≈ô√≠', '≈ô√≠jna', 'listopadu', 'prosince');
 
     $GLOBALS['mysql']->query('
         SELECT id, YEAR(date) AS year, MONTH(date) AS month, DAYOFMONTH(date) AS day, date, time, subject, text, pic_id, name, email
@@ -245,7 +245,7 @@ function novinka($poradi)
 
     $strHTML = '';
     $strHTML .= '<h2 class="title">' . $row["subject"] . '</h2>';
-    $strHTML .= '<p><span class="date">' . $row["day"] . '. ' . $monthz[$row["month"]] . ' ' . $row["year"] . '</span> &mdash; ' . $texT . ' <a href="' . odkaz('content/news.php') . '#' . $poradi . '">VÌce...</a></p>';
+    $strHTML .= '<p><span class="date">' . $row["day"] . '. ' . $monthz[$row["month"]] . ' ' . $row["year"] . '</span> &mdash; ' . $texT . ' <a href="' . odkaz('content/news.php') . '#' . $poradi . '">V√≠ce...</a></p>';
     return $strHTML;
 }
 
@@ -253,7 +253,7 @@ function novinka($poradi)
 
 function novinky()
 {
-    $monthz = Array(1 => 'ledna', '˙nora', 'b¯ezna', 'dubna', 'kvÏtna', 'Ëervna', 'Ëervence', 'srpna', 'z·¯Ì', '¯Ìjna', 'listopadu', 'prosince');
+    $monthz = Array(1 => 'ledna', '√∫nora', 'b≈ôezna', 'dubna', 'kvƒõtna', 'ƒçervna', 'ƒçervence', 'srpna', 'z√°≈ô√≠', '≈ô√≠jna', 'listopadu', 'prosince');
     $strHTML = '
         <ul class="nice-list">';
 
@@ -326,7 +326,7 @@ function rand_thumb()
         $path_thumb = ROOT_WWW . substr($rand_thumb, strlen(ROOT_DIR));
 
 
-        $s .= "<a href=\"$path_pic\"" . ($i == 0 ? '' : ' style="display: none;"') . "><img src=\"$path_thumb\" alt=\"Ze ûivota Fyzik·lnÌ olympi·dy\"/></a>";
+        $s .= "<a href=\"$path_pic\"" . ($i == 0 ? '' : ' style="display: none;"') . "><img src=\"$path_thumb\" alt=\"Ze ≈æivota Fyzik√°ln√≠ olympi√°dy\"/></a>";
     }
 
     return $s;
@@ -436,7 +436,7 @@ function parsuj()
     $result = $GLOBALS['mysql_odkazy']->vysledek;
     if ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
         if (file_exists(ROOT_DIR . $row["filename"])) {
-            $GLOBALS['nadpis'] = $default ? 'Ofici·lnÌ str·nky' : $row["title"];
+            $GLOBALS['nadpis'] = $default ? 'Ofici√°ln√≠ str√°nky' : $row["title"];
             $GLOBALS['napln'] = $row["filename"];
             $GLOBALS['difference'] = $row['difference'];
         }
@@ -446,7 +446,7 @@ function parsuj()
 
 
 /**
- * PoËÌtadlo p¯Ìstup˘
+ * Poƒç√≠tadlo p≈ô√≠stup≈Ø
  * @return array ($visits, $visits_day, $visits_online)
  */
 function pocitadlo()
@@ -455,7 +455,7 @@ function pocitadlo()
     $path_str = str_replace('/', '-', $path);
     $path_str = str_replace('.', '-', $path_str);
 
-    //vyt·hnu si vöechny IP adresy online n·vötÏvnÌk˘
+    //vyt√°hnu si v≈°echny IP adresy online n√°v≈°tƒõvn√≠k≈Ø
     $GLOBALS['mysql']->query('
         SELECT counter_online_id, ip_address
         FROM ' . TABLE_COUNTER_ONLINE . '
@@ -505,7 +505,7 @@ function pocitadlo()
         }
     }
 
-    /* UbÏhl den */
+    /* Ubƒõhl den */
     if ((time() - $unix_timestamp) > 24 * 60 * 60) {
         $visits_day = 1;
         $GLOBALS['mysql']->query('
@@ -518,15 +518,15 @@ function pocitadlo()
 
     setcookie("counter_id" . $path_str, $path_str, (time() + (INTERVAL_MEZI_NAVSTEVAMI * 60)));
 
-    /* PoËet online */
+    /* Poƒçet online */
     //if (empty($_COOKIE['counter_online_id'.$path_str]))
-    if (!array_key_exists($_SERVER['REMOTE_ADDR'], $ip_addresses)) {// nezn·m· IP
+    if (!array_key_exists($_SERVER['REMOTE_ADDR'], $ip_addresses)) {// nezn√°m√° IP
         $GLOBALS['mysql']->query('
             INSERT INTO ' . TABLE_COUNTER_ONLINE . ' (path, ip_address, datetime)
             VALUES ("' . $path . '", "' . $_SERVER['REMOTE_ADDR'] . '", "' . date('Y-m-d H:i:s') . '")
         ');
         //$counter_online_id=mysql_insert_id($GLOBALS['mysql']->dbc);
-    } else { // zn·m· IP
+    } else { // zn√°m√° IP
         //$counter_online_id = $_COOKIE['counter_online_id'.$path_str];
         $counter_online_id = $ip_addresses[$_SERVER['REMOTE_ADDR']];
         $GLOBALS['mysql']->query('
@@ -537,13 +537,13 @@ function pocitadlo()
 
     //setcookie("counter_online_id".$path_str, $counter_online_id, (time()+(INTERVAL_ONLINE*60)+30*60));  //30*60 je rezerva
 
-    /* Vymaûeme ty, co jsou po timeoutu */
+    /* Vyma≈æeme ty, co jsou po timeoutu */
     $GLOBALS['mysql']->query('
         DELETE FROM ' . TABLE_COUNTER_ONLINE . '
         WHERE UNIX_TIMESTAMP(datetime)<"' . (time() - (INTERVAL_ONLINE * 60)) . '"
     ');
 
-    /* SpoËÌt·me online */
+    /* Spoƒç√≠t√°me online */
     $GLOBALS['mysql']->query('
         SELECT COUNT(*) AS count FROM ' . TABLE_COUNTER_ONLINE . '
         WHERE path="' . $path . '"
@@ -639,7 +639,7 @@ function latest_terms()
         LIMIT 1
     ');
     if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Archimedi·da'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
+        $r['Archimedi√°da'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
     }
 
     return $r;

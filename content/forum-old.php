@@ -1,5 +1,5 @@
 <?php
-if(!defined("VALID_ACCESS"))	{die("Neoprávnìnı pøístup!");}				//	Ochrana proti neoprávnìnému pøístupu ke skriptùm
+if(!defined("VALID_ACCESS"))	{die("NeoprÃ¡vnÄ›nÃ½ pÅ™Ã­stup!");}				//	Ochrana proti neoprÃ¡vnÄ›nÃ©mu pÅ™Ã­stupu ke skriptÅ¯m
 
 $webmaster="webmaster@fo.cuni.cz";
 $headers = "From: webmaster@fo.cuni.cz\r\n"
@@ -22,7 +22,7 @@ else
 function vypis_forum($vnoreni,$reakcena_id,$stranka)
 {
 	$nastranku = nastranku;
-	$monthz = Array('', 'ledna', 'února', 'bøezna', 'dubna', 'kvìtna', 'èervna', 'èervence', 'srpna', 'záøí', 'øíjna', 'listopadu', 'prosince');
+	$monthz = Array('', 'ledna', 'Ãºnora', 'bÅ™ezna', 'dubna', 'kvÄ›tna', 'Äervna', 'Äervence', 'srpna', 'zÃ¡Å™Ã­', 'Å™Ã­jna', 'listopadu', 'prosince');
 
 	$query = '
   		SELECT id, name, email, date, time, title, text
@@ -59,13 +59,13 @@ function vypis_forum($vnoreni,$reakcena_id,$stranka)
 		$s .= '
 			<dl>
 				<dt>
-					' . $row["title"] . ' (<a href="email:' . str_replace("@",'(zavináè)',$row["email"]) . '" title="Autor pøíspìvku">' . $row["name"] . '</a>, ' . ((int) $datum[2]) . '. ' . $monthz[(int) $datum[1]] . " " . $datum[0] . ')
+					' . $row["title"] . ' (<a href="email:' . str_replace("@",'(zavinÃ¡Ä)',$row["email"]) . '" title="Autor pÅ™Ã­spÄ›vku">' . $row["name"] . '</a>, ' . ((int) $datum[2]) . '. ' . $monthz[(int) $datum[1]] . " " . $datum[0] . ')
 				</dt>
 				<dd>
 				' . str_replace('<BR>', '<br />', $row["text"]) . '
 				</dd>
 				<dd class="reagovat">
-				<a href="' . odkaz2(FILE_FORUM, array('page'=>$stranka, 'vnoreni'=>$vnoreni, 'id'=>$row["id"], 'titleline'=>urlencode($row["title"]) )) . '" title="Ragovat na pøíspìvek">reagovat</a>
+				<a href="' . odkaz2(FILE_FORUM, array('page'=>$stranka, 'vnoreni'=>$vnoreni, 'id'=>$row["id"], 'titleline'=>urlencode($row["title"]) )) . '" title="Ragovat na pÅ™Ã­spÄ›vek">reagovat</a>
 				</dd>
 			</dl>
 		</td>
@@ -108,38 +108,38 @@ function spam($text, $name, $titleline, $mail)
   $text = $text . " " .  $name . " " . $titleline;
   $t_spam = $text . " " .  $name;
   $text = strtolower($text);
-  $text = str_replace("ì", "e", $text);
-  $text = str_replace("š", "s", $text);
-  $text = str_replace("è", "c", $text);
-  $text = str_replace("ø", "r", $text);
-  $text = str_replace("", "z", $text);
-  $text = str_replace("ı", "y", $text);
-  $text = str_replace("á", "a", $text);
-  $text = str_replace("í", "i", $text);
-  $text = str_replace("é", "e", $text);
-  $text = str_replace("ú", "u", $text);
-  $text = str_replace("ù", "u", $text);
-  $text = str_replace("", "t", $text);
-  $text = str_replace("ò", "n", $text);
-  $text = str_replace("ï", "d", $text);
+  $text = str_replace("Ä›", "e", $text);
+  $text = str_replace("Å¡", "s", $text);
+  $text = str_replace("Ä", "c", $text);
+  $text = str_replace("Å™", "r", $text);
+  $text = str_replace("Å¾", "z", $text);
+  $text = str_replace("Ã½", "y", $text);
+  $text = str_replace("Ã¡", "a", $text);
+  $text = str_replace("Ã­", "i", $text);
+  $text = str_replace("Ã©", "e", $text);
+  $text = str_replace("Ãº", "u", $text);
+  $text = str_replace("Å¯", "u", $text);
+  $text = str_replace("Å¥", "t", $text);
+  $text = str_replace("Åˆ", "n", $text);
+  $text = str_replace("Ä", "d", $text);
   if ($name == '') //1
-    return "Uveïte prosím Vaše jméno!";
+    return "UveÄte prosÃ­m VaÅ¡e jmÃ©no!";
   if(!empty($mail) && !EReg("^[[:graph:]]+@[[:graph:]]+(\.[[:graph:]]{2,})$", $mail)) //2
-    return "Váš e-mail má neplatnı formát!";
+    return "VÃ¡Å¡ e-mail mÃ¡ neplatnÃ½ formÃ¡t!";
   if (strlen($text) < 4) //3
-    return "Váš text je pøíliš krátkı!";
+    return "VÃ¡Å¡ text je pÅ™Ã­liÅ¡ krÃ¡tkÃ½!";
   if (strlen($text) > 8000) //4
-    return "Váš text je pøíliš dlouhı!";
+    return "VÃ¡Å¡ text je pÅ™Ã­liÅ¡ dlouhÃ½!";
   if (stristr($text, "kurv") || strstr($text, "prdel") || strstr($text, "pica") || strstr($text, "pice") || strstr($text, "pici") || strstr($text, "hajzl") || strstr($text, "debil") || strstr($text, "kokot") || strstr($text, "curak") || strstr($text, "kreten") || strstr($text, "srack") || strstr($text, "srat") || strstr($text, "serte") || strstr($text, "serou") || strstr($text, "srany") || strstr($text, "srani") || strstr($text, "srane") || strstr($text, " kund") || strstr($text, "curac") || strstr($text, "jebat") || strstr($text, "jeban") || strstr($text, "kurev") || strstr($text, "sukat") || strstr($text, " hovn") || strstr($text, "mrd") || strstr($text, "pazdrat") || strstr($text, "sragor") || strstr($text, "prdol") || strstr($text, "chuj") || strstr($text, "klatic") || strstr($text, "honimir") || strstr($text, "hulibrk") || strstr($text, "chcat") || strstr($text, "chcan") || strstr($text, "sulin")) //5
-    return "Nepouívejte prosím v textu sprostá slova!";
+    return "NepouÅ¾Ã­vejte prosÃ­m v textu sprostÃ¡ slova!";
   $words = split('[ 
 ]', $text);
   for ($i = 0; $i < count($words); $i++) //6
     if (strlen($words[$i]) > 60)
-	  return "Nemùete mít slovo delší ne šedesát písmen!";
+	  return "NemÅ¯Å¾ete mÃ­t slovo delÅ¡Ã­ neÅ¾ Å¡edesÃ¡t pÃ­smen!";
   /*for ($i = 4; $i < strlen($text); $i++) //7
     if ($text[$i-4] == $text[$i-3] && $text[$i-3] == $text[$i-2] && $text[$i-2] == $text[$i-1] && $text[$i-1] == $text[$i] && $text[$i] != " ")
-      return "Ve slovì se Vám opakuje 5 stejnıch písmen za sebou!";*/
+      return "Ve slovÄ› se VÃ¡m opakuje 5 stejnÃ½ch pÃ­smen za sebou!";*/
   /*for ($i = 0; $i <= count($words)-3; $i++) { //8
   if ($words[$i] != '' && $words[$i] != "Re:") {
     $text1 = strstr($text, $words[$i]);
@@ -154,11 +154,11 @@ function spam($text, $name, $titleline, $mail)
 	$dif2 = strlen($text3) - strlen($text2);
 	$dif3 = strlen($text4) - strlen($text3);
 	if ($dif1 == $dif2 && $dif2 == $dif3)
-	  return "Nepokoušejte se posílat spamy!";
+	  return "NepokouÅ¡ejte se posÃ­lat spamy!";
   }
   }*/
   /*if(EReg("<[^>]+>", $text)) //9
-    return "Nepouívejte html tagy!";*/
+    return "NepouÅ¾Ã­vejte html tagy!";*/
   return 0;
 };
 
@@ -166,16 +166,16 @@ function spam($text, $name, $titleline, $mail)
 $chyba = "";
 ?>
 <?php if ($kdo == "student") { ?>
-	<p>Toto diskusní fórum je urèeno pro studenty. Mùete se zde vyjadøovat ohlednì prùbìhu olympiády, kvality úloh, pøípadnì mít nìjaké jiné pøipomínky èi dotazy.
+	<p>Toto diskusnÃ­ fÃ³rum je urÄeno pro studenty. MÅ¯Å¾ete se zde vyjadÅ™ovat ohlednÄ› prÅ¯bÄ›hu olympiÃ¡dy, kvality Ãºloh, pÅ™Ã­padnÄ› mÃ­t nÄ›jakÃ© jinÃ© pÅ™ipomÃ­nky Äi dotazy.
 <?php } if ($kdo == "ucitel") { ?>
-	<p>Toto diskusní fórum je urèeno pro uèitele. Mùete se zde vyjadøovat ohlednì prùbìhu olympiády, kvality úloh, pøípadnì mít nìjaké jiné pøipomínky èi dotazy.
+	<p>Toto diskusnÃ­ fÃ³rum je urÄeno pro uÄitele. MÅ¯Å¾ete se zde vyjadÅ™ovat ohlednÄ› prÅ¯bÄ›hu olympiÃ¡dy, kvality Ãºloh, pÅ™Ã­padnÄ› mÃ­t nÄ›jakÃ© jinÃ© pÅ™ipomÃ­nky Äi dotazy.
 <?php } if ($kdo == "organizator") { ?>
-	<p>Toto diskusní fórum je urèeno pro organizátory. Mùete se zde vyjadøovat ohlednì prùbìhu olympiády, kvality úloh, pøípadnì mít nìjaké jiné pøipomínky èi dotazy.
+	<p>Toto diskusnÃ­ fÃ³rum je urÄeno pro organizÃ¡tory. MÅ¯Å¾ete se zde vyjadÅ™ovat ohlednÄ› prÅ¯bÄ›hu olympiÃ¡dy, kvality Ãºloh, pÅ™Ã­padnÄ› mÃ­t nÄ›jakÃ© jinÃ© pÅ™ipomÃ­nky Äi dotazy.
 <?php } ?>
 	</p>
 <div id="forum">
 <?php
-if (isset($_POST["ok"])) {     //update odeslán
+if (isset($_POST["ok"])) {     //update odeslÃ¡n
   if ($_POST["titleline"] != "") {
     $date=date("Y-m-d");
     $time=date("H:i:s");	
@@ -183,7 +183,7 @@ if (isset($_POST["ok"])) {     //update odeslán
 	//$_POST["name"] = ucfirst($_POST["name"]);
   }
   else
-    $chyba .= "Chybí nadpis novinky!<br />";
+    $chyba .= "ChybÃ­ nadpis novinky!<br />";
   if (!($err = spam($_POST["text"],$_POST["name"],$_POST["titleline"],$_POST["email"]))) {
 	$zaloha = $_POST["text"];
 	$_POST["text"] = ucfirst($_POST["text"]);
@@ -211,7 +211,7 @@ if (isset($_POST["ok"])) {     //update odeslán
     $chyba .= '1 + 1 se nerovna '.$_POST['kontrola'].'.<br />';
   }
 	if ($chyba == "") {
-/*----- Ochrana pøed duplicitou záznamù -----*/
+/*----- Ochrana pÅ™ed duplicitou zÃ¡znamÅ¯ -----*/
 	$mysql->query("
 		SELECT name, email, text
 		FROM forum	
@@ -246,15 +246,15 @@ if (isset($_POST["ok"])) {     //update odeslán
 	}
 
 	echo '
-<div class="center">Pøidání názoru probìhlo v poøádku.</div>';
+<div class="center">PÅ™idÃ¡nÃ­ nÃ¡zoru probÄ›hlo v poÅ™Ã¡dku.</div>';
 	} //if
 	else
 	echo '
 <div class="chyba_vstupu">
 	<p>
-	Pøidání se nezdaøilo!<br /><br />
+	PÅ™idÃ¡nÃ­ se nezdaÅ™ilo!<br /><br />
 	' . $chyba . '<br />
-	Opravte chyby a odešlete formuláø znovu.
+	Opravte chyby a odeÅ¡lete formulÃ¡Å™ znovu.
 	</p>
 </div>';
 }
@@ -315,7 +315,7 @@ if (isset($_POST["kontrola"]) && $vyplnuj)
   echo $_POST["kontrola"] ?>" /></td>
   </tr>
   <tr>
-    <td style="text-align: right">Jméno:</td>
+    <td style="text-align: right">JmÃ©no:</td>
 	<td><input class="text" tabindex="9" type="text" size="25" name="name" value="<?php
 if (isset($_POST["name"]) && $vyplnuj)
   echo $_POST["name"] ?>" /></td>
@@ -359,7 +359,7 @@ for ( $i=1; $i<=$pocet_stranek; $i++ ) {
   if ( $i == $strana )
     echo "strana " . $i;
   else
-    echo "<a href=\"" . odkaz2(FILE_FORUM, array('page'=>$i)) . "\" title=\"Pøejít na stranu " . $i . "\">strana " . $i . "</a>";
+    echo "<a href=\"" . odkaz2(FILE_FORUM, array('page'=>$i)) . "\" title=\"PÅ™ejÃ­t na stranu " . $i . "\">strana " . $i . "</a>";
   
   if ( $i < $pocet_stranek )
     echo " | ";

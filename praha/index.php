@@ -36,16 +36,16 @@ require_once('init.php');
 <!-- ROBOTS end /--> 
 
 <!-- KEYWORDS & CATEGORIES - but who cares now :-( /--> 
-<meta name='description' content='Fyzik·lnÌ olympi·da, Praha, ofici·lnÌ str·nky' /> 
-<meta name='keywords' content='fyzika, fyzik·lnÌ, fyzikalni, olympiada, olympi·da, soutÏû, soutez, 
+<meta name='description' content='Fyzik√°ln√≠ olympi√°da, Praha, ofici√°ln√≠ str√°nky' /> 
+<meta name='keywords' content='fyzika, fyzik√°ln√≠, fyzikalni, olympiada, olympi√°da, soutƒõ≈æ, soutez, 
 praha' /> 
 <meta name='category' content='physics' /> 
 <!-- KEYWORDS & CATEGORIES - end /--> 
 
 <!-- AUTHOR self promo - use 'crypted' e-mails defeats robotic harvesters /--> 
-<meta name='author' content='All: Jan Pracha¯, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
-<meta name='webmaster' content='All: Jan Pracha¯, e-mail: webmaster@fyzikalniolympiada.cz' /> 
-<meta name='copyright' content='&copy;2005-2005 Jan Pracha¯, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
+<meta name='author' content='All: Jan Pracha≈ô, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
+<meta name='webmaster' content='All: Jan Pracha≈ô, e-mail: webmaster@fyzikalniolympiada.cz' /> 
+<meta name='copyright' content='&copy;2005-2005 Jan Pracha≈ô, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
 <!-- AUTHOR self promo - end /--> 
 
 <!-- GEOURL /--> 
@@ -67,7 +67,7 @@ praha' />
 <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' /> 
 <!-- ICON end /--> 
 
-<link rel='alternate' type='application/rss+xml' title='Aktuality Fyzik·lnÌ olympi·dy v Praze' href='rss.php'/>
+<link rel='alternate' type='application/rss+xml' title='Aktuality Fyzik√°ln√≠ olympi√°dy v Praze' href='rss.php'/>
 
 <!-- NAVIGATION - based on logical relations of documents /--> 
 <!-- homepage /--> 
@@ -93,7 +93,7 @@ href="./css/fixed_ie.css" />
 <!-- CASCADING STYLE SHEETS - end /--> 
 
 <title> 
-Fyzik·lnÌ olympi·da Praha<?php echo ' :: ' . nadpis(); ?>
+Fyzik√°ln√≠ olympi√°da Praha<?php echo ' :: ' . nadpis(); ?>
 </title> 
 </head>
 
@@ -122,7 +122,7 @@ Fyzik·lnÌ olympi·da Praha<?php echo ' :: ' . nadpis(); ?>
         
                                 <div id="masthead">
                                         <div id="innerMasthead">
-                                                <h1>Fyzik·lnÌ olympi·da &ndash; Praha</h1>
+                                                <h1>Fyzik√°ln√≠ olympi√°da &ndash; Praha</h1>
                                                 <hr class="hide" />
                                         </div>
                                 </div>
@@ -153,7 +153,7 @@ Fyzik·lnÌ olympi·da Praha<?php echo ' :: ' . nadpis(); ?>
                                                 <div id="counter">
                                                                         <table>
                                                                         <tr>
-                                                                                <td colspan="2"><strong>N·vötÏvy:</strong></td>
+                                                                                <td colspan="2"><strong>N√°v≈°tƒõvy:</strong></td>
                                                                         </tr>
                                                                         <tr>
                                                                                 <td>celkem</td>
@@ -179,7 +179,7 @@ Fyzik·lnÌ olympi·da Praha<?php echo ' :: ' . nadpis(); ?>
                                 <?php
 if ($napln == FILE_NEWS) {
         echo '
-                                <p>Ofici·lnÌ str·nky praûskÈ krajskÈ komise souteûe Fyzik·lnÌ olympi·da &ndash; <a href="http://praha.fyzikalniolympiada.cz">praha.fyzikalniolympiada.cz</a></p>';
+                                <p>Ofici√°ln√≠ str√°nky pra≈æsk√© krajsk√© komise soute≈æe Fyzik√°ln√≠ olympi√°da &ndash; <a href="http://praha.fyzikalniolympiada.cz">praha.fyzikalniolympiada.cz</a></p>';
         include(ROOT_DIR.FILE_NEWS);
 } else {
         include(ROOT_DIR.$napln);
@@ -193,7 +193,7 @@ if ($napln == FILE_NEWS) {
                                         <div id="footerBorder">
                                                 <div id="innerFooter">
                                                         <hr class="hide" />
-                                                        &copy; 2004&ndash;<?php echo date('Y') ?> Jan Pracha¯ &ndash; <a href="mailto:webmaster@fyzikalniolympiada.cz" title="KontaktnÌ email">webmaster@fyzikalniolympiada.cz</a>
+                                                        &copy; 2004&ndash;<?php echo date('Y') ?> Jan Pracha≈ô &ndash; <a href="mailto:webmaster@fyzikalniolympiada.cz" title="Kontaktn√≠ email">webmaster@fyzikalniolympiada.cz</a>
                                                 </div>
                                         </div>
                                 </div>

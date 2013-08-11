@@ -1,5 +1,5 @@
 <?php
-if(!defined("VALID_ACCESS"))	{die("Neoprávnìný pøístup!");}				//	Ochrana proti neoprávnìnému pøístupu ke skriptùm
+if(!defined("VALID_ACCESS"))	{die("NeoprÃ¡vnÄ›nÃ½ pÅ™Ã­stup!");}				//	Ochrana proti neoprÃ¡vnÄ›nÃ©mu pÅ™Ã­stupu ke skriptÅ¯m
 
 $nastranku = NOVINKY_NA_STRANKU;
 $interval = NOVINKY_INTERVAL;
@@ -10,8 +10,8 @@ if ( isset($_GET["page"]) )
 else
   $strana = 1;
 
-$monthz = Array('', 'ledna', 'února', 'bøezna', 'dubna', 'kvìtna', 'èervna', 'èervence', 'srpna', 'záøí', 'øíjna', 'listopadu', 'prosince');
-$monthz_short = Array('', 'ledna', 'února', 'bøezna', 'dubna', 'kvìtna', 'èervna', 'èerven.', 'srpna', 'záøí', 'øíjna', 'listop.', 'prosin.');
+$monthz = Array('', 'ledna', 'Ãºnora', 'bÅ™ezna', 'dubna', 'kvÄ›tna', 'Äervna', 'Äervence', 'srpna', 'zÃ¡Å™Ã­', 'Å™Ã­jna', 'listopadu', 'prosince');
+$monthz_short = Array('', 'ledna', 'Ãºnora', 'bÅ™ezna', 'dubna', 'kvÄ›tna', 'Äervna', 'Äerven.', 'srpna', 'zÃ¡Å™Ã­', 'Å™Ã­jna', 'listop.', 'prosin.');
 $rok = date("Y");
 $mesic = date("m");
 
@@ -75,7 +75,7 @@ while ( $row = mysql_fetch_array($result, MYSQL_ASSOC) ) {
             <div class="archive-post-title"><a name="'.++$i.'"></a>
                 <h3>' . $row["subject"] . '</h3>
                 <p>';
-	if ($row["pic_id"] != NULL) {       //i obrázek
+	if ($row["pic_id"] != NULL) {       //i obrÃ¡zek
     	$mysql->query('
     		SELECT filename, align, hspace, vspace, alt
     		FROM images
@@ -92,9 +92,9 @@ while ( $row = mysql_fetch_array($result, MYSQL_ASSOC) ) {
 	eval("\$row[\"text\"] = \"$row[text]\";");
     echo $row["text"] . '</p>
                 <div class="quiet">
-                    <a href="' . odkaz2('content/novinka.php', array('id'=>$row['id'], 'page' => NULL)) . '" title="Trvalý odkaz na pøíspìvek" class="link">Trvalý odkaz</a>
-                    <a href="pridat.php?id=' . $row['id'] . '" title="Editovat pøíspìvek" class="sign">&nbsp;&bull;</a>
-                    <a href="mailto:' . $row['email'] . '" title="Autor pøíspìvku" class="sign">' . $row['name'] . '</a>
+                    <a href="' . odkaz2('content/novinka.php', array('id'=>$row['id'], 'page' => NULL)) . '" title="TrvalÃ½ odkaz na pÅ™Ã­spÄ›vek" class="link">TrvalÃ½ odkaz</a>
+                    <a href="pridat.php?id=' . $row['id'] . '" title="Editovat pÅ™Ã­spÄ›vek" class="sign">&nbsp;&bull;</a>
+                    <a href="mailto:' . $row['email'] . '" title="Autor pÅ™Ã­spÄ›vku" class="sign">' . $row['name'] . '</a>
                 </div>
                 <div class="post-date">' . $row["hourmin"] . ', ' . $row["day"] . '. ' . $monthz[$row["month"]] . ' ' . $row["year"] . '</div>
             </div>
@@ -108,7 +108,7 @@ echo '
     <div class="archive-pagination archive-pagination-bottom">';
 
 if ($strana == 1) {
-    echo '<div class="right"><a href="' . odkaz2("content/news.php", array('page'=>2)) . '">Starší novinky &#187;</a></div>';
+    echo '<div class="right"><a href="' . odkaz2("content/news.php", array('page'=>2)) . '">StarÅ¡Ã­ novinky &#187;</a></div>';
 } else {
     echo '<div class="left"><a href="' . odkaz2("content/news.php", array('page'=>1)) . '">&#171; Novinky</a></div>';
 }

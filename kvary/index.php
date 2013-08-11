@@ -45,15 +45,15 @@ echo '<?xml version="1.0" encoding="windows-1250"?>
 <!-- ROBOTS end /--> 
 
 <!-- KEYWORDS & CATEGORIES - but who cares now :-( /--> 
-<meta name='description' content='Fyzikální olympiáda, Karlovy Vary, oficiální stránky' /> 
-<meta name='keywords' content='fyzika, fyzikální, fyzikalni, olympiada, olympiáda, soutěž, soutez, karlovy vary' /> 
+<meta name='description' content='FyzikĂˇlnĂ­ olympiĂˇda, Karlovy Vary, oficiĂˇlnĂ­ strĂˇnky' /> 
+<meta name='keywords' content='fyzika, fyzikĂˇlnĂ­, fyzikalni, olympiada, olympiĂˇda, soutÄ›Ĺľ, soutez, karlovy vary' /> 
 <meta name='category' content='physics' /> 
 <!-- KEYWORDS & CATEGORIES - end /--> 
 
 <!-- AUTHOR self promo - use 'crypted' e-mails defeats robotic harvesters /--> 
-<meta name='author' content='All: Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
-<meta name='webmaster' content='All: Jan Prachař, e-mail: webmaster@fyzikalniolympiada.cz' /> 
-<meta name='copyright' content='&copy;2005-2005 Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
+<meta name='author' content='All: Jan PrachaĹ™, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
+<meta name='webmaster' content='All: Jan PrachaĹ™, e-mail: webmaster@fyzikalniolympiada.cz' /> 
+<meta name='copyright' content='&copy;2005-2005 Jan PrachaĹ™, e-mail: jan.prachar@fyzikalniolympiada.cz' /> 
 <!-- AUTHOR self promo - end /--> 
 
 <!-- GEOURL /--> 
@@ -96,12 +96,12 @@ echo '<?xml version="1.0" encoding="windows-1250"?>
 <!-- CASCADING STYLE SHEETS - end /--> 
 
 <title> 
-Fyzikální olympiáda Karlovy Vary<?php echo ' :: ' . nadpis(); ?>
+FyzikĂˇlnĂ­ olympiĂˇda Karlovy Vary<?php echo ' :: ' . nadpis(); ?>
 </title> 
 </head>
 <body id="fo-cuni-cz/kvary">
 <div id="page_title">
-	Fyzikální olympiáda &ndash; Karlovy Vary
+	FyzikĂˇlnĂ­ olympiĂˇda &ndash; Karlovy Vary
 </div>
 <div id="menu">
 	<?php echo menu(); ?>
@@ -115,7 +115,7 @@ Fyzikální olympiáda Karlovy Vary<?php echo ' :: ' . nadpis(); ?>
 		<li>
 			<table>
 			<tr>
-				<td colspan="2"><strong>Návštěvy:</strong></td>
+				<td colspan="2"><strong>NĂˇvĹˇtÄ›vy:</strong></td>
 			</tr>
 			<tr>
 				<td>celkem</td>
@@ -141,14 +141,14 @@ Fyzikální olympiáda Karlovy Vary<?php echo ' :: ' . nadpis(); ?>
 				<?php
 if ($napln == FILE_NEWS) {
 	echo '
-				<p>Oficiální stránky karlovarské krajské komise souteže Fyzikální olympiáda &ndash; <a href="http://kvary.fyzikalniolympiada.cz/">kvary.fyzikalniolympiada.cz</a></p>';
+				<p>OficiĂˇlnĂ­ strĂˇnky karlovarskĂ© krajskĂ© komise souteĹľe FyzikĂˇlnĂ­ olympiĂˇda &ndash; <a href="http://kvary.fyzikalniolympiada.cz/">kvary.fyzikalniolympiada.cz</a></p>';
 	include(ROOT_DIR.FILE_NEWS);
 } else {
 	include(ROOT_DIR.$napln);
 }
 	  			?>
 </div>
-<address>&copy;2005&ndash;<?php echo date('Y') ?> Jan Prachař &ndash; <a href="mailto:webmaster@fyzikalniolympiada.cz" title="Kontaktní email">webmaster@fyzikalniolympiada.cz</a></address>
+<address>&copy;2005&ndash;<?php echo date('Y') ?> Jan PrachaĹ™ &ndash; <a href="mailto:webmaster@fyzikalniolympiada.cz" title="KontaktnĂ­ email">webmaster@fyzikalniolympiada.cz</a></address>
 </body>
 </html>
 <?php

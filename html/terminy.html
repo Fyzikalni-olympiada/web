@@ -1,9 +1,9 @@
-<h2>Termíny <?php echo AKTUALNI_ROCNIK ?>. roèníku fyzikální olympiády <?php echo AKTUALNI_ROK ?></h2>
+<h2>TermÃ­ny <?php echo AKTUALNI_ROCNIK ?>. roÄnÃ­ku fyzikÃ¡lnÃ­ olympiÃ¡dy <?php echo AKTUALNI_ROK ?></h2>
 
 
 <?php 
 if (FILE_INDEX == 'index.php') {
-	echo '<p>Termíny odevzdání úloh domácího kola jsou jen orientaèní. Závazné termíny v&nbsp;jednotlivıch krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajskıch komisí">webovıch stránkách</a>.</p>';
+	echo '<p>TermÃ­ny odevzdÃ¡nÃ­ Ãºloh domÃ¡cÃ­ho kola jsou jen orientaÄnÃ­. ZÃ¡vaznÃ© termÃ­ny v&nbsp;jednotlivÃ½ch krajÃ­ch vyhlaÅ¡ujÃ­ krajskÃ© komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="WebovÃ© strÃ¡nky krajskÃ½ch komisÃ­">webovÃ½ch strÃ¡nkÃ¡ch</a>.</p>';
 }
 
 
@@ -39,16 +39,16 @@ echo '
 for ( $i = 1; $i < 5; $i++ ) {
 	switch ($i) {
 		case 1:
-			echo '<h3>Kategorie A &ndash; støední školy</h3>';
+			echo '<h3>Kategorie A &ndash; stÅ™ednÃ­ Å¡koly</h3>';
 			break;
 		case 2:
-			echo '<h3>Kategorie B, C, D &ndash; støední školy</h3>';
+			echo '<h3>Kategorie B, C, D &ndash; stÅ™ednÃ­ Å¡koly</h3>';
 			break;
 		case 3:
-			echo '<h3>Kategorie E, F &ndash; základní školy</h3>';
+			echo '<h3>Kategorie E, F &ndash; zÃ¡kladnÃ­ Å¡koly</h3>';
 			break;
 		case 4:
-			echo '<h3>Kategorie G &ndash; základní školy</h3>';
+			echo '<h3>Kategorie G &ndash; zÃ¡kladnÃ­ Å¡koly</h3>';
 			break;
 		default:
 			break;
@@ -75,7 +75,7 @@ for ( $i = 1; $i < 5; $i++ ) {
 			} else {
 				$strong1 = $strong2 = '';
 			}
-			/* Pro prahu jinı termín domácích kol */
+			/* Pro prahu jinÃ½ termÃ­n domÃ¡cÃ­ch kol */
 			if ($row['termin'] == 'do 14. 1. 2013' && FILE_INDEX == 'praha/index.php') {
 				$row['termin'] = 'do 4. 1. 2013';
 			}

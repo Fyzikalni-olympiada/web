@@ -12,7 +12,7 @@ $headers = "From: webmaster@fyzikalniolympiada.cz\r\n"
     ."X-Mailer: PHP\r\n"
 	."Content-type: text/plain; charset=\"Windows-1250\"\r\n"
 	."Content-transfer-encoding: 8bit";
-$monthz = Array('', 'ledna', '˙nora', 'b¯ezna', 'dubna', 'kvÏtna', 'Ëervna', 'Ëervence', 'srpna', 'z·¯Ì', '¯Ìjna', 'listopadu', 'prosince');
+$monthz = Array('', 'ledna', '√∫nora', 'b≈ôezna', 'dubna', 'kvƒõtna', 'ƒçervna', 'ƒçervence', 'srpna', 'z√°≈ô√≠', '≈ô√≠jna', 'listopadu', 'prosince');
 $options = '';
 
 $mysql_w = new db('w', 0);
@@ -28,8 +28,8 @@ if (isset($_GET['id']) && !isset($_POST['ok'])) {
 		$_POST['name'] = $name;
 		$_POST['email'] = $email;
 		$_POST['titleline'] = $subject;
-		$text = str_replace('" . odkaz("', 'ﬂ', $text);
-		$text = str_replace('") . "', 'ﬂ', $text);
+		$text = str_replace('" . odkaz("', '√ü', $text);
+		$text = str_replace('") . "', '√ü', $text);
 		$text = str_replace('\"', '"', $text);
 	
 		$_POST['text'] = $text;
@@ -54,7 +54,7 @@ if (isset($_GET['id']) && !isset($_POST['ok'])) {
 	$get_url = '';
 }
 
-/** update odesl·n */
+/** update odesl√°n */
 if (isset($_POST["ok"])) { 
 	$_POST["titleline"] = $GLOBALS['mysql']->odstran_problemy($_POST["titleline"]);
 	$_POST["text"] = $GLOBALS['mysql']->odstran_problemy($_POST["text"]);
@@ -67,7 +67,7 @@ if (isset($_POST["ok"])) {
 
 
 	if (md5($_POST["heslo"]) != $qw)  //kontrola hesla
-		$chyba .= "äpatnÈ heslo!<BR>";
+		$chyba .= "≈†patn√© heslo!<BR>";
 	
 	$prokohoArray = array();
 	if (array_key_exists("stud", $_POST)) {
@@ -80,7 +80,7 @@ if (isset($_POST["ok"])) {
 		$prokohoArray[] = 'organizator';
 	}
 	if (empty($prokohoArray)) {
-		$chyba .= "NenÌ urËeno pro koho novinka je.<BR>";
+		$chyba .= "Nen√≠ urƒçeno pro koho novinka je.<BR>";
 	} else {
 		$prokoho = implode(',', $prokohoArray);
 	}
@@ -91,19 +91,19 @@ if (isset($_POST["ok"])) {
 		$_POST["titleline"] = ucfirst($_POST["titleline"]);
 	}
 	else
-		$chyba .= "ChybÌ nadpis novinky!<BR>";
+		$chyba .= "Chyb√≠ nadpis novinky!<BR>";
 	
-	if ( $_FILES['foto']['size'] !== 0 ) {       //odesl·n i obr·zek
+	if ( $_FILES['foto']['size'] !== 0 ) {       //odesl√°n i obr√°zek
 		if ( $_FILES['foto']['type'] == "image/jpeg"
 			|| $_FILES['foto']['type'] == "image/pjpeg" 
 			|| $_FILES['foto']['type'] == "image/gif" 
 			|| $_FILES['foto']['type'] == "image/x-png"
-		) { //podporovan˝ form·t
+		) { //podporovan√Ω form√°t
 			$name = date("Ymdhis_") . $_FILES['foto']['name'];
 			if (!file_exists("pic/$name") and ($_FILES['foto']['size'] <= 1050000)){
 				copy($_FILES['foto']['tmp_name'], ROOT_DIR."upload/" . $name);
 				$pic_id = '';
-				// zjistÌme pic_id (pokud obr·zek existuje, zmÏnÌme ho)
+				// zjist√≠me pic_id (pokud obr√°zek existuje, zmƒõn√≠me ho)
 				if (isset($_GET['id'])) {
 					$GLOBALS['mysql']->query('
 						SELECT pic_id FROM ' . TABLE_NEWS . '
@@ -121,10 +121,10 @@ if (isset($_POST["ok"])) {
 				
 				$query_img = "REPLACE INTO `" . TABLE_IMAGES . "` ( `id` , `filename` , `align` , `hspace` , `vspace` , `alt` ) VALUES ( " . $values . " ) ";
 			} else {
-				$chyba .= "Obr·zek se nepoda¯ilo uploadovat, je p¯Ìliö velik˝.";
+				$chyba .= "Obr√°zek se nepoda≈ôilo uploadovat, je p≈ô√≠li≈° velik√Ω.";
 			}
 		} else {
-		  $chyba .= "Obr·zek m· nepodporovan˝ form·t!<BR>";
+		  $chyba .= "Obr√°zek m√° nepodporovan√Ω form√°t!<BR>";
 		}
 	}
 
@@ -147,16 +147,16 @@ if (isset($_POST["ok"])) {
 		$_POST["text"] = str_replace(' A ', " A&nbsp;", $_POST["text"]);
 		$_POST["text"] = str_replace(' I ', " I&nbsp;", $_POST["text"]);
 		
-		//zpracovani odkaz˘
+		//zpracovani odkaz≈Ø
 			$text = str_replace('"', '\"', $_POST["text"]);
 		
-		$pieces = explode("ﬂ", $text);
+		$pieces = explode("√ü", $text);
 		for ( $i=0; $i+1 < count($pieces); $i+=2 ) {
 			$pieces[$i+1] = "\" . odkaz(\"" . $pieces[$i+1] . "\") . \"";
 		}
 		$text = implode("", $pieces);
 	} else {
-		$chyba .= "ChybÌ text p¯ÌspÏvku.<br />";
+		$chyba .= "Chyb√≠ text p≈ô√≠spƒõvku.<br />";
 	}
 
 	if ($chyba == "") {
@@ -205,7 +205,7 @@ if (isset($_POST["ok"])) {
 			header('Location: http://' . $_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']));
 		}
 	} else {
-		echo "<div class=\"AdminError\" >Update se nezda¯il!<br /><br />$chyba<br />Opravte chyby a odeölete formul·¯ znovu.</div>";
+		echo "<div class=\"AdminError\" >Update se nezda≈ôil!<br /><br />$chyba<br />Opravte chyby a ode≈°lete formul√°≈ô znovu.</div>";
 	}
 }
 
@@ -213,7 +213,7 @@ if (!isset($_POST["ok"]) || $chyba) {
 ?>
 <html>
 <head>
-<TITLE>P¯idat novinku</TITLE>
+<TITLE>P≈ôidat novinku</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
 <meta http-equiv="Content-language" content="cs" />
 <!-- ENCODING end /-->
@@ -254,7 +254,7 @@ function thumb()
 function checkit()
 {
   if ((document.sign.titleline.value == '') || (document.sign.text.value == '') || (document.sign.name.value == '') || (document.sign.email.value == '') || (document.sign.password.value == '')) {
-    alert('NÏkter· pole nejsou vyplnÏn·.');
+    alert('Nƒõkter√° pole nejsou vyplnƒõn√°.');
 	return false;
   }
   else {
@@ -289,13 +289,13 @@ $query = "
 $result = $GLOBALS['mysql']->query($query);
 
 $i = 0;
-while ( $row = mysql_fetch_assoc($result) ) { //hlavnÌ menu
+while ( $row = mysql_fetch_assoc($result) ) { //hlavn√≠ menu
 	$options .= "<option value=\"link$i\"> $row[name] </option>\r\n";
 	echo "
 if (document.sign.linkpredef.value=='link$i'){";
 	if ($row['type'] == 'file') {
 		echo "
-    document.sign.linkurl.value='ﬂ$row[filename]ﬂ';";
+    document.sign.linkurl.value='√ü$row[filename]√ü';";
 	} elseif ($row['type'] == 'url') {
 		echo "
     document.sign.linkurl.value='$row[href]';";
@@ -323,7 +323,7 @@ if (document.sign.linkpredef.value=='link$i'){";
 if (document.sign.linkpredef.value=='link$i'){";
 		if ($row2['type'] == 'file') {
 			echo "
-    document.sign.linkurl.value='ﬂ$row2[filename]ﬂ';";
+    document.sign.linkurl.value='√ü$row2[filename]√ü';";
 		} elseif ($row2['type'] == 'url') {
 			echo "
     document.sign.linkurl.value='$row2[href]';";
@@ -351,7 +351,7 @@ if (document.sign.linkpredef.value=='link$i'){";
 if (document.sign.linkpredef.value=='link$i'){";
 			if ($row3['type'] == 'file') {
 				echo "
-    document.sign.linkurl.value='ﬂ$row3[filename]ﬂ';";
+    document.sign.linkurl.value='√ü$row3[filename]√ü';";
 			} elseif ($row3['type'] == 'url') {
 				echo "
     document.sign.linkurl.value='$row3[href]';";
@@ -399,13 +399,13 @@ config.toolbar = [
 
 </HEAD>
 <BODY bgcolor="#ffffff" fontcolor="#000000">
-<h1>P¯idat novinku</h1>
+<h1>P≈ôidat novinku</h1>
 
 <div id="form_pridat">
 <form name="sign" id="sign" action="<? echo $_SERVER['PHP_SELF'] . $get_url ?>" method="post" ENCTYPE="multipart/form-data">
 <table align=center cellspacing="0" cellpadding="0">
 <tr valign="top">
-  <td colspan="2"><h2>Data k updatov·nÌ</h2>
+  <td colspan="2"><h2>Data k updatov√°n√≠</h2>
   <table>
   <tr>
     <td align="right">Nadpis:</td>
@@ -422,7 +422,7 @@ config.toolbar = [
   <td>
   <table width="90%">
   <tr>
-    <td colspan=2><h3>Obr·zek:</h3></td>
+    <td colspan=2><h3>Obr√°zek:</h3></td>
   </tr>
   <tr>
     <td></td>
@@ -431,11 +431,11 @@ config.toolbar = [
   <tr>
     <td align="right">Popisek:</td>
 	<td><input type="text" class="text" size="25" name="alt" value='<?php echo isset($_POST["alt"]) ? $_POST["alt"] : '' ?>'>
-	<input tabindex="15" type="button" class="button" value="N·hled" onclick="thumb()" />
+	<input tabindex="15" type="button" class="button" value="N√°hled" onclick="thumb()" />
 	</td>
   </tr>
   <tr>
-    <td align="right">Zarovn·nÌ:</td>
+    <td align="right">Zarovn√°n√≠:</td>
 	<td>
 	<select name="align">
       <option value= "left" <?php echo isset($_POST["align"]) && $_POST["align"] == "left" ? "selected" : ""; ?>>left</option>
@@ -451,12 +451,12 @@ config.toolbar = [
     <td align="right">Pro koho:</td>
 	<td>
 		<input type="checkbox" name="stud" tabindex="9" <?php echo isset($_POST["stud"]) && $_POST["stud"] ? "checked" : ""; ?>>student
-		<input type="checkbox" name="ucit" tabindex="10" <?php echo isset($_POST["ucit"]) && $_POST["ucit"] ? "checked" : ""; ?>>uËitel
-		<input type="checkbox" name="orga" tabindex="11" <?php echo isset($_POST["orga"]) && $_POST["orga"] ? "checked" : ""; ?>>organiz·tor
+		<input type="checkbox" name="ucit" tabindex="10" <?php echo isset($_POST["ucit"]) && $_POST["ucit"] ? "checked" : ""; ?>>uƒçitel
+		<input type="checkbox" name="orga" tabindex="11" <?php echo isset($_POST["orga"]) && $_POST["orga"] ? "checked" : ""; ?>>organiz√°tor
 	</td>
   </tr>
   <tr>
-    <td align="right">JmÈno:</td>
+    <td align="right">Jm√©no:</td>
 	<td><input tabindex="12" type="text" class="text" size="25" name="name" value='<?php echo isset($_POST["name"]) ? $_POST["name"] : ''?>'></td>
   </tr>
   <tr>
@@ -470,7 +470,7 @@ config.toolbar = [
   <tr>
     <td></td>
 	<td>
-	<input tabindex="16" type="submit" class="submit" name="ok" value="Uloûit">
+	<input tabindex="16" type="submit" class="submit" name="ok" value="Ulo≈æit">
 	<input type="checkbox" name="mail" checked>e-mail
     </td>
   </tr>
@@ -481,7 +481,7 @@ config.toolbar = [
   <td align="right">
   <table width="90%">
   <tr>
-    <td colspan="2"><h3>Vloûit odkaz na konec textu:<br /> (lze jen v textovÈm reûimu)</h3></td>
+    <td colspan="2"><h3>Vlo≈æit odkaz na konec textu:<br /> (lze jen v textov√©m re≈æimu)</h3></td>
   </tr>
   <tr valign="top">
     <td align="right">Odkaz na:</td>
@@ -505,7 +505,7 @@ config.toolbar = [
   <tr>
   	<td></td>
 	<td>
-	<input type="button" class="button" value="Vloûit odkaz" tabindex="8" onclick="addlink()">
+	<input type="button" class="button" value="Vlo≈æit odkaz" tabindex="8" onclick="addlink()">
 	<!--<input value="Reset" type="reset" class="button">-->
     </td>
   </tr>
@@ -513,10 +513,10 @@ config.toolbar = [
   
   <table width="90%">
   <tr>
-    <td colspan="2"><h3>N·hled obr·zku:</h3></td>
+    <td colspan="2"><h3>N√°hled obr√°zku:</h3></td>
   </tr>
   <tr>
-    <td><img name="thumbpic" src="" alt="n·hled"></td>
+    <td><img name="thumbpic" src="" alt="n√°hled"></td>
   </tr>
   </table>
   </td>

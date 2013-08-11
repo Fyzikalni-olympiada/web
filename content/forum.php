@@ -1,8 +1,8 @@
 <?php
 if(!defined("VALID_ACCESS"))	{
-	die("Neoprávnìnı pøístup!");
+	die("NeoprÃ¡vnÄ›nÃ½ pÅ™Ã­stup!");
 }
-//	Ochrana proti neoprávnìnému pøístupu ke skriptùm
+//	Ochrana proti neoprÃ¡vnÄ›nÃ©mu pÅ™Ã­stupu ke skriptÅ¯m
 
 if (TABLE_FORUM != 'forum') {
 	header('Location: '.odkaz('content/forum-old.php', null, 0));
@@ -11,7 +11,7 @@ if (TABLE_FORUM != 'forum') {
 
 include_once(ROOT_DIR.'functions/forum.php');
 
-/** Naètení strany */
+/** NaÄtenÃ­ strany */
 if (!isset($GLOBALS['get']['page']) || empty($GLOBALS['get']['page']) || intval($GLOBALS['get']['page']) < 1) {
 	$GLOBALS['get']['page'] = 1;
 	$strana = 1;
@@ -20,7 +20,7 @@ if (!isset($GLOBALS['get']['page']) || empty($GLOBALS['get']['page']) || intval(
 }
 
 
-/** Zpùsob tøídìní */
+/** ZpÅ¯sob tÅ™Ã­dÄ›nÃ­ */
 if (isset($GLOBALS['get']['sort']) && ($GLOBALS['get']['sort'] == 'chronologicky')) {
 	$sort = 'chronologicky';
 } elseif (isset($GLOBALS['get']['sort']) && ($GLOBALS['get']['sort'] == 'vlakno') && isset($GLOBALS['get']['forum_id']) && is_numeric($GLOBALS['get']['forum_id'])) {
@@ -56,13 +56,13 @@ $zpracuj_form = zpracuj_form();
 
 if ($kdo == "student")
 	echo '
-	<p>Toto diskusní fórum je urèeno pro studenty. Mùete se zde vyjadøovat ohlednì prùbìhu olympiády, kvality úloh, pøípadnì mít nìjaké jiné pøipomínky èi dotazy.';
+	<p>Toto diskusnÃ­ fÃ³rum je urÄeno pro studenty. MÅ¯Å¾ete se zde vyjadÅ™ovat ohlednÄ› prÅ¯bÄ›hu olympiÃ¡dy, kvality Ãºloh, pÅ™Ã­padnÄ› mÃ­t nÄ›jakÃ© jinÃ© pÅ™ipomÃ­nky Äi dotazy.';
 if ($kdo == "ucitel")
 	echo '
-	<p>Toto diskusní fórum je urèeno pro uèitele. Mùete se zde vyjadøovat ohlednì prùbìhu olympiády, kvality úloh, pøípadnì mít nìjaké jiné pøipomínky èi dotazy.';
+	<p>Toto diskusnÃ­ fÃ³rum je urÄeno pro uÄitele. MÅ¯Å¾ete se zde vyjadÅ™ovat ohlednÄ› prÅ¯bÄ›hu olympiÃ¡dy, kvality Ãºloh, pÅ™Ã­padnÄ› mÃ­t nÄ›jakÃ© jinÃ© pÅ™ipomÃ­nky Äi dotazy.';
 if ($kdo == "organizator")
 	echo '
-	<p>Toto diskusní fórum je urèeno pro organizátory. Mùete se zde vyjadøovat ohlednì prùbìhu olympiády, kvality úloh, pøípadnì mít nìjaké jiné pøipomínky èi dotazy.';
+	<p>Toto diskusnÃ­ fÃ³rum je urÄeno pro organizÃ¡tory. MÅ¯Å¾ete se zde vyjadÅ™ovat ohlednÄ› prÅ¯bÄ›hu olympiÃ¡dy, kvality Ãºloh, pÅ™Ã­padnÄ› mÃ­t nÄ›jakÃ© jinÃ© pÅ™ipomÃ­nky Äi dotazy.';
 
 echo '
 </p>';
@@ -70,16 +70,16 @@ echo '
 
 echo '
 <p>
-<strong>' . lng('Seøadit:','Sort by') . '</strong> ';
+<strong>' . lng('SeÅ™adit:','Sort by') . '</strong> ';
 
 if ($sort == 'chronologicky') {
-	echo '<a href="' . odkaz2(null, array('sort'=>'vlakna')) . '" title="' . lng('Seøadit podle vláken','Sort by threads') . '">' . lng('podle vláken','threads') . '</a>';
+	echo '<a href="' . odkaz2(null, array('sort'=>'vlakna')) . '" title="' . lng('SeÅ™adit podle vlÃ¡ken','Sort by threads') . '">' . lng('podle vlÃ¡ken','threads') . '</a>';
 } elseif ($sort == 'vlakna') {
-	echo '<a href="' . odkaz2(null, array('sort'=>'chronologicky')) . '" title="' . lng('Seøadit chronologicky','Sort by date') . '">' . lng('chronologicky','date') . '</a>';
+	echo '<a href="' . odkaz2(null, array('sort'=>'chronologicky')) . '" title="' . lng('SeÅ™adit chronologicky','Sort by date') . '">' . lng('chronologicky','date') . '</a>';
 } else {
-	echo '<a href="' . odkaz2(null, array('sort'=>'vlakna','forum_id'=>null)) . '" title="' . lng('Seøadit podle vláken','Sort by threads') . '">' . lng('podle vláken','threads') . '</a>';
+	echo '<a href="' . odkaz2(null, array('sort'=>'vlakna','forum_id'=>null)) . '" title="' . lng('SeÅ™adit podle vlÃ¡ken','Sort by threads') . '">' . lng('podle vlÃ¡ken','threads') . '</a>';
 	echo '&nbsp;|&nbsp;';
-	echo '<a href="' . odkaz2(null, array('sort'=>'chronologicky','forum_id'=>null)) . '" title="' . lng('Seøadit chronologicky','Sort by date') . '">' . lng('chronologicky','date') . '</a>';
+	echo '<a href="' . odkaz2(null, array('sort'=>'chronologicky','forum_id'=>null)) . '" title="' . lng('SeÅ™adit chronologicky','Sort by date') . '">' . lng('chronologicky','date') . '</a>';
 }
 
 echo '
@@ -93,7 +93,7 @@ $email = null;
 $guest_test = null;
 
 if (!empty($chyba) || isset($_POST['ok'])) { 
-	/* Chyba nebo odeslán formuláø */
+	/* Chyba nebo odeslÃ¡n formulÃ¡Å™ */
 	if (isset($_POST['title'])) {
 		$title = db::odstran_problemy($_POST['title']);
 	}
@@ -145,7 +145,7 @@ if (!empty($chyba) || isset($_POST['ok'])) {
 					$title = 'Re: ' . $row['title'];
 				}
 				
-			/** Úprava pøíspìvku (musí bıt nalogován nebo administrátor) */
+			/** Ãšprava pÅ™Ã­spÄ›vku (musÃ­ bÃ½t nalogovÃ¡n nebo administrÃ¡tor) */
 			} elseif( (isset($_SESSION['id']) && !is_null($row['users_id']) && $_SESSION['id'] == $row['users_id']) 
 				|| (isset($_SESSION['administrator']) && $_SESSION['administrator'] == 1) ) {
 				$title = $row['title'];
@@ -166,7 +166,7 @@ echo $zpracuj_form;
 
 echo '
 <div id="respond">
-    <div class="legend" id="comment-form-title">Vloit pøíspìvek</div>
+    <div class="legend" id="comment-form-title">VloÅ¾it pÅ™Ã­spÄ›vek</div>
 
     <div class="comment-content-wrapper">
 
@@ -206,7 +206,7 @@ if (strtolower($guest_test) == GUEST_TEST_TEXT) {
 echo '
                     <div class="form-row comment-input-name">
 
-                        <div class="form-property required"><label for="author">Jméno</label></div>
+                        <div class="form-property required"><label for="author">JmÃ©no</label></div>
                         <div class="form-value"><input type="text" name="name" id="name" value="' . $name . '" size="28" tabindex="3" class="text" /></div>
 
                         <div class="clearer">&nbsp;</div>
@@ -324,7 +324,7 @@ if ($sort == 'chronologicky') {
 
 <?php
 if ($strana > 1) {
-	echo '<div class="left"><a href="' . odkaz2(null, array('page'=>($strana-1))) . '">&#171; Pøedchozí strana</a></div>&nbsp;| ';
+	echo '<div class="left"><a href="' . odkaz2(null, array('page'=>($strana-1))) . '">&#171; PÅ™edchozÃ­ strana</a></div>&nbsp;| ';
 }
 for ( $i=max($strana-5,1); $i<=min($strana+5,$pocet_stranek); $i++ ) {
 	if ( $i == $strana ) {
@@ -337,7 +337,7 @@ for ( $i=max($strana-5,1); $i<=min($strana+5,$pocet_stranek); $i++ ) {
 	}
 }
 if ($strana < $pocet_stranek) {
-	echo '<div class="right"><a href="' . odkaz2(null, array('page'=>($strana+1))) . '">Následující strana &#187;</a></div>';
+	echo '<div class="right"><a href="' . odkaz2(null, array('page'=>($strana+1))) . '">NÃ¡sledujÃ­cÃ­ strana &#187;</a></div>';
 }
 ?>
 

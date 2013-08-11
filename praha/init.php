@@ -1,6 +1,6 @@
 <?php
 
-if(!defined("VALID_ACCESS"))	{die("Neoprávnìný pøístup!");}				//	Ochrana proti neoprávnìnému pøístupu ke skriptùm
+if(!defined("VALID_ACCESS"))	{die("NeoprÃ¡vnÄ›nÃ½ pÅ™Ã­stup!");}				//	Ochrana proti neoprÃ¡vnÄ›nÃ©mu pÅ™Ã­stupu ke skriptÅ¯m
 
 if (function_exists('date_default_timezone_set'))
 	date_default_timezone_set('Europe/Prague');
@@ -60,7 +60,7 @@ define('ERROR_MAIL_INTERVAL', 1); //interval posilani chybovych mailu in days
  * $napln
 */
  
-// Defaultní hodnoty, pokud je prázdné GET 
+// DefaultnÃ­ hodnoty, pokud je prÃ¡zdnÃ© GET 
 $GLOBALS['who'] = $GLOBALS['kdo'] = 'student';
 $GLOBALS['parentID'] = 72;
 $GLOBALS['structureID'] = 76;
@@ -76,7 +76,7 @@ require_once(ROOT_DIR.'classes/db.php');
 require_once(ROOT_DIR.'functions/folib.php');
 
 /*
- * SPOJENÍ S DATABÁZÍ
+ * SPOJENÃ S DATABÃZÃ
  */
 
 $mysql_odkazy = new db("r", 0);
@@ -84,7 +84,7 @@ $mysql = new db("w", 0);
 
 
 /*
- * PARSOVÁNÍ DOTAZU
+ * PARSOVÃNÃ DOTAZU
  */
 
 /* urcime napln, nadpis, parentID, structureID */
@@ -95,7 +95,7 @@ if (isset($_GET['who']) && in_array($_GET['who'], array('student','ucitel','orga
 }
 	
 /*
- * POÈÍTADLO
+ * POÄŒÃTADLO
  */
  
 list($GLOBALS['visits'], $GLOBALS['visits_day'], $GLOBALS['visits_online']) = pocitadlo();

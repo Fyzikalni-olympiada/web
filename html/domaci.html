@@ -1,4 +1,4 @@
-<h2>Domácí kolo <?php echo AKTUALNI_ROCNIK ?>. roèníku FO</h2>
+<h2>DomÃ¡cÃ­ kolo <?php echo AKTUALNI_ROCNIK ?>. roÄnÃ­ku FO</h2>
 
 <h3>Organizace</h3>
 
@@ -6,7 +6,7 @@
 $GLOBALS['mysql']->query('
 	SELECT termin, kategorie
 	FROM ' . TABLE_TERMS . '
-	WHERE nazev LIKE \'%domácí%\'
+	WHERE nazev LIKE \'%domÃ¡cÃ­%\'
 	AND rocnik="' . AKTUALNI_ROCNIK . '"
 	ORDER BY kategorie
 ');
@@ -30,112 +30,112 @@ if (FILE_INDEX == 'praha/index.php') {
 
 if ($kdo == "student") {?>
 <p>
-V&nbsp;domácím kole máte za úkol øešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">studijní témata</a>, která byla publikována jako broury Knihovnièky
-fyzikální olympiády.
-Jeho úkolem je vás jednak seznámit s&nbsp;typem úloh, které se v&nbsp;dané kategorii mohou v&nbsp;dalších kolech vyskytnout, a&nbsp;hlavnì také provìøit vaši
-schopnost tyto úlohy øešit.
-První tøi úlohy øešte nejlépe do konce listopadu,
-potom øešte další ètyøi úlohy vèetnì experimentální úlohy.
+V&nbsp;domÃ¡cÃ­m kole mÃ¡te za Ãºkol Å™eÅ¡it 7&nbsp;Ãºloh a&nbsp;prostudovat fyzikÃ¡lnÃ­ <a href="<?php echo odkaz("texty.html"); ?>" title="studijnÃ­ tÃ©mata">studijnÃ­ tÃ©mata</a>, kterÃ¡ byla publikovÃ¡na jako broÅ¾ury KnihovniÄky
+fyzikÃ¡lnÃ­ olympiÃ¡dy.
+Jeho Ãºkolem je vÃ¡s jednak seznÃ¡mit s&nbsp;typem Ãºloh, kterÃ© se v&nbsp;danÃ© kategorii mohou v&nbsp;dalÅ¡Ã­ch kolech vyskytnout, a&nbsp;hlavnÄ› takÃ© provÄ›Å™it vaÅ¡i
+schopnost tyto Ãºlohy Å™eÅ¡it.
+PrvnÃ­ tÅ™i Ãºlohy Å™eÅ¡te nejlÃ©pe do konce listopadu,
+potom Å™eÅ¡te dalÅ¡Ã­ ÄtyÅ™i Ãºlohy vÄetnÄ› experimentÃ¡lnÃ­ Ãºlohy.
 <?php
 
 if (FILE_INDEX != 'praha/index.php') {
 	echo '
-Termín odevzdání øešení pro kategorii&nbsp;A je zaèátek ledna
+TermÃ­n odevzdÃ¡nÃ­ Å™eÅ¡enÃ­ pro kategorii&nbsp;A je zaÄÃ¡tek ledna
 (<strong>'.$terminA.'</strong>),
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D zaèátek dubna
+v&nbsp;kategoriÃ­ch&nbsp;B,&nbsp;C,&nbsp;D zaÄÃ¡tek dubna
 (<strong>'.$terminBCD.'</strong>). ';
 } else {
 	echo '
-Termín odevzdání øešení pro kategorii&nbsp;A v&nbsp;Praze je nejpozdìji
+TermÃ­n odevzdÃ¡nÃ­ Å™eÅ¡enÃ­ pro kategorii&nbsp;A v&nbsp;Praze je nejpozdÄ›ji
 <strong>'.$terminA.'</strong>,
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D nejpozdìji
+v&nbsp;kategoriÃ­ch&nbsp;B,&nbsp;C,&nbsp;D nejpozdÄ›ji
 <strong>'.$terminBCD.'</strong>. Tyto
-termíny jsou z&nbsp;dùvodù ujednocení oprav v&nbsp;Praze závazné. ';
+termÃ­ny jsou z&nbsp;dÅ¯vodÅ¯ ujednocenÃ­ oprav v&nbsp;Praze zÃ¡vaznÃ©. ';
 }
 ?>
-Vypracovaná øešení odevzdejte svému uèiteli fyziky, kterı je opraví
-a&nbsp;oklasifikuje. Za kadou úlohu mùete získat maximálnì 10&nbsp;bodù.
-Øešení je vyhovující, pokud získáte za úlohu alespoò 5&nbsp;bodù.
+VypracovanÃ¡ Å™eÅ¡enÃ­ odevzdejte svÃ©mu uÄiteli fyziky, kterÃ½ je opravÃ­
+a&nbsp;oklasifikuje. Za kaÅ¾dou Ãºlohu mÅ¯Å¾ete zÃ­skat maximÃ¡lnÄ› 10&nbsp;bodÅ¯.
+Å˜eÅ¡enÃ­ je vyhovujÃ­cÃ­, pokud zÃ­skÃ¡te za Ãºlohu alespoÅˆ 5&nbsp;bodÅ¯.
 </p>
 <p>
-Úspìšní øešitelé prvního kola jsou ti z&nbsp;vás, kteøí úspìšnì vyøeší alespoò
-pìt úloh a&nbsp;øešili (i&nbsp;tøeba neúspìšnì) zadanou experimentální úlohu.
-O&nbsp;postupu do krajského kola a&nbsp;místì jeho konání se dozvíte prostøednictvím svého
-uèitele fyziky. Na pomoc
-pøi øešení úloh mohou organizovat vaši uèitelé fyziky konzultace, krouky nebo
-semináøe.
+ÃšspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© prvnÃ­ho kola jsou ti z&nbsp;vÃ¡s, kteÅ™Ã­ ÃºspÄ›Å¡nÄ› vyÅ™eÅ¡Ã­ alespoÅˆ
+pÄ›t Ãºloh a&nbsp;Å™eÅ¡ili (i&nbsp;tÅ™eba neÃºspÄ›Å¡nÄ›) zadanou experimentÃ¡lnÃ­ Ãºlohu.
+O&nbsp;postupu do krajskÃ©ho kola a&nbsp;mÃ­stÄ› jeho konÃ¡nÃ­ se dozvÃ­te prostÅ™ednictvÃ­m svÃ©ho
+uÄitele fyziky. Na pomoc
+pÅ™i Å™eÅ¡enÃ­ Ãºloh mohou organizovat vaÅ¡i uÄitelÃ© fyziky konzultace, krouÅ¾ky nebo
+seminÃ¡Å™e.
 </p>
 <p>
-Nepodceòujte øešení domácího kola! Úlohy ve druhém kole soutìe jsou velmi
-èasto podobné tìm z&nbsp;kola prvního. Proto se velmi nedoporuèuje opisovat øešení
-od kamaráda. Mùe se toti stát, e budete úlohami ve druhém kole zaskoèeni,
-vyvarovat se tomu mùete tím, e vyøešíte poctivì úlohy domácího kola.
-Neopomeòte si také prostudovat studijní témata ze studijních textù, které
-jsou distribuovány na školy. V&nbsp;kadém kole se vdy jedna úloha tıká studijního tématu.
+NepodceÅˆujte Å™eÅ¡enÃ­ domÃ¡cÃ­ho kola! Ãšlohy ve druhÃ©m kole soutÄ›Å¾e jsou velmi
+Äasto podobnÃ© tÄ›m z&nbsp;kola prvnÃ­ho. Proto se velmi nedoporuÄuje opisovat Å™eÅ¡enÃ­
+od kamarÃ¡da. MÅ¯Å¾e se totiÅ¾ stÃ¡t, Å¾e budete Ãºlohami ve druhÃ©m kole zaskoÄeni,
+vyvarovat se tomu mÅ¯Å¾ete tÃ­m, Å¾e vyÅ™eÅ¡Ã­te poctivÄ› Ãºlohy domÃ¡cÃ­ho kola.
+NeopomeÅˆte si takÃ© prostudovat studijnÃ­ tÃ©mata ze studijnÃ­ch textÅ¯, kterÃ©
+jsou distribuovÃ¡ny na Å¡koly. V&nbsp;kaÅ¾dÃ©m kole se vÅ¾dy jedna Ãºloha tÃ½kÃ¡ studijnÃ­ho tÃ©matu.
 </p>
 <?php } ?>
 
 <?php if ($kdo == "ucitel") {?>
 <p>
-V&nbsp;domácím kole mají áci za úkol øešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">studijní témata</a>, která byla publikována jako broury Knihovnièky
-fyzikální olympiády.
-Termín odevzdání øešení pro kategorii&nbsp;A je zaèátek ledna
+V&nbsp;domÃ¡cÃ­m kole majÃ­ Å¾Ã¡ci za Ãºkol Å™eÅ¡it 7&nbsp;Ãºloh a&nbsp;prostudovat fyzikÃ¡lnÃ­ <a href="<?php echo odkaz("texty.html"); ?>" title="studijnÃ­ tÃ©mata">studijnÃ­ tÃ©mata</a>, kterÃ¡ byla publikovÃ¡na jako broÅ¾ury KnihovniÄky
+fyzikÃ¡lnÃ­ olympiÃ¡dy.
+TermÃ­n odevzdÃ¡nÃ­ Å™eÅ¡enÃ­ pro kategorii&nbsp;A je zaÄÃ¡tek ledna
 (<strong><?php echo $terminA ?></strong>),
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D zaèátek dubna
+v&nbsp;kategoriÃ­ch&nbsp;B,&nbsp;C,&nbsp;D zaÄÃ¡tek dubna
 (<strong><?php echo $terminBCD ?></strong>).
-Vypracovaná øešení od svıch ákù vyberte, opravte a&nbsp;oklasifikujte
-je bodovım systémem, kterı zohledòuje kvalitu a&nbsp;úplnost øešení. Za kadou úlohu mùe student získat maximálnì 10&nbsp;bodù.
-Øešení je vyhovující, pokud øešitel získal za úlohu alespoò 5&nbsp;bodù. Øešení nevyhovuje, jsou-li odborné nedostatky závané nebo je øešení z&nbsp;vìtší èásti neúplné, jestlie chybí vıklad nebo je neúplnı, take se z&nbsp;nìho
-nedá usuzovat na myšlenkovı postup øešení. Bodovı systém objektivizuje
-hodnocení a&nbsp;usnadòuje vıbìr postupujících do dalšího kola.
+VypracovanÃ¡ Å™eÅ¡enÃ­ od svÃ½ch Å¾Ã¡kÅ¯ vyberte, opravte a&nbsp;oklasifikujte
+je bodovÃ½m systÃ©mem, kterÃ½ zohledÅˆuje kvalitu a&nbsp;Ãºplnost Å™eÅ¡enÃ­. Za kaÅ¾dou Ãºlohu mÅ¯Å¾e student zÃ­skat maximÃ¡lnÄ› 10&nbsp;bodÅ¯.
+Å˜eÅ¡enÃ­ je vyhovujÃ­cÃ­, pokud Å™eÅ¡itel zÃ­skal za Ãºlohu alespoÅˆ 5&nbsp;bodÅ¯. Å˜eÅ¡enÃ­ nevyhovuje, jsou-li odbornÃ© nedostatky zÃ¡vaÅ¾nÃ© nebo je Å™eÅ¡enÃ­ z&nbsp;vÄ›tÅ¡Ã­ ÄÃ¡sti neÃºplnÃ©, jestliÅ¾e chybÃ­ vÃ½klad nebo je neÃºplnÃ½, takÅ¾e se z&nbsp;nÄ›ho
+nedÃ¡ usuzovat na myÅ¡lenkovÃ½ postup Å™eÅ¡enÃ­. BodovÃ½ systÃ©m objektivizuje
+hodnocenÃ­ a&nbsp;usnadÅˆuje vÃ½bÄ›r postupujÃ­cÃ­ch do dalÅ¡Ã­ho kola.
 </p>
 <p>
-Jako pomùcka pro hodnocení úloh pøijde k&nbsp;vám na školu instruktání øešení. Po
-ukonèení prvního kola soutìe odešlete všechna opravená øešení (i&nbsp;neúspìšnıch øešitelù) na pøíslušnou KK&nbsp;FO. Od nich se dozvíte, kteøí øešitelé budou zaøazeni do
-druhého (krajského) kola, a&nbsp;kde se krajské kolo koná. Tyto informace oznámíte
-svım studentùm, pøípadnì se s&nbsp;nimi na krajské kolo dostavíte.
+Jako pomÅ¯cka pro hodnocenÃ­ Ãºloh pÅ™ijde k&nbsp;vÃ¡m na Å¡kolu instruktÃ¡Å¾nÃ­ Å™eÅ¡enÃ­. Po
+ukonÄenÃ­ prvnÃ­ho kola soutÄ›Å¾e odeÅ¡lete vÅ¡echna opravenÃ¡ Å™eÅ¡enÃ­ (i&nbsp;neÃºspÄ›Å¡nÃ½ch Å™eÅ¡itelÅ¯) na pÅ™Ã­sluÅ¡nou KK&nbsp;FO. Od nich se dozvÃ­te, kteÅ™Ã­ Å™eÅ¡itelÃ© budou zaÅ™azeni do
+druhÃ©ho (krajskÃ©ho) kola, a&nbsp;kde se krajskÃ© kolo konÃ¡. Tyto informace oznÃ¡mÃ­te
+svÃ½m studentÅ¯m, pÅ™Ã­padnÄ› se s&nbsp;nimi na krajskÃ© kolo dostavÃ­te.
 </p>
 <p>
 Na pomoc
-øešitelùm pøi øešení úloh mùete organizovat konzultace, krouky nebo
-semináøe.
+Å™eÅ¡itelÅ¯m pÅ™i Å™eÅ¡enÃ­ Ãºloh mÅ¯Å¾ete organizovat konzultace, krouÅ¾ky nebo
+seminÃ¡Å™e.
 </p>
 <?php } ?>
 
 <?php if ($kdo == "organizator") {?>
 <p>
-V&nbsp;domácím kole mají áci za úkol øešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">studijní témata</a>, která byla publikována jako broury Knihovnièky
-fyzikální olympiády.
-Termín odevzdání øešení pro kategorii&nbsp;A je zaèátek ledna
+V&nbsp;domÃ¡cÃ­m kole majÃ­ Å¾Ã¡ci za Ãºkol Å™eÅ¡it 7&nbsp;Ãºloh a&nbsp;prostudovat fyzikÃ¡lnÃ­ <a href="<?php echo odkaz("texty.html"); ?>" title="studijnÃ­ tÃ©mata">studijnÃ­ tÃ©mata</a>, kterÃ¡ byla publikovÃ¡na jako broÅ¾ury KnihovniÄky
+fyzikÃ¡lnÃ­ olympiÃ¡dy.
+TermÃ­n odevzdÃ¡nÃ­ Å™eÅ¡enÃ­ pro kategorii&nbsp;A je zaÄÃ¡tek ledna
 (<strong><?php echo $terminA ?></strong>),
-v&nbsp;kategoriích B,&nbsp;C,&nbsp;D zaèátek dubna
+v&nbsp;kategoriÃ­ch B,&nbsp;C,&nbsp;D zaÄÃ¡tek dubna
 (<strong><?php echo $terminBCD ?></strong>).
-Uèitel fyziky opraví øešení úloh a&nbsp;klasifikuje je bodovım systémem, kterı zohledòuje kvalitu a&nbsp;úplnost øešení. Za kadou úlohu mùe student získat maximálnì 10&nbsp;bodù.
-Øešení je vyhovující, pokud øešitel získal za úlohu alespoò 5&nbsp;bodù. Øešení nevyhovuje, jsou-li odborné nedostatky závané nebo je øešení z&nbsp;vìtší èásti neúplné, jestlie chybí vıklad nebo je neúplnı, take se z&nbsp;nìho
-nedá usuzovat na myšlenkovı postup øešení. Bodovı systém objektivizuje
-hodnocení a&nbsp;usnadòuje vıbìr postupujících do dalšího kola.
+UÄitel fyziky opravÃ­ Å™eÅ¡enÃ­ Ãºloh a&nbsp;klasifikuje je bodovÃ½m systÃ©mem, kterÃ½ zohledÅˆuje kvalitu a&nbsp;Ãºplnost Å™eÅ¡enÃ­. Za kaÅ¾dou Ãºlohu mÅ¯Å¾e student zÃ­skat maximÃ¡lnÄ› 10&nbsp;bodÅ¯.
+Å˜eÅ¡enÃ­ je vyhovujÃ­cÃ­, pokud Å™eÅ¡itel zÃ­skal za Ãºlohu alespoÅˆ 5&nbsp;bodÅ¯. Å˜eÅ¡enÃ­ nevyhovuje, jsou-li odbornÃ© nedostatky zÃ¡vaÅ¾nÃ© nebo je Å™eÅ¡enÃ­ z&nbsp;vÄ›tÅ¡Ã­ ÄÃ¡sti neÃºplnÃ©, jestliÅ¾e chybÃ­ vÃ½klad nebo je neÃºplnÃ½, takÅ¾e se z&nbsp;nÄ›ho
+nedÃ¡ usuzovat na myÅ¡lenkovÃ½ postup Å™eÅ¡enÃ­. BodovÃ½ systÃ©m objektivizuje
+hodnocenÃ­ a&nbsp;usnadÅˆuje vÃ½bÄ›r postupujÃ­cÃ­ch do dalÅ¡Ã­ho kola.
 </p>
 <p>
-Referent FO na škole odešle po ukonèení prvního kola soutìe všechna opravená øešení (i&nbsp;neúspìšnıch øešitelù) na pøíslušnou KK&nbsp;FO. Referenti KK&nbsp;FO pro kategorie
-provedou kontrolu øešení a&nbsp;KK&nbsp;FO rozhodne, kteøí øešitelé budou zaøazeni do
-druhého (krajského) kola, a&nbsp;oznámí to referentùm na školách.
+Referent FO na Å¡kole odeÅ¡le po ukonÄenÃ­ prvnÃ­ho kola soutÄ›Å¾e vÅ¡echna opravenÃ¡ Å™eÅ¡enÃ­ (i&nbsp;neÃºspÄ›Å¡nÃ½ch Å™eÅ¡itelÅ¯) na pÅ™Ã­sluÅ¡nou KK&nbsp;FO. Referenti KK&nbsp;FO pro kategorie
+provedou kontrolu Å™eÅ¡enÃ­ a&nbsp;KK&nbsp;FO rozhodne, kteÅ™Ã­ Å™eÅ¡itelÃ© budou zaÅ™azeni do
+druhÃ©ho (krajskÃ©ho) kola, a&nbsp;oznÃ¡mÃ­ to referentÅ¯m na Å¡kolÃ¡ch.
 </p>
 <p>
-Úspìšní øešitelé prvního kola jsou ti soutìící, kteøí úspìšnì vyøeší alespoò
-pìt úloh a&nbsp;øešili (i&nbsp;tøeba neúspìšnì) zadanou experimentální úlohu. Na pomoc
-øešitelùm pøi øešení úloh organizují uèitelé fyziky konzultace, krouky nebo
-semináøe v&nbsp;støediskovıch školách pod patronátem JÈMF.
+ÃšspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© prvnÃ­ho kola jsou ti soutÄ›Å¾Ã­cÃ­, kteÅ™Ã­ ÃºspÄ›Å¡nÄ› vyÅ™eÅ¡Ã­ alespoÅˆ
+pÄ›t Ãºloh a&nbsp;Å™eÅ¡ili (i&nbsp;tÅ™eba neÃºspÄ›Å¡nÄ›) zadanou experimentÃ¡lnÃ­ Ãºlohu. Na pomoc
+Å™eÅ¡itelÅ¯m pÅ™i Å™eÅ¡enÃ­ Ãºloh organizujÃ­ uÄitelÃ© fyziky konzultace, krouÅ¾ky nebo
+seminÃ¡Å™e v&nbsp;stÅ™ediskovÃ½ch Å¡kolÃ¡ch pod patronÃ¡tem JÄŒMF.
 </p>
 <?php } 
 if (FILE_INDEX == 'index.php') {
-	echo '<p><strong>Dùleité upozornìní:</strong> Termíny odevzdání úloh domácího kola jsou jen orientaèní. Závazné termíny v&nbsp;jednotlivıch krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajskıch komisí">webovıch stránkách</a>.</p>';
+	echo '<p><strong>DÅ¯leÅ¾itÃ© upozornÄ›nÃ­:</strong> TermÃ­ny odevzdÃ¡nÃ­ Ãºloh domÃ¡cÃ­ho kola jsou jen orientaÄnÃ­. ZÃ¡vaznÃ© termÃ­ny v&nbsp;jednotlivÃ½ch krajÃ­ch vyhlaÅ¡ujÃ­ krajskÃ© komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="WebovÃ© strÃ¡nky krajskÃ½ch komisÃ­">webovÃ½ch strÃ¡nkÃ¡ch</a>.</p>';
 }
 ?>
 
-<a name="ulohy"><h3>Texty úloh</h3></a>
+<a name="ulohy"><h3>Texty Ãºloh</h3></a>
 
 <p>
-Texty úloh si mùete stáhnout ve formátu <code>pdf</code> &ndash; <img class="icon" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png" />
+Texty Ãºloh si mÅ¯Å¾ete stÃ¡hnout ve formÃ¡tu <code>pdf</code> &ndash; <img class="icon" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png" />
 nebo <code>ps</code> &ndash; <img class="icon" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png" />.
 </p>
 <div class="center">
@@ -159,18 +159,18 @@ nebo <code>ps</code> &ndash; <img class="icon" alt="" src="<?php echo ROOT_WWW ?
 </table>
 </div>
 
-<a name="reseni"><h3>Øešení úloh</h3></a>
+<a name="reseni"><h3>Å˜eÅ¡enÃ­ Ãºloh</h3></a>
 
 
 <!--p>
-Øešení úloh kadé kategorie zveøejníme po termínu odevzdání.
+Å˜eÅ¡enÃ­ Ãºloh kaÅ¾dÃ© kategorie zveÅ™ejnÃ­me po termÃ­nu odevzdÃ¡nÃ­.
 </p-->
 
 <p>
-Øešení úloh si mùete stáhnout ve formátu <code>pdf</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/pdficon.png">
+Å˜eÅ¡enÃ­ Ãºloh si mÅ¯Å¾ete stÃ¡hnout ve formÃ¡tu <code>pdf</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/pdficon.png">
 nebo <code>ps</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/psicon.png">.
 
-<!-- Øešení domácího kola kategorií B, C a&nbsp;D zveøejníme a po termínu odevzdání.-->
+<!-- Å˜eÅ¡enÃ­ domÃ¡cÃ­ho kola kategoriÃ­ B, C a&nbsp;D zveÅ™ejnÃ­me aÅ¾ po termÃ­nu odevzdÃ¡nÃ­.-->
 </p>
 
 <div class="center">
@@ -195,72 +195,72 @@ nebo <code>ps</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo
 </div>
 
 <?php if ($kdo == "student") { ?>
-<h3>Pokyny pro soutìící</h3>
+<h3>Pokyny pro soutÄ›Å¾Ã­cÃ­</h3>
 <p>
-Øešení pište úhlednì a èitelnì na <strong>listy formátu A4</strong>. Kadou úlohu vypracujte na
-<strong>samostatnı papír</strong>, pomocné obrázky a náèrty zhotovte tukou. Jestlie pouíváte
-kalkulaèku, nezapomeòte na správné zaokrouhlení vısledkù.
+Å˜eÅ¡enÃ­ piÅ¡te ÃºhlednÄ› a ÄitelnÄ› na <strong>listy formÃ¡tu A4</strong>. KaÅ¾dou Ãºlohu vypracujte na
+<strong>samostatnÃ½ papÃ­r</strong>, pomocnÃ© obrÃ¡zky a nÃ¡Ärty zhotovte tuÅ¾kou. JestliÅ¾e pouÅ¾Ã­vÃ¡te
+kalkulaÄku, nezapomeÅˆte na sprÃ¡vnÃ© zaokrouhlenÃ­ vÃ½sledkÅ¯.
 </p>
 <p>
-Na první list øešení kadé úlohy napište záhlaví:
+Na prvnÃ­ list Å™eÅ¡enÃ­ kaÅ¾dÃ© Ãºlohy napiÅ¡te zÃ¡hlavÃ­:
 </p>
 <table style="border : 0px none; background-color : transparent;">
 <tr>
-	<td colspan="3" style="border : 0px none">Jméno a pøíjmení:</td>
+	<td colspan="3" style="border : 0px none">JmÃ©no a pÅ™Ã­jmenÃ­:</td>
 </tr>
 <tr>
-	<td style="border : 0px none">Tøída:</td>
-	<td style="border : 0px none">Zamìøení:</td>
+	<td style="border : 0px none">TÅ™Ã­da:</td>
+	<td style="border : 0px none">ZamÄ›Å™enÃ­:</td>
 	<td style="border : 0px none">Kategorie:</td>
 </tr>
 <tr>
-	<td colspan="3" style="border : 0px none">Škola:</td>
+	<td colspan="3" style="border : 0px none">Å kola:</td>
 </tr>
 <tr>
-	<td style="border : 0px none">Uèitel fyziky:</td>
+	<td style="border : 0px none">UÄitel fyziky:</td>
 	<td style="border : 0px none">Posudek:</td>
 	<td style="border : 0px none">Posuzovali:</td>
 </tr>
 <tr>
-	<td colspan="3" style="border : 0px none">Úloha è.:</td>
+	<td colspan="3" style="border : 0px none">Ãšloha Ä.:</td>
 </tr>
 </table>
 <p>
-Texty úloh <strong>neopisujte</strong>, napište jen text øešení a&nbsp;udìlejte legendu oznaèení. Na
-<strong>kadı další list</strong> napište svoje jméno, pøíjmení, školu, èíslo úlohy a&nbsp;èíslo
-strany øešení.
+Texty Ãºloh <strong>neopisujte</strong>, napiÅ¡te jen text Å™eÅ¡enÃ­ a&nbsp;udÄ›lejte legendu oznaÄenÃ­. Na
+<strong>kaÅ¾dÃ½ dalÅ¡Ã­ list</strong> napiÅ¡te svoje jmÃ©no, pÅ™Ã­jmenÃ­, Å¡kolu, ÄÃ­slo Ãºlohy a&nbsp;ÄÃ­slo
+strany Å™eÅ¡enÃ­.
 </p>
 <?php } ?>
 
 
-<h3>Studijní témata</h3>
+<h3>StudijnÃ­ tÃ©mata</h3>
 <p>
-Ke studijním tématùm vyšly následující studijní texty.
+Ke studijnÃ­m tÃ©matÅ¯m vyÅ¡ly nÃ¡sledujÃ­cÃ­ studijnÃ­ texty.
 </p>
 <p>
-Kategorie&nbsp;A: Šedivı, P.: <strong>Ohyb svìtla</strong><br />
-Kategorie&nbsp;B: Kapoun, M.: <strong>Aproximace ve fyzikálních úlohách</strong><br/>
-Kategorie&nbsp;C: Horáková, R. &ndash; Šedivı, P.: <strong>Kruhovı dìj s ideálním plynem</strong><br />
-Kategorie&nbsp;D: Jírù, J.: <strong>Hybnost a energie pøi vzájemném pùsobení tìles</strong>
+Kategorie&nbsp;A: Å edivÃ½, P.: <strong>Ohyb svÄ›tla</strong><br />
+Kategorie&nbsp;B: Kapoun, M.: <strong>Aproximace ve fyzikÃ¡lnÃ­ch ÃºlohÃ¡ch</strong><br/>
+Kategorie&nbsp;C: HorÃ¡kovÃ¡, R. &ndash; Å edivÃ½, P.: <strong>KruhovÃ½ dÄ›j s ideÃ¡lnÃ­m plynem</strong><br />
+Kategorie&nbsp;D: JÃ­rÅ¯, J.: <strong>Hybnost a energie pÅ™i vzÃ¡jemnÃ©m pÅ¯sobenÃ­ tÄ›les</strong>
 
 <? if ($kdo == "student") { ?>
 </p>
 <p>
-Studijní texty si vyádejte od svého uèitele fyziky! Mùete si je rovnì <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">
-stáhnout</a> v elektronické podobì. 
+StudijnÃ­ texty si vyÅ¾Ã¡dejte od svÃ©ho uÄitele fyziky! MÅ¯Å¾ete si je rovnÄ›Å¾ <a href="<?php echo odkaz("texty.html"); ?>" title="studijnÃ­ tÃ©mata">
+stÃ¡hnout</a> v elektronickÃ© podobÄ›. 
 <?php } ?>
 
 <? if ($kdo == "ucitel") { ?>
 </p>
 <p>
-Studijní texty budou distribuovány na školy sítí FO, rozdejte je svım studentùm!
-Mùete si je rovnì <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">
-stáhnout</a> v elektronické podobì.
+StudijnÃ­ texty budou distribuovÃ¡ny na Å¡koly sÃ­tÃ­ FO, rozdejte je svÃ½m studentÅ¯m!
+MÅ¯Å¾ete si je rovnÄ›Å¾ <a href="<?php echo odkaz("texty.html"); ?>" title="studijnÃ­ texty">
+stÃ¡hnout</a> v elektronickÃ© podobÄ›.
 <?php } ?>
 
 <? if ($kdo == "organizator") { ?>
 </p>
 <p>
-Studijní texty budou distribuovány na školy sítí FO, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">v elektronické podobì</a>.
+StudijnÃ­ texty budou distribuovÃ¡ny na Å¡koly sÃ­tÃ­ FO, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijnÃ­ texty">v elektronickÃ© podobÄ›</a>.
 <?php } ?>
 </p>

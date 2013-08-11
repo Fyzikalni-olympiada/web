@@ -12,25 +12,25 @@ $mysql->query("
 	ORDER BY date DESC, time DESC
 ");
 
-$strRSS = '<?xml version=\'1.0\' encoding=\'windows-1250\'?>
+$strRSS = '<?xml version=\'1.0\' encoding=\'utf-8\'?>
 <rss version=\'2.0\'>
 	<channel>
-		<title>Fyzikální olympiáda</title>
+		<title>FyzikÃ¡lnÃ­ olympiÃ¡da</title>
 		<link>http://fyzikalniolympiada.cz</link>
-		<description>Fyzikální olympiáda, aktuality.</description>
+		<description>FyzikÃ¡lnÃ­ olympiÃ¡da, aktuality.</description>
 		<language>cs</language>
-		<copyright>Copyright 2004-2005, Jan Prachaø</copyright>
-		<managingEditor>jan.prachar@fyzikalniolympiada.cz (Prachaø, Jan)</managingEditor>
-		<webMaster>webmaster@fyzikalniolympiada.cz (Prachaø, Jan)</webMaster>
+		<copyright>Copyright 2004-2005, Jan PrachaÅ™</copyright>
+		<managingEditor>jan.prachar@fyzikalniolympiada.cz (PrachaÅ™, Jan)</managingEditor>
+		<webMaster>webmaster@fyzikalniolympiada.cz (PrachaÅ™, Jan)</webMaster>
 		<pubDate>' . date('r') . '</pubDate>
 		<docs>http://backend.userland.com/rss2/</docs>
 		<image>
 			<url>http://fyzikalniolympiada.cz/pic/fo_logo.gif</url>
-			<title>Fyzikální olympiáda - oficiální stránky</title>
+			<title>FyzikÃ¡lnÃ­ olympiÃ¡da - oficiÃ¡lnÃ­ strÃ¡nky</title>
 			<link>http://fyzikalniolympiada.cz</link>
 			<width>62</width>
 			<height>83</height>
-			<description>Fyzikální olympiáda - oficiální stránky støedoškolské soutìe</description>
+			<description>FyzikÃ¡lnÃ­ olympiÃ¡da - oficiÃ¡lnÃ­ strÃ¡nky stÅ™edoÅ¡kolskÃ© soutÄ›Å¾e</description>
 		</image>';
 
 while ($row = $mysql->fetch_array()) {
@@ -53,7 +53,7 @@ $strRSS .= '
 </rss>';
 
 //header("Content-type: application/rss+xml; charset=windows-1250"); 
-Header("Content-type: text/xml; charset=windows-1250");
+Header("Content-type: text/xml; charset=utf-8");
 Header("Pragma: no-cache");
 Header("Cache-Control: no-cache");
 Header("Expires: ".GMDate("D, d M Y H:i:s")." GMT");

@@ -1,5 +1,5 @@
 <?php
-if(!defined("VALID_ACCESS"))    {die("Neoprávnìný pøístup!");}                          //      Ochrana proti neoprávnìnému pøístupu ke skriptùm
+if(!defined("VALID_ACCESS"))    {die("NeoprÃ¡vnÄ›nÃ½ pÅ™Ã­stup!");}                          //      Ochrana proti neoprÃ¡vnÄ›nÃ©mu pÅ™Ã­stupu ke skriptÅ¯m
 
 class db {
 
@@ -21,9 +21,9 @@ class db {
         $this->debug = $debug;
 
         $this->dbc = @mysql_connect(DB_HOSTITEL, $uzivatel, $heslo)
-        or $this->errorHandle("Nepodaøilo se pøipojit k databázi.",  mysql_error($this->dbc), $debug);
+        or $this->errorHandle("NepodaÅ™ilo se pÅ™ipojit k databÃ¡zi.",  mysql_error($this->dbc), $debug);
         @mysql_select_db(DB_NAZEVDATABAZE)
-        or $this->errorHandle("Nelze vybrat databázi.", mysql_error($this->dbc), $debug);
+        or $this->errorHandle("Nelze vybrat databÃ¡zi.", mysql_error($this->dbc), $debug);
         
         if (SET_NAMES_QUERY) {
 			$this->query(SET_NAMES_QUERY);
@@ -38,7 +38,7 @@ class db {
         }
 
         $this->vysledek = @mysql_query($dotaz,$this->dbc)
-        or $this->errorHandle("Chybný databázový dotaz. ".$dotaz, mysql_error($this->dbc), $debug);
+        or $this->errorHandle("ChybnÃ½ databÃ¡zovÃ½ dotaz. ".$dotaz, mysql_error($this->dbc), $debug);
         return $this->vysledek;
     }
     
@@ -91,7 +91,7 @@ class db {
 			$debug = $this->debug;
 		}		
         @mysql_close($this->dbc)
-        or $this->errorHandle("Nelze zavøít databázi.", mysql_error($this->dbc), $debug);
+        or $this->errorHandle("Nelze zavÅ™Ã­t databÃ¡zi.", mysql_error($this->dbc), $debug);
         
         return true;
     }
@@ -104,7 +104,7 @@ class db {
 		}
 		echo '
 		    <div class="chyba_vstupu">
-	            Došlo k chybì na serveru. Omlouváme se za vzniklé potíže, budeme je okamžitì øešit.
+	            DoÅ¡lo k chybÄ› na serveru. OmlouvÃ¡me se za vzniklÃ© potÃ­Å¾e, budeme je okamÅ¾itÄ› Å™eÅ¡it.
 		    </div>';
 
 		$timestamp = time();
@@ -118,7 +118,7 @@ class db {
 			echo $chyba;
 		}
 		
-		/* Chybu zapíšeme do souboru */
+		/* Chybu zapÃ­Å¡eme do souboru */
 		if (!$file_log_handle = @fopen(ROOT_DIR.FILE_DB_LOG, 'a')) {
 			die();
 		}
@@ -127,7 +127,7 @@ class db {
 		
 		$timestamp_old = intval(file_get_contents(ROOT_DIR.FILE_DB_LOG_TIME));
 		
-		/* Pokud ubìhl alespoò den, pošleme email o chybì */
+		/* Pokud ubÄ›hl alespoÅˆ den, poÅ¡leme email o chybÄ› */
 		if ((($timestamp-$timestamp_old) > ERROR_MAIL_INTERVAL*24*60*60) && !$debug) {
 			$headers = 'From: ' . ERROR_MAIL_FROM . "\r\n"
 					.'Reply-To: ' . ERROR_MAIL_FROM . "\r\n"

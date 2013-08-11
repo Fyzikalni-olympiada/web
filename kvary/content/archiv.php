@@ -1,6 +1,6 @@
 <?php
 echo '
-<h2>Archiv vısledkovıch listin karlovarskıch kol Fyzikální olympiády</h2>
+<h2>Archiv vÃ½sledkovÃ½ch listin karlovarskÃ½ch kol FyzikÃ¡lnÃ­ olympiÃ¡dy</h2>
 <div id="archiv_vysledky">
 ';
 $soubory = array();
@@ -32,10 +32,10 @@ foreach ($soubory as $soubor_name) {
 				$kolo_text = '';
 				break;
 			case 'postup':
-				$kolo_text = 'postupující do krajského kola ';
+				$kolo_text = 'postupujÃ­cÃ­ do krajskÃ©ho kola ';
 				break;
 			default:
-				$kolo_text = 'vısledky ';
+				$kolo_text = 'vÃ½sledky ';
 				break;
 		}
 		$odkaz_text_array[$rocnik][$kolo][$kategorie] = $kolo_text.'kategorie '.$kategorie;
@@ -45,22 +45,22 @@ krsort($odkaz_text_array);
 
 foreach ($odkaz_text_array as $rocnik => $odkaz_text_sub_array) {
 	echo '
-<h3>' . $rocnik . '. roèník &ndash; '.(1958+$rocnik).'/'.(1959+$rocnik).'</h3>
+<h3>' . $rocnik . '. roÄnÃ­k &ndash; '.(1958+$rocnik).'/'.(1959+$rocnik).'</h3>
 	<dl>';
 	krsort($odkaz_text_sub_array);
 	foreach ($odkaz_text_sub_array as $kolo => $odkaz_text_subsub_array) {
 		switch ($kolo) {
 			case 'dom':
-				$kolo_text = 'Domácí kolo';
+				$kolo_text = 'DomÃ¡cÃ­ kolo';
 				break;
 			case 'okr':
-				$kolo_text = 'Obvodní kolo';
+				$kolo_text = 'ObvodnÃ­ kolo';
 				break;
 			case 'reg':
-				$kolo_text = 'Krajské kolo';
+				$kolo_text = 'KrajskÃ© kolo';
 				break;
 			default:
-				$kolo_text = 'Další vısledkové listiny';
+				$kolo_text = 'DalÅ¡Ã­ vÃ½sledkovÃ© listiny';
 				break;
 		}
 		echo '

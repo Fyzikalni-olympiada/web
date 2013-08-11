@@ -1,121 +1,121 @@
-<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK ?>. roèníku FO</h2>
+<h2>CelostÃ¡tnÃ­ kolo <?php echo AKTUALNI_ROCNIK ?>. roÄnÃ­ku FO</h2>
 
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
-	WHERE nazev LIKE \'%celostátní kolo%\'
+	WHERE nazev LIKE \'%celostÃ¡tnÃ­ kolo%\'
 	AND rocnik="' . AKTUALNI_ROCNIK . '"
 	AND kategorie="1"
 ');
 if (!(list($termin, $misto) = $GLOBALS['mysql']->fetch_array())) {
 	$termin = AKTUALNI_ROK;
-	$misto = 'Èeské republiky';
+	$misto = 'ÄŒeskÃ© republiky';
 }
 $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
-	WHERE nazev LIKE \'%Mezinárodní FO%\'
+	WHERE nazev LIKE \'%MezinÃ¡rodnÃ­ FO%\'
 	AND rocnik="' . AKTUALNI_ROCNIK . '"
 	AND kategorie="1"
 ');
 if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
-	$terminMFO = 'èervenec '.AKTUALNI_ROK;
-	$mistoMFO = 'svìta';
+	$terminMFO = 'Äervenec '.AKTUALNI_ROK;
+	$mistoMFO = 'svÄ›ta';
 }		
 ?>
 
 <h3>Organizace</h3>
 <p>
-Z nejúspìšnìjších úèastníkù druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh krajskıch komisí
-FO nejvíce 50&nbsp;úèastníkù do celostátního kola soutìe.
-Celostátní kolo trvá ètyøi dny, pro všechny úèastníky i&nbsp;organizátory
-je zajištìno ubytování a&nbsp;stravování. První den se koná oficiální zahájení soutìe.
-Druhı den se zadávají ètyøi úlohy teoretické (vèetnì úlohy na studijní téma), na jejich vypracování
-je zpravidla 5&nbsp;hodin èasu. Tøetí den je zadána úloha experimentální.
-Poslední den jsou vyhlášeny vısledky&nbsp;&ndash; vítìzové a&nbsp;úspìšní øešitelé a&nbsp;rozdány
+Z nejÃºspÄ›Å¡nÄ›jÅ¡Ã­ch ÃºÄastnÃ­kÅ¯ druhÃ©ho kola kategorie&nbsp;A vybere ÃšK&nbsp;FO na nÃ¡vrh krajskÃ½ch komisÃ­
+FO nejvÃ­ce 50&nbsp;ÃºÄastnÃ­kÅ¯ do celostÃ¡tnÃ­ho kola soutÄ›Å¾e.
+CelostÃ¡tnÃ­ kolo trvÃ¡ ÄtyÅ™i dny, pro vÅ¡echny ÃºÄastnÃ­ky i&nbsp;organizÃ¡tory
+je zajiÅ¡tÄ›no ubytovÃ¡nÃ­ a&nbsp;stravovÃ¡nÃ­. PrvnÃ­ den se konÃ¡ oficiÃ¡lnÃ­ zahÃ¡jenÃ­ soutÄ›Å¾e.
+DruhÃ½ den se zadÃ¡vajÃ­ ÄtyÅ™i Ãºlohy teoretickÃ© (vÄetnÄ› Ãºlohy na studijnÃ­ tÃ©ma), na jejich vypracovÃ¡nÃ­
+je zpravidla 5&nbsp;hodin Äasu. TÅ™etÃ­ den je zadÃ¡na Ãºloha experimentÃ¡lnÃ­.
+PoslednÃ­ den jsou vyhlÃ¡Å¡eny vÃ½sledky&nbsp;&ndash; vÃ­tÄ›zovÃ© a&nbsp;ÃºspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© a&nbsp;rozdÃ¡ny
 ceny.
 </p>
 <p>
-V&nbsp;celostátním kole mohou soutìící pouívat Matematické,
-fyzikální a&nbsp;chemické tabulky pro støední školy a&nbsp;neprogramovatelné kalkulaèky.
+V&nbsp;celostÃ¡tnÃ­m kole mohou soutÄ›Å¾Ã­cÃ­ pouÅ¾Ã­vat MatematickÃ©,
+fyzikÃ¡lnÃ­ a&nbsp;chemickÃ© tabulky pro stÅ™ednÃ­ Å¡koly a&nbsp;neprogramovatelnÃ© kalkulaÄky.
 </p>
 <p>
-Úspìšní øešitelé budou stanoveni na základì bodovacího systému. 
-Za kadou teoretickou úlohu je mono získat 10&nbsp;bodù, za experimentální bodù&nbsp;20.
-Nejvíce dvanáct nejlepších øešitelù tøetího kola bude vyhlášeno za vítìze tøetího kola.
-Z&nbsp;desíti nejlepších vítìzù tøetího kola bude s&nbsp;ohledem na jejich pøedcházející vısledky v&nbsp;soutìi i&nbsp;na vıbìrovém soustøedìní
-uspoøádaném ÚK&nbsp;FO proveden vıbìr 5&nbsp;úèastníkù
+ÃšspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© budou stanoveni na zÃ¡kladÄ› bodovacÃ­ho systÃ©mu. 
+Za kaÅ¾dou teoretickou Ãºlohu je moÅ¾no zÃ­skat 10&nbsp;bodÅ¯, za experimentÃ¡lnÃ­ bodÅ¯&nbsp;20.
+NejvÃ­ce dvanÃ¡ct nejlepÅ¡Ã­ch Å™eÅ¡itelÅ¯ tÅ™etÃ­ho kola bude vyhlÃ¡Å¡eno za vÃ­tÄ›ze tÅ™etÃ­ho kola.
+Z&nbsp;desÃ­ti nejlepÅ¡Ã­ch vÃ­tÄ›zÅ¯ tÅ™etÃ­ho kola bude s&nbsp;ohledem na jejich pÅ™edchÃ¡zejÃ­cÃ­ vÃ½sledky v&nbsp;soutÄ›Å¾i i&nbsp;na vÃ½bÄ›rovÃ©m soustÅ™edÄ›nÃ­
+uspoÅ™Ã¡danÃ©m ÃšK&nbsp;FO proveden vÃ½bÄ›r 5&nbsp;ÃºÄastnÃ­kÅ¯
 <!--############################################## -->
-<strong>44. mezinárodní fyzikální olympiády</strong>,
+<strong>44. mezinÃ¡rodnÃ­ fyzikÃ¡lnÃ­ olympiÃ¡dy</strong>,
 <!-- ############################################## -->
-která bude uspoøádána v&nbsp;termínu <?php echo $terminMFO ?> ve státì <?php echo $mistoMFO ?>.
+kterÃ¡ bude uspoÅ™Ã¡dÃ¡na v&nbsp;termÃ­nu <?php echo $terminMFO ?> ve stÃ¡tÄ› <?php echo $mistoMFO ?>.
 
-<h3>Termín a místo konání</h3>
+<h3>TermÃ­n a mÃ­sto konÃ¡nÃ­</h3>
 <p>
-Celostátní kolo se koná v&nbsp;termínu <strong><?php echo $termin ?></strong> (úterı a pátek) ve&nbsp;mìstì <?php echo $misto ?>.
+CelostÃ¡tnÃ­ kolo se konÃ¡ v&nbsp;termÃ­nu <strong><?php echo $termin ?></strong> (ÃºterÃ½ aÅ¾ pÃ¡tek) ve&nbsp;mÄ›stÄ› <?php echo $misto ?>.
 
 <?php if ($kdo == "student") :?>
-O&nbsp;svém pozvání na celostátní kolo se dozvíte od øeditelství své školy.
+O&nbsp;svÃ©m pozvÃ¡nÃ­ na celostÃ¡tnÃ­ kolo se dozvÃ­te od Å™editelstvÃ­ svÃ© Å¡koly.
 <?php else : ?>
-Pozvání k úèasti ve tøetím kole zašle ÚK&nbsp;FO vybranım ákùm prostøednictvím øeditelství
-školy, kterou navštìvují.
+PozvÃ¡nÃ­ k ÃºÄasti ve tÅ™etÃ­m kole zaÅ¡le ÃšK&nbsp;FO vybranÃ½m Å¾Ã¡kÅ¯m prostÅ™ednictvÃ­m Å™editelstvÃ­
+Å¡koly, kterou navÅ¡tÄ›vujÃ­.
 <?php endif; ?>
 </p>
 <p>
 <?php if ($kdo != "organizator") :?>
-<a href="/archiv/celost/54/pozvanka-program-soutezici.pdf">Pozvánka a program</a>
+<a href="/archiv/celost/54/pozvanka-program-soutezici.pdf">PozvÃ¡nka a program</a>
 <?php else : ?>
-<a href="/archiv/celost/54/pozvanka-program-komise.pdf">Pozvánka a program</a>
+<a href="/archiv/celost/54/pozvanka-program-komise.pdf">PozvÃ¡nka a program</a>
 <?php endif; ?>
 </p>
 
 <!--p>
-Další informace o celostátním kole najdete
-<a href="http://www.gypce.cz/files/podweb.php?fo&Mon,_06_Feb_2012_20__05__05_GMT">stránkách krajské komise Fyzikální olympiády</a>.
+DalÅ¡Ã­ informace o celostÃ¡tnÃ­m kole najdete
+<a href="http://www.gypce.cz/files/podweb.php?fo&Mon,_06_Feb_2012_20__05__05_GMT">strÃ¡nkÃ¡ch krajskÃ© komise FyzikÃ¡lnÃ­ olympiÃ¡dy</a>.
 </p>
 
-<h3><a href="<?php echo odkaz('archiv/celost/54/photos.html')?>" title="Fotogalerie celostátního kola 54. roèníku FO">Fotogalerie</a></h3>
+<h3><a href="<?php echo odkaz('archiv/celost/54/photos.html')?>" title="Fotogalerie celostÃ¡tnÃ­ho kola 54. roÄnÃ­ku FO">Fotogalerie</a></h3>
 
 
 <a name="program"><h3>Program</h3></a-->
 
-<!--h4>Úterı 9.&nbsp;února</h4>
+<!--h4>ÃšterÃ½ 9.&nbsp;Ãºnora</h4>
 
 
 <table cellpadding="3" style="width: 100%">
 <tr><td>
-Pøíjezd, prezentace a ubytování 
+PÅ™Ã­jezd, prezentace a ubytovÃ¡nÃ­Â 
   v DM</td>
   <td>13.00-17.00</td></tr>
-<tr><td>Veèeøe</td>
+<tr><td>VeÄeÅ™e</td>
   <td>17.30-18.00</td></tr>
-<tr><td>Slavnostní 
-  zahájení v Mìstském divadle (spoleènı odchod z DM 18.30)</td>
+<tr><td>SlavnostnÃ­Â 
+  zahÃ¡jenÃ­Â v MÄ›stskÃ©m divadle (spoleÄnÃ½Â odchod z DM 18.30)</td>
   <td>19.00</td></tr>
-<tr><td>Organizaèní 
-  schùzka ÚK FO (v divadle po programu)</td>
+<tr><td>OrganizaÄnÃ­Â 
+  schÅ¯zka ÃšK FO (v divadle po programu)</td>
   <td>~21.00</td></tr>
-<tr><td> </td>
-  <td> </td></tr>
+<tr><td>Â </td>
+  <td>Â </td></tr>
 </table-->
 
 
 
-<a name="ulohy"><h3>Zadání a øešení úloh</h3></a>
+<a name="ulohy"><h3>ZadÃ¡nÃ­ a Å™eÅ¡enÃ­ Ãºloh</h3></a>
 <!--p>
-Texty i øešení úloh zveøejníme v prùbìhu konání celostátního kola.
+Texty i Å™eÅ¡enÃ­ Ãºloh zveÅ™ejnÃ­me v prÅ¯bÄ›hu konÃ¡nÃ­ celostÃ¡tnÃ­ho kola.
 </p-->
 <p>
-Texty i øešení úloh si mùete stáhnout ve formátu <code>pdf</code> nebo <code>ps</code>.
+Texty i Å™eÅ¡enÃ­ Ãºloh si mÅ¯Å¾ete stÃ¡hnout ve formÃ¡tu <code>pdf</code> nebo <code>ps</code>.
 </p>
 
 <div class="center">
 <table class="zadani centered">
 <tr>
 	<th></th>
-	<th scope="col">Zadání úloh</th>
-	<th scope="col">Øešení úloh</th>
+	<th scope="col">ZadÃ¡nÃ­ Ãºloh</th>
+	<th scope="col">Å˜eÅ¡enÃ­ Ãºloh</th>
 </tr>
 <tr>
 	<th scope="row">Teorie</th>
@@ -134,37 +134,37 @@ Texty i øešení úloh si mùete stáhnout ve formátu <code>pdf</code> nebo <code>ps
 </table>
 </div>
 
-<a name="vysledky"><h3>Vısledky</h3></a>
+<a name="vysledky"><h3>VÃ½sledky</h3></a>
 
 <p>
-Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/54_A_3.pdf"><img class="icon" border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>.
+VÃ½sledky si mÅ¯Å¾ete rovnÄ›Å¾ stÃ¡hnout ve formÃ¡tu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/54_A_3.pdf"><img class="icon" border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>.
 </p>
 
 <table class="vysledkovka" cellpadding=3>
 <thead>
 	<tr>
 		<th>&nbsp;</th>
-		<th>pøíjmení</th>
-		<th>jméno</th>
-		<th>škola</th>
-		<th style="text-align:center;">úloha 1</th>
-		<th style="text-align:center;">úloha 2</th>
-		<th style="text-align:center;">úloha 3</th>
-		<th style="text-align:center;">úloha 4</th>
-		<th style="text-align:center;">úloha exp.</th>
-		<th style="text-align:center;">souèet</th>
+		<th>pÅ™Ã­jmenÃ­</th>
+		<th>jmÃ©no</th>
+		<th>Å¡kola</th>
+		<th style="text-align:center;">Ãºloha 1</th>
+		<th style="text-align:center;">Ãºloha 2</th>
+		<th style="text-align:center;">Ãºloha 3</th>
+		<th style="text-align:center;">Ãºloha 4</th>
+		<th style="text-align:center;">Ãºloha exp.</th>
+		<th style="text-align:center;">souÄet</th>
 		<th style="text-align:center;">modif. body</th></tr>
 </thead>
 <tbody>
 
 	<tr>
-		<th style="text-align:center;" colspan=11>Vítìzové</th></tr>
+		<th style="text-align:center;" colspan=11>VÃ­tÄ›zovÃ©</th></tr>
 
 	<tr>
 		<td>1</td>
 		<td>Grund</td>
-		<td>Lubomír</td>
-		<td>G Praha, Zborovská</td>
+		<td>LubomÃ­r</td>
+		<td>G Praha, ZborovskÃ¡</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">10,0</td>
@@ -177,7 +177,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>2</td>
 		<td>Raszyk</td>
 		<td>Martin</td>
-		<td>G Karviná, Mírová</td>
+		<td>G KarvinÃ¡, MÃ­rovÃ¡</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;"><b>10,0</b></td>
 		<td style="text-align:center;">10,0</td>
@@ -189,8 +189,8 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>3</td>
 		<td>Guth</td>
-		<td>Jiøí</td>
-		<td>G Èeské Budìjovice, Jírovcova</td>
+		<td>JiÅ™Ã­</td>
+		<td>G ÄŒeskÃ© BudÄ›jovice, JÃ­rovcova</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">7,0</td>
@@ -201,9 +201,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>4</td>
-		<td>Murár</td>
+		<td>MurÃ¡r</td>
 		<td>Fillip</td>
-		<td>G Tøebíè</td>
+		<td>G TÅ™ebÃ­Ä</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">6,0</td>
@@ -214,9 +214,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>5</td>
-		<td>Rösler</td>
+		<td>RÃ¶sler</td>
 		<td>Jakub</td>
-		<td>G Praha, Truhláøská</td>
+		<td>G Praha, TruhlÃ¡Å™skÃ¡</td>
 		<td style="text-align:center;">8,0</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">6,0</td>
@@ -227,9 +227,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>6</td>
-		<td>Vanèura</td>
+		<td>VanÄura</td>
 		<td>Jakub</td>
-		<td>G Brno, tø. Kpt. Jaroše</td>
+		<td>G Brno, tÅ™. Kpt. JaroÅ¡e</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">9,5</td>
 		<td style="text-align:center;">4,0</td>
@@ -240,9 +240,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>7</td>
-		<td>Hruška</td>
+		<td>HruÅ¡ka</td>
 		<td>David</td>
-		<td>G Plzeò, Mikulášské nám.</td>
+		<td>G PlzeÅˆ, MikulÃ¡Å¡skÃ© nÃ¡m.</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -254,8 +254,8 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>8</td>
 		<td>Neoral</td>
-		<td>Aleš</td>
-		<td>G Olomouc-Hejèín</td>
+		<td>AleÅ¡</td>
+		<td>G Olomouc-HejÄÃ­n</td>
 		<td style="text-align:center;"><b>10,0</b></td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -268,7 +268,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>9</td>
 		<td>Hanzelka</td>
 		<td>Miroslav</td>
-		<td>G Èeská Lípa</td>
+		<td>G ÄŒeskÃ¡ LÃ­pa</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;"><b>10,0</b></td>
 		<td style="text-align:center;">5,0</td>
@@ -279,9 +279,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>10</td>
-		<td>Povolnı</td>
+		<td>PovolnÃ½</td>
 		<td>Jan</td>
-		<td>G Brno, tø. Kpt. Jaroše</td>
+		<td>G Brno, tÅ™. Kpt. JaroÅ¡e</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">9,5</td>
 		<td style="text-align:center;">8,0</td>
@@ -293,8 +293,8 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>11</td>
 		<td>Fusek</td>
-		<td>Lukáš</td>
-		<td>G Uherské Hradištì</td>
+		<td>LukÃ¡Å¡</td>
+		<td>G UherskÃ© HradiÅ¡tÄ›</td>
 		<td style="text-align:center;">8,0</td>
 		<td style="text-align:center;">8,0</td>
 		<td style="text-align:center;">4,0</td>
@@ -305,9 +305,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>12</td>
-		<td>Skácel</td>
-		<td>Ondøej</td>
-		<td>G Šternberk</td>
+		<td>SkÃ¡cel</td>
+		<td>OndÅ™ej</td>
+		<td>G Å ternberk</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -317,13 +317,13 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td style="text-align:center;"><i>217,04</td></tr>
 
 	<tr>
-		<th style="text-align:center;" colspan=11><b>Úspìšní øešitelé</b></th></tr>
+		<th style="text-align:center;" colspan=11><b>ÃšspÄ›Å¡nÃ­ Å™eÅ¡itelÃ©</b></th></tr>
 
 	<tr>
 		<td>13</td>
-		<td>Skoupı</td>
+		<td>SkoupÃ½</td>
 		<td>Viktor</td>
-		<td>G Moravská Tøebová</td>
+		<td>G MoravskÃ¡ TÅ™ebovÃ¡</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -334,9 +334,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>14</td>
-		<td>Noièka</td>
+		<td>NoÅ¾iÄka</td>
 		<td>Michal</td>
-		<td>G Plzeò, Mikulášské nám.</td>
+		<td>G PlzeÅˆ, MikulÃ¡Å¡skÃ© nÃ¡m.</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -347,9 +347,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>15</td>
-		<td>Buráò</td>
+		<td>BurÃ¡Åˆ</td>
 		<td>Michal</td>
-		<td>G J. A. Komenského, Uh. Brod</td>
+		<td>G J. A. KomenskÃ©ho, Uh. Brod</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">8,5</td>
 		<td style="text-align:center;">6,0</td>
@@ -360,9 +360,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>16</td>
-		<td>Hladík</td>
+		<td>HladÃ­k</td>
 		<td>Jan</td>
-		<td>G Pelhøimov</td>
+		<td>G PelhÅ™imov</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -373,9 +373,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>17</td>
-		<td>Matìjka</td>
-		<td>Ondøej</td>
-		<td>G J. V. Jirsíka, Èeské Budìjovice</td>
+		<td>MatÄ›jka</td>
+		<td>OndÅ™ej</td>
+		<td>G J. V. JirsÃ­ka, ÄŒeskÃ© BudÄ›jovice</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">9,5</td>
 		<td style="text-align:center;">0,0</td>
@@ -387,8 +387,8 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>18</td>
 		<td>Trnka</td>
-		<td>Jiøí</td>
-		<td>G Polièka</td>
+		<td>JiÅ™Ã­</td>
+		<td>G PoliÄka</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">7,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -398,13 +398,13 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td style="text-align:center;"><i>186,90</td></tr>
 
 	<tr>
-		<th style="text-align:center;" colspan=11><b>Úspìšní úèastníci</b></th></tr>
+		<th style="text-align:center;" colspan=11><b>ÃšspÄ›Å¡nÃ­ ÃºÄastnÃ­ci</b></th></tr>
 
 	<tr>
 		<td>19</td>
 		<td>Kodytek</td>
-		<td>Tomáš</td>
-		<td>G Ústí nad Orlicí</td>
+		<td>TomÃ¡Å¡</td>
+		<td>G ÃšstÃ­ nad OrlicÃ­</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">4,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -416,7 +416,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>20</td>
 		<td>Basler</td>
-		<td>Ondøej</td>
+		<td>OndÅ™ej</td>
 		<td>G Jana Keplera, Praha</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">8,5</td>
@@ -428,9 +428,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>21</td>
-		<td>Baláš</td>
+		<td>BalÃ¡Å¡</td>
 		<td>Jan</td>
-		<td>G amberk</td>
+		<td>G Å½amberk</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">7,5</td>
 		<td style="text-align:center;">5,0</td>
@@ -442,7 +442,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>22</td>
 		<td>Falta</td>
-		<td>František</td>
+		<td>FrantiÅ¡ek</td>
 		<td>G Trutnov</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">10,0</td>
@@ -454,9 +454,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>23</td>
-		<td>Vozáb</td>
+		<td>VozÃ¡b</td>
 		<td>Filip</td>
-		<td>G Ústí nad Labem, Jateèní</td>
+		<td>G ÃšstÃ­ nad Labem, JateÄnÃ­</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">7,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -482,7 +482,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>25</td>
 		<td>Kunt</td>
 		<td>Ota</td>
-		<td>G F. X. Šaldy, Liberec</td>
+		<td>G F. X. Å aldy, Liberec</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">4,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -495,7 +495,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>26</td>
 		<td>Balouch</td>
 		<td>Martin</td>
-		<td>G Uherské Hradištì</td>
+		<td>G UherskÃ© HradiÅ¡tÄ›</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">0,0</td>
 		<td style="text-align:center;">4,0</td>
@@ -508,7 +508,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>27</td>
 		<td>Zakopal</td>
 		<td>Petr</td>
-		<td>G Brno, tø. Kpt. Jaroše</td>
+		<td>G Brno, tÅ™. Kpt. JaroÅ¡e</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">3,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -519,9 +519,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>28</td>
-		<td>Doleal</td>
+		<td>DoleÅ¾al</td>
 		<td>Jakub</td>
-		<td>G Praha, Špitálská</td>
+		<td>G Praha, Å pitÃ¡lskÃ¡</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">8,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -532,9 +532,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>29</td>
-		<td>Jurèek</td>
+		<td>JurÄek</td>
 		<td>Martin</td>
-		<td>G Havíøov, Studentská</td>
+		<td>G HavÃ­Å™ov, StudentskÃ¡</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">7,5</td>
 		<td style="text-align:center;">0,0</td>
@@ -546,8 +546,8 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>30</td>
 		<td>Knob</td>
-		<td>Lukáš</td>
-		<td>G Kojetín</td>
+		<td>LukÃ¡Å¡</td>
+		<td>G KojetÃ­n</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">6,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -558,9 +558,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>31</td>
-		<td>Hùla</td>
-		<td>František</td>
-		<td>G Kolín</td>
+		<td>HÅ¯la</td>
+		<td>FrantiÅ¡ek</td>
+		<td>G KolÃ­n</td>
 		<td style="text-align:center;">5,0</td>
 		<td style="text-align:center;">2,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -573,7 +573,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>32</td>
 		<td>Haman</td>
 		<td>Pavel</td>
-		<td>Masarykovo G, Plzeò</td>
+		<td>Masarykovo G, PlzeÅˆ</td>
 		<td style="text-align:center;">6,0</td>
 		<td style="text-align:center;">8,0</td>
 		<td style="text-align:center;">4,0</td>
@@ -586,7 +586,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>33</td>
 		<td>Vach</td>
 		<td>Dominik</td>
-		<td>BiGy, Hradec Králové</td>
+		<td>BiGy, Hradec KrÃ¡lovÃ©</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">2,5</td>
 		<td style="text-align:center;">7,0</td>
@@ -597,8 +597,8 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>34</td>
-		<td>Èajánek</td>
-		<td>Ondøej</td>
+		<td>ÄŒajÃ¡nek</td>
+		<td>OndÅ™ej</td>
 		<td>G Jablonec, U Balvanu</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">4,5</td>
@@ -610,9 +610,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>35</td>
-		<td>Novák</td>
-		<td>Šimon</td>
-		<td>G Frenštát pod Radhoštìm</td>
+		<td>NovÃ¡k</td>
+		<td>Å imon</td>
+		<td>G FrenÅ¡tÃ¡t pod RadhoÅ¡tÄ›m</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">8,5</td>
 		<td style="text-align:center;">0,0</td>
@@ -624,8 +624,8 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 	<tr>
 		<td>36</td>
 		<td>Pipek</td>
-		<td>Jindøich</td>
-		<td>G J. K. Tyla, Hradec Králové</td>
+		<td>JindÅ™ich</td>
+		<td>G J. K. Tyla, Hradec KrÃ¡lovÃ©</td>
 		<td style="text-align:center;">7,0</td>
 		<td style="text-align:center;">1,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -636,7 +636,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>37</td>
-		<td>Mareš</td>
+		<td>MareÅ¡</td>
 		<td>Martin</td>
 		<td>G Jihlava</td>
 		<td style="text-align:center;">6,5</td>
@@ -649,9 +649,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>38</td>
-		<td>Guráš</td>
+		<td>GurÃ¡Å¡</td>
 		<td>Radek</td>
-		<td>G Frenštát pod Radhoštìm</td>
+		<td>G FrenÅ¡tÃ¡t pod RadhoÅ¡tÄ›m</td>
 		<td style="text-align:center;">8,0</td>
 		<td style="text-align:center;">0,0</td>
 		<td style="text-align:center;">5,0</td>
@@ -664,7 +664,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>39</td>
 		<td>Matas</td>
 		<td>Martin</td>
-		<td>G L. Pika, Plzeò</td>
+		<td>G L. Pika, PlzeÅˆ</td>
 		<td style="text-align:center;">10,0</td>
 		<td style="text-align:center;">0,0</td>
 		<td style="text-align:center;">4,0</td>
@@ -674,13 +674,13 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td style="text-align:center;"><i>131,82</td></tr>
 
 	<tr>
-		<th style="text-align:center;" colspan=11><b>Úèastníci</b></th></tr>
+		<th style="text-align:center;" colspan=11><b>ÃšÄastnÃ­ci</b></th></tr>
 
 	<tr>
 		<td>40</td>
 		<td>Wirth</td>
 		<td>Martin</td>
-		<td>G Karlovy Vary, Národní</td>
+		<td>G Karlovy Vary, NÃ¡rodnÃ­</td>
 		<td style="text-align:center;">4,5</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -693,7 +693,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>41</td>
 		<td>Hendrych</td>
 		<td>Erik</td>
-		<td>G Praha, Heyrovského</td>
+		<td>G Praha, HeyrovskÃ©ho</td>
 		<td style="text-align:center;">5,5</td>
 		<td style="text-align:center;">8,5</td>
 		<td style="text-align:center;">5,0</td>
@@ -706,7 +706,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 		<td>42</td>
 		<td>Weber</td>
 		<td>Ladislav</td>
-		<td>G Karlovy Vary, Národní</td>
+		<td>G Karlovy Vary, NÃ¡rodnÃ­</td>
 		<td style="text-align:center;">0,5</td>
 		<td style="text-align:center;">7,5</td>
 		<td style="text-align:center;">0,0</td>
@@ -717,7 +717,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>43</td>
-		<td>Doèkalová</td>
+		<td>DoÄkalovÃ¡</td>
 		<td>Veronika</td>
 		<td>G Brno, Elgartova</td>
 		<td style="text-align:center;">7,0</td>
@@ -730,9 +730,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>44</td>
-		<td>Veselá</td>
+		<td>VeselÃ¡</td>
 		<td>Petra</td>
-		<td>G Ivanèice</td>
+		<td>G IvanÄice</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">0,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -743,9 +743,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>45</td>
-		<td>Vavøièka</td>
+		<td>VavÅ™iÄka</td>
 		<td>Radek</td>
-		<td>G Plzeò, Mikulášské nám.</td>
+		<td>G PlzeÅˆ, MikulÃ¡Å¡skÃ© nÃ¡m.</td>
 		<td style="text-align:center;">9,0</td>
 		<td style="text-align:center;">6,5</td>
 		<td style="text-align:center;">0,0</td>
@@ -756,9 +756,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>46</td>
-		<td>Bureš</td>
-		<td>Lubomír</td>
-		<td>G J. V. Jirsíka, Èeské Budìjovice</td>
+		<td>BureÅ¡</td>
+		<td>LubomÃ­r</td>
+		<td>G J. V. JirsÃ­ka, ÄŒeskÃ© BudÄ›jovice</td>
 		<td style="text-align:center;">6,0</td>
 		<td style="text-align:center;">2,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -769,9 +769,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>47</td>
-		<td>Novotnı</td>
-		<td>Lukáš</td>
-		<td>G Pardubice, Dašická</td>
+		<td>NovotnÃ½</td>
+		<td>LukÃ¡Å¡</td>
+		<td>G Pardubice, DaÅ¡ickÃ¡</td>
 		<td style="text-align:center;">8,0</td>
 		<td style="text-align:center;">0,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -782,7 +782,7 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>48</td>
-		<td>Vlèek</td>
+		<td>VlÄek</td>
 		<td>Daniel</td>
 		<td>G Teplice</td>
 		<td style="text-align:center;">1,5</td>
@@ -795,9 +795,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>49</td>
-		<td>Illetšková</td>
-		<td>Markéta</td>
-		<td>G J. Vrchlického, Klatovy</td>
+		<td>IlletÅ¡kovÃ¡</td>
+		<td>MarkÃ©ta</td>
+		<td>G J. VrchlickÃ©ho, Klatovy</td>
 		<td style="text-align:center;">3,0</td>
 		<td style="text-align:center;">0,0</td>
 		<td style="text-align:center;">0,0</td>
@@ -808,9 +808,9 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 
 	<tr>
 		<td>50</td>
-		<td>Krèál</td>
-		<td>Vít</td>
-		<td>G Havlíèkùv Brod</td>
+		<td>KrÄÃ¡l</td>
+		<td>VÃ­t</td>
+		<td>G HavlÃ­ÄkÅ¯v Brod</td>
 		<td style="text-align:center;">7,0</td>
 		<td style="text-align:center;">3,5</td>
 		<td style="text-align:center;">0,0</td>
@@ -821,295 +821,295 @@ Vısledky si mùete rovnì stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a h
 </tbody></table>
 
 <p>
-V pøípadì rovnosti bodù je potøeba rozlišit poøadí (poadavek programu Excelence). K tomu slouí pomocné kritérium, tzv. modifiované body.
-Modifiované body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>), kde <i>b</i> je bodovı zisk z dané úlohy, max je maximum bodù dané úlohy a prum je prùmìrnı bodovı zisk z dané úlohy.
-Znamená to, e v modifikovanıch bodech má vìtší váhu zisk bodù z obtínìjších úloh.
+V pÅ™Ã­padÄ› rovnosti bodÅ¯ je potÅ™eba rozliÅ¡it poÅ™adÃ­ (poÅ¾adavek programu Excelence). K tomu slouÅ¾Ã­ pomocnÃ© kritÃ©rium, tzv. modifiovanÃ© body.
+ModifiovanÃ© body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>), kde <i>b</i> je bodovÃ½ zisk z danÃ© Ãºlohy, max je maximum bodÅ¯ danÃ© Ãºlohy a prum je prÅ¯mÄ›rnÃ½ bodovÃ½ zisk z danÃ© Ãºlohy.
+ZnamenÃ¡ to, Å¾e v modifikovanÃ½ch bodech mÃ¡ vÄ›tÅ¡Ã­ vÃ¡hu zisk bodÅ¯ z obtÃ­Å¾nÄ›jÅ¡Ã­ch Ãºloh.
 </p>
 
-<a name="seznam"><h3>Seznam postupujících</h3></a>
+<a name="seznam"><h3>Seznam postupujÃ­cÃ­ch</h3></a>
 
 <p>
-U&nbsp;kadého postupujícího uvádíme body získané v&nbsp;krajském kole.
+U&nbsp;kaÅ¾dÃ©ho postupujÃ­cÃ­ho uvÃ¡dÃ­me body zÃ­skanÃ© v&nbsp;krajskÃ©m kole.
 </p>
 
 <table class="vysledkovka" cellpadding=3>
 <thead>
 	<tr>
 		<th>Kraj</th>
-		<th>Soutìící</th>
-		<th>Škola</th>
+		<th>SoutÄ›Å¾Ã­cÃ­</th>
+		<th>Å kola</th>
 		<th style="text-align:center;">Body</th></tr>
 
 </thead>
 <tbody>
 	<tr>
 		<td>Jmo</td>
-		<td>Doèkalová Veronika</td>
+		<td>DoÄkalovÃ¡ Veronika</td>
 		<td>G Brno, Elgartova</td>
 		<td style="text-align:center;"><b>34</b></td></tr>
 
 	<tr>
 		<td>VY</td>
-		<td>Murár Fillip</td>
-		<td>G Tøebíè</td>
+		<td>MurÃ¡r Fillip</td>
+		<td>G TÅ™ebÃ­Ä</td>
 		<td style="text-align:center;"><b>33</b></td></tr>
 
 	<tr>
 		<td>Pha</td>
-		<td>Grund Lubomír</td>
-		<td>G Praha, Zborovská</td>
+		<td>Grund LubomÃ­r</td>
+		<td>G Praha, ZborovskÃ¡</td>
 		<td style="text-align:center;"><b>32</b></td></tr>
 
 	<tr>
-		<td>STÈ</td>
-		<td>Hùla František</td>
-		<td>G Kolím</td>
+		<td>STÄŒ</td>
+		<td>HÅ¯la FrantiÅ¡ek</td>
+		<td>G KolÃ­m</td>
 		<td style="text-align:center;"><b>32</b></td></tr>
 
 	<tr>
-		<td>JÈ</td>
-		<td>Guth Jiøí</td>
-		<td>G Èeské Bud., Jírovcova</td>
+		<td>JÄŒ</td>
+		<td>Guth JiÅ™Ã­</td>
+		<td>G ÄŒeskÃ© Bud., JÃ­rovcova</td>
 		<td style="text-align:center;"><b>31</b></td></tr>
 
 	<tr>
 		<td>MSL</td>
 		<td>Raszyk Martin</td>
-		<td>G Karviná, Mírová</td>
+		<td>G KarvinÃ¡, MÃ­rovÃ¡</td>
 		<td style="text-align:center;"><b>30</b></td></tr>
 
 	<tr>
 		<td>OL</td>
-		<td>Knob Lukáš</td>
-		<td>G Kojetín</td>
+		<td>Knob LukÃ¡Å¡</td>
+		<td>G KojetÃ­n</td>
 		<td style="text-align:center;"><b>29</b></td></tr>
 
 	<tr>
 		<td>PL</td>
 		<td>Haman Pavel</td>
-		<td>G Plzeò, Masarykovo</td>
+		<td>G PlzeÅˆ, Masarykovo</td>
 		<td style="text-align:center;"><b>28,5</b></td></tr>
 
 	<tr>
 		<td>PL</td>
-		<td>Hraška David</td>
-		<td>G Plzeò, Mikulášské</td>
+		<td>HraÅ¡ka David</td>
+		<td>G PlzeÅˆ, MikulÃ¡Å¡skÃ©</td>
 		<td style="text-align:center;"><b>28</b></td></tr>
 
 	<tr>
 		<td>PL</td>
 		<td>Matas Martin</td>
-		<td>G Plzeò, L.Pika</td>
+		<td>G PlzeÅˆ, L.Pika</td>
 		<td style="text-align:center;"><b>27</b></td></tr>
 
 	<tr>
 		<td>MSL</td>
-		<td>Jurèek Martin</td>
-		<td>G Havíøov, Studentská</td>
+		<td>JurÄek Martin</td>
+		<td>G HavÃ­Å™ov, StudentskÃ¡</td>
 		<td style="text-align:center;"><b>26,5</b></td></tr>
 
 	<tr>
 		<td>PL</td>
-		<td>Noièka Michal</td>
-		<td>G Plzeò, Mikulášské</td>
+		<td>NoÅ¾iÄka Michal</td>
+		<td>G PlzeÅˆ, MikulÃ¡Å¡skÃ©</td>
 		<td style="text-align:center;"><b>26,5</b></td></tr>
 
 	<tr>
 		<td>Pha</td>
-		<td>Rösler Jakub</td>
-		<td>G Praha, Truhláøská</td>
+		<td>RÃ¶sler Jakub</td>
+		<td>G Praha, TruhlÃ¡Å™skÃ¡</td>
 		<td style="text-align:center;"><b>26,5</b></td></tr>
 
 	<tr>
 		<td>PU</td>
-		<td>Trnka Jiøí</td>
-		<td>G Polièka</td>
+		<td>Trnka JiÅ™Ã­</td>
+		<td>G PoliÄka</td>
 		<td style="text-align:center;"><b>26,5</b></td></tr>
 
 	<tr>
 		<td>VY</td>
-		<td>Mareš Martin</td>
+		<td>MareÅ¡ Martin</td>
 		<td>G Jihlava</td>
 		<td style="text-align:center;"><b>26</b></td></tr>
 
 	<tr>
 		<td>UL</td>
-		<td>Vozáb Filip</td>
-		<td>G Ústí n.K., Jateèní</td>
+		<td>VozÃ¡b Filip</td>
+		<td>G ÃšstÃ­ n.K., JateÄnÃ­</td>
 		<td style="text-align:center;"><b>26</b></td></tr>
 
 	<tr>
 		<td>Pha</td>
-		<td>Basler Ondøej</td>
+		<td>Basler OndÅ™ej</td>
 		<td>G Praha, Keplerovo</td>
 		<td style="text-align:center;"><b>25</b></td></tr>
 
 	<tr>
 		<td>MSL</td>
-		<td>Novák Šimon</td>
-		<td>G Frenštát p.Radh.</td>
+		<td>NovÃ¡k Å imon</td>
+		<td>G FrenÅ¡tÃ¡t p.Radh.</td>
 		<td style="text-align:center;"><b>25</b></td></tr>
 
 	<tr>
 		<td>Jmo</td>
-		<td>Povolnı Jan</td>
-		<td>G Brno, kpt. Jaroše</td>
+		<td>PovolnÃ½ Jan</td>
+		<td>G Brno, kpt. JaroÅ¡e</td>
 		<td style="text-align:center;"><b>25</b></td></tr>
 
 	<tr>
 		<td>Jmo</td>
-		<td>Vanèura Jakub</td>
-		<td>G Brno, kpt. Jaroše</td>
+		<td>VanÄura Jakub</td>
+		<td>G Brno, kpt. JaroÅ¡e</td>
 		<td style="text-align:center;"><b>24,5</b></td></tr>
 
 	<tr>
 		<td>KV</td>
 		<td>Wirth Martin</td>
-		<td>G Karlovy Vary, Národní</td>
+		<td>G Karlovy Vary, NÃ¡rodnÃ­</td>
 		<td style="text-align:center;"><b>24</b></td></tr>
 
 	<tr>
 		<td>OL</td>
-		<td>Neoral Aleš</td>
-		<td>G Olomouc-Hejèín</td>
+		<td>Neoral AleÅ¡</td>
+		<td>G Olomouc-HejÄÃ­n</td>
 		<td style="text-align:center;"><b>23,5</b></td></tr>
 
 	<tr>
 		<td>PL</td>
-		<td>Illetšková Markéta</td>
-		<td>G Klatovy, Vrchlického</td>
+		<td>IlletÅ¡kovÃ¡ MarkÃ©ta</td>
+		<td>G Klatovy, VrchlickÃ©ho</td>
 		<td style="text-align:center;"><b>22</b></td></tr>
 
 	<tr>
 		<td>LI</td>
 		<td>Kunt Ota</td>
-		<td>G Liberec, FX Šaldy</td>
+		<td>G Liberec, FX Å aldy</td>
 		<td style="text-align:center;"><b>22</b></td></tr>
 
 	<tr>
 		<td>KH</td>
-		<td>Pipek Jindøich</td>
-		<td>GJKT Hradec Králové</td>
+		<td>Pipek JindÅ™ich</td>
+		<td>GJKT Hradec KrÃ¡lovÃ©</td>
 		<td style="text-align:center;"><b>22</b></td></tr>
 
 	<tr>
 		<td>LI</td>
-		<td>Èajánek Ondøej</td>
+		<td>ÄŒajÃ¡nek OndÅ™ej</td>
 		<td>G Jablonec, U Balvanu</td>
 		<td style="text-align:center;"><b>21,5</b></td></tr>
 
 	<tr>
 		<td>Pha</td>
 		<td>Hendrych Erik</td>
-		<td>G Praha, Heyrovského</td>
+		<td>G Praha, HeyrovskÃ©ho</td>
 		<td style="text-align:center;"><b>21,5</b></td></tr>
 
 	<tr>
 		<td>ZL</td>
-		<td>Fusek Lukáš</td>
-		<td>G Uherské Hradištì</td>
+		<td>Fusek LukÃ¡Å¡</td>
+		<td>G UherskÃ© HradiÅ¡tÄ›</td>
 		<td style="text-align:center;"><b>21</b></td></tr>
 
 	<tr>
 		<td>LI</td>
 		<td>Hanzelka Miroslav</td>
-		<td>G Èeská Lípa</td>
+		<td>G ÄŒeskÃ¡ LÃ­pa</td>
 		<td style="text-align:center;"><b>21</b></td></tr>
 
 	<tr>
 		<td>KH</td>
 		<td>Vach Dominik</td>
-		<td>Bisk.G Hradec Králové</td>
+		<td>Bisk.G Hradec KrÃ¡lovÃ©</td>
 		<td style="text-align:center;"><b>21</b></td></tr>
 
 	<tr>
 		<td>PL</td>
-		<td>Vavøièka Radek</td>
-		<td>G Plzeò, Mikulášské</td>
+		<td>VavÅ™iÄka Radek</td>
+		<td>G PlzeÅˆ, MikulÃ¡Å¡skÃ©</td>
 		<td style="text-align:center;"><b>21</b></td></tr>
 
 	<tr>
 		<td>ZL</td>
-		<td>Buráò Michal</td>
-		<td>G Uherské Hradištì JÁK</td>
+		<td>BurÃ¡Åˆ Michal</td>
+		<td>G UherskÃ© HradiÅ¡tÄ› JÃK</td>
 		<td style="text-align:center;"><b>20</b></td></tr>
 
 	<tr>
 		<td>VY</td>
-		<td>Hladík Jan</td>
-		<td>G Pelhøimov</td>
+		<td>HladÃ­k Jan</td>
+		<td>G PelhÅ™imov</td>
 		<td style="text-align:center;"><b>20</b></td></tr>
 
 	<tr>
 		<td>PU</td>
-		<td>Kodytek Tomáš</td>
-		<td>G Ústí n.Orl.</td>
+		<td>Kodytek TomÃ¡Å¡</td>
+		<td>G ÃšstÃ­ n.Orl.</td>
 		<td style="text-align:center;"><b>20</b></td></tr>
 
 	<tr>
-		<td>JÈ</td>
-		<td>Matìjka Ondøej</td>
-		<td>G Èeské Bud. Jirsíka</td>
+		<td>JÄŒ</td>
+		<td>MatÄ›jka OndÅ™ej</td>
+		<td>G ÄŒeskÃ© Bud. JirsÃ­ka</td>
 		<td style="text-align:center;"><b>20</b></td></tr>
 
 	<tr>
 		<td>KV</td>
 		<td>Weber Ladislav</td>
-		<td>G Karlovy Vary, Národní</td>
+		<td>G Karlovy Vary, NÃ¡rodnÃ­</td>
 		<td style="text-align:center;"><b>20</b></td></tr>
 
 	<tr>
 		<td>VY</td>
-		<td>Krèál Vít</td>
-		<td>G Havlíèkùv Brod</td>
+		<td>KrÄÃ¡l VÃ­t</td>
+		<td>G HavlÃ­ÄkÅ¯v Brod</td>
 		<td style="text-align:center;"><b>19,5</b></td></tr>
 
 	<tr>
 		<td>PU</td>
-		<td>Novotnı Lukáš</td>
-		<td>G Pardubice, Dašická</td>
+		<td>NovotnÃ½ LukÃ¡Å¡</td>
+		<td>G Pardubice, DaÅ¡ickÃ¡</td>
 		<td style="text-align:center;"><b>19,5</b></td></tr>
 
 	<tr>
 		<td>Jmo</td>
 		<td>Zakopal Petr</td>
-		<td>G Brno, kpt. Jaroše</td>
+		<td>G Brno, kpt. JaroÅ¡e</td>
 		<td style="text-align:center;"><b>19,5</b></td></tr>
 
 	<tr>
 		<td>ZL</td>
 		<td>Balouch Martin</td>
-		<td>G Uherské Hradištì</td>
+		<td>G UherskÃ© HradiÅ¡tÄ›</td>
 		<td style="text-align:center;"><b>19</b></td></tr>
 
 	<tr>
 		<td>KH</td>
-		<td>Falta František</td>
+		<td>Falta FrantiÅ¡ek</td>
 		<td>G Trutnov</td>
 		<td style="text-align:center;"><b>19</b></td></tr>
 
 	<tr>
 		<td>UL</td>
-		<td>Vlèek Daniel</td>
+		<td>VlÄek Daniel</td>
 		<td>G Teplice</td>
 		<td style="text-align:center;"><b>19</b></td></tr>
 
 	<tr>
 		<td>PU</td>
-		<td>Baláš Jan</td>
-		<td>G amberk</td>
+		<td>BalÃ¡Å¡ Jan</td>
+		<td>G Å½amberk</td>
 		<td style="text-align:center;"><b>18,5</b></td></tr>
 
 	<tr>
 		<td>Pha</td>
-		<td>Doleal Jakub</td>
-		<td>G Praha, Špitálská</td>
+		<td>DoleÅ¾al Jakub</td>
+		<td>G Praha, Å pitÃ¡lskÃ¡</td>
 		<td style="text-align:center;"><b>18,5</b></td></tr>
 
 	<tr>
 		<td>PU</td>
-		<td>Skoupı Viktor</td>
-		<td>G Moravská Tøebová</td>
+		<td>SkoupÃ½ Viktor</td>
+		<td>G MoravskÃ¡ TÅ™ebovÃ¡</td>
 		<td style="text-align:center;"><b>18</b></td></tr>
 
 	<tr>
@@ -1119,26 +1119,26 @@ U&nbsp;kadého postupujícího uvádíme body získané v&nbsp;krajském kole.
 		<td style="text-align:center;"><b>18</b></td></tr>
 
 	<tr>
-		<td>JÈ</td>
-		<td>Bureš Lubomír</td>
-		<td>G Èeské Bud. Jirsíka</td>
+		<td>JÄŒ</td>
+		<td>BureÅ¡ LubomÃ­r</td>
+		<td>G ÄŒeskÃ© Bud. JirsÃ­ka</td>
 		<td style="text-align:center;"><b>17</b></td></tr>
 
 	<tr>
 		<td>MSL</td>
-		<td>Guráš Radek</td>
-		<td>G Frenštát p.Radh.</td>
+		<td>GurÃ¡Å¡ Radek</td>
+		<td>G FrenÅ¡tÃ¡t p.Radh.</td>
 		<td style="text-align:center;"><b>17</b></td></tr>
 
 	<tr>
 		<td>OL</td>
-		<td>Skácel Ondøej</td>
-		<td>G Šternberk</td>
+		<td>SkÃ¡cel OndÅ™ej</td>
+		<td>G Å ternberk</td>
 		<td style="text-align:center;"><b>17</b></td></tr>
 
 	<tr>
 		<td>Jmo</td>
-		<td>Veselá Petra</td>
-		<td>G Ivanèice</td>
+		<td>VeselÃ¡ Petra</td>
+		<td>G IvanÄice</td>
 		<td style="text-align:center;"><b>17</b></td></tr>
 </tbody></table>

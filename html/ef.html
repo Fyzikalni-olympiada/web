@@ -1,4 +1,4 @@
-<h2>Kategorie E, F <?php echo AKTUALNI_ROCNIK ?>. roèníku FO</h2>
+<h2>Kategorie E, F <?php echo AKTUALNI_ROCNIK ?>. roÄnÃ­ku FO</h2>
 
 <h3>Organizace</h3>
 
@@ -11,13 +11,13 @@ $GLOBALS['mysql']->query('
 ');
 while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 	switch ($nazev) {
-			case 'domácí kolo':
+			case 'domÃ¡cÃ­ kolo':
 				$termin1 = $termin;
 				break;
-			case 'okresní kolo':
+			case 'okresnÃ­ kolo':
 				$termin2 = $termin;
 				break;
-			case 'krajské kolo':
+			case 'krajskÃ© kolo':
 				$termin3 = $termin;
 				break;
 			default:
@@ -28,180 +28,180 @@ while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 
 if ($kdo == "student") { ?>
 <p>
-Kategorie E urèena ákùm 9. tøíd, kategorie F urèena ákùm 8. tøíd základních škol a jim vìkovì odpovídajícím ákùm tøíd nišího gymnázia.
+Kategorie E urÄena Å¾Ã¡kÅ¯m 9. tÅ™Ã­d, kategorie F urÄena Å¾Ã¡kÅ¯m 8. tÅ™Ã­d zÃ¡kladnÃ­ch Å¡kol a jim vÄ›kovÄ› odpovÃ­dajÃ­cÃ­m Å¾Ã¡kÅ¯m tÅ™Ã­d niÅ¾Å¡Ã­ho gymnÃ¡zia.
 
 </p>
 <p>
-V <strong>prvním (domácím) kole</strong> máte za úkol vyøešit sedm úloh.
-Øešení odevzdejte svému uèiteli fyziky v tìchto termínech: úlohu první a tøetí zpravidla do konce
-listopadu, úlohu ètvrtou a sedmou nejpozdìji
+V <strong>prvnÃ­m (domÃ¡cÃ­m) kole</strong> mÃ¡te za Ãºkol vyÅ™eÅ¡it sedm Ãºloh.
+Å˜eÅ¡enÃ­ odevzdejte svÃ©mu uÄiteli fyziky v tÄ›chto termÃ­nech: Ãºlohu prvnÃ­ aÅ¾ tÅ™etÃ­ zpravidla do konce
+listopadu, Ãºlohu Ätvrtou aÅ¾ sedmou nejpozdÄ›ji
 <strong><?php echo $termin1 ?></strong>,
-kdy konèí první kolo soutìe. Øešení úloh opraví váš uèitel fyziky. Pro kadou úlohu je stanoveno 10 bodù. Plnı poèet bodù dostává øešitel, jestlie je úloha øešena zcela bez chyb. Øešení je nevyhovující, chybí-li slovní vıklad, nebo je-li neúplnı, take z nìho nelze vyvodit myšlenkovı postup podaného øešení.
+kdy konÄÃ­ prvnÃ­ kolo soutÄ›Å¾e. Å˜eÅ¡enÃ­ Ãºloh opravÃ­ vÃ¡Å¡ uÄitel fyziky. Pro kaÅ¾dou Ãºlohu je stanoveno 10 bodÅ¯. PlnÃ½ poÄet bodÅ¯ dostÃ¡vÃ¡ Å™eÅ¡itel, jestliÅ¾e je Ãºloha Å™eÅ¡ena zcela bez chyb. Å˜eÅ¡enÃ­ je nevyhovujÃ­cÃ­, chybÃ­-li slovnÃ­ vÃ½klad, nebo je-li neÃºplnÃ½, takÅ¾e z nÄ›ho nelze vyvodit myÅ¡lenkovÃ½ postup podanÃ©ho Å™eÅ¡enÃ­.
 </p>
 <p>
-Úspìšnı øešitel prvního kola jste v pøípadì, e dostanete v pìti úlohách alespoò 5 bodù a vyøešíte experimentální úlohu. Pozvání do druhého kola soutìe, ve kterém se dozvíte o místì a èasu konání, dostanete od svého uèitele.
+ÃšspÄ›Å¡nÃ½ Å™eÅ¡itel prvnÃ­ho kola jste v pÅ™Ã­padÄ›, Å¾e dostanete v pÄ›ti ÃºlohÃ¡ch alespoÅˆ 5 bodÅ¯ a vyÅ™eÅ¡Ã­te experimentÃ¡lnÃ­ Ãºlohu. PozvÃ¡nÃ­ do druhÃ©ho kola soutÄ›Å¾e, ve kterÃ©m se dozvÃ­te o mÃ­stÄ› a Äasu konÃ¡nÃ­, dostanete od svÃ©ho uÄitele.
 </p>
 <p>
-<strong>Druhé (okresní) kolo</strong> se uskuteèní v&nbsp;termínu <strong><?php echo $termin2 ?></strong>.
-Ve druhém kole je vaším úkolem vyøešit ètyøi teoretické úlohy. Úspìšnım øešitelem druhého kola, kde se také boduje jedna úloha 10ti body, se stanete, pokud vyøešíte alespoò dvì úlohy s bodovım hodnocením alespoò 5 bodù a dosáhnete pøitom nejmenšího poètu celkem 14 bodù. Všichni úspìšní øešitelé dostanete pochvalné uznání, nejlepší øešitelé budou odmìnìni.
+<strong>DruhÃ© (okresnÃ­) kolo</strong> se uskuteÄnÃ­ v&nbsp;termÃ­nu <strong><?php echo $termin2 ?></strong>.
+Ve druhÃ©m kole je vaÅ¡Ã­m Ãºkolem vyÅ™eÅ¡it ÄtyÅ™i teoretickÃ© Ãºlohy. ÃšspÄ›Å¡nÃ½m Å™eÅ¡itelem druhÃ©ho kola, kde se takÃ© boduje jedna Ãºloha 10ti body, se stanete, pokud vyÅ™eÅ¡Ã­te alespoÅˆ dvÄ› Ãºlohy s bodovÃ½m hodnocenÃ­m alespoÅˆ 5 bodÅ¯ a dosÃ¡hnete pÅ™itom nejmenÅ¡Ã­ho poÄtu celkem 14 bodÅ¯. VÅ¡ichni ÃºspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© dostanete pochvalnÃ© uznÃ¡nÃ­, nejlepÅ¡Ã­ Å™eÅ¡itelÃ© budou odmÄ›nÄ›ni.
 </p>
-<p>V&nbsp;termínu
+<p>V&nbsp;termÃ­nu
 <strong><?php echo $termin3 ?></strong>
-budou uspoøádána <strong>tøetí (krajská) kola</strong> soutìe v kategorii E, a to ve vybranıch místech. Do tøetího kola jsou vybráni nejlepší úèastníci druhého kola. Pozvání do tøetího kola dostanete od svého uèitele. Všichni úspìšní øešitelé tøetího kola obdríte pochvalná uznání a nejlepší soutìící budou odmìnìni.
+budou uspoÅ™Ã¡dÃ¡na <strong>tÅ™etÃ­ (krajskÃ¡) kola</strong> soutÄ›Å¾e v kategorii E, a to ve vybranÃ½ch mÃ­stech. Do tÅ™etÃ­ho kola jsou vybrÃ¡ni nejlepÅ¡Ã­ ÃºÄastnÃ­ci druhÃ©ho kola. PozvÃ¡nÃ­ do tÅ™etÃ­ho kola dostanete od svÃ©ho uÄitele. VÅ¡ichni ÃºspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© tÅ™etÃ­ho kola obdrÅ¾Ã­te pochvalnÃ¡ uznÃ¡nÃ­ a nejlepÅ¡Ã­ soutÄ›Å¾Ã­cÃ­ budou odmÄ›nÄ›ni.
 </p>
 <p>
-Okresní èi krajské kolo probíhá v celé Èeské republice v tı den a soutì zaèíná zpravidla v&nbsp;9&nbsp;h (podle moností dojezdnosti soutìících a pedagogického dozoru).
-Po sdìlení nutnıch informací soutìícím a krátkım prostudováním textu zadanıch úloh soutìícími, zodpovìzení dotazù, je jsou spojeny s vysvìtlením nìkterıch nejasností, se potom vyhlásí zaèátek soutìe a pro 4&nbsp;úlohy se stanoví 4&nbsp;h èistého èasu.
-Úlohy mùete vyøešit v kratší dobì, ale tyto 4&nbsp;h jsou limitní; po jejich uplynutí musíte své øešení odevzdat dozorujícímu èlenu okresní, popø. krajské komise.
+OkresnÃ­ Äi krajskÃ© kolo probÃ­hÃ¡ v celÃ© ÄŒeskÃ© republice v tÃ½Å¾ den a soutÄ›Å¾ zaÄÃ­nÃ¡ zpravidla v&nbsp;9&nbsp;h (podle moÅ¾nostÃ­ dojezdnosti soutÄ›Å¾Ã­cÃ­ch a pedagogickÃ©ho dozoru).
+Po sdÄ›lenÃ­ nutnÃ½ch informacÃ­ soutÄ›Å¾Ã­cÃ­m a krÃ¡tkÃ½m prostudovÃ¡nÃ­m textu zadanÃ½ch Ãºloh soutÄ›Å¾Ã­cÃ­mi, zodpovÄ›zenÃ­ dotazÅ¯, jeÅ¾ jsou spojeny s vysvÄ›tlenÃ­m nÄ›kterÃ½ch nejasnostÃ­, se potom vyhlÃ¡sÃ­ zaÄÃ¡tek soutÄ›Å¾e a pro 4&nbsp;Ãºlohy se stanovÃ­ 4&nbsp;h ÄistÃ©ho Äasu.
+Ãšlohy mÅ¯Å¾ete vyÅ™eÅ¡it v kratÅ¡Ã­ dobÄ›, ale tyto 4&nbsp;h jsou limitnÃ­; po jejich uplynutÃ­ musÃ­te svÃ© Å™eÅ¡enÃ­ odevzdat dozorujÃ­cÃ­mu Älenu okresnÃ­, popÅ™. krajskÃ© komise.
 </p>
 <p>
-Po ukonèení kadého kola budete seznámeni se správnım øešením úloh, buïto od svého uèitele fyziky,
-nebo ho najdte na tìchto stránkách. Kadá krajská komise zøizuje svou <a href="<?php echo odkaz('stranky_regionu.html'); ?>" title="Webové stránky krajskıch komisí">webovskou stránku</a>, kde mùete najít další informace i&nbsp;vısledky soutìe. 
+Po ukonÄenÃ­ kaÅ¾dÃ©ho kola budete seznÃ¡meni se sprÃ¡vnÃ½m Å™eÅ¡enÃ­m Ãºloh, buÄto od svÃ©ho uÄitele fyziky,
+nebo ho najdte na tÄ›chto strÃ¡nkÃ¡ch. KaÅ¾dÃ¡ krajskÃ¡ komise zÅ™izuje svou <a href="<?php echo odkaz('stranky_regionu.html'); ?>" title="WebovÃ© strÃ¡nky krajskÃ½ch komisÃ­">webovskou strÃ¡nku</a>, kde mÅ¯Å¾ete najÃ­t dalÅ¡Ã­ informace i&nbsp;vÃ½sledky soutÄ›Å¾e. 
 </p>
 <?php } ?>
 
 <?php if ($kdo == "ucitel") { ?>
 <p>
-V letošním roce je kategorie E urèena ákùm 9. tøíd, kategorie F urèena ákùm 8. tøíd základních škol a jim vìkovì odpovídajícím ákùm tøíd nišího gymnázia.
+V letoÅ¡nÃ­m roce je kategorie E urÄena Å¾Ã¡kÅ¯m 9. tÅ™Ã­d, kategorie F urÄena Å¾Ã¡kÅ¯m 8. tÅ™Ã­d zÃ¡kladnÃ­ch Å¡kol a jim vÄ›kovÄ› odpovÃ­dajÃ­cÃ­m Å¾Ã¡kÅ¯m tÅ™Ã­d niÅ¾Å¡Ã­ho gymnÃ¡zia.
 
 </p>
 <p>
-Soutì je dobrovolná a probíhá na území Èeské republiky jednotnì. V <strong>prvním (domácím) kole</strong> mají vaši áci za úkol vyøešit sedm úloh. Øešení vám odevzdají v tìchto termínech: úlohu první a tøetí zpravidla do konce
-listopadu, úlohu ètvrtou a sedmou nejpozdìji
+SoutÄ›Å¾ je dobrovolnÃ¡ a probÃ­hÃ¡ na ÃºzemÃ­ ÄŒeskÃ© republiky jednotnÄ›. V <strong>prvnÃ­m (domÃ¡cÃ­m) kole</strong> majÃ­ vaÅ¡i Å¾Ã¡ci za Ãºkol vyÅ™eÅ¡it sedm Ãºloh. Å˜eÅ¡enÃ­ vÃ¡m odevzdajÃ­ v tÄ›chto termÃ­nech: Ãºlohu prvnÃ­ aÅ¾ tÅ™etÃ­ zpravidla do konce
+listopadu, Ãºlohu Ätvrtou aÅ¾ sedmou nejpozdÄ›ji
 <strong><?php echo $termin1 ?></strong>,
-kdy konèí první kolo soutìe. Øešení úloh opravte a klasifikujte podle dispozic ÚKFO, které pøijdou na vaši školu. Pro kadou úlohu je stanoveno 10 bodù, jejich rozloení je uvedeno v instruktáním øešení. Plnı poèet bodù dostává øešitel, jestlie je úloha èi její èást øešena  zcela bez chyb, nebo se v øešení vyskytují pouze drobné formální nedostatky. Jestlie øešení úlohy èi její èásti v podstatì vystihuje úkol, ale má vìtší nedostatky po odborné stránce èi vyskytují-li se v nìm závané formální nedostatky, je poèet bodù sníen. Øešení je nevyhovující a pøidìlenı poèet bodù nízkı nebo nulovı, jestlie nedostatky odborného rázu jsou závané, nebo je øešení z vìtší èásti neúplné. Øešení je také nevyhovující, chybí-li slovní vıklad, nebo je-li neúplnı, take z nìho nelze vyvodit myšlenkovı postup podaného øešení. Kladné hodnocení tedy pøedpokládá, e protokol o øešení obsahuje fyzikální vysvìtlení, z nìho jasnì vyplıvá myšlenkovı postup pøi øešení daného problému. K metodice øešení fyzikálních úloh pøipravila pro vás ÚKFO materiál s mnoha konkrétními pøíklady. Návodné úlohy pro soutì ji nìkolikrát vyšly v èasopise Školská fyzika. 
+kdy konÄÃ­ prvnÃ­ kolo soutÄ›Å¾e. Å˜eÅ¡enÃ­ Ãºloh opravte a klasifikujte podle dispozic ÃšKFO, kterÃ© pÅ™ijdou na vaÅ¡i Å¡kolu. Pro kaÅ¾dou Ãºlohu je stanoveno 10 bodÅ¯, jejichÅ¾ rozloÅ¾enÃ­ je uvedeno v instruktÃ¡Å¾nÃ­m Å™eÅ¡enÃ­. PlnÃ½ poÄet bodÅ¯ dostÃ¡vÃ¡ Å™eÅ¡itel, jestliÅ¾e je Ãºloha Äi jejÃ­ ÄÃ¡st Å™eÅ¡ena  zcela bez chyb, nebo se v Å™eÅ¡enÃ­ vyskytujÃ­ pouze drobnÃ© formÃ¡lnÃ­ nedostatky. JestliÅ¾e Å™eÅ¡enÃ­ Ãºlohy Äi jejÃ­ ÄÃ¡sti v podstatÄ› vystihuje Ãºkol, ale mÃ¡ vÄ›tÅ¡Ã­ nedostatky po odbornÃ© strÃ¡nce Äi vyskytujÃ­-li se v nÄ›m zÃ¡vaÅ¾nÃ© formÃ¡lnÃ­ nedostatky, je poÄet bodÅ¯ snÃ­Å¾en. Å˜eÅ¡enÃ­ je nevyhovujÃ­cÃ­ a pÅ™idÄ›lenÃ½ poÄet bodÅ¯ nÃ­zkÃ½ nebo nulovÃ½, jestliÅ¾e nedostatky odbornÃ©ho rÃ¡zu jsou zÃ¡vaÅ¾nÃ©, nebo je Å™eÅ¡enÃ­ z vÄ›tÅ¡Ã­ ÄÃ¡sti neÃºplnÃ©. Å˜eÅ¡enÃ­ je takÃ© nevyhovujÃ­cÃ­, chybÃ­-li slovnÃ­ vÃ½klad, nebo je-li neÃºplnÃ½, takÅ¾e z nÄ›ho nelze vyvodit myÅ¡lenkovÃ½ postup podanÃ©ho Å™eÅ¡enÃ­. KladnÃ© hodnocenÃ­ tedy pÅ™edpoklÃ¡dÃ¡, Å¾e protokol o Å™eÅ¡enÃ­ obsahuje fyzikÃ¡lnÃ­ vysvÄ›tlenÃ­, z nÄ›hoÅ¾ jasnÄ› vyplÃ½vÃ¡ myÅ¡lenkovÃ½ postup pÅ™i Å™eÅ¡enÃ­ danÃ©ho problÃ©mu. K metodice Å™eÅ¡enÃ­ fyzikÃ¡lnÃ­ch Ãºloh pÅ™ipravila pro vÃ¡s ÃšKFO materiÃ¡l s mnoha konkrÃ©tnÃ­mi pÅ™Ã­klady. NÃ¡vodnÃ© Ãºlohy pro soutÄ›Å¾ jiÅ¾ nÄ›kolikrÃ¡t vyÅ¡ly v Äasopise Å kolskÃ¡ fyzika. 
 </p>
 <p>
-Øešení úloh prvního kola opravte spoleènì s referentem FO na škole. Po ukonèení prvního kola navrhnìte úspìšné øešitele k postupu do druhého kola a odešlete opravené úlohy všech, tj. i neúspìšnıch øešitelù, spoleènì s návrhem postupujících pøíslušné okresní komisi fyzikální olympiády (OKFO). O zaøazení do druhého kola soutìe rozhodne OKFO po kontrole opravenıch úloh a sjednocení klasifikace.
-Za úspìšného øešitele prvního kola je povaován soutìící, kterı byl hodnocen v pìti úlohách alespoò 5 body, pøièem øešil experimentální úlohy (tøeba i neúspìšnì).
-Pozvání do druhého kola soutìe pro úspìšné øešitele dostanete od pøíslušné OKFO, pøedejte je svım ákùm.
+Å˜eÅ¡enÃ­ Ãºloh prvnÃ­ho kola opravte spoleÄnÄ› s referentem FO na Å¡kole. Po ukonÄenÃ­ prvnÃ­ho kola navrhnÄ›te ÃºspÄ›Å¡nÃ© Å™eÅ¡itele k postupu do druhÃ©ho kola a odeÅ¡lete opravenÃ© Ãºlohy vÅ¡ech, tj. i neÃºspÄ›Å¡nÃ½ch Å™eÅ¡itelÅ¯, spoleÄnÄ› s nÃ¡vrhem postupujÃ­cÃ­ch pÅ™Ã­sluÅ¡nÃ© okresnÃ­ komisi fyzikÃ¡lnÃ­ olympiÃ¡dy (OKFO). O zaÅ™azenÃ­ do druhÃ©ho kola soutÄ›Å¾e rozhodne OKFO po kontrole opravenÃ½ch Ãºloh a sjednocenÃ­ klasifikace.
+Za ÃºspÄ›Å¡nÃ©ho Å™eÅ¡itele prvnÃ­ho kola je povaÅ¾ovÃ¡n soutÄ›Å¾Ã­cÃ­, kterÃ½ byl hodnocen v pÄ›ti ÃºlohÃ¡ch alespoÅˆ 5 body, pÅ™iÄemÅ¾ Å™eÅ¡il experimentÃ¡lnÃ­ Ãºlohy (tÅ™eba i neÃºspÄ›Å¡nÄ›).
+PozvÃ¡nÃ­ do druhÃ©ho kola soutÄ›Å¾e pro ÃºspÄ›Å¡nÃ© Å™eÅ¡itele dostanete od pÅ™Ã­sluÅ¡nÃ© OKFO, pÅ™edejte je svÃ½m Å¾Ã¡kÅ¯m.
 </p>
 <p>
-<strong>Druhé (okresní) kolo</strong> se uskuteèní v místì urèeném OKFO v termínu
+<strong>DruhÃ© (okresnÃ­) kolo</strong> se uskuteÄnÃ­ v mÃ­stÄ› urÄenÃ©m OKFO v termÃ­nu
 <strong><?php echo $termin2 ?></strong>.
-Ve druhém kole je úkolem vašeho áka vyøešit ètyøi teoretické úlohy, které zajišuje jednotnì pro celou republiku ÚKFO. Úspìšnım øešitelem druhého kola, kde se také boduje, je úèastník, kterı vyøešil alespoò dvì úlohy s bodovım hodnocením alespoò 5 bodù a dosáhl pøitom  nejmenšího poètu 14 bodù. OKFO opraví øešení úloh nejlépe ještì v den soutìe a sestaví poøadí úspìšnıch øešitelù. Všichni úspìšní øešitelé dostanou pochvalné uznání, nejlepší øešitelé budou odmìnìni podle smìrnic MŠMT.
+Ve druhÃ©m kole je Ãºkolem vaÅ¡eho Å¾Ã¡ka vyÅ™eÅ¡it ÄtyÅ™i teoretickÃ© Ãºlohy, kterÃ© zajiÅ¡Å¥uje jednotnÄ› pro celou republiku ÃšKFO. ÃšspÄ›Å¡nÃ½m Å™eÅ¡itelem druhÃ©ho kola, kde se takÃ© boduje, je ÃºÄastnÃ­k, kterÃ½ vyÅ™eÅ¡il alespoÅˆ dvÄ› Ãºlohy s bodovÃ½m hodnocenÃ­m alespoÅˆ 5 bodÅ¯ a dosÃ¡hl pÅ™itom  nejmenÅ¡Ã­ho poÄtu 14 bodÅ¯. OKFO opravÃ­ Å™eÅ¡enÃ­ Ãºloh nejlÃ©pe jeÅ¡tÄ› v den soutÄ›Å¾e a sestavÃ­ poÅ™adÃ­ ÃºspÄ›Å¡nÃ½ch Å™eÅ¡itelÅ¯. VÅ¡ichni ÃºspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© dostanou pochvalnÃ© uznÃ¡nÃ­, nejlepÅ¡Ã­ Å™eÅ¡itelÃ© budou odmÄ›nÄ›ni podle smÄ›rnic MÅ MT.
 </p>
 <p>
-V&nbsp;termínu
+V&nbsp;termÃ­nu
 <strong><?php echo $termin3 ?></strong>
-budou uspoøádána <strong>tøetí (krajská) kola</strong> soutìe v kategorii E, a to ve vybranıch místech. Do tøetího kola jsou vybráni nejlepší úèastníci druhého kola podle organizaèního øádu fyzikální olympiády; o jejich  zaøazení rozhoduje poøadatel tøetího kola. áci jsou pozváni prostøednictvím školy. Všichni úspìšní øešitelé tøetího kola obdrí pochvalná uznání a nejlepší soutìící budou odmìnìni.
+budou uspoÅ™Ã¡dÃ¡na <strong>tÅ™etÃ­ (krajskÃ¡) kola</strong> soutÄ›Å¾e v kategorii E, a to ve vybranÃ½ch mÃ­stech. Do tÅ™etÃ­ho kola jsou vybrÃ¡ni nejlepÅ¡Ã­ ÃºÄastnÃ­ci druhÃ©ho kola podle organizaÄnÃ­ho Å™Ã¡du fyzikÃ¡lnÃ­ olympiÃ¡dy; o jejich  zaÅ™azenÃ­ rozhoduje poÅ™adatel tÅ™etÃ­ho kola. Å½Ã¡ci jsou pozvÃ¡ni prostÅ™ednictvÃ­m Å¡koly. VÅ¡ichni ÃºspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© tÅ™etÃ­ho kola obdrÅ¾Ã­ pochvalnÃ¡ uznÃ¡nÃ­ a nejlepÅ¡Ã­ soutÄ›Å¾Ã­cÃ­ budou odmÄ›nÄ›ni.
 </p>
 <p>
-Okresní èi krajské kolo probíhá v celé Èeské republice v tı den a soutì zaèíná zpravidla v&nbsp;9&nbsp;h (podle moností dojezdnosti soutìících a pedagogického dozoru).
-Po sdìlení nutnıch informací soutìícím a krátkım prostudováním textu zadanıch úloh soutìícími, zodpovìzení dotazù, je jsou spojeny s vysvìtlením nìkterıch nejasností, se potom vyhlásí zaèátek soutìe a pro 4&nbsp;úlohy se stanoví 4&nbsp;h èistého èasu.
-Soutìící mùe vyøešit úlohy v kratší dobì, ale tyto 4&nbsp;h jsou limitní; po jejich uplynutí musí soutìící své øešení odevzdat dozorujícímu èlenu okresní, popø. krajské komise.
+OkresnÃ­ Äi krajskÃ© kolo probÃ­hÃ¡ v celÃ© ÄŒeskÃ© republice v tÃ½Å¾ den a soutÄ›Å¾ zaÄÃ­nÃ¡ zpravidla v&nbsp;9&nbsp;h (podle moÅ¾nostÃ­ dojezdnosti soutÄ›Å¾Ã­cÃ­ch a pedagogickÃ©ho dozoru).
+Po sdÄ›lenÃ­ nutnÃ½ch informacÃ­ soutÄ›Å¾Ã­cÃ­m a krÃ¡tkÃ½m prostudovÃ¡nÃ­m textu zadanÃ½ch Ãºloh soutÄ›Å¾Ã­cÃ­mi, zodpovÄ›zenÃ­ dotazÅ¯, jeÅ¾ jsou spojeny s vysvÄ›tlenÃ­m nÄ›kterÃ½ch nejasnostÃ­, se potom vyhlÃ¡sÃ­ zaÄÃ¡tek soutÄ›Å¾e a pro 4&nbsp;Ãºlohy se stanovÃ­ 4&nbsp;h ÄistÃ©ho Äasu.
+SoutÄ›Å¾Ã­cÃ­ mÅ¯Å¾e vyÅ™eÅ¡it Ãºlohy v kratÅ¡Ã­ dobÄ›, ale tyto 4&nbsp;h jsou limitnÃ­; po jejich uplynutÃ­ musÃ­ soutÄ›Å¾Ã­cÃ­ svÃ© Å™eÅ¡enÃ­ odevzdat dozorujÃ­cÃ­mu Älenu okresnÃ­, popÅ™. krajskÃ© komise.
 </p>
 <p>
-Po ukonèení kadé soutìe seznámente své áky se správnım øešením úloh, je jsou zasílána na kadou školu ÚKFO. Doporuèujeme, abyste na školách provedli spoleènì s øešiteli analızu podanıch øešení v prvním a druhém kole.
+Po ukonÄenÃ­ kaÅ¾dÃ© soutÄ›Å¾e seznÃ¡mente svÃ© Å¾Ã¡ky se sprÃ¡vnÃ½m Å™eÅ¡enÃ­m Ãºloh, jeÅ¾ jsou zasÃ­lÃ¡na na kaÅ¾dou Å¡kolu ÃšKFO. DoporuÄujeme, abyste na Å¡kolÃ¡ch provedli spoleÄnÄ› s Å™eÅ¡iteli analÃ½zu podanÃ½ch Å™eÅ¡enÃ­ v prvnÃ­m a druhÃ©m kole.
 </p>
 <?php } ?>
 
 <?php if ($kdo == "organizator") { ?>
 <p>
-Od 4. roèníku byla soutì FO rozšíøena o kategorii, urèenou ákùm základních devítiletıch škol. Od 25.&nbsp;roèníku byla fyzikální olympiáda v kategorii E urèena ákùm osmıch roèníkù základních škol, ale mohli se jí zúèastnit i mladší áci i áci devátıch roèníkù s hlubším zájmem o fyziku. V letošním roce je kategorie E urèena ákùm 9. tøíd, kategorie F urèena ákùm 8. roèníkù a jim vìkovì odpovídajícím ákùm tøíd nišího gymnázia.
+Od 4. roÄnÃ­ku byla soutÄ›Å¾ FO rozÅ¡Ã­Å™ena o kategorii, urÄenou Å¾Ã¡kÅ¯m zÃ¡kladnÃ­ch devÃ­tiletÃ½ch Å¡kol. Od 25.&nbsp;roÄnÃ­ku byla fyzikÃ¡lnÃ­ olympiÃ¡da v kategorii E urÄena Å¾Ã¡kÅ¯m osmÃ½ch roÄnÃ­kÅ¯ zÃ¡kladnÃ­ch Å¡kol, ale mohli se jÃ­ zÃºÄastnit i mladÅ¡Ã­ Å¾Ã¡ci i Å¾Ã¡ci devÃ¡tÃ½ch roÄnÃ­kÅ¯ s hlubÅ¡Ã­m zÃ¡jmem o fyziku. V letoÅ¡nÃ­m roce je kategorie E urÄena Å¾Ã¡kÅ¯m 9. tÅ™Ã­d, kategorie F urÄena Å¾Ã¡kÅ¯m 8. roÄnÃ­kÅ¯ a jim vÄ›kovÄ› odpovÃ­dajÃ­cÃ­m Å¾Ã¡kÅ¯m tÅ™Ã­d niÅ¾Å¡Ã­ho gymnÃ¡zia.
 
 </p>
 <p>
-Soutì je dobrovolná a probíhá na území Èeské republiky jednotnì. V <strong>prvním (domácím) kole</strong> mají soutìící za úkol vyøešit sedm úloh. Øešení odevzdají uèiteli fyziky v tìchto termínech:  úlohu první a tøetí zpravidla do konce
-listopadu, úlohu ètvrtou a sedmou nejpozdìji
+SoutÄ›Å¾ je dobrovolnÃ¡ a probÃ­hÃ¡ na ÃºzemÃ­ ÄŒeskÃ© republiky jednotnÄ›. V <strong>prvnÃ­m (domÃ¡cÃ­m) kole</strong> majÃ­ soutÄ›Å¾Ã­cÃ­ za Ãºkol vyÅ™eÅ¡it sedm Ãºloh. Å˜eÅ¡enÃ­ odevzdajÃ­ uÄiteli fyziky v tÄ›chto termÃ­nech:  Ãºlohu prvnÃ­ aÅ¾ tÅ™etÃ­ zpravidla do konce
+listopadu, Ãºlohu Ätvrtou aÅ¾ sedmou nejpozdÄ›ji
 <strong><?php echo $termin1 ?></strong>,
-kdy konèí první kolo soutìe. Øešení úloh uèitel fyziky opraví a klasifikuje podle dispozic ÚKFO. Pro kadou úlohu je stanoveno 10 bodù, jejich rozloení je uvedeno v instruktáním øešení, které dostanou uèitelé k dispozici. Plnı poèet bodù dostává øešitel, jestlie je úloha èi její èást øešena  zcela bez chyb, nebo se v øešení vyskytují pouze drobné formální nedostatky. Jestlie øešení úlohy èi její èásti v podstatì vystihuje úkol, ale má vìtší nedostatky po odborné stránce èi vyskytují-li se v nìm závané formální nedostatky, je poèet bodù sníen. Øešení je nevyhovující a pøidìlenı poèet bodù nízkı nebo nulovı, jestlie nedostatky odborného rázu jsou závané, nebo je øešení z vìtší èásti neúplné.  Øešení je také nevyhovující, chybí-li slovní vıklad, nebo je-li neúplnı, take z nìho nelze vyvodit myšlenkovı postup podaného øešení. Kladné hodnocení tedy pøedpokládá, e protokol o øešení obsahuje fyzikální vysvìtlení, z nìho jasnì vyplıvá myšlenkovı postup pøi øešení daného problému. K metodice øešení fyzikálních úloh pøipravil ÚKFO materiál pro uèitele fyziky s mnoha konkrétními pøíklady.
+kdy konÄÃ­ prvnÃ­ kolo soutÄ›Å¾e. Å˜eÅ¡enÃ­ Ãºloh uÄitel fyziky opravÃ­ a klasifikuje podle dispozic ÃšKFO. Pro kaÅ¾dou Ãºlohu je stanoveno 10 bodÅ¯, jejichÅ¾ rozloÅ¾enÃ­ je uvedeno v instruktÃ¡Å¾nÃ­m Å™eÅ¡enÃ­, kterÃ© dostanou uÄitelÃ© k dispozici. PlnÃ½ poÄet bodÅ¯ dostÃ¡vÃ¡ Å™eÅ¡itel, jestliÅ¾e je Ãºloha Äi jejÃ­ ÄÃ¡st Å™eÅ¡ena  zcela bez chyb, nebo se v Å™eÅ¡enÃ­ vyskytujÃ­ pouze drobnÃ© formÃ¡lnÃ­ nedostatky. JestliÅ¾e Å™eÅ¡enÃ­ Ãºlohy Äi jejÃ­ ÄÃ¡sti v podstatÄ› vystihuje Ãºkol, ale mÃ¡ vÄ›tÅ¡Ã­ nedostatky po odbornÃ© strÃ¡nce Äi vyskytujÃ­-li se v nÄ›m zÃ¡vaÅ¾nÃ© formÃ¡lnÃ­ nedostatky, je poÄet bodÅ¯ snÃ­Å¾en. Å˜eÅ¡enÃ­ je nevyhovujÃ­cÃ­ a pÅ™idÄ›lenÃ½ poÄet bodÅ¯ nÃ­zkÃ½ nebo nulovÃ½, jestliÅ¾e nedostatky odbornÃ©ho rÃ¡zu jsou zÃ¡vaÅ¾nÃ©, nebo je Å™eÅ¡enÃ­ z vÄ›tÅ¡Ã­ ÄÃ¡sti neÃºplnÃ©.  Å˜eÅ¡enÃ­ je takÃ© nevyhovujÃ­cÃ­, chybÃ­-li slovnÃ­ vÃ½klad, nebo je-li neÃºplnÃ½, takÅ¾e z nÄ›ho nelze vyvodit myÅ¡lenkovÃ½ postup podanÃ©ho Å™eÅ¡enÃ­. KladnÃ© hodnocenÃ­ tedy pÅ™edpoklÃ¡dÃ¡, Å¾e protokol o Å™eÅ¡enÃ­ obsahuje fyzikÃ¡lnÃ­ vysvÄ›tlenÃ­, z nÄ›hoÅ¾ jasnÄ› vyplÃ½vÃ¡ myÅ¡lenkovÃ½ postup pÅ™i Å™eÅ¡enÃ­ danÃ©ho problÃ©mu. K metodice Å™eÅ¡enÃ­ fyzikÃ¡lnÃ­ch Ãºloh pÅ™ipravil ÃšKFO materiÃ¡l pro uÄitele fyziky s mnoha konkrÃ©tnÃ­mi pÅ™Ã­klady.
 
 </p>
 <p>
-Øešení úloh prvního kola opraví uèitel fyziky spoleènì s referentem FO na škole. Po ukonèení prvního kola navrhne referent FO na škole úspìšné øešitele k postupu do druhého kola a odešle opravené úlohy všech, tj. i neúspìšnıch øešitelù spoleènì s návrhem postupujících pøíslušné okresní komisi fyzikální olympiády (OKFO). O zaøazení do druhého kola soutìe rozhodne OKFO po kontrole opravenıch úloh a sjednocení klasifikace. Vzhledem k organizaci soutìe je vhodné, aby si OKFO dal pøedloit první èást opravenıch øešení ji v prosinci. Poèet úèastníkù druhého kola mùe OKFO omezit podle dosaeného bodového hodnocení. Za úspìšného øešitele prvního kola je povaován soutìící, kterı byl hodnocen v pìti úlohách alespoò 5 body, pøièem øešil experimentální úlohy (tøeba i neúspìšnì).
-Pozvání do druhého kola soutìe dostane pozvanı úspìšnı øešitel FO od pøíslušného OKFO prostøednictvím školy.
+Å˜eÅ¡enÃ­ Ãºloh prvnÃ­ho kola opravÃ­ uÄitel fyziky spoleÄnÄ› s referentem FO na Å¡kole. Po ukonÄenÃ­ prvnÃ­ho kola navrhne referent FO na Å¡kole ÃºspÄ›Å¡nÃ© Å™eÅ¡itele k postupu do druhÃ©ho kola a odeÅ¡le opravenÃ© Ãºlohy vÅ¡ech, tj. i neÃºspÄ›Å¡nÃ½ch Å™eÅ¡itelÅ¯ spoleÄnÄ› s nÃ¡vrhem postupujÃ­cÃ­ch pÅ™Ã­sluÅ¡nÃ© okresnÃ­ komisi fyzikÃ¡lnÃ­ olympiÃ¡dy (OKFO). O zaÅ™azenÃ­ do druhÃ©ho kola soutÄ›Å¾e rozhodne OKFO po kontrole opravenÃ½ch Ãºloh a sjednocenÃ­ klasifikace. Vzhledem k organizaci soutÄ›Å¾e je vhodnÃ©, aby si OKFO dal pÅ™edloÅ¾it prvnÃ­ ÄÃ¡st opravenÃ½ch Å™eÅ¡enÃ­ jiÅ¾ v prosinci. PoÄet ÃºÄastnÃ­kÅ¯ druhÃ©ho kola mÅ¯Å¾e OKFO omezit podle dosaÅ¾enÃ©ho bodovÃ©ho hodnocenÃ­. Za ÃºspÄ›Å¡nÃ©ho Å™eÅ¡itele prvnÃ­ho kola je povaÅ¾ovÃ¡n soutÄ›Å¾Ã­cÃ­, kterÃ½ byl hodnocen v pÄ›ti ÃºlohÃ¡ch alespoÅˆ 5 body, pÅ™iÄemÅ¾ Å™eÅ¡il experimentÃ¡lnÃ­ Ãºlohy (tÅ™eba i neÃºspÄ›Å¡nÄ›).
+PozvÃ¡nÃ­ do druhÃ©ho kola soutÄ›Å¾e dostane pozvanÃ½ ÃºspÄ›Å¡nÃ½ Å™eÅ¡itel FO od pÅ™Ã­sluÅ¡nÃ©ho OKFO prostÅ™ednictvÃ­m Å¡koly.
 
 </p>
 <p>
-<strong>Druhé (okresní) kolo</strong> se uskuteèní v místì urèeném OKFO v termínu, vyhlášeném ÚKFO, a to v celé republice v tou dobu
+<strong>DruhÃ© (okresnÃ­) kolo</strong> se uskuteÄnÃ­ v mÃ­stÄ› urÄenÃ©m OKFO v termÃ­nu, vyhlÃ¡Å¡enÃ©m ÃšKFO, a to v celÃ© republice v touÅ¾ dobu
 <strong><?php echo $termin2 ?></strong>.
-Ve druhém kole je úkolem øešitele vyøešit ètyøi teoretické úlohy, které zajišuje jednotnì pro celou republiku ÚKFO. Úspìšnım øešitelem druhého kola, kde se také boduje, je úèastník, kterı vyøešil alespoò dvì úlohy s bodovım hodnocením alespoò 5 bodù a dosáhl pøitom  nejmenšího  poètu 14 bodù. OKFO opraví øešení úloh nejlépe ještì v den soutìe a sestaví poøadí úspìšnıch øešitelù. Všichni úspìšní øešitelé dostanou pochvalné uznání, nejlepší øešitelé  budou odmìnìni podle smìrnic MŠMT.
+Ve druhÃ©m kole je Ãºkolem Å™eÅ¡itele vyÅ™eÅ¡it ÄtyÅ™i teoretickÃ© Ãºlohy, kterÃ© zajiÅ¡Å¥uje jednotnÄ› pro celou republiku ÃšKFO. ÃšspÄ›Å¡nÃ½m Å™eÅ¡itelem druhÃ©ho kola, kde se takÃ© boduje, je ÃºÄastnÃ­k, kterÃ½ vyÅ™eÅ¡il alespoÅˆ dvÄ› Ãºlohy s bodovÃ½m hodnocenÃ­m alespoÅˆ 5 bodÅ¯ a dosÃ¡hl pÅ™itom  nejmenÅ¡Ã­ho  poÄtu 14 bodÅ¯. OKFO opravÃ­ Å™eÅ¡enÃ­ Ãºloh nejlÃ©pe jeÅ¡tÄ› v den soutÄ›Å¾e a sestavÃ­ poÅ™adÃ­ ÃºspÄ›Å¡nÃ½ch Å™eÅ¡itelÅ¯. VÅ¡ichni ÃºspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© dostanou pochvalnÃ© uznÃ¡nÃ­, nejlepÅ¡Ã­ Å™eÅ¡itelÃ©  budou odmÄ›nÄ›ni podle smÄ›rnic MÅ MT.
 
 </p>
 <p>
-V&nbsp;termínu
+V&nbsp;termÃ­nu
 <strong><?php echo $termin3 ?></strong>
-budou uspoøádána <strong>tøetí (krajská) kola</strong> soutìe v kategorii E, a to ve vybranıch místech. Do tøetího kola jsou vybráni nejlepší úèastníci druhého kola podle organizaèního øádu  fyzikální olympiády; o jejich  zaøazení rozhoduje poøadatel tøetího kola. áci jsou pozváni prostøednictvím školy. Všichni úspìšní øešitelé tøetího kola obdrí pochvalná uznání a nejlepší soutìící budou odmìnìni.
+budou uspoÅ™Ã¡dÃ¡na <strong>tÅ™etÃ­ (krajskÃ¡) kola</strong> soutÄ›Å¾e v kategorii E, a to ve vybranÃ½ch mÃ­stech. Do tÅ™etÃ­ho kola jsou vybrÃ¡ni nejlepÅ¡Ã­ ÃºÄastnÃ­ci druhÃ©ho kola podle organizaÄnÃ­ho Å™Ã¡du  fyzikÃ¡lnÃ­ olympiÃ¡dy; o jejich  zaÅ™azenÃ­ rozhoduje poÅ™adatel tÅ™etÃ­ho kola. Å½Ã¡ci jsou pozvÃ¡ni prostÅ™ednictvÃ­m Å¡koly. VÅ¡ichni ÃºspÄ›Å¡nÃ­ Å™eÅ¡itelÃ© tÅ™etÃ­ho kola obdrÅ¾Ã­ pochvalnÃ¡ uznÃ¡nÃ­ a nejlepÅ¡Ã­ soutÄ›Å¾Ã­cÃ­ budou odmÄ›nÄ›ni.
 
 </p>
 <p>
-Okresní èi krajské kolo probíhá v celé Èeské republice v tı den a soutì zaèíná zpravidla v&nbsp;9&nbsp;h (podle moností dojezdnosti soutìících a pedagogického dozoru).
-Po sdìlení nutnıch informací soutìícím a krátkım prostudováním textu zadanıch úloh soutìícími, zodpovìzení dotazù, je jsou spojeny s vysvìtlením nìkterıch nejasností, se potom vyhlásí zaèátek soutìe a pro 4&nbsp;úlohy se stanoví 4&nbsp;h èistého èasu.
-Soutìící mùe vyøešit úlohy v kratší dobì, ale tyto 4&nbsp;h jsou limitní; po jejich uplynutí musí soutìící své øešení odevzdat dozorujícímu èlenu okresní, popø. krajské komise.
+OkresnÃ­ Äi krajskÃ© kolo probÃ­hÃ¡ v celÃ© ÄŒeskÃ© republice v tÃ½Å¾ den a soutÄ›Å¾ zaÄÃ­nÃ¡ zpravidla v&nbsp;9&nbsp;h (podle moÅ¾nostÃ­ dojezdnosti soutÄ›Å¾Ã­cÃ­ch a pedagogickÃ©ho dozoru).
+Po sdÄ›lenÃ­ nutnÃ½ch informacÃ­ soutÄ›Å¾Ã­cÃ­m a krÃ¡tkÃ½m prostudovÃ¡nÃ­m textu zadanÃ½ch Ãºloh soutÄ›Å¾Ã­cÃ­mi, zodpovÄ›zenÃ­ dotazÅ¯, jeÅ¾ jsou spojeny s vysvÄ›tlenÃ­m nÄ›kterÃ½ch nejasnostÃ­, se potom vyhlÃ¡sÃ­ zaÄÃ¡tek soutÄ›Å¾e a pro 4&nbsp;Ãºlohy se stanovÃ­ 4&nbsp;h ÄistÃ©ho Äasu.
+SoutÄ›Å¾Ã­cÃ­ mÅ¯Å¾e vyÅ™eÅ¡it Ãºlohy v kratÅ¡Ã­ dobÄ›, ale tyto 4&nbsp;h jsou limitnÃ­; po jejich uplynutÃ­ musÃ­ soutÄ›Å¾Ã­cÃ­ svÃ© Å™eÅ¡enÃ­ odevzdat dozorujÃ­cÃ­mu Älenu okresnÃ­, popÅ™. krajskÃ© komise.
 </p>
 <p>
-Po ukonèení kadé soutìe jsou soutìící seznámeni se správnım øešením úloh, je jsou zasílána na kadou školu ÚKFO. Doporuèujeme, aby vıbory FO zajistily opravu úloh co nejdøíve, nejlépe ještì v den soutìe, a velmi brzy informovaly úèastníky soutìe i jejich školy a uèitele fyziky o dosaenıch vısledcích.
+Po ukonÄenÃ­ kaÅ¾dÃ© soutÄ›Å¾e jsou soutÄ›Å¾Ã­cÃ­ seznÃ¡meni se sprÃ¡vnÃ½m Å™eÅ¡enÃ­m Ãºloh, jeÅ¾ jsou zasÃ­lÃ¡na na kaÅ¾dou Å¡kolu ÃšKFO. DoporuÄujeme, aby vÃ½bory FO zajistily opravu Ãºloh co nejdÅ™Ã­ve, nejlÃ©pe jeÅ¡tÄ› v den soutÄ›Å¾e, a velmi brzy informovaly ÃºÄastnÃ­ky soutÄ›Å¾e i jejich Å¡koly a uÄitele fyziky o dosaÅ¾enÃ½ch vÃ½sledcÃ­ch.
 </p>
 <?php } ?>
 
 <?php if ($kdo == "student") { ?>
-<h3>Pokyny pro soutìící</h3>
+<h3>Pokyny pro soutÄ›Å¾Ã­cÃ­</h3>
 <p>
-Øešení pište úhlednì a èitelnì na <strong>listy formátu A4</strong>. Kadou úlohu vypracujte na
-<strong>samostatnı papír</strong>, pomocné obrázky a náèrty zhotovte tukou. Jestlie pouíváte
-kalkulaèku, nezapomeòte na správné zaokrouhlení vısledkù.
-Na první list øešení kadé úlohy napište záhlaví podle následujícího vzoru:
+Å˜eÅ¡enÃ­ piÅ¡te ÃºhlednÄ› a ÄitelnÄ› na <strong>listy formÃ¡tu A4</strong>. KaÅ¾dou Ãºlohu vypracujte na
+<strong>samostatnÃ½ papÃ­r</strong>, pomocnÃ© obrÃ¡zky a nÃ¡Ärty zhotovte tuÅ¾kou. JestliÅ¾e pouÅ¾Ã­vÃ¡te
+kalkulaÄku, nezapomeÅˆte na sprÃ¡vnÃ© zaokrouhlenÃ­ vÃ½sledkÅ¯.
+Na prvnÃ­ list Å™eÅ¡enÃ­ kaÅ¾dÃ© Ãºlohy napiÅ¡te zÃ¡hlavÃ­ podle nÃ¡sledujÃ­cÃ­ho vzoru:
 </p>
 <table width="100%" style="border : 0px none; background-color : transparent;">
 <tr>
-	<td style="border : 0px none">Jméno a pøíjmení:</td>
+	<td style="border : 0px none">JmÃ©no a pÅ™Ã­jmenÃ­:</td>
 	<td style="border : 0px none">Kategorie E, F</td>
 </tr>
 <tr>
-	<td style="border : 0px none">Tøída:</td>
-	<td style="border : 0px none">Školní rok:</td>
+	<td style="border : 0px none">TÅ™Ã­da:</td>
+	<td style="border : 0px none">Å kolnÃ­ rok:</td>
 </tr>
 <tr>
-	<td style="border : 0px none">Škola:</td>
+	<td style="border : 0px none">Å kola:</td>
 	<td style="border : 0px none">I. kolo</td>
 </tr>
 <tr>
-	<td style="border : 0px none">Vyuèíjící fyziky:</td>
+	<td style="border : 0px none">VyuÄÃ­jÃ­cÃ­ fyziky:</td>
 	<td style="border : 0px none">Posudek:</td>
 <tr>
 	<td style="border : 0px none">Okres:</td>
 	<td style="border : 0px none">Posuzovali:</td>
 <tr>
-	<td colspan="2" style="border : 0px none">Úloha è.:</td>
+	<td colspan="2" style="border : 0px none">Ãšloha Ä.:</td>
 </tr>
 </table>
 
 <p>
-Následuje struènı záznam textu úlohy, vysvìtlete oznaèení velièin. Zapište podrobnı protokol o øešení úlohy, doplnìnı o pøíslušné obrázky a náèrtky. Nezapomeòte, e z protokolu musí  bıt jasnı myšlenkovı postup pøi øešení úlohy.
+NÃ¡sleduje struÄnÃ½ zÃ¡znam textu Ãºlohy, vysvÄ›tlete oznaÄenÃ­ veliÄin. ZapiÅ¡te podrobnÃ½ protokol o Å™eÅ¡enÃ­ Ãºlohy, doplnÄ›nÃ½ o pÅ™Ã­sluÅ¡nÃ© obrÃ¡zky a nÃ¡Ärtky. NezapomeÅˆte, Å¾e z protokolu musÃ­  bÃ½t jasnÃ½ myÅ¡lenkovÃ½ postup pÅ™i Å™eÅ¡enÃ­ Ãºlohy.
 </p>
 <p>
-Na kadı další list napište své jméno, pøíjmení, školu a èíslo øešené úlohy, stránku protokolu o øešení. Texty úloh neopisujte, vysvìtlete však vámi pouité oznaèení a udìlejte struènı zápis a legendu. Pouívejte náèrtky. Øešení úloh doprovázejte vdy takovım slovním vıkladem, aby kadı, kdo si vaše øešení pøeète, porozumìl vašemu postupu øešení. Pøipomínáme ještì jednou, e øešení úlohy bez vıkladu je hodnoceno jako nevyhovující. K oznaèení velièin pouívejte obvyklé znaèky, které uíváte ve vıuce fyziky. Nauète se, e podat dobrou zprávu o øešení problému je stejnì tak dùleité jako jeho vyøešení. Bude se vám to hodit v dalším studiu.
+Na kaÅ¾dÃ½ dalÅ¡Ã­ list napiÅ¡te svÃ© jmÃ©no, pÅ™Ã­jmenÃ­, Å¡kolu a ÄÃ­slo Å™eÅ¡enÃ© Ãºlohy, strÃ¡nku protokolu o Å™eÅ¡enÃ­. Texty Ãºloh neopisujte, vysvÄ›tlete vÅ¡ak vÃ¡mi pouÅ¾itÃ© oznaÄenÃ­ a udÄ›lejte struÄnÃ½ zÃ¡pis a legendu. PouÅ¾Ã­vejte nÃ¡Ärtky. Å˜eÅ¡enÃ­ Ãºloh doprovÃ¡zejte vÅ¾dy takovÃ½m slovnÃ­m vÃ½kladem, aby kaÅ¾dÃ½, kdo si vaÅ¡e Å™eÅ¡enÃ­ pÅ™eÄte, porozumÄ›l vaÅ¡emu postupu Å™eÅ¡enÃ­. PÅ™ipomÃ­nÃ¡me jeÅ¡tÄ› jednou, Å¾e Å™eÅ¡enÃ­ Ãºlohy bez vÃ½kladu je hodnoceno jako nevyhovujÃ­cÃ­. K oznaÄenÃ­ veliÄin pouÅ¾Ã­vejte obvyklÃ© znaÄky, kterÃ© uÅ¾Ã­vÃ¡te ve vÃ½uce fyziky. NauÄte se, Å¾e podat dobrou zprÃ¡vu o Å™eÅ¡enÃ­ problÃ©mu je stejnÄ› tak dÅ¯leÅ¾itÃ© jako jeho vyÅ™eÅ¡enÃ­. Bude se vÃ¡m to hodit v dalÅ¡Ã­m studiu.
 </p>
 <p>
-Úlohy øešte pokud mono nejprve obecnì, potom proveïte èíselné øešení. Nezapomínejte, e fyzikální velièiny jsou vdy doprovázeny jednotkami, e ve fyzice pracujeme èasto s nepøesnımi èísly a vısledek je tøeba zaokrouhlovat s ohledem na poèet platnıch míst danıch velièin. U zlomkù pište vodorovnou zlomkovou èáru. Pøi øešení úloh se opírejte pøedevším o uèebnice fyziky. Váš uèitel fyziky vám doporuèí i jiné vhodné studijní  pomùcky. K úspìšnému èíselnému vıpoètu pouívejte kalkulátory; vısledek  však nezapomeòte zaokrouhlit na rozumnı poèet platnıch míst. Nauète se odhadovat vısledek, co vám pomùe pøi kontrole vašich vıpoètù.
+Ãšlohy Å™eÅ¡te pokud moÅ¾no nejprve obecnÄ›, potom proveÄte ÄÃ­selnÃ© Å™eÅ¡enÃ­. NezapomÃ­nejte, Å¾e fyzikÃ¡lnÃ­ veliÄiny jsou vÅ¾dy doprovÃ¡zeny jednotkami, Å¾e ve fyzice pracujeme Äasto s nepÅ™esnÃ½mi ÄÃ­sly a vÃ½sledek je tÅ™eba zaokrouhlovat s ohledem na poÄet platnÃ½ch mÃ­st danÃ½ch veliÄin. U zlomkÅ¯ piÅ¡te vodorovnou zlomkovou ÄÃ¡ru. PÅ™i Å™eÅ¡enÃ­ Ãºloh se opÃ­rejte pÅ™edevÅ¡Ã­m o uÄebnice fyziky. VÃ¡Å¡ uÄitel fyziky vÃ¡m doporuÄÃ­ i jinÃ© vhodnÃ© studijnÃ­  pomÅ¯cky. K ÃºspÄ›Å¡nÃ©mu ÄÃ­selnÃ©mu vÃ½poÄtu pouÅ¾Ã­vejte kalkulÃ¡tory; vÃ½sledek  vÅ¡ak nezapomeÅˆte zaokrouhlit na rozumnÃ½ poÄet platnÃ½ch mÃ­st. NauÄte se odhadovat vÃ½sledek, coÅ¾ vÃ¡m pomÅ¯Å¾e pÅ™i kontrole vaÅ¡ich vÃ½poÄtÅ¯.
 </p>
 <?php } ?>
 
-<h3><a id="ulohy">Úlohy</a></h3>
+<h3><a id="ulohy">Ãšlohy</a></h3>
 
 <?php if ($kdo == "student") : ?>
 <p>
-Pro obì kategorie E a F je v&nbsp;domácím kole zadáno spoleènì více úloh, z nich váš uèitel fyziky vybere a vyznaèí sedm úloh pro kadou kategorii podle uèiva, které bude na vaší škole probráno do konce bøezna.
+Pro obÄ› kategorie E a F je v&nbsp;domÃ¡cÃ­m kole zadÃ¡no spoleÄnÄ› vÃ­ce Ãºloh, z nichÅ¾ vÃ¡Å¡ uÄitel fyziky vybere a vyznaÄÃ­ sedm Ãºloh pro kaÅ¾dou kategorii podle uÄiva, kterÃ© bude na vaÅ¡Ã­ Å¡kole probrÃ¡no do konce bÅ™ezna.
 </p>
 <?php elseif ($kdo == "ucitel") : ?>
 <p>
-Protoe existuje pøíliš velká rùznorodost v uèebních programech podle schválenıch projektù, rozhodla ÚKFO zadat pro tyto dvì kategorie spoleènì více úloh, z nich vyberete a vyznaèíte sedm úloh pro kadou kategorii podle uèiva, které budete ve škole probírat do konce bøezna.
+ProtoÅ¾e existuje pÅ™Ã­liÅ¡ velkÃ¡ rÅ¯znorodost v uÄebnÃ­ch programech podle schvÃ¡lenÃ½ch projektÅ¯, rozhodla ÃšKFO zadat pro tyto dvÄ› kategorie spoleÄnÄ› vÃ­ce Ãºloh, z nichÅ¾ vyberete a vyznaÄÃ­te sedm Ãºloh pro kaÅ¾dou kategorii podle uÄiva, kterÃ© budete ve Å¡kole probÃ­rat do konce bÅ™ezna.
 </p>
 <?php elseif ($kdo == "organizator") : ?>
 <p>
-Protoe existuje pøíliš velká rùznorodost v uèebních programech podle schválenıch projektù, rozhodla ÚKFO ve svém bøeznovém zasedání zadat pro tyto dvì kategorie spoleènì více úloh, z nich uèitel fyziky vybere a vyznaèí sedm úloh pro kadou kategorii podle uèiva, které bude ve škole probráno do konce bøezna.
+ProtoÅ¾e existuje pÅ™Ã­liÅ¡ velkÃ¡ rÅ¯znorodost v uÄebnÃ­ch programech podle schvÃ¡lenÃ½ch projektÅ¯, rozhodla ÃšKFO ve svÃ©m bÅ™eznovÃ©m zasedÃ¡nÃ­ zadat pro tyto dvÄ› kategorie spoleÄnÄ› vÃ­ce Ãºloh, z nichÅ¾ uÄitel fyziky vybere a vyznaÄÃ­ sedm Ãºloh pro kaÅ¾dou kategorii podle uÄiva, kterÃ© bude ve Å¡kole probrÃ¡no do konce bÅ™ezna.
 </p>
 <?php endif; ?>
 
 <p>
-Zadání<!-- a øešení--> všech úloh domácího<!-- a&nbsp;okresního--> kola si mùete stáhnout ve formátu <code>pdf</code>.
+ZadÃ¡nÃ­<!-- a Å™eÅ¡enÃ­--> vÅ¡ech Ãºloh domÃ¡cÃ­ho<!-- a&nbsp;okresnÃ­ho--> kola si mÅ¯Å¾ete stÃ¡hnout ve formÃ¡tu <code>pdf</code>.
 </p>
 
 <?php if ($kdo != "student") : ?>
 <p>
-Dále si mùete stáhnout <em>vısledky øešení úloh domácího kola jako návody k&nbsp;opravì a ke kontrole vısledkù</em> a&nbsp;hodnocení úloh vašich ákù.
-Øešení úloh však musí bıt doprovázeno slovním komentáøem, z&nbsp;nìho musí bıt zcela jasnı myšlenkovı postup, kterı byl pøi øešení pouit.
+DÃ¡le si mÅ¯Å¾ete stÃ¡hnout <em>vÃ½sledky Å™eÅ¡enÃ­ Ãºloh domÃ¡cÃ­ho kola jako nÃ¡vody k&nbsp;opravÄ› a ke kontrole vÃ½sledkÅ¯</em> a&nbsp;hodnocenÃ­ Ãºloh vaÅ¡ich Å¾Ã¡kÅ¯.
+Å˜eÅ¡enÃ­ Ãºloh vÅ¡ak musÃ­ bÃ½t doprovÃ¡zeno slovnÃ­m komentÃ¡Å™em, z&nbsp;nÄ›hoÅ¾ musÃ­ bÃ½t zcela jasnÃ½ myÅ¡lenkovÃ½ postup, kterÃ½ byl pÅ™i Å™eÅ¡enÃ­ pouÅ¾it.
 </p>
 <?php endif; ?>
 
@@ -209,38 +209,38 @@ Dále si mùete stáhnout <em>vısledky øešení úloh domácího kola jako návody k&nbs
 <table class="centered zadani">
 <tr>
     <th scope="col">Kolo</th>
-    <th scope="col" style="width: 25%">Zadání</th>
-    <th scope="col" style="width: 25%">Zadání ilustrované barevnımi obrázky</th>
-    <!--th scope="col" style="width: 25%">Vısledky úloh</th-->
-    <th scope="col" style="width: 25%">Øešení</th>
+    <th scope="col" style="width: 25%">ZadÃ¡nÃ­</th>
+    <th scope="col" style="width: 25%">ZadÃ¡nÃ­ ilustrovanÃ© barevnÃ½mi obrÃ¡zky</th>
+    <!--th scope="col" style="width: 25%">VÃ½sledky Ãºloh</th-->
+    <th scope="col" style="width: 25%">Å˜eÅ¡enÃ­</th>
 </tr>
 <tr>
-    <th scope="row">Domácí</th>
-    <!--td colspan="2">Zveøejníme v nejbliší dobì</td-->
+    <th scope="row">DomÃ¡cÃ­</th>
+    <!--td colspan="2">ZveÅ™ejnÃ­me v nejbliÅ¾Å¡Ã­ dobÄ›</td-->
     <td>
         <a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_zi.pdf" title="Zadání úloh domácího kola ve formátu pdf s obrázky"><img border="0" alt="PDF s obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_zi.pdf" title="ZadÃ¡nÃ­ Ãºloh domÃ¡cÃ­ho kola ve formÃ¡tu pdf s obrÃ¡zky"><img border="0" alt="PDF s obrÃ¡zky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
     </td>
     <!--td>
         <?php if ($kdo != "student") : ?>
-        Zveøejníme na zaèátku roku 2013
+        ZveÅ™ejnÃ­me na zaÄÃ¡tku roku 2013
         <a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef1_v.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
         <? else: ?>
-        Zveøejníme po termínu odevzdání
+        ZveÅ™ejnÃ­me po termÃ­nu odevzdÃ¡nÃ­
         <? endif; ?>
     </td-->
     <td>
         <?php if (true) : ?>
         <a href="<?php echo ROOT_WWW ?>archiv/54/fo54efg1_r.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
         <? else: ?>
-        Zveøejníme po termínu odevzdání
+        ZveÅ™ejnÃ­me po termÃ­nu odevzdÃ¡nÃ­
         <? endif; ?>
     </td>
 </tr>
 <!--tr>
-    <th scope="row">Okresní</th>
+    <th scope="row">OkresnÃ­</th>
     <td>
         <a href="<?php echo ROOT_WWW ?>archiv/54/fo54ef2_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
     </td>
@@ -251,7 +251,7 @@ Dále si mùete stáhnout <em>vısledky øešení úloh domácího kola jako návody k&nbs
     </td>
 </tr>
 <tr>
-    <th scope="row">Krajské</th>
+    <th scope="row">KrajskÃ©</th>
     <td>
         <a href="<?php echo ROOT_WWW ?>archiv/54/fo54e3_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
     </td>
@@ -265,100 +265,100 @@ Dále si mùete stáhnout <em>vısledky øešení úloh domácího kola jako návody k&nbs
 </div>
 
 <p>
-Pro vyšší kola soutìe (okresní, krajské kolo) jsme stanovili nìkterá závazná témata.
+Pro vyÅ¡Å¡Ã­ kola soutÄ›Å¾e (okresnÃ­, krajskÃ© kolo) jsme stanovili nÄ›kterÃ¡ zÃ¡vaznÃ¡ tÃ©mata.
 </p>
 <dl>
 	<dt>Kategorie F:</dt>
-		<dd>Mechanika (pohyby,  síly, práce, vıkon, energie)</dd>
+		<dd>Mechanika (pohyby,  sÃ­ly, prÃ¡ce, vÃ½kon, energie)</dd>
 		<dd>Hydromechanika (statika a dynamika kapalin, aerostatika)</dd>
-		<dd>Termika (vımìna tepla, teplo a práce, zmìny skupenství)</dd>
-		<dd>Optika (jen paprsková optika &ndash; geometrické øešení)</dd>
-	<dt>Kategorie E: (k vıše uvedenım závaznım tématùm pøipojíme)</dt>
-		<dd>Elektøina (kondenzátory, stejnosmìrnı proud, obvody, úèinky proudu)</dd>
+		<dd>Termika (vÃ½mÄ›na tepla, teplo a prÃ¡ce, zmÄ›ny skupenstvÃ­)</dd>
+		<dd>Optika (jen paprskovÃ¡ optika &ndash; geometrickÃ© Å™eÅ¡enÃ­)</dd>
+	<dt>Kategorie E: (k vÃ½Å¡e uvedenÃ½m zÃ¡vaznÃ½m tÃ©matÅ¯m pÅ™ipojÃ­me)</dt>
+		<dd>ElektÅ™ina (kondenzÃ¡tory, stejnosmÄ›rnÃ½ proud, obvody, ÃºÄinky proudu)</dd>
 </dl>
 
 
 <?php if ($kdo == "student") : ?>
 <p>
-Pøejeme vám, abyste pøi øešení úloh fyzikální olympiády strávili pìkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrı vztah k fyzice. Fyzika je teoretickım  základem techniky, která je pro souèasnou spoleènost zcela nepostradatelná. Fyzika je však i souèástí lidské kultury, a proto by se mìl s jejími vısledky seznámit kadı èlovìk a najít k ní kladnı vztah.
+PÅ™ejeme vÃ¡m, abyste pÅ™i Å™eÅ¡enÃ­ Ãºloh fyzikÃ¡lnÃ­ olympiÃ¡dy strÃ¡vili pÄ›knÃ© chvÃ­le, aby vÃ¡s Ãºlohy zaujaly, a tÃ­m aby se prohloubil vÃ¡Å¡ dobrÃ½ vztah k fyzice. Fyzika je teoretickÃ½m  zÃ¡kladem techniky, kterÃ¡ je pro souÄasnou spoleÄnost zcela nepostradatelnÃ¡. Fyzika je vÅ¡ak i souÄÃ¡stÃ­ lidskÃ© kultury, a proto by se mÄ›l s jejÃ­mi vÃ½sledky seznÃ¡mit kaÅ¾dÃ½ ÄlovÄ›k a najÃ­t k nÃ­ kladnÃ½ vztah.
 </p>
 <?php elseif ($kdo == "ucitel") : ?>
 <p>
-Fyzika je teoretickım  základem techniky, která je pro souèasnou spoleènost zcela nepostradatelná. Fyzika je však i souèástí lidské kultury, a proto by se mìl s jejími vısledky seznámit kadı èlovìk a najít k ní kladnı vztah. Proto ádáme vyuèující fyziky, aby se v <?php echo AKTUALNI_ROCNIK ?>. roèníku FO tato soutì rozšíøila na všechny základní školy v Èeské republice.
+Fyzika je teoretickÃ½m  zÃ¡kladem techniky, kterÃ¡ je pro souÄasnou spoleÄnost zcela nepostradatelnÃ¡. Fyzika je vÅ¡ak i souÄÃ¡stÃ­ lidskÃ© kultury, a proto by se mÄ›l s jejÃ­mi vÃ½sledky seznÃ¡mit kaÅ¾dÃ½ ÄlovÄ›k a najÃ­t k nÃ­ kladnÃ½ vztah. Proto Å¾Ã¡dÃ¡me vyuÄujÃ­cÃ­ fyziky, aby se v <?php echo AKTUALNI_ROCNIK ?>. roÄnÃ­ku FO tato soutÄ›Å¾ rozÅ¡Ã­Å™ila na vÅ¡echny zÃ¡kladnÃ­ Å¡koly v ÄŒeskÃ© republice.
 </p>
 <?php endif; ?>
 
 
 <?php if ($kdo == "student") { ?>
 
-<h3>Nìkolik rad, jak øešit fyzikální úlohy</h3>
+<h3>NÄ›kolik rad, jak Å™eÅ¡it fyzikÃ¡lnÃ­ Ãºlohy</h3>
 
 <ol>
-	<li>Peèlivì
-	si prostuduj text úlohy a&nbsp;sna se pochopit všechny jeho èásti.
-	Velmi dùleité je pochopit, o jakém problému se v&nbsp;úloze jedná.</li>
-	<li>Oznaè
-	fyzikální velièiny tak, jak jsi zvyklá(ı) z&nbsp;vıuky fyziky, hodnoty
-	si pøeveï do mezinárodní soustavy jednotek.</li>
-	<li>Nezapomeò
-	si nakreslit situaèní náèrtek, pomùe ti orientovat se v&nbsp;problému.</li>
-	<li>Proveï
-	fyzikální analızu situace&nbsp;&ndash; vytvoø si zjednodušující modely
-	a&nbsp;vyberte vztahy, o&nbsp;nich pøedpokláš, e je pouiješ pøi øešení.
-	Vytvoøte si plán øešení.</li>
-	<li>Úlohu
-	øeš nejprve obecnì, tj. nedosazuj za písmena dané hodnoty&nbsp;&ndash;
-	pomùe ti to èasto dostat se rychleji k&nbsp;cíli a&nbsp;øešíš souèasnì
-	všechny podobné úlohy. Tak dostaneš závìreènı vztah, kde na levé
-	stranì máš hledanou velièinu a&nbsp;napravo máš velièiny, jejich
-	hodnoty znáš z&nbsp;textu úlohy nebo je umíš zjistit.</li>
-	<li>Dosaï
-	do vztahu místo hodnot velièin pouze jejich jednotky a&nbsp;proveï tak
-	tzv. jednotkovou kontrolu. Vyjde-li ti správná jednotka vısledku,
-	máš velkou nadìji, e danı vztah je správnı.</li>
-	<li>Dosaï
-	hodnoty velièin a&nbsp;známé konstanty, pouij kalkulátor a&nbsp;sna se
-	pokud mono ekonomicky dostat k&nbsp;hodnotì vısledku. Nezapomeò
-	na stanovení hledaného vısledku s&nbsp;pøijatelnım poètem platnıch
-	èíslic &ndash; neopisuj tedy vısledek z&nbsp;kalkulátoru.</li>
+	<li>PeÄlivÄ›
+	si prostuduj text Ãºlohy a&nbsp;snaÅ¾ se pochopit vÅ¡echny jeho ÄÃ¡sti.
+	Velmi dÅ¯leÅ¾itÃ© je pochopit, o jakÃ©m problÃ©mu se v&nbsp;Ãºloze jednÃ¡.</li>
+	<li>OznaÄ
+	fyzikÃ¡lnÃ­ veliÄiny tak, jak jsi zvyklÃ¡(Ã½) z&nbsp;vÃ½uky fyziky, hodnoty
+	si pÅ™eveÄ do mezinÃ¡rodnÃ­ soustavy jednotek.</li>
+	<li>NezapomeÅˆ
+	si nakreslit situaÄnÃ­ nÃ¡Ärtek, pomÅ¯Å¾e ti orientovat se v&nbsp;problÃ©mu.</li>
+	<li>ProveÄ
+	fyzikÃ¡lnÃ­ analÃ½zu situace&nbsp;&ndash; vytvoÅ™ si zjednoduÅ¡ujÃ­cÃ­ modely
+	a&nbsp;vyberte vztahy, o&nbsp;nichÅ¾ pÅ™edpoklÃ¡Å¡, Å¾e je pouÅ¾ijeÅ¡ pÅ™i Å™eÅ¡enÃ­.
+	VytvoÅ™te si plÃ¡n Å™eÅ¡enÃ­.</li>
+	<li>Ãšlohu
+	Å™eÅ¡ nejprve obecnÄ›, tj. nedosazuj za pÃ­smena danÃ© hodnoty&nbsp;&ndash;
+	pomÅ¯Å¾e ti to Äasto dostat se rychleji k&nbsp;cÃ­li a&nbsp;Å™eÅ¡Ã­Å¡ souÄasnÄ›
+	vÅ¡echny podobnÃ© Ãºlohy. Tak dostaneÅ¡ zÃ¡vÄ›reÄnÃ½ vztah, kde na levÃ©
+	stranÄ› mÃ¡Å¡ hledanou veliÄinu a&nbsp;napravo mÃ¡Å¡ veliÄiny, jejichÅ¾
+	hodnoty znÃ¡Å¡ z&nbsp;textu Ãºlohy nebo je umÃ­Å¡ zjistit.</li>
+	<li>DosaÄ
+	do vztahu mÃ­sto hodnot veliÄin pouze jejich jednotky a&nbsp;proveÄ tak
+	tzv. jednotkovou kontrolu. Vyjde-li ti sprÃ¡vnÃ¡ jednotka vÃ½sledku,
+	mÃ¡Å¡ velkou nadÄ›ji, Å¾e danÃ½ vztah je sprÃ¡vnÃ½.</li>
+	<li>DosaÄ
+	hodnoty veliÄin a&nbsp;znÃ¡mÃ© konstanty, pouÅ¾ij kalkulÃ¡tor a&nbsp;snaÅ¾ se
+	pokud moÅ¾no ekonomicky dostat k&nbsp;hodnotÄ› vÃ½sledku. NezapomeÅˆ
+	na stanovenÃ­ hledanÃ©ho vÃ½sledku s&nbsp;pÅ™ijatelnÃ½m poÄtem platnÃ½ch
+	ÄÃ­slic &ndash; neopisuj tedy vÃ½sledek z&nbsp;kalkulÃ¡toru.</li>
 	<li>Pro
-	kontrolu pouij nìkteré z&nbsp;grafickıch metod (nìkdy to bude
-	jedinı zpùsob, jak se dostat k&nbsp;vısledku, zvláštì, není-li tvoje
-	matematická pøíprava dostateèná). Nìkdy musíš vykonat kontrolní
-	experiment. <!--V&nbsp;letošní soutìi jsou úlohy, které je tøeba øešit pomocí poèítaèe nebo uitím volnì staitelnıch programù na Internetu (<a href="http://www.mapy.cz" title="Internetovı vyhledáváè mapy.cz">www.mapy.cz</a>, <a href="http://earth.google.com" title="Google Earth">earth.google.com</a> aj.).--></li>
-	<li>Nezapomeò
-	provést diskusi øešení s&nbsp;ohledem na dané hodnoty velièin a&nbsp;vybranı model k&nbsp;øešení problému.</li>
-	<li>Stanov odpovìï na otázku danou textem problému. Nezapomeò, e nìkdy jde jen o&nbsp;èíselnou hodnotu hledané velièiny, jindy získanı vısledek je pøedpokladem pro vyslovení slovní odpovìdi. 
+	kontrolu pouÅ¾ij nÄ›kterÃ© z&nbsp;grafickÃ½ch metod (nÄ›kdy to bude
+	jedinÃ½ zpÅ¯sob, jak se dostat k&nbsp;vÃ½sledku, zvlÃ¡Å¡tÄ›, nenÃ­-li tvoje
+	matematickÃ¡ pÅ™Ã­prava dostateÄnÃ¡). NÄ›kdy musÃ­Å¡ vykonat kontrolnÃ­
+	experiment. <!--V&nbsp;letoÅ¡nÃ­ soutÄ›Å¾i jsou Ãºlohy, kterÃ© je tÅ™eba Å™eÅ¡it pomocÃ­ poÄÃ­taÄe nebo uÅ¾itÃ­m volnÄ› staÅ¾itelnÃ½ch programÅ¯ na Internetu (<a href="http://www.mapy.cz" title="InternetovÃ½ vyhledÃ¡vÃ¡Ä mapy.cz">www.mapy.cz</a>, <a href="http://earth.google.com" title="Google Earth">earth.google.com</a> aj.).--></li>
+	<li>NezapomeÅˆ
+	provÃ©st diskusi Å™eÅ¡enÃ­ s&nbsp;ohledem na danÃ© hodnoty veliÄin a&nbsp;vybranÃ½ model k&nbsp;Å™eÅ¡enÃ­ problÃ©mu.</li>
+	<li>Stanov odpovÄ›Ä na otÃ¡zku danou textem problÃ©mu. NezapomeÅˆ, Å¾e nÄ›kdy jde jen o&nbsp;ÄÃ­selnou hodnotu hledanÃ© veliÄiny, jindy zÃ­skanÃ½ vÃ½sledek je pÅ™edpokladem pro vyslovenÃ­ slovnÃ­ odpovÄ›di. 
 </li>
 </ol>
 <p>
-Zdají se ti úlohy obtíné? Nezapomeò na známou pravdu: èím více si nakreslíš obrázkù, èím více se v pokusech èi pøedstavách se pøiblííš situaci, o&nbsp;ní se v úloze jedná, èím více udìláš pøípravnıch èinností, tím snadnìji se potom dostaneš k vısledku. Další informace najdeš v&nbsp;uèebnicích a&nbsp; na Internetu.
+ZdajÃ­ se ti Ãºlohy obtÃ­Å¾nÃ©? NezapomeÅˆ na znÃ¡mou pravdu: ÄÃ­m vÃ­ce si nakreslÃ­Å¡ obrÃ¡zkÅ¯, ÄÃ­m vÃ­ce se v pokusech Äi pÅ™edstavÃ¡ch se pÅ™iblÃ­Å¾Ã­Å¡ situaci, o&nbsp;nÃ­Å¾ se v Ãºloze jednÃ¡, ÄÃ­m vÃ­ce udÄ›lÃ¡Å¡ pÅ™Ã­pravnÃ½ch ÄinnostÃ­, tÃ­m snadnÄ›ji se potom dostaneÅ¡ k vÃ½sledku. DalÅ¡Ã­ informace najdeÅ¡ v&nbsp;uÄebnicÃ­ch a&nbsp; na Internetu.
 </p>
 
-<h4>Upozornìní pro øešitele</h4>
+<h4>UpozornÄ›nÃ­ pro Å™eÅ¡itele</h4>
 
 <p>
-Fyzikální
-úlohy, zadávané vìtšinou ve školních hodinách fyziky, bıvají
-jednoduché a pøi jejich øešení èasto vystaèíte s&nbsp;pouitím
-logickıch úvah nebo jen s&nbsp;jedním vzorce, do nìho lze dosadit
-dané velièiny.
+FyzikÃ¡lnÃ­
+Ãºlohy, zadÃ¡vanÃ© vÄ›tÅ¡inou ve Å¡kolnÃ­ch hodinÃ¡ch fyziky, bÃ½vajÃ­
+jednoduchÃ© a pÅ™i jejich Å™eÅ¡enÃ­ Äasto vystaÄÃ­te s&nbsp;pouÅ¾itÃ­m
+logickÃ½ch Ãºvah nebo jen s&nbsp;jednÃ­m vzorce, do nÄ›hoÅ¾ lze dosadit
+danÃ© veliÄiny.
 </p>
 <p>
 Ve
-fyzikální olympiádì zaøazujeme vìtšinou úlohy problémové, u kterıch
-je tøeba nejprve formulovat podmínky, za nich je vùbec moné úlohu
-øešit, zjednodušit situaci, které se danı problém tıká a zváit
-dosaené vısledky s&nbsp;ohledem na vybrané vstupní údaje. Nìkteré
-úlohy vyadují spojit vìdomosti z&nbsp;nìkolika èástí fyziky, jiné
-mùeme øešit jenom tehdy, kdy uváíme informace z&nbsp;techniky nebo
-z&nbsp;dalších pøírodovìdnıch disciplín. Øešení kadé úlohy musí bıt
-tedy doplnìno dalším komentáøem, nelze jen vybrat vhodnı fyzikální
-vztah a &bdquo;zbavit&ldquo; se problému. Velmi dùleitım krokem je
-tzv. diskuse øešení, která dává do souvislosti nejen dané a doplnìné
-hodnoty velièin, ale také porovnává získané vısledky se skuteèností
-èi tabelárními hodnotami. V posledních letech zadáváme i takové úlohy,
-pro jejich øešení je vhodné otevøít vhodné internetové stránky.
+fyzikÃ¡lnÃ­ olympiÃ¡dÄ› zaÅ™azujeme vÄ›tÅ¡inou Ãºlohy problÃ©movÃ©, u kterÃ½ch
+je tÅ™eba nejprve formulovat podmÃ­nky, za nichÅ¾ je vÅ¯bec moÅ¾nÃ© Ãºlohu
+Å™eÅ¡it, zjednoduÅ¡it situaci, kterÃ© se danÃ½ problÃ©m tÃ½kÃ¡ a zvÃ¡Å¾it
+dosaÅ¾enÃ© vÃ½sledky s&nbsp;ohledem na vybranÃ© vstupnÃ­ Ãºdaje. NÄ›kterÃ©
+Ãºlohy vyÅ¾adujÃ­ spojit vÄ›domosti z&nbsp;nÄ›kolika ÄÃ¡stÃ­ fyziky, jinÃ©
+mÅ¯Å¾eme Å™eÅ¡it jenom tehdy, kdyÅ¾ uvÃ¡Å¾Ã­me informace z&nbsp;techniky nebo
+z&nbsp;dalÅ¡Ã­ch pÅ™Ã­rodovÄ›dnÃ½ch disciplÃ­n. Å˜eÅ¡enÃ­ kaÅ¾dÃ© Ãºlohy musÃ­ bÃ½t
+tedy doplnÄ›no dalÅ¡Ã­m komentÃ¡Å™em, nelze jen vybrat vhodnÃ½ fyzikÃ¡lnÃ­
+vztah a &bdquo;zbavit&ldquo; se problÃ©mu. Velmi dÅ¯leÅ¾itÃ½m krokem je
+tzv. diskuse Å™eÅ¡enÃ­, kterÃ¡ dÃ¡vÃ¡ do souvislosti nejen danÃ© a doplnÄ›nÃ©
+hodnoty veliÄin, ale takÃ© porovnÃ¡vÃ¡ zÃ­skanÃ© vÃ½sledky se skuteÄnostÃ­
+Äi tabelÃ¡rnÃ­mi hodnotami. V poslednÃ­ch letech zadÃ¡vÃ¡me i takovÃ© Ãºlohy,
+pro jejichÅ¾ Å™eÅ¡enÃ­ je vhodnÃ© otevÅ™Ã­t vhodnÃ© internetovÃ© strÃ¡nky.
 </p>
 
 <?php } ?>

@@ -10,7 +10,7 @@ $headers = "From: webmaster@fyzikalniolympiada.cz\r\n"
     ."Reply-To: webmaster@fyzikalniolympiada.cz\r\n"
 	."MIME-Version: 1.0\r\n"
     ."X-Mailer: PHP\r\n"
-	."Content-type: text/plain; charset=\"Windows-1250\"\r\n"
+	."Content-type: text/plain; charset=\"utf-8\"\r\n"
 	."Content-transfer-encoding: 8bit";
 $options = '';
 
@@ -50,7 +50,7 @@ if (isset($_GET['id']) && !isset($_POST['ok'])) {
 	$get_url = '';
 }
 
-/** update odesl·n */
+/** update odesl√°n */
 if (isset($_POST["ok"])) { 
 	$_POST['filename'] = $GLOBALS['mysql']->odstran_problemy($_POST["filename"]);
 	$_POST['filetitle'] = $GLOBALS['mysql']->odstran_problemy($_POST["filetitle"]);
@@ -59,13 +59,13 @@ if (isset($_POST["ok"])) {
 	$_POST['menutitle'] = $GLOBALS['mysql']->odstran_problemy($_POST["menutitle"]);
 	
 	if (md5($_POST["heslo"]) != $qw)  //kontrola hesla
-		$chyba .= "äpatnÈ heslo!<br />";
+		$chyba .= "≈†patn√© heslo!<br />";
 	
 	if ($_POST["filename"] == '') {
-		$chyba .= "ChybÌ n·zev souboru!<br />";
+		$chyba .= "Chyb√≠ n√°zev souboru!<br />";
 	}
 	if ($_POST["filetitle"] == '') {
-		$chyba .= "ChybÌ titulek souboru!<br />";
+		$chyba .= "Chyb√≠ titulek souboru!<br />";
 	}
 	if (array_key_exists('difference', $_POST)) {
 		$difference = 1;	
@@ -73,10 +73,10 @@ if (isset($_POST["ok"])) {
 		$difference = 0;
 	}
 	if ($_POST['za_id'] && empty($_POST["name"])) {
-		$chyba .= "ChybÌ n·zev poloûky v menu!<br />";
+		$chyba .= "Chyb√≠ n√°zev polo≈æky v menu!<br />";
 	}
 	if ($_POST['za_id'] && empty($_POST["menutitle"])) {
-		$chyba .= "ChybÌ popisek k poloûce v menu!<br />";
+		$chyba .= "Chyb√≠ popisek k polo≈æce v menu!<br />";
 	}
 
 	if ($chyba == "") {
@@ -97,9 +97,9 @@ if (isset($_POST["ok"])) {
 		if (isset($_GET['id']) && !array_key_exists('as_new', $_POST)) {
 			$query .= 'WHERE id="' . mysql_escape_string($_GET['id']) . '"';
 		}
-		if($result = $GLOBALS['mysql']->query($query) && $_POST['za_id']) {//vloûenÌ do DB probÏhlo v po¯·dku a chceme vytvo¯it poloûku menu
+		if($result = $GLOBALS['mysql']->query($query) && $_POST['za_id']) {//vlo≈æen√≠ do DB probƒõhlo v po≈ô√°dku a chceme vytvo≈ôit polo≈æku menu
 			$file_id = mysql_insert_id($GLOBALS['mysql']->dbc);
-			//urËÌme po¯adÌ a parent_id
+			//urƒç√≠me po≈ôad√≠ a parent_id
 			$GLOBALS['mysql']->query('
 				SELECT parent_id, poradi
 				FROM ' . TABLE_MENU_STRUCTURE . '
@@ -115,7 +115,7 @@ if (isset($_POST["ok"])) {
 				');	
 				$i = 0;
 				$posunout = array();
-				//zapamatujeme si, u kter˝ch ¯·dk˘ si musÌme posunout po¯adÌ o 1
+				//zapamatujeme si, u kter√Ωch ≈ô√°dk≈Ø si mus√≠me posunout po≈ôad√≠ o 1
 				while(list($id, $poradi_i) = $GLOBALS['mysql']->fetch_array()) {
 					$i++;
 					if ($poradi_i <= $poradi+$i) {
@@ -150,7 +150,7 @@ if (isset($_POST["ok"])) {
 			header('Location: http://' . $_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']));
 		}
 	} else {
-		echo "<div class=\"AdminError\" >Update se nezda¯il!<br /><br />$chyba<br />Opravte chyby a odeölete formul·¯ znovu.</div>";
+		echo "<div class=\"AdminError\" >Update se nezda≈ôil!<br /><br />$chyba<br />Opravte chyby a ode≈°lete formul√°≈ô znovu.</div>";
 	}
 }
 
@@ -158,7 +158,7 @@ if (!isset($_POST["ok"]) || $chyba) {
 ?>
 <html>
 <head>
-<TITLE>P¯idat soubor</TITLE>
+<TITLE>P≈ôidat soubor</TITLE>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
 <meta http-equiv="Content-language" content="cs" />
 <!-- ENCODING end /-->
@@ -182,7 +182,7 @@ if (!isset($_POST["ok"]) || $chyba) {
 function checkit()
 {
   if ((document.sign.filename.value == '') || (document.sign.title.value == '')) {
-    alert('NÏkter· pole nejsou vyplnÏn·.');
+    alert('Nƒõkter√° pole nejsou vyplnƒõn√°.');
 	return false;
   }
   else {
@@ -193,7 +193,7 @@ function checkit()
 
 </HEAD>
 <BODY bgcolor="#ffffff" fontcolor="#000000">
-<h1>P¯idat soubor</h1>
+<h1>P≈ôidat soubor</h1>
 
 <?php
 if (!isset($za_id)) {
@@ -206,7 +206,7 @@ if ($za_id == 0) {
 	$selected = '';
 }
 	
-$options = '<option value="0"' . $selected . '>--- neumÌsùovat do menu ---</option>\r\n';
+$options = '<option value="0"' . $selected . '>--- neum√≠s≈•ovat do menu ---</option>\r\n';
 $query = "
 	SELECT ms.id AS id, ms.type AS type, ms.href AS href, ms.name AS name, ms.title AS title, f.filename AS filename
 	FROM " . TABLE_MENU_STRUCTURE . " AS ms
@@ -218,7 +218,7 @@ $query = "
 ";
 $result = $GLOBALS['mysql']->query($query);
 
-while ( $row = mysql_fetch_assoc($result) ) { //hlavnÌ menu
+while ( $row = mysql_fetch_assoc($result) ) { //hlavn√≠ menu
 	if ($za_id == $row['id']) {
 		$selected = ' SELECTED';
 	} else {
@@ -278,32 +278,32 @@ while ( $row = mysql_fetch_assoc($result) ) { //hlavnÌ menu
 	<td><input tabindex="2" type="text" class="text" size="60" value='<?php echo isset($_POST["filetitle"]) ? $_POST["filetitle"] : '' ?>' name="filetitle"></td>
 </tr>
 <tr>
-	<td style="width: 20em; text-align:right">RozdÌlnÈ verze souboru<br />pro student/uËitel/organiz·tor:</td>
+	<td style="width: 20em; text-align:right">Rozd√≠ln√© verze souboru<br />pro student/uƒçitel/organiz√°tor:</td>
 	<td><input tabindex="3" type="checkbox" name="difference"<?php echo isset($_POST["difference"]) ? ' checked' : '' ?>></td>
 </tr>
 </table>
 
-<h2>Poloûka v menu</h2>
+<h2>Polo≈æka v menu</h2>
 
 <table>
 <tr>
-	<td style="width: 20em; text-align:right">Za¯adit za:</td>
+	<td style="width: 20em; text-align:right">Za≈ôadit za:</td>
 	<td style="width: 30em"><select tabindex="4" name="za_id"><?php
 	echo $options;
       ?>
       </select></td>
 </tr>
 <tr>
-	<td style="width: 20em; text-align:right">N·zev poloûky:</td>
+	<td style="width: 20em; text-align:right">N√°zev polo≈æky:</td>
 	<td><input tabindex="5" type="text" class="text" size="60" value='<?php echo isset($_POST["name"]) ? $_POST["name"] : '' ?>' name="name"></td>
 </tr>
 <tr>
-	<td style="width: 20em; text-align:right">Popisek poloûky:</td>
+	<td style="width: 20em; text-align:right">Popisek polo≈æky:</td>
 	<td><input tabindex="6" type="text" class="text" size="60" value='<?php echo isset($_POST["menutitle"]) ? $_POST["menutitle"] : '' ?>' name="menutitle"></td>
 </tr>
 </table>
 
-<h2>Uloûit</h2>
+<h2>Ulo≈æit</h2>
 
 <table>
 <tr>
@@ -313,9 +313,9 @@ while ( $row = mysql_fetch_assoc($result) ) { //hlavnÌ menu
 <tr>
 	<td style="width: 20em; text-align:right"></td>
 	<td>
-	<input tabindex="8" type="submit" class="submit" name="ok" value="Uloûit">
+	<input tabindex="8" type="submit" class="submit" name="ok" value="Ulo≈æit">
 	<?php if (isset($_GET['id'])) {?>
-		<input type="checkbox" name="as_new">Uloûit jako novou poloûku
+		<input type="checkbox" name="as_new">Ulo≈æit jako novou polo≈æku
 	<?php }?>
 	</td>
 </tr>
