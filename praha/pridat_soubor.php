@@ -159,7 +159,7 @@ if (!isset($_POST["ok"]) || $chyba) {
 <html>
 <head>
 <TITLE>Přidat soubor</TITLE>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-language" content="cs" />
 <!-- ENCODING end /-->
 

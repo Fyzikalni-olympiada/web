@@ -12,7 +12,7 @@ $mysql->query("
 	ORDER BY date DESC, time DESC
 ");
 
-$strRSS = '<?xml version=\'1.0\' encoding=\'windows-1250\'?>
+$strRSS = '<?xml version=\'1.0\' encoding=\'utf-8\'?>
 <rss version=\'2.0\'>
 	<channel>
 		<title>Fyzikální olympiáda Praha</title>
@@ -53,7 +53,7 @@ $strRSS .= '
 </rss>';
 
 //header("Content-type: application/rss+xml; charset=windows-1250"); 
-Header("Content-type: text/xml; charset=windows-1250");
+Header("Content-type: text/xml; charset=utf-8");
 Header("Pragma: no-cache");
 Header("Cache-Control: no-cache");
 Header("Expires: ".GMDate("D, d M Y H:i:s")." GMT");

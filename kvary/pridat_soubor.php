@@ -10,7 +10,7 @@ $headers = "From: webmaster@fyzikalniolympiada.cz\r\n"
     ."Reply-To: webmaster@fyzikalniolympiada.cz\r\n"
 	."MIME-Version: 1.0\r\n"
     ."X-Mailer: PHP\r\n"
-	."Content-type: text/plain; charset=\"Windows-1250\"\r\n"
+	."Content-type: text/plain; charset=\"utf-8\"\r\n"
 	."Content-transfer-encoding: 8bit";
 $options = '';
 
@@ -159,7 +159,7 @@ if (!isset($_POST["ok"]) || $chyba) {
 <html>
 <head>
 <TITLE>Přidat soubor</TITLE>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-language" content="cs" />
 <!-- ENCODING end /-->
 

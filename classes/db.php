@@ -133,7 +133,7 @@ class db {
 					.'Reply-To: ' . ERROR_MAIL_FROM . "\r\n"
 					.'MIME-Version: 1.0'."\r\n"
 					.'X-Mailer: PHP'."\r\n"
-					.'Content-type: text/plain; charset="Windows-1250"'."\r\n"
+					.'Content-type: text/plain; charset="utf-8"'."\r\n"
 					.'Content-transfer-encoding: 8bit';
 			$subject = 'Chyba databaze na ' . SERVER_NAME;
 			$body = 'Na serveru ' . SERVER_NAME . ' doslo k chybe databaze.'."\r\n"."\r\n".$chyba;

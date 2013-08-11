@@ -15,7 +15,7 @@ require_once('init.php');
  * HTML KOD
  */
 
-echo '<?xml version="1.0" encoding="windows-1250"?>
+echo '<?xml version="1.0" encoding="utf-8"?>
 ';
 
 ?>

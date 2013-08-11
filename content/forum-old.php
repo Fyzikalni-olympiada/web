@@ -6,7 +6,7 @@ $headers = "From: webmaster@fo.cuni.cz\r\n"
     ."Reply-To: webmaster@fo.cuni.cz\r\n"
 	."MIME-Version: 1.0\r\n"
     ."X-Mailer: PHP\r\n"
-	."Content-type: text/plain; charset=\"Windows-1250\"\r\n"
+	."Content-type: text/plain; charset=\"utf-8\"\r\n"
 	."Content-transfer-encoding: 8bit";
 
 define("nastranku",7);
