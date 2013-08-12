@@ -38,7 +38,7 @@ html {
 body {
 	background: #FFF;
 	color: #444;
-	font: normal 82% sans-serif;
+	font: normal 100% sans-serif;
 	line-height: 1.5;
 }
 
@@ -60,9 +60,9 @@ h2,h3,h4,h5,h6 {
 }
 h4,h5,h6 {font-weight: bold;}
 
-h1 {font-size: 2.6em;}
-h2 {font-size: 2em;}
-h3 {font-size: 1.5em;}
+h1 {font-size: 2.2em;}
+h2 {font-size: 1.8em;}
+h3 {font-size: 1.45em;}
 h4 {font-size: 1.25em;}
 h5 {font-size: 1.1em;}
 h6 {font-size: 1em;}
@@ -397,7 +397,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	border-right: 1px solid #CFCFCF;
 	float: left;
 	margin-right: 12px;
-	padding: 2px 0 5px;
+	padding: 2px 2px 5px;
 	text-align: center;
 	width: 46px;
 }
@@ -533,11 +533,11 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 
 /* Logo */
 #logo {	border-right: 1px solid #DDD;
-	padding: 10px 40px 10px 0;
-	margin-right: 40px;
+	padding: 10px 25px 10px 0;
+	margin-right: 25px;
 }
 #logo img {float:right;}
-#logo span {font-size: 35px; line-height: 60px; font-weight: normal; color: #000; display:block; width: 9em;}
+#logo span {font-size: 40px; line-height: 60px; font-weight: normal; color: #000; display:block; width: 345px;}
 #logo a:hover {text-decoration: none; color: #000;}
 
 /* Splash */
@@ -555,10 +555,10 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #main-nav li:first-child/*, #sub-nav li:first-child*/ {margin-left: 0;}
 
 /* Main navigation */
-#main-nav {padding-top: 36px;/*72px*/; width: 520px;}
+#main-nav {padding-top: 20px;/*72px*/; width: 520px;}
 #main-nav li {margin: 0 1.5em;}
 #main-nav a {
-	font-size: 1.8em;
+	font-size: 1.6em;
 	line-height: 2em;
 	padding-bottom: 2px;
 }
@@ -575,7 +575,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 }
 #sub-nav a {
     color: #666;
-	font-size: 1.2em;
+	font-size: 1.0em;
 	text-decoration: none;
 }
 #sub-nav li {margin: 0 1em;}
@@ -589,9 +589,14 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .main#main-two-columns {background: url('../images/main-two-columns.gif') repeat-y right top;}
 .main#main-two-columns-left {background: url('../images/main-two-columns-left.gif') repeat-y left top;}
 .main#main-two-columns #main-content, .main#main-two-columns-left #main-content {width: 620px; position:relative}
+#main-content p, #main-content li, #main-content dl { font-family: serif }
+#main-content table {font-size: 0.9em}
 
 /* Sidebar */
-#sidebar {width: 255px;}
+#sidebar {
+	width: 255px;
+	font-size: 0.82em;
+}
 
 
 /* Columns */
@@ -604,7 +609,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	background-color: #F9F9F9;
 	border-top: 2px solid #DDD;
 	color: #7A7A7A;
-	font: bold 1.2em sans-serif;
+	font: bold 1.1em sans-serif;
 	margin-bottom: 16px;
 	padding: 7px 10px 6px;
 }
@@ -621,7 +626,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	border-top: 1px solid #DDD;
 	color: #777;
 	padding: 16px 0 4px;
-        font-size: 90%;
+        font-size: 80%;
 }
 #footer-left {width: 459px;}
 #footer-right {
@@ -636,6 +641,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #footer a:hover {color: #000;}
 
 #role {
+	font-size: .82em;
     position: absolute;
     right: 0;
     top: 0;
@@ -654,6 +660,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
     display: inline-block;
 }
 #role ul li {
+	font-family: sans-serif;
     display:  inline-block;
     padding: 0 6px 0 3px;
     margin: 0;
@@ -702,3 +709,33 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 * html .navigation, * html #footer, * html #splash, * html .comment ul {height: 0.01%;}
 * html #footer-left {width: 500px;}
 .navigation, #splash, .comment ul {min-height: 0.01%;}
+
+
+/*
+   Accordion
+------------------------------------------------------------------- */
+.accordion {
+	cursor: pointer;
+	display: block;
+	padding: 8px 15px;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	text-decoration: none;
+	color: #459;
+	margin: 0;
+	background-color: #f9f9f9;
+}
+.accordion:hover {
+	text-decoration: underline;
+	color: #039;
+}
+.accordion.off {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 2px;
+}
+.accordion + div {
+	padding: 9px 15px;
+	margin-bottom: 2px;
+	border: 1px solid #ddd;
+	border-top: none;
+}

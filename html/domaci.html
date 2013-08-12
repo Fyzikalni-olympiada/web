@@ -1,7 +1,8 @@
 <h2>Domácí kolo <?php echo AKTUALNI_ROCNIK ?>. ročníku FO</h2>
 
-<h3>Organizace</h3>
+<h3 class="accordion" id="organizace">Organizace</h3>
 
+<div>
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, kategorie
@@ -131,9 +132,12 @@ if (FILE_INDEX == 'index.php') {
 	echo '<p><strong>Důležité upozornění:</strong> Termíny odevzdání úloh domácího kola jsou jen orientační. Závazné termíny v&nbsp;jednotlivých krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajských komisí">webových stránkách</a>.</p>';
 }
 ?>
+</div>
 
-<a name="ulohy"><h3>Texty úloh</h3></a>
+<h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
 
+<div>
+<h4>Zadání</h4>
 <p>
 Texty úloh si můžete stáhnout ve formátu <code>pdf</code> &ndash; <img class="icon" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png" />
 nebo <code>ps</code> &ndash; <img class="icon" alt="" src="<?php echo ROOT_WWW ?>pic/psicon.png" />.
@@ -159,8 +163,7 @@ nebo <code>ps</code> &ndash; <img class="icon" alt="" src="<?php echo ROOT_WWW ?
 </table>
 </div>
 
-<a name="reseni"><h3>Řešení úloh</h3></a>
-
+<h4>Řešení</h4>
 
 <p>
 Řešení úloh každé kategorie zveřejníme po termínu odevzdání.
@@ -194,8 +197,11 @@ nebo <code>ps</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo
 </table>
 </div-->
 
+</div>
+
 <?php if ($kdo == "student") { ?>
-<h3>Pokyny pro soutěžící</h3>
+<h3 class="accordion" id="pokyny">Pokyny pro soutěžící</h3>
+<div>
 <p>
 Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
 <strong>samostatný papír</strong>, pomocné obrázky a náčrty zhotovte tužkou. Jestliže používáte
@@ -230,10 +236,12 @@ Texty úloh <strong>neopisujte</strong>, napište jen text řešení a&nbsp;udě
 <strong>každý další list</strong> napište svoje jméno, příjmení, školu, číslo úlohy a&nbsp;číslo
 strany řešení.
 </p>
+</div>
 <?php } ?>
 
 
-<h3>Studijní témata</h3>
+<h3 class="accordion" id="temata">Studijní témata</h3>
+<div>
 <p>
 Ke studijním tématům vyšly následující studijní texty.
 </p>
@@ -264,3 +272,4 @@ stáhnout</a> v elektronické podobě.
 Studijní texty budou distribuovány na školy sítí FO, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">v elektronické podobě</a>.
 <?php } ?>
 </p>
+</div>

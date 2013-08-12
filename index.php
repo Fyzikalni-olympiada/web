@@ -58,6 +58,18 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     $(function() {
+		var $panels = $('h3.accordion');
+		$panels.not('.accordion-main').addClass('off').next().hide();
+		$panels.click(function () {
+			if ($(this).is('.off')) {
+				$(this).toggleClass('off').next().slideToggle();
+			} else {
+				var $that = $(this);
+				$(this).next().slideToggle(function () {
+					$that.addClass('off');	
+				});
+			}
+		});
         $('#sidebar .section-title-image a').attr('rel', 'gallery[]').prettyPhoto({ });
     });
 </script>
