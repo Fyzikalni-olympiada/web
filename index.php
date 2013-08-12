@@ -13,69 +13,36 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='cs' lang='cs'>
 <head>
-<!-- ENCODING /-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv='Content-language' content='cs' />
-<!-- ENCODING end /-->
 
-<!-- ROBOTS /-->
 <meta name='robots' content='index,follow' />
 <meta name='googlebot' content='index,follow,snippet,archive' />
-<!-- ROBOTS end /-->
 
-<!-- KEYWORDS & CATEGORIES - but who cares now :-( /-->
 <meta name='description' content='Fyzikální olympiáda, oficiální stránky' />
 <meta name='keywords' content='fyzika, fyzikální olympiáda, fyzikalni olympiada, soutěž, soutez' />
 <meta name='category' content='physics' />
-<!-- KEYWORDS & CATEGORIES - end /-->
 
-<!-- AUTHOR self promo - use 'crypted' e-mails defeats robotic harvesters /-->
 <meta name='author' content='All: Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' />
 <meta name='webmaster' content='All: Jan Prachař, e-mail: webmaster@fyzikalniolympiada.cz' />
 <meta name='copyright' content='&copy;2004-2011 Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' />
-<!-- AUTHOR self promo - end /-->
-
-<!-- PICS label - content rating & description (kids, security...) /-->
-<meta http-equiv="pics-label" content='(pics-1.1 "http://www.icra.org/ratingsv02.html" l gen true for "http://fo.cuni.cz" r (nz 1 vz 1 lz 1 oz 1 cb 1))' />
-<!-- PICS label - end /-->
-
-<!-- BROWSER SPECIFIC FEATURES = ALL OFF /-->
-<!-- MSIE - 'helpful' features /-->
-<meta http-equiv='imagetoolbar' content='no' />
-<meta http-equiv='MSThemeCompatible' content='no' />
-<meta name='MS.LOCALE' content='cs' />
-<!-- OPERA - image resizing /-->
-<meta name='autosize' content='off' />
-<!-- BROWSER SPECIFIC FEATURES = end /-->
 
 <base href="http://<?= SERVER_NAME ?>/" />
 
-<!-- ICON /-->
 <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
-<!-- ICON end /-->
 
-<!-- NAVIGATION - based on logical relations of documents /-->
-<!-- homepage /-->
 <? if ($napln == FILE_FORUM) : ?>
 <link rel='alternate' type='application/rss+xml' title='Diskuse Fyzikální olympiády' href='http://<?= SERVER_NAME ?>/rss_forum.php' />
 <? else: ?>
 <link rel='alternate' type='application/rss+xml' title='Aktuality Fyzikální olympiády' href='http://<?= SERVER_NAME ?>/rss.php' />
 <? endif; ?>
+<link rel='home' href='http://<?= SERVER_NAME ?>/' />
 
-<link rel='home' href='http://<?= SERVER_NAME ?>/index.php' />
-<!-- NAVIGATION - end /-->
-
-<!-- CASCADING STYLE SHEETS /-->
-<!-- LINKED STYLE /-->
 <link rel='stylesheet' type='text/css' media='screen,projection,tv' href='./css/layout.css' />
 <link rel='stylesheet' type='text/css' media='all' href='./css/content.css' />
 <link rel='stylesheet' type='text/css' media='print' href='./css/print.css' />
 <link rel="stylesheet" type="text/css" media='screen' href="./css/jquery.lightbox-0.5.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="./css/prettyPhoto.css" title="prettyPhoto main stylesheet" charset="utf-8" />
-<style type="text/css" media="all">
-@import "css/jtip.css";
-</style>
-<!-- CASCADING STYLE SHEETS - end /-->
 
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
