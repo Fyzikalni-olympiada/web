@@ -1,7 +1,8 @@
 <h2>Kategorie E, F <?php echo AKTUALNI_ROCNIK ?>. ročníku FO</h2>
 
-<h3>Organizace</h3>
+<h3 class="accordion" id="organizace">Organizace</h3>
 
+<div>
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, nazev
@@ -134,55 +135,12 @@ Soutěžící může vyřešit úlohy v kratší době, ale tyto 4&nbsp;h jsou l
 Po ukončení každé soutěže jsou soutěžící seznámeni se správným řešením úloh, jež jsou zasílána na každou školu ÚKFO. Doporučujeme, aby výbory FO zajistily opravu úloh co nejdříve, nejlépe ještě v den soutěže, a velmi brzy informovaly účastníky soutěže i jejich školy a učitele fyziky o dosažených výsledcích.
 </p>
 <?php } ?>
+</div>
 
-<?php if ($kdo == "student") { ?>
-<h3>Pokyny pro soutěžící</h3>
-<p>
-Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
-<strong>samostatný papír</strong>, pomocné obrázky a náčrty zhotovte tužkou. Jestliže používáte
-kalkulačku, nezapomeňte na správné zaokrouhlení výsledků.
-Na první list řešení každé úlohy napište záhlaví podle následujícího vzoru:
-</p>
-<table width="100%" style="border : 0px none; background-color : transparent;">
-<tr>
-	<td style="border : 0px none">Jméno a příjmení:</td>
-	<td style="border : 0px none">Kategorie E, F</td>
-</tr>
-<tr>
-	<td style="border : 0px none">Třída:</td>
-	<td style="border : 0px none">Školní rok:</td>
-</tr>
-<tr>
-	<td style="border : 0px none">Škola:</td>
-	<td style="border : 0px none">I. kolo</td>
-</tr>
-<tr>
-	<td style="border : 0px none">Vyučíjící fyziky:</td>
-	<td style="border : 0px none">Posudek:</td>
-<tr>
-	<td style="border : 0px none">Okres:</td>
-	<td style="border : 0px none">Posuzovali:</td>
-<tr>
-	<td colspan="2" style="border : 0px none">Úloha č.:</td>
-</tr>
-</table>
+<h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
+<div>
+<!--p><i>Připravujeme</i></p-->
 
-<p>
-Následuje stručný záznam textu úlohy, vysvětlete označení veličin. Zapište podrobný protokol o řešení úlohy, doplněný o příslušné obrázky a náčrtky. Nezapomeňte, že z protokolu musí  být jasný myšlenkový postup při řešení úlohy.
-</p>
-<p>
-Na každý další list napište své jméno, příjmení, školu a číslo řešené úlohy, stránku protokolu o řešení. Texty úloh neopisujte, vysvětlete však vámi použité označení a udělejte stručný zápis a legendu. Používejte náčrtky. Řešení úloh doprovázejte vždy takovým slovním výkladem, aby každý, kdo si vaše řešení přečte, porozuměl vašemu postupu řešení. Připomínáme ještě jednou, že řešení úlohy bez výkladu je hodnoceno jako nevyhovující. K označení veličin používejte obvyklé značky, které užíváte ve výuce fyziky. Naučte se, že podat dobrou zprávu o řešení problému je stejně tak důležité jako jeho vyřešení. Bude se vám to hodit v dalším studiu.
-</p>
-<p>
-Úlohy řešte pokud možno nejprve obecně, potom proveďte číselné řešení. Nezapomínejte, že fyzikální veličiny jsou vždy doprovázeny jednotkami, že ve fyzice pracujeme často s nepřesnými čísly a výsledek je třeba zaokrouhlovat s ohledem na počet platných míst daných veličin. U zlomků pište vodorovnou zlomkovou čáru. Při řešení úloh se opírejte především o učebnice fyziky. Váš učitel fyziky vám doporučí i jiné vhodné studijní  pomůcky. K úspěšnému číselnému výpočtu používejte kalkulátory; výsledek  však nezapomeňte zaokrouhlit na rozumný počet platných míst. Naučte se odhadovat výsledek, což vám pomůže při kontrole vašich výpočtů.
-</p>
-<?php } ?>
-
-<h3><a id="ulohy">Úlohy</a></h3>
-
-<p><i>Připravujeme</i></p>
-
-<?php if (false) : ?>
 <?php if ($kdo == "student") : ?>
 <p>
 Pro obě kategorie E a F je v&nbsp;domácím kole zadáno společně více úloh, z nichž váš učitel fyziky vybere a vyznačí sedm úloh pro každou kategorii podle učiva, které bude na vaší škole probráno do konce března.
@@ -201,7 +159,7 @@ Protože existuje příliš velká různorodost v učebních programech podle sc
 Zadání<!-- a řešení--> všech úloh domácího<!-- a&nbsp;okresního--> kola si můžete stáhnout ve formátu <code>pdf</code>.
 </p>
 
-<?php if ($kdo != "student") : ?>
+<?php if (false && $kdo != "student") : ?>
 <p>
 Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako návody k&nbsp;opravě a ke kontrole výsledků</em> a&nbsp;hodnocení úloh vašich žáků.
 Řešení úloh však musí být doprovázeno slovním komentářem, z&nbsp;něhož musí být zcela jasný myšlenkový postup, který byl při řešení použit.
@@ -212,8 +170,8 @@ Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako n
 <table class="centered zadani">
 <tr>
     <th scope="col">Kolo</th>
-    <th scope="col" style="width: 25%">Zadání</th>
-    <th scope="col" style="width: 25%">Zadání ilustrované barevnými obrázky</th>
+    <th scope="col" style="width: 25%">Zadání pro tisk</th>
+	<th scope="col" style="width: 25%">Zadání na nástěnky</th>
     <!--th scope="col" style="width: 25%">Výsledky úloh</th-->
     <th scope="col" style="width: 25%">Řešení</th>
 </tr>
@@ -221,10 +179,10 @@ Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako n
     <th scope="row">Domácí</th>
     <!--td colspan="2">Zveřejníme v nejbližší době</td-->
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/55/fo55ef1_z.pdf"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/55/fo55ef1_z.pdf" title="Zadání pro tisk ve formátu PDF"><img border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/55/fo55ef1_zi.pdf" title="Zadání úloh domácího kola ve formátu pdf s obrázky"><img border="0" alt="PDF s obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/55/fo55efg1_zi.pdf" title="Zadání úloh domácího kola ve formátu pro nástěnky (ilustrované barevnými obrázky)"><img border="0" alt="PDF s obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
     </td>
     <!--td>
         <?php if ($kdo != "student") : ?>
@@ -283,20 +241,65 @@ Pro vyšší kola soutěže (okresní, krajské kolo) jsme stanovili některá z
 
 <?php if ($kdo == "student") : ?>
 <p>
-Přejeme vám, abyste při řešení úloh fyzikální olympiády strávili pěkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrý vztah k fyzice. Fyzika je teoretickým  základem techniky, která je pro současnou společnost zcela nepostradatelná. Fyzika je však i součástí lidské kultury, a proto by se měl s jejími výsledky seznámit každý člověk a najít k ní kladný vztah.
+Přejeme vám, abyste při řešení úloh fyzikální olympiády strávili pěkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrý vztah k fyzice.
 </p>
 <?php elseif ($kdo == "ucitel") : ?>
 <p>
 Fyzika je teoretickým  základem techniky, která je pro současnou společnost zcela nepostradatelná. Fyzika je však i součástí lidské kultury, a proto by se měl s jejími výsledky seznámit každý člověk a najít k ní kladný vztah. Proto žádáme vyučující fyziky, aby se v <?php echo AKTUALNI_ROCNIK ?>. ročníku FO tato soutěž rozšířila na všechny základní školy v České republice.
 </p>
 <?php endif; ?>
+</div>
 
-<?php endif; ?>
+<?php if ($kdo == "student") { ?>
+<h3 class="accordion" id="pokyny">Pokyny pro soutěžící</h3>
+<div>
+<p>
+Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
+<strong>samostatný papír</strong>, pomocné obrázky a náčrty zhotovte tužkou. Jestliže používáte
+kalkulačku, nezapomeňte na správné zaokrouhlení výsledků.
+Na první list řešení každé úlohy napište záhlaví podle následujícího vzoru:
+</p>
+<table width="100%" style="border : 0px none; background-color : transparent;">
+<tr>
+	<td style="border : 0px none">Jméno a příjmení:</td>
+	<td style="border : 0px none">Kategorie E, F</td>
+</tr>
+<tr>
+	<td style="border : 0px none">Třída:</td>
+	<td style="border : 0px none">Školní rok:</td>
+</tr>
+<tr>
+	<td style="border : 0px none">Škola:</td>
+	<td style="border : 0px none">I. kolo</td>
+</tr>
+<tr>
+	<td style="border : 0px none">Vyučíjící fyziky:</td>
+	<td style="border : 0px none">Posudek:</td>
+<tr>
+	<td style="border : 0px none">Okres:</td>
+	<td style="border : 0px none">Posuzovali:</td>
+<tr>
+	<td colspan="2" style="border : 0px none">Úloha č.:</td>
+</tr>
+</table>
+
+<p>
+Následuje stručný záznam textu úlohy, vysvětlete označení veličin. Zapište podrobný protokol o řešení úlohy, doplněný o příslušné obrázky a náčrtky. Nezapomeňte, že z protokolu musí  být jasný myšlenkový postup při řešení úlohy.
+</p>
+<p>
+Na každý další list napište své jméno, příjmení, školu a číslo řešené úlohy, stránku protokolu o řešení. Texty úloh neopisujte, vysvětlete však vámi použité označení a udělejte stručný zápis a legendu. Používejte náčrtky. Řešení úloh doprovázejte vždy takovým slovním výkladem, aby každý, kdo si vaše řešení přečte, porozuměl vašemu postupu řešení. Připomínáme ještě jednou, že řešení úlohy bez výkladu je hodnoceno jako nevyhovující. K označení veličin používejte obvyklé značky, které užíváte ve výuce fyziky. Naučte se, že podat dobrou zprávu o řešení problému je stejně tak důležité jako jeho vyřešení. Bude se vám to hodit v dalším studiu.
+</p>
+<p>
+Úlohy řešte pokud možno nejprve obecně, potom proveďte číselné řešení. Nezapomínejte, že fyzikální veličiny jsou vždy doprovázeny jednotkami, že ve fyzice pracujeme často s nepřesnými čísly a výsledek je třeba zaokrouhlovat s ohledem na počet platných míst daných veličin. U zlomků pište vodorovnou zlomkovou čáru. Při řešení úloh se opírejte především o učebnice fyziky. Váš učitel fyziky vám doporučí i jiné vhodné studijní  pomůcky. K úspěšnému číselnému výpočtu používejte kalkulátory; výsledek  však nezapomeňte zaokrouhlit na rozumný počet platných míst. Naučte se odhadovat výsledek, což vám pomůže při kontrole vašich výpočtů.
+</p>
+</div>
+<?php } ?>
+
 
 <?php if ($kdo == "student") { ?>
 
-<h3>Několik rad, jak řešit fyzikální úlohy</h3>
-
+<h3 class="accordion">Několik rad, jak řešit fyzikální úlohy</h3>
+<div>
 <ol>
 	<li>Pečlivě
 	si prostuduj text úlohy a&nbsp;snaž se pochopit všechny jeho části.
@@ -364,6 +367,7 @@ hodnoty veličin, ale také porovnává získané výsledky se skutečností
 či tabelárními hodnotami. V posledních letech zadáváme i takové úlohy,
 pro jejichž řešení je vhodné otevřít vhodné internetové stránky.
 </p>
+</div>
 
 <?php } ?>
 
