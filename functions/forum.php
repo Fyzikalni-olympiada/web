@@ -70,6 +70,7 @@ function zpracuj_form()
         if ($GLOBALS['chyba'] == "") {
 
             /** Ošetření pole text */
+			$_POST["text"] = stripslashes($_POST["text"]);
             $zaloha_text = $_POST["text"];
             $regex  = '@</?\w+((\s+\w+(\s*=\s*';
             $regex .= '(?:".*?"|\'.*?\'|[^\'">\s]+))?)+';
@@ -124,7 +125,7 @@ function zpracuj_form()
                         db::escape_string(db::odstran_problemy($_POST["name"])) . ", " .
                         db::escape_string(db::odstran_problemy($_POST["email"])) . ", " .
                         db::escape_string(db::odstran_problemy($_POST["title"])) . ", " .
-                        db::escape_string(db::odstran_problemy($_POST["text"])) . ", " .
+                        db::escape_string($_POST["text"]) . ", " .
                         db::escape_string($reakcena_id) . ", " .
                         db::escape_string($news_id) . ", " .
                         db::escape_string($users_id) . ", " .
@@ -441,7 +442,7 @@ function get_html_prispevek($row)
         </div>
 
         <div class="comment-text">
-            <p><span class="large">' . $row['title'] . '</span><br />' . nahrad_smajliky($row["text"]) . '</p>
+            <p><span class="large">' . htmlspecialchars($row['title'], ENT_NOQOUTES | ENT_XHTML) . '</span><br />' . nahrad_smajliky($row["text"]) . '</p>
         </div>
 
     </div>
