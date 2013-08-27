@@ -26,6 +26,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <meta name='author' content='All: Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' />
 <meta name='webmaster' content='All: Jan Prachař, e-mail: webmaster@fyzikalniolympiada.cz' />
 <meta name='copyright' content='&copy;2004-2011 Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <base href="http://<?= SERVER_NAME ?>/" />
 
@@ -38,6 +39,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <? endif; ?>
 <link rel='home' href='http://<?= SERVER_NAME ?>/' />
 
+<link rel='stylesheet' type='text/css' media='screen' href='./css/bootstrap.css' />
 <link rel='stylesheet' type='text/css' media='screen,projection,tv' href='./css/layout.css' />
 <link rel='stylesheet' type='text/css' media='all' href='./css/content.css' />
 <link rel='stylesheet' type='text/css' media='print' href='./css/print.css' />
@@ -58,6 +60,11 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     $(function() {
+		$('[data-toggle=offcanvas]').click(function() {
+			$('.row-offcanvas').toggleClass('active');
+			$('.sidebar-offcanvas').toggleClass('active');
+		});
+
 		var $panels = $('h3.accordion');
 		$panels.not('.accordion-main').addClass('off').next().hide();
 		$panels.click(function () {
@@ -79,32 +86,31 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 </title>
 </head>
 <body id="fo-cuni-cz">
-<div id="site-wrapper">
-    <div id="header">
-        <div id="top">
-            <div class="left" id="logo">
-                <a href="/"><img src="images/logo.gif" alt="" /> </a>
-                <a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
-            </div>
+<div class="container">
+    <div id="header" class="row">
+		<div class="col-xs-12 col-md-5 col-lg-4" id="logo">
+			<a href="/"><img src="images/logo.gif" alt="" /> </a>
+			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
+		</div>
 
-            <div class="left navigation" id="main-nav">
-                <?php echo menu(); ?>
-                <div class="clearer">&nbsp;</div>
-            </div>
+		<div class="col-xs-12 col-md-7 navigation" id="main-nav">
+			<?php echo menu(); ?>
+		</div>
 
-            <div class="clearer">&nbsp;</div>
-        </div>
+		<div class="clearfix"></div>
 
-        <div class="navigation" id="sub-nav">
+        <div class="col-xs-12 navigation" id="sub-nav">
             <?php echo submenu($parentID); ?>
-            <div class="clearer">&nbsp;</div>
         </div>
     </div>
 
-    <div class="main" id="main-two-columns">
-        <div class="left" id="main-content">
+    <div id="main-two-columns" class="row row-offcanvas row-offcanvas-right">
+        <div id="main-content" class="col-lg-9 col-md-8 col-xs-12">
+			<div class="pull-right visible-sm visible-xs">
+				<button type="button" class="btn-xs btn-sm" data-toggle="offcanvas">Zobrazit boční panel</button>
+			</div>
             <?php if ($menu_kdo = menu_kdo()) :?>
-            <div id="role">
+            <div class="pull-right" id="role">
                 <h3>Vaše role</h3>
                 <?php echo $menu_kdo; ?>
             </div>
@@ -120,8 +126,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             ?>
         </div>
 
-        <div class="right sidebar" id="sidebar">
-
+		<div id="sidebar" class="col-lg-3 col-md-4 col-sm-6 sidebar-offcanvas">
             <form action="/vyhledavani" id="cse-search-box">
               <div>
                 <input type="hidden" name="cx" value="002398901476820886408:ooqo1rb0p1a" />
@@ -252,8 +257,8 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
         <div class="clearer">&nbsp;</div>
     </div>
 
-    <div id="footer">
-        <div class="left" id="footer-left">
+    <div id="footer" class="row row-offcanvas row-offcanvas-right">
+        <div class="col-sm-6">
             <img src="images/logo-small.gif" alt="" class="left" />
             <p>&copy; 2002&ndash;<?php echo date('Y') ?> Fyzikální olympiáda. All rights Reserved.<br />
                 Pokud není uvedeno jinak, podléhá text na těchto stránkách licenci <a rel="license" href="http://creativecommons.org/licenses/by/3.0/cz/">Creative Commons Uveďte autora 3.0 Česká republika</a>
@@ -264,8 +269,8 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             <div class="clearer">&nbsp;</div>
         </div>
 
-        <div class="right" id="footer-right">
-            <p class="large">
+        <div class="col-sm-6">
+            <p class="large pull-right">
                 <a href="rss.php?who=<?php echo $GLOBALS['who'] ?>" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('domaci.html') ?>">Domácí kolo</a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('ef.html') ?>">Kategorie E, F</a> <span class="text-separator">|</span>
@@ -273,9 +278,6 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                 <a href="<?php echo odkaz('archiv.html') ?>">Archiv</a>
             </p>
         </div>
-        <div class="clearer">&nbsp;</div>
-        <p class="quiet small">
-        </p>
     </div>
 </div>
 </body>

@@ -1,3 +1,5 @@
+@import url(offcanvas.css);
+
 /*
 Template name: Simple Organization
 Template URI: http://templates.arcsin.se/simple-organization-website-template/
@@ -140,14 +142,14 @@ ul.plain-list li, ul.nice-list li, ul.tabbed li {
 }
 
 ul.tabbed {
-	display: inline;
 	margin: 0;
+	padding: 0;
 }
-ul.tabbed li {float: left;}
+ul.tabbed li {display: inline-block;}
 
 ul.plain-list {margin: 0;}
 
-ul.nice-list {margin-left: 0;}
+ul.nice-list {margin-left: 0; padding-left: 0;}
 ul.nice-list li {
 	border-top: 1px solid #EEE;
 	list-style: none;
@@ -513,36 +515,13 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
    Layout
 ------------------------------------------------------------------- */
 
-/* Common */
-#top, #sub-nav {border-bottom: 1px solid #DDD;}
-
-
-/* Wrapper */
-#site-wrapper {
-	margin: 0 auto;
-	width: 920px;
-}
-
-
 /* Header */
 #header {padding-top: 24px;}
 
-/* Top */
-#top {padding-bottom: 32px;}
-
-
 /* Logo */
-#logo {	border-right: 1px solid #DDD;
-	padding: 10px 25px 10px 0;
-	margin-right: 25px;
-}
 #logo img {float:right;}
-#logo span {font-size: 40px; line-height: 60px; font-weight: normal; color: #000; display:block; width: 345px;}
+#logo span {font-size: 40px; line-height: 60px; font-weight: normal; color: #000; display:block;}
 #logo a:hover {text-decoration: none; color: #000;}
-
-/* Splash */
-#splash {padding-top: 32px;}
-
 
 /* Navigation */
 .navigation a {
@@ -552,11 +531,8 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .navigation a:hover {color: #002;}
 .navigation li.current-tab a {color: #222;}
 
-#main-nav li:first-child/*, #sub-nav li:first-child*/ {margin-left: 0;}
-
 /* Main navigation */
-#main-nav {padding-top: 20px;/*72px*/; width: 520px;}
-#main-nav li {margin: 0 1.5em;}
+#main-nav li {margin: 0 1.3em;}
 #main-nav a {
 	font-size: 1.6em;
 	line-height: 2em;
@@ -569,8 +545,13 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 
 /* Subnav */
 #sub-nav {
+	margin-top: 32px;
+}
+#sub-nav ul {
+	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
-	padding: 12px 0;
+	padding-top: 12px;
+	padding-bottom: 12px;
     background-color: #e8edff/*#e3e9ff*/;
 }
 #sub-nav a {
@@ -584,18 +565,19 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 
 
 /* Main */
-.main {margin: 24px 0;}
-
-.main#main-two-columns {background: url('../images/main-two-columns.gif') repeat-y right top;}
-.main#main-two-columns-left {background: url('../images/main-two-columns-left.gif') repeat-y left top;}
-.main#main-two-columns #main-content, .main#main-two-columns-left #main-content {width: 620px; position:relative}
+#main-two-columns {margin-top: 24px; margin-bottom: 24px;}
+#main-content {position:relative}
 #main-content p, #main-content li, #main-content dl { font-family: "DejaVu Serif", "Lucida Bright", Georgia, serif; line-height: 2; }
 #main-content table {font-size: 0.9em}
 
 /* Sidebar */
 #sidebar {
-	width: 255px;
 	font-size: 0.82em;
+}
+@media (min-width: 992px) {
+	#sidebar {
+		border-left: 1px solid #DDD;
+	}
 }
 
 
@@ -628,11 +610,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	padding: 16px 0 4px;
         font-size: 80%;
 }
-#footer-left {width: 459px;}
-#footer-right {
-	width: 459px;
-	text-align: right;
-}
 #footer p {margin-bottom: 0.4em;}
 #footer .text-separator {
 	padding: 0 3px;
@@ -642,9 +619,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 
 #role {
 	font-size: .82em;
-    position: absolute;
-    right: 0;
-    top: 0;
     background-color: #F9F9F9;
     border-top: 1px solid #DDD;
     padding: 5px 10px;
@@ -707,7 +681,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 ------------------------------------------------------------------- */
 
 * html .navigation, * html #footer, * html #splash, * html .comment ul {height: 0.01%;}
-* html #footer-left {width: 500px;}
 .navigation, #splash, .comment ul {min-height: 0.01%;}
 
 
