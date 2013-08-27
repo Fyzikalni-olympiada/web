@@ -1,7 +1,8 @@
 <h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?>&nbsp;&ndash; kategorie G fyzikální olympiády</h2>
 
-<h3>Organizace</h3>
+<h3 class="accordion" id="organizace">Organizace</h3>
 
+<div>
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, nazev
@@ -11,10 +12,10 @@ $GLOBALS['mysql']->query('
 ');
 while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 	switch ($nazev) {
-			case 'domácí kolo':
+			case 'školní kolo':
 				$termin1 = $termin;
 				break;
-			case 'školní či okresní kolo':
+			case 'druhé kolo':
 				$termin2 = $termin;
 				break;
 			default:
@@ -25,7 +26,7 @@ while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 if ($kdo == "student") { ?>
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
-probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> se uskuteční v únoru až květnu. Máte za úkol vyřešit pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisujte na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávejte je <strong>nejpozději <?php echo $termin1 ?></strong> svému učiteli fyziky.
+probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Máte za úkol vyřešit pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisujte na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávejte je svému učiteli fyziky.
 
 </p>
 <p>
@@ -45,7 +46,7 @@ Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp
 </p>
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
-probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> se uskuteční v únoru až květnu. Soutěžící obdrží k řešení pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisují řešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je <strong>nejpozději <?php echo $termin1 ?></strong> vám &ndash; učiteli fyziky.
+probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Soutěžící obdrží k řešení pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisují řešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je vám &ndash; učiteli fyziky.
 </p>
 
 <p>
@@ -65,7 +66,7 @@ Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp
 </p>
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
-probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> se uskuteční v únoru až květnu. Soutěžící obdrží k řešení pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisují řešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je <strong>nejpozději <?php echo $termin1 ?></strong> svému učiteli fyziky.
+probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Soutěžící obdrží k řešení pět úloh, které jsou uvedeny dále. Řešení úloh zapisují řešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je svému učiteli fyziky.
 </p>
 
 <p>
@@ -80,13 +81,12 @@ Učitel fyziky jejich řešení opraví, pravděpodobně s&nbsp;nimi pohovoří 
 Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se i letos bude žákům líbit; snažili jsme se zařadit úlohy s výzkumnou částí, jež povzbudí žáky 7.&nbsp;ročníků k dalšímu studiu fyziky. Na závěr soutěže je třeba účastníky upozornit, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy  budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
 </p>
 <?php } ?>
+</div>
 
+<h3 class="accordion accordion-main" id="ulohy">Úlohy domácího kola</h3>
 
-<a name="ulohy"><h3>Úlohy domácího kola</h3></a>
-
-<p><i>Připravujeme</i></p>
-
-<?php if (false) : ?>
+<div>
+<!--p><i>Připravujeme</i></p-->
 
 <p>
     Zadání všech úloh domácího kola si můžete <!--rovněž -->stáhnout ve formátu <code>pdf</code>.
@@ -96,8 +96,8 @@ Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp
 <table class="centered zadani">
 <tr>
     <th rowspan="2">Domácí kolo</th>
-    <th scope="col" style="width: 30%">Zadání úloh</th>
-    <th scope="col" style="width: 30%">Zadání ilustrované barevnými obrázky</th>
+    <th scope="col" style="width: 30%">Zadání pro tisk</th>
+    <th scope="col" style="width: 30%">Zadání na nástěnky</th>
     <th scope="col" style="width: 30%">Řešení úloh</th>
 </tr>
 <tr>
@@ -106,7 +106,7 @@ Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp
         <a href="<?php echo ROOT_WWW ?>archiv/55/fo55g1_z.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><img border="0" alt="PDF" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/55/fo55g1_zi.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><img border="0" alt="PDF ilustrované barevnými obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/55/fo55efg1_zi.pdf" title="Zadání úloh domácího kola ve formátu na nástěnky s barevnými ilustracemi"><img border="0" alt="PDF ilustrované barevnými obrázky" src="<?php echo ROOT_WWW ?>pic/pdfiicon.png"></a>
     </td>
     <td>
         Zveřejníme po termínu odevzdání
@@ -116,19 +116,12 @@ Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp
 </table>
 </div>
 
-<? endif; ?>
-
-
 <?php if ($kdo == "ucitel" || $kdo == "organizator") { ?>
-<!--p>
-Na základě bodování odevzdaných řešení soutěžících můžeme stanovit jejich pořadí ve třídě nebo ve škole. Žáci se určitě těší na pokračování – druhé kolo. To může proběhnout ve škole pro soutěžící z různých paralelních tříd, školy se mohou dohodnout na společné akci nebo okresní komise uspořádá okresní kolo. Pro druhé kolo vyšla před řadou let publikace ARCHIMÉDIÁDA, obsahující asi 200 námětů pro úlohy, pokusy, hry a zábavy. 
-</p-->
 <p>
 Děkujeme všem vyučujícím, kteří našli cestu k Fyzikální olympiádě a získali své žáky pro řešení úloh. Věříme, že úlohy byly dostatečně zajímavé, dostatečně náročné i dostatečně přístupně žákům základních škol a jejich kamarádům z víceletých gymnázií. 
 Pokud máte nějaký pěkný nápad, zašlete ho prosím na adresu ivo.volf@uhk.cz.
 </p>
-<p>
-S přáním úspěšného závěru školního roku a pěkných prázdnin se těšíme na setkání v příštím školním roce, v němž proběhne 55. ročník Fyzikální olympiády.
-</p>
 <p style="text-align: right">Za ÚKFO prof. RNDr. Ivo Volf, CSc.</p>
 <?php } ?>
+
+</div>
