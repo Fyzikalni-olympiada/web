@@ -118,3 +118,16 @@ table.zadani th, table.zadani td {
 table.zadani td {
     text-align: center;
 }
+
+.ukfo img {
+	border: 2px solid #eee;
+	border-radius: 100px; -moz-border-radius: 100px;
+}
+@media (max-width: 767px) {
+.ukfo img {
+	border: none;
+	border-radius: 0px; -moz-border-radius: 0px;
+}
+}
+
+
