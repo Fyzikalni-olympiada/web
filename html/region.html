@@ -1,7 +1,5 @@
 <h2>Krajské kolo <?php echo AKTUALNI_ROCNIK ?>. ročníku FO</h2>
 
-<h3>Organizace</h3>
-
 <?php
 $GLOBALS['mysql']->query('
         SELECT termin, kategorie
@@ -23,7 +21,17 @@ while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
         }
 }                       
 
-if ($kdo == "student") { ?>
+?>
+<h3 class="accordion accordion-main" id="organizace">Organizace</h3>
+
+<div>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
+	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
+	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="organizace-student">
 <p>
 Pozvánku (s&nbsp;místem a&nbsp;časem konání) na krajské kolo obdržíte od svého učitele fyziky
 nebo ředitele školy, pokud jste úspěšně vyřešili domácí kolo.
@@ -60,9 +68,9 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 V&nbsp;krajském kole můžete používat Matematické,
 fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
 </p>
-<?php } ?>
+</div>
 
-<?php if ($kdo == "ucitel") { ?>
+<div id="organizace-ucitel" class="tab-pane">
 <p>
 Pozvánku na krajské kolo pro své studenty obdržíte od příslušné krajské komise FO.
 O&nbsp;postupu rozhodují jejich výsledky v&nbsp;domácím kole. Pozvánky rozdejte studentům,
@@ -82,9 +90,9 @@ nejvíce 50&nbsp;účastníků do třetího, celostátního kola soutěže.
 V&nbsp;krajském kole mohou studenti používat Matematické,
 fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
 </p>
-<?php } ?>
+</div>
 
-<?php if ($kdo == "organizator") { ?>
+<div id="organizace-organizator" class="tab-pane">
 <p>
 V&nbsp;krajském kole, na které zve příslušný krajská komise FO soutěžící podle
 výsledků v&nbsp;domácím kole
@@ -120,10 +128,30 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A vybere
 V&nbsp;krajském kole mohou soutěžící používat Matematické,
 fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
 </p>
-<?php } ?>
+</div>
+</div>
+</div>
 
-<a name="ulohy"><h3>Texty úloh</h3></a>
+<h3 class="accordion" id="temata">Studijní témata</h3>
+<div>
+<p>
+Ke studijním tématům vyšly následující studijní texty.
+</p>
+<p>
+Kategorie&nbsp;A: Šedivý, P.: <strong>Kapitoly ze speciální teorie relativity</strong><br />
+Kategorie&nbsp;B: Šedivý &ndash; Volf &ndash; Horáková: <strong>Harmonické kmity mechanických soustav</strong><br/>
+Kategorie&nbsp;C: Volf, I.: <strong>Pohyb, síly a sportovní aktivity</strong><br />
+Kategorie&nbsp;D: Volf, I. &ndash; Jarešová, M.: <strong>Fyzika je kolem nás (Pohyby těles v planetární soustavě)</strong>
+</p>
+<p>
+Studijní texty budou distribuovány na školy, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">v&nbsp;elektronické podobě</a>.
+</p>
+</div>
 
+<h3 class="accordion" id="ulohy">Úlohy</h3>
+
+<div>
+<h4>Zadání</h4>
 <p>
 Texty úloh pro kategorie A, B, C a&nbsp;D obdrží studenti před zahájením krajského kola.
 Stáhnout si je můžete níže ve formátu <code>pdf</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/pdficon.png"> nebo <code>ps</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/psicon.png">, zveřejňujeme je v&nbsp;den konání krajského kola.
@@ -150,7 +178,7 @@ Stáhnout si je můžete níže ve formátu <code>pdf</code> &ndash; <img class=
 </table>
 </div-->
 
-<a name="reseni"><h3>Řešení úloh</h3></a>
+<h4>Řešení</h4>
 
 <p>
 Řešení úloh kategorií A, B, C a&nbsp;D obdrží soutěžící po skončení krajského kola.
@@ -177,17 +205,13 @@ Stáhnout si je můžete níže ve formátu <code>pdf</code> &ndash; <img class=
 </tr>
 </table>
 </div-->
+</div>
 
-<a name="vysledky"><h3>Výsledky</h3></a>
+<h3 class="accordion" id="vysledky">Výsledkové listiny</h3>
 
-<?php if ($kdo == "organizator") { ?>
-<p>
-Výsledky krajského kola zveřejněte na vašich webových stránkách krajské komise.
-<?php } else { ?>
-</p>
+<div>
 <p>
 Výsledky krajského kola hledejte na webových <a href="<?php echo odkaz("stranky_regionu.html") ?>" title="Webové stránky krajských komisí">stránkách krajských komisí FO</a>.
-<?php } ?>
 </p>
 
 <!--p>
@@ -211,36 +235,4 @@ Kompletní výsledky krajských kol kategorie&nbsp;A v&nbsp;jednotlivých krají
         <li><a href="http://physics.ujep.cz/~fo/vysl_2007-a.html">Ústecký kraj</a>, 1.&nbsp;2.</li>
         <li>Moravskoslezský kraj <img src="http://www.anchoredbygrace.com/smileys/1034552550.gif" alt=""></li>
 </ul-->
-
-
-<h3>Studijní témata</h3>
-<p>
-Ke studijním tématům vyšly následující studijní texty.
-</p>
-<p>
-Kategorie&nbsp;A: Šedivý, P.: <strong>Kapitoly ze speciální teorie relativity</strong><br />
-Kategorie&nbsp;B: Šedivý &ndash; Volf &ndash; Horáková: <strong>Harmonické kmity mechanických soustav</strong><br/>
-Kategorie&nbsp;C: Volf, I.: <strong>Pohyb, síly a sportovní aktivity</strong><br />
-Kategorie&nbsp;D: Volf, I. &ndash; Jarešová, M.: <strong>Fyzika je kolem nás (Pohyby těles v planetární soustavě)</strong>
-
-<?php if ($kdo == "student") { ?>
-</p>
-<p>
-Studijní texty si vyžádejte od svého učitele fyziky! Můžete si je rovněž <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">
-stáhnout</a> v&nbsp;elektronické podobě.
-<?php } ?>
-
-<?php if ($kdo == "ucitel") { ?>
-</p>
-<p>
-Studijní texty budou distribuovány na školy sítí FO, rozdejte je svým studentům!
-Můžete si je rovněž <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">
-stáhnout</a> v&nbsp;elektronické podobě.
-<?php } ?>
-
-<?php if ($kdo == "organizator") { ?>
-</p>
-<p>
-Studijní texty budou distribuovány na školy sítí FO, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">v&nbsp;elektronické podobě</a>.
-<?php } ?>
-</p>
+</div>
