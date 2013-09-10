@@ -1,8 +1,5 @@
 <h2>Kategorie E, F <?php echo AKTUALNI_ROCNIK ?>. ročníku FO</h2>
 
-<h3 class="accordion" id="organizace">Organizace</h3>
-
-<div>
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, nazev
@@ -27,7 +24,18 @@ while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 }			
 
 
-if ($kdo == "student") { ?>
+?>
+
+<h3 class="accordion" id="organizace">Organizace</h3>
+
+<div>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
+	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
+	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="organizace-student">
 <p>
 Kategorie E určena žákům 9. tříd, kategorie F určena žákům 8. tříd základních škol a jim věkově odpovídajícím žákům tříd nižšího gymnázia.
 
@@ -59,9 +67,12 @@ Po sdělení nutných informací soutěžícím a krátkým prostudováním text
 Po ukončení každého kola budete seznámeni se správným řešením úloh, buďto od svého učitele fyziky,
 nebo ho najdte na těchto stránkách. Každá krajská komise zřizuje svou <a href="<?php echo odkaz('stranky_regionu.html'); ?>" title="Webové stránky krajských komisí">webovskou stránku</a>, kde můžete najít další informace i&nbsp;výsledky soutěže. 
 </p>
-<?php } ?>
+<p>
+Přejeme vám, abyste při řešení úloh fyzikální olympiády strávili pěkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrý vztah k fyzice.
+</p>
+</div>
 
-<?php if ($kdo == "ucitel") { ?>
+<div id="organizace-ucitel" class="tab-pane">
 <p>
 V letošním roce je kategorie E určena žákům 9. tříd, kategorie F určena žákům 8. tříd základních škol a jim věkově odpovídajícím žákům tříd nižšího gymnázia.
 
@@ -95,9 +106,12 @@ Soutěžící může vyřešit úlohy v kratší době, ale tyto 4&nbsp;h jsou l
 <p>
 Po ukončení každé soutěže seznámente své žáky se správným řešením úloh, jež jsou zasílána na každou školu ÚKFO. Doporučujeme, abyste na školách provedli společně s řešiteli analýzu podaných řešení v prvním a druhém kole.
 </p>
-<?php } ?>
+<p>
+Fyzika je teoretickým  základem techniky, která je pro současnou společnost zcela nepostradatelná. Fyzika je však i součástí lidské kultury, a proto by se měl s jejími výsledky seznámit každý člověk a najít k ní kladný vztah. Proto žádáme vyučující fyziky, aby se v <?php echo AKTUALNI_ROCNIK ?>. ročníku FO tato soutěž rozšířila na všechny základní školy v České republice.
+</p>
+</div>
 
-<?php if ($kdo == "organizator") { ?>
+<div id="organizace-organizator" class="tab-pane">
 <p>
 Od 4. ročníku byla soutěž FO rozšířena o kategorii, určenou žákům základních devítiletých škol. Od 25.&nbsp;ročníku byla fyzikální olympiáda v kategorii E určena žákům osmých ročníků základních škol, ale mohli se jí zúčastnit i mladší žáci i žáci devátých ročníků s hlubším zájmem o fyziku. V letošním roce je kategorie E určena žákům 9. tříd, kategorie F určena žákům 8. ročníků a jim věkově odpovídajícím žákům tříd nižšího gymnázia.
 
@@ -134,26 +148,17 @@ Soutěžící může vyřešit úlohy v kratší době, ale tyto 4&nbsp;h jsou l
 <p>
 Po ukončení každé soutěže jsou soutěžící seznámeni se správným řešením úloh, jež jsou zasílána na každou školu ÚKFO. Doporučujeme, aby výbory FO zajistily opravu úloh co nejdříve, nejlépe ještě v den soutěže, a velmi brzy informovaly účastníky soutěže i jejich školy a učitele fyziky o dosažených výsledcích.
 </p>
-<?php } ?>
+</div>
+</div>
 </div>
 
 <h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
 <div>
 <!--p><i>Připravujeme</i></p-->
 
-<?php if ($kdo == "student") : ?>
 <p>
-Pro obě kategorie E a F je v&nbsp;domácím kole zadáno společně více úloh, z nichž váš učitel fyziky vybere a vyznačí sedm úloh pro každou kategorii podle učiva, které bude na vaší škole probráno do konce března.
+Pro obě kategorie E a F je v&nbsp;domácím kole zadáno společně více úloh, z nichž učitel fyziky vybere a vyznačí sedm úloh pro každou kategorii podle učiva, které bude na vaší škole probráno do konce března.
 </p>
-<?php elseif ($kdo == "ucitel") : ?>
-<p>
-Protože existuje příliš velká různorodost v učebních programech podle schválených projektů, rozhodla ÚKFO zadat pro tyto dvě kategorie společně více úloh, z nichž vyberete a vyznačíte sedm úloh pro každou kategorii podle učiva, které budete ve škole probírat do konce března.
-</p>
-<?php elseif ($kdo == "organizator") : ?>
-<p>
-Protože existuje příliš velká různorodost v učebních programech podle schválených projektů, rozhodla ÚKFO ve svém březnovém zasedání zadat pro tyto dvě kategorie společně více úloh, z nichž učitel fyziky vybere a vyznačí sedm úloh pro každou kategorii podle učiva, které bude ve škole probráno do konce března.
-</p>
-<?php endif; ?>
 
 <p>
 Zadání<!-- a řešení--> všech úloh domácího<!-- a&nbsp;okresního--> kola si můžete stáhnout ve formátu <code>pdf</code>.
@@ -238,19 +243,8 @@ Pro vyšší kola soutěže (okresní, krajské kolo) jsme stanovili některá z
 		<dd>Elektřina (kondenzátory, stejnosměrný proud, obvody, účinky proudu)</dd>
 </dl>
 
-
-<?php if ($kdo == "student") : ?>
-<p>
-Přejeme vám, abyste při řešení úloh fyzikální olympiády strávili pěkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrý vztah k fyzice.
-</p>
-<?php elseif ($kdo == "ucitel") : ?>
-<p>
-Fyzika je teoretickým  základem techniky, která je pro současnou společnost zcela nepostradatelná. Fyzika je však i součástí lidské kultury, a proto by se měl s jejími výsledky seznámit každý člověk a najít k ní kladný vztah. Proto žádáme vyučující fyziky, aby se v <?php echo AKTUALNI_ROCNIK ?>. ročníku FO tato soutěž rozšířila na všechny základní školy v České republice.
-</p>
-<?php endif; ?>
 </div>
 
-<?php if ($kdo == "student") { ?>
 <h3 class="accordion" id="pokyny">Pokyny pro soutěžící</h3>
 <div>
 <p>
@@ -293,10 +287,7 @@ Na každý další list napište své jméno, příjmení, školu a číslo ře�
 Úlohy řešte pokud možno nejprve obecně, potom proveďte číselné řešení. Nezapomínejte, že fyzikální veličiny jsou vždy doprovázeny jednotkami, že ve fyzice pracujeme často s nepřesnými čísly a výsledek je třeba zaokrouhlovat s ohledem na počet platných míst daných veličin. U zlomků pište vodorovnou zlomkovou čáru. Při řešení úloh se opírejte především o učebnice fyziky. Váš učitel fyziky vám doporučí i jiné vhodné studijní  pomůcky. K úspěšnému číselnému výpočtu používejte kalkulátory; výsledek  však nezapomeňte zaokrouhlit na rozumný počet platných míst. Naučte se odhadovat výsledek, což vám pomůže při kontrole vašich výpočtů.
 </p>
 </div>
-<?php } ?>
 
-
-<?php if ($kdo == "student") { ?>
 
 <h3 class="accordion">Několik rad, jak řešit fyzikální úlohy</h3>
 <div>
@@ -368,6 +359,3 @@ hodnoty veličin, ale také porovnává získané výsledky se skutečností
 pro jejichž řešení je vhodné otevřít vhodné internetové stránky.
 </p>
 </div>
-
-<?php } ?>
-

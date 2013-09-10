@@ -1,8 +1,5 @@
 <h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?>&nbsp;&ndash; kategorie G fyzikální olympiády</h2>
 
-<h3 class="accordion" id="organizace">Organizace</h3>
-
-<div>
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, nazev
@@ -23,7 +20,17 @@ while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 	}
 }		
 
-if ($kdo == "student") { ?>
+?>
+<h3 class="accordion" id="organizace">Organizace</h3>
+
+<div>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
+	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
+	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="organizace-student">
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
 probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Máte za úkol vyřešit pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisujte na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávejte je svému učiteli fyziky.
@@ -38,11 +45,11 @@ U všech úloh popište své úvahy při řešení. Učitel fyziky vaše řešen
 </p>
 
 <p>
-Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se i letos bude žákům líbit; snažili jsme se zařadit úlohy s výzkumnou částí, jež povzbudí žáky 7.&nbsp;ročníků k dalšímu studiu fyziky. Na závěr vás chceme upozornit, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
+Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se vám i letos bude líbit. Na závěr vás chceme upozornit, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
 </p>
-<?php } ?>
+</div>
 
-<?php if ($kdo == "ucitel") { ?>
+<div id="organizace-ucitel" class="tab-pane">
 </p>
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
@@ -58,11 +65,16 @@ probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základníc
 </p>
 
 <p>
-Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se i letos bude žákům líbit; snažili jsme se zařadit úlohy s výzkumnou částí, jež povzbudí žáky 7.&nbsp;ročníků k dalšímu studiu fyziky. Na závěr soutěže je třeba, abyste žáky upozornili, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy  budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
+Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se vám i letos bude žákům líbit; snažili jsme se zařadit úlohy s výzkumnou částí, jež povzbudí žáky 7.&nbsp;ročníků k dalšímu studiu fyziky. Na závěr soutěže je třeba, abyste žáky upozornili, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy  budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
 </p>
-<?php } ?>
+<p>
+Děkujeme všem vyučujícím, kteří našli cestu k Fyzikální olympiádě a získali své žáky pro řešení úloh. Věříme, že úlohy byly dostatečně zajímavé, dostatečně náročné i dostatečně přístupně žákům základních škol a jejich kamarádům z víceletých gymnázií. 
+Pokud máte nějaký pěkný nápad, zašlete ho prosím na adresu ivo.volf@uhk.cz.
+</p>
+<p style="text-align: right">Za ÚKFO prof. RNDr. Ivo Volf, CSc.</p>
+</div>
 
-<?php if ($kdo == "organizator") { ?>
+<div id="organizace-organizator" class="tab-pane">
 </p>
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
@@ -77,10 +89,8 @@ Učitel fyziky jejich řešení opraví, pravděpodobně s&nbsp;nimi pohovoří 
 <strong>Druhá část soutěže</strong> proběhne <strong><?php echo $termin2 ?></strong> a může být organizována jakou soutěž jednotlivců nebo družstev podle dispozic, které obdrží učitelé od OKFO. Formu této části soutěže ponecháváme v kompetenci OKFO. Úkolem bude řešit různé úlohy, provádět a vysvětlovat pokusy, řešit hádanky a rébusy. Organizátor soutěže může také pověřit některé řešitele, aby si předem připravili referát, pokus či jiné vystoupení. Námětů získali učitelé fyziky za dobu trvání soutěže již značné množství. Druhé kolo lze organizovat pro soutěžící z jedné školy či z několika sousedních škol dohromady. Nevylučuje se ani případ, že toto kolo bude organizováno obdobně jako v kategoriích E, F, tj. řešením úloh pro účastníky z více škol nebo jako okresní kolo. Pro organizaci školního kola mají okresní výbory k dispozici starší metodickou příručku Archimédiáda, kterou vydalo MAFY v Hradci Králové.
 </p>
 
-<p>
-Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se i letos bude žákům líbit; snažili jsme se zařadit úlohy s výzkumnou částí, jež povzbudí žáky 7.&nbsp;ročníků k dalšímu studiu fyziky. Na závěr soutěže je třeba účastníky upozornit, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy  budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
-</p>
-<?php } ?>
+</div>
+</div>
 </div>
 
 <h3 class="accordion accordion-main" id="ulohy">Úlohy domácího kola</h3>
@@ -115,13 +125,5 @@ Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp
 </tr>
 </table>
 </div>
-
-<?php if ($kdo == "ucitel" || $kdo == "organizator") { ?>
-<p>
-Děkujeme všem vyučujícím, kteří našli cestu k Fyzikální olympiádě a získali své žáky pro řešení úloh. Věříme, že úlohy byly dostatečně zajímavé, dostatečně náročné i dostatečně přístupně žákům základních škol a jejich kamarádům z víceletých gymnázií. 
-Pokud máte nějaký pěkný nápad, zašlete ho prosím na adresu ivo.volf@uhk.cz.
-</p>
-<p style="text-align: right">Za ÚKFO prof. RNDr. Ivo Volf, CSc.</p>
-<?php } ?>
 
 </div>
