@@ -58,6 +58,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 </script>
 <script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function() {
 		$('[data-toggle=offcanvas]').click(function() {
@@ -77,7 +78,9 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 				});
 			}
 		});
-        $('#sidebar .section-title-image a').attr('rel', 'gallery[]').prettyPhoto({ });
+		$('#sidebar .section-title-image a').attr('rel', 'gallery[]').prettyPhoto({
+			social_tools: false
+		});
     });
 </script>
 

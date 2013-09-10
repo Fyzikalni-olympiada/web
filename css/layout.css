@@ -712,4 +712,14 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	margin-bottom: 2px;
 	border: 1px solid #ddd;
 	border-top: none;
+	position: relative;
 }
+.accordion + div > ul {
+	position: absolute;
+	top: -44px;
+	right: 3px;
+}
+.accordion + div > ul > li > a {
+	height: 44px;
+}
+

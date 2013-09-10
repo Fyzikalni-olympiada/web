@@ -1,8 +1,5 @@
 <h2>Domácí kolo <?php echo AKTUALNI_ROCNIK ?>. ročníku FO</h2>
 
-<h3 class="accordion" id="organizace">Organizace</h3>
-
-<div>
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, kategorie
@@ -28,8 +25,17 @@ if (FILE_INDEX == 'praha/index.php') {
 	$terminA = 'do 4. 1. 2013';
 	$terminBCD = 'do 12. 4. 2013';
 }
+?>
+<h3 class="accordion" id="organizace">Organizace</h3>
 
-if ($kdo == "student") {?>
+<div>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
+	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
+	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="organizace-student">
 <p>
 V&nbsp;domácím kole máte za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
 fyzikální olympiády.
@@ -74,9 +80,9 @@ vyvarovat se tomu můžete tím, že vyřešíte poctivě úlohy domácího kola
 Neopomeňte si také prostudovat studijní témata ze studijních textů, které
 jsou distribuovány na školy. V&nbsp;každém kole se vždy jedna úloha týká studijního tématu.
 </p>
-<?php } ?>
+</div>
 
-<?php if ($kdo == "ucitel") {?>
+<div id="organizace-ucitel" class="tab-pane">
 <p>
 V&nbsp;domácím kole mají žáci za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
 fyzikální olympiády.
@@ -101,9 +107,9 @@ Na pomoc
 řešitelům při řešení úloh můžete organizovat konzultace, kroužky nebo
 semináře.
 </p>
-<?php } ?>
+</div>
 
-<?php if ($kdo == "organizator") {?>
+<div id="organizace-organizator" class="tab-pane">
 <p>
 V&nbsp;domácím kole mají žáci za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
 fyzikální olympiády.
@@ -127,11 +133,13 @@ pět úloh a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentáln�
 řešitelům při řešení úloh organizují učitelé fyziky konzultace, kroužky nebo
 semináře v&nbsp;střediskových školách pod patronátem JČMF.
 </p>
-<?php } 
+</div>
+<?php
 if (FILE_INDEX == 'index.php') {
 	echo '<p><strong>Důležité upozornění:</strong> Termíny odevzdání úloh domácího kola jsou jen orientační. Závazné termíny v&nbsp;jednotlivých krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajských komisí">webových stránkách</a>.</p>';
 }
 ?>
+</div>
 </div>
 
 <h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
@@ -199,7 +207,6 @@ nebo <code>ps</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo
 
 </div>
 
-<?php if ($kdo == "student") { ?>
 <h3 class="accordion" id="pokyny">Pokyny pro soutěžící</h3>
 <div>
 <p>
@@ -237,7 +244,6 @@ Texty úloh <strong>neopisujte</strong>, napište jen text řešení a&nbsp;udě
 strany řešení.
 </p>
 </div>
-<?php } ?>
 
 
 <h3 class="accordion" id="temata">Studijní témata</h3>
@@ -250,26 +256,8 @@ Kategorie&nbsp;A: Šedivý, P.: <strong>Kapitoly ze speciální teorie relativit
 Kategorie&nbsp;B: Šedivý &ndash; Volf &ndash; Horáková: <strong>Harmonické kmity mechanických soustav</strong><br/>
 Kategorie&nbsp;C: Volf, I.: <strong>Pohyb, síly a sportovní aktivity</strong><br />
 Kategorie&nbsp;D: Volf, I. &ndash; Jarešová, M.: <strong>Fyzika je kolem nás (Pohyby těles v planetární soustavě)</strong>
-
-<? if ($kdo == "student") { ?>
 </p>
 <p>
-Studijní texty si vyžádejte od svého učitele fyziky! Můžete si je rovněž <a href="<?php echo odkaz("texty.html"); ?>" title="studijní témata">
-stáhnout</a> v elektronické podobě. 
-<?php } ?>
-
-<? if ($kdo == "ucitel") { ?>
-</p>
-<p>
-Studijní texty budou distribuovány na školy sítí FO, rozdejte je svým studentům!
-Můžete si je rovněž <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">
-stáhnout</a> v elektronické podobě.
-<?php } ?>
-
-<? if ($kdo == "organizator") { ?>
-</p>
-<p>
-Studijní texty budou distribuovány na školy sítí FO, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">v elektronické podobě</a>.
-<?php } ?>
+Studijní texty budou distribuovány na školy, k dispozici jsou i <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">v elektronické podobě</a>.
 </p>
 </div>
