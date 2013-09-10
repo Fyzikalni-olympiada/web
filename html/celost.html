@@ -25,13 +25,14 @@ if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
 }		
 ?>
 
-<h3>Organizace</h3>
+<h3 class="accordion accordion-main" id="organizace">Organizace</h3>
+<div>
 <p>
 Z nejúspěšnějších účastníků druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh krajských komisí
 FO nejvíce 50&nbsp;účastníků do celostátního kola soutěže.
 Celostátní kolo trvá čtyři dny, pro všechny účastníky i&nbsp;organizátory
 je zajištěno ubytování a&nbsp;stravování. První den se koná oficiální zahájení soutěže.
-Druhý den se zadávají čtyři úlohy teoretické (včetně úlohy na studijní téma), na jejich vypracování
+Druhý den se zadávají čtyři úlohy teoretické (včetně úlohy na <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">studijní téma</a>), na jejich vypracování
 je zpravidla 5&nbsp;hodin času. Třetí den je zadána úloha experimentální.
 Poslední den jsou vyhlášeny výsledky&nbsp;&ndash; vítězové a&nbsp;úspěšní řešitelé a&nbsp;rozdány
 ceny.
@@ -50,17 +51,12 @@ uspořádaném ÚK&nbsp;FO proveden výběr 5&nbsp;účastníků (a jednoho náh
 <strong>45. Mezinárodní fyzikální olympiády</strong>,
 <!-- ############################################## -->
 která bude uspořádána v&nbsp;termínu <?php echo $terminMFO ?> ve státě <?php echo $mistoMFO ?>.
+</div>
 
-<h3>Termín a místo konání</h3>
+<h3 class="accordion" id="venue">Termín a místo konání</h3>
+<div>
 <p>
 Celostátní kolo se koná v&nbsp;termínu <strong><?php echo $termin ?></strong> (úterý až pátek) ve&nbsp;městě <?php echo $misto ?>.
-
-<?php if ($kdo == "student") :?>
-O&nbsp;svém pozvání na celostátní kolo se dozvíte od ředitelství své školy.
-<?php else : ?>
-Pozvání k účasti ve třetím kole zašle ÚK&nbsp;FO vybraným žákům prostřednictvím ředitelství
-školy, kterou navštěvují.
-<?php endif; ?>
 </p>
 
 <!--p>
@@ -91,10 +87,11 @@ Příjezd, prezentace a ubytování 
 <tr><td> </td>
   <td> </td></tr>
 </table-->
+</div>
 
+<h3 class="accordion" id="ulohy">Zadání a řešení úloh</h3>
 
-
-<a name="ulohy"><h3>Zadání a řešení úloh</h3></a>
+<div>
 <p>
 Texty i řešení úloh zveřejníme v průběhu konání či po skončení celostátního kola.
 </p>
@@ -125,6 +122,7 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code> nebo 
 </tr>
 </table>
 </div-->
+</div>
 
 <!--a name="vysledky"><h3>Výsledky</h3></a>
 
