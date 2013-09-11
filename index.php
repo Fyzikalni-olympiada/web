@@ -112,13 +112,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 			<div class="pull-right visible-sm visible-xs">
 				<button type="button" class="btn-xs btn-sm" data-toggle="offcanvas">Zobrazit boční panel</button>
 			</div>
-            <?php if ($menu_kdo = menu_kdo()) :?>
-            <div class="pull-right" id="role">
-                <h3>Vaše role</h3>
-                <?php echo $menu_kdo; ?>
-            </div>
-            <?php endif; ?>
-
+       
             <h1><?php echo nadpis(); ?></h1>
             <?php
                 if ($napln == FILE_NEWS) {

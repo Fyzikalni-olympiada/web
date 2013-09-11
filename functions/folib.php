@@ -194,37 +194,6 @@ function submenu($parentID = 1)
 
 
 
-function menu_kdo()
-{
-    if (!$GLOBALS['difference']) { // soubor neni rozdilny pro studenta/ucitele/organizatora
-        return '';
-    }
-    $strHTML = '
-                <ul>';
-
-    if ($GLOBALS['who'] == 'student') {
-        $strHTML .= '
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce stránek pro studenty" class="selected">Student</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce stránek pro učitele">Učitel</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce stránek pro organzátory">Organizátor</a></li>';
-    } elseif ($GLOBALS['who'] == 'ucitel') {
-        $strHTML .= '
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce stránek pro studenty">Student</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce stránek pro učitele" class="selected">Učitel</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce stránek pro organzátory">Organizátor</a></li>';
-    } elseif ($GLOBALS['who'] == 'organizator') {
-        $strHTML .= '
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'student') . '" title="Sekce stránek pro studenty">Student</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'ucitel') . '" title="Sekce stránek pro učitele">Učitel</a></li>
-                    <li><a href="' . odkaz($GLOBALS['napln'], 'organizator') . '" title="Sekce stránek pro organzátory" class="selected">Organizátor</a></li>';
-    }
-    $strHTML .= '
-                </ul>';
-    return $strHTML;
-}
-
-
-
 function novinka($poradi)
 {
     $monthz = Array(1 => 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');

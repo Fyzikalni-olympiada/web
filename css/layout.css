@@ -618,36 +618,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 }
 #footer a:hover {color: #000;}
 
-#role {
-	font-size: .82em;
-    background-color: #F9F9F9;
-    border-top: 1px solid #DDD;
-    padding: 5px 10px;
-}
-#role h3 {
-    display: inline;
-    font-size: 1em;
-    font-weight: bold;
-    color: #7A7A7A;
-}
-#role ul {
-    margin: 0;
-    display: inline-block;
-}
-#role ul li {
-	font-family: sans-serif;
-    display:  inline-block;
-    padding: 0 6px 0 3px;
-    margin: 0;
-    border-width: 0px;
-    border-right: 1px solid #D8D8D8;
-}
-#role ul li:last-child {
-    padding-right: 0;
-    border-right: none;
-}
-
-
 /*
    Misc overriding classes
 ------------------------------------------------------------------- */
