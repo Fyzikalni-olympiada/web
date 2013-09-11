@@ -137,7 +137,7 @@ dd {margin-left: 1.5em;}
 
 /* Special lists */
 
-ul.plain-list li, ul.nice-list li, ul.tabbed li {
+ul.plain-list li, ul.nice-list li, ul.tabbed > li {
 	list-style: none;
 	margin-top: 0;
 }
@@ -146,7 +146,7 @@ ul.tabbed {
 	margin: 0;
 	padding: 0;
 }
-ul.tabbed li {display: inline-block;}
+ul.tabbed > li {display: inline-block;}
 
 ul.plain-list {margin: 0;}
 
@@ -548,21 +548,21 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #sub-nav {
 	margin-top: 32px;
 }
-#sub-nav ul {
+#sub-nav > ul {
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 	padding-top: 12px;
 	padding-bottom: 12px;
     background-color: #e8edff/*#e3e9ff*/;
 }
-#sub-nav a {
+#sub-nav > ul > li > a {
     color: #666;
 	font-size: 1.0em;
 	text-decoration: none;
 }
-#sub-nav li {margin: 0 1em;}
-#sub-nav a:hover {color: #002;}
-#sub-nav li.current-tab a {color: #222; font-weight: bold;}
+#sub-nav > ul > li {margin: 0 1em;}
+#sub-nav > ul > li >a:hover {color: #002;}
+#sub-nav > ul > li.current-tab > a {color: #222; font-weight: bold;}
 
 
 /* Main */

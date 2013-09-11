@@ -184,8 +184,21 @@ function submenu($parentID = 1)
         else
             $selected = '';
 
-        $strHTML .= '
+		if ($row['file_id'] == 19) {//diskuse
+			$urlS = odkaz2(null, array('file' => $row['file_id'], 'who' => 'student'));
+			$urlU = odkaz2(null, array('file' => $row['file_id'], 'who' => 'ucitel'));
+			$strHTML .= '
+				<li class="dropdown' . ($selected ? ' current-tab' : '') . '">
+				<a href="' . $url . '" title="' . $row['title'] . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $row['name'] . '<b class="caret"></b></a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
+					<li><a href="' . $urlS . '">Studenti</a></li>
+					<li><a href="' . $urlU . '">Učitelé</a></li>
+				</ul>
+				</li>';
+		} else {
+			$strHTML .= '
                     <li' . $selected . '>' . SUBMENU_ODRAZKA . '<a href="' . $url . '" title="' . $row['title'] . '"' . $selected . '>' . $row['name'] . '</a></li>';
+		}
     }
     $strHTML .= '
                 </ul>';
