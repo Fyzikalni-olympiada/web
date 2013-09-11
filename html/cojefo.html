@@ -1,6 +1,5 @@
 <h2><?php echo AKTUALNI_ROCNIK ?>. ročník fyzikální olympiády ve školním roce <?php echo AKTUALNI_ROK ?></h2>
 
-<?php if ($kdo == "student") {?>
 <h3>Žákům středních a základních škol</h3>
 
 <p>
@@ -13,10 +12,6 @@ mohli ukázat, jaké jsou vaše vědomosti z&nbsp;fyziky a&nbsp;jak je dovedete 
 odborníky ve fyzice a&nbsp;v&nbsp;technických vědách, neboť v&nbsp;souvislosti s&nbsp;neustálým
 vývojem vědy a&nbsp;techniky je těchto odborníků stále více zapotřebí, ale počet
 hodin výuky i&nbsp;počet zájemců o&nbsp;fyziku se snižuje.
-</p>
-<p>
-Vítězní řešitelé druhého kola všech kategorií a&nbsp;v&nbsp;kategorii&nbsp;A též třetího kola
-soutěže budou odměněni hodnotnými cenami. Kromě toho dostanou úspěšní řešitelé druhého a&nbsp;třetího kola soutěže pochvalná uznání a&nbsp;vítězové třetího kola diplomy.
 </p>
 <p>
 Při výběru na některé fakulty vysokých škol matematického, fyzikálního a&nbsp;technického směru se přihlíží mimo jiné i&nbsp;k&nbsp;tomu, zda se uchazeč zúčastnil
@@ -33,14 +28,18 @@ možnost soutěžit na
 </p>
 <p>
 Přejeme vám hodně úspěchů.
-<br />ÚKFO
 </p>
-<?php } ?>
 
 <h3>Organizace soutěže</h3>
 
-<?php if ($kdo == "student") { ?>
 <p>
+<a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád Fyzikální olympiády</a> platný od 1.&nbsp;září 2012 (ve formátu <code>pdf</code>)
+</p>
+
+<p>
+Soutěž FO je řízena celostátně Ústřední komisí fyzikální olympiády České
+republiky (ÚK&nbsp;FO), který má sekretariát v&nbsp;Hradci Králové. Na řízení soutěže se
+podílejí krajské (KK&nbsp;FO) a&nbsp;okresní komise FO (OK&nbsp;FO).
 Soutěž FO je dobrovolná. Kategorie&nbsp;A,&nbsp;B,&nbsp;C,&nbsp;D jsou určeny pro žáky středních
 škol. Všechny kategorie mají <a href="<?php echo odkaz("domaci.html"); ?>" title="domácí kolo">domácí</a> a&nbsp;<a href="<?php echo odkaz("region.html"); ?>" title="krajské kolo">krajské kolo</a>.
 Kategorie&nbsp;A navíc vrcholí <a href="<?php echo odkaz("celost.html"); ?>" title="celostátní kolo">celostátním kolem</a>. Pro žáky základních škol jsou určeny <a href="<?php echo odkaz("ef.html"); ?>" title="kategorie E, F">kategorie&nbsp;E,&nbsp;F</a>
@@ -59,42 +58,10 @@ a&nbsp;<a href="<?php echo odkaz("g.html"); ?>" title="Archimediáda">Archimedi�
 Každý řešitel se může zúčastnit i&nbsp;kategorie vyšší, než mu odpovídá, pokud se na to cítí.
 </p>
 <p>
-Na podporu FO jsou vydávány <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">studijní texty</a> a&nbsp;pořádány přednášky a&nbsp;soustředění, na která zveme
+Na podporu FO jsou vydávány <a href="<?php echo odkaz("texty.html"); ?>" title="studijní texty">studijní texty</a> a&nbsp;KK&nbsp;FO pořádají přednášky a&nbsp;soustředění, na která zvou
 účastníky FO prostřednictvím učitelů na školách. Každý rok
-pořádáme pro nejlepší účastníky v kategorii&nbsp;B <a href="<?php echo odkaz("tana/index.html"); ?>" title="Táňa">celostátní soustředění na chatě Táňa</a> a&nbsp;pro vybrané účastníky v&nbsp;kategorii&nbsp;A je uspořádáno
+pořádáme pro nejlepší účastníky v&nbsp;kategoriích&nbsp;B a&nbsp;C <a href="<?php echo odkaz("tana/index.html"); ?>" title="Táňa">celostátní soustředění na chatě Táňa</a> a&nbsp;pro vítěze celostátního kola v&nbsp;kategorii&nbsp;A je uspořádáno
 <a href="<?php echo odkaz("vyberko.html"); ?>" title="soustředění před MFO">soustředění před mezinárodní fyzikální olympiádou</a>.
-Pro pomoc žákům talentovaným na fyziku působí od školního roku&nbsp;1994/95 na katedře
-fyziky Pedagogické fakulty Univerzity Hradec Králové Poradna pro fyzikální
-talenty, na níž se můžete obrátit.
-</p>
-<?php } ?>
-
-<?php if ($kdo != "student") { ?>
-<p>
-Ministerstvo školství, mládeže a&nbsp;tělovýchovy České republiky spolu s&nbsp;Jednotou
-českých matematiků a&nbsp;fyziků pořádají ve školním roce&nbsp;<?php echo AKTUALNI_ROK ?> již&nbsp;<?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník
-soutěže fyzikální olympiáda (FO).
-Soutěž FO je řízena celostátně Ústřední komisí fyzikální olympiády České
-republiky (ÚK&nbsp;FO), který má sekretariát v&nbsp;Hradci Králové. Na řízení soutěže se
-podílejí krajské (KK&nbsp;FO) a&nbsp;okresní komise FO (OK&nbsp;FO).
-Soutěž je dobrovolná a&nbsp;kategorie&nbsp;A,&nbsp;B,&nbsp;C,&nbsp;D jsou určeny pro žáky středních
-škol. Všechny kategorie mají <a href="<?php echo odkaz("domaci.html"); ?>" title="domácí kolo">domácí</a> a&nbsp;<a href="<?php echo odkaz("region.html"); ?>" title="krajské kolo">krajské kolo</a>.
-Kategorie&nbsp;A navíc vrcholí <a href="<?php echo odkaz("celost.html"); ?>" title="celostátní kolo">celostátním kolem</a>. Pro žáky základních škol jsou určeny <a href="<?php echo odkaz("ef.html"); ?>" title="kategorie E, F">kategorie E,&nbsp;F</a>
-a&nbsp;<a href="<?php echo odkaz("g.html"); ?>" title="Archimediáda">Archimediáda</a>&nbsp;&ndash; kategorie&nbsp;G.
-</p>
-<p>
-Na podporu FO jsou vydávány <a href="<?php echo odkaz("texty.html"); ?>" "studijní texty">studijní texty</a> a&nbsp;KK&nbsp;FO pořádají přednášky a&nbsp;soustředění, na která pozvou
-účastníky&nbsp;FO prostřednictvím referentů&nbsp;FO na středních školách. Odborně zajistí
-tyto přednášky pobočky JČMF. ÚK&nbsp;FO uspořádá pro nejlepší účastníky v&nbsp;kategorii&nbsp;B <a href="<?php echo odkaz("tana/index.html"); ?>" title="Táňa">celostátní soustředění na chatě Táňa</a> a&nbsp;pro vybrané účastníky v&nbsp;kategorii&nbsp;A je uspořádáno
-<a href="<?php echo odkaz("vyberko.html"); ?>" title="soustředění před MFO">soustředění před mezinárodní fyzikální olympiádou</a>.
-Pro pomoc žákům talentovaným na fyziku a&nbsp;učitelům základních a&nbsp;středních
-škol, kteří s nimi chtějí pracovat, působí od školního roku&nbsp;1994/95 na katedře
-fyziky Pedagogické fakulty Univerzity Hradec Králové Poradna pro fyzikální
-talenty, na níž se mohou obracet soutěžící i&nbsp;učitelé.
-</p>
-<?php } ?>
-<p>
-<a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád Fyzikální olympiády</a> platný od 1.&nbsp;září 2012 (ve formátu <code>pdf</code>)
 </p>
 
 <h3>Historie a současnost</h3>

@@ -1,4 +1,3 @@
-<?php if ($kdo == "student" || $kdo == "organizator") { ?>
 <h2>Literatura vhodná pro přípravu na FO</h2>
 
 <ul>
@@ -8,12 +7,17 @@
 	<li><em>Feynmanovy přednášky z fyziky</em> (3 svazky). Fragment, Havlíčkův Brod 2000.</li>
 	<li>Štoll, I.: <em>Svět očima fyziky</em>. Prometheus, Praha 1996.</li>
 	<li>Vybíral, B.: <em>Základy teorie relativity</em>. Gaudeamus, Hradec Králové 1995.</li>
-	<li><em>Ročenky Fyzikálního korespondenčního semináře <a href="http://fykos.mff.cuni.cz" title="Fyzikální korespondenční seminář">FYKOS</a> z let 1994&ndash;2009</em>. Vyd. MFF UK, Praha 1995&ndash;2009.</li>
+	<li><em>Ročenky Fyzikálního korespondenčního semináře <a href="http://fykos.mff.cuni.cz" title="Fyzikální korespondenční seminář">FYKOS</a> z let 1994&ndash;<?=date('Y')?></em>. Vyd. MFF UK, Praha 1995&ndash;<?=date('Y')?>.</li>
 </ul>
-<?php } ?>
 
 <h2>Časopisy</h2>
 
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#casopisy-student" data-toggle="tab">Student</a></li>
+	<li><a href="#casopisy-ucitel" data-toggle="tab">Učitel</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="casopisy-student">
 <ul>
     <li>
         <a href="http://www.cscasfyz.fzu.cz/">Československý časopis pro fyziku</a><br>
@@ -23,7 +27,19 @@
         <a href="http://class.pedf.cuni.cz/NewSUMA/Default.aspx?PorZobr=19&PolozkaID=21&ClanekID=162">Rozhledy matematicko-fyzikální</a><br>
         Časopis určený talentovaným žákům základních a středních škol, přináší články zaměřené na rozšíření a doplnění znalostí, zajímavé úlohy, informace o soutěžích a olympiádách.
     </li>
-<?php if ($kdo == "ucitel" || $kdo == "organizator") { ?>
+</ul>
+</div>
+
+<div class="tab-pane" id="casopisy-ucitel">
+<ul>
+    <li>
+        <a href="http://www.cscasfyz.fzu.cz/">Československý časopis pro fyziku</a><br>
+        Přináší původní i přeložené referativní články, aktuality, zprávy a recenze knih. Uveřejňuje diskuse o filozofických aspektech fyziky, články z historie fyziky.
+    </li>
+    <li>
+        <a href="http://class.pedf.cuni.cz/NewSUMA/Default.aspx?PorZobr=19&PolozkaID=21&ClanekID=162">Rozhledy matematicko-fyzikální</a><br>
+        Časopis určený talentovaným žákům základních a středních škol, přináší články zaměřené na rozšíření a doplnění znalostí, zajímavé úlohy, informace o soutěžích a olympiádách.
+    </li>
     <li>
         <a href="http://sf.zcu.cz/">Školská fyzika</a><br>
         Praktický časopis pro výuku fyziky a práci s talentovanými žáky na základních a středních školách. Od března 2012 vychází v elektronické podobě.
@@ -32,10 +48,10 @@
         <a href="http://mfi.upol.cz/">Matematika&ndash;fyzika&ndash;informatika</a><br>
         Časopis se zabývá problémy výuky na základních a středních školách. Od 22. ročníku vychází v elektronické podobě a všem zájemcům je volně dostupný na internetových adresách redakce i vydavatele.
     </li>
-<?php } ?>
 </ul>
+</div>
+</div>
 
-<?php if ($kdo == "ucitel" || $kdo == "organizator") { ?>
 <h2>Literatura o Fyzikální olympiádě</h2>
 
 <ul>
@@ -46,5 +62,4 @@
 	<li>Kluiber, Z.: <em>10th International Young Physicist's Tournament</em>. Hradec Králové, MAFY 1998.</li>
 	<li>Volf, I.: <em>Metodika řešení úloh ve výuce fyziky na základní škole</em>. Hradec Králové, MAFY 1998.</li>
 </ul>
-<?php } ?>
 
