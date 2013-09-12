@@ -46,16 +46,6 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <link rel="stylesheet" type="text/css" media='screen' href="./css/jquery.lightbox-0.5.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="./css/prettyPhoto.css" title="prettyPhoto main stylesheet" charset="utf-8" />
 
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script type="text/javascript">
-  google.load('search', '1');
-  google.setOnLoadCallback(function() {
-    google.search.CustomSearchControl.attachAutoCompletion(
-      '002398901476820886408:ooqo1rb0p1a',
-      document.getElementById('q'),
-      'cse-search-box');
-  });
-</script>
 <script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
@@ -82,6 +72,17 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 			social_tools: false
 		});
     });
+</script>
+
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load('search', '1');
+  google.setOnLoadCallback(function() {
+    google.search.CustomSearchControl.attachAutoCompletion(
+      '002398901476820886408:ooqo1rb0p1a',
+      document.getElementById('q'),
+      'cse-search-box');
+  });
 </script>
 
 <title>
@@ -187,7 +188,10 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             <div class="section">
                 <div class="section-title">Krajské stránky</div>
                 <div class="section-content">
-                    <ul class="nice-list">
+					<div class="visible-md visible-lg map-container">
+						<?php include 'html/stranky_regionu.html' ?>
+					</div>	
+                    <ul class="nice-list visible-sm visible-xs">
                         <li><a href="http://praha.fyzikalniolympiada.cz/" title="Pražské stránky">Praha</a></li>
                         <li><a href="http://www.pf.jcu.cz/structure/departments/kaft/pro-verejnost/fyzikalni-olympiada/" title="Stránky jihočeského kraje">Jihočeský kraj</a></li>
                         <li><a href="http://www.jaroska.cz/fo/" title="Stránky jihomoravského kraje">Jihomoravský kraj</a></li>

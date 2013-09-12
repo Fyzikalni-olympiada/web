@@ -618,6 +618,35 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 }
 #footer a:hover {color: #000;}
 
+#sidebar .map-container {
+	height: 132px;
+	position: relative;
+}
+#sidebar .mapa {
+	-webkit-transform: scale(.5);
+	-moz-transform: scale(.5);
+	-o-transform: scale(.5);
+	-ms-transform: scale(.5);
+	transform: scale(.5);
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	margin: 0;
+	top: -67px;
+	left: -105px;
+}
+#sidebar .mapa:hover {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	left: -210px;
+}
+
+
 /*
    Misc overriding classes
 ------------------------------------------------------------------- */
