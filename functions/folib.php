@@ -145,16 +145,28 @@ function menu()
             $url = odkaz2(null, array('file' => $row['file_id']));
         else
             $url = $row['href'];
-        if ($row['id'] == $GLOBALS['parentID'])
+        if ($row['id'] == $GLOBALS['parentID'] || $row['id'] == $GLOBALS['structureID'])
             $selected = true;
         else
             $selected = false;
 
-        $strHTML .= '
+		if ($row['file_id'] == 19) {//diskuse
+			$urlS = odkaz2(null, array('file' => $row['file_id'], 'who' => 'student'));
+			$urlU = odkaz2(null, array('file' => $row['file_id'], 'who' => 'ucitel'));
+			$strHTML .= '
+				<li class="dropdown' . ($selected ? ' current-tab' : '') . '">
+				<a href="' . $url . '" title="' . $row['title'] . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $row['name'] . '<b class="caret"></b></a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
+					<li><a href="' . $urlS . '">Studenti</a></li>
+					<li><a href="' . $urlU . '">Učitelé</a></li>
+				</ul>';
+		} else {
+			$strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : 'dropdown') . '">
 			<a href="' . $url . '" title="' . $row['title'] . '"' . (!$selected ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $row['name'] . (!$selected ? '<b class="caret"></b>' : '') . '</a>';
-		if (!$selected) {
-			$strHTML .= submenu($row['id'], true);
+			if (!$selected) {
+				$strHTML .= submenu($row['id'], true);
+			}
 		}
 		$strHTML .= ' ' . MENU_ODDELOVAC . '</li>';
 
@@ -190,21 +202,8 @@ function submenu($parentID = 1, $dropdown = false)
         else
             $selected = '';
 
-		if ($row['file_id'] == 19 && !$dropdown) {//diskuse
-			$urlS = odkaz2(null, array('file' => $row['file_id'], 'who' => 'student'));
-			$urlU = odkaz2(null, array('file' => $row['file_id'], 'who' => 'ucitel'));
-			$strHTML .= '
-				<li class="dropdown' . ($selected ? ' current-tab' : '') . '">
-				<a href="' . $url . '" title="' . $row['title'] . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $row['name'] . '<b class="caret"></b></a>
-				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
-					<li><a href="' . $urlS . '">Studenti</a></li>
-					<li><a href="' . $urlU . '">Učitelé</a></li>
-				</ul>
-				</li>';
-		} else {
-			$strHTML .= '
-                    <li' . $selected . '>' . SUBMENU_ODRAZKA . '<a href="' . $url . '" title="' . $row['title'] . '"' . $selected . '>' . $row['name'] . '</a></li>';
-		}
+		$strHTML .= '
+				<li' . $selected . '>' . SUBMENU_ODRAZKA . '<a href="' . $url . '" title="' . $row['title'] . '"' . $selected . '>' . $row['name'] . '</a></li>';
     }
     $strHTML .= '
                 </ul>';
@@ -392,7 +391,7 @@ function parsuj()
     $result = $GLOBALS['mysql_odkazy']->vysledek;
     if ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
         $GLOBALS['mysql_odkazy']->query("
-            SELECT parent_id
+            SELECT parent_id, id
             FROM " . TABLE_MENU_STRUCTURE . "
             WHERE id='" . $row['parent_id'] . "'
             AND path='" . FILE_INDEX . "'
@@ -407,7 +406,7 @@ function parsuj()
             }
         } else {
             $GLOBALS['parentID'] = NULL;
-            $GLOBALS['structureID'] = NULL;
+            $GLOBALS['structureID'] = $row['id'];
         }
     }
     /* Soubor bude zobrazen i kdyz neni ve stromu menu */
