@@ -39,12 +39,13 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <? endif; ?>
 <link rel='home' href='http://<?= SERVER_NAME ?>/' />
 
-<link rel='stylesheet' type='text/css' media='screen' href='./css/bootstrap.css' />
-<link rel='stylesheet' type='text/css' media='screen,projection,tv' href='./css/layout.css' />
-<link rel='stylesheet' type='text/css' media='all' href='./css/content.css' />
-<link rel='stylesheet' type='text/css' media='print' href='./css/print.css' />
-<link rel="stylesheet" type="text/css" media='screen' href="./css/jquery.lightbox-0.5.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="./css/prettyPhoto.css" title="prettyPhoto main stylesheet" charset="utf-8" />
+<link rel='stylesheet' type='text/css' media='screen' href='/css/bootstrap.css' />
+<link rel='stylesheet' type='text/css' media='screen,projection,tv' href='/css/layout.css' />
+<link rel='stylesheet' type='text/css' media='all' href='/css/content.css' />
+<link rel='stylesheet' type='text/css' media='print' href='/css/print.css' />
+<link rel="stylesheet" type="text/css" media='screen' href="/css/jquery.lightbox-0.5.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/css/prettyPhoto.css" title="prettyPhoto main stylesheet" charset="utf-8" />
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/css/ie8.css" /><![endif]-->
 
 <script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
