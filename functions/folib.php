@@ -408,7 +408,10 @@ function parsuj()
             $GLOBALS['parentID'] = NULL;
             $GLOBALS['structureID'] = $row['id'];
         }
-    }
+	} else {
+		$GLOBALS['parentID'] = 1;
+	}
+
     /* Soubor bude zobrazen i kdyz neni ve stromu menu */
     $GLOBALS['mysql_odkazy']->query("
         SELECT filename, title, difference

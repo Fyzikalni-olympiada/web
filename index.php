@@ -273,11 +273,10 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 
         <div class="col-sm-6">
             <p class="large pull-right">
-                <a href="rss.php?who=<?php echo $GLOBALS['who'] ?>" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('domaci.html') ?>">Domácí kolo</a> <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('ef.html') ?>">Kategorie E, F</a> <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('g.html') ?>">Archimediáda</a> <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('archiv.html') ?>">Archiv</a>
+                <a href="/rss" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
+                <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
+                <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a> (<code>pdf</code>) <span class="text-separator">|</span>
+                <a href="<?php echo odkaz('domaci.html') ?>">Domácí kolo</a>
             </p>
         </div>
     </div>
