@@ -146,12 +146,18 @@ function menu()
         else
             $url = $row['href'];
         if ($row['id'] == $GLOBALS['parentID'])
-            $selected = ' class="current-tab"';
+            $selected = true;
         else
-            $selected = '';
+            $selected = false;
 
         $strHTML .= '
-                <li' . $selected . '><a href="' . $url . '" title="' . $row['title'] . '">' . $row['name'] . '</a>' . ' ' . MENU_ODDELOVAC . '</li>';
+			<li class="' . ($selected ? 'current-tab' : 'dropdown') . '">
+			<a href="' . $url . '" title="' . $row['title'] . '"' . (!$selected ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $row['name'] . (!$selected ? '<b class="caret"></b>' : '') . '</a>';
+		if (!$selected) {
+			$strHTML .= submenu($row['id'], true);
+		}
+		$strHTML .= ' ' . MENU_ODDELOVAC . '</li>';
+
     }
     $strHTML[strlen($strHTML) - 6] = ' ';
     $strHTML .= '
@@ -162,10 +168,10 @@ function menu()
 
 
 
-function submenu($parentID = 1)
+function submenu($parentID = 1, $dropdown = false)
 {
     $strHTML = '
-                <ul class="tabbed">';
+                <ul ' . ($dropdown ? 'class="dropdown-menu" role="menu"' : 'class="tabbed"') . '>';
     $result = $GLOBALS['mysql_odkazy']->query("
         SELECT id, poradi, type, file_id, href, name, title
         FROM " . TABLE_MENU_STRUCTURE . "
@@ -184,7 +190,7 @@ function submenu($parentID = 1)
         else
             $selected = '';
 
-		if ($row['file_id'] == 19) {//diskuse
+		if ($row['file_id'] == 19 && !$dropdown) {//diskuse
 			$urlS = odkaz2(null, array('file' => $row['file_id'], 'who' => 'student'));
 			$urlU = odkaz2(null, array('file' => $row['file_id'], 'who' => 'ucitel'));
 			$strHTML .= '
