@@ -1,9 +1,4 @@
-<h2>Studijní texty ke studijním tématům <?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročníku&nbsp;FO</h2>
-
 <p>Během každému ročníku Fyzikální olympiády vychází sada studijních textů, která rozšiřuje znalosti studentů ve zvoleném studijním tématu nad rámec středoškolského učiva. Pro každou kategorii A&ndash;D je určen jeden studijní text, jejichž přehled uvádíme níže. Ke zvolenému tématu se vždy váže jedna úloha v&nbsp;domácím, kraském i&nbsp;(v&nbsp;kategorii&nbsp;A) celostáním kole. Během řešení domácího kola doporučujeme studentům tyto texty prostudovat a&nbsp;vyřešit úlohy v&nbsp;nich uvedené. Pomohou jim nejen při řešení zmíněných úloh FO, ale jsou rovněž jsou velice dobrým studijním materiálem.
-</p>
-<p>
-Studijní texty byly vydány Vydavatelstvím MAFY Hradec Králové a jsou distribuovány na školy. Můžete si je rovněž stáhnout zde v elektronické podobě.
 </p>
 
 <!--p>
@@ -41,18 +36,11 @@ Studijní texty byly vydány Vydavatelstvím MAFY Hradec Králové a jsou distri
 </tr>
 </tbody></table>
 
-
+<?php if ($napln !== 'html/texty_arch.html'): ?>
 <p>
 Přehled všech studijních textů Knihovničky fyzikální olympiády najdete
 v&nbsp;<a href="<?php echo odkaz("texty_arch.html"); ?>" title="archiv studijních textů">Archivu studijních textů</a>.
 Řadu z&nbsp;nich si zde můžete také stáhnout v&nbsp;elektronické podobě.
 </p>
-<p>
-Soubory jsou k dispozici ve dvou fomátech: <code>pdf</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/pdficon.png">
-a <code>ps</code> &ndash; <img class="icon" alt="" border="0" src="<?php echo ROOT_WWW ?>pic/psicon.png">.
-K prohlížení <code>pdf</code> souborů je vhodný <a href="http://www.foxitsoftware.com/Secure_PDF_Reader/" title="Foxit Reader">Foxit Reader</a>,
-k prohlížení postscriptových souborů <code>ps</code> je vhodný <a href="http://www.cs.wisc.edu/~ghost/gsview/">GSview</a> (umí zobrazovat
-i zabalené soubory <code>.ps.gz</code>).
-</p>
-
+<?php endif; ?>
 
