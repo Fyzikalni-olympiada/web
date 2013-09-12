@@ -90,7 +90,7 @@ function odkaz2($path = null, $addget = null, $amp_entity = 1, $erase = false)
 
     if ($pathname) {
         unset($get['file']);
-        $url = ROOT_WWW/* . DIR_INDEX*/ . $pathname;
+        $url = ROOT_WWW/* . DIR_INDEX*/ . ltrim($pathname, '/');
     } else {
         $url = ROOT_WWW/* . DIR_INDEX*/;
     }
@@ -355,6 +355,15 @@ function parsuj()
 
         $pathname = iconv('UTF-8', 'ASCII//TRANSLIT', $pathname);
 
+		// 301
+		if ($pathname === 'archiv/studijni-texty') {
+			header('Location: /studijni-texty', TRUE, 301);
+			exit();
+		}
+		if ($pathname === 'novinky') {
+			header('Location: /', TRUE, 301);
+			exit();
+		}
         $row = $GLOBALS['mysql_odkazy']->query('
                     SELECT id
                     FROM ' . TABLE_FILES . '
