@@ -62,11 +62,6 @@ define('ERROR_MAIL_INTERVAL', 1); //interval posilani chybovych mailu in days
  
 // Defaultní hodnoty, pokud je prázdné GET 
 $GLOBALS['who'] = 'student';
-$GLOBALS['difference'] = 1;
-$GLOBALS['parentID'] = 1;
-$GLOBALS['structureID'] = 7;
-$GLOBALS['napln'] = FILE_NEWS;
-$GLOBALS['nadpis'] = 'Novinky';
 
 $GLOBALS['get'] = $_GET;
 

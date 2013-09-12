@@ -346,8 +346,7 @@ function text()
 function parsuj()
 {
     setlocale(LC_CTYPE, 'cs_CZ.utf8');
-    $default = FALSE;
-    if (isset($_SERVER['PATH_INFO'])) {
+    if (isset($_SERVER['PATH_INFO']) || !isset($_GET['file'])) {
         $path_info = $_SERVER['PATH_INFO'];
         if ($pos = strpos($path_info, '/', 0) !== FALSE)
             $pathname = substr($path_info, $pos) or $pathname = '/';
@@ -367,21 +366,8 @@ function parsuj()
         $result = $GLOBALS['mysql_odkazy']->vysledek;
         $row = mysql_fetch_array($result, MYSQL_ASSOC);
         $_GET["file"] = $row['id'];
-    } elseif (!isset($_GET["file"])) {
-        $GLOBALS['mysql_odkazy']->query('
-            SELECT file_id
-            FROM ' . TABLE_NEWS . '
-            WHERE wheres = \'' . NOVINKY_WHERES . '\'
-            AND who LIKE \'%' . $GLOBALS['who'] . '%\'
-            ORDER BY date DESC, time DESC
-            LIMIT 1
-        ');
-        $result = $GLOBALS['mysql_odkazy']->vysledek;
-        $row = mysql_fetch_array($result, MYSQL_ASSOC);
-        $_GET["file"] = $row['file_id'];
-        $default = TRUE;
-    }
-    $GLOBALS['mysql_odkazy']->query("
+	}
+	$GLOBALS['mysql_odkazy']->query("
         SELECT filename, " . TABLE_FILES . ".title, " . TABLE_MENU_STRUCTURE . ".id, parent_id
         FROM " . TABLE_FILES . " LEFT JOIN " . TABLE_MENU_STRUCTURE . "
         ON " . TABLE_FILES . ".id=" . TABLE_MENU_STRUCTURE . ".file_id
@@ -416,13 +402,16 @@ function parsuj()
         WHERE " . TABLE_FILES . ".id=" . $GLOBALS['mysql_odkazy']->escape_string($_GET["file"]) . "
     ");
     $result = $GLOBALS['mysql_odkazy']->vysledek;
-    if ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-        if (file_exists(ROOT_DIR . $row["filename"])) {
-            $GLOBALS['nadpis'] = $default ? 'Oficiální stránky' : $row["title"];
-            $GLOBALS['napln'] = $row["filename"];
-            $GLOBALS['difference'] = $row['difference'];
-        }
-    }
+    if (($row = mysql_fetch_array($result, MYSQL_ASSOC)) && file_exists(ROOT_DIR . $row["filename"])) {
+		$GLOBALS['nadpis'] = $row["title"];
+		$GLOBALS['napln'] = $row["filename"];
+		$GLOBALS['difference'] = $row['difference'];
+	} else {
+		header("HTTP/1.1 404 Not Found");
+		$GLOBALS['nadpis'] = 'Nenalezeno';
+		$GLOBALS['napln'] = NULL;
+		$GLOBALS['parentID'] = 1;
+	}
 }
 
 
