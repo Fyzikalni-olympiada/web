@@ -548,8 +548,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 /* Subnav */
 #sub-nav {
 	margin-top: 32px;
-}
-#sub-nav > ul {
 	border-top: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
 	padding-top: 12px;

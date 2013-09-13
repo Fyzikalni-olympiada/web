@@ -161,11 +161,12 @@ function menu()
 					<li><a href="' . $urlU . '">Učitelé</a></li>
 				</ul>';
 		} else {
+			$dropdown = !$selected && ($submenu = submenu($row['id'], true));
 			$strHTML .= '
-			<li class="' . ($selected ? 'current-tab' : 'dropdown') . '">
-			<a href="' . $url . '" title="' . $row['title'] . '"' . (!$selected ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $row['name'] . (!$selected ? '<b class="caret"></b>' : '') . '</a>';
-			if (!$selected) {
-				$strHTML .= submenu($row['id'], true);
+			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . '">
+			<a href="' . $url . '" title="' . $row['title'] . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $row['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
+			if ($dropdown) {
+				$strHTML .= $submenu;
 			}
 		}
 		$strHTML .= ' ' . MENU_ODDELOVAC . '</li>';
@@ -207,7 +208,7 @@ function submenu($parentID = 1, $dropdown = false)
     }
     $strHTML .= '
                 </ul>';
-    return $strHTML;
+    return isset($url) ? $strHTML : '';
 }
 
 
