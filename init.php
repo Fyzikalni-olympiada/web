@@ -92,10 +92,3 @@ if (isset($_GET['who']) && in_array($_GET['who'], array('student','ucitel','orga
 	$GLOBALS['who'] = $_GET['who'];
 }
 $GLOBALS['kdo'] = $GLOBALS['who'];
-	
-/*
- * POČÍTADLO
- */
- 
-list($GLOBALS['visits'], $GLOBALS['visits_day'], $GLOBALS['visits_online']) = pocitadlo();
-

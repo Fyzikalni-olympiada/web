@@ -231,29 +231,6 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                 </div>
             </div>
 
-            <div class="section">
-                <div class="section-title">Návštěvnost</div>
-                <div class="section-content">
-                    <ul class="nice-list">
-                        <li>
-                            <div class="left">Celkem</div>
-                            <div class="right"><?php echo $GLOBALS['visits']; ?></div>
-                            <div class="clearer">&nbsp;</div>
-                        </li>
-                        <li>
-                            <div class="left">Dnes</div>
-                            <div class="right"><?php echo $GLOBALS['visits_day']; ?></div>
-                            <div class="clearer">&nbsp;</div>
-                        </li>
-                        <li>
-                            <div class="left">Online</div>
-                            <div class="right"><?php echo $GLOBALS['visits_online']; ?></div>
-                            <div class="clearer">&nbsp;</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
             <div style="text-align: center">
                 <a href="http://www.facebook.com/fyzikalniolympiada" title="Fyzikální olympiáda na Facebooku"><img src="/pic/ico-facebook.png" alt="Fyzikální olympiáda na Facebooku"/></a>
             </div>
@@ -283,6 +260,15 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
         </div>
     </div>
 </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-31717225-2', 'fyzikalniolympiada.cz');
+  ga('send', 'pageview');
+</script>
 </body>
 </html>
 <?php
