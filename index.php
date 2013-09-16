@@ -96,6 +96,9 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 		<div class="col-xs-12 col-md-5 col-lg-4" id="logo">
 			<a href="/"><img src="images/logo.gif" alt="" /> </a>
 			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
+			<small>
+                    <?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník ve školním roce <?php echo AKTUALNI_ROK?>
+			</small>
 		</div>
 
 		<div class="col-xs-12 col-md-7 navigation" id="main-nav">
@@ -140,19 +143,6 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             <script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=cs"></script>
 
             <div class="section">
-                <div class="section-title">Právě probíhá</div>
-                <div class="section-content">
-                    <?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník &mdash; <?php echo AKTUALNI_ROK?>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title section-title-image">
-                    <?php echo rand_thumb(); ?>
-                </div>
-            </div>
-
-            <div class="section">
                 <div class="section-title">Nejbližští termíny</div>
                 <div class="section-content">
                     <?php foreach (latest_terms() as $title=>$term) : ?>
@@ -160,31 +150,9 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                         <?php echo $term; ?>
                         <div class="clearer">&nbsp;</div>
                     <?php endforeach;?>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Novinky</div>
-                <div class="section-content">
-                       <?php echo novinky(); ?>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">Ústřední komise</div>
-                <div class="section-content">
-                    <ul class="nice-list">
-                        <li><a href="mailto:ivo.volf@uhk.cz">prof. Ivo Volf</a> <span class="quiet">&ndash; předseda</span></li>
-                        <li><a href="mailto:bohumil.vybiral@uhk.cz">prof. Bohumil Vybíral</a> <span class="quiet">&ndash; místopředseda</span></li>
-                        <li><a href="mailto:jan.kriz@uhk.cz">dr. Jan Kříž</a> <span class="quiet">&ndash; místopředseda</span></li>
-                        <li><a href="mailto:premysls(z@vinac)seznam.cz">dr. Přemysl Šedivý</a> <span class="quiet">&ndash; redakce úloh a tisků</span></li>
-                        <li><a href="mailto:jaresova.miroslava(z@vinac)sspst-chrudim.cz">dr. Miroslava Jarešová</a> <span class="quiet">&ndash; členka předsednictva</span></li>
-                    </ul>
-                    <ul class="nice-list">
-                        <li><a href="http://www.uhk.cz/fo" title="Centrum péče o fyzikální talenty na UHK">Centrum péče o fyzikální talenty</a></li>
-                        <li><a href="http://cental.uhk.cz/" title="Centrum talentů M&amp;F&amp;I">CenTal &ndash; Centrum talentů M&amp;F&amp;I</a></li>
-                    </ul>
-                    
+					<p class="text-center">
+						<a href="<?php echo odkaz('terminy.html') ?>">Všechny termíny</a>
+					</p>
                 </div>
             </div>
 
@@ -210,6 +178,37 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                         <li><a href="http://physics.ujep.cz/~fo/" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
                         <li><a href="http://rvfo.webz.cz/" title="Stránky zlínského kraje">Zlínský kraj</a></li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Novinky</div>
+                <div class="section-content">
+                       <?php echo novinky(); ?>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title section-title-image">
+                    <?php echo rand_thumb(); ?>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Ústřední komise</div>
+                <div class="section-content">
+                    <ul class="nice-list">
+                        <li><a href="mailto:ivo.volf@uhk.cz">prof. Ivo Volf</a> <span class="quiet">&ndash; předseda</span></li>
+                        <li><a href="mailto:bohumil.vybiral@uhk.cz">prof. Bohumil Vybíral</a> <span class="quiet">&ndash; místopředseda</span></li>
+                        <li><a href="mailto:jan.kriz@uhk.cz">dr. Jan Kříž</a> <span class="quiet">&ndash; místopředseda</span></li>
+                        <li><a href="mailto:premysls(z@vinac)seznam.cz">dr. Přemysl Šedivý</a> <span class="quiet">&ndash; redakce úloh a tisků</span></li>
+                        <li><a href="mailto:jaresova.miroslava(z@vinac)sspst-chrudim.cz">dr. Miroslava Jarešová</a> <span class="quiet">&ndash; členka předsednictva</span></li>
+                    </ul>
+                    <ul class="nice-list">
+                        <li><a href="http://www.uhk.cz/fo" title="Centrum péče o fyzikální talenty na UHK">Centrum péče o fyzikální talenty</a></li>
+                        <li><a href="http://cental.uhk.cz/" title="Centrum talentů M&amp;F&amp;I">CenTal &ndash; Centrum talentů M&amp;F&amp;I</a></li>
+                    </ul>
+                    
                 </div>
             </div>
 

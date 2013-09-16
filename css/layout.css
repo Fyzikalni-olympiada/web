@@ -521,8 +521,9 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 
 /* Logo */
 #logo img {float:right;}
-#logo span {font-size: 40px; line-height: 60px; font-weight: normal; color: #000; display:block;}
+#logo span {font-size: 40px; line-height: 62px; font-weight: normal; color: #000; display:block;}
 #logo a:hover {text-decoration: none; color: #000;}
+#logo small {font-size: 19px; color: #888}
 
 /* Navigation */
 .navigation a {
