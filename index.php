@@ -214,8 +214,11 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             </div>
 
             <div class="section">
-                <div class="section-title">Partneři soutěže</div>
+                <div class="section-title">Partneři soutěže a sponzoři</div>
                 <div class="section-content">
+					<div style="margin: 0 0 20px;">
+						<a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a>
+					</div>
                     <div style="margin: 0 0 20px;">
                        <img src="/pic/logo_CEZ.png" alt="Skupina ČEZ" style="width: 99px; height: 99px; float: right;" />
                        Skupina ČEZ
@@ -224,22 +227,31 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                     <div>
                        <i>Mediální partner</i>
                        <a href="http://www.cscasfyz.fzu.cz/">
-                        <img src="/pic/logo_ccf.png" alt="Československý časopis pro fyziku" style="width: 220px; height: 52px; float: right;" />
+                        <img src="/pic/logo_ccf.png" alt="Československý časopis pro fyziku" style="width: 220px; height: 52px; float: right; margin-top: 1em;" />
                        </a>
                        <br style="clear: right" />
                     </div>
                 </div>
-            </div>
-
-            <div style="text-align: center">
-                <a href="http://www.facebook.com/fyzikalniolympiada" title="Fyzikální olympiáda na Facebooku"><img src="/pic/ico-facebook.png" alt="Fyzikální olympiáda na Facebooku"/></a>
             </div>
         </div>
         <div class="clearer">&nbsp;</div>
     </div>
 
     <div id="footer" class="row row-offcanvas row-offcanvas-right">
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-sm-push-6 col-lg-5 col-lg-offset-1">
+            <p class="large pull-right text-right">
+                <a href="/rss" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
+                <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
+                <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a> (<code>pdf</code>) <span class="text-separator">|</span>
+                <a href="<?php echo odkaz('terminy.html') ?>">Termíny</a> <span class="text-separator">|</span>
+                <a href="<?php echo odkaz('jine_olym.html') ?>">Další předmětové olympiády</a> <span class="text-separator">|</span>
+                <a href="<?php echo odkaz('odkazy.html') ?>">Odkazy</a>
+			</p>
+            <p class="pull-right">
+                <a href="http://www.facebook.com/fyzikalniolympiada" title="Fyzikální olympiáda na Facebooku"><img src="/pic/ico-facebook.png" alt="Fyzikální olympiáda na Facebooku"/></a>
+			</p>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
             <img src="images/logo-small.gif" alt="" class="left" />
             <p>&copy; 2002&ndash;<?php echo date('Y') ?> Fyzikální olympiáda. All rights Reserved.<br />
                 Pokud není uvedeno jinak, podléhá text na těchto stránkách licenci <a rel="license" href="http://creativecommons.org/licenses/by/3.0/cz/">Creative Commons Uveďte autora 3.0 Česká republika</a>
@@ -248,15 +260,6 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             <p><a href="mailto:webmaster@fyzikalniolympiada.cz" title="Kontaktní email">webmaster@fyzikalniolympiada.cz</a> &ndash; Jan Prachař</p>
             <p class="quiet"><a href="http://templates.arcsin.se/">Website template</a> by <a href="http://arcsin.se/">Arcsin</a></p>
             <div class="clearer">&nbsp;</div>
-        </div>
-
-        <div class="col-sm-6">
-            <p class="large pull-right">
-                <a href="/rss" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
-                <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a> (<code>pdf</code>) <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('domaci.html') ?>">Domácí kolo</a>
-            </p>
         </div>
     </div>
 </div>
