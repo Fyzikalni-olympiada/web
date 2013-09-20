@@ -534,7 +534,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .navigation li.current-tab a {color: #222;}
 
 /* Main navigation */
-#main-nav > ul > li {margin: 0 1.3em;}
+#main-nav > ul > li {margin: 0 1.3em; position: relative}
 #main-nav > ul > li > a {
 	font-size: 1.6em;
 	line-height: 2.2em;
