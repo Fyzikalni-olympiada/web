@@ -198,7 +198,7 @@ function submenu($parentID = 1, $dropdown = false)
             $url = odkaz2(null, array('file' => $row['file_id']));
         else
             $url = $row['href'];
-        if ($row['id'] == $GLOBALS['structureID'])
+        if (isset($GLOBALS['structureID']) && $row['id'] == $GLOBALS['structureID'])
             $selected = ' class="current-tab"';
         else
             $selected = '';
@@ -353,7 +353,7 @@ function parsuj()
 {
     setlocale(LC_CTYPE, 'cs_CZ.utf8');
     if (isset($_SERVER['PATH_INFO']) || !isset($_GET['file'])) {
-        $path_info = $_SERVER['PATH_INFO'];
+		$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
         if ($pos = strpos($path_info, '/', 0) !== FALSE)
             $pathname = substr($path_info, $pos) or $pathname = '/';
         else
@@ -410,7 +410,8 @@ function parsuj()
             $GLOBALS['structureID'] = $row['id'];
         }
 	} else {
-		$GLOBALS['parentID'] = 1;
+		$GLOBALS['parentID'] = NULL;
+		$GLOBALS['structureID'] = NULL;
 	}
 
     /* Soubor bude zobrazen i kdyz neni ve stromu menu */
