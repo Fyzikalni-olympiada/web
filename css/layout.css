@@ -592,7 +592,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 /* Main */
 #main-two-columns {margin-top: 24px; margin-bottom: 24px;}
 #main-content {position:relative}
-#main-content p, #main-content li, #main-content dl { font-family: "DejaVu Serif", "Lucida Bright", Georgia, serif; line-height: 2; }
+#main-content p, #main-content li, #main-content dl { font-family: "DejaVu Serif", "Lucida Bright", Georgia, serif; line-height: 1.7; }
 #main-content table {font-size: 0.9em}
 
 /* Sidebar */
