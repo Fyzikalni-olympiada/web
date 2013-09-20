@@ -93,15 +93,15 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 <body id="fo-cuni-cz">
 <div class="container">
     <div id="header" class="row">
-		<div class="col-xs-12 col-md-5 col-lg-4" id="logo">
-			<a href="/"><img src="images/logo.gif" alt="" /> </a>
+		<div class="col-xs-12 col-lg-5" id="logo">
+			<a href="/"><img src="/pic/logo-fo.svg" alt="" /> </a>
 			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
 			<small>
                     <?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník ve školním roce <?php echo AKTUALNI_ROK?>
 			</small>
 		</div>
-
-		<div class="col-xs-12 col-md-7 navigation" id="main-nav">
+		
+		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">
 			<?php echo menu(); ?>
 		</div>
 
@@ -251,7 +251,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 			</p>
         </div>
         <div class="col-sm-6 col-sm-pull-6">
-            <img src="images/logo-small.gif" alt="" class="left" />
+            <img src="pic/logo-fo.svg" alt="" class="left logo" />
             <p>&copy; 2002&ndash;<?php echo date('Y') ?> Fyzikální olympiáda. All rights Reserved.<br />
                 Pokud není uvedeno jinak, podléhá text na těchto stránkách licenci <a rel="license" href="http://creativecommons.org/licenses/by/3.0/cz/">Creative Commons Uveďte autora 3.0 Česká republika</a>
                 <!--a rel="license" href="http://creativecommons.org/licenses/by/3.0/cz/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a-->

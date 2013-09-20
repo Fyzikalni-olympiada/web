@@ -520,14 +520,14 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #header {padding-top: 24px;}
 
 /* Logo */
-#logo img {float:right;}
-#logo span {font-size: 40px; line-height: 62px; font-weight: normal; color: #000; display:block;}
+#logo img {float:right; width: 132px;}
+#logo span {font-size: 50px; line-height: 62px; font-weight: normal; color: #000; display:block;}
 #logo a:hover {text-decoration: none; color: #000;}
 #logo small {font-size: 19px; color: #888}
 
 /* Navigation */
 .navigation a {
-	color: #888;
+	color: #555;
 	text-decoration: none;
 }
 .navigation a:hover {color: #002;}
@@ -537,13 +537,29 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #main-nav > ul > li {margin: 0 1.3em;}
 #main-nav > ul > li > a {
 	font-size: 1.6em;
-	line-height: 2em;
+	line-height: 2.2em;
 	padding-bottom: 2px;
 }
 #main-nav > ul > li.current-tab > a {color: #333;}
 #main-nav > ul > li > a:hover {color: #002;}
 #main-nav > ul > li.current-tab > a {border-bottom: 2px solid #3E5199/*#94CC5F*/;}
 #main-nav .dropdown-menu {font-size: 1.2em;}
+@media (max-width: 1199px) {
+	#logo span {font-size: 55px}
+	#logo small {padding-left: 9em;}
+	#main-nav > ul > li > a {line-height: 1.8em}
+}
+@media (max-width: 991px) {
+	#logo span {font-size: 45px; line-height: 50px}
+	#logo small {padding-left: 7em;}
+	#main-nav > ul > li > a {line-height: 1.6em}
+}
+@media (max-width: 767px) {
+	#logo img {width: 120px}
+	#logo span {font-size: 40px; line-height: 45px}
+	#logo small {font-size: 17px; padding-left: 0}
+	#main-nav > ul > li > a {font-size: 1.4em}
+}
 
 
 /* Subnav */
@@ -617,6 +633,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	color: #BBB;
 }
 #footer a:hover {color: #000;}
+#footer img.logo {width: 62px}
 
 #sidebar .map-container {
 	height: 132px;
