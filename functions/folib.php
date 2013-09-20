@@ -307,7 +307,7 @@ function rand_thumb()
         $rand_thumb = ROOT_DIR . 'temp/images/' . md5($rand_pic) . '.jpg';
         if (!is_file($rand_thumb)) {
             $image = NImage::fromFile($rand_pic);
-            $image->resize(235, 235, NImage::FIT);
+            $image->resize(260, 260, NImage::FIT);
             //$image->sharpen();
             $image->save($rand_thumb, 95);
         }

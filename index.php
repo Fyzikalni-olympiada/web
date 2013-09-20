@@ -111,9 +111,9 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 	<hr>
 
     <div id="main-two-columns" class="row row-offcanvas row-offcanvas-right">
-        <div id="main-content" class="col-lg-9 col-md-8 col-xs-12">
-			<div class="pull-right visible-sm visible-xs">
-				<button type="button" class="btn-xs btn-sm" data-toggle="offcanvas">Zobrazit boční panel</button>
+        <div id="main-content" class="col-sm-9 col-xs-12">
+			<div class="pull-right visible-xs">
+				<button type="button" class="btn-xs" data-toggle="offcanvas">Zobrazit boční panel</button>
 			</div>
        
             <h1><?php echo nadpis(); ?></h1>
@@ -126,7 +126,10 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             ?>
         </div>
 
-		<div id="sidebar" class="col-lg-3 col-md-4 col-sm-6 sidebar-offcanvas">
+		<div id="sidebar" class="col-sm-3 sidebar-offcanvas">
+			<div class="section visible-xs">
+				<button type="button" class="btn-xs" data-toggle="offcanvas">Skrýt boční panel</button>
+			</div>
             <form action="/vyhledavani" id="cse-search-box">
               <div>
                 <input type="hidden" name="cx" value="002398901476820886408:ooqo1rb0p1a" />
@@ -185,7 +188,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             </div>
 
             <div class="section">
-                <div class="section-title section-title-image">
+                <div class="section-title-image">
                     <?php echo rand_thumb(); ?>
                 </div>
             </div>
@@ -222,7 +225,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                     <div>
                        <i>Mediální partner</i>
                        <a href="http://www.cscasfyz.fzu.cz/">
-                        <img src="/pic/logo_ccf.png" alt="Československý časopis pro fyziku" style="width: 220px; height: 52px; float: right; margin-top: 1em;" />
+                        <img src="/pic/logo_ccf.png" alt="Československý časopis pro fyziku" class="cscas" />
                        </a>
                        <br style="clear: right" />
                     </div>

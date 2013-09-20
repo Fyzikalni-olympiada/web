@@ -96,8 +96,6 @@ p img.icon {
 .mapa {
 	width: 470px;
 	height: 269px;
-	position: absolute;
-	margin-left: -20px;
 }
 .mapa img {
 	position: absolute;

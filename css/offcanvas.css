@@ -14,7 +14,7 @@ footer {
  * Off Canvas
  * --------------------------------------------------
  */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 767px) {
   .row-offcanvas {
     position: relative;
     -webkit-transition: all 0.25s ease-out;
@@ -22,28 +22,32 @@ footer {
     transition: all 0.25s ease-out;
   }
 
+  .row-offcanvas.active {
+	  margin: 0;
+  }
+
   .row-offcanvas-right
   .sidebar-offcanvas {
-    right: -50%; /* 6 columns */
+    right: -100%; /* 6 columns */
   }
 
   .row-offcanvas-left
   .sidebar-offcanvas {
-    left: -50%; /* 6 columns */
+    left: -100%; /* 6 columns */
   }
 
   .row-offcanvas-right.active {
-    right: 50%; /* 6 columns */
+    right: 100%; /* 6 columns */
   }
 
   .row-offcanvas-left.active {
-    left: 50%; /* 6 columns */
+    left: 100%; /* 6 columns */
   }
 
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 50%; /* 6 columns */
+    width: 100%; /* 6 columns */
 	display: none;
   }
 
