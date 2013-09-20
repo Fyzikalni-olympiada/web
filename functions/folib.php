@@ -127,6 +127,7 @@ function menu()
     ");
     $result = $GLOBALS['mysql_odkazy']->vysledek;
 
+	$i = 1;
     while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
         if (empty($row['type'])) { //zjistime, na jaky soubor mame vlastne odkazovat
             $GLOBALS['mysql_odkazy']->query("
@@ -154,7 +155,7 @@ function menu()
 			$urlS = odkaz2(null, array('file' => $row['file_id'], 'who' => 'student'));
 			$urlU = odkaz2(null, array('file' => $row['file_id'], 'who' => 'ucitel'));
 			$strHTML .= '
-				<li class="dropdown' . ($selected ? ' current-tab' : '') . '">
+				<li class="dropdown' . ($selected ? ' current-tab' : '') . ($i++ > 5 ? ' smaller' : '') . '">
 				<a href="' . $url . '" title="' . $row['title'] . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $row['name'] . '<b class="caret"></b></a>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
 					<li><a href="' . $urlS . '">Studenti</a></li>
@@ -163,7 +164,7 @@ function menu()
 		} else {
 			$dropdown = ($submenu = submenu($row['id'], true));
 			$strHTML .= '
-			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . '">
+			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 5 ? ' smaller' : '') . '">
 			<a href="' . $url . '" title="' . $row['title'] . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $row['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
 			if ($dropdown) {
 				$strHTML .= $submenu;
