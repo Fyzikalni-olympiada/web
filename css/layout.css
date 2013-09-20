@@ -517,7 +517,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 ------------------------------------------------------------------- */
 
 /* Header */
-#header {padding-top: 24px;}
+#header {padding-top: 14px;position: relative}
 
 /* Logo */
 #logo img {float:right; width: 132px;}
@@ -530,6 +530,9 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	text-decoration: none;
 }
 .navigation li.current-tab a {color: #3E5199;}
+
+#search {position: absolute; bottom: -34px; right: 0px;}
+#search button {height: 34px}
 
 /* Main navigation */
 #main-nav > ul > li {margin: 0 20px; position: relative}
@@ -564,6 +567,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 @media (max-width: 360px) {
 	#logo img {width: 70px}
 	#logo span {font-size: 36px;}
+	#search {width: 67%}
 }
 
 
@@ -639,10 +643,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 		max-height: 130px;
 	}
 }
-
-#cse-search-box {margin: 0 0 18px;}
-#cse-search-box .text {width: 185px; margin:0;}
-#cse-search-box .button {width: 50px;}
 /* Footer */
 
 #footer {
@@ -792,3 +792,25 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .nav {
 	margin-left: 0;
 }
+
+/** Google custom search */
+.gsc-control-cse {
+	padding: 0 !important;
+}
+.gsc-table-result,
+.gsc-thumbnail-inside,
+.gsc-url-top {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+.gsc-control-cse table {
+	font-size: 1em !important;
+	border: none;
+	margin: 0;
+}
+.gsc-control-cse tr, .gsc-control-cse td {
+	border: none;
+	background: none;
+	padding: 0;
+}
+

@@ -75,15 +75,17 @@ echo '<?xml version="1.0" encoding="utf-8"?>
     });
 </script>
 
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script type="text/javascript">
-  google.load('search', '1');
-  google.setOnLoadCallback(function() {
-    google.search.CustomSearchControl.attachAutoCompletion(
-      '002398901476820886408:ooqo1rb0p1a',
-      document.getElementById('q'),
-      'cse-search-box');
-  });
+<script>
+  (function() {
+    var cx = '010018104406474741832:8azmff_xpkm';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
 </script>
 
 <title>
@@ -93,6 +95,18 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 <body id="fo-cuni-cz">
 <div class="container">
     <div id="header" class="row">
+		<form class="col-xs-6 col-sm-4 col-md-3" id="search" role="search" action="/vyhledavani">
+		<label class="sr-only" for="q">Vyhledávání</label>
+		  <div class="input-group">
+			<input class="form-control" placeholder="Vyhledávání" type="text" name="q" id="q" autocomplete="off" />
+			<span class="input-group-btn">
+			<button class="btn btn-default" type="submit">
+				<i class="glyphicon glyphicon-search"></i><span style="width:0">&nbsp;</span>
+			</button>
+			</span>
+		  </div>
+		</form>
+
 		<div class="col-xs-12 col-lg-5" id="logo">
 			<a href="/"><img src="/pic/logo-fo.svg" alt="" /> </a>
 			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
@@ -130,17 +144,6 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 			<div class="section visible-xs">
 				<button type="button" class="btn-xs" data-toggle="offcanvas">Skrýt boční panel</button>
 			</div>
-            <form action="/vyhledavani" id="cse-search-box">
-              <div>
-                <input type="hidden" name="cx" value="002398901476820886408:ooqo1rb0p1a" />
-                <input type="hidden" name="cof" value="FORID:11" />
-                <input type="hidden" name="ie" value="utf-8" />
-                <input class="text" type="text" name="q" id="q" autocomplete="off" size="31" />
-                <input class="button" type="submit" name="sa" value="Hledat" />
-              </div>
-            </form>
-            <script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=cs"></script>
-
             <div class="section">
                 <div class="section-title">Nejbližští termíny</div>
                 <div class="section-content">
@@ -152,6 +155,12 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 					<p class="text-center">
 						<a href="<?php echo odkaz('terminy.html') ?>">Všechny termíny</a>
 					</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title-image">
+                    <?php echo rand_thumb(); ?>
                 </div>
             </div>
 
@@ -184,12 +193,6 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                 <div class="section-title">Novinky</div>
                 <div class="section-content">
                        <?php echo novinky(); ?>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title-image">
-                    <?php echo rand_thumb(); ?>
                 </div>
             </div>
 
