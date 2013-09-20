@@ -529,16 +529,16 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .navigation a {
 	text-decoration: none;
 }
-.navigation li.current-tab a {color: #3E5199;}
+.navigation li.current-tab > a {color: #3E5199;}
 
-#search {position: absolute; bottom: -34px; right: 0px;}
+#search {position: absolute; bottom: -35px; right: 0px;}
 #search button {height: 34px}
 
 /* Main navigation */
 #main-nav > ul > li {margin: 0 20px; position: relative}
 #main-nav > ul > li > a {
 	font-size: 1.6em;
-	line-height: 2.2em;
+	line-height: 52px;
 	padding-bottom: 2px;
 }
 #main-nav > ul > li > a:hover,
@@ -548,18 +548,21 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	#logo span {font-size: 55px}
 	#logo small {padding-left: 9em;}
 	#main-nav {margin-top: 20px}
-	#main-nav > ul > li > a {line-height: 1.8em}
+	#main-nav > ul > li {margin: 0 18px;}
+	#main-nav > ul > li > a {line-height: 46px;}
 }
 @media (max-width: 991px) {
 	#logo span {font-size: 45px; line-height: 50px}
 	#logo small {padding-left: 7em;}
-	#main-nav > ul > li > a {line-height: 1.6em}
+	#main-nav > ul > li {margin: 0 16px;}
+	#main-nav > ul > li > a {line-height: 40px}
 }
 @media (max-width: 767px) {
 	#logo img {width: 120px}
 	#logo span {font-size: 40px; line-height: 45px}
 	#logo small {font-size: 17px; padding-left: 0}
-	#main-nav > ul > li > a {font-size: 1.4em}
+	#main-nav > ul > li {margin: 0 12px;}
+	#main-nav > ul > li > a {font-size: 1.4em; line-height: 36px;}
 }
 @media (max-width: 640px) {
 	#logo img {width: 90px}
