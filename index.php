@@ -106,13 +106,9 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 		</div>
 
 		<div class="clearfix"></div>
-
-		<div class="col-xs-12 navigation">
-			<div id="sub-nav">
-            <?php echo submenu($parentID); ?>
-  			</div>
-        </div>
     </div>
+
+	<hr>
 
     <div id="main-two-columns" class="row row-offcanvas row-offcanvas-right">
         <div id="main-content" class="col-lg-9 col-md-8 col-xs-12">
