@@ -161,7 +161,7 @@ function menu()
 					<li><a href="' . $urlU . '">Učitelé</a></li>
 				</ul>';
 		} else {
-			$dropdown = !$selected && ($submenu = submenu($row['id'], true));
+			$dropdown = ($submenu = submenu($row['id'], true));
 			$strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . '">
 			<a href="' . $url . '" title="' . $row['title'] . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $row['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
