@@ -237,14 +237,15 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             <p class="large pull-right text-right">
                 <a href="/rss" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
-                <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a> (<code>pdf</code>) <span class="text-separator">|</span>
+                <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('terminy.html') ?>">Termíny</a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('jine_olym.html') ?>">Další předmětové olympiády</a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('odkazy.html') ?>">Odkazy</a>
 			</p>
             <p class="pull-right">
-                <a href="http://www.facebook.com/fyzikalniolympiada" title="Fyzikální olympiáda na Facebooku"><img src="/pic/ico-facebook.png" alt="Fyzikální olympiáda na Facebooku"/></a>
+                <a href="http://www.facebook.com/fyzikalniolympiada" title="Fyzikální olympiáda na Facebooku"><img class="fb" src="/pic/ico-facebook.png" alt="Fyzikální olympiáda na Facebooku"/></a>
 			</p>
+			<div class="clearfix"></div>
         </div>
         <div class="col-sm-6 col-sm-pull-6">
             <img src="pic/logo-fo.svg" alt="" class="left logo" />
