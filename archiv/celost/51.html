@@ -66,9 +66,9 @@ balíček na cestu. </p>
 
 <a name="mapa"></a><h3>Mapa</h3>
 
-<a href="<?php echo ROOT_WWW ?>archiv/celost/51/mapa.jpg" title="Mapa Pelhřimov"><img src="<?php echo ROOT_WWW ?>archiv/celost/51/mapa_s.jpg" alt="Mapa" align="left" /></a>
+<a href="<?php echo ROOT_WWW ?>archiv/celost/51/mapa.jpg" title="Mapa Pelhřimov"><img class="img-responsive" src="<?php echo ROOT_WWW ?>archiv/celost/51/mapa_s.jpg" alt="Mapa" align="left" /></a>
 
-<ol style="padding-left: 370px">
+<ol class="celost-51-list">
 <li>Autobusové nádraží</li>
 <li>Domov mládeže (ubytování a stravování)</li>
 <li>Kulturní dům Máj (soutěž, hlavní schůze ÚK FO)</li>
@@ -76,8 +76,18 @@ balíček na cestu. </p>
 <li>Gymnázium (přednášky, opravy úloh, vyhlášení výsledků)</li>
 <li>U hradeb (závěrečná schůze ÚK FO)</li>
 </ol>
-<br style="clear: left"/>
-<br />
+<div class="clearfix"></div>
+<style>
+	.celost-51-list {
+		padding-left: 370px
+	}
+@media (max-width: 767px) {
+	.celost-51-list {
+		clear: left;
+		padding-left: 20px
+	}
+}
+</style>
 
 <a name="program"><h3>Program</h3></a>
 
@@ -198,8 +208,8 @@ Texty i řešení úloh zveřejníme v průběhu konání celostátního kola.
 Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code> nebo <code>ps</code>.
 </p>
 
-<div class="center">
-<table cellpadding="4" class="centered">
+<div class="table-responsive">
+<table class="table">
 <tr>
 	<th></th>
 	<th scope="col">Zadání úloh</th>
@@ -230,8 +240,8 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code> nebo 
 Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/51_A_3.pdf"><img class="icon" border="0" alt="" src="<?php echo ROOT_WWW ?>pic/pdficon.png"></a>.
 </p>
 
-<div class="center">
-<table cellpadding="3" class="centered">
+<div class="table-responsive">
+<table class="table">
 <colgroup span="1" style="text-align: right; white-space : nowrap;"></colgroup>
 <colgroup span="3"></colgroup>
 <colgroup align="center" span="5" style="text-align: center"></colgroup>
@@ -903,8 +913,8 @@ nejlepší experimentální úloha&nbsp;&ndash; Jáchym Sýkroa a&nbsp;Štěpán
 U&nbsp;každého postupujícího uvádíme body získané v&nbsp;krajském kole.
 </p>
 
-<div class="center">
-<table cellpadding="3" class="centered">
+<div class="table-responsive">
+<table class="table">
 <colgroup span="4"></colgroup>
 <colgroup align="center" span="1" style="font-weight: bold; text-align: center"></colgroup>
 <thead>

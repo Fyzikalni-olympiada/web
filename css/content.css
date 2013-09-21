@@ -18,18 +18,6 @@ var {
 	font-style : italic;
 }
 
-/*div.center
-{
-	text-align : center;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-}*/
-
-table.centered {
-	text-align: left;
-	margin : 0 auto 1.6em auto;
-}
-
 img.block {
 	display : block;
 }
@@ -103,14 +91,6 @@ p img.icon {
 
 .mapa .kraj {
 	/*display: none;*/
-}
-
-table.zadani {
-    border-collapse: collapse;
-}
-
-table.zadani th, table.zadani td {
-    padding: 4px;
 }
 
 table.zadani td {

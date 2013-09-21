@@ -190,6 +190,8 @@ table td {
 }
 table.data-table tr.even td {background: #FCFCFC;}
 
+td p, td ul {margin-bottom: 0}
+
 
 /* Misc classes */
 
@@ -794,6 +796,9 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 /* Bootstrap related */
 .nav {
 	margin-left: 0;
+}
+.table-responsive > .table td > div {
+	white-space: normal;
 }
 
 /** Google custom search */
