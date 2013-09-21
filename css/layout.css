@@ -817,3 +817,8 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	padding: 0;
 }
 
+/** smap */
+.smap {line-height: 1}
+.smap .label {margin: 0; padding: 0; border:none;}
+.smap table {border: none; background: none;}
+.smap td, .smap tr {border: none; padding: 0; background: none}

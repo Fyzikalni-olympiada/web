@@ -98,19 +98,63 @@ viditelný ukazatel na chatu Irena a pozornému oku neunikne ani méně výrazn�
 vede střídavě mírně z&nbsp;kopce a&nbsp;do&nbsp;kopce. Jděte po této cestě
 stále rovně, na poslední křižovatce je směr na Táňu vyznačen, chata je od
 křižovatky vzdálená asi 100&nbsp;m. Celkem je chata od autobusového nádraží
-vzdálená asi&nbsp;1500&nbsp;m. Viz obrázek, podrobněji na
-<a href="http://www.mapy.cz/#!d=firm_262722_1">on-line mapě</a>.
+vzdálená asi&nbsp;1500&nbsp;m, viz mapa a 
+<a href="http://www.mapy.cz/#!d=firm_262722_1">vizitka na on-line mapě</a>.
 Pro majitele GPS: 50°41'35.8"N, 15°45'18.7"E. Nelze příliš doporučit přímou
 cestou svahem od penzionu Tetřívek, zejména ne se zavazadly.
   </p>
 
-  <div align="center"><img src="<?php echo ROOT_WWW ?>pic/cesta.gif" alt="mapa"></div>
+<style>
+	div#m {height: 500px; width: 100%}
+</style>
+<script type="text/javascript" src="http://api4.mapy.cz/loader.js"></script>
+<script type="text/javascript">Loader.load();</script>
+<div id="m">
+	<img src="<?php echo ROOT_WWW ?>pic/cesta.gif" alt="mapa">
+</div>
+<script type="text/javascript">
+	$('#m > img').hide();
+	var m = new SMap(document.getElementById("m"));
+	m.addControl(new SMap.Control.Sync());
+	m.addDefaultLayer(SMap.DEF_SMART_BASE).enable();
+	m.addDefaultLayer(SMap.DEF_SMART_TURIST);
+	m.addDefaultControls();
 
+	var layerControl = new SMap.Control.Layer();
+	m.addControl(layerControl);
+	layerControl.addDefaultLayer(SMap.DEF_SMART_BASE);
+	layerControl.addDefaultLayer(SMap.DEF_SMART_TURIST);
+
+	var layer = new SMap.Layer.Marker();
+	m.addLayer(layer).enable();
+
+	var autobus = SMap.Coords.fromWGS84(15.7352289, 50.6948275);
+	var kriz = SMap.Coords.fromWGS84(15.7508542, 50.6936778);
+	var tana = SMap.Coords.fromWGS84(15.7552725, 50.6932333);
+
+	var route = new SMap.Route([autobus, kriz], function (route) {
+			var layer = new SMap.Layer.Geometry();
+			m.addLayer(layer).enable();
+
+			var coords = route.getResults().geometry;
+
+			var g = new SMap.Geometry(SMap.GEOMETRY_POLYLINE, null, coords);
+			layer.addGeometry(g);
+		}, {'criterion': 'turist1'});
+
+	var cz = m.computeCenterZoom([autobus, kriz, tana]);
+	m.setCenterZoom(cz[0], cz[1]);
+
+	layer.addMarker(new SMap.Marker(autobus, null, {title: 'Autobus'}));
+	layer.addMarker(new SMap.Marker(tana, null, {title: 'Táňa'}));
+</script>
+
+<!--
   <h3>Další informace</h3>
 
   <ul>
-  <!--<li><a href="<?php echo odkaz("tana/ucastnici.html"); ?>" title="Účastníci soustředění">Účastníci soustředění</a></li>-->
   <li><a href="<?php echo odkaz("tana/organizatori.html"); ?>" title="Organizátoři soustředění">Organizátoři soustředění</a></li>
   <li><a href="<?php echo odkaz("tana/foto.html"); ?>" title="Fotky ze soustředění">Fotky ze soustředění</a></li>
   <li><a href="<?php echo odkaz("tana/historie.html"); ?>" title="Historie soustředění">Historie soustředění</a></li>
   </ul>
+  -->
