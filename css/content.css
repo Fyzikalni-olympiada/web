@@ -122,9 +122,13 @@ table.zadani td {
 	border-radius: 100px; -moz-border-radius: 100px;
 }
 @media (max-width: 767px) {
+.ukfo .col-xs-4 {
+	float: right;
+}
 .ukfo img {
-	border: none;
-	border-radius: 0px; -moz-border-radius: 0px;
+	width: 100px;
+	border-radius: 50px; -moz-border-radius: 50px;
+	float: right;
 }
 }
 
