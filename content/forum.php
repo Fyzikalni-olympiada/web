@@ -165,79 +165,46 @@ if (!empty($chyba) || isset($_POST['ok'])) {
 echo $zpracuj_form;
 
 echo '
-<div id="respond">
-    <div class="legend" id="comment-form-title">Vložit příspěvek</div>
+<div class="legend" id="comment-form-title">
+	<h3>Vložit příspěvek</h3>
 
-    <div class="comment-content-wrapper">
+            <form class="form-horizontal" action="' . odkaz2() . '" method="post" id="commentform">
 
-        <div class="comment-body">
-
-            <div class="comment-arrow"></div>
-
-            <form action="' . odkaz2() . '" method="post" id="commentform">
-
-                <fieldset>
-
-                    <div class="form-row comment-input-website">
-
-                        <div class="form-property"><label for="title">Nadpis</label></div>
-                        <div class="form-value"><input type="text" name="title" id="title" value="' . $title . '" size="28" tabindex="1" class="text" /></div>
-
-                        <div class="clearer">&nbsp;</div>
-
+                    <div class="form-group">
+                        <label for="title" class="sr-only">Nadpis</label>
+                        <div class="col-sm-12"><input type="text" name="title" id="title" value="' . $title . '" tabindex="1" class="form-control" placeholder="Nadpis" /></div>
                     </div>
 
-                    <div class="form-row comment-input-text"><textarea name="text" id="comment" cols="10" rows="10" tabindex="2">' . $text . '</textarea></div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<textarea class="form-control" placeholder="Text" name="text" id="comment" cols="10" rows="10" tabindex="2">' . $text . '</textarea>
+						</div>
+					</div>
 ';
 if (strtolower($guest_test) == GUEST_TEST_TEXT) {
 	echo '
                     <input type="hidden" name="guest_test" value="'.GUEST_TEST_TEXT.'" />';
 } else {
 	echo '
-                    <div class="form-row comment-input-website">
-
-                        <div class="form-property"><label for="guest_test">1 a 1 je</label></div>
-                        <div class="form-value"><input type="text" name="guest_test" id="guest_test" value="' . $guest_test . '" size="28" tabindex="5" class="text" /></div>
-
-                        <div class="clearer">&nbsp;</div>
-
+                    <div class="form-group">
+                        <label for="guest_test" class="col-sm-2">1 a 1 je</label>
+                        <div class="col-sm-10"><input type="text" name="guest_test" id="guest_test" value="' . $guest_test . '"  tabindex="5" class="form-control" /></div>
                     </div>';
 }
 echo '
-                    <div class="form-row comment-input-name">
-
-                        <div class="form-property required"><label for="author">Jméno</label></div>
-                        <div class="form-value"><input type="text" name="name" id="name" value="' . $name . '" size="28" tabindex="3" class="text" /></div>
-
-                        <div class="clearer">&nbsp;</div>
-
+                    <div class="form-group">
+                        <label for="author" class="col-sm-2">Jméno</label>
+                        <div class="col-sm-10"><input type="text" name="name" id="name" value="' . $name . '" tabindex="3" class="form-control" /></div>
                     </div>
 
-                    <div class="form-row comment-input-email">
-
-                        <div class="form-property required"><label for="email">Email</label></div>
-                        <div class="form-value"><input type="text" name="email" id="email" value="' . $email . '" size="28" tabindex="4" class="text" /></div>
-
-                        <div class="clearer">&nbsp;</div>
-
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2">Email</label>
+                        <div class="col-sm-10"><input type="email" name="email" id="email" value="' . $email . '" tabindex="4" class="form-control" /></div>
                     </div>
 
-                    <div class="form-row form-row-submit">
-                        <input type="submit" name="ok" class="button" value="Odeslat" />
-                    </div>
-
-                </fieldset>
-
+					<input type="hidden" name="ok" value=1/>
+					<button type="submit" class="btn btn-default">Odeslat</button>
             </form>
-
-        </div>
-
-        <div class="clearer">&nbsp;</div>
-
-    </div>
-
-    <div class="clearer">&nbsp;</div>
-
 </div>';
 
 echo '

@@ -229,79 +229,19 @@ td p, td ul {margin-bottom: 0}
 .success {background: #E6EFC2; color: #264409; border-color: #C6D880;}
 .success a {color: #264409;}
 
-
-/* Labels */
-.label {
-	border-left-style: solid;
-	border-left-width: 4px;
-	margin-bottom: 0.2em;
-	padding-left: 10px;
-}
-
-.label-blue {border-left-color: #55AADA;}
-.label-green {border-left-color: #B7D897;}
-.label-orange {border-left-color: #FA8F6F;}
-
-
-/*
-   Forms
-------------------------------------------------------------------- */
-
-label {
-	cursor: pointer;
-	font-weight: bold;
-}
-label.checkbox, label.radio {font-weight: normal;}
-legend {
-	font-weight: bold;
-	font-size: 1.2em;
-}
-textarea {overflow: auto;}
-input.text, textarea, select {
-	background: #FCFCFC;
-	border: 1px inset #AAA;
-	margin: 0.5em 0;
-	padding: 4px 5px;
-}
-input.text:focus, textarea:focus, select:focus {background: #FFFFF5;}
-
-input.button {
-	background: #DDD;
-	border: 1px outset #AAA;
-	padding: 4px 5px;
-}
-input.button:active {border-style: inset;}
-
-
 /* Specific */
 
 form .required {font-weight: bold;}
 
-.form-error {border-color: #F00;}
-.form-row {padding: 5px 0;}
-.form-row-submit {
-	border-top: 1px solid #DDD;
-	padding: 8px 0 10px 76px;
-	margin-top: 10px;
-}
 .legend {
 	background: #e8edff;/*#F0FAF0;*/
 	border: 1px solid #9fabdc;/*#D6DFD6;*/
-	font-size: 1.5em;
 	margin: 0;
-	padding: 8px 14px;
+	padding: 0px 14px 14px;
 }
-.form-property, .form-value {float: left;}
-.form-property {
-	padding-top: 8px;
-	text-align: right;
-	width: 60px;
+.legend h3 {
+	font-size: 1.5em;
 }
-.form-value {padding-left: 16px;}
-.form-error {border-color: #F00;}
-
-
-
 /*
    Alignment
 ------------------------------------------------------------------- */
@@ -415,8 +355,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
    Comments
 ------------------------------------------------------------------- */
 
-.comment-input-text textarea {width: 80%;}
-
 /* Comment list */
 
 .comment-list-wrapper {
@@ -445,7 +383,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 
 .comment-parent, .comment-single {margin-top: 15px;}
 
-.comment-list ul.children, #comments #respond ul {
+.comment-list ul.children {
 	border-left: 1px solid #CCC;
 	margin: 0 0 0 15px;
 }
@@ -472,48 +410,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .comment .post-date .right a {color: #BBB;}
 .comment .post-date .right a:hover {color: #234;}
 
-.comment-arrow {
-	background: url('../images/comment-arrow.gif') no-repeat left top;
-	display: block;
-	float: left;
-	height: 45px;
-	margin: 3px 0 -45px -41px;
-	position: absolute;
-	width: 29px;
-}
-
-/* Respond */
-
-#respond li {list-style: none;}
-#respond {
-	background: #F6F6F6;
-	padding: 10px 12px;
-}
-#respond ul {margin: 0;}
-#respond .legend {margin-bottom: 10px;}
-
-#comments #respond {padding: 0;}
-#comments #respond .legend {
-	border-bottom: 0;
-	margin-bottom: 0;
-}
-#comments #respond ul {
-	background: url('../images/comment-reply.gif') no-repeat left top;
-	padding: 10px 0 0 15px;
-}
-#comments ul.children #respond ul {
-	margin-left: 30px;
-	padding: 0;
-}
-
-#comments #respond .comment-profile-wrapper, #comments #respond .comment-arrow {display: none;}
-#comments #respond .comment-body {background: #FFF;}
-#comments #respond .comment-content-wrapper {
-	float: none;
-	width: 100%;
-}
-
-
 /*
    Layout
 ------------------------------------------------------------------- */
@@ -534,7 +430,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .navigation li.current-tab > a {color: #3E5199;}
 
 #search {position: absolute; bottom: -35px; right: 0px;}
-#search button {height: 34px}
 
 /* Main navigation */
 #main-nav > ul > li {margin: 0 20px; position: relative}
