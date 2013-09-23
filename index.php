@@ -145,7 +145,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 				<button type="button" class="btn-xs" data-toggle="offcanvas">Skrýt boční panel</button>
 			</div>
             <div class="section">
-                <div class="section-title">Nejbližští termíny</div>
+                <div class="section-title">Nejbližší termíny</div>
                 <div class="section-content">
                     <?php foreach (latest_terms() as $title=>$term) : ?>
                         <h6><?php echo $title; ?></h6>
