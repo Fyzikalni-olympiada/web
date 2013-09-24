@@ -82,6 +82,7 @@ p img.icon {
 }
 
 .mapa {
+	position: relative;
 	width: 470px;
 	height: 269px;
 }
@@ -90,7 +91,7 @@ p img.icon {
 }
 
 .mapa .kraj {
-	/*display: none;*/
+	display: none;
 }
 
 table.zadani td {

@@ -168,7 +168,9 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                 <div class="section-title">Krajské stránky</div>
                 <div class="section-content">
 					<div class="visible-md visible-lg map-container">
-						<?php include 'html/stranky_regionu.html' ?>
+						<div class="map-inner">
+							<?php include 'html/stranky_regionu.html' ?>
+						</div>
 					</div>	
                     <ul class="nice-list visible-sm visible-xs">
                         <li><a href="http://praha.fyzikalniolympiada.cz/" title="Pražské stránky">Praha</a></li>
