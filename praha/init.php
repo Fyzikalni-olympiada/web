@@ -28,8 +28,8 @@ define('SITE', 'praha');
 
 require_once('configure.php');
 
-define('AKTUALNI_ROCNIK', 54);
-define('AKTUALNI_ROK', '2012/2013');
+define('AKTUALNI_ROCNIK', 55);
+define('AKTUALNI_ROK', '2013/2014');
 
 /* Pocitadlo */
 define('INTERVAL_MEZI_NAVSTEVAMI', 60); //minimalni interval mezi navstevami v minutach

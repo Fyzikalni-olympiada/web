@@ -55,19 +55,6 @@ select
 	border: 1px solid Black;
 }
 
-#counter table {
-	border : 1px solid Black;
-	border-collapse : collapse;
-	padding : 0px, 0px, 0px, 0px;
-	_position : absolute;
-}
-
-#counter td {
-	padding : 0px 5px 1px 5px;
-	margin: 0px 0px 0px 0px;
-	text-align : left;
-}
-
 #content P,OL,UL,DT {
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -256,3 +243,30 @@ var {
 .vysledkovka td:last-child {
 	font-weight: bold;
 }
+
+.nav-tabs {display: none}
+#organizace-ucitel, #organizace-organizator {display: none;}
+
+i.pdf, i.ps, i.pdfi, i.html {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	font-size: 0;
+	text-indent: -9999px;
+	vertical-align: text-bottom;
+	background-position: center;
+	background-size: 24px 24px;
+}
+i.pdf {
+	background-image: url(../../pic/pdficon.svg);
+}
+i.pdfi {
+	background-image: url(../../pic/pdfiicon.svg);
+}
+i.ps {
+	background-image: url(../../pic/psicon.svg);
+}
+i.html {
+	background-image: url(../../pic/htmlicon.svg);
+}
+

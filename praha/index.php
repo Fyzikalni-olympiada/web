@@ -139,36 +139,6 @@ Fyzikální olympiáda Praha<?php echo ' :: ' . nadpis(); ?>
                                                         <?php echo submenu($GLOBALS['parentID']); ?>
         
                                                 </div>
-
-                                                <!--<p>
-                                                        <a href="http://validator.w3.org/check/referer"><img
-                                                                src="http://www.w3.org/Icons/valid-xhtml11"
-                                                                alt="Valid XHTML 1.1!" height="31" width="88" /></a>
-                                                </p>
-                                                <p>                                     
-                                                        <a href="http://jigsaw.w3.org/css-validator/"><img
-                                                                src="http://jigsaw.w3.org/css-validator/images/vcss"
-                                                                alt="Valid CSS!" height="31" width="88"/></a>
-                                                </p>-->
-                                                <div id="counter">
-                                                                        <table>
-                                                                        <tr>
-                                                                                <td colspan="2"><strong>Návštěvy:</strong></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                                <td>celkem</td>
-                                                                                <td style="text-align: right"><?php echo $GLOBALS['visits']; ?></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                                <td>dnes</td>
-                                                                                <td style="text-align: right"><?php echo $GLOBALS['visits_day']; ?></td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                                <td>online</td>
-                                                                                <td style="text-align: right"><?php echo $GLOBALS['visits_online']; ?></td>
-                                                                        </tr>
-                                                                        </table>
-                                                </div>
                                         </div>
                                 </div>
                                 <div id="contentColumn">

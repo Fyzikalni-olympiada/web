@@ -61,6 +61,10 @@
 	text-decoration: none;
 }
 
+.hnav ul ul {
+	display: none;
+}
+
 .selected {
 	font-weight : bold;
 }
