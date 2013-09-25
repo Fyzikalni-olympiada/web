@@ -51,7 +51,7 @@ body {
 
 /* Headings */
 
-h1,h2,h3,h4,h5,h6 {
+h2,h3,h4,h5,h6 {
 	color: #444;
 	font-weight: normal;
 	line-height: 1.4;
@@ -62,7 +62,19 @@ h2,h3,h4,h5,h6 {
 }
 h4,h5,h6 {font-weight: bold;}
 
-h1 {font-size: 2.2em;}
+h1 {
+	font-size: 17px;
+	line-height: 1.4;
+	position: relative;
+	color: #888;
+	font-weight: bold;
+	top: -18px;
+}
+h1:after {
+	padding-left: .5em;
+	content: '»'
+}
+h1 + h2 {margin-top: 0}
 h2 {font-size: 1.8em;}
 h3 {font-size: 1.45em;}
 h4 {font-size: 1.25em;}
@@ -344,7 +356,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	margin-right: 12px;
 	padding: 2px 2px 5px;
 	text-align: center;
-	width: 46px;
+	width: 60px;
 }
 .archive-post-title .post-date {margin: 0;}
 .archive-post-title {padding-top: 4px;}
