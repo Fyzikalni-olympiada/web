@@ -111,27 +111,6 @@ Fyzikální olympiáda Karlovy Vary<?php echo ' :: ' . nadpis(); ?>
 	<?php echo submenu($GLOBALS['parentID']); ?>
 </div>
 <div id="buttons">
-	<ul>
-		<li>
-			<table>
-			<tr>
-				<td colspan="2"><strong>Návštěvy:</strong></td>
-			</tr>
-			<tr>
-				<td>celkem</td>
-				<td style="text-align: right"><?php echo $GLOBALS['visits']; ?></td>
-			</tr>
-			<tr>
-				<td>dnes</td>
-				<td style="text-align: right"><?php echo $GLOBALS['visits_day']; ?></td>
-			</tr>
-			<tr>
-				<td>online</td>
-				<td style="text-align: right"><?php echo $GLOBALS['visits_online']; ?></td>
-			</tr>
-			</table>
-		</li>
-	</ul>
 </div>
 </div>
 <div id="title">

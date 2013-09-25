@@ -93,12 +93,3 @@ parsuj();
 if (isset($_GET['who']) && in_array($_GET['who'], array('student','ucitel','organizator')) ) {
 	$GLOBALS['who'] = $GLOBALS['kdo'] = $_GET['who'];
 }
-	
-/*
- * POČÍTADLO
- */
- 
-list($GLOBALS['visits'], $GLOBALS['visits_day'], $GLOBALS['visits_online']) = pocitadlo();
-
-
-?>
