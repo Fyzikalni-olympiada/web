@@ -202,13 +202,6 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                 <div class="section-title">Ústřední komise</div>
                 <div class="section-content">
                     <ul class="nice-list">
-                        <li><a href="mailto:ivo.volf@uhk.cz">prof. Ivo Volf</a> <span class="quiet">&ndash; předseda</span></li>
-                        <li><a href="mailto:bohumil.vybiral@uhk.cz">prof. Bohumil Vybíral</a> <span class="quiet">&ndash; místopředseda</span></li>
-                        <li><a href="mailto:jan.kriz@uhk.cz">dr. Jan Kříž</a> <span class="quiet">&ndash; místopředseda</span></li>
-                        <li><a href="mailto:premysls(z@vinac)seznam.cz">dr. Přemysl Šedivý</a> <span class="quiet">&ndash; redakce úloh a tisků</span></li>
-                        <li><a href="mailto:jaresova.miroslava(z@vinac)sspst-chrudim.cz">dr. Miroslava Jarešová</a> <span class="quiet">&ndash; členka předsednictva</span></li>
-                    </ul>
-                    <ul class="nice-list">
                         <li><a href="http://www.uhk.cz/fo" title="Centrum péče o fyzikální talenty na UHK">Centrum péče o fyzikální talenty</a></li>
                         <li><a href="http://cental.uhk.cz/" title="Centrum talentů M&amp;F&amp;I">CenTal &ndash; Centrum talentů M&amp;F&amp;I</a></li>
                     </ul>
