@@ -136,7 +136,7 @@ function zpracuj_form()
 
                 $forum_last_id = mysql_insert_id($GLOBALS['mysql']->dbc);
 
-                $telo = 'Na ' . SERVER_NAME . ' je novy diskusni prispevek od ' . $_POST['name'] . ' (' . $_POST['email'] . "):\n\n" . $_POST['title'] . "\n\n" . $zaloha_text . "\n\nhttp://" . SERVER_NAME . ROOT_WWW . FILE_INDEX . '?file=' . $_GET['file'] . '&forum_id=' . $forum_last_id . '&sort=vlakno&news_id=' . $GLOBALS['news_id'];
+                $telo = 'Na ' . SERVER_NAME . ' je novy diskusni prispevek od ' . $_POST['name'] . ' (' . $_POST['email'] . "):\n\n" . $_POST['title'] . "\n\n" . $zaloha_text . "\n\nhttp://" . SERVER_NAME . rtrim(ROOT_WWW, '/') . odkaz2('content/forum.php', array('forum_id' => $forum_last_id, 'sort' => 'vlakno', 'news_id' => $GLOBALS['news_id']), 0);
 
                 $GLOBALS['mysql']->query('
                     SELECT email
