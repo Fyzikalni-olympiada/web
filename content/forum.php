@@ -56,10 +56,12 @@ $zpracuj_form = zpracuj_form();
 
 if ($kdo == "student")
 	echo '
-	<p>Toto diskusní fórum je určeno pro studenty. Můžete se zde vyjadřovat ohledně průběhu olympiády, kvality úloh, případně mít nějaké jiné připomínky či dotazy.';
+	<h2>Diskusní fórum pro studenty</h2>
+	<p>Toto diskusní fórum je určeno pro studenty. Můžete se zde vyjadřovat ohledně průběhu olympiády, případně mít nějaké jiné připomínky či dotazy.';
 if ($kdo == "ucitel")
 	echo '
-	<p>Toto diskusní fórum je určeno pro učitele. Můžete se zde vyjadřovat ohledně průběhu olympiády, kvality úloh, případně mít nějaké jiné připomínky či dotazy.';
+	<h2>Diskusní fórum pro učitele</h2>
+	<p>Toto diskusní fórum je určeno pro učitele. Můžete se zde vyjadřovat ohledně průběhu olympiády, případně mít nějaké jiné připomínky či dotazy.';
 if ($kdo == "organizator")
 	echo '
 	<p>Toto diskusní fórum je určeno pro organizátory. Můžete se zde vyjadřovat ohledně průběhu olympiády, kvality úloh, případně mít nějaké jiné připomínky či dotazy.';
