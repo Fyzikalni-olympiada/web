@@ -69,6 +69,13 @@ $GLOBALS['get'] = $_GET;
  * KONEC GLOBALNICH PROMENNYCH
  */
 
+/*
+ * TRACY
+ */
+require_once(ROOT_DIR.'tracy/src/tracy.php');
+Tracy\Debugger::enable(Tracy\Debugger::DETECT, __DIR__ . '/logs', 'jan@prachar.eu');
+
+
 require_once(ROOT_DIR.'classes/db.php');
 require_once(ROOT_DIR.'functions/folib.php');
 
