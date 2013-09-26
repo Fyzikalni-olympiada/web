@@ -373,6 +373,18 @@ function parsuj()
 	$pathname = iconv('UTF-8', 'ASCII//TRANSLIT', $pathname);
 
 	// 301
+	if ($pathname === 'zajimavosti/korespondencni-seminare') {
+		header('Location: /korespondencni-seminare', TRUE, 301);
+		exit();
+	}
+	if ($pathname === 'zajimavosti/jine-olympiady') {
+		header('Location: /jine-olympiady', TRUE, 301);
+		exit();
+	}
+	if ($pathname === 'zajimavosti/odkazy') {
+		header('Location: /odkazy', TRUE, 301);
+		exit();
+	}
 	if ($pathname === 'archiv/studijni-texty') {
 		header('Location: /studijni-texty', TRUE, 301);
 		exit();
