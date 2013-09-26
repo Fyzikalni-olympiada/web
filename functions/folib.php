@@ -353,36 +353,46 @@ function text()
 function parsuj()
 {
     setlocale(LC_CTYPE, 'cs_CZ.utf8');
-    if (isset($_SERVER['PATH_INFO']) || !isset($_GET['file'])) {
-		$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
-        if ($pos = strpos($path_info, '/', 0) !== FALSE)
-            $pathname = substr($path_info, $pos) or $pathname = '/';
-        else
-            $pathname = '/';
 
-        $pathname = iconv('UTF-8', 'ASCII//TRANSLIT', $pathname);
-
-		// 301
-		if ($pathname === 'archiv/studijni-texty') {
-			header('Location: /studijni-texty', TRUE, 301);
-			exit();
+	if (isset($_GET['file'])) {
+		$location = odkaz2(null, null, 0);
+		if (strpos($location, 'file=')) {
+			//soubor jsme nenašli
+			$location = '/';
 		}
-		if ($pathname === 'novinky') {
-			header('Location: /', TRUE, 301);
-			exit();
-		}
-        $row = $GLOBALS['mysql_odkazy']->query('
-                    SELECT id
-                    FROM ' . TABLE_FILES . '
-                    WHERE pathname=' . $GLOBALS['mysql_odkazy']->escape_string($pathname) . '
-                    AND (dir_index="' . SITE . '"
-                        OR dir_index="")
-                    ORDER BY dir_index DESC
-            ');
-        $result = $GLOBALS['mysql_odkazy']->vysledek;
-        $row = mysql_fetch_array($result, MYSQL_ASSOC);
-        $_GET["file"] = $row['id'];
+		header('Location: ' . $location, TRUE, 301);
+		exit();
 	}
+
+	$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
+	if ($pos = strpos($path_info, '/', 0) !== FALSE)
+		$pathname = substr($path_info, $pos) or $pathname = '/';
+	else
+		$pathname = '/';
+
+	$pathname = iconv('UTF-8', 'ASCII//TRANSLIT', $pathname);
+
+	// 301
+	if ($pathname === 'archiv/studijni-texty') {
+		header('Location: /studijni-texty', TRUE, 301);
+		exit();
+	}
+	if ($pathname === 'novinky') {
+		header('Location: /', TRUE, 301);
+		exit();
+	}
+	$row = $GLOBALS['mysql_odkazy']->query('
+				SELECT id
+				FROM ' . TABLE_FILES . '
+				WHERE pathname=' . $GLOBALS['mysql_odkazy']->escape_string($pathname) . '
+				AND (dir_index="' . SITE . '"
+					OR dir_index="")
+				ORDER BY dir_index DESC
+		');
+	$result = $GLOBALS['mysql_odkazy']->vysledek;
+	$row = mysql_fetch_array($result, MYSQL_ASSOC);
+	$_GET["file"] = $row['id'];
+
 	$GLOBALS['mysql_odkazy']->query("
         SELECT filename, " . TABLE_FILES . ".title, " . TABLE_MENU_STRUCTURE . ".id, parent_id
         FROM " . TABLE_FILES . " LEFT JOIN " . TABLE_MENU_STRUCTURE . "

@@ -134,7 +134,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             <?php
                 if ($napln == FILE_NEWS) {
                     include(ROOT_DIR.FILE_NEWS);
-                } else {
+                } elseif ($napln) {
                     include(ROOT_DIR.$napln);
                 }
             ?>
