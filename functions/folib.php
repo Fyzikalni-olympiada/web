@@ -499,7 +499,7 @@ function latest_terms()
         LIMIT 1
     ');
     if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Kategorie A'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
+        $r['Kategorie A (4.&nbsp;ročník SŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
     }
 
     $GLOBALS['mysql']->query('
@@ -513,7 +513,7 @@ function latest_terms()
         LIMIT 1
     ');
     if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Kategorie B&ndash;D'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
+        $r['Kategorie B&ndash;D (1.&ndash;3.&nbsp;ročník SŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
     }
 
     $GLOBALS['mysql']->query('
@@ -527,7 +527,7 @@ function latest_terms()
         LIMIT 1
     ');
     if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Kategorie E, F'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
+        $r['Kategorie E, F (8. a&nbsp;9. třída ZŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
     }
 
     $GLOBALS['mysql']->query('
@@ -541,7 +541,7 @@ function latest_terms()
         LIMIT 1
     ');
     if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Archimediáda'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
+        $r['Archimediáda (7.&nbsp;třída ZŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
     }
 
     return $r;
