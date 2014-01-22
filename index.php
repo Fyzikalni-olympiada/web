@@ -266,7 +266,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-31717225-2', 'fyzikalniolympiada.cz');
+  ga('create', 'UA-44541919-1', 'fyzikalniolympiada.cz');
   ga('send', 'pageview');
 </script>
 </body>
