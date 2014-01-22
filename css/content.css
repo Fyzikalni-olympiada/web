@@ -47,15 +47,19 @@ i.pdf, i.ps, i.pdfi, i.html {
 }
 i.pdf {
 	background-image: url(../pic/pdficon.svg);
+	background-image: /*\**/url(../pic/pdficon.png)\9;
 }
 i.pdfi {
 	background-image: url(../pic/pdfiicon.svg);
+	background-image: /*\**/url(../pic/pdfiicon.png)\9;
 }
 i.ps {
 	background-image: url(../pic/psicon.svg);
+	background-image: /*\**/url(../pic/psicon.png)\9;
 }
 i.html {
 	background-image: url(../pic/htmlicon.svg);
+	background-image: /*\**/url(../pic/htmlicon.png)\9;
 }
 
 #zadani dl {
@@ -67,7 +71,6 @@ i.html {
 	margin-bottom : .5em;
 	font-weight : bold;
 }
-
 #zadani dd {
 	margin-left: 0px;
 }
