@@ -1,28 +1,6 @@
-/* http://www.useragentman.com/IETransformsTranslator/ */
-#sidebar .mapa {
-   /* IE8+ - must be on one line, unfortunately */ 
-   -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.5, M12=0, M21=0, M22=0.5, SizingMethod='auto expand')";
-   
-   /* IE6 and 7 */ 
-   filter: progid:DXImageTransform.Microsoft.Matrix(
-            M11=0.5,
-            M12=0,
-            M21=0,
-            M22=0.5,
-            SizingMethod='auto expand');
-
-
-   /*
-    * To make the transform-origin be the middle of
-    * the object.    Note: These numbers
-    * are approximations.  For more accurate results,
-    * use Internet Explorer with this tool.
-    */
-   margin-left: 115px; 
-   margin-top: 64px;
+#sidebar .map-container {
+	display: none !important;
 }
-#sidebar .mapa:hover {
-	-ms-filter: ;
-	filter: ;
+#sidebar .map-container + ul {
+	display: block !important;
 }
-
