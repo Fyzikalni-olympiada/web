@@ -53,7 +53,7 @@ uspořádaném ÚK&nbsp;FO proveden výběr 5&nbsp;účastníků (a jednoho náh
 která bude uspořádána v&nbsp;termínu <?php echo $terminMFO ?> ve státě <?php echo $mistoMFO ?>.
 </div>
 
-<h3 class="accordion accordion-main" id="venue">Termín a místo konání</h3>
+<h3 class="accordion" id="venue">Termín a místo konání</h3>
 <div>
 <!--p>
 Celostátní kolo se koná v&nbsp;termínu <strong><?php echo $termin ?></strong> (pondělí až čtvrtek) ve&nbsp;městě <?php echo $misto ?>.
@@ -138,13 +138,13 @@ Příjezd, prezentace a ubytování 
 </table-->
 </div>
 
-<h3 class="accordion" id="ulohy">Zadání a řešení úloh</h3>
+<h3 class="accordion accordion-main" id="ulohy">Zadání a řešení úloh</h3>
 
 <div>
-<p>
-Texty i řešení úloh zveřejníme v průběhu konání či po skončení celostátního kola.
-</p>
 <!--p>
+Texty i řešení úloh zveřejníme v průběhu konání či po skončení celostátního kola.
+</p-->
+<p>
 Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code> nebo <code>ps</code>.
 </p>
 
@@ -164,13 +164,14 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code> nebo 
 </tr>
 <tr>
 	<th scope="row">Experiment</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/55/fo55a3_exp_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/55/fo55a3_exp_r.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/55/fo55a3_exp_r.ps.gz"><i class="ps">ps</i></a>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/55/fo55a3_pz.pdf"><i class="pdf">pdf</i></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/55/fo55a3_pz.ps.gz"><i class="ps">ps</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/55/fo55a3_pr.pdf"><i class="pdf">pdf</i></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/55/fo55a3_pr.ps.gz"><i class="ps">ps</i></a>
 	</td>
 </tr>
 </table>
-</div-->
+</div>
 </div>
 
 <!--a name="vysledky"><h3>Výsledky</h3></a>
@@ -184,7 +185,7 @@ Modifiované body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&
 Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.
 </p-->
 
-<h3 class="accordion accordion-main" id="seznam">Seznam postupujících</h3>
+<h3 class="accordion" id="seznam">Seznam postupujících</h3>
 
 <div>
 
