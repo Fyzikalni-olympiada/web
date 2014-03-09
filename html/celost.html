@@ -174,16 +174,921 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code> nebo 
 </div>
 </div>
 
-<!--a name="vysledky"><h3>Výsledky</h3></a>
+<h3 class="accordion accordion-main" id="vysledky">Výsledky</h3>
+
+<div>
 
 <p>
 Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/55_A_3.pdf"><i class="pdf">pdf</i></a>.
 </p>
+
+<table class="vysledkovka" cellpadding=3>
+<thead>
+	<tr>
+		<th style="text-align:center;" rowspan=2>Pořadí</th>
+		<th rowspan=2>Příjmení</th>
+		<th rowspan=2>Jméno</th>
+		<th rowspan=2>Škola</th>
+		<th style="text-align:center;" colspan=5>Získané body</th>
+		<th style="text-align:center;display:none;" colspan=5>Modifikované body</th>
+		<th style="text-align:center;" rowspan=2>Získané body</th>
+		<th style="text-align:center;" rowspan=2>Modif. body</th>
+		<th rowspan=2>Vítěz</th></tr>
+
+	<tr>
+		<th style="text-align:center;">Úl. č.1</th>
+		<th style="text-align:center;">Úl. č.2</th>
+		<th style="text-align:center;">Úl. č.3</th>
+		<th style="text-align:center;">Úl. č.4</th>
+		<th style="text-align:center;">Úl. č.5</th>
+		<th style="text-align:center;display:none;">Úl. č.1</th>
+		<th style="text-align:center;display:none;">Úl. č.2</th>
+		<th style="text-align:center;display:none;">Úl. č.3</th>
+		<th style="text-align:center;display:none;">Úl. č.4</th>
+		<th style="text-align:center;display:none;">Úl. č.5</th></tr>
+
+</thead>
+<tbody>
+	<tr>
+		<td style="text-align:center;">1</td>
+		<td>RASZYK</td>
+		<td>MARTIN</td>
+		<td>Gymnázium Karviná</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">20</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">36,130</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">136,304</td>
+		<td style="text-align:center;"><b>56</b></td>
+		<td style="text-align:center;"><b>277,326</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>2</b></td>
+		<td>MIŘÁTSKÝ</td>
+		<td>VÁCLAV</td>
+		<td>Gymnázium Pelhřimov</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">19</td>
+		<td style="text-align:center;display:none;">42,592</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">51,185</td>
+		<td style="text-align:center;display:none;">33,538</td>
+		<td style="text-align:center;display:none;">129,489</td>
+		<td style="text-align:center;"><b>54,5</b></td>
+		<td style="text-align:center;"><b>272,130</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>3</b></td>
+		<td>HORA</td>
+		<td>MARTIN</td>
+		<td>Gymnázium Mikulášské náměstí Plzeň</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">17,5</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">33,120</td>
+		<td style="text-align:center;display:none;">37,484</td>
+		<td style="text-align:center;display:none;">119,266</td>
+		<td style="text-align:center;"><b>52,5</b></td>
+		<td style="text-align:center;"><b>255,304</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>4</b></td>
+		<td>KUČERA</td>
+		<td>JIŘÍ</td>
+		<td>Gymnázium Jana Keplera Praha</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">15</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">60,217</td>
+		<td style="text-align:center;display:none;">27,620</td>
+		<td style="text-align:center;display:none;">102,228</td>
+		<td style="text-align:center;"><b>52</b></td>
+		<td style="text-align:center;"><b>255,500</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>5</b></td>
+		<td>DOLEJŠÍ</td>
+		<td>JAKUB</td>
+		<td>Gymnázium Boženy Němcové Hradec Králové</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">15,5</td>
+		<td style="text-align:center;display:none;">40,087</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">48,174</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">105,636</td>
+		<td style="text-align:center;"><b>51,5</b></td>
+		<td style="text-align:center;"><b>248,679</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>6</b></td>
+		<td>NOVOTNÝ</td>
+		<td>TOMÁŠ</td>
+		<td>Gymnázium Česká Lípa</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">2,5</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">20</td>
+		<td style="text-align:center;display:none;">40,087</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">15,054</td>
+		<td style="text-align:center;display:none;">33,538</td>
+		<td style="text-align:center;display:none;">136,304</td>
+		<td style="text-align:center;"><b>49</b></td>
+		<td style="text-align:center;"><b>240,310</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>7</b></td>
+		<td>GUTH JARKOVSKÝ</td>
+		<td>JIŘÍ</td>
+		<td>Gymnázium Jírovcova České Budějovice </td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">57,207</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">64,745</td>
+		<td style="text-align:center;"><b>48</b></td>
+		<td style="text-align:center;"><b>225,310</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>8</b></td>
+		<td>SKOUPÝ</td>
+		<td>VIKTOR</td>
+		<td>Gymnázium Moravská Třebová </td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">16,5</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">13,027</td>
+		<td style="text-align:center;display:none;">12,043</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">112,451</td>
+		<td style="text-align:center;"><b>47</b></td>
+		<td style="text-align:center;"><b>227,087</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>9</b></td>
+		<td>VLASÁKOVÁ</td>
+		<td>ZUZANA</td>
+		<td>Gymnázium Rumburk</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">20</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">51,185</td>
+		<td style="text-align:center;display:none;">31,565</td>
+		<td style="text-align:center;display:none;">136,304</td>
+		<td style="text-align:center;"><b>46,5</b></td>
+		<td style="text-align:center;"><b>234,380</b></td>
+		<td>VÍTĚZ</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>10</b></td>
+		<td>PŘÁDA</td>
+		<td>ADAM</td>
+		<td>Gymnázium Ostrov</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">16</td>
+		<td style="text-align:center;display:none;">30,065</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">24,087</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">109,043</td>
+		<td style="text-align:center;"><b>45</b></td>
+		<td style="text-align:center;"><b>216,446</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>11</b></td>
+		<td>SOUKUP</td>
+		<td>JAN</td>
+		<td>Gymnázium Jaroslava Vrchlického Klatovy</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">17</td>
+		<td style="text-align:center;display:none;">27,560</td>
+		<td style="text-align:center;display:none;">12,261</td>
+		<td style="text-align:center;display:none;">24,087</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">115,859</td>
+		<td style="text-align:center;"><b>44,5</b></td>
+		<td style="text-align:center;"><b>219,223</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>12</b></td>
+		<td>SKÁCEL</td>
+		<td>ONDŘEJ</td>
+		<td>Gymnázium Šternberk</td>
+		<td style="text-align:center;">3,5</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">17,5</td>
+		<td style="text-align:center;display:none;">17,538</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">36,130</td>
+		<td style="text-align:center;display:none;">27,620</td>
+		<td style="text-align:center;display:none;">119,266</td>
+		<td style="text-align:center;"><b>44</b></td>
+		<td style="text-align:center;"><b>215,880</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>13</b></td>
+		<td>RÖSLER</td>
+		<td>JAKUB</td>
+		<td>Gymnázium J. Gutha-Jarkovského Praha</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">12,5</td>
+		<td style="text-align:center;display:none;">37,582</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">45,163</td>
+		<td style="text-align:center;display:none;">27,620</td>
+		<td style="text-align:center;display:none;">85,190</td>
+		<td style="text-align:center;"><b>43,5</b></td>
+		<td style="text-align:center;"><b>209,348</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>14</b></td>
+		<td>WIRTH</td>
+		<td>MARTIN</td>
+		<td>První české gymnázium Karlovy Vary</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">11</td>
+		<td style="text-align:center;display:none;">35,076</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">24,087</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">74,967</td>
+		<td style="text-align:center;"><b>42</b></td>
+		<td style="text-align:center;"><b>188,913</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>15</b></td>
+		<td>MŰLER</td>
+		<td>ONDŘEJ</td>
+		<td>Gymnázium Břeclav</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">0,5</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">13</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">3,011</td>
+		<td style="text-align:center;display:none;">35,511</td>
+		<td style="text-align:center;display:none;">88,598</td>
+		<td style="text-align:center;"><b>41,5</b></td>
+		<td style="text-align:center;"><b>191,022</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>16</b></td>
+		<td>LYSONĚK</td>
+		<td>TOMÁŠ</td>
+		<td>Gymnázium Uherské Hradiště</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">18</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">33,120</td>
+		<td style="text-align:center;display:none;">33,538</td>
+		<td style="text-align:center;display:none;">122,674</td>
+		<td style="text-align:center;"><b>41</b></td>
+		<td style="text-align:center;"><b>203,125</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>17</b></td>
+		<td>KEPČIJA</td>
+		<td>PETR</td>
+		<td>Gymnázium Jírovcova České Budějovice </td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">4,5</td>
+		<td style="text-align:center;">5</td>
+		<td style="text-align:center;">13</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">12,261</td>
+		<td style="text-align:center;display:none;">27,098</td>
+		<td style="text-align:center;display:none;">19,728</td>
+		<td style="text-align:center;display:none;">88,598</td>
+		<td style="text-align:center;"><b>40,5</b></td>
+		<td style="text-align:center;"><b>197,793</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>18</b></td>
+		<td>ZMEK</td>
+		<td>JIŘÍ OSKAR</td>
+		<td>Arcibiskupské gymnázium Kroměříž</td>
+		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">5</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">14,5</td>
+		<td style="text-align:center;display:none;">7,516</td>
+		<td style="text-align:center;display:none;">14,560</td>
+		<td style="text-align:center;display:none;">30,109</td>
+		<td style="text-align:center;display:none;">37,484</td>
+		<td style="text-align:center;display:none;">98,821</td>
+		<td style="text-align:center;"><b>40</b></td>
+		<td style="text-align:center;"><b>188,489</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>19</b></td>
+		<td>BALOUCH</td>
+		<td>MARTIN</td>
+		<td>Gymnázium Uherské Hradiště</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">14</td>
+		<td style="text-align:center;display:none;">30,065</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">6,022</td>
+		<td style="text-align:center;display:none;">35,511</td>
+		<td style="text-align:center;display:none;">95,413</td>
+		<td style="text-align:center;"><b>40</b></td>
+		<td style="text-align:center;"><b>182,337</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>20</b></td>
+		<td>HORVÁT</td>
+		<td>PETR</td>
+		<td>Gymnázium Zábřeh</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">5</td>
+		<td style="text-align:center;">3,5</td>
+		<td style="text-align:center;">18</td>
+		<td style="text-align:center;display:none;">15,033</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">30,109</td>
+		<td style="text-align:center;display:none;">13,810</td>
+		<td style="text-align:center;display:none;">122,674</td>
+		<td style="text-align:center;"><b>39,5</b></td>
+		<td style="text-align:center;"><b>196,951</b></td>
+		<td>ÚSPĚŠNÝ ŘEŠITEL</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>21</b></td>
+		<td>JIŘÍČEK</td>
+		<td>DAVID</td>
+		<td>Gymnázium Hranice</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">0,5</td>
+		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">18,5</td>
+		<td style="text-align:center;display:none;">47,603</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">3,011</td>
+		<td style="text-align:center;display:none;">5,918</td>
+		<td style="text-align:center;display:none;">126,082</td>
+		<td style="text-align:center;"><b>39</b></td>
+		<td style="text-align:center;"><b>196,408</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>22</b></td>
+		<td>SLÁMA</td>
+		<td>JAKUB</td>
+		<td>Gymnázium Opatov</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">15</td>
+		<td style="text-align:center;display:none;">27,560</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">12,043</td>
+		<td style="text-align:center;display:none;">23,674</td>
+		<td style="text-align:center;display:none;">102,228</td>
+		<td style="text-align:center;"><b>38,5</b></td>
+		<td style="text-align:center;"><b>180,832</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>23</b></td>
+		<td>FOŘTOVÁ</td>
+		<td>LUCIE</td>
+		<td>Gymnázium Pierra De Coubertina Tábor</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">11,5</td>
+		<td style="text-align:center;display:none;">20,043</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">24,087</td>
+		<td style="text-align:center;display:none;">35,511</td>
+		<td style="text-align:center;display:none;">78,375</td>
+		<td style="text-align:center;"><b>37,5</b></td>
+		<td style="text-align:center;"><b>171,810</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>24</b></td>
+		<td>ZMEŠKAL</td>
+		<td>MAREK</td>
+		<td>Gymnázium Pelhřimov</td>
+		<td style="text-align:center;">3,5</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">16</td>
+		<td style="text-align:center;display:none;">17,538</td>
+		<td style="text-align:center;display:none;">11,495</td>
+		<td style="text-align:center;display:none;">9,033</td>
+		<td style="text-align:center;display:none;">33,538</td>
+		<td style="text-align:center;display:none;">109,043</td>
+		<td style="text-align:center;"><b>37</b></td>
+		<td style="text-align:center;"><b>180,647</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>25</b></td>
+		<td>SUPIK</td>
+		<td>LUKÁŠ</td>
+		<td>Gymnázium Třinec</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">12,5</td>
+		<td style="text-align:center;display:none;">42,592</td>
+		<td style="text-align:center;display:none;">12,261</td>
+		<td style="text-align:center;display:none;">12,043</td>
+		<td style="text-align:center;display:none;">23,674</td>
+		<td style="text-align:center;display:none;">85,190</td>
+		<td style="text-align:center;"><b>37</b></td>
+		<td style="text-align:center;"><b>175,761</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>26</b></td>
+		<td>JIRÁTKO</td>
+		<td>JAN</td>
+		<td>Gymnázium a Jazyková škola Zlín</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">2,5</td>
+		<td style="text-align:center;">14</td>
+		<td style="text-align:center;display:none;">50,109</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">6,022</td>
+		<td style="text-align:center;display:none;">9,864</td>
+		<td style="text-align:center;display:none;">95,413</td>
+		<td style="text-align:center;"><b>36,5</b></td>
+		<td style="text-align:center;"><b>175,201</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>27</b></td>
+		<td>MAREK</td>
+		<td>ŠTĚPÁN</td>
+		<td>Gymnázium Jana Keplera Praha</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">6,5</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;display:none;">37,582</td>
+		<td style="text-align:center;display:none;">14,560</td>
+		<td style="text-align:center;display:none;">39,141</td>
+		<td style="text-align:center;display:none;">11,837</td>
+		<td style="text-align:center;display:none;">68,152</td>
+		<td style="text-align:center;"><b>36,5</b></td>
+		<td style="text-align:center;"><b>171,272</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>28</b></td>
+		<td>KNOB</td>
+		<td>LUKÁŠ</td>
+		<td>Gymnázium Kojetín</td>
+		<td style="text-align:center;">5</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">2,5</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">12</td>
+		<td style="text-align:center;display:none;">25,054</td>
+		<td style="text-align:center;display:none;">14,560</td>
+		<td style="text-align:center;display:none;">15,054</td>
+		<td style="text-align:center;display:none;">27,620</td>
+		<td style="text-align:center;display:none;">81,783</td>
+		<td style="text-align:center;"><b>36</b></td>
+		<td style="text-align:center;"><b>164,071</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>29</b></td>
+		<td>BIALAS</td>
+		<td>FILIP</td>
+		<td>Gymnázium Opatov</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">0,5</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">15,5</td>
+		<td style="text-align:center;display:none;">27,560</td>
+		<td style="text-align:center;display:none;">14,560</td>
+		<td style="text-align:center;display:none;">3,011</td>
+		<td style="text-align:center;display:none;">15,783</td>
+		<td style="text-align:center;display:none;">105,636</td>
+		<td style="text-align:center;"><b>35</b></td>
+		<td style="text-align:center;"><b>166,549</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>30</b></td>
+		<td>SGALLOVÁ</td>
+		<td>RÁCHEL</td>
+		<td>Gymnázium Christiana Dopplera Praha</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">17,5</td>
+		<td style="text-align:center;display:none;">15,033</td>
+		<td style="text-align:center;display:none;">8,429</td>
+		<td style="text-align:center;display:none;">9,033</td>
+		<td style="text-align:center;display:none;">27,620</td>
+		<td style="text-align:center;display:none;">119,266</td>
+		<td style="text-align:center;"><b>34,5</b></td>
+		<td style="text-align:center;"><b>179,380</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>31</b></td>
+		<td>HOLEČEK</td>
+		<td>JAN</td>
+		<td>Gymnázium Mikulášské náměstí Plzeň</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">6,5</td>
+		<td style="text-align:center;">10,5</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">42,152</td>
+		<td style="text-align:center;display:none;">25,647</td>
+		<td style="text-align:center;display:none;">71,560</td>
+		<td style="text-align:center;"><b>34</b></td>
+		<td style="text-align:center;"><b>154,685</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>32</b></td>
+		<td>KROUPA</td>
+		<td>PAVEL</td>
+		<td>Gymnázium Brno tř. Kpt. Jaroše</td>
+		<td style="text-align:center;">3,5</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">17,5</td>
+		<td style="text-align:center;display:none;">17,538</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">6,022</td>
+		<td style="text-align:center;display:none;">5,918</td>
+		<td style="text-align:center;display:none;">119,266</td>
+		<td style="text-align:center;"><b>33,5</b></td>
+		<td style="text-align:center;"><b>164,071</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>33</b></td>
+		<td>BUKVIŠOVÁ</td>
+		<td>KRISTÝNA</td>
+		<td>Gymnázium Brno tř. Kpt. Jaroše</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">33,120</td>
+		<td style="text-align:center;display:none;">39,457</td>
+		<td style="text-align:center;display:none;">54,522</td>
+		<td style="text-align:center;"><b>33,5</b></td>
+		<td style="text-align:center;"><b>142,424</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>34</b></td>
+		<td>ŠESTÁKOVÁ</td>
+		<td>ELIŠKA</td>
+		<td>Gymnázium Josefa Jungmanna Litoměřice</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;display:none;">30,065</td>
+		<td style="text-align:center;display:none;">13,027</td>
+		<td style="text-align:center;display:none;">54,196</td>
+		<td style="text-align:center;display:none;">11,837</td>
+		<td style="text-align:center;display:none;">20,446</td>
+		<td style="text-align:center;"><b>29,5</b></td>
+		<td style="text-align:center;"><b>129,571</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>35</b></td>
+		<td>VINCENA</td>
+		<td>PETR</td>
+		<td>Gymnázium Jakuba Škody Přerov</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">2,5</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">20</td>
+		<td style="text-align:center;display:none;">5,011</td>
+		<td style="text-align:center;display:none;">8,429</td>
+		<td style="text-align:center;display:none;">15,054</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">136,304</td>
+		<td style="text-align:center;"><b>29</b></td>
+		<td style="text-align:center;"><b>164,799</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>36</b></td>
+		<td>PEŤKO</td>
+		<td>BENEDIKT</td>
+		<td>Gymnázium Matyáše Lercha Brno</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;display:none;">5,011</td>
+		<td style="text-align:center;display:none;">14,560</td>
+		<td style="text-align:center;display:none;">6,022</td>
+		<td style="text-align:center;display:none;">31,565</td>
+		<td style="text-align:center;display:none;">54,522</td>
+		<td style="text-align:center;"><b>27,5</b></td>
+		<td style="text-align:center;"><b>111,679</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>37</b></td>
+		<td>KREJČÍ</td>
+		<td>JAN</td>
+		<td>Gymnázium Mikuláše Koperníka Bílovec</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">4,5</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">10,5</td>
+		<td style="text-align:center;display:none;">30,065</td>
+		<td style="text-align:center;display:none;">6,897</td>
+		<td style="text-align:center;display:none;">6,022</td>
+		<td style="text-align:center;display:none;">15,783</td>
+		<td style="text-align:center;display:none;">71,560</td>
+		<td style="text-align:center;"><b>26</b></td>
+		<td style="text-align:center;"><b>130,326</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>38</b></td>
+		<td>ISER</td>
+		<td>TOMÁŠ</td>
+		<td>Gymnázium Jablonec nad Nisou</td>
+		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">2,5</td>
+		<td style="text-align:center;">12</td>
+		<td style="text-align:center;display:none;">7,516</td>
+		<td style="text-align:center;display:none;">13,793</td>
+		<td style="text-align:center;display:none;">6,022</td>
+		<td style="text-align:center;display:none;">9,864</td>
+		<td style="text-align:center;display:none;">81,783</td>
+		<td style="text-align:center;"><b>26</b></td>
+		<td style="text-align:center;"><b>118,978</b></td>
+		<td>ÚSPĚŠNÝ ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>39</b></td>
+		<td>PRINZ</td>
+		<td>FRANTIŠEK</td>
+		<td>Gymnázium Břeclav</td>
+		<td style="text-align:center;">5</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">4,5</td>
+		<td style="text-align:center;">2,5</td>
+		<td style="text-align:center;">11,5</td>
+		<td style="text-align:center;display:none;">25,054</td>
+		<td style="text-align:center;display:none;">3,065</td>
+		<td style="text-align:center;display:none;">27,098</td>
+		<td style="text-align:center;display:none;">9,864</td>
+		<td style="text-align:center;display:none;">78,375</td>
+		<td style="text-align:center;"><b>25,5</b></td>
+		<td style="text-align:center;"><b>143,457</b></td>
+		<td>ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>40</b></td>
+		<td>VRBKA</td>
+		<td>PAVEL</td>
+		<td>Gymnázium Třebíč</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">5</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;display:none;">5,011</td>
+		<td style="text-align:center;display:none;">13,027</td>
+		<td style="text-align:center;display:none;">30,109</td>
+		<td style="text-align:center;display:none;">7,891</td>
+		<td style="text-align:center;display:none;">51,114</td>
+		<td style="text-align:center;"><b>24</b></td>
+		<td style="text-align:center;"><b>107,152</b></td>
+		<td>ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>41</b></td>
+		<td>DOSTÁLOVÁ</td>
+		<td>VLASTA</td>
+		<td>Gymnázium, Pardubice, Dašická 1083</td>
+		<td style="text-align:center;">0,5</td>
+		<td style="text-align:center;">4,5</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">13,5</td>
+		<td style="text-align:center;display:none;">2,505</td>
+		<td style="text-align:center;display:none;">6,897</td>
+		<td style="text-align:center;display:none;">12,043</td>
+		<td style="text-align:center;display:none;">5,918</td>
+		<td style="text-align:center;display:none;">92,005</td>
+		<td style="text-align:center;"><b>22</b></td>
+		<td style="text-align:center;"><b>119,370</b></td>
+		<td>ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>42</b></td>
+		<td>CIDLINSKÝ</td>
+		<td>DAREK</td>
+		<td>Gymnázium Brno tř. Kpt. Jaroše</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">5</td>
+		<td style="text-align:center;">4,5</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">13,027</td>
+		<td style="text-align:center;display:none;">30,109</td>
+		<td style="text-align:center;display:none;">17,755</td>
+		<td style="text-align:center;display:none;">27,261</td>
+		<td style="text-align:center;"><b>22</b></td>
+		<td style="text-align:center;"><b>88,152</b></td>
+		<td>ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>43</b></td>
+		<td>KUCHYŇOVÁ</td>
+		<td>KAROLÍNA</td>
+		<td>Gymnázium Matyáše Lercha Brno</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">0,5</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;display:none;">5,011</td>
+		<td style="text-align:center;display:none;">10,728</td>
+		<td style="text-align:center;display:none;">33,120</td>
+		<td style="text-align:center;display:none;">1,973</td>
+		<td style="text-align:center;display:none;">51,114</td>
+		<td style="text-align:center;"><b>21,5</b></td>
+		<td style="text-align:center;"><b>101,946</b></td>
+		<td>ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>44</b></td>
+		<td>MELICHÁREK</td>
+		<td>VÁCLAV</td>
+		<td>Gymnázium Brno tř. Kpt. Jaroše</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;">6,5</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;display:none;">27,560</td>
+		<td style="text-align:center;display:none;">9,962</td>
+		<td style="text-align:center;display:none;">12,043</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">37,484</td>
+		<td style="text-align:center;"><b>19,5</b></td>
+		<td style="text-align:center;"><b>87,049</b></td>
+		<td>ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>45</b></td>
+		<td>ZIKOVÁ</td>
+		<td>JANA</td>
+		<td>Gymnázium Brno tř. Kpt. Jaroše</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">15,326</td>
+		<td style="text-align:center;display:none;">6,022</td>
+		<td style="text-align:center;display:none;">15,783</td>
+		<td style="text-align:center;display:none;">27,261</td>
+		<td style="text-align:center;"><b>19</b></td>
+		<td style="text-align:center;"><b>64,391</b></td>
+		<td>ÚČASTNÍK</td></tr>
+
+	<tr>
+		<td style="text-align:center;"><b>46</b></td>
+		<td>ZEMAN</td>
+		<td>DALIBOR</td>
+		<td>Gymnázium Strakonice</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">0,5</td>
+		<td style="text-align:center;">3,5</td>
+		<td style="text-align:center;">3,5</td>
+		<td style="text-align:center;display:none;">5,011</td>
+		<td style="text-align:center;display:none;">0,000</td>
+		<td style="text-align:center;display:none;">3,011</td>
+		<td style="text-align:center;display:none;">13,810</td>
+		<td style="text-align:center;display:none;">23,853</td>
+		<td style="text-align:center;"><b>8,5</b></td>
+		<td style="text-align:center;"><b>45,685</b></td>
+		<td>ÚČASTNÍK</td></tr>
+</tbody></table>
 <p>
 V případě rovnosti bodů je potřeba rozlišit pořadí (požadavek programu Excelence). K tomu slouží pomocné kritérium, tzv. modifiované body.
 Modifiované body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>), kde <i>b</i> je bodový zisk z dané úlohy, max je maximum bodů dané úlohy a prum je průměrný bodový zisk z dané úlohy.
 Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.
-</p-->
+</p>
+</div>
 
 <h3 class="accordion" id="seznam">Seznam postupujících</h3>
 
