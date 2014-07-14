@@ -3,8 +3,8 @@
 
   RewriteBase /praha
 
-  RewriteCond %{HTTP_HOST} !^praha
-  RewriteRule ^(.*)$ http://praha.fyzikalniolympiada.cz/$1 [R=301,L,QSA]
+  #RewriteCond %{HTTP_HOST} !^praha
+  #RewriteRule ^(.*)$ http://praha.fyzikalniolympiada.cz/$1 [R=301,L,QSA]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
