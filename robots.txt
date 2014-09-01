@@ -7,3 +7,6 @@ User-agent: *
 Disallow: /netinfo/
 Disallow: /cgi-bin/
 
+User-agent: Googlebot-Image
+Disallow: /archiv/mfo/40/druzstvo.jpg
+Disallow: /archiv/mfo/40/druzstvo_thumb.jpg
