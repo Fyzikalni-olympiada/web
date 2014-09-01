@@ -25,7 +25,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 
 <meta name='author' content='All: Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' />
 <meta name='webmaster' content='All: Jan Prachař, e-mail: webmaster@fyzikalniolympiada.cz' />
-<meta name='copyright' content='&copy;2004-2011 Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' />
+<meta name='copyright' content='&copy;2004-2014 Fyzikalní olympiáda, e-mail: jan.prachar@fyzikalniolympiada.cz' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <base href="http://<?= SERVER_NAME ?>/" />
@@ -199,22 +199,12 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
             </div>
 
             <div class="section">
-                <div class="section-title">Ústřední komise</div>
-                <div class="section-content">
-                    <ul class="nice-list">
-                        <li><a href="http://www.uhk.cz/fo" title="Centrum péče o fyzikální talenty na UHK">Centrum péče o fyzikální talenty</a></li>
-                        <li><a href="http://cental.uhk.cz/" title="Centrum talentů M&amp;F&amp;I">CenTal &ndash; Centrum talentů M&amp;F&amp;I</a></li>
-                    </ul>
-                    
-                </div>
-            </div>
-
-            <div class="section">
                 <div class="section-title">Partneři soutěže a sponzoři</div>
                 <div class="section-content">
-					<div style="margin: 0 0 20px;">
-						<a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a>
-					</div>
+                    <ul class="nice-list">
+                        <li><a href="http://cental.uhk.cz/" title="Centrum talentů M&amp;F&amp;I">CenTal &ndash; Centrum talentů M&amp;F&amp;I</a></li>
+						<li><a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a></li>
+					</ul>
                     <div style="margin: 0 0 20px;">
                        <img src="/pic/logo_CEZ.png" alt="Skupina ČEZ" style="width: 99px; height: 99px; float: right;" />
                        Skupina ČEZ
@@ -239,7 +229,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                 <a href="/rss" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
                 <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('terminy.html') ?>">Termíny</a> <span class="text-separator">|</span>
+                <a href="<?php echo ROOT_WWW ?>dokumenty/pravidla-pro-urcovani-poradi.pdf">Pravidla pro určování pořadí</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('jine_olym.html') ?>">Další předmětové olympiády</a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('odkazy.html') ?>">Odkazy</a>
 			</p>
