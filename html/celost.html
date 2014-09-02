@@ -28,7 +28,10 @@ if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
 <h3 class="accordion accordion-main" id="organizace">Organizace</h3>
 <div>
 <p>
-Z nejúspěšnějších účastníků druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh krajských komisí
+Termín a místo konání: <strong><?php echo $termin ?></strong> (úterý až pátek), <?php echo $misto ?>.
+</p>
+<p>
+Z nejúspěšnějších řešitelů krajského kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh krajských komisí
 FO nejvíce 50&nbsp;účastníků do celostátního kola soutěže.
 Celostátní kolo trvá čtyři dny, pro všechny účastníky i&nbsp;organizátory
 je zajištěno ubytování a&nbsp;stravování. První den se koná oficiální zahájení soutěže.
@@ -42,18 +45,22 @@ V&nbsp;celostátním kole mohou soutěžící používat Matematické,
 fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
 </p>
 <p>
-Úspěšní řešitelé budou stanoveni na základě bodovacího systému. 
-Za každou teoretickou úlohu je možno získat 10&nbsp;bodů, za experimentální bodů&nbsp;20.
-Nejvíce dvanáct nejlepších řešitelů třetího kola bude vyhlášeno za vítěze třetího kola.
-Z&nbsp;desíti nejlepších vítězů třetího kola bude s&nbsp;ohledem na jejich předcházející výsledky v&nbsp;soutěži i&nbsp;na výběrovém soustředění
-uspořádaném ÚK&nbsp;FO proveden výběr 5&nbsp;účastníků (a jednoho náhradníka)
-<!--############################################## -->
-<strong>46. Mezinárodní fyzikální olympiády</strong>,
-<!-- ############################################## -->
-která bude uspořádána v&nbsp;termínu <?php echo $terminMFO ?> ve státě <?php echo $mistoMFO ?>.
+Úspěšní řešitelé a jejich pořadí bude stanoveno na základě bodovacího systému. Za každou teoretickou úlohu je možno získat 10&nbsp;bodů, za experimentální bodů&nbsp;20.  
+Bodovou hranici pro <em>úspěšného řešitele</em> stanovuje ÚK FO po sečtení všech bodů tak, že je nutné dosáhnout zpravidla alespoň polovinu bodů z průměrného hodnocení prvních tří soutěžících. Počet <em>vítězů</em> by měl být v rozmezí 18–24 procent z celkového počtu soutěžících (všichni vítězové však musí být úspěšnými řešiteli). Při shodném počtu bodů o pořadí dále rozhoduje:
+<ol>
+    <li>Vyšší počet „modifikovaných bodů“, které se vypočítají dle vzorce &Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>),
+        kde <i>b</i> je bodový zisk z dané úlohy, <i>max</i> je maximum bodů dané úlohy a&nbsp;<i>prum</i> je průměrný bodový zisk z&nbsp;dané úlohy v celostátním kole.
+Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.</li>
+    <li>Ročník studia soutěžícího, příp. datum narození. Mladší mají přednost.</li>
+    <li>Pokud nerozhodne ani jedno z předchozích kritérií, rozhoduje los.</li>
+</ol>
+<p>
+Soutěžící, kteří se stali vítězi, obdrží diplom vítěze. Soutěžící, kteří se stali úspěšnými řešiteli, obdrží diplom úspěšného řešitele. Ostatní soutěžící obdrží diplom za účast.
 </p>
 <p>
-Celostátní kolo se koná v&nbsp;termínu <strong><?php echo $termin ?></strong> (pondělí až čtvrtek) ve&nbsp;městě <?php echo $misto ?>.
+Z&nbsp;vítězů celostátního kola bude na základě výsledků na <a href="/pripravne-soustredeni">výběrovém soustředění</a> uspořádaném ÚK&nbsp;FO proveden výběr 5&nbsp;účastníků (a jednoho náhradníka)
+<strong><?php echo AKTUALNI_ROCNIK - 10 ?>.&nbsp;Mezinárodní fyzikální olympiády</strong>,
+která bude uspořádána v&nbsp;termínu <?php echo $terminMFO ?> ve státě <?php echo $mistoMFO ?>.
 </p>
 </div>
 
