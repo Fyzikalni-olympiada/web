@@ -186,7 +186,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                         <li><a href="http://kof.zcu.cz/fo/" title="Stránky plzeňského kraje">Plzeňský kraj</a></li>
                         <li><a href="http://fo.czechian.net/" title="Stránky středočeského kraje">Středočeský kraj</a></li>
                         <li><a href="http://physics.ujep.cz/~fo/" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
-                        <li><a href="http://rvfo.webz.cz/" title="Stránky zlínského kraje">Zlínský kraj</a></li>
+                        <li><a href="http://www.guh.cz/?page_id=272" title="Stránky zlínského kraje">Zlínský kraj</a></li>
                     </ul>
                 </div>
             </div>
