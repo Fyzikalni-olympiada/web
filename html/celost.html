@@ -25,7 +25,7 @@ if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
 }		
 ?>
 
-<h3 class="accordion accordion-main" id="organizace">Organizace</h3>
+<h3 class="accordion" id="organizace">Organizace</h3>
 <div>
 <p>
 Termín a místo konání: <strong><?php echo $termin ?></strong> (úterý až pátek), <?php echo $misto ?>.
@@ -64,13 +64,21 @@ která bude uspořádána v&nbsp;termínu <?php echo $terminMFO ?> ve státě <?
 </p>
 </div>
 
-<h3 class="accordion" id="venue">Informace pro účastníky</h3>
+<h3 class="accordion accordion-main" id="venue">Informace pro účastníky</h3>
 <div>
 
-<!--p>
+<p>
+Celostátní kolo 56. ročníku Fyzikální olympiády proběhne 17.&ndash;20. února 2015 v Českých Budějovicích. Soutěž pořádá nejstarší českobudějovické gymnázium – Gymnázium J.V.&nbsp;Jirsíka, ve spolupráci s Katedrou aplikované fyziky a techniky PF JU.
+</p>
+
+<p>
 Další informace o celostátním kole najdete
-<a href="http://www.gymhol.cz/fyzikalni-olympiada">stránkách Gymnázia Ladislava Jaroše Holešov</a>.
-</p--> 
+<a href="http://fo.gjvj.cz/index.html">stránce organizátorů</a>.
+</p> 
+
+<p>Postupující prosíme, ať se závazně registrují ve <a href="http://excelence.nidm.cz/soutez/106">formuláři na protálu Programu Excelence</a>.
+</p>
+
 <!--h3><a href="<?php echo odkaz('archiv/celost/56/photos.html')?>" title="Fotogalerie celostátního kola 56. ročníku FO">Fotogalerie</a></h3-->
 
 
@@ -142,9 +150,9 @@ V případě rovnosti bodů je potřeba rozlišit pořadí (požadavek programu 
 Modifiované body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>), kde <i>b</i> je bodový zisk z dané úlohy, max je maximum bodů dané úlohy a prum je průměrný bodový zisk z dané úlohy.
 Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.
 </p>
-</div>
+</div-->
 
-<h3 class="accordion" id="seznam">Seznam postupujících</h3>
+<h3 class="accordion accordion-main" id="seznam">Seznam postupujících</h3>
 
 <div>
 
@@ -152,4 +160,366 @@ Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtí�
 U&nbsp;každého postupujícího uvádíme body získané v&nbsp;krajském kole.
 </p>
 
-</div-->
+<table class="vysledkovka" cellpadding=3>
+<thead>
+	<tr>
+		<th>Jméno</th>
+		<th>Kraj</th>
+		<th>Škola</th>
+		<th style="text-align:right;">Body</th>
+		<th>Pořadí</th></tr>
+
+</thead>
+<tbody>
+	<tr>
+		<td>Fiala Tomáš</td>
+		<td>VY</td>
+		<td>Ledeč nad Sázavou</td>
+		<td style="text-align:right;">39.0</td>
+		<td>1.</td></tr>
+
+	<tr>
+		<td>Jiří Etrych</td>
+		<td>Pce</td>
+		<td>G Pardubice, Dašická</td>
+		<td style="text-align:right;">38.0</td>
+		<td>2.</td></tr>
+
+	<tr>
+		<td>Rozhoň Václav</td>
+		<td>JČ</td>
+		<td>G J.V.Jirsíka ČB</td>
+		<td style="text-align:right;">38.0</td>
+		<td>3.</td></tr>
+
+	<tr>
+		<td>Benedikt Peťko</td>
+		<td>JM</td>
+		<td>GML Brno</td>
+		<td style="text-align:right;">38.0</td>
+		<td>4.</td></tr>
+
+	<tr>
+		<td>Kryštof Kolář</td>
+		<td>JM</td>
+		<td>G tř. Kpt. Jaroše</td>
+		<td style="text-align:right;">37.5</td>
+		<td>5.</td></tr>
+
+	<tr>
+		<td>Soukup Jan</td>
+		<td>PL</td>
+		<td>Gymnázium J. Vrchlického Klatovy</td>
+		<td style="text-align:right;">37.0</td>
+		<td>6.</td></tr>
+
+	<tr>
+		<td>Honsa Lukáš</td>
+		<td>JČ</td>
+		<td>G Jírovcova ČB</td>
+		<td style="text-align:right;">37.0</td>
+		<td>7.</td></tr>
+
+	<tr>
+		<td>Miřátský Václav</td>
+		<td>VY</td>
+		<td>Pelhřimov</td>
+		<td style="text-align:right;">37.0</td>
+		<td>8.</td></tr>
+
+	<tr>
+		<td>Sláma Jakub</td>
+		<td>Pha</td>
+		<td>Gymnázium Opatov</td>
+		<td style="text-align:right;">36.0</td>
+		<td>9.</td></tr>
+
+	<tr>
+		<td>Zmeškal Marek</td>
+		<td>VY</td>
+		<td>Pelhřimov</td>
+		<td style="text-align:right;">36.0</td>
+		<td>10.</td></tr>
+
+	<tr>
+		<td>Jakub Dolejší</td>
+		<td>HK</td>
+		<td>G B.Němcové HK</td>
+		<td style="text-align:right;">34.0</td>
+		<td>11.</td></tr>
+
+	<tr>
+		<td>Marek Štěpán</td>
+		<td>Pha</td>
+		<td>GJK</td>
+		<td style="text-align:right;">34.0</td>
+		<td>12.</td></tr>
+
+	<tr>
+		<td>Lukáš Supik</td>
+		<td>MS</td>
+		<td>Gymnázium Komenského 713 Třinec</td>
+		<td style="text-align:right;">33.0</td>
+		<td>13.</td></tr>
+
+	<tr>
+		<td>Skála Václav</td>
+		<td>PL</td>
+		<td>Gymnázium J. Vrchlického Klatovy</td>
+		<td style="text-align:right;">33.0</td>
+		<td>14.</td></tr>
+
+	<tr>
+		<td>Peterka Pavel</td>
+		<td>JČ</td>
+		<td>G PdC Tábor</td>
+		<td style="text-align:right;">33.0</td>
+		<td>15.</td></tr>
+
+	<tr>
+		<td>Konečný Matěj</td>
+		<td>JČ</td>
+		<td>G Jírovcova ČB</td>
+		<td style="text-align:right;">33.0</td>
+		<td>16.</td></tr>
+
+	<tr>
+		<td>Mojmír Poprocký</td>
+		<td>JM</td>
+		<td>GML Brno</td>
+		<td style="text-align:right;">33.0</td>
+		<td>17.</td></tr>
+
+	<tr>
+		<td>Bialas Filip</td>
+		<td>Pha</td>
+		<td>Gymnázium Opatov</td>
+		<td style="text-align:right;">32.0</td>
+		<td>18.</td></tr>
+
+	<tr>
+		<td>Krov Martin</td>
+		<td>JČ</td>
+		<td>G Jírovcova ČB</td>
+		<td style="text-align:right;">32.0</td>
+		<td>19.</td></tr>
+
+	<tr>
+		<td>David Samuel</td>
+		<td>Pce</td>
+		<td>G Svitavy</td>
+		<td style="text-align:right;">31.5</td>
+		<td>20.</td></tr>
+
+	<tr>
+		<td>Michal Kalousek</td>
+		<td>Pce</td>
+		<td>G Pardubice, Dašická</td>
+		<td style="text-align:right;">30.0</td>
+		<td>21.</td></tr>
+
+	<tr>
+		<td>Kučera Jiří</td>
+		<td>Pha</td>
+		<td>GJK</td>
+		<td style="text-align:right;">29.0</td>
+		<td>22.</td></tr>
+
+	<tr>
+		<td>Kremel Tomáš</td>
+		<td>OL</td>
+		<td>GJŠ Přerov</td>
+		<td style="text-align:right;">28.5</td>
+		<td>23.</td></tr>
+
+	<tr>
+		<td>Tomáš Jakubec</td>
+		<td>HK</td>
+		<td>G Trutnov</td>
+		<td style="text-align:right;">28.0</td>
+		<td>24.</td></tr>
+
+	<tr>
+		<td>Miroslav Sochor</td>
+		<td>ZL</td>
+		<td>G Uh. Hradiště</td>
+		<td style="text-align:right;">28.0</td>
+		<td>25.</td></tr>
+
+	<tr>
+		<td>Kateřina Smítalová</td>
+		<td>Pce</td>
+		<td>G Pardubice, Dašická</td>
+		<td style="text-align:right;">28.0</td>
+		<td>26.</td></tr>
+
+	<tr>
+		<td>Vančura Martin</td>
+		<td>JČ</td>
+		<td>G J.V.Jirsíka ČB</td>
+		<td style="text-align:right;">28.0</td>
+		<td>27.</td></tr>
+
+	<tr>
+		<td>Fořtová Lucie</td>
+		<td>JČ</td>
+		<td>G PdC Tábor</td>
+		<td style="text-align:right;">28.0</td>
+		<td>28.</td></tr>
+
+	<tr>
+		<td>Poljak Marián</td>
+		<td>OL</td>
+		<td>GJŠ Přerov</td>
+		<td style="text-align:right;">27.5</td>
+		<td>29.</td></tr>
+
+	<tr>
+		<td>Turek Zdeněk</td>
+		<td>PL</td>
+		<td>Gymnázium Rokycany</td>
+		<td style="text-align:right;">27.0</td>
+		<td>30.</td></tr>
+
+	<tr>
+		<td>Jelínek Matěj</td>
+		<td>VY</td>
+		<td>Jihlava</td>
+		<td style="text-align:right;">27.0</td>
+		<td>31.</td></tr>
+
+	<tr>
+		<td>Ryška Jakub</td>
+		<td>VY</td>
+		<td>Jihlava</td>
+		<td style="text-align:right;">27.0</td>
+		<td>32.</td></tr>
+
+	<tr>
+		<td>Beck Dominik</td>
+		<td>LB</td>
+		<td>Gymnázium Semily</td>
+		<td style="text-align:right;">26.0</td>
+		<td>33.</td></tr>
+
+	<tr>
+		<td>Kůs Pavel</td>
+		<td>PL</td>
+		<td>Gymnázium J. Š. Baara Domažlice</td>
+		<td style="text-align:right;">26.0</td>
+		<td>34.</td></tr>
+
+	<tr>
+		<td>Vaníček Tomáš</td>
+		<td>JČ</td>
+		<td>G Jírovcova ČB</td>
+		<td style="text-align:right;">26.0</td>
+		<td>35.</td></tr>
+
+	<tr>
+		<td>Petr Zamazal</td>
+		<td>JM</td>
+		<td>G tř. Kpt. Jaroše</td>
+		<td style="text-align:right;">26.0</td>
+		<td>36.</td></tr>
+
+	<tr>
+		<td>Olga Leskovjanová</td>
+		<td>ZL</td>
+		<td>MG Vsetín</td>
+		<td style="text-align:right;">25.0</td>
+		<td>37.</td></tr>
+
+	<tr>
+		<td>Vladimír Jeřábek</td>
+		<td>MS</td>
+		<td>Gymnázium M. Koperníka  Bílovec </td>
+		<td style="text-align:right;">25.0</td>
+		<td>38.</td></tr>
+
+	<tr>
+		<td>Pavel Souček</td>
+		<td>SČ</td>
+		<td>G Nymburk</td>
+		<td style="text-align:right;">25.0</td>
+		<td>39.</td></tr>
+
+	<tr>
+		<td>Wohlrath Vladislav</td>
+		<td>PL</td>
+		<td>Gymnázium Rokycany</td>
+		<td style="text-align:right;">25.0</td>
+		<td>40.</td></tr>
+
+	<tr>
+		<td>Vokrouhlický David</td>
+		<td>Pha</td>
+		<td>GJK</td>
+		<td style="text-align:right;">25.0</td>
+		<td>41.</td></tr>
+
+	<tr>
+		<td>Demovič Daniel</td>
+		<td>Pha</td>
+		<td>GJK</td>
+		<td style="text-align:right;">25.0</td>
+		<td>42.</td></tr>
+
+	<tr>
+		<td>Tomáš Nekvinda</td>
+		<td>Pce</td>
+		<td>G Litomyšl</td>
+		<td style="text-align:right;">24.0</td>
+		<td>43.</td></tr>
+
+	<tr>
+		<td>Vojtěch Suchánek</td>
+		<td>JM</td>
+		<td>G tř. Kpt. Jaroše</td>
+		<td style="text-align:right;">24.0</td>
+		<td>44.</td></tr>
+
+	<tr>
+		<td>Liška Marek</td>
+		<td>LB</td>
+		<td>Gymnázium a SOŠPg</td>
+		<td style="text-align:right;">23.0</td>
+		<td>45.</td></tr>
+
+	<tr>
+		<td>Jakub Píška</td>
+		<td>ZL</td>
+		<td>G JAK Uh. Brod</td>
+		<td style="text-align:right;">23.0</td>
+		<td>46.</td></tr>
+
+	<tr>
+		<td>Šimon Karch</td>
+		<td>MS</td>
+		<td>Gymn. Komenského 2 Havířov - Město</td>
+		<td style="text-align:right;">23.0</td>
+		<td>47.</td></tr>
+
+	<tr>
+		<td>Zeman Radovan</td>
+		<td>OL</td>
+		<td>G Uničov</td>
+		<td style="text-align:right;">23.0</td>
+		<td>48.</td></tr>
+
+	<tr>
+		<td>Šimon Jelínek</td>
+		<td>UL</td>
+		<td>Gymnázium Chomutov</td>
+		<td style="text-align:right;">23.0</td>
+		<td>49.</td></tr>
+
+	<tr>
+		<td>Jan Preiss</td>
+		<td>UL</td>
+		<td>Gymnázium Lovosice</td>
+		<td style="text-align:right;">22.0</td>
+		<td>50.</td></tr>
+</tbody></table>
+
+</div>
