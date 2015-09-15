@@ -15,7 +15,7 @@ while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 			case 'okresní kolo':
 				$termin2 = $termin;
 				break;
-			case 'krajské kolo':
+			case 'krajské kolo E':
 				$termin3 = $termin;
 				break;
 			default:
@@ -175,57 +175,47 @@ Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako n
 <table class="table zadani">
 <tr>
     <th scope="col">Kolo</th>
-    <th scope="col" style="width: 40%" colspan="2">Zadání pro tisk</th>
-	<!--th scope="col" style="width: 25%">Zadání na nástěnky</th-->
-    <!--th scope="col" style="width: 25%">Výsledky úloh</th-->
+    <th scope="col" style="width: 40%" colspan="2">Zadání</th>
     <th scope="col" style="width: 40%" colspan="2" >Řešení</th>
 </tr>
 <tr>
     <th scope="row">Domácí</th>
     <!--td colspan="2">Zveřejníme v nejbližší době</td-->
     <td colspan="2">
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56ef1_z.pdf" title="Zadání pro tisk ve formátu PDF"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/57/fo57ef1_z.pdf" title="Zadání pro tisk ve formátu PDF"><i class="pdf">pdf</i></a><br>
+		<small><?=$termin1?></small>
     </td>
-    <!--td>
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56efg1_zi.pdf" title="Zadání úloh domácího kola ve formátu pro nástěnky (ilustrované barevnými obrázky)"><i class="pdfi">pdfi</i></a>
-    </td-->
-    <!--td>
-        <?php if ($kdo != "student") : ?>
-        Zveřejníme na začátku roku 2013
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56ef1_v.pdf"><i class="pdf">pdf</i></a>
-        <? else: ?>
-        Zveřejníme po termínu odevzdání
-        <? endif; ?>
-    </td-->
     <td colspan="2">
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56ef1_r.pdf"><i class="pdf">pdf</i></a>
-		<!--Zveřejníme po termínu odevzdání-->
+        <!--a href="<?php echo ROOT_WWW ?>archiv/57/fo57ef1_r.pdf"><i class="pdf">pdf</i></a-->
+		Zveřejníme po termínu odevzdání
     </td>
 </tr>
 <tr>
     <th scope="row">Okresní</th>
+    <td colspan="2">
+        <!--a href="<?php echo ROOT_WWW ?>archiv/57/fo57e2_z.pdf"><i class="pdf">pdf</i></a-->
+		<small><?=$termin2?></small>
+    </td>
+    <!--td>
+        <a href="<?php echo ROOT_WWW ?>archiv/57/fo57f2_z.pdf"><i class="pdf">pdf</i></a>
+    </td-->
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56e2_z.pdf"><i class="pdf">pdf</i></a>
+        <!--a href="<?php echo ROOT_WWW ?>archiv/57/fo57e2_r.pdf"><i class="pdf">pdf</i></a-->
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56f2_z.pdf"><i class="pdf">pdf</i></a>
-    </td>
-    <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56e2_r.pdf"><i class="pdf">pdf</i></a>
-    </td>
-    <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56f2_r.pdf"><i class="pdf">pdf</i></a>
+        <!--a href="<?php echo ROOT_WWW ?>archiv/57/fo57f2_r.pdf"><i class="pdf">pdf</i></a-->
     </td>
 </tr>
 <tr>
     <th scope="row">Krajské</th>
-    <td></td>
-    <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56e3_z.pdf"><i class="pdf">pdf</i></a>
+    <!--td></td-->
+    <td colspan="2">
+        <!--a href="<?php echo ROOT_WWW ?>archiv/57/fo57e3_z.pdf"><i class="pdf">pdf</i></a-->
+		<small><?=$termin3?></small>
     </td>
     <td></td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/56/fo56e3_r.pdf"><i class="pdf">pdf</i></a>
+		<!--a href="<?php echo ROOT_WWW ?>archiv/57/fo57e3_r.pdf"><i class="pdf">pdf</i></a>-->
     </td>
 </tr>
 </table>

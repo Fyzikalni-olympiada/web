@@ -20,11 +20,6 @@ while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
 				break;
 	}
 }	
-
-if (FILE_INDEX == 'praha/index.php') {
-	$terminA = 'do 6. 1. 2014';
-	//$terminBCD = 'do 12. 4. 2013';
-}
 ?>
 <h3 class="accordion" id="organizace">Organizace</h3>
 
@@ -163,8 +158,7 @@ if (FILE_INDEX == 'index.php') {
 <div>
 <h4>Zadání</h4>
 <p>
-Texty úloh si můžete stáhnout ve formátu <code>pdf</code> &ndash; <i class="pdf">pdf</i>
-nebo <code>ps</code> &ndash; <i class="ps">ps</i>.
+Texty úloh si můžete stáhnout ve formátu <code>pdf</code> &ndash; <i class="pdf">pdf</i>.
 </p>
 <div class="table-responsive">
 <table class="table zadani">
@@ -175,25 +169,43 @@ nebo <code>ps</code> &ndash; <i class="ps">ps</i>.
 	<th scope="col">Kategorie D</th>
 </tr>
 <tr>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56a1_z.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56a1_z.ps.gz"><i class="ps">ps</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56b1_z.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56b1_z.ps.gz"><i class="ps">ps</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56c1_z.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56c1_z.ps.gz"><i class="ps">ps</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56d1_z.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56d1_z.ps.gz"><i class="ps">ps</i></a></td>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/57/fo57a1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminA?></small>
+	</td>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/57/fo57b1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminBCD?></small>
+	</td>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/57/fo57c1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminBCD?></small>
+	</td>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/57/fo57d1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminBCD?></small>
+	</td>
+</tr>
+<tr>
+	<td><i>4. ročník SŠ</i></td>
+	<td><i>3. ročník SŠ</i></td>
+	<td><i>2. ročník SŠ</i></td>
+	<td><i>1. ročník SŠ</i></td>
 </tr>
 </table>
 </div>
 
 <h4>Řešení</h4>
 
-<!--p>
-Řešení úloh každé kategorie zveřejníme po termínu odevzdání.
-</p-->
-
 <p>
+Řešení úloh každé kategorie zveřejníme po termínu odevzdání.
+</p>
+
+<!--p>
 Řešení úloh si můžete stáhnout ve formátu <code>pdf</code> &ndash; <i class="pdf">pdf</i>
 nebo <code>ps</code> &ndash; <i class="ps">ps</i>.
 
@@ -209,17 +221,17 @@ nebo <code>ps</code> &ndash; <i class="ps">ps</i>.
 	<th scope="col">Kategorie D</th>
 </tr>
 <tr>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56a1_r.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56a1_r.ps.gz"><i class="ps">ps</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56b1_r.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56b1_r.ps.gz"><i class="ps">ps</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56c1_r.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56c1_r.ps.gz"><i class="ps">ps</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/56/fo56d1_r.pdf"><i class="pdf">pdf</i></a>
-	<a href="<?php echo ROOT_WWW ?>archiv/56/fo56d1_r.ps.gz"><i class="ps">ps</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57a1_r.pdf"><i class="pdf">pdf</i></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/57/fo57a1_r.ps.gz"><i class="ps">ps</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57b1_r.pdf"><i class="pdf">pdf</i></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/57/fo57b1_r.ps.gz"><i class="ps">ps</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57c1_r.pdf"><i class="pdf">pdf</i></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/57/fo57c1_r.ps.gz"><i class="ps">ps</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57d1_r.pdf"><i class="pdf">pdf</i></a>
+	<a href="<?php echo ROOT_WWW ?>archiv/57/fo57d1_r.ps.gz"><i class="ps">ps</i></a></td>
 </tr>
 </table>
-</div>
+</div-->
 
 </div>
 
