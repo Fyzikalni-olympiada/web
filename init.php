@@ -38,7 +38,7 @@ define('INTERVAL_ONLINE', 20); //maximalni doba necinnosti v minutach, kdy je cl
 /* Novinky */
 define('NOVINKY_WHERES', 'celost');
 define('NOVINKY_NA_STRANKU', 6);
-define('NOVINKY_INTERVAL', 90); //maximalni stari zobrazene novinky ve dnech
+define('NOVINKY_INTERVAL', 120); //maximalni stari zobrazene novinky ve dnech
 
 define('GUEST_TEST_TEXT', '2'); //kontrolni text pro prispevatele ve foru
 
