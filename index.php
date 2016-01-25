@@ -56,6 +56,9 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 			$('.row-offcanvas').toggleClass('active');
 			$('.sidebar-offcanvas').toggleClass('active');
 		});
+		if (window.location.hash) {
+			$('h3.accordion' + window.location.hash).addClass('accordion-main');
+		}
 
 		var $panels = $('h3.accordion');
 		$panels.not('.accordion-main').addClass('off').next().hide();
