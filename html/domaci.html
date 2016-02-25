@@ -21,7 +21,7 @@ while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
 	}
 }	
 ?>
-<h3 class="accordion" id="organizace">Organizace</h3>
+<h3 class="accordion" id="organizace">Pravidla</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -54,30 +54,21 @@ Jeho úkolem je vás jednak seznámit s&nbsp;typem úloh, které se v&nbsp;dané
 schopnost tyto úlohy řešit.
 První tři úlohy řešte nejlépe do konce listopadu,
 potom řešte další čtyři úlohy včetně experimentální úlohy.
-<?php
 
-if (FILE_INDEX != 'praha/index.php') {
-	echo '
+<p>
 Termín odevzdání řešení pro kategorii&nbsp;A je začátek ledna
-(<strong>'.$terminA.'</strong>),
+(<strong><?=$terminA?></strong>),
 v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D začátek dubna
-(<strong>'.$terminBCD.'</strong>). ';
-} else {
-	echo '
-Termín odevzdání řešení pro kategorii&nbsp;A v&nbsp;Praze je nejpozději
-<strong>'.$terminA.'</strong>,
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D nejpozději
-<strong>'.$terminBCD.'</strong>. Tyto
-termíny jsou z&nbsp;důvodů ujednocení oprav v&nbsp;Praze závazné. ';
-}
-?>
+(<strong><?=$terminBCD?></strong>)
+</p>
+<p>
 Vypracovaná řešení odevzdejte svému učiteli fyziky, který je opraví
 a&nbsp;oklasifikuje. Za každou úlohu můžete získat maximálně 10&nbsp;bodů.
 Řešení je vyhovující, pokud získáte za úlohu alespoň 5&nbsp;bodů.
 </p>
 <p>
-Úspěšní řešitelé prvního kola jsou ti z&nbsp;vás, kteří úspěšně vyřeší alespoň
-pět úloh a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentální úlohu.
+<b>Úspěšní řešitelé</b> prvního kola jsou ti z&nbsp;vás, kteří vyřeší alespoň
+pět úloh za pět bodů a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentální úlohu.
 O&nbsp;postupu do krajského kola a&nbsp;místě jeho konání se dozvíte prostřednictvím svého
 učitele fyziky. Na pomoc
 při řešení úloh mohou organizovat vaši učitelé fyziky konzultace, kroužky nebo
@@ -145,11 +136,6 @@ pět úloh a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentáln�
 semináře v&nbsp;střediskových školách pod patronátem JČMF.
 </p>
 </div>
-<?php
-if (FILE_INDEX == 'index.php') {
-	echo '<p><strong>Důležité upozornění:</strong> Termíny odevzdání úloh domácího kola jsou jen orientační. Závazné termíny v&nbsp;jednotlivých krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajských komisí">webových stránkách</a>.</p>';
-}
-?>
 </div>
 </div>
 
@@ -273,7 +259,7 @@ strany řešení.
 </div>
 
 
-<h3 class="accordion" id="temata">Studijní témata</h3>
+<h3 class="accordion accordion-main" id="temata">Studijní témata</h3>
 <div>
 <?php include 'html/texty.html' ?>
 </div>
