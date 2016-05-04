@@ -68,7 +68,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 			} else {
 				var $that = $(this);
 				$(this).next().slideToggle(function () {
-					$that.addClass('off');	
+					$that.addClass('off');
 				});
 			}
 		});
@@ -117,7 +117,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                     <?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník ve školním roce <?php echo AKTUALNI_ROK?>
 			</small>
 		</div>
-		
+
 		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">
 			<?php echo menu(); ?>
 		</div>
@@ -132,7 +132,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 			<div class="pull-right visible-xs">
 				<button type="button" class="btn-xs" data-toggle="offcanvas">Zobrazit boční panel</button>
 			</div>
-       
+
             <h1><?php echo nadpis(); ?></h1>
             <?php
                 if ($napln == FILE_NEWS) {
@@ -174,13 +174,13 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
 						<div class="map-inner">
 							<?php include 'html/stranky_regionu.html' ?>
 						</div>
-					</div>	
+					</div>
                     <ul class="nice-list visible-sm visible-xs">
                         <li><a href="http://praha.fyzikalniolympiada.cz/" title="Pražské stránky">Praha</a></li>
                         <li><a href="http://www.pf.jcu.cz/structure/departments/kaft/pro-verejnost/fyzikalni-olympiada/" title="Stránky jihočeského kraje">Jihočeský kraj</a></li>
                         <li><a href="http://www.jaroska.cz/fo/" title="Stránky jihomoravského kraje">Jihomoravský kraj</a></li>
                         <li><a href="http://kvary.fyzikalniolympiada.cz/" title="Stránky karlovarského kraje">Karlovarský kraj</a></li>
-                        <li><a href="http://www.viki.sro.cz/obj/fo/" title="Stránky kraje Vysočina">Kraj Vysočina</a></li>
+                        <li><a href="https://www.gymnaziumjihlava.cz/fo/" title="Stránky kraje Vysočina">Kraj Vysočina</a></li>
                         <li><a href="http://www.gybon.cz/~sada/fyzikalniolympiada.html" title="Stránky královéhradeckého kraje">Královéhradecký kraj</a></li>
                         <li><a href="http://www.sportgym.cz/aktivity/fyzikalni-olympiada" title="Stránky libereckého kraje">Liberecký kraj</a></li>
                         <li><a href="http://www.svcoo.cz/souteze/souteze_fyzika.html" title="Stránky moravskoslezského kraje">Moravskoslezský kraj</a></li>
