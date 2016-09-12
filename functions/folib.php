@@ -485,6 +485,19 @@ function vlnka($data)
 }
 
 
+function v($termin) {
+	$v = 'v';
+	if (substr($termin, 0, 7) == 'středa') {
+		$v .= 'e';
+		$termin = str_replace('středa', 'středu', $termin);
+	} elseif (substr($termin, 0, 8) == 'čtvrtek') {
+		$v .= 'e';
+	}
+	$termin = str_replace(' ', '&nbsp;', $termin);
+	return "$v&nbsp;$termin";
+}
+
+
 
 function latest_terms()
 {

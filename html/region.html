@@ -34,9 +34,9 @@ while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
 <div class="tab-pane active" id="organizace-student">
 <p>
 Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-v&nbsp;<strong><?php echo $terminA ?></strong>,
+<strong><?php echo v($terminA) ?></strong>,
 v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-v&nbsp;<strong><?php echo $terminBCD ?></strong>.
+<strong><?php echo v($terminBCD) ?></strong>.
 </p>
 <p>
 Pozvánku (s&nbsp;místem a&nbsp;časem konání) na krajské kolo obdržíte od svého učitele fyziky
@@ -66,9 +66,9 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 <div id="organizace-ucitel" class="tab-pane">
 <p>
 Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-v&nbsp;<strong><?php echo $terminA ?></strong>,
+<strong><?php echo v($terminA) ?></strong>,
 v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-v&nbsp;<strong><?php echo $terminBCD ?></strong>.
+<strong><?php echo v($terminBCD) ?></strong>.
 </p>
 <p>
 Pozvánku na krajské kolo pro své studenty obdržíte od příslušné krajské komise FO.
@@ -89,9 +89,9 @@ nejvíce 50&nbsp;účastníků do třetího, celostátního kola soutěže.
 <div id="organizace-organizator" class="tab-pane">
 <p>
 Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-v&nbsp;<strong><?php echo $terminA ?></strong>,
+<strong><?php echo v($terminA) ?></strong>,
 v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-v&nbsp;<strong><?php echo $terminBCD ?></strong>.
+<strong><?php echo v($terminBCD) ?></strong>.
 </p>
 <p>
 V&nbsp;krajském kole, na které zve příslušný krajská komise FO soutěžící podle
