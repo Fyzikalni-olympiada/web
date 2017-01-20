@@ -1,11 +1,11 @@
-<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK-1 ?>. ročníku FO</h2>
+<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK-0 ?>. ročníku FO</h2>
 
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%celostátní kolo%\'
-	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
+	AND rocnik="' . (AKTUALNI_ROCNIK-0) . '"
 	AND kategorie="1"
 ');
 if (!(list($termin, $misto) = $GLOBALS['mysql']->fetch_array())) {
@@ -16,7 +16,7 @@ $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%Mezinárodní FO%\'
-	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
+	AND rocnik="' . (AKTUALNI_ROCNIK-0) . '"
 	AND kategorie="1"
 ');
 if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
@@ -59,128 +59,100 @@ Soutěžící, kteří se stali vítězi, obdrží diplom vítěze. Soutěžíc�
 </p>
 <p>
 Z&nbsp;vítězů celostátního kola bude na základě výsledků na <a href="/pripravne-soustredeni">výběrovém soustředění</a> uspořádaném ÚK&nbsp;FO proveden výběr 5&nbsp;účastníků (a jednoho náhradníka)
-<strong><?php echo AKTUALNI_ROCNIK - 10 ?>.&nbsp;Mezinárodní fyzikální olympiády</strong>,
-která bude uspořádána v&nbsp;termínu <?php echo $terminMFO ?> ve státě <?php echo $mistoMFO ?>.
+<strong><?php echo AKTUALNI_ROCNIK - 10 ?>.&nbsp;Mezinárodní fyzikální olympiády</strong> (<?php echo $terminMFO ?>, <?php echo $mistoMFO ?>).
 </p>
 </div>
 
-<h3 class="accordion" id="venue">Informace pro účastníky</h3>
+<h3 class="accordion accordion-main" id="venue">Informace pro účastníky</h3>
 <div>
 
 <p>
-Ve dnech 2. – 5. února 2016 uspořádá <a href="http://www.gmk.cz/">Gymnázium Mikuláše Koperníka, Bílovec, p.o.</a> spolu s Jednotou českých matematiků a fyziků celostátní kolo 57.&nbsp;ročníku Fyzikální olympiády kategorie&nbsp;A.
-
-<p>Soutěžící prosíme, ať se <b>závazně registrují</b> ve <a href="http://excelence.nidm.cz/soutez/235">formuláři na portálu Programu Excelence</a>.
+Ve dnech 7. – 10. února 2017 uspořádá <a href="http://www.gymrumburk.cz/">Gymnázium Rumburk</a> spolu s <a href="http://www.jcmf.cz">Jednotou českých matematiků a fyziků</a> celostátní kolo 58. ročníku Fyzikální olympiády kategorie A.
 </p>
-
 <p>
-<a href="/archiv/celost/57/pozv_soutezici">[pozvánka pro soutežící]</a>
+Soutěžící prosíme, ať se <b>závazně registrují</b> ve <a href="http://excelence.msmt.cz/soutez/335">formuláři na portálu programu Excelence</a> (aktivní od 24.&nbsp;1.).
 </p>
-
 <p>
-Záštitu nad soutěží převzali mimo jiné prezident České republiky Ing. Miloš Zeman, hejtman Moravskoslezského kraje Miroslav Novák, rektor VŠB-TUO prof.&nbsp;Ing.&nbsp;Ivo Vondrák,&nbsp;CSc., rektor SU v Opavě doc.&nbsp;Ing.&nbsp;Pavel Tuleja,&nbsp;Ph.D. a zástupci dalších významných institucí.
+Záštitu nad soutěží převzal hejtman Ústeckého kraje Oldřich Bubeníček.
 </p>
-
-<p>
-Hlavní partneři a sponzoři: VÍTKOVICE HOLDING, a. s., Skupina ČEZ, město Bílovec, Národní strojírenský klastr, z. s., Veolia Energie ČR, a. s.
+<p> 
+Konání soutěže podpořili:
 </p>
+<div>
+<ul>
+<li>Ministerstvo školství, mládeže a tělovýchovy</li>
+<li>Ústecký kraj</li>
+<li>Město Rumburk</li>
+<li><a href="http://www.mff.cuni.cz/">Matematicko-fyzikální fakulta UK v Praze</a></li>
+<li><a href="https://www.ujep.cz">Univerzita Jana Evangelisty Purkyně Ústí nad Labem</a></li>
+<li><a href="http://www.maplesoft.cz/">Czech Software First s.r.o.</a></li>
+<li><a href="http://www.tosvarnsdorf.cz/">TOS Varnsdorf a. s.</a></li>
+<li><a href="https://cez.cz/">Skupina ČEZ</a></li>
+<li>Benteler Automotive Rumburk</li>
+<li><a href="http://www.sasa.cz/">SCHÄFER a SÝKORA s. r. o.</a></li>
+<li>MUDr. Pavla Beránková</li>
+<li><a href="http://www.velveta.cz/">VELVETA Varnsdorf a. s.</a></li>
+</ul>
+</div>
 
 <h4>Doprava</h4>
 
 <p>
-Vlakem ČD do stanice Studénka (trať č. 270), dále můžete pokračovat vlakem do Bílovce (trať č. 279). <a href="https://mapy.cz/s/qxsZ">Od nádraží ČD pěšky asi 10 minut přes náměstí k DM GMK</a>.
+Pokud pojedete přes Prahu, tak jako časově i finančně nejvýhodnější způsob dopravy doporučujeme použít některý z přímých autobusů. Ubytovaní na internátu vystupují na zastávce <a href="https://mapy.cz/s/1llP3">Rumburk Bytex</a>, ubytovaní v penzionu na zastávce Rumburk, autobusové nádraží.
 </p>
 <p>
-Jízdenky předložíte u prezence, v průběhu soutěžních dnů Vám bude proplacen dvojnásobek jejich ceny. V případě výhodnějšího spojení lze použít autobusové dopravy. Prosíme Vás o použití slevových karet, při dopravě osobním automobilem Vám bude proplaceno cestovné ve výši železniční nebo autobusové dopravy.
+Jízdné bude propláceno na základě předložených jízdenek Jednotou českých matematiků a fyziků na účet. Nezapomeňte s sebou tedy vzít číslo účtu, na který budete chtít platbu provést.
 </p>
 
-<h4>Kontakty</h4>
+<h4>Kontaktní osoba</h4>
 <p>
-Ubytování: Domov mládeže při GMK, Sokolovská 910
+Mgr. Jana Vlasáková, vlasakova@gymrumburk.cz, 737 113 386
 </p>
-<div>
-<ul>
-	<li>Marie Malá, mmala@gmk.cz, 556 414 438</li>
-	<li>Jarmila Pavlištíková, jpavlistikova@gmk.cz, 556 414 438</li>
-</ul>
-</div>
-<p>
-Gymnázium Mikuláše Koperníka, Bílovec, p. o., třída 17. listopadu 526
-</p>
-<div>
-<ul>
-	<li>Mgr. Vít Schindler, vschindler@gmk.cz</li>
-	<li>RNDr. Radmila Horáková, rhorakova@gmk.cz, 605 477 791</li>
-	<li>Mgr. Tomáš Táborský, ttaborsky@gmk.cz, 732 758 448</li>
-</ul>
-</div>
 
 </div>
 
 <!--h3><a href="<?php echo odkaz('archiv/celost/56/photos.html')?>" title="Fotogalerie celostátního kola 56. ročníku FO">Fotogalerie</a></h3-->
 
 
-<h3 class="accordion" id="program">Program</h3>
+<h3 class="accordion accordion-main" id="program">Program</h3>
 
 <div>
 
-<p>
-Veškerá autobusová doprava na místo zahájení a konání soutěže je zajištěna.
-</p>
-
-<h4>Úterý 2. 2. 2016</h4>
+<h4>Úterý 7. 2. 2017</h4>
 <table cellpadding="3" style="width: 100%">
-<tr><td>13.00 – 16.30</td><td>Příjezd a ubytování účastníků na DM při GMK Bílovec</td></tr>
-<tr><td>17.00</td><td>Odjezd na slavnostní zahájení</td></tr>
-<tr><td>18.00 – 22.00</td><td>Slavnostní zahájení celostátního kola Fyzikální olympiády kat. A</td></tr>
-<tr><td>22.30</td><td>Odjezd ze slavnostního zahájení (Svět techniky, Ostrava-Vítkovice)</td></tr>
+<tr><td>14:00 – 18:00</td><td>Příjezd, registrace a ubytování</td></tr>
+<tr><td>19:00</td><td>Slavnostní zahájení – Dům kultury Střelnice Rumburk</td></tr>
 </table>
-<h4>Středa 3. 2. 2016</h4>
+<h4>Středa 8. 2. 2017</h4>
 <table cellpadding="3" style="width: 100%">
-<tr><td>6.45 – 7.15</td><td>Snídaně v jídelně GMK</td></tr>
-<tr><td>7.30</td><td>Odjezd do Dolní oblasti Vítkovice</td></tr>
-<tr><td>8.30 – 13.30</td><td>Řešení teoretických úloh (Svět techniky, Ostrava-Vítkovice)</td></tr>
-<tr><td>9.00 – 13.00</td><td>1. zasedání ÚK FO (Svět techniky, Ostrava-Vítkovice)</td></tr>
-<tr><td>13.00 – 14.00</td><td>Oběd v areálu Dolní oblasti Vítkovice</td></tr>
-<tr><td>Odpoledne</td><td>Oprava teoretických úloh</td></tr>
-<tr><td>14.30 – 16.30</td><td>Exkurze ve Světě techniky</td></tr>
-<tr><td>17.00</td><td>Odjezd z Dolní oblasti Vítkovice</td></tr>
-<tr><td>18.00 – 19.00</td><td>Večeře v jídelně GMK</td></tr>
-<tr><td>19.00</td><td>Odborná přednáška (aula GMK)<br>
-RNDr. Miroslav Kawalec: Současnost a budoucnost jaderné energetiky u nás
-a ve světě</td></tr>
+<tr><td>7:00 – 8:00</td><td>Snídaně dle ubytování</td></tr>
+<tr><td>8:30 – 13:30</td><td>Řešení teoretických úloh – Gymnázium Rumburk</td></tr>
+<tr><td>9:00 – 13:00</td><td>Zasedání ÚK FO</td></tr>
+<tr><td>13:30 – 14:30</td><td>Oběd – jídelna SZŠ a OA</td></tr>
+<tr><td></td><td>Oprava teoretických úloh</td></tr>
+<tr><td>15:00</td><td>Přednáška: p. Václav Sojka, <em>„Českosaské Švýcarsko“</em> – sál knihovny Rumburk (skR)</td></tr>
+<tr><td>17.30 – 18:30</td><td>Večeře – jídelna SZŠ a OA</td></tr>
+<tr><td>19:30</td><td>Přednáška: prof. RNDr. Jiří Podolský, CSc., DSc.,<br><em>„Maxwell a Einstein – elektromagnetické a gravitační vlny“</em> – skR</td></tr>
 </table>
-<h4>Čtvrtek 4. 2. 2016</h4>
+<h4>Čtvrtek 9. 2. 2017</h4>
 <table cellpadding="3" style="width: 100%">
-<tr><td>6.30 – 8.30</td><td>Snídaně v jídelně GMK</td></tr>
-<tr><td>7.00</td><td>Odjezd 1. skupiny soutěžících na VŠB-TUO</td></tr>
-<tr><td>9.00</td><td>Odjezd 2. skupiny soutěžících na VŠB-TUO</td></tr>
-<tr><td>8.00 – 12.00</td><td>1. skupina soutěžících – řešení experimentální úlohy</td></tr>
-<tr><td>10.00 – 14.00</td><td>2. skupina soutěžících – řešení experimentální úlohy</td></tr>
-<tr><td>13.00 – 15.00</td><td>Oběd v menze VŠB-TUO</td></tr>
-<tr><td>14.00 – 15.45</td><td>1. skupina soutěžících – exkurze ve vědecko-výzkumných laboratořích v Národním superpočítačovém centru IT4Innovations, VŠB-TUO</td></tr>
-<tr><td>15.00 – 16.45</td><td>
-2. skupina soutěžících – exkurze ve vědecko-výzkumných laboratořích
-v Národním superpočítačovém centru IT4Innovations, VŠB-TUO</td></tr>
-<tr><td>17.00</td><td>Odjezd z VŠB-TUO</td></tr>
-<tr><td>18.00 – 18.30</td><td>Prohlídka opravených teoretických úloh, konzultace
-s opravujícími (učebny GMK)</td></tr>
-<tr><td>18.30 – 19.00</td><td>Večeře v jídelně GMK</td></tr>
-<tr><td style="white-space: nowrap">19.15 – 20.15</td><td>Odborné přednášky (učebny GMK)<br>
- RNDr. Petr Slaný, Ph.D.: Má světlo stopky? aneb Šíření světla podle Fermata<br>
- doc. RNDr. Stanislav Hledík, Ph.D.: Levitace permanentních magnetů</td></tr>
-<tr><td>21.00</td><td>
-2. zasedání ÚK FO (sborovna GMK)</td></tr>
+<tr><td>7:00 – 8:00</td><td>Snídaně dle ubytování</td></tr>
+<tr><td>8:30 – 12:30</td><td>Řešení experimentální úlohy – Gymnázium Rumburk</td></tr>
+<tr><td>13:00 – 14:00</td><td>Oběd – jídelna SZŠ a OA</td></tr>
+<tr><td>15:00</td><td>Komentovaná prohlídka Lorety Rumburk</td></tr>
+<tr><td>16:30 – 17:30</td><td>Konzultace opravených úloh</td></tr>
+<tr><td>17.30 – 18:30</td><td>Večeře – jídelna SZŠ a OA</td></tr>
+<tr><td>19:00</td><td>Přednáška: RNDr. Petr Kulhánek, CSc., <em>„Plazma ve vesmíru a v laboratoři“</em> – skR</td></tr>
+<tr><td>21:30</td><td>Závěrečné zasedání ÚK FO</td></tr>
 </table>
-<h4>Pátek 5. 2. 2016</h4>
+<h4>Pátek 10. 2. 2017</h4>
 <table cellpadding="3" style="width: 100%">
-<tr><td>8.00</td><td>Snídaně v jídelně GMK</td></tr>
-<tr><td>9.00</td><td>Slavnostní vyhlášení výsledků (aula GMK)</td></tr>
+<tr><td>7:30 – 8:30</td><td>Snídaně dle ubytování</td></tr>
+<tr><td>9:00</td><td>Slavnostní vyhlášení výsledků – aula Gymnázia Rumburk</td></tr>
 </table>
-<a href="/archiv/celost/57/Program_FO_final.pdf">Program v pdf</a>
 </div>
 
-<h3 class="accordion accordion-main" id="ulohy">Zadání a řešení úloh</h3>
+<!--h3 class="accordion accordion-main" id="ulohy">Zadání a řešení úloh</h3>
 
 <div>
 <p>
@@ -196,13 +168,13 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 </tr>
 <tr>
 	<th scope="row">Teorie</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57a3_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57a3_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_r.pdf"><i class="pdf">pdf</i></a></td>
 </tr>
 <tr>
 	<th scope="row">Experiment</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57a3_pz.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/57/fo57a3_pr.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_pz.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_pr.pdf"><i class="pdf">pdf</i></a></td>
 </tr>
 </table>
 </div>
@@ -213,7 +185,7 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 <div>
 
 <p>
-Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/57_A_3.pdf"><i class="pdf">pdf</i></a>.
+Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/58_A_3.pdf"><i class="pdf">pdf</i></a>.
 </p>
 <table class="vysledkovka" cellpadding=3>
 <thead>
@@ -251,717 +223,6 @@ Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndas
 		<td style="display:none;">&nbsp;</td>
 		<td style="text-align:right;">304.06</td></tr>
 
-	<tr>
-		<td><b>2.</b></td>
-		<td><b>Bialas Filip</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium Opatov, Praha 4, Konstantinova 1500 </td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">13</td>
-		<td style="text-align:center;"><b>50</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">296.65</td></tr>
-
-	<tr>
-		<td><b>3.</b></td>
-		<td><b>Etrych Jiří</b></td>
-		<td style="text-align:center;">PAK</td>
-		<td>Gynázium, Pardubice, Dašická 1083</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">7.5</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">16.5</td>
-		<td style="text-align:center;"><b>49</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">291.27</td></tr>
-
-	<tr>
-		<td><b>4.</b></td>
-		<td><b>Supik Lukáš</b></td>
-		<td style="text-align:center;">MSK</td>
-		<td>Gymnázium, Třinec</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">18</td>
-		<td style="text-align:center;"><b>49</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">282.19</td></tr>
-
-	<tr>
-		<td><b>5.</b></td>
-		<td><b>Hrubý Petr</b></td>
-		<td style="text-align:center;">PAK</td>
-		<td>Gymnázium, Polička, nábřeží Svobody 306</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">14.5</td>
-		<td style="text-align:center;"><b>48.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">289.57</td></tr>
-
-	<tr>
-		<td><b>6.</b></td>
-		<td><b>Kolář Kryštof</b></td>
-		<td style="text-align:center;">JHM</td>
-		<td>Gymnázium Brno, třída Kapitána Jaroše</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">8.5</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">10.5</td>
-		<td style="text-align:center;"><b>46.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">271.45</td></tr>
-
-	<tr>
-		<td><b>7.</b></td>
-		<td><b>Tran Anh Minh</b></td>
-		<td style="text-align:center;">JHM</td>
-		<td>Gymnázium Brno, třída Kapitána Jaroše</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">15</td>
-		<td style="text-align:center;"><b>44.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">243.39</td></tr>
-
-	<tr>
-		<td><b>8.</b></td>
-		<td><b>Preiss Jan</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium Jana Keplera, Praha 6, Parléřova 2</td>
-		<td style="text-align:center;">2.</td>
-		<td style="text-align:center;">0.5</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">8.5</td>
-		<td style="text-align:center;">17</td>
-		<td style="text-align:center;"><b>44</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">247.99</td></tr>
-
-	<tr>
-		<td><b>9.</b></td>
-		<td><b>Karch Šimon</b></td>
-		<td style="text-align:center;">MSK</td>
-		<td>Gymnázium, Havířov - Město, Komenského 2 </td>
-		<td style="text-align:center;">2.</td>
-		<td style="text-align:center;">1.5</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">7.5</td>
-		<td style="text-align:center;">16.5</td>
-		<td style="text-align:center;"><b>42</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">240.74</td></tr>
-
-	<tr>
-		<td><b>10.</b></td>
-		<td><b>Demovič Daniel</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium Jana Keplera, Praha 6, Parléřova 2</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">8.5</td>
-		<td style="text-align:center;">12</td>
-		<td style="text-align:center;"><b>41.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">250.42</td></tr>
-
-	<tr>
-		<th style="text-align:center;" colspan=13>Úspěšní řešitelé</th></tr>
-
-	<tr>
-		<td><b>11.</b></td>
-		<td><b>Kůs Pavel</b></td>
-		<td style="text-align:center;">PLK</td>
-		<td>Gymnázium J. Š. Baara v Domažlicích</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;"><b>38.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">204.52</td></tr>
-
-	<tr>
-		<td><b>12.</b></td>
-		<td><b>Mezera Matěj</b></td>
-		<td style="text-align:center;">VYS</td>
-		<td>Gymnázium Havlíčkův Brod</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">1.5</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">14</td>
-		<td style="text-align:center;"><b>37</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">230.86</td></tr>
-
-	<tr>
-		<td><b>13.</b></td>
-		<td><b>Preissnitz Jan</b></td>
-		<td style="text-align:center;">JHM</td>
-		<td>Gymnázium Brno, třída Kapitána Jaroše</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">14.5</td>
-		<td style="text-align:center;"><b>37</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">228.42</td></tr>
-
-	<tr>
-		<td><b>14.</b></td>
-		<td><b>Voráček Václav</b></td>
-		<td style="text-align:center;">JHČ</td>
-		<td>Gymnázium Vítězslava Nováka, Jindřichův Hradec</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;">14.5</td>
-		<td style="text-align:center;"><b>37</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">208.71</td></tr>
-
-	<tr>
-		<td><b>15.</b></td>
-		<td><b>Pajer Daniel</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium Jana Keplera, Praha 6, Parléřova 2</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">8.5</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">14</td>
-		<td style="text-align:center;"><b>36</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">203.46</td></tr>
-
-	<tr>
-		<td><b>16.</b></td>
-		<td><b>Konečný Tomáš</b></td>
-		<td style="text-align:center;">JHČ</td>
-		<td>Gymnázium J. V. Jirsíka, České Budějovice, Fráni Šrámka 23</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">15</td>
-		<td style="text-align:center;"><b>34</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">194.51</td></tr>
-
-	<tr>
-		<td><b>17.</b></td>
-		<td><b>Jelínek Vojtěch</b></td>
-		<td style="text-align:center;">VYS</td>
-		<td>Gymnázium Žďár nad Sázavou</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">16</td>
-		<td style="text-align:center;"><b>33.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">183.98</td></tr>
-
-	<tr>
-		<td><b>18.</b></td>
-		<td><b>Kučera Martin</b></td>
-		<td style="text-align:center;">PAK</td>
-		<td>Gymnázium, Polička, nábřeží Svobody 306</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;">16</td>
-		<td style="text-align:center;"><b>32.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">175.81</td></tr>
-
-	<tr>
-		<td><b>19.</b></td>
-		<td><b>Jarošík Jiří</b></td>
-		<td style="text-align:center;">PLK</td>
-		<td>Gymnázium Jaroslava Vrchlického v Klatovech</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">6.5</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;"><b>32</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">176.26</td></tr>
-
-	<tr>
-		<td><b>20.</b></td>
-		<td><b>Turek Pavel</b></td>
-		<td style="text-align:center;">OLK</td>
-		<td>Gymnázium, Olomouc - Hejčín, Tomkova 45</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">14</td>
-		<td style="text-align:center;"><b>31.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">183.11</td></tr>
-
-	<tr>
-		<td><b>21.</b></td>
-		<td><b>Jelínek Šimon</b></td>
-		<td style="text-align:center;">ULK</td>
-		<td>Gymnázium, Chomutov, Mostecká 3000</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">11.5</td>
-		<td style="text-align:center;"><b>31.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">178.63</td></tr>
-
-	<tr>
-		<td><b>22.</b></td>
-		<td><b>Souček Pavel</b></td>
-		<td style="text-align:center;">STČ</td>
-		<td>Gymnázium Bohumila Hrabala v Nymburce</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">16.5</td>
-		<td style="text-align:center;"><b>31.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">177.19</td></tr>
-
-	<tr>
-		<td><b>23.</b></td>
-		<td><b>Poljak Marian</b></td>
-		<td style="text-align:center;">OLK</td>
-		<td>Gymnázium Jakuba Škody, Přerov, Komenského 29</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">7.5</td>
-		<td style="text-align:center;">12.5</td>
-		<td style="text-align:center;"><b>31</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">178.29</td></tr>
-
-	<tr>
-		<td><b>24.</b></td>
-		<td><b>Knopp Ondřej</b></td>
-		<td style="text-align:center;">JHČ</td>
-		<td>Gymnázium, Třeboň, Na Sadech 308</td>
-		<td style="text-align:center;">2.</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">1.5</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">3.5</td>
-		<td style="text-align:center;">15.5</td>
-		<td style="text-align:center;"><b>30.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">197.26</td></tr>
-
-	<tr>
-		<td><b>25.</b></td>
-		<td><b>Hausner Daniel</b></td>
-		<td style="text-align:center;">PLK</td>
-		<td>Gymnázium a Střední odborná škola, Plasy</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">12.5</td>
-		<td style="text-align:center;"><b>30.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">169.80</td></tr>
-
-	<tr>
-		<td><b>26.</b></td>
-		<td><b>Štyks Martin</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium Jana Keplera, Praha 6, Parléřova 2</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0.5</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">15</td>
-		<td style="text-align:center;"><b>30.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">166.18</td></tr>
-
-	<tr>
-		<td><b>27.</b></td>
-		<td><b>Greš Adam</b></td>
-		<td style="text-align:center;">ZLK</td>
-		<td>Gymnázium Zlín - Lesní čtvrť</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">7.5</td>
-		<td style="text-align:center;">11.5</td>
-		<td style="text-align:center;"><b>30</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">159.21</td></tr>
-
-	<tr>
-		<td><b>28.</b></td>
-		<td><b>Johanovská Zuzana</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium Opatov, Praha 4, Konstantinova 1500 </td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">13.5</td>
-		<td style="text-align:center;"><b>29.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">174.67</td></tr>
-
-	<tr>
-		<td><b>29.</b></td>
-		<td><b>Lukeš Vojtěch</b></td>
-		<td style="text-align:center;">PLK</td>
-		<td>Gymnázium Luďka Pika, Plzeň, Opavská 21</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">16.5</td>
-		<td style="text-align:center;"><b>29.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">170.81</td></tr>
-
-	<tr>
-		<td><b>30.</b></td>
-		<td><b>Rzehulka Matěj</b></td>
-		<td style="text-align:center;">MSK</td>
-		<td>Wichterlovo Gymnázium, Ostrava-Poruba</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">6.5</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">13.5</td>
-		<td style="text-align:center;"><b>27.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">158.02</td></tr>
-
-	<tr>
-		<td><b>31.</b></td>
-		<td><b>Procházka Daniel</b></td>
-		<td style="text-align:center;">LBK</td>
-		<td> Gymnázium F. X. Šaldy, Liberec 11, Partyzánská 530 </td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">11.5</td>
-		<td style="text-align:center;"><b>27.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">144.53</td></tr>
-
-	<tr>
-		<td><b>32.</b></td>
-		<td><b>Vokrouhlický David</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium Jana Keplera, Praha 6, Parléřova 2</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">14.5</td>
-		<td style="text-align:center;"><b>26.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">152.34</td></tr>
-
-	<tr>
-		<td><b>33.</b></td>
-		<td><b>Koblížek Jan</b></td>
-		<td style="text-align:center;">JHČ</td>
-		<td>Gymnázium J. V. Jirsíka, České Budějovice, Fráni Šrámka 23</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0.5</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">3.5</td>
-		<td style="text-align:center;">15.5</td>
-		<td style="text-align:center;"><b>24.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">148.98</td></tr>
-
-	<tr>
-		<td><b>34.</b></td>
-		<td><b>Šumník Adam</b></td>
-		<td style="text-align:center;">OLK</td>
-		<td>Konzervatoř Evangelické akademie</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;">13.5</td>
-		<td style="text-align:center;"><b>24.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">146.88</td></tr>
-
-	<tr>
-		<td><b>35.</b></td>
-		<td><b>Štefka Ladislav</b></td>
-		<td style="text-align:center;">VYS</td>
-		<td>Gymnázium Jihlava</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7.5</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">11</td>
-		<td style="text-align:center;"><b>24.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">141.35</td></tr>
-
-	<tr>
-		<td><b>36.</b></td>
-		<td><b>Mikeska Václav</b></td>
-		<td style="text-align:center;">ZLK</td>
-		<td>Gymnázium Františka Palackého Valašské Meziříčí</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">12</td>
-		<td style="text-align:center;"><b>24</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">135.34</td></tr>
-
-	<tr>
-		<td><b>37.</b></td>
-		<td><b>Šťastný Přemysl</b></td>
-		<td style="text-align:center;">PAK</td>
-		<td>Gymnázium Žamberk</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">10.5</td>
-		<td style="text-align:center;"><b>24</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">124.95</td></tr>
-
-	<tr>
-		<th style="text-align:center;" colspan=13>Další řešitelé</th></tr>
-
-	<tr>
-		<td><b>38.</b></td>
-		<td><b>Rosman Viktor</b></td>
-		<td style="text-align:center;">VYS</td>
-		<td> Gymnázium a Obchodní akademie Pelhřimov </td>
-		<td style="text-align:center;">2.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;"><b>23</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">112.74</td></tr>
-
-	<tr>
-		<td><b>39.</b></td>
-		<td><b>Hofrichterová Tereza</b></td>
-		<td style="text-align:center;">LBK</td>
-		<td>Gymnázium Dr. Antona Randy, Jablonec nad Nisou </td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">14</td>
-		<td style="text-align:center;"><b>22.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">131.33</td></tr>
-
-	<tr>
-		<td><b>40.</b></td>
-		<td><b>Liška Jakub</b></td>
-		<td style="text-align:center;">LBK</td>
-		<td>Gymnázium Dr. Antona Randy, Jablonec nad Nisou </td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">6.5</td>
-		<td style="text-align:center;">13</td>
-		<td style="text-align:center;"><b>20.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">117.11</td></tr>
-
-	<tr>
-		<td><b>41.</b></td>
-		<td><b>Kalva Tomáš</b></td>
-		<td style="text-align:center;">OLK</td>
-		<td>Gymnázium, Olomouc - Hejčín, Tomkova 45</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">2.5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">6.5</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;"><b>20.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">114.17</td></tr>
-
-	<tr>
-		<td><b>42.</b></td>
-		<td><b>Zelina Petr</b></td>
-		<td style="text-align:center;">JHM</td>
-		<td>Gymnázium Brno, třída Kapitána Jaroše</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">1.5</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">6.5</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;"><b>20</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">111.33</td></tr>
-
-	<tr>
-		<td><b>43.</b></td>
-		<td><b>Procházková Zuzana</b></td>
-		<td style="text-align:center;">PHA</td>
-		<td>Gymnázium, Praha 4, Na Vítězné Pláni 1160</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">2.5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">5.5</td>
-		<td style="text-align:center;">11.5</td>
-		<td style="text-align:center;"><b>19.5</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">109.93</td></tr>
-
-	<tr>
-		<td><b>44.</b></td>
-		<td><b>Dittrich Jan</b></td>
-		<td style="text-align:center;">JHM</td>
-		<td>Gymnázium Brno, třída Kapitána Jaroše</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">6.5</td>
-		<td style="text-align:center;">10.5</td>
-		<td style="text-align:center;"><b>19</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">103.19</td></tr>
-
-	<tr>
-		<td><b>45.</b></td>
-		<td><b>Novotný Vojtěch</b></td>
-		<td style="text-align:center;">PAK</td>
-		<td>Gymnázium, Pardubice, Dašická 1083</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">2.5</td>
-		<td style="text-align:center;">9.5</td>
-		<td style="text-align:center;"><b>16</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">98.56</td></tr>
-
-	<tr>
-		<td><b>46.</b></td>
-		<td><b>Horáček Vít</b></td>
-		<td style="text-align:center;">ZLK</td>
-		<td>Gymnázium Ladislava Jaroše Holešov</td>
-		<td style="text-align:center;">3.</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;"><b>16</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">86.11</td></tr>
-
-	<tr>
-		<td><b>47.</b></td>
-		<td><b>Bláha Pavel</b></td>
-		<td style="text-align:center;">HKK</td>
-		<td>Jiráskovo Gymnázium, Náchod </td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0.5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">4.5</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;"><b>13</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">73.62</td></tr>
-
-	<tr>
-		<td><b>48.</b></td>
-		<td><b>Chmel Jiří</b></td>
-		<td style="text-align:center;">ZLK</td>
-		<td>Gymnázium Františka Palackého Valašské Meziříčí</td>
-		<td style="text-align:center;">4.</td>
-		<td style="text-align:center;">0.5</td>
-		<td style="text-align:center;">0.5</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7.5</td>
-		<td style="text-align:center;">3.5</td>
-		<td style="text-align:center;"><b>12</b></td>
-		<td style="display:none;">&nbsp;</td>
-		<td style="text-align:right;">52.74</td></tr>
-</tbody></table>
 <p>
 V případě rovnosti bodů je potřeba rozlišit pořadí (požadavek programu Excelence). K tomu slouží pomocné kritérium, tzv. modifiované body.
 Modifiované body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>), kde <i>b</i> je bodový zisk z dané úlohy, max je maximum bodů dané úlohy a prum je průměrný bodový zisk z dané úlohy.
@@ -995,239 +256,5 @@ U&nbsp;každého postupujícího uvádíme body získané v&nbsp;krajském kole.
 		<td>JČ</td>
 		<td style="text-align:center;">34</td></tr>
 
-	<tr>
-		<td>Etrych Jiří</td>
-		<td>Pce</td>
-		<td style="text-align:center;">31.5</td></tr>
-
-	<tr>
-		<td>Knopp Ondřej</td>
-		<td>JČ</td>
-		<td style="text-align:center;">31</td></tr>
-
-	<tr>
-		<td>Poljak Marián</td>
-		<td>Ol</td>
-		<td style="text-align:center;">30</td></tr>
-
-	<tr>
-		<td>Bialas Filip</td>
-		<td>Pha</td>
-		<td style="text-align:center;">29</td></tr>
-
-	<tr>
-		<td>Kůs Pavel</td>
-		<td>Plz</td>
-		<td style="text-align:center;">27.5</td></tr>
-
-	<tr>
-		<td>Pavel Souček</td>
-		<td>SČ</td>
-		<td style="text-align:center;">27</td></tr>
-
-	<tr>
-		<td>Tran Anh Minh</td>
-		<td>JM</td>
-		<td style="text-align:center;">26.5</td></tr>
-
-	<tr>
-		<td>Hrubý Petr</td>
-		<td>Pce</td>
-		<td style="text-align:center;">26</td></tr>
-
-	<tr>
-		<td>Karch Šimon</td>
-		<td>MS</td>
-		<td style="text-align:center;">26</td></tr>
-
-	<tr>
-		<td>Pajer Daniel</td>
-		<td>Pha</td>
-		<td style="text-align:center;">25</td></tr>
-
-	<tr>
-		<td>Voráček Václav</td>
-		<td>JČ</td>
-		<td style="text-align:center;">25</td></tr>
-
-	<tr>
-		<td>Konečný Tomáš</td>
-		<td>JČ</td>
-		<td style="text-align:center;">24</td></tr>
-
-	<tr>
-		<td>Šumník Adam</td>
-		<td>Ol</td>
-		<td style="text-align:center;">23.5</td></tr>
-
-	<tr>
-		<td>Supik Lukáš</td>
-		<td>MS</td>
-		<td style="text-align:center;">22.5</td></tr>
-
-	<tr>
-		<td>Jelínek Vojtěch</td>
-		<td>VYS</td>
-		<td style="text-align:center;">22</td></tr>
-
-	<tr>
-		<td>Lukeš Vojtěch</td>
-		<td>Plz</td>
-		<td style="text-align:center;">21.5</td></tr>
-
-	<tr>
-		<td>Kučera Martin</td>
-		<td>Pce</td>
-		<td style="text-align:center;">21</td></tr>
-
-	<tr>
-		<td>Hofrichterová Tereza</td>
-		<td>Lib</td>
-		<td style="text-align:center;">21</td></tr>
-
-	<tr>
-		<td>Jelínek Šimon</td>
-		<td>ÚL</td>
-		<td style="text-align:center;">21</td></tr>
-
-	<tr>
-		<td>Mikeska Václav</td>
-		<td>ZL</td>
-		<td style="text-align:center;">21</td></tr>
-
-	<tr>
-		<td>Šťastný Přemysl</td>
-		<td>Pce</td>
-		<td style="text-align:center;">20.5</td></tr>
-
-	<tr>
-		<td>Procházková Zuzana</td>
-		<td>Pha</td>
-		<td style="text-align:center;">20.5</td></tr>
-
-	<tr>
-		<td>Demovič Daniel</td>
-		<td>Pha</td>
-		<td style="text-align:center;">19.5</td></tr>
-
-	<tr>
-		<td>Jarošík Jiří</td>
-		<td>Plz</td>
-		<td style="text-align:center;">19.5</td></tr>
-
-	<tr>
-		<td>Liška Jakub</td>
-		<td>Lib</td>
-		<td style="text-align:center;">19.5</td></tr>
-
-	<tr>
-		<td>Preissnitz Jan</td>
-		<td>JM</td>
-		<td style="text-align:center;">19</td></tr>
-
-	<tr>
-		<td>Novotný Vojtěch</td>
-		<td>Pce</td>
-		<td style="text-align:center;">18.5</td></tr>
-
-	<tr>
-		<td>Preiss Jan</td>
-		<td>Pha</td>
-		<td style="text-align:center;">18.5</td></tr>
-
-	<tr>
-		<td>Turek Pavel</td>
-		<td>Ol</td>
-		<td style="text-align:center;">18.5</td></tr>
-
-	<tr>
-		<td>Štefka Ladislav</td>
-		<td>VYS</td>
-		<td style="text-align:center;">18.5</td></tr>
-
-	<tr>
-		<td>Rzehulka Matěj</td>
-		<td>MS</td>
-		<td style="text-align:center;">18</td></tr>
-
-	<tr>
-		<td>Chmel Jiří</td>
-		<td>ZL</td>
-		<td style="text-align:center;">18</td></tr>
-
-	<tr>
-		<td>Horáček Vít</td>
-		<td>ZL</td>
-		<td style="text-align:center;">18</td></tr>
-
-	<tr>
-		<td>Vokrouhlický David</td>
-		<td>Pha</td>
-		<td style="text-align:center;">17.5</td></tr>
-
-	<tr>
-		<td>Rosman Viktor</td>
-		<td>VYS</td>
-		<td style="text-align:center;">17.5</td></tr>
-
-	<tr>
-		<td>Zelina Petr</td>
-		<td>JM</td>
-		<td style="text-align:center;">17</td></tr>
-
-	<tr>
-		<td>Greš Adam</td>
-		<td>ZL</td>
-		<td style="text-align:center;">17</td></tr>
-
-	<tr>
-		<td>Johanovská Zuzana</td>
-		<td>Pha</td>
-		<td style="text-align:center;">16.5</td></tr>
-
-	<tr>
-		<td>Pavel Bláha</td>
-		<td>HK</td>
-		<td style="text-align:center;">16</td></tr>
-
-	<tr>
-		<td>Procházka Daniel</td>
-		<td>Lib</td>
-		<td style="text-align:center;">16</td></tr>
-
-	<tr>
-		<td>Koblížek Jan</td>
-		<td>JČ</td>
-		<td style="text-align:center;">16</td></tr>
-
-	<tr>
-		<td>Hausner Daniel</td>
-		<td>Plz</td>
-		<td style="text-align:center;">15.5</td></tr>
-
-	<tr>
-		<td>Dittrich Jan</td>
-		<td>JM</td>
-		<td style="text-align:center;">15.5</td></tr>
-
-	<tr>
-		<td>Štyks Martin</td>
-		<td>Pha</td>
-		<td style="text-align:center;">15</td></tr>
-
-	<tr>
-		<td>Poláček Ondřej</td>
-		<td>ZL</td>
-		<td style="text-align:center;">15</td></tr>
-
-	<tr>
-		<td>Mezera Matěj</td>
-		<td>VYS</td>
-		<td style="text-align:center;">14.5</td></tr>
-
-	<tr>
-		<td>Kalva Tomáš</td>
-		<td>Ol</td>
-		<td style="text-align:center;">14</td></tr>
 </tbody></table>
-</div>
+</div-->
