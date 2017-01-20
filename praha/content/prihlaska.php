@@ -2,6 +2,8 @@
 echo '
 <h2>Přihláška do krajského kola</h2>';
 
+exit();
+
 $chyba = '';
 $kategorie_array = array('A'=>'kategorie A','B'=>'kategorie B','C'=>'kategorie C','D'=>'kategorie D');
 
@@ -41,7 +43,7 @@ if (isset($_POST['step1'])) { //
 			$chyba .= 'Vyplněný email má neplatný formát.<br />';
 		}
 	}
-	
+
 	if (empty($chyba)) {
 		$mysql->query('
 			INSERT INTO ' . TABLE_REFERENTS . ' SET
@@ -67,7 +69,7 @@ $participant_born_year = array_fill(1,$participant_count,null);
 $participant_solution_count = array_fill(1,$participant_count,null);
 
 /* Snížit nebo zvýšit počet soutěžících 2 */
-if (isset($_POST['step2-increase']) || isset($_POST['step2-decrease'])) { // 
+if (isset($_POST['step2-increase']) || isset($_POST['step2-decrease'])) { //
 	if (isset($_POST['participant_name']) && is_array($_POST['participant_name'])) {
 		$participant_name = $mysql->odstran_problemy($_POST['participant_name']);
 	}
@@ -116,10 +118,10 @@ if (isset($_POST['step2-increase']) || isset($_POST['step2-decrease'])) { //
 	} elseif ($participant_count > 1) {
 		$participant_count--;
 	}
-	
+
 }
 /* Odeslán krok 2 */
-if (isset($_POST['step2'])) { // 
+if (isset($_POST['step2'])) { //
 	if (isset($_POST['participant_name']) && is_array($_POST['participant_name'])) {
 		$participant_name = $mysql->odstran_problemy($_POST['participant_name']);
 		for ($i=1; $i<=$participant_count; $i++) {
@@ -215,7 +217,7 @@ if (isset($_POST['step2'])) { //
 	} else {
 		$chyba .= 'Neočekávaný vstup.<br />';
 	}
-	
+
 	if (empty($chyba)) {
 		for ($i=1; $i<=$participant_count; $i++) {
 			$mysql->query('
@@ -229,12 +231,12 @@ if (isset($_POST['step2'])) { //
 				category=' . db::escape_string($participant_category[$i]) . ',
 				born_year=' . db::escape_string($participant_born_year[$i]) . ',
 				solution_count=' . db::escape_string($participant_solution_count[$i]) . '
-			');	
+			');
 		}
 		/*header('Location: '.odkaz('praha/content/prihlaska.php',null,0).'&step3=1&referent_id='.$referent_id);
 		exit();*/
 	}
-	
+
 }
 
 if (!empty($chyba)) {
@@ -243,7 +245,7 @@ if (!empty($chyba)) {
 	<p>
 	' . $chyba . '
 	</p>
-</div>';	
+</div>';
 }
 
 /* KROK 1*/
@@ -310,8 +312,8 @@ for ($i=1; $i<=$participant_count; $i++) {
 	<tr>
 	<td style="text-align: right">'.$i.'.</td>
 	<td><input type="text" id="participant_name['.$i.']" name="participant_name['.$i.']" size="10" value="' . $participant_name[$i] . '"></td>
-	<td><input type="text" id="participant_surname['.$i.']" name="participant_surname['.$i.']" size="10" value="' . $participant_surname[$i] . '"></td>	
-	<td><input type="text" id="participant_class['.$i.']" name="participant_class['.$i.']" size="4" value="' . $participant_class[$i] . '"></td>	
+	<td><input type="text" id="participant_surname['.$i.']" name="participant_surname['.$i.']" size="10" value="' . $participant_surname[$i] . '"></td>
+	<td><input type="text" id="participant_class['.$i.']" name="participant_class['.$i.']" size="4" value="' . $participant_class[$i] . '"></td>
 	<td><input type="text" id="participant_teacher['.$i.']" name="participant_teacher['.$i.']" size="15" value="' . $participant_teacher[$i] . '"></td>
 	<td><input type="text" id="participant_email['.$i.']" name="participant_email['.$i.']" size="15" value="' . $participant_email[$i] . '"></td>
 	<td><input type="text" id="participant_born_year['.$i.']" name="participant_born_year['.$i.']" size="4" value="' . $participant_born_year[$i] . '"></td>
@@ -388,7 +390,7 @@ Přihlášku posílá ' . $referent_name . ' ' . $konakt_text . '.
 	</tr>
 	</thead>
 	<tbody>';
-	
+
 	$mysql->query('
 		SELECT name, surname, class, teacher, email, category, solution_count
 		FROM ' . TABLE_PARTICIPANTS . '
@@ -399,8 +401,8 @@ Přihlášku posílá ' . $referent_name . ' ' . $konakt_text . '.
 		echo '
 	<tr>
 	<td>' . $name . ' ' . $surname . '</td>
-	<td>' . $class . '</td>	
-	<td>' . $teacher . '</td>	
+	<td>' . $class . '</td>
+	<td>' . $teacher . '</td>
 	<td>' . $email . '</td>
 	<td style="text-align: center">' . $category . '</td>
 	<td style="text-align: center">' . $solution_count . '</td>
@@ -409,7 +411,7 @@ Přihlášku posílá ' . $referent_name . ' ' . $konakt_text . '.
 	}
 echo '
 </tbody>
-</table>';	
+</table>';
 }
 
 
