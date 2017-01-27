@@ -22,7 +22,7 @@ while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
 }                       
 
 ?>
-<h3 class="accordion accordion-main" id="organizace">Pravidla</h3>
+<h3 class="accordion" id="organizace">Pravidla</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -123,12 +123,12 @@ fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatel
 </div>
 </div>
 
-<h3 class="accordion accordion-main" id="temata">Studijní témata</h3>
+<h3 class="accordion" id="temata">Studijní témata</h3>
 <div>
 <?php include 'html/texty.html' ?>
 </div>
 
-<h3 class="accordion" id="ulohy">Úlohy</h3>
+<h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
 
 <div>
 <h4>Zadání</h4>
@@ -146,7 +146,7 @@ Stáhnout si je můžete níže ve formátu <code>pdf</code> <i class="pdf">pdf<
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-    <td><!--a href="<?php echo ROOT_WWW ?>archiv/58/fo58a2_z.pdf"><i class="pdf">pdf</i></a--></td>
+    <td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a2_z.pdf"><i class="pdf">pdf</i></a></td>
 	<td></td>
 	<td></td>
 	<td></td>
@@ -173,7 +173,7 @@ V&nbsp;elektronické podobě si je můžete stáhnout níže.
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-    <td><!--a href="<?php echo ROOT_WWW ?>archiv/58/fo58a2_r.pdf"><i class="pdf">pdf</i></a--></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a2_r.pdf"><i class="pdf">pdf</i></a></td>
 	<td></td>
 	<td></td>
 	<td></td>
