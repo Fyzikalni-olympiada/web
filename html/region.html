@@ -22,7 +22,7 @@ while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
 }                       
 
 ?>
-<h3 class="accordion" id="organizace">Pravidla</h3>
+<h3 class="accordion accordion-main" id="organizace">Pravidla</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -123,12 +123,12 @@ fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatel
 </div>
 </div>
 
-<h3 class="accordion" id="temata">Studijní témata</h3>
+<h3 class="accordion accordion-main" id="temata">Studijní témata</h3>
 <div>
 <?php include 'html/texty.html' ?>
 </div>
 
-<h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
+<!--h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
 
 <div>
 <h4>Zadání</h4>
@@ -147,9 +147,6 @@ Stáhnout si je můžete níže ve formátu <code>pdf</code> <i class="pdf">pdf<
 </tr>
 <tr>
     <td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a2_z.pdf"><i class="pdf">pdf</i></a></td>
-	<!--td></td>
-	<td></td>
-	<td></td-->
 	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58b2_z.pdf"><i class="pdf">pdf</i></a></td>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58c2_z.pdf"><i class="pdf">pdf</i></a></td>
     <td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58d2_z.pdf"><i class="pdf">pdf</i></a></td>
@@ -174,18 +171,15 @@ V&nbsp;elektronické podobě si je můžete stáhnout níže.
 </tr>
 <tr>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a2_r.pdf"><i class="pdf">pdf</i></a></td>
-	<!--td></td>
-	<td></td>
-	<td></td-->
 	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58b2_r.pdf"><i class="pdf">pdf</i></a></td>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58c2_r.pdf"><i class="pdf">pdf</i></a></td>
     <td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58d2_r.pdf"><i class="pdf">pdf</i></a></td>
 </tr>
 </table>
 </div>
-</div>
+</div-->
 
-<h3 class="accordion accordion-main" id="vysledky">Výsledky</h3>
+<!--h3 class="accordion accordion-main" id="vysledky">Výsledky</h3>
 
 <div>
 	
@@ -196,7 +190,7 @@ Výsledky krajského kola hledejte na webových <a href="<?php echo odkaz("stran
 <p>
 Kompletní výsledky krajských kol kategorie&nbsp;A v&nbsp;jednotlivých krajích.
 </p>
-<!--div>
+<div>
 <ul>
         <li><a href="http://kvary.fyzikalniolympiada.cz/vysledky/58/krajske-kolo/kategorie-a/" title="Karlovy Vary">Karlovarský kraj</a></li>
         <li><a href="http://praha.fyzikalniolympiada.cz/vysledky/58-rocnik-2016-2017/krajske-kolo/kategorie-a/" title="Praha">Praha</a></li>
@@ -214,7 +208,7 @@ Kompletní výsledky krajských kol kategorie&nbsp;A v&nbsp;jednotlivých krají
         <li><a href="http://physics.ujep.cz/~fo/vysl_2007-a.html">Ústecký kraj</a>, 1.&nbsp;2.</li>
         <li>Moravskoslezský kraj <img src="http://www.anchoredbygrace.com/smileys/1034552550.gif" alt=""></li>
 </ul>
-</div-->
+</div>
 
 <table class="vysledkovka" cellpadding=3>
 <thead>
@@ -1200,4 +1194,4 @@ Kompletní výsledky krajských kol kategorie&nbsp;A v&nbsp;jednotlivých krají
 		<td style="display:none;">&nbsp;</td>
 		<td style="text-align:right;">38,86</td></tr>
 </tbody></table>
-</div>
+</div-->
