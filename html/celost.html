@@ -1,11 +1,11 @@
-<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK-1 ?>. ročníku FO</h2>
+<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK ?>. ročníku FO</h2>
 
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%celostátní kolo%\'
-	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
+	AND rocnik="' . (AKTUALNI_ROCNIK) . '"
 	AND kategorie="1"
 ');
 if (!(list($termin, $misto) = $GLOBALS['mysql']->fetch_array())) {
@@ -16,7 +16,7 @@ $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%Mezinárodní FO%\'
-	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
+	AND rocnik="' . (AKTUALNI_ROCNIK) . '"
 	AND kategorie="1"
 ');
 if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
@@ -63,58 +63,39 @@ Z&nbsp;vítězů celostátního kola bude na základě výsledků na <a href="/p
 </p>
 </div>
 
-<h3 class="accordion" id="venue">Informace pro účastníky</h3>
+<h3 class="accordion accordion-main" id="venue">Informace pro účastníky</h3>
 <div>
 
 <p>
-Ve dnech 7. – 10. února 2017 uspořádá <a href="http://www.gymrumburk.cz/">Gymnázium Rumburk</a> spolu s <a href="http://www.jcmf.cz">Jednotou českých matematiků a fyziků</a> celostátní kolo 58. ročníku Fyzikální olympiády kategorie A.
+Ve dnech 27. února – 2. března 2017 uspořádá <a href="https://randovka.cz/">Gymnázium Dr. Antonra Randy v Jablonci nad Nisou</a> spolu s <a href="http://www.jcmf.cz">Jednotou českých matematiků a fyziků</a> celostátní kolo 59. ročníku Fyzikální olympiády kategorie A.
 </p>
 <p>
-Soutěžící prosíme, ať se <b>závazně registrují</b> ve <a href="http://excelence.msmt.cz/soutez/335">formuláři na portálu programu Excelence</a> (aktivní od 24.&nbsp;1.).
+Soutěžící prosíme, ať se <b>závazně registrují</b> ve <a href="https://docs.google.com/forms/d/1bj2JSRjB6qgDKInyaAPZgIWtZfk3v1xLxEF5goPwQ54/viewform">online přihlašovacím formuláři</a> co nejdříve.
 </p>
 <p>
-Záštitu nad soutěží převzal hejtman Ústeckého kraje Oldřich Bubeníček.
+Záštitu nad soutěží převzal náměstek hejtmana Libereckého kraje pro resort školství, mládeže, tělovýchovy a sportu Mgr. Petr Tulpa.
 </p>
 <p> 
-Konání soutěže podpořili:
+Partnery akce jsou:
 </p>
 <div>
 <ul>
 <li>Ministerstvo školství, mládeže a tělovýchovy</li>
-<li>Ústecký kraj</li>
-<li>Město Rumburk</li>
-<li><a href="http://www.mff.cuni.cz/">Matematicko-fyzikální fakulta UK v Praze</a></li>
-<li><a href="https://www.ujep.cz">Univerzita Jana Evangelisty Purkyně Ústí nad Labem</a></li>
-<li><a href="http://www.maplesoft.cz/">Czech Software First s.r.o.</a></li>
-<li><a href="http://www.tosvarnsdorf.cz/">TOS Varnsdorf a. s.</a></li>
+<li>Liberecký kraj</li>
+<li><a href="http://www.nadacejablotron.cz/">Nadace Jablotron</a></li>
+<li><a href="http://www.tul.cz/">Technická univerzita v Liberci</a></li>
 <li><a href="https://cez.cz/">Skupina ČEZ</a></li>
-<li>Benteler Automotive Rumburk</li>
-<li><a href="http://www.sasa.cz/">SCHÄFER a SÝKORA s. r. o.</a></li>
-<li>MUDr. Pavla Beránková</li>
-<li><a href="http://www.velveta.cz/">VELVETA Varnsdorf a. s.</a></li>
 </ul>
 </div>
 
-<h4>Doprava</h4>
-
-<p>
-Pokud pojedete přes Prahu, tak jako časově i finančně nejvýhodnější způsob dopravy doporučujeme použít některý z přímých autobusů. Ubytovaní na internátu vystupují na zastávce <a href="https://mapy.cz/s/1llP3">Rumburk Bytex</a>, ubytovaní v penzionu na zastávce Rumburk, autobusové nádraží.
-</p>
-<p>
-Jízdné bude propláceno na základě předložených jízdenek Jednotou českých matematiků a fyziků na účet. Nezapomeňte s sebou tedy vzít číslo účtu, na který budete chtít platbu provést.
-</p>
-
-<h4>Kontaktní osoba</h4>
-<p>
-Mgr. Jana Vlasáková, vlasakova@gymrumburk.cz, 737 113 386
-</p>
-
+<p><i class="pdf">pdf</i>&nbsp;<a href="/archiv/celost/59/2018_pozvanka.pdf"><b>Pozvánka pro soutěžící</b></a></p>
+<p><i class="pdf">pdf</i>&nbsp;<a href="/archiv/celost/59/2018_program.pdf"><b>Program celostátního kola</b></a></p>
 </div>
 
 <!--h3><a href="<?php echo odkaz('archiv/celost/56/photos.html')?>" title="Fotogalerie celostátního kola 56. ročníku FO">Fotogalerie</a></h3-->
 
 
-<h3 class="accordion" id="program">Program</h3>
+<!--h3 class="accordion" id="program">Program</h3>
 
 <div>
 
@@ -152,7 +133,7 @@ Mgr. Jana Vlasáková, vlasakova@gymrumburk.cz, 737 113 386
 </table>
 
 <p>
-<img src="/archiv/celost/58/mapa.jpg" class="center" style="width: 100%">
+<img src="/archiv/celost/59/mapa.jpg" class="center" style="width: 100%">
 </p>
 <ol>
 	<li>Autobusová zastávka Bytex 01</li>
@@ -179,13 +160,13 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 </tr>
 <tr>
 	<th scope="row">Teorie</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/59/fo59a3_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/59/fo59a3_r.pdf"><i class="pdf">pdf</i></a></td>
 </tr>
 <tr>
 	<th scope="row">Experiment</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_pz.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/58/fo58a3_pr.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/59/fo59a3_pz.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/59/fo59a3_pr.pdf"><i class="pdf">pdf</i></a></td>
 </tr>
 </table>
 </div>
@@ -196,673 +177,17 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 <div>
 
 <p>
-<a href="/archiv/celost/58/58_cfo_zprava.pdf">Zpráva o celostátním kole 58. ročníku Fyzikální olympiády</a>.
+<a href="/archiv/celost/59/59_cfo_zprava.pdf">Zpráva o celostátním kole 59. ročníku Fyzikální olympiády</a>.
 </p>
 <p>
-Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/58_A_3.pdf"><i class="pdf">pdf</i></a>.
+Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/59_A_3.pdf"><i class="pdf">pdf</i></a>.
 </p>
 <table class="vysledkovka" cellpadding=3>
-<thead>
-	<tr>
-		<th>&nbsp;</th>
-		<th>Příjmení</th>
-		<th>Jméno</th>
-		<th>Škola</th>
-		<th style="text-align:center;">1</th>
-		<th style="text-align:center;">2</th>
-		<th style="text-align:center;">3</th>
-		<th style="text-align:center;">4</th>
-		<th style="text-align:center;">E</th>
-		<th style="text-align:right;">Celkem</th>
-		<th style="text-align:right;">MB</th></tr>
-
-	<tr>
-		<th style="text-align:center;" colspan=11>Vítězové</th></tr>
-
-</thead>
-<tbody>
-	<tr>
-		<td>1.</td>
-		<td>Jelínek</td>
-		<td>Jindřich</td>
-		<td>G Olomouc – Hejčín</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>58,5</b></td>
-		<td style="text-align:right;">248,67</td></tr>
-
-	<tr>
-		<td>2.</td>
-		<td>Bialas</td>
-		<td>Filip</td>
-		<td>G Opatov Praha 4</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;"><b>10,0</b></td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>58,0</b></td>
-		<td style="text-align:right;">244,84</td></tr>
-
-	<tr>
-		<td>3.</td>
-		<td>Knopp</td>
-		<td>Ondřej</td>
-		<td>G Ch. Dopplera Praha </td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;"><b>9,5</b></td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>57,5</b></td>
-		<td style="text-align:right;">247,51</td></tr>
-
-	<tr>
-		<td>4.</td>
-		<td>Karch</td>
-		<td>Šimon</td>
-		<td>G JAK Havířov</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;"><b>10,0</b></td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>55,5</b></td>
-		<td style="text-align:right;">232,78</td></tr>
-
-	<tr>
-		<td>5.</td>
-		<td>Stenchlák </td>
-		<td>Štěpán</td>
-		<td>G Komenského Třinec </td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">18,0</td>
-		<td style="text-align:right;"><b>53,5</b></td>
-		<td style="text-align:right;">223,97</td></tr>
-
-	<tr>
-		<td>6.</td>
-		<td>Vokrouhlický</td>
-		<td>David</td>
-		<td>G Keplera Praha</td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">4,5</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">19,5</td>
-		<td style="text-align:right;"><b>52,0</b></td>
-		<td style="text-align:right;">207,42</td></tr>
-
-	<tr>
-		<td>7.</td>
-		<td>Priessnitz</td>
-		<td>Jan</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">4,5</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">18,0</td>
-		<td style="text-align:right;"><b>49,0</b></td>
-		<td style="text-align:right;">197,07</td></tr>
-
-	<tr>
-		<td>8.</td>
-		<td>Turek</td>
-		<td>Pavel</td>
-		<td>G Olomouc – Hejčín</td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">3,5</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">18,0</td>
-		<td style="text-align:right;"><b>48,0</b></td>
-		<td style="text-align:right;">189,60</td></tr>
-
-	<tr>
-		<td>9.</td>
-		<td>Mezera </td>
-		<td>Matěj</td>
-		<td>G Havlíčkův Brod</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">2,5</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">18,5</td>
-		<td style="text-align:right;"><b>47,5</b></td>
-		<td style="text-align:right;">182,51</td></tr>
 
 	<tr>
 		<td style="text-align:center;" colspan=11><b>Úspěšní řešitelé</b></td></tr>
 
 	<tr>
-		<td>10.</td>
-		<td>Pajer</td>
-		<td>Daniel</td>
-		<td>G Keplera Praha</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">6,0</td>
-		<td style="text-align:right;">18,0</td>
-		<td style="text-align:right;"><b>46,5</b></td>
-		<td style="text-align:right;">182,91</td></tr>
-
-	<tr>
-		<td>11.</td>
-		<td>Mielec </td>
-		<td>Jaromír</td>
-		<td>G Volgogradská  O. - Zábřeh </td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;"><b>20,0</b></td>
-		<td style="text-align:right;"><b>46,5</b></td>
-		<td style="text-align:right;">178,36</td></tr>
-
-	<tr>
-		<td>12.</td>
-		<td>Kalva</td>
-		<td>Tomáš</td>
-		<td>G Olomouc – Hejčín</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>46,0</b></td>
-		<td style="text-align:right;">184,95</td></tr>
-
-	<tr>
-		<td>13.</td>
-		<td>Rosická</td>
-		<td>Kateřina </td>
-		<td>G jiřího Ortena Kutná Hora</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">7,0</td>
-		<td style="text-align:right;">0,5</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>45,5</b></td>
-		<td style="text-align:right;">170,59</td></tr>
-
-	<tr>
-		<td>14.</td>
-		<td>Bártík </td>
-		<td>Jáchym</td>
-		<td>G Havlíčkův Brod</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">3,5</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">18,0</td>
-		<td style="text-align:right;"><b>45,0</b></td>
-		<td style="text-align:right;">175,85</td></tr>
-
-	<tr>
-		<td>15.</td>
-		<td>Horáček</td>
-		<td>Martin</td>
-		<td>G Šumperk</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">2,5</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">19,5</td>
-		<td style="text-align:right;"><b>44,5</b></td>
-		<td style="text-align:right;">172,10</td></tr>
-
-	<tr>
-		<td>16.</td>
-		<td>Mikeska</td>
-		<td>Václav</td>
-		<td>G Valašské Meziříčí</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">14,0</td>
-		<td style="text-align:right;"><b>44,0</b></td>
-		<td style="text-align:right;">171,46</td></tr>
-
-	<tr>
-		<td>17.</td>
-		<td>Rosman </td>
-		<td>Viktor</td>
-		<td>G Pelhřimov</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">16,5</td>
-		<td style="text-align:right;"><b>43,5</b></td>
-		<td style="text-align:right;">161,63</td></tr>
-
-	<tr>
-		<td>18.</td>
-		<td>Konečný</td>
-		<td>Tomáš</td>
-		<td>GJVJ ČB</td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>42,0</b></td>
-		<td style="text-align:right;">153,29</td></tr>
-
-	<tr>
-		<td>19.</td>
-		<td>Zelina</td>
-		<td>Petr</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">14,0</td>
-		<td style="text-align:right;"><b>41,0</b></td>
-		<td style="text-align:right;">147,34</td></tr>
-
-	<tr>
-		<td>20.</td>
-		<td>Štyks</td>
-		<td>Martin</td>
-		<td>G Keplera Praha</td>
-		<td style="text-align:right;"><b>10,0</b></td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">1,5</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">13,0</td>
-		<td style="text-align:right;"><b>40,0</b></td>
-		<td style="text-align:right;">147,38</td></tr>
-
-	<tr>
-		<td>21.</td>
-		<td>Pískovský</td>
-		<td> Vít</td>
-		<td>G Ol. Havlové O. - Poruba </td>
-		<td style="text-align:right;">1,0</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">1,5</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">20,0</td>
-		<td style="text-align:right;"><b>39,0</b></td>
-		<td style="text-align:right;">153,24</td></tr>
-
-	<tr>
-		<td>22.</td>
-		<td>Poloček </td>
-		<td>Adam</td>
-		<td>Polské G  Český Těšín </td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">12,0</td>
-		<td style="text-align:right;"><b>39,0</b></td>
-		<td style="text-align:right;">138,18</td></tr>
-
-	<tr>
-		<td>23.</td>
-		<td>Beran</td>
-		<td>Vít</td>
-		<td>G Masarykovo Plzeň</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">1,5</td>
-		<td style="text-align:right;">2,5</td>
-		<td style="text-align:right;">17,0</td>
-		<td style="text-align:right;"><b>38,0</b></td>
-		<td style="text-align:right;">142,48</td></tr>
-
-	<tr>
-		<td>24.</td>
-		<td>Motlíček</td>
-		<td>Ondřej</td>
-		<td>G Šumperk</td>
-		<td style="text-align:right;">6,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">13,0</td>
-		<td style="text-align:right;"><b>38,0</b></td>
-		<td style="text-align:right;">134,31</td></tr>
-
-	<tr>
-		<td>25.</td>
-		<td>Kovanda </td>
-		<td>Martin</td>
-		<td>G Žďár nad Sázavou</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">12,0</td>
-		<td style="text-align:right;"><b>37,5</b></td>
-		<td style="text-align:right;">137,91</td></tr>
-
-	<tr>
-		<td>26.</td>
-		<td>Březina</td>
-		<td>Tomáš</td>
-		<td>G, SPŠ, OA a JŠ Znojmo</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">8,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">18,0</td>
-		<td style="text-align:right;"><b>36,5</b></td>
-		<td style="text-align:right;">131,93</td></tr>
-
-	<tr>
-		<td>27.</td>
-		<td>Šťastný</td>
-		<td>Přemysl</td>
-		<td>G Žamberk</td>
-		<td style="text-align:right;">6,5</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">6,5</td>
-		<td style="text-align:right;">13,0</td>
-		<td style="text-align:right;"><b>35,5</b></td>
-		<td style="text-align:right;">124,90</td></tr>
-
-	<tr>
-		<td>28.</td>
-		<td>Ivičič</td>
-		<td>Michal</td>
-		<td>G a JŠ Břeclav</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">2,5</td>
-		<td style="text-align:right;">14,5</td>
-		<td style="text-align:right;"><b>35,0</b></td>
-		<td style="text-align:right;">131,92</td></tr>
-
-	<tr>
-		<td>29.</td>
-		<td>Baďura</td>
-		<td>Antonín</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">11,0</td>
-		<td style="text-align:right;"><b>34,5</b></td>
-		<td style="text-align:right;">128,43</td></tr>
-
-	<tr>
-		<td>30.</td>
-		<td>Löffelmann</td>
-		<td>Jiří</td>
-		<td>G Litoměřická Praha</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">15,5</td>
-		<td style="text-align:right;"><b>34,5</b></td>
-		<td style="text-align:right;">123,65</td></tr>
-
-	<tr>
-		<td>31.</td>
-		<td>Perner</td>
-		<td>Jiří</td>
-		<td>G Teplice</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">4,5</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">18,5</td>
-		<td style="text-align:right;"><b>34,0</b></td>
-		<td style="text-align:right;">139,18</td></tr>
-
-	<tr>
-		<td>32.</td>
-		<td>Hladíková</td>
-		<td>Veronika</td>
-		<td>G Mikulášské nám. Plzeň</td>
-		<td style="text-align:right;">7,0</td>
-		<td style="text-align:right;">5,5</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">14,5</td>
-		<td style="text-align:right;"><b>34,0</b></td>
-		<td style="text-align:right;">133,04</td></tr>
-
-	<tr>
-		<td>33.</td>
-		<td>Zach</td>
-		<td>František</td>
-		<td>G Litomyšl</td>
-		<td style="text-align:right;">10,0</td>
-		<td style="text-align:right;">6,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">6,0</td>
-		<td style="text-align:right;">11,5</td>
-		<td style="text-align:right;"><b>33,5</b></td>
-		<td style="text-align:right;">118,69</td></tr>
-
-	<tr>
-		<td>34.</td>
-		<td>Doležalová</td>
-		<td>Anežka</td>
-		<td>G Dašická Pardubice</td>
-		<td style="text-align:right;">3,5</td>
-		<td style="text-align:right;">3,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">17,0</td>
-		<td style="text-align:right;"><b>33,0</b></td>
-		<td style="text-align:right;">137,24</td></tr>
-
-	<tr>
-		<td>35.</td>
-		<td>Suchánek</td>
-		<td>Jakub</td>
-		<td>G Opatov Praha 4</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">18,0</td>
-		<td style="text-align:right;"><b>33,0</b></td>
-		<td style="text-align:right;">135,80</td></tr>
-
-	<tr>
-		<td>36.</td>
-		<td>Hanková</td>
-		<td>Adéla</td>
-		<td>PČG KV</td>
-		<td style="text-align:right;">7,0</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">12,5</td>
-		<td style="text-align:right;"><b>33,0</b></td>
-		<td style="text-align:right;">130,42</td></tr>
-
-	<tr>
-		<td>37.</td>
-		<td>Orság</td>
-		<td>Martin</td>
-		<td>G a SOŠ Vyškov</td>
-		<td style="text-align:right;">7,0</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">5,5</td>
-		<td style="text-align:right;">0,5</td>
-		<td style="text-align:right;">10,5</td>
-		<td style="text-align:right;"><b>32,0</b></td>
-		<td style="text-align:right;">131,94</td></tr>
-
-	<tr>
-		<td>38.</td>
-		<td>Lei</td>
-		<td>Taylor</td>
-		<td>G Na Pražačce Praha</td>
-		<td style="text-align:right;">5,5</td>
-		<td style="text-align:right;">7,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">17,5</td>
-		<td style="text-align:right;"><b>32,0</b></td>
-		<td style="text-align:right;">125,76</td></tr>
-
-	<tr>
-		<td>39.</td>
-		<td>Luc</td>
-		<td>Ronald</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td style="text-align:right;">3,5</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">16,0</td>
-		<td style="text-align:right;"><b>32,0</b></td>
-		<td style="text-align:right;">118,42</td></tr>
-
-	<tr>
-		<td>40.</td>
-		<td>Hrůza</td>
-		<td>Jan</td>
-		<td>G  Kadaň</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">2,5</td>
-		<td style="text-align:right;">13,5</td>
-		<td style="text-align:right;"><b>31,5</b></td>
-		<td style="text-align:right;">122,26</td></tr>
-
-	<tr>
-		<td>41.</td>
-		<td>Lounová</td>
-		<td>Hana</td>
-		<td>G Olomouc – Hejčín</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">7,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">13,0</td>
-		<td style="text-align:right;"><b>29,5</b></td>
-		<td style="text-align:right;">109,19</td></tr>
-
-	<tr>
-		<td>42.</td>
-		<td>Hons</td>
-		<td>Tomáš</td>
-		<td>G V.Hlavatého Louny</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">9,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">4,5</td>
-		<td style="text-align:right;">15,5</td>
-		<td style="text-align:right;"><b>29,0</b></td>
-		<td style="text-align:right;">107,17</td></tr>
-
-	<tr>
-		<td>43.</td>
-		<td>Dušek</td>
-		<td>Jindřich</td>
-		<td>G Keplera Praha</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;">6,5</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">3,5</td>
-		<td style="text-align:right;">10,5</td>
-		<td style="text-align:right;"><b>29,0</b></td>
-		<td style="text-align:right;">101,16</td></tr>
-
-	<tr>
-		<td style="text-align:center;" colspan=11><b>Řešitelé</b></td></tr>
-
-	<tr>
-		<td>44.</td>
-		<td>Koblížek</td>
-		<td>Jan</td>
-		<td>GJVJ ČB</td>
-		<td style="text-align:right;">4,5</td>
-		<td style="text-align:right;">4,5</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">6,5</td>
-		<td style="text-align:right;">12,0</td>
-		<td style="text-align:right;"><b>27,5</b></td>
-		<td style="text-align:right;">102,57</td></tr>
-
-	<tr>
-		<td>45.</td>
-		<td>Buček</td>
-		<td>Ondřej</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">4,0</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;">11,0</td>
-		<td style="text-align:right;"><b>26,5</b></td>
-		<td style="text-align:right;">101,07</td></tr>
-
-	<tr>
-		<td>46.</td>
-		<td>Řehoř</td>
-		<td>Michal</td>
-		<td>G U Balvanu, Jbc</td>
-		<td style="text-align:right;">1,0</td>
-		<td style="text-align:right;">3,5</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">6,5</td>
-		<td style="text-align:right;">12,0</td>
-		<td style="text-align:right;"><b>25,0</b></td>
-		<td style="text-align:right;">104,89</td></tr>
-
-	<tr>
-		<td>47.</td>
-		<td>Kurečka</td>
-		<td>Martin</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td style="text-align:right;">3,5</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">8,5</td>
-		<td style="text-align:right;"><b>24,5</b></td>
-		<td style="text-align:right;">85,36</td></tr>
-
-	<tr>
-		<td>48.</td>
-		<td>Kislingerová</td>
-		<td>Tereza</td>
-		<td>G Klatovy</td>
-		<td style="text-align:right;">1,5</td>
-		<td style="text-align:right;">7,5</td>
-		<td style="text-align:right;">0,0</td>
-		<td style="text-align:right;">2,5</td>
-		<td style="text-align:right;">11,5</td>
-		<td style="text-align:right;"><b>23,0</b></td>
-		<td style="text-align:right;">82,76</td></tr>
-
-	<tr>
-		<td>49.</td>
-		<td>Kupka</td>
-		<td>Oldřich</td>
-		<td>G a SOŠ Vyškov</td>
-		<td style="text-align:right;">5,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">2,0</td>
-		<td style="text-align:right;">0,5</td>
-		<td style="text-align:right;">9,5</td>
-		<td style="text-align:right;"><b>19,0</b></td>
-		<td style="text-align:right;">79,09</td></tr>
 </tbody></table>
 
 <p>
@@ -870,693 +195,612 @@ V případě rovnosti bodů je potřeba rozlišit pořadí (požadavek programu 
 Modifiované body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>), kde <i>b</i> je bodový zisk z dané úlohy, max je maximum bodů dané úlohy a prum je průměrný bodový zisk z dané úlohy.
 Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.
 </p>
-</div>
+</div-->
 
-<h3 class="accordion" id="seznam">Seznam postupujících</h3>
+<h3 class="accordion accordion-main" id="seznam">Seznam postupujících</h3>
 
 <div>
 
 <p>
 U&nbsp;každého postupujícího uvádíme body získané v&nbsp;krajském kole.
 </p>
+
 <table class="vysledkovka" cellpadding=3>
 <thead>
 	<tr>
 		<th>Pořadí</th>
-		<th>Příjmení</th>
 		<th>Jméno</th>
-		<th>škola</th>
+		<th>Škola</th>
 		<th>Kraj</th>
-		<th>1</th>
-		<th>2</th>
-		<th>3</th>
-		<th>4</th>
-		<th>Celkem</th>
-		<th style="display:none;">C+M</th></tr>
+		<th style="text-align:center;">1</th>
+		<th style="text-align:center;">2</th>
+		<th style="text-align:center;">3</th>
+		<th style="text-align:center;">4</th>
+		<th style="text-align:center;">Σ</th></tr>
 
 </thead>
 <tbody>
 	<tr>
 		<td>1.</td>
-		<td>Bialas</td>
-		<td>Filip</td>
-		<td>G Opatov Praha 4</td>
-		<td>Pha</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">8</td>
+		<td>Martin Orság</td>
+		<td>G a SOŠ Vyškov</td>
+		<td>JM</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">7,5</td>
-		<td style="text-align:center;"><b>34,5</b></td>
-		<td style="display:none;">34,5</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>40</b></td></tr>
 
 	<tr>
 		<td>2.</td>
-		<td>Jelínek</td>
-		<td>Jindřich</td>
-		<td>G Olomouc – Hejčín</td>
-		<td>Ol</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">5</td>
+		<td>Šimon Karch </td>
+		<td>G, Havířov - Město</td>
+		<td>MS</td>
 		<td style="text-align:center;">10</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;"><b>34</b></td>
-		<td style="display:none;">34</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>40</b></td></tr>
 
 	<tr>
 		<td>3.</td>
-		<td>Karch</td>
-		<td>Šimon</td>
-		<td>G JAK Havířov</td>
-		<td>MS</td>
+		<td>Milan Kočí</td>
+		<td>G Strakonice</td>
+		<td>JČ</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">5</td>
 		<td style="text-align:center;">10</td>
 		<td style="text-align:center;">8</td>
-		<td style="text-align:center;"><b>33</b></td>
-		<td style="display:none;">33</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>38</b></td></tr>
 
 	<tr>
 		<td>4.</td>
-		<td>Priessnitz</td>
-		<td>Jan</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td>JM</td>
-		<td style="text-align:center;">9,5</td>
-		<td style="text-align:center;">4,5</td>
+		<td>Jindřich Jelínek</td>
+		<td>G Olomouc – Hejčín</td>
+		<td>OL</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>31</b></td>
-		<td style="display:none;">31</td></tr>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>37,5</b></td></tr>
 
 	<tr>
 		<td>5.</td>
-		<td>Mezera </td>
-		<td>Matěj</td>
-		<td>G Havlíčkův Brod</td>
-		<td>Vys</td>
+		<td>Kateřina Rosická</td>
+		<td>G Kutná Hora</td>
+		<td>SČ</td>
+		<td style="text-align:center;">10</td>
 		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">8</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;"><b>31</b></td>
-		<td style="display:none;">31</td></tr>
+		<td style="text-align:center;"><b>37</b></td></tr>
 
 	<tr>
 		<td>6.</td>
-		<td>Orság</td>
-		<td>Martin</td>
-		<td>G a SOŠ Vyškov</td>
-		<td>JM</td>
+		<td>Matěj Holý </td>
+		<td>G Klatovy</td>
+		<td>Plz</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">3</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">7,5</td>
-		<td style="text-align:center;"><b>30,5</b></td>
-		<td style="display:none;">30,5</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">6,5</td>
+		<td style="text-align:center;"><b>36,5</b></td></tr>
 
 	<tr>
 		<td>7.</td>
-		<td>Knopp</td>
-		<td>Ondřej</td>
-		<td>G Ch. Dopplera Praha </td>
-		<td>Pha</td>
+		<td>Michal Jireš</td>
+		<td>G F.M.Pelcla RK</td>
+		<td>HK</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">2,5</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">9</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">6,5</td>
-		<td style="text-align:center;"><b>29</b></td>
-		<td style="display:none;">29</td></tr>
+		<td style="text-align:center;"><b>36</b></td></tr>
 
 	<tr>
 		<td>8.</td>
-		<td>Stenchlák </td>
-		<td>Štěpán</td>
-		<td>G Komenského Třinec </td>
-		<td>MS</td>
+		<td>Hořák Jaroslav</td>
+		<td>G F.X. Šaldy Liberec</td>
+		<td>Lib</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">2</td>
 		<td style="text-align:center;">10</td>
 		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>29</b></td>
-		<td style="display:none;">29</td></tr>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;"><b>36</b></td></tr>
 
 	<tr>
 		<td>9.</td>
-		<td>Turek</td>
-		<td>Pavel</td>
-		<td>G Olomouc – Hejčín</td>
-		<td>Ol</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">4</td>
+		<td>Matěj Konvalinka</td>
+		<td>G Sedlčany</td>
+		<td>SČ</td>
+		<td style="text-align:center;">7</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;"><b>28</b></td>
-		<td style="display:none;">28</td></tr>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>36</b></td></tr>
 
 	<tr>
 		<td>10.</td>
-		<td>Kovanda </td>
-		<td>Martin</td>
-		<td>G Žďár nad Sázavou</td>
-		<td>Vys</td>
+		<td>Vít Pískovský </td>
+		<td>G Olgy Havlové</td>
+		<td>MS</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>28</b></td>
-		<td style="display:none;">28</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">5,5</td>
+		<td style="text-align:center;"><b>35,5</b></td></tr>
 
 	<tr>
 		<td>11.</td>
-		<td>Rosická</td>
-		<td>Kateřina </td>
-		<td>G jiřího Ortena Kutná Hora</td>
-		<td>SČ</td>
+		<td>Lukáš Červený</td>
+		<td>G Trutnov</td>
+		<td>HK</td>
 		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">2</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>28</b></td>
-		<td style="display:none;">28</td></tr>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>35</b></td></tr>
 
 	<tr>
 		<td>12.</td>
-		<td>Horáček</td>
-		<td>Martin</td>
-		<td>G Šumperk</td>
-		<td>Ol</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">10</td>
+		<td>Kamil Mudruňka</td>
+		<td>G Pardubice, Dašická</td>
+		<td>Pce</td>
 		<td style="text-align:center;">8</td>
-		<td style="text-align:center;"><b>28</b></td>
-		<td style="display:none;">28</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;"><b>35</b></td></tr>
 
 	<tr>
 		<td>13.</td>
-		<td>Konečný</td>
-		<td>Tomáš</td>
-		<td>GJVJ ČB</td>
+		<td>Pavla Trembuláková</td>
+		<td>G Jírovcova ČB</td>
 		<td>JČ</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">1</td>
 		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>27</b></td>
-		<td style="display:none;">27</td></tr>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;"><b>35</b></td></tr>
 
 	<tr>
 		<td>14.</td>
-		<td>Kalva</td>
-		<td>Tomáš</td>
-		<td>G Olomouc – Hejčín</td>
-		<td>Ol</td>
+		<td>Karel Balej</td>
+		<td> G Rokycany</td>
+		<td>Plz</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">1,5</td>
+		<td style="text-align:center;">5,5</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;"><b>26,5</b></td>
-		<td style="display:none;">26,5</td></tr>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;"><b>34,5</b></td></tr>
 
 	<tr>
 		<td>15.</td>
-		<td>Bártík </td>
-		<td>Jáchym</td>
-		<td>G Havlíčkův Brod</td>
+		<td>John Richard Ritter </td>
+		<td>G Třebíč</td>
 		<td>Vys</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">9</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">7,5</td>
-		<td style="text-align:center;"><b>25,5</b></td>
-		<td style="display:none;">25,5</td></tr>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;"><b>34</b></td></tr>
 
 	<tr>
 		<td>16.</td>
-		<td>Vokrouhlický</td>
-		<td>David</td>
-		<td>G Keplera Praha</td>
-		<td>Pha</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">6,5</td>
-		<td style="text-align:center;"><b>25,5</b></td>
-		<td style="display:none;">25,5</td></tr>
+		<td>Vojtěch Vařečka</td>
+		<td>G Čáslav</td>
+		<td>SČ</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>34</b></td></tr>
 
 	<tr>
 		<td>17.</td>
-		<td>Štyks</td>
-		<td>Martin</td>
-		<td>G Keplera Praha</td>
+		<td>Richard Veselý</td>
+		<td>G Budějovická</td>
 		<td>Pha</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">0,5</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;">7</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;"><b>25,5</b></td>
-		<td style="display:none;">25,5</td></tr>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;"><b>33,5</b></td></tr>
 
 	<tr>
 		<td>18.</td>
-		<td>Suchánek</td>
-		<td>Jakub</td>
-		<td>G Opatov Praha 4</td>
-		<td>Pha</td>
+		<td>Miroslava Novoveská</td>
+		<td>Masarykovo G</td>
+		<td>Plz</td>
 		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>25</b></td>
-		<td style="display:none;">25</td></tr>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>33</b></td></tr>
 
 	<tr>
 		<td>19.</td>
-		<td>Hons</td>
-		<td>Tomáš</td>
-		<td>G V.Hlavatého Louny</td>
-		<td>UL</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">10</td>
+		<td>Viktor Rosman </td>
+		<td>G Pelhřimov</td>
+		<td>Vys</td>
 		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>25</b></td>
-		<td style="display:none;">25</td></tr>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;"><b>33</b></td></tr>
 
 	<tr>
 		<td>20.</td>
-		<td>Pajer</td>
-		<td>Daniel</td>
-		<td>G Keplera Praha</td>
-		<td>Pha</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">9</td>
+		<td>Václav Kubíček </td>
+		<td>Arcibiskupské G Kroměříž</td>
+		<td>ZL</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">5</td>
 		<td style="text-align:center;">8</td>
-		<td style="text-align:center;"><b>25</b></td>
-		<td style="display:none;">25</td></tr>
+		<td style="text-align:center;"><b>33</b></td></tr>
 
 	<tr>
 		<td>21.</td>
-		<td>Baďura</td>
-		<td>Antonín</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td>JM</td>
-		<td style="text-align:center;">6,5</td>
-		<td style="text-align:center;">2</td>
+		<td>Jakub Gregora</td>
+		<td>G Lanškroun</td>
+		<td>Pce</td>
 		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;"><b>24,5</b></td>
-		<td style="display:none;">24,5</td></tr>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;"><b>32,5</b></td></tr>
 
 	<tr>
 		<td>22.</td>
-		<td>Hrůza</td>
-		<td>Jan</td>
-		<td>G  Kadaň</td>
-		<td>UL</td>
+		<td>Danil Koževnikov</td>
+		<td>GJK</td>
+		<td>Pha</td>
 		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">4,5</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;"><b>24,5</b></td>
-		<td style="display:none;">24,5</td></tr>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;"><b>32,5</b></td></tr>
 
 	<tr>
 		<td>23.</td>
-		<td>Mielec </td>
-		<td>Jaromír</td>
-		<td>G Volgogradská  O. - Zábřeh </td>
-		<td>MS</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;"><b>24</b></td>
-		<td style="display:none;">24</td></tr>
+		<td>Jakub Suchánek</td>
+		<td>G Opatov</td>
+		<td>Pha</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;"><b>32,5</b></td></tr>
 
 	<tr>
 		<td>24.</td>
-		<td>Šťastný</td>
-		<td>Přemysl</td>
-		<td>G Žamberk</td>
-		<td>Pce</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">7,5</td>
+		<td>Pavel Hudec</td>
+		<td>GJGJ</td>
+		<td>Pha</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">4</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">6,5</td>
-		<td style="text-align:center;"><b>24</b></td>
-		<td style="display:none;">24</td></tr>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;"><b>32,5</b></td></tr>
 
 	<tr>
 		<td>25.</td>
-		<td>Motlíček</td>
-		<td>Ondřej</td>
-		<td>G Šumperk</td>
-		<td>Ol</td>
-		<td style="text-align:center;">3,5</td>
-		<td style="text-align:center;">4</td>
+		<td>Josef Minařík</td>
+		<td>G tř. Kpt. Jaroše Brno</td>
+		<td>JM</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">6,5</td>
-		<td style="text-align:center;"><b>24</b></td>
-		<td style="display:none;">24</td></tr>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>32</b></td></tr>
 
 	<tr>
 		<td>26.</td>
-		<td>Lounová</td>
-		<td>Hana</td>
-		<td>G Olomouc – Hejčín</td>
-		<td>Ol</td>
+		<td>Filip Svoboda</td>
+		<td>G Brno, Elgartova</td>
+		<td>JM</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">3</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;"><b>24</b></td>
-		<td style="display:none;">24</td></tr>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>32</b></td></tr>
 
 	<tr>
 		<td>27.</td>
-		<td>Doležalová</td>
-		<td>Anežka</td>
-		<td>G Dašická Pardubice</td>
-		<td>Pce</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">5,5</td>
+		<td>Miroslav Burýšek</td>
+		<td>GJK</td>
+		<td>Pha</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;"><b>23,5</b></td>
-		<td style="display:none;">23,5</td></tr>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;"><b>32</b></td></tr>
 
 	<tr>
 		<td>28.</td>
-		<td>Lei</td>
-		<td>Taylor</td>
-		<td>G Na Pražačce Praha</td>
+		<td>Viktor Fukala</td>
+		<td>GJK</td>
 		<td>Pha</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">0</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">4,5</td>
-		<td style="text-align:center;"><b>23,5</b></td>
-		<td style="display:none;">23,5</td></tr>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>32</b></td></tr>
 
 	<tr>
 		<td>29.</td>
-		<td>Dušek</td>
-		<td>Jindřich</td>
-		<td>G Keplera Praha</td>
-		<td>Pha</td>
+		<td>Filip Koňařík</td>
+		<td>G F.Palackého Val. Meziříčí</td>
+		<td>ZL</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">9</td>
 		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">2</td>
 		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">6,5</td>
-		<td style="text-align:center;"><b>22,5</b></td>
-		<td style="display:none;">22,5</td></tr>
+		<td style="text-align:center;"><b>32</b></td></tr>
 
 	<tr>
 		<td>30.</td>
-		<td>Pískovský</td>
-		<td> Vít</td>
-		<td>G Ol. Havlové O. - Poruba </td>
-		<td>MS</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">0</td>
+		<td>Jan Žák</td>
+		<td>G Pardubice, Dašická</td>
+		<td>Pce</td>
 		<td style="text-align:center;">9,5</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;"><b>22,5</b></td>
-		<td style="display:none;">22,5</td></tr>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;"><b>31,5</b></td></tr>
 
 	<tr>
 		<td>31.</td>
-		<td>Poloček </td>
-		<td>Adam</td>
-		<td>Polské G  Český Těšín </td>
-		<td>MS</td>
-		<td style="text-align:center;">4</td>
+		<td>Michal Košek</td>
+		<td>G, Čs. Dobrovolců 11, Teplice</td>
+		<td>UL</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">9</td>
 		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;"><b>22</b></td>
-		<td style="display:none;">22</td></tr>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;"><b>31,5</b></td></tr>
 
 	<tr>
 		<td>32.</td>
-		<td>Hladíková</td>
-		<td>Veronika</td>
-		<td>G Mikulášské nám. Plzeň</td>
+		<td>Vít Beran </td>
+		<td>Masarykovo G</td>
 		<td>Plz</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;"><b>22</b></td>
-		<td style="display:none;">22</td></tr>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">6,5</td>
+		<td style="text-align:center;"><b>31</b></td></tr>
 
 	<tr>
 		<td>33.</td>
-		<td>Zelina</td>
-		<td>Petr</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td>JM</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">3</td>
+		<td>Jindřich Dušek</td>
+		<td>GJK</td>
+		<td>Pha</td>
 		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">4</td>
-		<td style="text-align:center;"><b>22</b></td>
-		<td style="display:none;">22</td></tr>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;"><b>30,5</b></td></tr>
 
 	<tr>
 		<td>34.</td>
-		<td>Beran</td>
-		<td>Vít</td>
-		<td>G Masarykovo Plzeň</td>
-		<td>Plz</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">2</td>
+		<td>David Klement</td>
+		<td>G Nad Alejí</td>
+		<td>Pha</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>22</b></td>
-		<td style="display:none;">22</td></tr>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>30</b></td></tr>
 
 	<tr>
 		<td>35.</td>
-		<td>Löffelmann</td>
-		<td>Jiří</td>
-		<td>G Litoměřická Praha</td>
-		<td>Pha</td>
-		<td style="text-align:center;">8</td>
+		<td>Adéla Hanková</td>
+		<td>PČG KV</td>
+		<td>KV</td>
 		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;"><b>22</b></td>
-		<td style="display:none;">22</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>30</b></td></tr>
 
 	<tr>
 		<td>36.</td>
-		<td>Luc</td>
-		<td>Ronald</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td>JM</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">0</td>
+		<td>Lukáš Jiřiště</td>
+		<td>G, Komenského nám. 4, Děčín</td>
+		<td>UL</td>
+		<td style="text-align:center;">2</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">8</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;"><b>22</b></td>
-		<td style="display:none;">22</td></tr>
+		<td style="text-align:center;"><b>29,5</b></td></tr>
 
 	<tr>
 		<td>37.</td>
-		<td>Perner</td>
-		<td>Jiří</td>
-		<td>G Teplice</td>
-		<td>UL</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">0</td>
+		<td>Martin Schmied</td>
+		<td>G Jihlava</td>
+		<td>Vys</td>
+		<td style="text-align:center;">10</td>
 		<td style="text-align:center;">7</td>
-		<td style="text-align:center;"><b>21</b></td>
-		<td style="display:none;">21</td></tr>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;"><b>29,5</b></td></tr>
 
 	<tr>
 		<td>38.</td>
-		<td>Koblížek</td>
-		<td>Jan</td>
-		<td>GJVJ ČB</td>
-		<td>JČ</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;"><b>21</b></td>
-		<td style="display:none;">21</td></tr>
+		<td>Jakub Cach</td>
+		<td>G Pardubice, Dašická</td>
+		<td>Pce</td>
+		<td style="text-align:center;">7,5</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;"><b>29</b></td></tr>
 
 	<tr>
 		<td>39.</td>
-		<td>Ivičič</td>
-		<td>Michal</td>
-		<td>G a JŠ Břeclav</td>
-		<td>JM</td>
-		<td style="text-align:center;">9</td>
-		<td style="text-align:center;">0</td>
+		<td>Michal Minařík</td>
+		<td>G Trutnov</td>
+		<td>HK</td>
+		<td style="text-align:center;">8</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;"><b>21</b></td>
-		<td style="display:none;">21</td></tr>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;"><b>28</b></td></tr>
 
 	<tr>
 		<td>40.</td>
-		<td>Zach</td>
-		<td>František</td>
-		<td>G Litomyšl</td>
-		<td>Pce</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">2</td>
+		<td>Filip Keller</td>
+		<td>G PdC Tábor</td>
+		<td>JČ</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">2,5</td>
-		<td style="text-align:center;"><b>20,5</b></td>
-		<td style="display:none;">20,5</td></tr>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;"><b>28</b></td></tr>
 
 	<tr>
 		<td>41.</td>
-		<td>Mikeska</td>
-		<td>Václav</td>
-		<td>G Valašské Meziříčí</td>
-		<td>ZL</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">3</td>
+		<td>Borek Požár</td>
+		<td>G Rakovník</td>
+		<td>SČ</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;"><b>20</b></td>
-		<td style="display:none;">20</td></tr>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;">-</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>27</b></td></tr>
 
 	<tr>
 		<td>42.</td>
-		<td>Kupka</td>
-		<td>Oldřich</td>
-		<td>G a SOŠ Vyškov</td>
-		<td>JM</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">3,5</td>
-		<td style="text-align:center;"><b>19,5</b></td>
-		<td style="display:none;">19,5</td></tr>
+		<td>Dominik Starý</td>
+		<td>G Benešov</td>
+		<td>SČ</td>
+		<td style="text-align:center;">6</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;"><b>27</b></td></tr>
 
 	<tr>
 		<td>43.</td>
-		<td>Kurečka</td>
-		<td>Martin</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td>JM</td>
+		<td>Tomáš Faikl</td>
+		<td>G Pardubice, Dašická</td>
+		<td>Pce</td>
+		<td style="text-align:center;">6,5</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">3,5</td>
-		<td style="text-align:center;"><b>19,5</b></td>
-		<td style="display:none;">19,5</td></tr>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;"><b>26,5</b></td></tr>
 
 	<tr>
 		<td>44.</td>
-		<td>Jakubčík</td>
-		<td>Petr</td>
-		<td>PORG </td>
-		<td>Pha</td>
-		<td style="text-align:center;">8</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">8</td>
+		<td>David Królikowski </td>
+		<td>G, Karviná</td>
+		<td>MS</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">9,5</td>
 		<td style="text-align:center;">3,5</td>
-		<td style="text-align:center;"><b>19,5</b></td>
-		<td style="display:none;">19,5</td></tr>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;"><b>26,5</b></td></tr>
 
 	<tr>
 		<td>45.</td>
-		<td>Březina</td>
-		<td>Tomáš</td>
-		<td>G, SPŠ, OA a JŠ Znojmo</td>
-		<td>JM</td>
-		<td style="text-align:center;">7,5</td>
-		<td style="text-align:center;">1</td>
+		<td>Tomáš Čížek </td>
+		<td>G Pelhřimov</td>
+		<td>Vys</td>
+		<td style="text-align:center;">8,5</td>
+		<td style="text-align:center;">4</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">1</td>
-		<td style="text-align:center;"><b>19,5</b></td>
-		<td style="display:none;">19,5</td></tr>
+		<td style="text-align:center;">4</td>
+		<td style="text-align:center;"><b>26,5</b></td></tr>
 
 	<tr>
 		<td>46.</td>
-		<td>Řehoř</td>
-		<td>Michal</td>
-		<td>G U Balvanu, Jbc</td>
-		<td>Lib</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">3</td>
-		<td style="text-align:center;">10</td>
+		<td>Soňa Burešová</td>
+		<td>G Jaroslava Heyrovského</td>
+		<td>Pha</td>
 		<td style="text-align:center;">1</td>
-		<td style="text-align:center;"><b>19</b></td>
-		<td style="display:none;">19</td></tr>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;"><b>26</b></td></tr>
 
 	<tr>
 		<td>47.</td>
-		<td>Buček</td>
-		<td>Ondřej</td>
-		<td>G tř. Kpt. Jaroše Brno</td>
-		<td>JM</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">3</td>
+		<td>Josef Hladil</td>
+		<td>G Mikulášské</td>
+		<td>Plz</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">7</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">0,5</td>
-		<td style="text-align:center;"><b>18,5</b></td>
-		<td style="display:none;">18,5</td></tr>
+		<td style="text-align:center;"><b>26</b></td></tr>
 
 	<tr>
 		<td>48.</td>
-		<td>Kislingerová</td>
-		<td>Tereza</td>
-		<td>G Klatovy</td>
-		<td>Plz</td>
+		<td>Michal Jůza</td>
+		<td>G Benešov</td>
+		<td>SČ</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">7</td>
 		<td style="text-align:center;">10</td>
-		<td style="text-align:center;">0</td>
-		<td style="text-align:center;">6</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;"><b>18</b></td>
-		<td style="display:none;">18</td></tr>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;"><b>26</b></td></tr>
 
 	<tr>
 		<td>49.</td>
-		<td>Rosman </td>
-		<td>Viktor</td>
-		<td>G Pelhřimov</td>
-		<td>Vys</td>
-		<td style="text-align:center;">2</td>
-		<td style="text-align:center;">0</td>
+		<td>Matěj Šimek</td>
+		<td>G Polička</td>
+		<td>Pce</td>
+		<td style="text-align:center;">6,5</td>
 		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">3</td>
 		<td style="text-align:center;">6</td>
-		<td style="text-align:center;"><b>18</b></td>
-		<td style="display:none;">18</td></tr>
+		<td style="text-align:center;"><b>25,5</b></td></tr>
 
 	<tr>
 		<td>50.</td>
-		<td>Převrátil</td>
-		<td>Michal</td>
-		<td>G Klatovy</td>
+		<td>Vojtěch Nováček</td>
+		<td>GMikulášské</td>
 		<td>Plz</td>
-		<td style="text-align:center;">5</td>
-		<td style="text-align:center;">0</td>
 		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">4</td>
 		<td style="text-align:center;">3</td>
-		<td style="text-align:center;"><b>18</b></td>
-		<td style="display:none;">18</td></tr>
+		<td style="text-align:center;">8</td>
+		<td style="text-align:center;"><b>25</b></td></tr>
 
 	<tr>
 		<td>51.</td>
-		<td>Hanková</td>
-		<td>Adéla</td>
-		<td>PČG KV</td>
-		<td>KV</td>
+		<td>Martin Repčík</td>
+		<td>G Olomouc – Hejčín</td>
+		<td>OL</td>
+		<td style="text-align:center;">1</td>
+		<td style="text-align:center;">10</td>
 		<td style="text-align:center;">7</td>
-		<td style="text-align:center;">0</td>
+		<td style="text-align:center;">7</td>
+		<td style="text-align:center;"><b>25</b></td></tr>
+
+	<tr>
+		<td>52.</td>
+		<td>Ladislav Trnka</td>
+		<td>G Havlíčkův Brod</td>
+		<td>Vys</td>
+		<td style="text-align:center;">9,5</td>
+		<td style="text-align:center;">4,5</td>
 		<td style="text-align:center;">10</td>
 		<td style="text-align:center;">1</td>
-		<td style="text-align:center;"><b>18</b></td>
-		<td style="display:none;">18</td></tr>
+		<td style="text-align:center;"><b>25</b></td></tr>
+
+	<tr>
+		<td>53.</td>
+		<td>Jakub Růžička</td>
+		<td>G Nymburk</td>
+		<td>SČ</td>
+		<td style="text-align:center;">10</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">3</td>
+		<td style="text-align:center;">9</td>
+		<td style="text-align:center;"><b>25</b></td></tr>
 </tbody></table>
 </div>
