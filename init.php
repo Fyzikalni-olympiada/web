@@ -28,8 +28,8 @@ define('SITE', '');
 
 require_once('configure.php');
 
-define('AKTUALNI_ROCNIK', 59);
-define('AKTUALNI_ROK', '2017/2018');
+define('AKTUALNI_ROCNIK', 60);
+define('AKTUALNI_ROK', '2018/2019');
 
 /* Pocitadlo */
 define('INTERVAL_MEZI_NAVSTEVAMI', 60); //minimalni interval mezi navstevami v minutach

@@ -1,11 +1,11 @@
-<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK ?>. ročníku FO</h2>
+<h2>Celostátní kolo <?php echo AKTUALNI_ROCNIK-1 ?>. ročníku FO</h2>
 
 <?php
 $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%celostátní kolo%\'
-	AND rocnik="' . (AKTUALNI_ROCNIK) . '"
+	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
 	AND kategorie="1"
 ');
 if (!(list($termin, $misto) = $GLOBALS['mysql']->fetch_array())) {
@@ -16,7 +16,7 @@ $GLOBALS['mysql']->query('
 	SELECT termin, misto
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%Mezinárodní FO%\'
-	AND rocnik="' . (AKTUALNI_ROCNIK) . '"
+	AND rocnik="' . (AKTUALNI_ROCNIK-1) . '"
 	AND kategorie="1"
 ');
 if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
