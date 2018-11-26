@@ -1,6 +1,0 @@
-# Nechceme, aby skripty byly videt
-<Files *.html>
-  Order allow,deny
-  Deny from all
-</Files>
-
