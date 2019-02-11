@@ -314,7 +314,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 ------------------------------------------------------------------- */
 
 .post {margin-bottom: 20px;}
-.post h3 {line-height: 1; margin-top: 0;}
+.post h3 {line-height: 1.1; font-size: 1.9em; margin-top: 0;}
 
 .post img.left, .post img.right {margin-bottom: 0;}
 
@@ -322,7 +322,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	color: #777;
 	margin: 2px 0 10px;
 }
-.post-date a {color: #444;}
+.post-date a {color: #777;}
 
 .post-meta a {color: #345; }
 .post-meta a:hover {color: #001;}
@@ -361,6 +361,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .archive-post-title .post-date {margin: 0;}
 .archive-post-title {padding-top: 4px;}
 .archive-post-day {font: normal 1.6em Georgia,serif;}
+.archive-post-day:after {content: "."}
 
 
 /*

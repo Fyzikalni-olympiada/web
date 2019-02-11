@@ -435,6 +435,7 @@ config.toolbar = [
     <td align="right">Zarovnání:</td>
 	<td>
 	<select name="align">
+      <option value="block" <?php echo isset($_POST["align"]) && $_POST["align"] == "block" ? "selected" : "";?>>block</option>
       <option value= "left" <?php echo isset($_POST["align"]) && $_POST["align"] == "left" ? "selected" : ""; ?>>left</option>
       <option value="right" <?php echo isset($_POST["align"]) && $_POST["align"] == "right" ? "selected" : "";?>>right</option>
     </select>
