@@ -297,7 +297,7 @@ function rand_thumb()
     if (isset($cache['thumbs'])) {
         $thumbs = $cache['thumbs'];
     } else {
-        $thumbs = iterator_to_array(new NMapIterator(NFinder::findFiles('*.jpg')->size('>27kB')->from(ROOT_DIR)->exclude('temp', 'thumbnails', '_ukrajina', '_norsko'), 'getPath'));
+        $thumbs = iterator_to_array(new NMapIterator(NFinder::findFiles('*.jpg')->size('>27kB')->from(ROOT_DIR)->exclude('temp', 'thumbnails', 'pic', 'images', 'cd', 'kvary', 'upload', '_ukrajina', '_norsko'), 'getPath'));
         $cache->save('thumbs', $thumbs);
     }
 
