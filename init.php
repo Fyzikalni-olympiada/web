@@ -5,6 +5,8 @@ if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana p
 if (function_exists('date_default_timezone_set'))
 	date_default_timezone_set('Europe/Prague');
 
+ini_set('default_encoding', 'utf-8');
+
 define("TABLE_FILES", "files");
 define("TABLE_MENU_STRUCTURE", "menu_structure");
 define("TABLE_FORUM", "forum");
