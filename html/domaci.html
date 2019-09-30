@@ -2,24 +2,28 @@
 
 <?php
 $GLOBALS['mysql']->query('
-	SELECT termin, kategorie
+	SELECT termin, date, kategorie
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%domácí%\'
 	AND rocnik="' . AKTUALNI_ROCNIK . '"
 	ORDER BY kategorie
 ');
-while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
+while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
 	switch ($kategorie) {
 			case 1:
 				$terminA = $termin;
+				$dateA = $date;
 				break;
 			case 2:
 				$terminBCD = $termin;
+				$dateBCD = $date;
 				break;
 			default:
 				break;
 	}
 }	
+$beforeA = $dateA >= date('Y-m-d');
+$beforeBCD = $dateBCD >= date('Y-m-d');
 ?>
 <h3 class="accordion" id="organizace">Pravidla</h3>
 
@@ -143,9 +147,6 @@ semináře v&nbsp;střediskových školách pod patronátem JČMF.
 
 <div>
 <h4>Zadání</h4>
-<p>
-Texty úloh si můžete stáhnout ve formátu <code>pdf</code> <i class="pdf">pdf</i>.
-</p>
 <div class="table-responsive">
 <table class="table zadani">
 <tr>
@@ -156,22 +157,22 @@ Texty úloh si můžete stáhnout ve formátu <code>pdf</code> <i class="pdf">pd
 </tr>
 <tr>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/60/fo60a1_z.pdf"><i class="pdf">pdf</i></a>
+		<!--a href="<?php echo ROOT_WWW ?>archiv/61/fo61a1_z.pdf"><i class="pdf">pdf</i></a-->bude zveřejněno
 		<br>
 		<small><?=$terminA?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/60/fo60b1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61b1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/60/fo60c1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61c1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/60/fo60d1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61d1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
@@ -187,18 +188,16 @@ Texty úloh si můžete stáhnout ve formátu <code>pdf</code> <i class="pdf">pd
 
 <h4>Řešení</h4>
 
+<? if ($beforeA) : ?>
 <p>
 Řešení úloh každé kategorie zveřejníme po termínu odevzdání.
 </p>
-
-<p>
-Řešení úloh si můžete stáhnout ve formátu <code>pdf</code> &ndash; <i class="pdf">pdf</i>.
-</p>
-
+<? else : ?>
 <p>
 Řešení domácího kola kategorií B, C a&nbsp;D zveřejníme až po termínu odevzdání.
 </p>
-
+<? endif; ?>
+<? if (!$beforeA) : ?>
 <div class="table-responsive">
 <table class="table zadani">
 <tr>
@@ -208,17 +207,28 @@ Texty úloh si můžete stáhnout ve formátu <code>pdf</code> <i class="pdf">pd
     <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/60/fo60a1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/60/fo60b1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/60/fo60c1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/60/fo60d1_r.pdf"><i class="pdf">pdf</i></a></td>
+<? if (!$beforeA) : ?>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61a1_r.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+<? endif; ?>
+<? if (!$beforeBCD) : ?>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61b1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61c1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61d1_r.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+	<td></td>
+	<td></td>
+<? endif; ?>
 </tr>
 </table>
 </div>
+<? endif; ?>
 
 </div>
 
-<h3 class="accordion" id="pokyny">Pokyny pro soutěžící</h3>
+<h3 class="accordion<?if ($beforeBCD):?> accordion-main<? endif; ?>" id="pokyny">Pokyny pro soutěžící</h3>
 <div>
 <p>
 Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na

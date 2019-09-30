@@ -2,23 +2,28 @@
 
 <?php
 $GLOBALS['mysql']->query('
-	SELECT termin, nazev
+	SELECT termin, date, nazev
 	FROM ' . TABLE_TERMS . '
 	WHERE kategorie="4"
 	AND rocnik="' . AKTUALNI_ROCNIK . '"
 ');
-while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
+while (list($termin, $date, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 	switch ($nazev) {
 			case 'Školní kolo':
 				$termin1 = $termin;
+				$date1 = $date;
 				break;
 			case 'okresní kolo':
 				$termin2 = $termin;
+				$date2 = $date;
 				break;
 			default:
 				break;
 	}
 }		
+
+$beforeDom = $date1 >= date('Y-m-d');
+$beforeOkr = $date2 >= date('Y-m-d');
 
 ?>
 <h3 class="accordion accordion-main" id="organizace">Pravidla</h3>
@@ -114,22 +119,25 @@ Učitel fyziky jejich řešení opraví, pravděpodobně s&nbsp;nimi pohovoří 
     <th>Domácí kolo</th>
     <td>
         <!--Zveřejníme v&nbsp;nejbližší době.-->
-		<a href="<?php echo ROOT_WWW ?>archiv/60/fo60g1_z.pdf" title="Zadání úloh domácího kola ve formátu pdf"><i class="pdf">pdf</i></a><br>
+		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61g1_z.pdf" title="Zadání úloh domácího kola ve formátu pdf"><i class="pdf">pdf</i></a><br>
 		<small><?=$termin1?></small>
     </td>
     <td>
-		<!--Zveřejníme po termínu odevzdání-->
-        <a href="archiv/60/fo60g1_r.pdf"><i class="pdf">pdf</i></a>
+		<? if ($beforeDom) :?>
+		Zveřejníme po termínu odevzdání
+		<? else : ?>
+        <a href="archiv/61/fo61g1_r.pdf"><i class="pdf">pdf</i></a>
+		<? endif; ?>
     </td>
 </tr>
 <tr>
     <th>Školní/okresní kolo</th>
     <td>
-		<!--a href="<?php echo ROOT_WWW ?>archiv/60/fo60g2_z.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><i class="pdf">pdf</i></a><br-->
+		<!--a href="<?php echo ROOT_WWW ?>archiv/61/fo61g2_z.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><i class="pdf">pdf</i></a><br-->
 		<small><?=$termin2?></small>
     </td>
     <td>
-        <!--a href="archiv/60/fo60g2_r.pdf"><i class="pdf">pdf</i></a-->
+        <!--a href="archiv/61/fo61g2_r.pdf"><i class="pdf">pdf</i></a-->
     </td>
 </tr>
 </table>

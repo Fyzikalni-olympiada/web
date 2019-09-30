@@ -2,27 +2,33 @@
 
 <?php
 $GLOBALS['mysql']->query('
-	SELECT termin, nazev
+	SELECT termin, date, nazev
 	FROM ' . TABLE_TERMS . '
 	WHERE kategorie="3"
 	AND rocnik="' . AKTUALNI_ROCNIK . '"
 ');
-while (list($termin, $nazev) = $GLOBALS['mysql']->fetch_array()) {
+while (list($termin, $date, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 	switch ($nazev) {
 			case 'domácí kolo':
 				$termin1 = $termin;
+				$date1 = $date;
 				break;
 			case 'okresní kolo':
 				$termin2 = $termin;
+				$date2 = $date;
 				break;
 			case 'krajské kolo E':
 				$termin3 = $termin;
+				$date3 = $date;
 				break;
 			default:
 				break;
 	}
 }			
 
+$beforeDom = $date1 >= date('Y-m-d');
+$beforeOkr = $date2 > date('Y-m-d');
+$beforeKra = $date3 > date('Y-m-d');
 
 ?>
 
@@ -177,42 +183,55 @@ Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako n
     <th scope="row">Domácí</th>
     <!--td colspan="2">Zveřejníme v nejbližší době</td-->
     <td colspan="2">
-		<a href="<?php echo ROOT_WWW ?>archiv/60/fo60ef1_z.pdf" title="Zadání ve formátu PDF"><i class="pdf">pdf</i></a><br>
+		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61ef1_z.pdf" title="Zadání ve formátu PDF"><i class="pdf">pdf</i></a><br>
 		<small><?=$termin1?></small>
     </td>
     <td colspan="2">
-        <a href="<?php echo ROOT_WWW ?>archiv/60/fo60ef1_r.pdf"><i class="pdf">pdf</i></a>
+		<? if (!$beforeDom) :?>
+        <a href="<?php echo ROOT_WWW ?>archiv/61/fo61ef1_r.pdf"><i class="pdf">pdf</i></a>
+		<? endif; ?>
     </td>
 </tr>
 <tr>
     <th scope="row">Okresní</th>
-    <!--td colspan="2">
+	<? if ($beforeOkr) :?>
+    <td colspan="2">
 		<small><?=$termin2?></small>
-    </td-->
+    </td>
+    <td></td>
+    <td></td>
+	<? else: ?>
 	<td>
-        <a href="<?php echo ROOT_WWW ?>archiv/60/fo60e2_z.pdf"><i class="pdf">pdf</i></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/61/fo61e2_z.pdf"><i class="pdf">pdf</i></a>
     </td>
 	<td>
-        <a href="<?php echo ROOT_WWW ?>archiv/60/fo60f2_z.pdf"><i class="pdf">pdf</i></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/61/fo61f2_z.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/60/fo60e2_r.pdf"><i class="pdf">pdf</i></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/61/fo61e2_r.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/60/fo60f2_r.pdf"><i class="pdf">pdf</i></a>
+        <a href="<?php echo ROOT_WWW ?>archiv/61/fo61f2_r.pdf"><i class="pdf">pdf</i></a>
     </td>
+	<? endif; ?>
 </tr>
 <tr>
     <th scope="row">Krajské</th>
-    <td colspan="1">
-        <a href="<?php echo ROOT_WWW ?>archiv/60/fo60e3_z.pdf"><i class="pdf">pdf</i></a>
-		<!--small><?=$termin3?></small-->
+	<? if ($beforeKra) :?>
+    <td colspan="2">
+		<small><?=$termin3?></small>
+    </td>
+	<td colspan="2"></td>
+	<? else: ?>
+    <td>
+        <a href="<?php echo ROOT_WWW ?>archiv/61/fo61e3_z.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td></td>
     <td colspan="1">
-		<a href="<?php echo ROOT_WWW ?>archiv/60/fo60e3_r.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61e3_r.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td></td>
+	<? endif; ?>
 </tr>
 </table>
 </div>
@@ -232,7 +251,7 @@ Pro vyšší kola soutěže (okresní, krajské kolo) jsme stanovili některá z
 
 </div>
 
-<h3 class="accordion" id="pokyny">Pokyny pro soutěžící</h3>
+<h3 class="accordion<? if ($beforeDom) :?> accordion-main<? endif; ?>" id="pokyny">Pokyny pro soutěžící</h3>
 <div>
 <p>
 Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
