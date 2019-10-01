@@ -37,14 +37,26 @@ p img.icon {
 
 i.pdf, i.ps, i.pdfi, i.html {
 	display: inline-block;
-	width: 24px;
-	height: 24px;
+	width: 64px;
+	height: 64px;
 	font-size: 0;
 	text-indent: -9999px;
 	vertical-align: text-bottom;
 	background-position: center;
+	background-size: 64px 64px;
+}
+p > i.pdf, p > i.ps, p > i.pdfi, p > i.html,
+p > a > i.pdf, p > a > i.ps, p > a >  i.pdfi, p > a > i.html {
+	width: 24px;
+	height: 24px;
 	background-size: 24px 24px;
 }
+#archiv i.pdf, #archiv i.ps, #archiv i.pdfi, #archiv i.html  {
+	width: 48px;
+	height: 48px;
+	background-size: 48px 48px;
+}
+
 i.pdf {
 	background-image: url(../pic/pdficon.svg);
 	background-image: /*\**/url(../pic/pdficon.png)\9;
@@ -126,6 +138,23 @@ table.zadani td {
 table.zadani td br + small {
 	display: block;
 	margin-top: 5px;
+}
+
+.texty-arch td {
+	position: relative;
+}
+.texty-arch td strong {
+	font-size: 1.5em;
+	display: block;
+	font-weight: normal;
+}
+.texty-arch td .cat {
+	font-size: 0.9em;
+	font-style: italic;
+	display: block;
+	position: absolute;
+	top: 8px;
+	right: 8px;
 }
 
 .ukfo img {
