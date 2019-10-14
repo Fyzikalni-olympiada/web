@@ -9,7 +9,7 @@ $GLOBALS['mysql']->query('
 ');
 while (list($termin, $date, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 	switch ($nazev) {
-			case 'Školní kolo':
+			case 'školní kolo':
 				$termin1 = $termin;
 				$date1 = $date;
 				break;
@@ -26,7 +26,7 @@ $beforeDom = $date1 >= date('Y-m-d');
 $beforeOkr = $date2 >= date('Y-m-d');
 
 ?>
-<h3 class="accordion accordion-main" id="organizace">Pravidla</h3>
+<h3 class="accordion accordion-main" id="organizace">Organizace</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -41,71 +41,79 @@ Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+
 probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií.
 </p>
 <p>
-<strong>První část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Máte za úkol vyřešit pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisujte na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávejte je svému učiteli fyziky.
-
-</p>
-<p>
-U všech úloh popište své úvahy při řešení. Učitel fyziky vaše řešení opraví, pravděpodobně s&nbsp;vámi pohovoří o&nbsp;řešení, nebo vám alespoň sdělí správné výsledky a hodnocení vašeho řešení. Úlohy byste měli řešit stručně, ale protokol o&nbsp;řešení musí být výstižný, doplněný výpočty, grafy, tabulkami naměřených hodnot či jinak získaných údajů. Při řešení kreslete obrázky a náčrtky. Stačí obrázky načrtnout &#8222;od ruky&#8220;, ale grafy pečlivě narýsujte. Pokusy můžete provádět doma nebo ve škole, musí však být načrtnuta a popsána soustava použitých pomůcek, uveden postup měření a zpracovány výsledky.
-
+<strong>První, školní část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Máte za úkol vyřešit pět úloh, které jsou uvedeny dále.
+Za <strong>úspěšného řešitele</strong> školního kola jste považováni, pokud získáte alespoň ve 3 početních
+úlohách nejméně 5 bodů za každou z nich a zároveň jste řešili experimentální úlohu (třeba i neúspěšně).
 </p>
 <p>
 <strong>Druhá část soutěže</strong> proběhne <strong><?php echo $termin2 ?></strong> a může být organizována jakou soutěž jednotlivců nebo družstev podle dispozic. Přesnou podobu soutěže, datum a místo konání vám sdělí váš učitel fyziky.
 </p>
 
 <p>
-Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se vám i letos bude líbit. Na závěr vás chceme upozornit, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
+Doufáme, že nejnižší kategorie naší soutěže Fyzikální olympiády&nbsp;&ndash; Archimediáda se vám i letos bude líbit.
 </p>
 </div>
 
 <div id="organizace-ucitel" class="tab-pane">
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
-probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Soutěžící obdrží k řešení pět úloh, které jsou uvedeny dále. Jejich řešení vyžaduje schopnost fyzikálně uvažovat, používat jednoduché výpočty nebo grafy. Některé úlohy předpokládají také provést jednoduchý pokus. Řešení úloh zapisují řešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je vám &ndash; učiteli fyziky.
+probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií.
+</p>
+<p>
+<strong>První, školní část soutěže</strong> proběhne <strong><?=$termin1?></strong>, přesný termín ukončení určují okresní komise FO. Soutěžící obdrží k řešení pět úloh, které jsou uvedeny dále.
+Za <strong>úspěšného řešitele</strong> školního kola je považován soutěžící, který získal alespoň ve 3 početních
+úlohách nejméně 5 bodů za každou z nich a zároveň řešil experimentální úlohu (třeba i neúspěšně).
+</p>
+<p>
+Řešení vašich žáků opravte, pohovořte s nimi o&nbsp;řešení, a sdělte jim správné výsledky a hodnocení jejich řešení. Poskytněte prosím soutěžícím všestrannou pomoc. Můžete doporučit vhodnou studijní literaturu, popř. navést, jakým postupem se k výsledku úlohy dostat.
+</p>
+<p>
+Po ukončení prvního kola navrhne referent FO na škole řešitele k postupu
+do druhého (okresního) kola a návrh postupujících jednotlivců nebo družstev
+odešle příslušné okresní komisi FO.
 </p>
 
 <p>
-Řešení vašich žáků opravte, pohovořte s nimi o&nbsp;řešení, a sdělte jim správné výsledky a hodnocení jejich řešení. Poskytněte prosím soutěžícím všestrannou pomoc.
-</p>
+<strong>Druhá část soutěže</strong> proběhne <strong><?php echo $termin2 ?></strong> a může být organizována jakou soutěž jednotlivců nebo družstev podle dispozic, které obdržíte od OKFO. Formu této části soutěže ponecháváme v kompetenci OKFO. Úkolem bude řešit různé úlohy, provádět a vysvětlovat pokusy, řešit hádanky a rébusy. Organizátor soutěže může také pověřit některé řešitele, aby si předem připravili referát, pokus či jiné vystoupení.</p>
 
 <p>
-<strong>Druhá část soutěže</strong> proběhne <strong><?php echo $termin2 ?></strong> a může být organizována jakou soutěž jednotlivců nebo družstev podle dispozic, které obdržíte od OKFO. Formu této části soutěže ponecháváme v kompetenci OKFO. Úkolem bude řešit různé úlohy, provádět a vysvětlovat pokusy, řešit hádanky a rébusy. Organizátor soutěže může také pověřit některé řešitele, aby si předem připravili referát, pokus či jiné vystoupení. Námětů získali učitelé fyziky za dobu trvání soutěže již značné množství. Druhé kolo lze organizovat pro soutěžící z jedné školy či z několika sousedních škol dohromady. Nevylučuje se ani případ, že toto kolo bude organizováno obdobně jako v kategoriích E, F, tj. řešením úloh pro účastníky z více škol nebo jako okresní kolo. Pro organizaci školního kola mají okresní výbory k dispozici starší metodickou příručku Archimédiáda, kterou vydalo MAFY v Hradci Králové.
-</p>
-
-<p>
-Doufáme, že nejnižší kategorie naší soutěže fyzikální olympiády&nbsp;&ndash; Archimediáda se vám i letos bude žákům líbit; snažili jsme se zařadit úlohy s výzkumnou částí, jež povzbudí žáky 7.&nbsp;ročníků k dalšímu studiu fyziky. Na závěr soutěže je třeba, abyste žáky upozornili, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií. Úlohy  budou na školy doručeny začátkem září, nejdete je i na těchto stránkách.
+Doufáme, že nejnižší kategorie naší soutěže Fyzikální olympiády&nbsp;&ndash; Archimediáda se vám i letos bude žákům líbit; snažili jsme se zařadit úlohy s výzkumnou částí, jež povzbudí žáky 7.&nbsp;ročníků k dalšímu studiu fyziky. Na závěr soutěže je třeba, abyste žáky upozornili, že pro zájemce o fyziku je připravena soutěž Fyzikální olympiáda v další kategorii&nbsp;F, jež je určena žákům 8.&nbsp;ročníků základních škol a odpovídajících tříd víceletých gymnázií.
 </p>
 <p>
 Děkujeme všem vyučujícím, kteří našli cestu k Fyzikální olympiádě a získali své žáky pro řešení úloh. Věříme, že úlohy byly dostatečně zajímavé, dostatečně náročné i dostatečně přístupně žákům základních škol a jejich kamarádům z víceletých gymnázií. 
-Pokud máte nějaký pěkný nápad, zašlete ho prosím na adresu ivo.volf@uhk.cz.
 </p>
-<p style="text-align: right">Za ÚKFO prof. RNDr. Ivo Volf, CSc.</p>
 </div>
 
 <div id="organizace-organizator" class="tab-pane">
 <p>
 Soutěž ARCHIMÉDIÁDA&nbsp;<?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?> 
-probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií. <strong>První část soutěže</strong> proběhne <strong><?=$termin1?></strong>. Soutěžící obdrží k řešení pět úloh, které jsou uvedeny dále. Řešení úloh zapisují řešitelé na papíry <strong>formátu A5</strong> (malý sešit), každou úlohu na <strong>zvláštní papír</strong>, a odevzdávají je svému učiteli fyziky.
+probíhá ve dvou částech a je určena žákům 7.&nbsp;ročníků základních škol a odpovídajících ročníků víceletých gymnázií.</p>
+<p>
+<strong>První, školní část soutěže</strong> proběhne <strong><?=$termin1?></strong>, přesný termín ukončení určují okresní komise FO. Soutěžící obdrží k řešení pět úloh, opravu provede učitel fyziky.
+Po ukončení prvního kola navrhne referent FO na škole řešitele k postupu
+do druhého (okresního) kola a návrh postupujících jednotlivců nebo družstev
+odešle příslušné okresní komisi FO.
 </p>
 
 <p>
-Učitel fyziky jejich řešení opraví, pravděpodobně s&nbsp;nimi pohovoří o&nbsp;řešení, nebo jim alespoň sdělí správné výsledky a hodnocení vašeho řešení. Učitel fyziky poskytne soutěžícím všestrannou pomoc.
+<strong>Druhá část soutěže</strong> proběhne <strong><?php echo $termin2 ?></strong> a může být organizována jakou soutěž jednotlivců nebo družstev podle dispozic, které obdrží učitelé od OKFO. Formu této části soutěže ponecháváme v kompetenci OKFO. Úkolem bude řešit různé úlohy, provádět a vysvětlovat pokusy, řešit hádanky a rébusy. Organizátor soutěže může také pověřit některé řešitele, aby si předem připravili referát, pokus či jiné vystoupení. Námětů získali učitelé fyziky za dobu trvání soutěže již značné množství. Druhé kolo lze organizovat pro soutěžící z jedné školy či z několika sousedních škol dohromady. Nevylučuje se ani případ, že toto kolo bude organizováno obdobně jako v kategoriích E, F, tj. řešením úloh pro účastníky z více škol nebo jako okresní kolo.
 </p>
-
 <p>
-<strong>Druhá část soutěže</strong> proběhne <strong><?php echo $termin2 ?></strong> a může být organizována jakou soutěž jednotlivců nebo družstev podle dispozic, které obdrží učitelé od OKFO. Formu této části soutěže ponecháváme v kompetenci OKFO. Úkolem bude řešit různé úlohy, provádět a vysvětlovat pokusy, řešit hádanky a rébusy. Organizátor soutěže může také pověřit některé řešitele, aby si předem připravili referát, pokus či jiné vystoupení. Námětů získali učitelé fyziky za dobu trvání soutěže již značné množství. Druhé kolo lze organizovat pro soutěžící z jedné školy či z několika sousedních škol dohromady. Nevylučuje se ani případ, že toto kolo bude organizováno obdobně jako v kategoriích E, F, tj. řešením úloh pro účastníky z více škol nebo jako okresní kolo. Pro organizaci školního kola mají okresní výbory k dispozici starší metodickou příručku Archimédiáda, kterou vydalo MAFY v Hradci Králové.
+O zařazení řešitelů do druhého kola soutěže rozhodne okresní komise FO, pozvánku do druhého kola soutěže dostanou řešitelé
+(nebo družstvo) prostřednictvím školy.	
 </p>
 
 </div>
 </div>
 </div>
 
-<h3 class="accordion accordion-main" id="ulohy">Úlohy domácího kola</h3>
+<h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
 
 <div>
 <!--p><i>Připravujeme</i></p-->
 
 <p>
-    Zadání všech úloh domácího kola si můžete <!--rovněž -->stáhnout ve formátu <code>pdf</code>.
+    Zadání pěti úloh školního kola si můžete <!--rovněž -->stáhnout ve formátu <code>pdf</code>.
 </p>
 
 <div class="table-responsive">
@@ -131,7 +139,7 @@ Učitel fyziky jejich řešení opraví, pravděpodobně s&nbsp;nimi pohovoří 
     </td>
 </tr>
 <tr>
-    <th>Školní/okresní kolo</th>
+    <th>Okresní kolo</th>
     <td>
 		<!--a href="<?php echo ROOT_WWW ?>archiv/61/fo61g2_z.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><i class="pdf">pdf</i></a><br-->
 		<small><?=$termin2?></small>
@@ -144,3 +152,19 @@ Učitel fyziky jejich řešení opraví, pravděpodobně s&nbsp;nimi pohovoří 
 </div>
 </div>
 
+<h3 class="accordion accordion-main" id="ulohy">Pokyny pro soutěžící</h3>
+<div>
+<p>
+Řešení každé úlohy zapisujte na <strong>zvláštní papír</strong>, a odevzdávejte je svému učiteli fyziky.
+</p>
+<p>
+U všech úloh je potřeba popsat také úvahy při řešení. Protokol o řešení musí
+být výstižný, doplněný výpočty, grafy, tabulkami naměřených hodnot či jinak
+získaných údajů, obrázky a náčrtky.
+</p>
+<p>
+Pokusy lze provádět doma nebo ve škole, musí však být načrtnuty a popsány
+použité pomůcky, uveden postup měření a zpracovány výsledky, plynoucí ze
+změřených hodnot.
+</p>
+</div>
