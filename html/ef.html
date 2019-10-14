@@ -9,7 +9,7 @@ $GLOBALS['mysql']->query('
 ');
 while (list($termin, $date, $nazev) = $GLOBALS['mysql']->fetch_array()) {
 	switch ($nazev) {
-			case 'domácí kolo':
+			case 'školní kolo':
 				$termin1 = $termin;
 				$date1 = $date;
 				break;
@@ -32,7 +32,7 @@ $beforeKra = $date3 > date('Y-m-d');
 
 ?>
 
-<h3 class="accordion" id="organizace">Pravidla</h3>
+<h3 class="accordion" id="organizace">Organizace</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -47,7 +47,7 @@ Kategorie E určena žákům 9. tříd, kategorie F určena žákům 8. tříd z
 
 </p>
 <p>
-V <strong>prvním (domácím) kole</strong> máte za úkol vyřešit sedm úloh.
+V <strong>prvním (školním) kole</strong> máte za úkol vyřešit sedm úloh.
 Řešení odevzdejte svému učiteli fyziky v těchto termínech: úlohu první až třetí zpravidla do konce
 listopadu, úlohu čtvrtou až sedmou nejpozději
 <strong><?php echo $termin1 ?></strong>,
@@ -58,13 +58,13 @@ kdy končí první kolo soutěže. Řešení úloh opraví váš učitel fyziky.
 </p>
 <p>
 <strong>Druhé (okresní) kolo</strong> se uskuteční <strong><?php echo v($termin2) ?></strong>.
-Ve druhém kole je vaším úkolem vyřešit čtyři teoretické úlohy. Úspěšným řešitelem druhého kola, kde se také boduje jedna úloha 10ti body, se stanete, pokud vyřešíte alespoň dvě úlohy s bodovým hodnocením alespoň 5 bodů a dosáhnete přitom nejmenšího počtu celkem 14 bodů. Všichni úspěšní řešitelé dostanete pochvalné uznání, nejlepší řešitelé budou odměněni.
+Ve druhém kole je vaším úkolem vyřešit čtyři teoretické úlohy. Na jejich vyřešení máte 4 hodiny. Úspěšným řešitelem druhého kola, kde se také boduje jedna úloha 10 body, se stanete, pokud vyřešíte alespoň dvě úlohy s bodovým hodnocením alespoň 5 bodů a dosáhnete přitom nejmenšího počtu celkem 14 bodů. Všichni úspěšní řešitelé dostanete pochvalné uznání, nejlepší řešitelé budou odměněni.
 </p>
 <p><strong><?php echo ucfirst(v($termin3)) ?></strong>
 budou uspořádána <strong>třetí (krajská) kola</strong> soutěže v kategorii E, a to ve vybraných místech. Do třetího kola jsou vybráni nejlepší účastníci druhého kola. Pozvání do třetího kola dostanete od svého učitele. Všichni úspěšní řešitelé třetího kola obdržíte pochvalná uznání a nejlepší soutěžící budou odměněni.
 </p>
 <p>
-Okresní či krajské kolo probíhá v celé České republice v týž den a soutěž začíná zpravidla v&nbsp;9&nbsp;h (podle možností dojezdnosti soutěžících a pedagogického dozoru).
+Okresní či krajské kolo probíhá v celé České republice v týž den a soutěž začíná zpravidla v&nbsp;9&nbsp;h.
 Po sdělení nutných informací soutěžícím a krátkým prostudováním textu zadaných úloh soutěžícími, zodpovězení dotazů, jež jsou spojeny s vysvětlením některých nejasností, se potom vyhlásí začátek soutěže a pro 4&nbsp;úlohy se stanoví 4&nbsp;h čistého času.
 Úlohy můžete vyřešit v kratší době, ale tyto 4&nbsp;h jsou limitní; po jejich uplynutí musíte své řešení odevzdat dozorujícímu členu okresní, popř. krajské komise.
 </p>
@@ -73,7 +73,7 @@ Po ukončení každého kola budete seznámeni se správným řešením úloh, b
 nebo ho najdte na těchto stránkách. Každá krajská komise zřizuje svou <a href="<?php echo odkaz('stranky_regionu.html'); ?>" title="Webové stránky krajských komisí">webovskou stránku</a>, kde můžete najít další informace i&nbsp;výsledky soutěže. 
 </p>
 <p>
-Přejeme vám, abyste při řešení úloh fyzikální olympiády strávili pěkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrý vztah k fyzice.
+Přejeme vám, abyste při řešení úloh Fyzikální olympiády strávili pěkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrý vztah k fyzice.
 </p>
 </div>
 
@@ -83,24 +83,25 @@ V letošním roce je kategorie E určena žákům 9. tříd, kategorie F určena
 
 </p>
 <p>
-Soutěž je dobrovolná a probíhá na území České republiky jednotně. V <strong>prvním (domácím) kole</strong> mají vaši žáci za úkol vyřešit sedm úloh. Řešení vám odevzdají v těchto termínech: úlohu první až třetí zpravidla do konce
+Soutěž je dobrovolná a probíhá na území České republiky jednotně. V <strong>prvním (školním) kole</strong> mají vaši žáci za úkol vyřešit sedm úloh. Řešení vám odevzdají v těchto termínech: úlohu první až třetí zpravidla do konce
 listopadu, úlohu čtvrtou až sedmou nejpozději
 <strong><?php echo $termin1 ?></strong>,
 kdy končí první kolo soutěže. Řešení úloh opravte a klasifikujte podle dispozic ÚKFO, které přijdou na vaši školu. Pro každou úlohu je stanoveno 10 bodů, jejichž rozložení je uvedeno v instruktážním řešení. Plný počet bodů dostává řešitel, jestliže je úloha či její část řešena  zcela bez chyb, nebo se v řešení vyskytují pouze drobné formální nedostatky. Jestliže řešení úlohy či její části v podstatě vystihuje úkol, ale má větší nedostatky po odborné stránce či vyskytují-li se v něm závažné formální nedostatky, je počet bodů snížen. Řešení je nevyhovující a přidělený počet bodů nízký nebo nulový, jestliže nedostatky odborného rázu jsou závažné, nebo je řešení z větší části neúplné. Řešení je také nevyhovující, chybí-li slovní výklad, nebo je-li neúplný, takže z něho nelze vyvodit myšlenkový postup podaného řešení. Kladné hodnocení tedy předpokládá, že protokol o řešení obsahuje fyzikální vysvětlení, z něhož jasně vyplývá myšlenkový postup při řešení daného problému. K metodice řešení fyzikálních úloh připravila pro vás ÚKFO materiál s mnoha konkrétními příklady. Návodné úlohy pro soutěž již několikrát vyšly v časopise Školská fyzika. 
 </p>
 <p>
-Řešení úloh prvního kola opravte společně s referentem FO na škole. Po ukončení prvního kola navrhněte úspěšné řešitele k postupu do druhého kola a odešlete opravené úlohy všech, tj. i neúspěšných řešitelů, společně s návrhem postupujících příslušné okresní komisi fyzikální olympiády (OKFO). O zařazení do druhého kola soutěže rozhodne OKFO po kontrole opravených úloh a sjednocení klasifikace.
+Řešení úloh prvního kola opravte společně s referentem FO na škole. Po ukončení prvního kola navrhněte úspěšné řešitele k postupu do druhého kola a odešlete opravené úlohy všech, tj. i neúspěšných řešitelů, společně s návrhem postupujících příslušné okresní komisi Fyzikální olympiády (OKFO). O zařazení do druhého kola soutěže rozhodne OKFO po kontrole opravených úloh a sjednocení klasifikace.
 Za úspěšného řešitele prvního kola je považován soutěžící, který byl hodnocen v pěti úlohách alespoň 5 body, přičemž řešil experimentální úlohy (třeba i neúspěšně).
 Pozvání do druhého kola soutěže pro úspěšné řešitele dostanete od příslušné OKFO, předejte je svým žákům.
 </p>
 <p>
 <strong>Druhé (okresní) kolo</strong> se uskuteční v místě určeném OKFO
 <strong><?php echo v($termin2) ?></strong>.
-Ve druhém kole je úkolem vašeho žáka vyřešit čtyři teoretické úlohy, které zajišťuje jednotně pro celou republiku ÚKFO. Úspěšným řešitelem druhého kola, kde se také boduje, je účastník, který vyřešil alespoň dvě úlohy s bodovým hodnocením alespoň 5 bodů a dosáhl přitom  nejmenšího počtu 14 bodů. OKFO opraví řešení úloh nejlépe ještě v den soutěže a sestaví pořadí úspěšných řešitelů. Všichni úspěšní řešitelé dostanou pochvalné uznání, nejlepší řešitelé budou odměněni podle směrnic MŠMT.
+Ve druhém kole je úkolem vašeho žáka vyřešit čtyři teoretické úlohy, které zajišťuje jednotně pro celou republiku ÚKFO. Na jejich vyřešení
+mají soutěžící 4 hodiny. Úspěšným řešitelem druhého kola, kde se také boduje, je účastník, který vyřešil alespoň dvě úlohy s bodovým hodnocením alespoň 5 bodů a dosáhl přitom  nejmenšího počtu 14 bodů. OKFO opraví řešení úloh nejlépe ještě v den soutěže a sestaví pořadí úspěšných řešitelů. Všichni úspěšní řešitelé dostanou pochvalné uznání, nejlepší řešitelé budou odměněni podle směrnic MŠMT.
 </p>
 <p>
 <strong><?php echo ucfirst(v($termin3)) ?></strong>
-budou uspořádána <strong>třetí (krajská) kola</strong> soutěže v kategorii E, a to ve vybraných místech. Do třetího kola jsou vybráni nejlepší účastníci druhého kola podle organizačního řádu fyzikální olympiády; o jejich  zařazení rozhoduje pořadatel třetího kola. Žáci jsou pozváni prostřednictvím školy. Všichni úspěšní řešitelé třetího kola obdrží pochvalná uznání a nejlepší soutěžící budou odměněni.
+budou uspořádána <strong>třetí (krajská) kola</strong> soutěže v kategorii E, a to ve vybraných místech. Do třetího kola jsou vybráni nejlepší účastníci druhého kola podle organizačního řádu Fyzikální olympiády; o jejich  zařazení rozhoduje pořadatel třetího kola. Žáci jsou pozváni prostřednictvím školy. Všichni úspěšní řešitelé třetího kola obdrží pochvalná uznání a nejlepší soutěžící budou odměněni.
 </p>
 <p>
 Okresní či krajské kolo probíhá v celé České republice v týž den a soutěž začíná zpravidla v&nbsp;9&nbsp;h (podle možností dojezdnosti soutěžících a pedagogického dozoru).
@@ -117,28 +118,27 @@ Fyzika je teoretickým  základem techniky, která je pro současnou společnost
 
 <div id="organizace-organizator" class="tab-pane">
 <p>
-Od 4. ročníku byla soutěž FO rozšířena o kategorii, určenou žákům základních devítiletých škol. Od 25.&nbsp;ročníku byla fyzikální olympiáda v kategorii E určena žákům osmých ročníků základních škol, ale mohli se jí zúčastnit i mladší žáci i žáci devátých ročníků s hlubším zájmem o fyziku. V letošním roce je kategorie E určena žákům 9. tříd, kategorie F určena žákům 8. ročníků a jim věkově odpovídajícím žákům tříd nižšího gymnázia.
+Od 4. ročníku byla soutěž FO rozšířena o kategorii, určenou žákům základních devítiletých škol. Od 25.&nbsp;ročníku byla Fyzikální olympiáda v kategorii E určena žákům osmých ročníků základních škol, ale mohli se jí zúčastnit i mladší žáci i žáci devátých ročníků s hlubším zájmem o fyziku. V letošním roce je kategorie E určena žákům 9. tříd, kategorie F určena žákům 8. ročníků a jim věkově odpovídajícím žákům tříd nižšího gymnázia.
 
 </p>
 <p>
-Soutěž je dobrovolná a probíhá na území České republiky jednotně. V <strong>prvním (domácím) kole</strong> mají soutěžící za úkol vyřešit sedm úloh. Řešení odevzdají učiteli fyziky v těchto termínech:  úlohu první až třetí zpravidla do konce
+Soutěž je dobrovolná a probíhá na území České republiky jednotně. V <strong>prvním (školním) kole</strong> mají soutěžící za úkol vyřešit sedm úloh. Řešení odevzdají učiteli fyziky v těchto termínech:  úlohu první až třetí zpravidla do konce
 listopadu, úlohu čtvrtou až sedmou nejpozději
 <strong><?php echo $termin1 ?></strong>,
-kdy končí první kolo soutěže. Řešení úloh učitel fyziky opraví a klasifikuje podle dispozic ÚKFO. Pro každou úlohu je stanoveno 10 bodů, jejichž rozložení je uvedeno v instruktážním řešení, které dostanou učitelé k dispozici. Plný počet bodů dostává řešitel, jestliže je úloha či její část řešena  zcela bez chyb, nebo se v řešení vyskytují pouze drobné formální nedostatky. Jestliže řešení úlohy či její části v podstatě vystihuje úkol, ale má větší nedostatky po odborné stránce či vyskytují-li se v něm závažné formální nedostatky, je počet bodů snížen. Řešení je nevyhovující a přidělený počet bodů nízký nebo nulový, jestliže nedostatky odborného rázu jsou závažné, nebo je řešení z větší části neúplné.  Řešení je také nevyhovující, chybí-li slovní výklad, nebo je-li neúplný, takže z něho nelze vyvodit myšlenkový postup podaného řešení. Kladné hodnocení tedy předpokládá, že protokol o řešení obsahuje fyzikální vysvětlení, z něhož jasně vyplývá myšlenkový postup při řešení daného problému. K metodice řešení fyzikálních úloh připravil ÚKFO materiál pro učitele fyziky s mnoha konkrétními příklady.
-
+kdy končí první kolo soutěže.
 </p>
 <p>
-Řešení úloh prvního kola opraví učitel fyziky společně s referentem FO na škole. Po ukončení prvního kola navrhne referent FO na škole úspěšné řešitele k postupu do druhého kola a odešle opravené úlohy všech, tj. i neúspěšných řešitelů společně s návrhem postupujících příslušné okresní komisi fyzikální olympiády (OKFO). O zařazení do druhého kola soutěže rozhodne OKFO po kontrole opravených úloh a sjednocení klasifikace. Vzhledem k organizaci soutěže je vhodné, aby si OKFO dal předložit první část opravených řešení již v prosinci. Počet účastníků druhého kola může OKFO omezit podle dosaženého bodového hodnocení. Za úspěšného řešitele prvního kola je považován soutěžící, který byl hodnocen v pěti úlohách alespoň 5 body, přičemž řešil experimentální úlohy (třeba i neúspěšně).
+Řešení úloh prvního kola opraví učitel fyziky společně s referentem FO na škole. Po ukončení prvního kola navrhne referent FO na škole úspěšné řešitele k postupu do druhého kola a odešle opravené úlohy všech, tj. i neúspěšných řešitelů společně s návrhem postupujících příslušné okresní komisi Fyzikální olympiády (OKFO). O zařazení do druhého kola soutěže rozhodne OKFO po kontrole opravených úloh a sjednocení klasifikace. Vzhledem k organizaci soutěže je vhodné, aby si OKFO dal předložit první část opravených řešení již v prosinci. Počet účastníků druhého kola může OKFO omezit podle dosaženého bodového hodnocení. Za úspěšného řešitele prvního kola je považován soutěžící, který byl hodnocen v pěti úlohách alespoň 5 body, přičemž řešil experimentální úlohy (třeba i neúspěšně).
 Pozvání do druhého kola soutěže dostane pozvaný úspěšný řešitel FO od příslušného OKFO prostřednictvím školy.
-
 </p>
 <p>
 <strong>Druhé (okresní) kolo</strong> se uskuteční v místě určeném OKFO v termínu, vyhlášeném ÚKFO, a to v celé republice <strong><?php echo v($termin2) ?></strong>.
-Ve druhém kole je úkolem řešitele vyřešit čtyři teoretické úlohy, které zajišťuje jednotně pro celou republiku ÚKFO. Úspěšným řešitelem druhého kola, kde se také boduje, je účastník, který vyřešil alespoň dvě úlohy s bodovým hodnocením alespoň 5 bodů a dosáhl přitom  nejmenšího  počtu 14 bodů. OKFO opraví řešení úloh nejlépe ještě v den soutěže a sestaví pořadí úspěšných řešitelů. Všichni úspěšní řešitelé dostanou pochvalné uznání, nejlepší řešitelé  budou odměněni podle směrnic MŠMT.
+Ve druhém kole je úkolem řešitele vyřešit čtyři teoretické úlohy, které zajišťuje jednotně pro celou republiku ÚKFO. Na jejich vyřešení
+mají soutěžící 4 hodiny. Úspěšným řešitelem druhého kola, kde se také boduje, je účastník, který vyřešil alespoň dvě úlohy s bodovým hodnocením alespoň 5 bodů a dosáhl přitom  nejmenšího  počtu 14 bodů. OKFO opraví řešení úloh nejlépe ještě v den soutěže a sestaví pořadí úspěšných řešitelů. Všichni úspěšní řešitelé dostanou pochvalné uznání, nejlepší řešitelé  budou odměněni podle směrnic MŠMT.
 
 </p>
 <p><strong><?php echo ucfirst(v($termin3)) ?></strong>
-budou uspořádána <strong>třetí (krajská) kola</strong> soutěže v kategorii E, a to ve vybraných místech. Do třetího kola jsou vybráni nejlepší účastníci druhého kola podle organizačního řádu  fyzikální olympiády; o jejich  zařazení rozhoduje pořadatel třetího kola. Žáci jsou pozváni prostřednictvím školy. Všichni úspěšní řešitelé třetího kola obdrží pochvalná uznání a nejlepší soutěžící budou odměněni.
+budou uspořádána <strong>třetí (krajská) kola</strong> soutěže v kategorii E, a to ve vybraných místech. Do třetího kola jsou vybráni nejlepší účastníci druhého kola podle organizačního řádu  Fyzikální olympiády; o jejich  zařazení rozhoduje pořadatel třetího kola. Žáci jsou pozváni prostřednictvím školy. Všichni úspěšní řešitelé třetího kola obdrží pochvalná uznání a nejlepší soutěžící budou odměněni.
 
 </p>
 <p>
@@ -158,16 +158,16 @@ Po ukončení každé soutěže jsou soutěžící seznámeni se správným ře�
 <!--p><i>Připravujeme</i></p-->
 
 <p>
-Pro obě kategorie E a F je v&nbsp;domácím kole zadáno společně více úloh, z nichž učitel fyziky vybere a vyznačí sedm úloh pro každou kategorii podle učiva, které bude na vaší škole probráno do konce března.
+Pro obě kategorie E a F je ve&nbsp;školním kole zadáno společně více úloh, z nichž učitel fyziky nebo předmětová komise vybere sedm úloh pro každou kategorii podle učiva, které bude ve škole probráno do konce prosince.
 </p>
 
 <p>
-Zadání<!-- a řešení--> všech úloh domácího<!-- a&nbsp;okresního--> kola si můžete stáhnout ve formátu <code>pdf</code>.
+Zadání<!-- a řešení--> všech úloh školního<!-- a&nbsp;okresního--> kola si můžete stáhnout ve formátu <code>pdf</code>.
 </p>
 
 <?php if (false && $kdo != "student") : ?>
 <p>
-Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako návody k&nbsp;opravě a ke kontrole výsledků</em> a&nbsp;hodnocení úloh vašich žáků.
+Dále si můžete stáhnout <em>výsledky řešení úloh školního kola jako návody k&nbsp;opravě a ke kontrole výsledků</em> a&nbsp;hodnocení úloh vašich žáků.
 Řešení úloh však musí být doprovázeno slovním komentářem, z&nbsp;něhož musí být zcela jasný myšlenkový postup, který byl při řešení použit.
 </p>
 <?php endif; ?>
@@ -180,7 +180,7 @@ Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako n
     <th scope="col" style="width: 40%" colspan="2">Řešení</th>
 </tr>
 <tr>
-    <th scope="row">Domácí</th>
+    <th scope="row">Školní</th>
     <!--td colspan="2">Zveřejníme v nejbližší době</td-->
     <td colspan="2">
 		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61ef1_z.pdf" title="Zadání ve formátu PDF"><i class="pdf">pdf</i></a><br>
@@ -237,16 +237,16 @@ Dále si můžete stáhnout <em>výsledky řešení úloh domácího kola jako n
 </div>
 
 <p>
-Pro vyšší kola soutěže (okresní, krajské kolo) jsme stanovili některá závazná témata.
+Vyšší kola soutěže (okresní, krajské kolo) mají v celé republice jednotné zadání a je pro ně nutné stanovit závazná témata:
 </p>
 <dl>
 	<dt>Kategorie F:</dt>
-		<dd>Mechanika (pohyby,  síly, práce, výkon, energie)</dd>
-		<dd>Hydromechanika (statika a dynamika kapalin, aerostatika)</dd>
-		<dd>Termika (výměna tepla, teplo a práce, změny skupenství)</dd>
-		<dd>Optika (jen paprsková optika &ndash; geometrické řešení)</dd>
+		<dd>mechanika (pohyby, síly, práce, výkon, energie, páka, kladka)</dd>
+		<dd>tlak v kapalinách a plynech, Archimédův zákon</dd>
+		<dd>optika (jen geometrická řešení, odraz a lom)</dd>
 	<dt>Kategorie E: (k výše uvedeným závazným tématům připojíme)</dt>
-		<dd>Elektřina (stejnosměrný proud, obvody, účinky proudu)</dd>
+		<dd>termika (výměna tepla, teplo a práce, změny skupenství)</dd>
+		<dd>elektřina (stejnosměrný proud, obvody, práce a výkon elektrického proudu, spojování rezistorů)</dd>
 </dl>
 
 </div>
