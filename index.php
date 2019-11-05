@@ -178,7 +178,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
                     <ul class="nice-list visible-sm visible-xs">
                         <li><a href="http://praha.fyzikalniolympiada.cz/" title="Pražské stránky">Praha</a></li>
                         <li><a href="http://www.pf.jcu.cz/structure/departments/kaft/pro-verejnost/fyzikalni-olympiada/" title="Stránky jihočeského kraje">Jihočeský kraj</a></li>
-                        <li><a href="http://www.jaroska.cz/fo/" title="Stránky jihomoravského kraje">Jihomoravský kraj</a></li>
+                        <li><a href="https://www.chces-soutezit.cz/souteze/detail?soutez_id=256" title="Stránky jihomoravského kraje">Jihomoravský kraj</a></li>
                         <li><a href="http://kvary.fyzikalniolympiada.cz/" title="Stránky karlovarského kraje">Karlovarský kraj</a></li>
                         <li><a href="https://www.gymnaziumjihlava.cz/fo/" title="Stránky kraje Vysočina">Kraj Vysočina</a></li>
                         <li><a href="http://www.gybon.cz/~sada/fyzikalniolympiada.html" title="Stránky královéhradeckého kraje">Královéhradecký kraj</a></li>
