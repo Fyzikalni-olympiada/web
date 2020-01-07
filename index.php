@@ -19,13 +19,11 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <meta name='robots' content='index,follow' />
 <meta name='googlebot' content='index,follow,snippet,archive' />
 
-<meta name='description' content='Fyzikální olympiáda, oficiální stránky' />
 <meta name='keywords' content='fyzika, fyzikální olympiáda, fyzikalni olympiada, soutěž, soutez' />
 <meta name='category' content='physics' />
 
-<meta name='author' content='All: Jan Prachař, e-mail: jan.prachar@fyzikalniolympiada.cz' />
 <meta name='webmaster' content='All: Jan Prachař, e-mail: webmaster@fyzikalniolympiada.cz' />
-<meta name='copyright' content='&copy;2004-2014 Fyzikalní olympiáda, e-mail: jan.prachar@fyzikalniolympiada.cz' />
+<meta name='copyright' content='&copy;2002-<?= date('Y') ?> Fyzikalní olympiáda' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <base href="http://<?= SERVER_NAME ?>/" />
@@ -92,7 +90,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 </script>
 
 <title>
-FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
+Fyzikální olympiáda – <?= nadpis() ?>
 </title>
 </head>
 <body id="fo-cuni-cz">
@@ -284,7 +282,7 @@ FYZIKÁLNÍ OLYMPIÁDA<?php echo ' :: ' . nadpis(); ?>
         </div>
         <div class="col-sm-6 col-sm-pull-6">
             <img src="pic/logo-fo.svg" alt="" class="left logo" />
-            <p>&copy; 2002&ndash;<?php echo date('Y') ?> Fyzikální olympiáda. All rights Reserved.<br />
+            <p>&copy; 2002&ndash;<?= date('Y') ?> Fyzikální olympiáda. All rights Reserved.<br />
                 Pokud není uvedeno jinak, podléhá text na těchto stránkách licenci <a rel="license" href="http://creativecommons.org/licenses/by/3.0/cz/">Creative Commons Uveďte autora 3.0 Česká republika</a>
                 <!--a rel="license" href="http://creativecommons.org/licenses/by/3.0/cz/"><img alt="Licence Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a-->
             </p>
