@@ -2,27 +2,31 @@
 
 <?php
 $GLOBALS['mysql']->query('
-        SELECT termin, kategorie
+        SELECT termin, date, kategorie
         FROM ' . TABLE_TERMS . '
         WHERE nazev LIKE \'%krajské kolo%\'
         AND rocnik="' . AKTUALNI_ROCNIK . '"
         ORDER BY kategorie
 ');
-while (list($termin, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
+while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
         switch ($kategorie) {
                         case 1:
                                 $terminA = $termin;
+								$dateA = $date;
                                 break;
                         case 2:
                                 $terminBCD = $termin;
+								$dateBCD = $date;
                                 break;
                         default:
                                 break;
         }
 }                       
+$beforeA = $dateA >= date('Y-m-d');
+$beforeBCD = $dateBCD >= date('Y-m-d');
 
 ?>
-<h3 class="accordion accordion-main" id="organizace">Pravidla</h3>
+<h3 class="accordion<?if ($beforeBCD):?> accordion-main<? endif; ?>" id="organizace">Pravidla</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -128,7 +132,7 @@ fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatel
 <?php include 'html/texty.html' ?>
 </div>
 
-<h3 class="accordion" id="ulohy">Úlohy</h3>
+<h3 class="accordion<?if (!$beforeA):?> accordion-main<? endif; ?>" id="ulohy">Úlohy</h3>
 
 <div>
 <h4>Zadání</h4>
@@ -137,7 +141,8 @@ Texty úloh pro kategorie A, B, C a&nbsp;D obdrží studenti před zahájením k
 zveřejňujeme je v&nbsp;den konání krajského kola.
 </p>
 
-<!--div class="table-responsive">
+<? if (!$beforeA) : ?>
+<div class="table-responsive">
 <table class="table zadani">
 <tr>
         <th scope="col">Kategorie A</th>
@@ -147,12 +152,19 @@ zveřejňujeme je v&nbsp;den konání krajského kola.
 </tr>
 <tr>
     <td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61a2_z.pdf"><i class="pdf">pdf</i></a></td>
+<? if (!$beforeBCD) : ?>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61b2_z.pdf"><i class="pdf">pdf</i></a></td>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61c2_z.pdf"><i class="pdf">pdf</i></a></td>
     <td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61d2_z.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+	<td></td>
+	<td></td>
+<? endif; ?>
 </tr>
 </table>
-</div-->
+</div>
+<? endif; ?>
 
 <h4>Řešení</h4>
 
@@ -161,7 +173,8 @@ zveřejňujeme je v&nbsp;den konání krajského kola.
 V&nbsp;elektronické podobě si je můžete stáhnout níže.
 </p>
 
-<!--div class="table-responsive">
+<? if (!$beforeA) : ?>
+<div class="table-responsive">
 <table class="table zadani">
 <tr>
         <th scope="col">Kategorie A</th>
@@ -171,15 +184,22 @@ V&nbsp;elektronické podobě si je můžete stáhnout níže.
 </tr>
 <tr>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61a2_r.pdf"><i class="pdf">pdf</i></a></td>
+<? if (!$beforeBCD) : ?>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61b2_r.pdf"><i class="pdf">pdf</i></a></td>
 	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61c2_r.pdf"><i class="pdf">pdf</i></a></td>
     <td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61d2_r.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+	<td></td>
+	<td></td>
+<? endif; ?>
 </tr>
 </table>
-</div-->
+</div>
+<? endif; ?>
 </div>
 
-<h3 class="accordion" id="vysledky">Výsledky</h3>
+<h3 class="accordion<?if (!$beforeA):?> accordion-main<? endif; ?>" id="vysledky">Výsledky</h3>
 
 <div>
 	
@@ -187,28 +207,30 @@ V&nbsp;elektronické podobě si je můžete stáhnout níže.
 Výsledky krajského kola hledejte na webových <a href="<?php echo odkaz("stranky_regionu.html") ?>" title="Webové stránky krajských komisí">stránkách krajských komisí FO</a>.
 </p>
 
-<!--p>
+<p>
 Kompletní výsledky krajských kol kategorie&nbsp;A v&nbsp;jednotlivých krajích.
 </p>
 <div>
 <ul>
-        <li><a href="http://kvary.fyzikalniolympiada.cz/vysledky/58/krajske-kolo/kategorie-a/" title="Karlovy Vary">Karlovarský kraj</a></li>
-        <li><a href="http://praha.fyzikalniolympiada.cz/vysledky/61-rocnik-2017-2018/krajske-kolo/kategorie-a/" title="Praha">Praha</a></li>
-        <li><a href="http://www.gybon.cz/~sada/strana2.html">Královéhradecký kraj</a></li>
-        <li><a href="http://www.gypce.cz/wp-content/uploads/2012/09/Vysledkova-listina-A-Pardubice-2017.pdf">Pardubický kraj</a></li>
-        <li><a href="http://fo.upol.cz/archiv/kk58.html#kata">Olomoucký kraj</a></li>
+        <li><a href="https://www.chces-soutezit.cz/souteze/editace-soutezni-kolo?soutez_kategorie_id=862&soutez_kolo_id=16623&soutez_id=256&backlink=5m4ba&do=GeneratePdf">Jihomoravský kraj (pdf)</a></li>
+        <li><a href="http://kvary.fyzikalniolympiada.cz/vysledky/61/krajske-kolo/a/" title="Karlovy Vary">Karlovarský kraj</a></li>
+        <li><a href="https://drive.google.com/file/d/1c6VPFx37yDJlAcbCzHG2CP4ZW2gKyuq_/view">Liberecký kraj</a></li>
+		<li><a href="https://svcoo.iddm.cz/admin/download/document/1312">Moravskoslezský kraj (pdf)</a></li>
+        <li><a href="http://fo.upol.cz/archiv/kk61.html#kata">Olomoucký kraj</a></li>
+        <li><a href="https://www.gypce.cz/wp-content/uploads/2020/01/FO_A_2020_Pardubice.pdf">Pardubický kraj (pdf)</a></li>
+        <li><a href="https://kof.zcu.cz/fo/2020/FO_A_2020.xls">Plzeňský kraj (xls)</a></li>
+        <li><a href="http://praha.fyzikalniolympiada.cz/vysledky/61-rocnik-2019-2020/krajske-kolo/kategorie-a/" title="Praha">Praha</a></li>
 
-        <li><a href="http://kof.zcu.cz/fo/2013/FO_A_2013.xls">Plzeňský kraj</a> (xls)</li>
+		<!--
+        <li><a href="http://www.gybon.cz/~sada/strana2.html">Královéhradecký kraj</a></li>
         <li><a href="http://fo.czechian.net/55foa.htm">Středočeský kraj</a></li>
-        <li><a href="http://www.sportgym.cz/public/pdfs/vysledkova-listina-kategorie-a/FO55ALbc.pdf">Liberecký kraj</a> (pdf, 1 úspěšný řešitel)</li>
-        <li><a href="http://www.jaroska.cz/fo/55/abcd/krajske_kolo#vysledky_krajskeho_kola_kategorie_a">Jihomoravský kraj</a> (8&nbsp;úspěšných řešitelů)</li>
         <li><a href="http://www.pf.jcu.cz/stru/katedry/fyz/fo/55roc_a.php?var=print">Jihočeský kraj</a> (5&nbsp;úspěšných řešitelů)</li>
         <li><a href="https://www.gymnaziumjihlava.cz/fo/">Kraj Vysočina</a> (9&nbsp;úspěšných řešitelů)</li>
         <li><a href="http://www.calvin.wz.cz/Vys_Kat_A.doc">Zlínský kraj</a> (doc, 2&nbsp;úspěšní řešitelé)</li>
         <li><a href="http://physics.ujep.cz/~fo/vysl_2007-a.html">Ústecký kraj</a>, 1.&nbsp;2.</li>
-        <li>Moravskoslezský kraj <img src="http://www.anchoredbygrace.com/smileys/1034552550.gif" alt=""></li>
+		-->
 </ul>
-</div-->
+</div>
 
 <!--h4>Úspěšní řešitelé kategorie A</h4-->
 </div>
