@@ -179,7 +179,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
                         <li><a href="https://www.chces-soutezit.cz/souteze/detail?soutez_id=256" title="Stránky jihomoravského kraje">Jihomoravský kraj</a></li>
                         <li><a href="http://kvary.fyzikalniolympiada.cz/" title="Stránky karlovarského kraje">Karlovarský kraj</a></li>
                         <li><a href="http://vysocina.fyzikalniolympiada.cz/" title="Stránky kraje Vysočina">Kraj Vysočina</a></li>
-                        <li><a href="http://www.gybon.cz/~sada/fyzikalniolympiada.html" title="Stránky královéhradeckého kraje">Královéhradecký kraj</a></li>
+                        <li><a href="https://www.gjkt.cz/fyzikalni-olympiada/" title="Stránky královéhradeckého kraje">Královéhradecký kraj</a></li>
                         <li><a href="http://www.sportgym.cz/aktivity/fyzikalni-olympiada" title="Stránky libereckého kraje">Liberecký kraj</a></li>
                         <li><a href="http://www.svcoo.cz/souteze/souteze_fyzika.html" title="Stránky moravskoslezského kraje">Moravskoslezský kraj</a></li>
                         <li><a href="http://www.ktf.upol.cz/fo/" title="Stránky olomouckého kraje">Olomoucký kraj</a></li>
