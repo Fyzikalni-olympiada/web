@@ -720,12 +720,12 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	border-top: none;
 	position: relative;
 }
-.accordion + div > ul {
+.accordion + div > ul.nav {
 	position: absolute;
 	top: -44px;
 	right: 3px;
 }
-.accordion + div > ul > li > a {
+.accordion + div > ul.nav > li > a {
 	height: 44px;
 }
 @media (max-width: 640px) {
