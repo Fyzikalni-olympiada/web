@@ -30,8 +30,8 @@ define('SITE', '');
 
 require_once('configure.php');
 
-define('AKTUALNI_ROCNIK', 61);
-define('AKTUALNI_ROK', '2019/2020');
+define('AKTUALNI_ROCNIK', 62);
+define('AKTUALNI_ROK', '2020/2021');
 
 /* Pocitadlo */
 define('INTERVAL_MEZI_NAVSTEVAMI', 60); //minimalni interval mezi navstevami v minutach
@@ -40,7 +40,7 @@ define('INTERVAL_ONLINE', 20); //maximalni doba necinnosti v minutach, kdy je cl
 /* Novinky */
 define('NOVINKY_WHERES', 'celost');
 define('NOVINKY_NA_STRANKU', 6);
-define('NOVINKY_INTERVAL', 120); //maximalni stari zobrazene novinky ve dnech
+define('NOVINKY_INTERVAL', 150); //maximalni stari zobrazene novinky ve dnech
 
 define('GUEST_TEST_TEXT', '2'); //kontrolni text pro prispevatele ve foru
 

@@ -35,6 +35,21 @@ SetEnvIf Host ^www\.(.*)$ without_www=$1
   RewriteCond %{REQUEST_URI} novinka.php
   RewriteRule ^novinka.php(.*)$ /novinka$1 [R=301,L,QSA]
 
+  RewriteCond %{REQUEST_URI} domaci-kolo
+  RewriteRule ^(.*)$ /stredni-skoly [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_URI} krajske-kolo
+  RewriteRule ^(.*)$ /stredni-skoly [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_URI} celostatni-kolo
+  RewriteRule ^(.*)$ /ustredni-kolo [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_URI} kategorie-e-f
+  RewriteRule ^(.*)$ /zakladni-skoly [R=301,L,QSA]
+
+  RewriteCond %{REQUEST_URI} mfo/aktualni
+  RewriteRule ^(.*)$ /mfo/50 [L,QSA]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !(.php)

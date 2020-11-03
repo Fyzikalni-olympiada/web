@@ -1,0 +1,476 @@
+<h2>Soutěž pro střední školy</h2>
+
+<?php
+$GLOBALS['mysql']->query('
+	SELECT termin, date, kategorie
+	FROM ' . TABLE_TERMS . '
+	WHERE nazev LIKE \'%školní%\'
+	AND rocnik="' . AKTUALNI_ROCNIK . '"
+	ORDER BY kategorie
+');
+while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
+	switch ($kategorie) {
+			case 1:
+				$terminA = $termin;
+				$dateA = $date;
+				break;
+			case 2:
+				$terminBCD = $termin;
+				$dateBCD = $date;
+				break;
+			default:
+				break;
+	}
+}	
+$beforeA = $dateA >= date('Y-m-d');
+$beforeBCD = $dateBCD >= date('Y-m-d');
+
+$GLOBALS['mysql']->query('
+        SELECT termin, date, kategorie
+        FROM ' . TABLE_TERMS . '
+        WHERE nazev LIKE \'%krajské kolo%\'
+        AND rocnik="' . (AKTUALNI_ROCNIK) . '"
+        ORDER BY kategorie
+');
+while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
+        switch ($kategorie) {
+                        case 1:
+                                $terminA = $termin;
+								$dateA = $date;
+                                break;
+                        case 2:
+                                $terminBCD = $termin;
+								$dateBCD = $date;
+                                break;
+                        default:
+                                break;
+        }
+}                       
+$krajBeforeA = $dateA >= date('Y-m-d');
+$krajBeforeBCD = $dateBCD >= date('Y-m-d');
+?>
+<h3 class="accordion" id="organizace">Školní kolo</h3>
+
+<div>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
+	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
+	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
+</ul>
+<div class="tab-content">
+<p>
+Kategorie&nbsp;A,&nbsp;B,&nbsp;C,&nbsp;D jsou určeny pro žáky středních
+škol (a odpovídajících ročníků víceletých gymnázií):</p>
+<ul>
+	<li>Kategorie A &ndash; 4. ročník</li>
+	<li>Kategorie B &ndash; 3. ročník</li>
+	<li>Kategorie C &ndash; 2. ročník</li>
+	<li>Kategorie D &ndash; 1. ročník</li>
+</ul>
+<p>
+Všechny kategorie mají školní a&nbsp;krajské kolo.
+Kategorie&nbsp;A navíc vrcholí <a href="<?php echo odkaz("celost.html"); ?>" title="ústřední kolo">ústředním kolem</a>.
+Každý řešitel se může zúčastnit i kategorie vyšší, než mu odpovídá, pokud se na to cítí.
+</p>
+<div class="tab-pane active" id="organizace-student">
+<p>
+Ve&nbsp;školním kole máte za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="/studijni-texty" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
+fyzikální olympiády.
+Jeho úkolem je vás jednak seznámit s&nbsp;typem úloh, které se v&nbsp;dané kategorii mohou v&nbsp;dalších kolech vyskytnout, a&nbsp;hlavně také prověřit vaši
+schopnost tyto úlohy řešit.
+První tři úlohy řešte nejlépe do konce listopadu,
+potom řešte další čtyři úlohy včetně experimentální úlohy.
+
+<p>
+Termín odevzdání řešení pro kategorii&nbsp;A je začátek ledna
+(<strong><?=$terminA?></strong>),
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D začátek dubna
+(<strong><?=$terminBCD?></strong>)
+</p>
+<p>
+Vypracovaná řešení odevzdejte svému učiteli fyziky, který je opraví
+a&nbsp;oklasifikuje. Za každou úlohu můžete získat maximálně 10&nbsp;bodů.
+Řešení je vyhovující, pokud získáte za úlohu alespoň 5&nbsp;bodů.
+</p>
+<p>
+<b>Úspěšní řešitelé</b> prvního kola jsou ti z&nbsp;vás, kteří vyřeší alespoň
+pět úloh za pět bodů a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentální úlohu.
+O&nbsp;postupu do krajského kola a&nbsp;místě jeho konání se dozvíte prostřednictvím svého
+učitele fyziky. Na pomoc
+při řešení úloh mohou organizovat vaši učitelé fyziky konzultace, kroužky nebo
+semináře.
+</p>
+<p>
+Nepodceňujte řešení školního kola! Úlohy ve druhém kole soutěže jsou velmi
+často podobné těm z&nbsp;kola prvního. Proto se velmi nedoporučuje opisovat řešení
+od kamaráda. Může se totiž stát, že budete úlohami ve druhém kole zaskočeni,
+vyvarovat se tomu můžete tím, že vyřešíte poctivě úlohy školního kola.
+Neopomeňte si také prostudovat studijní témata ze studijních textů, které
+jsou distribuovány na školy. V&nbsp;každém kole se vždy jedna úloha týká studijního tématu.
+</p>
+</div>
+
+<div id="organizace-ucitel" class="tab-pane">
+<p>
+Ve&nbsp;školním kole mají žáci za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="/studijni-texty" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
+fyzikální olympiády.
+Termín odevzdání řešení pro kategorii&nbsp;A je začátek ledna
+(<strong><?php echo $terminA ?></strong>),
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D začátek dubna
+(<strong><?php echo $terminBCD ?></strong>).
+Vypracovaná řešení od svých žáků vyberte, opravte a&nbsp;oklasifikujte
+je bodovým systémem, který zohledňuje kvalitu a&nbsp;úplnost řešení. Za každou úlohu může student získat maximálně 10&nbsp;bodů.
+Řešení je vyhovující, pokud řešitel získal za úlohu alespoň 5&nbsp;bodů. Řešení nevyhovuje, jsou-li odborné nedostatky závažné nebo je řešení z&nbsp;větší části neúplné, jestliže chybí výklad nebo je neúplný, takže se z&nbsp;něho
+nedá usuzovat na myšlenkový postup řešení. Bodový systém objektivizuje
+hodnocení a&nbsp;usnadňuje výběr postupujících do dalšího kola.
+</p>
+<p>
+Jako pomůcka pro hodnocení úloh přijde k&nbsp;vám na školu instruktážní řešení. Po
+ukončení prvního kola soutěže odešlete všechna opravená řešení (i&nbsp;neúspěšných řešitelů) na příslušnou KK&nbsp;FO. Od nich se dozvíte, kteří řešitelé budou zařazeni do
+druhého (krajského) kola, a&nbsp;kde se krajské kolo koná. Tyto informace oznámíte
+svým studentům, případně se s&nbsp;nimi na krajské kolo dostavíte.
+</p>
+<p>
+Na pomoc
+řešitelům při řešení úloh můžete organizovat konzultace, kroužky nebo
+semináře.
+</p>
+</div>
+
+<div id="organizace-organizator" class="tab-pane">
+<p>
+Ve&nbsp;školním kole mají žáci za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="/studijni-texty" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
+fyzikální olympiády.
+Termín odevzdání řešení pro kategorii&nbsp;A je začátek ledna
+(<strong><?php echo $terminA ?></strong>),
+v&nbsp;kategoriích B,&nbsp;C,&nbsp;D začátek dubna
+(<strong><?php echo $terminBCD ?></strong>).
+Učitel fyziky opraví řešení úloh a&nbsp;klasifikuje je bodovým systémem, který zohledňuje kvalitu a&nbsp;úplnost řešení. Za každou úlohu může student získat maximálně 10&nbsp;bodů.
+Řešení je vyhovující, pokud řešitel získal za úlohu alespoň 5&nbsp;bodů. Řešení nevyhovuje, jsou-li odborné nedostatky závažné nebo je řešení z&nbsp;větší části neúplné, jestliže chybí výklad nebo je neúplný, takže se z&nbsp;něho
+nedá usuzovat na myšlenkový postup řešení. Bodový systém objektivizuje
+hodnocení a&nbsp;usnadňuje výběr postupujících do dalšího kola.
+</p>
+<p>
+Referent FO na škole odešle po ukončení prvního kola soutěže všechna opravená řešení (i&nbsp;neúspěšných řešitelů) na příslušnou KK&nbsp;FO. Referenti KK&nbsp;FO pro kategorie
+provedou kontrolu řešení a&nbsp;KK&nbsp;FO rozhodne, kteří řešitelé budou zařazeni do
+druhého (krajského) kola, a&nbsp;oznámí to referentům na školách.
+</p>
+<p>
+Úspěšní řešitelé prvního kola jsou ti soutěžící, kteří úspěšně vyřeší alespoň
+pět úloh a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentální úlohu. Na pomoc
+řešitelům při řešení úloh organizují učitelé fyziky konzultace, kroužky nebo
+semináře v&nbsp;střediskových školách pod patronátem JČMF.
+</p>
+</div>
+</div>
+</div>
+
+<h3 class="accordion<? if ($krajBeforeBCD): ?> accordion-main<? endif; ?>" id="ulohy">Úlohy školního kola</h3>
+
+<div>
+<h4>Zadání</h4>
+<div class="table-responsive">
+<table class="table zadani">
+<tr>
+	<th scope="col">Kategorie A</th>
+	<th scope="col">Kategorie B</th>
+	<th scope="col">Kategorie C</th>
+	<th scope="col">Kategorie D</th>
+</tr>
+<tr>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/62/fo62a1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminA?></small>
+	</td>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/62/fo62b1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminBCD?></small>
+	</td>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/62/fo62c1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminBCD?></small>
+	</td>
+	<td>
+		<a href="<?php echo ROOT_WWW ?>archiv/62/fo62d1_z.pdf"><i class="pdf">pdf</i></a>
+		<br>
+		<small><?=$terminBCD?></small>
+	</td>
+</tr>
+<tr>
+	<td><i>4. ročník SŠ</i></td>
+	<td><i>3. ročník SŠ</i></td>
+	<td><i>2. ročník SŠ</i></td>
+	<td><i>1. ročník SŠ</i></td>
+</tr>
+</table>
+</div>
+
+<h4>Řešení</h4>
+
+<? if ($beforeBCD) : ?>
+<p>
+Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
+<strong>samostatný papír</strong>, pomocné obrázky a náčrty zhotovte tužkou. Jestliže používáte
+kalkulačku, nezapomeňte na správné zaokrouhlení výsledků.
+</p>
+<p>
+Na první list řešení každé úlohy napište záhlaví:
+</p>
+<table style="border : 0px none; background-color : transparent;">
+<tr>
+	<td colspan="3" style="border : 0px none">Jméno a příjmení:</td>
+</tr>
+<tr>
+	<td style="border : 0px none">Třída:</td>
+	<td style="border : 0px none">Zaměření:</td>
+	<td style="border : 0px none">Kategorie:</td>
+</tr>
+<tr>
+	<td colspan="3" style="border : 0px none">Škola:</td>
+</tr>
+<tr>
+	<td style="border : 0px none">Učitel fyziky:</td>
+	<td style="border : 0px none">Posudek:</td>
+	<td style="border : 0px none">Posuzovali:</td>
+</tr>
+<tr>
+	<td colspan="3" style="border : 0px none">Úloha č.:</td>
+</tr>
+</table>
+<p>
+Texty úloh <strong>neopisujte</strong>, napište jen text řešení a&nbsp;udělejte legendu označení. Na
+<strong>každý další list</strong> napište svoje jméno, příjmení, školu, číslo úlohy a&nbsp;číslo
+strany řešení.
+</p>
+<? endif; ?>
+<? if (!$beforeA) : ?>
+<div class="table-responsive">
+<table class="table zadani">
+<tr>
+    <th scope="col">Kategorie A</th>
+	<th scope="col">Kategorie B</th>
+	<th scope="col">Kategorie C</th>
+    <th scope="col">Kategorie D</th>
+</tr>
+<tr>
+<? if (!$beforeA) : ?>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62a1_r.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+<? endif; ?>
+<? if (!$beforeBCD) : ?>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62b1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62c1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62d1_r.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+	<td></td>
+	<td></td>
+<? endif; ?>
+</tr>
+</table>
+</div>
+<? endif; ?>
+
+</div>
+
+
+<h3 class="accordion<?if ($krajBeforeBCD):?> accordion-main<? endif; ?>" id="temata">Studijní témata</h3>
+<div>
+<?php include 'html/texty.html' ?>
+</div>
+
+<h3 class="accordion<?if ($krajBeforeA && !$beforeA || $krajBeforeBCD && !$beforeBCD):?> accordion-main<? endif; ?>" id="organizace">Krajské kolo</h3>
+
+<div>
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
+	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
+	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="organizace-student">
+<p>
+Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
+<strong><?php echo v($terminA) ?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
+<strong><?php echo v($terminBCD) ?></strong>.
+</p>
+<p>
+Pozvánku (s&nbsp;místem a&nbsp;časem konání) na krajské kolo obdržíte od svého učitele fyziky
+nebo ředitele školy, pokud jste úspěšně vyřešili domácí kolo.
+V&nbsp;krajském kole jsou zadané jen čtyři teoretické úlohy. Některé
+z&nbsp;nich kontrolují, jak dobře jste prostudovali zadané <a href="/studijni-texty" title="studijní téma">studijní téma</a>.
+Čas na řešení úloh je 4&nbsp;hodiny čistého času. Maximální dosažitelný počet bodů
+z&nbsp;jedné úlohy je&nbsp;10. V&nbsp;krajském kole můžete používat Matematické, fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
+</p>
+<p>
+Za <b>úspěšného řešitele</b> se považuje každý soutěžící, který celkové dosáhl minimálně 14 bodů, přičemž bodové hodnocení alespoň dvou úloh bylo 5 bodů nebo více. Ve výsledném pořadí jsou nejprve uvedeni úspěšní řešitelé seřazeni podle počtu bodů a teprve za nimi jsou další účastníci. Při shodném počtu bodů o pořadí rozhoduje:
+<ol>
+    <li>Vyšší počet „modifikovaných bodů“, které se vypočítají dle vzorce &Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>),
+        kde <i>b</i> je bodový zisk z dané úlohy, <i>max</i> je maximum bodů dané úlohy a&nbsp;<i>prum</i> je průměrný bodový zisk z&nbsp;dané úlohy v daném kraji.
+Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.</li>
+    <li>Ročník studia soutěžícího, příp. datum narození. Mladší mají přednost.</li>
+    <li>Pokud nerozhodne ani jedno z předchozích kritérií, rozhoduje los.</li>
+</ol>
+<p>
+Úspěšní řešitelé obdrží diplom úspěšného řešitele, úspěšní řešitelé na 1. až 3. místě obdrží kromě diplomu i věcný dar. Ostatní soutěžící obdrží diplom za účast.
+</p>
+<p>
+Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude vybráno nejvíce 50&nbsp;účastníků do třetího, ústředního kola soutěže.
+</p>
+</div>
+
+<div id="organizace-ucitel" class="tab-pane">
+<p>
+Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
+<strong><?php echo v($terminA) ?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
+<strong><?php echo v($terminBCD) ?></strong>.
+</p>
+<p>
+Pozvánku na krajské kolo pro své studenty obdržíte od příslušné krajské komise FO.
+O&nbsp;postupu rozhodují jejich výsledky v&nbsp;domácím kole. Pozvánky rozdejte studentům,
+aby věděli o&nbsp;místě a&nbsp;času konání krajského kola, případně je tam můžete přímo doprovodit.
+V&nbsp;krajském kole jsou zadané čtyři teoretické úlohy. Některé
+z&nbsp;nich kontrolují, jak vaši studenti prostudovali zadané <a href="/studijni-texty" title="studijní téma">studijní téma</a>.
+Čas na řešení úloh je 4&nbsp;hodiny čistého času.
+V&nbsp;krajském kole mohou studenti používat Matematické,
+fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
+</p>
+<p>
+Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO
+nejvíce 50&nbsp;účastníků do třetího, ústředního kola soutěže.
+</p>
+</div>
+
+<div id="organizace-organizator" class="tab-pane">
+<p>
+Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
+<strong><?php echo v($terminA) ?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
+<strong><?php echo v($terminBCD) ?></strong>.
+</p>
+<p>
+V&nbsp;krajském kole, na které zve příslušný krajská komise FO soutěžící podle
+výsledků v&nbsp;domácím kole
+prostřednictvím ředitelů škol, jsou zadané jen čtyři teoretické úlohy.
+Čas na řešení úloh je 4&nbsp;hodiny čistého času. Maximální dosažitelný počet bodů
+z&nbsp;jedné úlohy je&nbsp;10.
+</p>
+<p>
+Za <b>úspěšného řešitele</b> se považuje každý soutěžící, který celkové dosáhl minimálně 14 bodů, přičemž bodové hodnocení alespoň dvou úloh bylo 5 bodů nebo více. Ve výsledném pořadí jsou nejprve uvedeni úspěšní řešitelé seřazeni podle počtu bodů a teprve za nimi jsou další účastníci. Při shodném počtu bodů o pořadí rozhoduje:
+<ol>
+    <li>Vyšší počet „modifikovaných bodů“, které se vypočítají dle vzorce &Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>),
+        kde <i>b</i> je bodový zisk z dané úlohy, <i>max</i> je maximum bodů dané úlohy a&nbsp;<i>prum</i> je průměrný bodový zisk z&nbsp;dané úlohy v daném kraji.
+Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.</li>
+    <li>Ročník studia soutěžícího, příp. datum narození. Mladší mají přednost.</li>
+    <li>Pokud nerozhodne ani jedno z předchozích kritérií, rozhoduje los.</li>
+</ol>
+<p>
+Úspěšní řešitelé obdrží diplom úspěšného řešitele, úspěšní řešitelé na 1. až 3. místě obdrží kromě diplomu i věcný dar. Ostatní soutěžící obdrží diplom za účast.
+</p>
+<p>
+Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh KK&nbsp;FO nejvíce 50&nbsp;účastníků do třetího, ústředního kola soutěže.
+</p>
+<p>
+V&nbsp;krajském kole mohou soutěžící používat Matematické,
+fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
+</p>
+</div>
+</div>
+</div>
+
+<? if (!$krajBeforeA) : ?>
+<h3 class="accordion<?if (!$krajBeforeBCD):?> accordion-main<? endif; ?>" id="ulohy">Úlohy krajského kola</h3>
+
+<div>
+<h4>Zadání</h4>
+
+<div class="table-responsive">
+<table class="table zadani">
+<tr>
+        <th scope="col">Kategorie A</th>
+        <th scope="col">Kategorie B</th>
+        <th scope="col">Kategorie C</th>
+        <th scope="col">Kategorie D</th>
+</tr>
+<tr>
+    <td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62a2_z.pdf"><i class="pdf">pdf</i></a></td>
+<? if (!$krajBeforeBCD) : ?>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62b2_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62c2_z.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62d2_z.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+	<td></td>
+	<td></td>
+<? endif; ?>
+</tr>
+</table>
+</div>
+
+<h4>Řešení</h4>
+
+<div class="table-responsive">
+<table class="table zadani">
+<tr>
+        <th scope="col">Kategorie A</th>
+        <th scope="col">Kategorie B</th>
+        <th scope="col">Kategorie C</th>
+        <th scope="col">Kategorie D</th>
+</tr>
+<tr>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62a2_r.pdf"><i class="pdf">pdf</i></a></td>
+<? if (!$krajBeforeBCD) : ?>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62b2_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62c2_r.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62d2_r.pdf"><i class="pdf">pdf</i></a></td>
+<? else :?>
+	<td></td>
+	<td></td>
+	<td></td>
+<? endif; ?>
+</tr>
+</table>
+</div>
+
+</div>
+<? endif; ?>
+
+<!--h3 class="accordion<?if (!$krajBeforeA):?> accordion-main<? endif; ?>" id="vysledky">Výsledky</h3>
+
+<div>
+	
+<p>
+Výsledky krajského kola hledejte na webových <a href="<?php echo odkaz("stranky_regionu.html") ?>" title="Webové stránky krajských komisí">stránkách krajských komisí FO</a>.
+</p>
+
+<p>
+Kompletní výsledky krajských kol kategorie&nbsp;A v&nbsp;jednotlivých krajích.
+</p>
+<div>
+<ul>
+        <li><a href="https://www.chces-soutezit.cz/souteze/editace-soutezni-kolo?soutez_kategorie_id=862&soutez_kolo_id=16623&soutez_id=256&backlink=5m4ba&do=GeneratePdf">Jihomoravský kraj (pdf)</a></li>
+        <li><a href="http://kvary.fyzikalniolympiada.cz/vysledky/62/krajske-kolo/a/" title="Karlovy Vary">Karlovarský kraj</a></li>
+        <li><a href="https://drive.google.com/file/d/1c6VPFx37yDJlAcbCzHG2CP4ZW2gKyuq_/view">Liberecký kraj</a></li>
+		<li><a href="https://svcoo.iddm.cz/admin/download/document/1312">Moravskoslezský kraj (pdf)</a></li>
+        <li><a href="http://fo.upol.cz/archiv/kk62.html#kata">Olomoucký kraj</a></li>
+        <li><a href="https://www.gypce.cz/wp-content/uploads/2020/01/FO_A_2020_Pardubice.pdf">Pardubický kraj (pdf)</a></li>
+        <li><a href="https://kof.zcu.cz/fo/2020/FO_A_2020.xls">Plzeňský kraj (xls)</a></li>
+        <li><a href="http://praha.fyzikalniolympiada.cz/vysledky/62-rocnik-2019-2020/krajske-kolo/kategorie-a/" title="Praha">Praha</a></li>
+        <li><a href="http://vysocina.fyzikalniolympiada.cz/vysledkove-listiny/62/a/">Kraj Vysočina</a></li>
+
+        <li><a href="http://www.gybon.cz/~sada/strana2.html">Královéhradecký kraj</a></li>
+        <li><a href="http://fo.czechian.net/55foa.htm">Středočeský kraj</a></li>
+        <li><a href="http://www.pf.jcu.cz/stru/katedry/fyz/fo/55roc_a.php?var=print">Jihočeský kraj</a> (5&nbsp;úspěšných řešitelů)</li>
+        <li><a href="https://www.gymnaziumjihlava.cz/fo/">Kraj Vysočina</a> (9&nbsp;úspěšných řešitelů)</li>
+        <li><a href="http://www.calvin.wz.cz/Vys_Kat_A.doc">Zlínský kraj</a> (doc, 2&nbsp;úspěšní řešitelé)</li>
+        <li><a href="http://physics.ujep.cz/~fo/vysl_2007-a.html">Ústecký kraj</a>, 1.&nbsp;2.</li>
+</ul>
+</div>
+
+</div-->

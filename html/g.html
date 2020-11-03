@@ -1,4 +1,4 @@
-<h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?>&nbsp;&ndash; kategorie G Fyzikální olympiády</h2>
+<h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?></h2>
 
 <?php
 $GLOBALS['mysql']->query('
@@ -127,25 +127,25 @@ O zařazení řešitelů do druhého kola soutěže rozhodne okresní komise FO,
     <th>Domácí kolo</th>
     <td>
         <!--Zveřejníme v&nbsp;nejbližší době.-->
-		<a href="<?php echo ROOT_WWW ?>archiv/61/fo61g1_z.pdf" title="Zadání úloh domácího kola ve formátu pdf"><i class="pdf">pdf</i></a><br>
+		<a href="<?php echo ROOT_WWW ?>archiv/62/fo62g1_z.pdf" title="Zadání úloh domácího kola ve formátu pdf"><i class="pdf">pdf</i></a><br>
 		<small><?=$termin1?></small>
     </td>
     <td>
 		<? if ($beforeDom) :?>
 		Zveřejníme po termínu odevzdání
 		<? else : ?>
-        <a href="archiv/61/fo61g1_r.pdf"><i class="pdf">pdf</i></a>
+        <a href="archiv/62/fo62g1_r.pdf"><i class="pdf">pdf</i></a>
 		<? endif; ?>
     </td>
 </tr>
 <tr>
     <th>Okresní kolo</th>
     <td>
-		<!--a href="<?php echo ROOT_WWW ?>archiv/61/fo61g2_z.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><i class="pdf">pdf</i></a><br-->
+		<!--a href="<?php echo ROOT_WWW ?>archiv/62/fo62g2_z.pdf" title="Zadání úloh domácího kola ve formátu pdf pro tisk"><i class="pdf">pdf</i></a><br-->
 		<small><?=$termin2?></small>
     </td>
     <td>
-        <!--a href="archiv/61/fo61g2_r.pdf"><i class="pdf">pdf</i></a-->
+        <!--a href="archiv/62/fo62g2_r.pdf"><i class="pdf">pdf</i></a-->
     </td>
 </tr>
 </table>

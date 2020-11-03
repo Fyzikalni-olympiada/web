@@ -254,7 +254,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
                     </div>
                     <div>
                        <i>Mediální partner</i>
-                       <a href="http://www.cscasfyz.fzu.cz/">
+                       <a href="https://ccf.fzu.cz/">
                         <img src="/pic/logo_ccf.png" alt="Československý časopis pro fyziku" class="cscas" />
                        </a>
                        <br style="clear: right" />
