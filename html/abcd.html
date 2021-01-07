@@ -35,19 +35,19 @@ $GLOBALS['mysql']->query('
 while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
         switch ($kategorie) {
                         case 1:
-                                $terminA = $termin;
-								$dateA = $date;
+                                $krajTerminA = $termin;
+								$krajDateA = $date;
                                 break;
                         case 2:
-                                $terminBCD = $termin;
-								$dateBCD = $date;
+                                $krajTerminBCD = $termin;
+								$krajDateBCD = $date;
                                 break;
                         default:
                                 break;
         }
 }                       
-$krajBeforeA = $dateA >= date('Y-m-d');
-$krajBeforeBCD = $dateBCD >= date('Y-m-d');
+$krajBeforeA = $krajDateA >= date('Y-m-d');
+$krajBeforeBCD = $krajDateBCD >= date('Y-m-d');
 ?>
 <h3 class="accordion" id="organizace">Školní kolo</h3>
 
@@ -295,9 +295,9 @@ strany řešení.
 <div class="tab-pane active" id="organizace-student">
 <p>
 Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-<strong><?php echo v($terminA) ?></strong>,
+<strong><?php echo v($krajTerminA) ?></strong>,
 v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-<strong><?php echo v($terminBCD) ?></strong>.
+<strong><?php echo v($krajTerminBCD) ?></strong>.
 </p>
 <p>
 Pozvánku (s&nbsp;místem a&nbsp;časem konání) na krajské kolo obdržíte od svého učitele fyziky
@@ -327,9 +327,9 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 <div id="organizace-ucitel" class="tab-pane">
 <p>
 Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-<strong><?php echo v($terminA) ?></strong>,
+<strong><?php echo v($krajTerminA) ?></strong>,
 v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-<strong><?php echo v($terminBCD) ?></strong>.
+<strong><?php echo v($krajTerminBCD) ?></strong>.
 </p>
 <p>
 Pozvánku na krajské kolo pro své studenty obdržíte od příslušné krajské komise FO.
@@ -350,9 +350,9 @@ nejvíce 50&nbsp;účastníků do třetího, ústředního kola soutěže.
 <div id="organizace-organizator" class="tab-pane">
 <p>
 Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-<strong><?php echo v($terminA) ?></strong>,
+<strong><?php echo v($krajTerminA) ?></strong>,
 v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-<strong><?php echo v($terminBCD) ?></strong>.
+<strong><?php echo v($krajTerminBCD) ?></strong>.
 </p>
 <p>
 V&nbsp;krajském kole, na které zve příslušný krajská komise FO soutěžící podle
