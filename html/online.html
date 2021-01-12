@@ -1,0 +1,226 @@
+<h2>Krajské kolo A <?php echo (AKTUALNI_ROCNIK) ?>. ročníku FO</h2>
+
+<h3 class="accordion accordion-main" id="organizace">Krajské kolo online</h3>
+<div>
+	<p>Krajské kolo Fyzikální olympiády v kategorii A proběhne dálkovou formou. Úlohy budete řešit doma, ve škole, nebo tam, kde budete mít počítač, přístup k internetu a klid.</p> 
+	<p>Uskuteční se <b>ve středu 20. ledna od 8:45 do 13:00</b> (SEČ). Další půlhodinu budete mít čas na odeslání řešení prostřednictvím webového formuláře.</p>
+	<h4>Registrace</h4>
+
+		<p>Nemáte-li <i>Google účet</i>, <a href="https://accounts.google.com/signup">vytvořte si ho</a>. Je potřeba k otevření formuláře pro registraci a odeslání úloh.</p>
+		<p>Formulář je stejný jako loni. Pokud se vám tedy zobrazí <b>Už jste odpověděli</b>, klikněte na odkaz Upravit odpověď, aktualizujte odpovědi a formulář <i>odešlete</i>.
+		<p><a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSfvHLS7ZoZBtDog3Nlpz-5ALBMJlN7LyChxwxekfMnA4unEcg/viewform?usp=sf_link" target="_blank">Registrovat se</a></p>
+		<p>Registrace bude <b>ukončena v pondělí 18. ledna ve 22:00</b>.</p>
+
+	<h4>Čestné prohlášení</h4>
+		<p>Připravte si čestné prohlášení následujícího znění:
+			<blockquote>
+				Já, níže podepsaný, <var>(Fridolín Centimetr)</var>, žák <var>(Gymnázia Járy Cimrmana v Cerekvici nad Bystřicí)</var>  čestně prohlašuji, že jsem úlohy zadané v rámci krajského kola 62. ročníku Fyzikální olympiády řešil samostatně, bez jakékoliv pomoci jiné osoby a pouze s povolenými pomůckami (tabulky a kalkulačka).<br><br>
+
+				V <var>(Cerekvici nad Bystřicí)</var> dne 27. 1. 2021
+			</blockquote>
+		</p>
+		<p>Toto čestné prohlášení <i>podepište</i> a naskenujte či vyfoťte. Budete ho potřebovat v den soutěže (viz pokyny dále).</p>
+
+
+	<!--p><b>Odevzdávání řešení úloh již skončilo.</b></p>
+<div class="table-responsive">
+<table class="table zadani">
+<tr>
+        <th scope="col" style="width: 50%">Zadání úloh</th>
+        <th scope="col" style="width: 50%">Řešení úloh</th>
+</tr>
+<tr>
+	<td style="vertical-align: top !important">
+		<a href="<?php echo ROOT_WWW ?>archiv/62/fo62bcd2_z.pdf"><i class="pdf" style="width: 96px; height: 96px; margin: 16px; background-size: 96px 96px;">pdf</i></a><br>
+		<small>Odevzdávání řešení již skončilo</small><br>
+	</td>
+	<td style="vertical-align: top !important">
+		<a href="<?php echo ROOT_WWW ?>archiv/62/fo62bcd2_r.pdf"><i class="pdf" style="width: 96px; height: 96px; margin: 16px; background-size: 96px 96px;">pdf</i></a><br>
+		<small>V zadání na obrázku v úloze 1 byly špatně označeny směry pohybu automobilů</small><br>
+	</td>
+</tr>
+</table>
+</div-->
+</div>
+<?php if (false) : ?>
+<h3 class="accordion accordion-main" id="vysledky">Výsledky</h3>
+<div>
+<form class="form-inline" style="margin-bottom: 15px">
+	<div class="form-group">
+		<select class="form-control" id="kraj-control" onchange="krajkat(this)">
+			<option>Celá ČR</option>
+			<option>Hlavní město Praha</option>
+			<option>Středočeský kraj</option>
+			<option>Jihočeský kraj</option>
+			<option>Plzeňský kraj</option>
+			<option>Karlovarský kraj</option>
+			<option>Ústecký kraj</option>
+			<option>Liberecký kraj</option>
+			<option>Královéhradecký kraj</option>
+			<option>Pardubický kraj</option>
+			<option>Kraj Vysočina</option>
+			<option>Jihomoravský kraj</option>
+			<option>Olomoucký kraj</option>
+			<option>Moravskoslezský kraj</option>
+			<option>Zlínský kraj</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<select class="form-control" id="kat-control" onchange="krajkat(this)">
+			<option value="BCD">Všechny kategorie</option>
+			<option value="B">Kategorie B</option>
+			<option value="C">Kategorie C</option>
+			<option value="D">Kategorie D</option>
+		</select>
+	</div>
+</form>
+<script>
+var krajEl=document.getElementById("kraj-control")
+var katEl=document.getElementById("kat-control")
+function krajkat(el) {
+	var kraj = krajEl.value;
+	var kat = katEl.value;
+	var showAllKraj = kraj == "Celá ČR";
+	var showAllKat = kat == "BCD";
+	var poradi = 0;
+	var lastSamePoradi = 0;
+	var lastSameBody = "41";
+	document.querySelectorAll("#vysledky-table tbody tr").forEach(function(tr) {
+		if (
+			(showAllKraj || tr.children[2].textContent == kraj) &&
+			(showAllKat	 || tr.children[3].textContent == kat)
+		) {
+			tr.style.display = '';
+			poradi++;
+			if (tr.children[9].textContent == lastSameBody) {
+				tr.children[0].textContent = lastSamePoradi;
+			} else {
+				tr.children[0].textContent = poradi;
+				lastSamePoradi = poradi;
+				lastSameBody = tr.children[9].textContent;
+			}
+		} else {
+			tr.style.display = 'none';
+		} 
+	});
+}
+</script>
+<div class="table-responsive">
+<table class="table" id="vysledky-table">
+<thead>
+	<tr><th rowspan=2></th>
+		<th rowspan=2>Jméno a příjmení</th>
+		<th rowspan=2 style="display: none">Kraj</th>
+		<th rowspan=2>Kat.</th>
+		<th rowspan=2>Škola</th>
+		<th colspan=4>Úloha</th>
+		<th rowspan=2>Body</th>
+		<th rowspan=2>Učitel fyziky</th></tr>
+	<tr>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th></tr>
+
+</thead>
+<tbody>
+	<tr><td></td>
+		<td>Robert Gemrot</td>
+		<td style="display: none">Moravskoslezský kraj</td>
+		<td>B</td>
+		<td>Gymnázium Komenského Havířov</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td>10</td>
+		<td><b>40</b></td>
+		<td>Irena Fikačková</td>
+	</tr>
+</tbody></table>
+</div>
+<script>
+	krajkat()
+</script>
+</div>
+<? endif; ?>
+<h3 class="accordion accordion-main" id="pokyny">Pravidla</h3>
+<div>
+	<p>Důkladně se prosím seznamte s pravidly pro online krajské kolo:</p>
+	<ol>
+		<li>Na řešení čtyř úloh budete mít čtyři hodiny čistého času.</li>
+		<li>Můžete používat Matematické, fyzikální a chemické tabulky pro
+			střední školy a neprogramovatelné kalkulačky. Jiné pomůcky,
+			informační zdroje a prameny povolené nejsou.</li>
+		<li>Pochopitelně jsou zakázany konzultace a porady s kamarády,
+			spolužáky, rodiči, učiteli, přítelem na telefonu, zkrátka radit se
+			nesmíte s nikým. Toto potvrzujete čestným prohlášením.</li>
+		<li>Během souteže budete připojeni na Zoom, kde budete vystupovat pod
+			svým civilním jménem.</li>
+		<li>Kameru budete mít nastavenou na své pracovní místo tak, aby vám
+			bylo vidět na obličej a na ruce. Do záběru kamery umístíte hodiny
+			(budík, mobil).</li>
+		<li>V Zoomu nasdílíte obrazovku svého počítače. Na obrazovce smíte mít
+			pouze zadání úloh nebo aplikaci Zoom.</li>
+		<li>Od okamžiku zobrazení zadání úloh na svém počítači, nesmíte sahat
+			na klávesnici, pouze myší můžete posouvat zadání.</li>
+		<li>Když odejde na toaletu, musí se vrátit do dvou minut.</li>
+		<li>Vypracovaná řešení je možné naskenovat nebo nafotit mobilem.</li>
+	</ol>
+</div>
+<h3 class="accordion accordion-main" id="pokyny">Podrobné pokyny</h3>
+<div>
+	<h4>Příprava před zahájením</h4>
+	<ul>
+		<li>S přípravou začněte včas. Doporučujeme začít nejpozději v 8:00.</li>
+		<li>Připravte si dostatek papírů na psaní a psací potřeby. Jistě se
+			bude také hodit pití a svačina.</li>
+		<li>Papíry nadepište svým <em>jménem</em>, <em>názvem školy</em> a
+			dobře viditelným <em>číslem úlohy</em>.</li>
+		<li>Přípravené podepsané čestné prohlášení naskenujte, či vyfoťte
+			mobilem, vložte ho do <a
+				href="https://docs.google.com/forms/d/e/1FAIpQLSfvHLS7ZoZBtDog3Nlpz-5ALBMJlN7LyChxwxekfMnA4unEcg/viewform?usp=sf_link"
+				target="_blank">formuláře pro odevzdávání úloh</a> a formulář
+		<em>odešlete</em>. Jedná se o stejný formulář, který jste vyplňovali
+		při registraci, proto je třeba nejprve potvrdit, že ho chcete
+		editovat. To stejné budete dělat při odevzdávání úloh.</li>
+		<li>Emailem by vám měl již dorazit odkaz na Zoom, prostřednictvím kterého
+			se <b>nejpozději v 8:45</b> přihlašte do místnosti, kde budou další
+			soutěžící a dohlížitel.</li>
+		<li>Kameru nastavte tak, aby vám bylo vidět na obličej a na ruce. Do
+			záběru kamery umístěte také hodiny (budík, mobil).</li>
+		<li>Nasdílejte obrazovku svého počítače.</li>
+		<li>Přesně v 9:00 (27. 1. 2021) se na této stránce objeví <a
+				href="/archiv/62/fo62a2_z.pdf">zadání úloh</a> (do té doby bude
+			odkaz vracet „nenalezeno“). Odkaz na zadání máte i v emailu.</li>
+		<li>Nezapomeňte, že řešení každé úlohy je třeba začít psát na nový
+			papír. Není přípustné, aby na jednom papíru bylo řešení více úloh,
+			protože každou úlohu bude opravovat někdo jiný.</li>
+		</ul>
+
+	<h4>Odeslání vypracovaných řešení</h4>
+	<ul>
+		<li>Ve 13:00 čas na řešení končí. Dalších 30 minut máte na to, abyste
+			úlohy odeslali. Nic vám však nebrání odeslat úlohy dříve, pokud
+			budete se vším hotovi.</li>
+		<li>Vypracovaná řešení naskenujte nebo vyfoťte.</li>
+		<li>Ve <a
+				href="https://docs.google.com/forms/d/e/1FAIpQLSfvHLS7ZoZBtDog3Nlpz-5ALBMJlN7LyChxwxekfMnA4unEcg/viewform?usp=sf_link"
+				target="_blank">formuláři</a> lze ke každé úloze nahrát až
+		    deset obrázků nebo pdf souborů.</li>
+		<li>Maximální velikost jednoho souboru je 10 MB.</li>
+		<li><b>Do 13:30</b> (27. 1. 2021) musíte vyplněný formulář odeslat.</li>
+		<li>Fomulář lze odeslat pouze jednou, ale máte možnost ho editovat i po
+			odeslání, pokud například zapomenete přiložit jeden list
+			řešení.</li>
+		<li>Uploadované úlohy již nelze smazat a dodatečné opravy v řešení
+			nebudou akceptovány.</li>
+		<li>Dávejte pozor na čas, kdy opravenou verzi formuláře odesíláte.
+			Pokud ji odešlete po stanovéném limitu, svoje řešení tím
+			zneplatníte.</li>
+		<li>Po nahrání úloh nezapomeňte formulář <b>odeslat</b> tlačítkem pod ním.</li>
+		<li>V případě jakýchkoliv technických problémů pište na
+			webmaster@fyzikalniolympiada.cz nebo volejte na 608 613 117.</li>
+	</ul>
+
+	<p>Mnoho zdaru přejí organizátoři!</p>
+</div>

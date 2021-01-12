@@ -38,7 +38,7 @@ SetEnvIf Host ^www\.(.*)$ without_www=$1
   RewriteCond %{REQUEST_URI} domaci-kolo
   RewriteRule ^(.*)$ /stredni-skoly [R=301,L,QSA]
 
-  RewriteCond %{REQUEST_URI} krajske-kolo
+  RewriteCond %{REQUEST_URI} krajske-kolo$
   RewriteRule ^(.*)$ /stredni-skoly [R=301,L,QSA]
 
   RewriteCond %{REQUEST_URI} celostatni-kolo
