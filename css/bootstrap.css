@@ -1579,8 +1579,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #e8edff;
-  border-color: #ced9ff;
+  background-color: #3e539f;
+  border-color: #1e3074;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -1588,8 +1588,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #bfcdff;
-  border-color: #91a9ff;
+  background-color: #586ebe;
+  border-color: #2d48ae;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -1611,8 +1611,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #e8edff;
-  border-color: #ced9ff;
+  background-color: #3e539f;
+  border-color: #1e3074;
 }
 .btn-warning {
   color: #ffffff;
@@ -2699,7 +2699,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #e8edff;
+  background-color: #3e539f;
 }
 .nav-stacked > li {
   float: none;
