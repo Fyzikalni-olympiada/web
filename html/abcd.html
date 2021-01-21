@@ -46,8 +46,8 @@ while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
                                 break;
         }
 }                       
-$krajBeforeA = $krajDateA >= date('Y-m-d');
-$krajBeforeBCD = $krajDateBCD >= date('Y-m-d');
+$krajBeforeA = $krajDateA > date('Y-m-d');
+$krajBeforeBCD = $krajDateBCD > date('Y-m-d');
 ?>
 <h3 class="accordion" id="organizace">Školní kolo</h3>
 
