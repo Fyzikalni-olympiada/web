@@ -325,6 +325,9 @@ function rand_thumb()
 
 function nadpis()
 {
+	if ($GLOBALS['nadpis'] === NULL) {
+		return '404';
+	}
     $headline = '';
     /* $GLOBALS['mysql_odkazy']->query("
       SELECT name
@@ -450,8 +453,8 @@ function parsuj()
 		$GLOBALS['difference'] = $row['difference'];
 	} else {
 		header("HTTP/1.1 404 Not Found");
-		$GLOBALS['nadpis'] = 'Nenalezeno';
-		$GLOBALS['napln'] = NULL;
+		$GLOBALS['nadpis'] = NULL;
+		$GLOBALS['napln'] = 404;
 		$GLOBALS['parentID'] = 1;
 	}
 }

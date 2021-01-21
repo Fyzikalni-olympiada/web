@@ -131,6 +131,9 @@ Fyzikální olympiáda – <?= nadpis() ?>
 				<button type="button" class="btn-xs" data-toggle="offcanvas">Zobrazit boční panel</button>
 			</div>
 
+			<?php if ($napln === 404): ?>
+			<p style="text-align: center; font-size: 2em">Tato stránka neexistuje</p>
+			<?php else: ?>
             <h1><?php echo nadpis(); ?></h1>
             <?php
                 if ($napln == FILE_NEWS) {
@@ -139,6 +142,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
                     include(ROOT_DIR.$napln);
                 }
             ?>
+			<?php endif; ?>
         </div>
 
 		<div id="sidebar" class="col-sm-3 sidebar-offcanvas">
