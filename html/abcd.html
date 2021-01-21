@@ -47,6 +47,7 @@ while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
         }
 }                       
 $krajBeforeA = $krajDateA > date('Y-m-d');
+$krajBeforeWeekAfterA = $krajDateA > date('Y-m-d', strtotime("-1 week"));
 $krajBeforeBCD = $krajDateBCD > date('Y-m-d');
 ?>
 <h3 class="accordion" id="organizace">Školní kolo</h3>
@@ -388,7 +389,7 @@ fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatel
 </div>
 
 <? if (!$krajBeforeA) : ?>
-<h3 class="accordion<?if (!$krajBeforeBCD):?> accordion-main<? endif; ?>" id="ulohy">Úlohy krajského kola</h3>
+<h3 class="accordion<?if (!$krajBeforeBCD || $krajBeforeWeekAfterA):?> accordion-main<? endif; ?>" id="ulohy">Úlohy krajského kola</h3>
 
 <div>
 <h4>Zadání</h4>
