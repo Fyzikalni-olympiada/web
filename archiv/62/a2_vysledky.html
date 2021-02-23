@@ -1,0 +1,1203 @@
+<h2>Výsledky krajského kolo A 62. ročníku FO</h2>
+
+	<p>Krajské kolo Fyzikální olympiády v kategorii A proběhlo 20. ledna 2021
+	netradiční online dálkovou formou.</p> 
+
+<form class="form-inline" style="margin-bottom: 15px">
+	<div class="form-group">
+		<select class="form-control" id="kraj-control" onchange="krajkat(this)">
+			<option>Celá ČR</option>
+			<option>Hlavní město Praha</option>
+			<option>Středočeský kraj</option>
+			<option>Jihočeský kraj</option>
+			<option>Plzeňský kraj</option>
+			<option>Karlovarský kraj</option>
+			<option>Ústecký kraj</option>
+			<option>Liberecký kraj</option>
+			<option>Královéhradecký kraj</option>
+			<option>Pardubický kraj</option>
+			<option>Kraj Vysočina</option>
+			<option>Jihomoravský kraj</option>
+			<option>Olomoucký kraj</option>
+			<option>Moravskoslezský kraj</option>
+			<option>Zlínský kraj</option>
+		</select>
+	</div>
+</form>
+<script type="text/javascript">
+var krajEl=document.getElementById("kraj-control")
+function krajkat(el) {
+	var kraj = krajEl.value;
+	var showAllKraj = kraj == "Celá ČR";
+	var poradi = 0;
+	var lastSamePoradi = 0;
+	var lastSameBody = "41";
+	document.querySelectorAll("#vysledky-table tbody tr").forEach(function(tr) {
+		if (showAllKraj || tr.children[2].textContent == kraj) {
+			tr.style.display = '';
+			poradi++;
+			if (tr.children[8].textContent == lastSameBody) {
+				tr.children[0].textContent = lastSamePoradi;
+			} else {
+				tr.children[0].textContent = poradi;
+				lastSamePoradi = poradi;
+				lastSameBody = tr.children[8].textContent;
+			}
+		} else {
+			tr.style.display = 'none';
+		} 
+	});
+}
+</script>
+<div class="table-responsive">
+<table class="table" id="vysledky-table">
+<thead>
+	<tr><th rowspan=2></th>
+		<th rowspan=2>Jméno a příjmení</th>
+		<th rowspan=2 style="display: none">Kraj</th>
+		<th rowspan=2>Škola</th>
+		<th colspan=4>Úloha</th>
+		<th rowspan=2>Body</th>
+		<th rowspan=2>Úspěšný</th>
+		<th rowspan=2>Učitel fyziky</th></tr>
+	<tr>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th></tr>
+
+</thead>
+<tbody>
+	<tr><td></td>
+		<td>Jiří Kohl</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Biskupské gymnázium Brno</td>
+		<td>9,5</td>
+		<td>4</td>
+		<td>10</td>
+		<td>9,5</td>
+		<td><b>33</b></td>
+		<td>úspěšný</td>
+		<td>Miloš Winkler</td></tr>
+
+	<tr><td></td>
+		<td>Štěpán Hortlík</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium Pardubice, Dašická 1083</td>
+		<td>10</td>
+		<td>8,5</td>
+		<td>7,5</td>
+		<td>6,5</td>
+		<td><b>32,5</b></td>
+		<td>úspěšný</td>
+		<td>Vladimír Vícha</td></tr>
+
+	<tr><td></td>
+		<td>Hynek Jakeš</td>
+		<td style="display:none;">Olomoucký kraj</td>
+		<td>Slovanské gymnázium Olomouc</td>
+		<td>9,5</td>
+		<td>4,5</td>
+		<td>7</td>
+		<td>10</td>
+		<td><b>31</b></td>
+		<td>úspěšný</td>
+		<td>Petra Martišková</td></tr>
+
+	<tr><td></td>
+		<td>Adam Mendl</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Gymnázium Pierra de Coubertina, Tábor</td>
+		<td>9</td>
+		<td>6</td>
+		<td>7,5</td>
+		<td>8</td>
+		<td><b>30,5</b></td>
+		<td>úspěšný</td>
+		<td>Václav Voráček</td></tr>
+
+	<tr><td></td>
+		<td>Tomáš Vítek</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Gymnázium a Jazyková škola s právem státní jazykové zkoušky Břeclav, příspěvková organizace</td>
+		<td>7</td>
+		<td>9</td>
+		<td>9,5</td>
+		<td>4,5</td>
+		<td><b>30</b></td>
+		<td>úspěšný</td>
+		<td>Milan Ling, Iva Garčicová</td></tr>
+
+	<tr><td></td>
+		<td>David Kamenský</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Gymnázium Břeclav</td>
+		<td>10</td>
+		<td>4</td>
+		<td>5,5</td>
+		<td>7,5</td>
+		<td><b>27</b></td>
+		<td>úspěšný</td>
+		<td>Milan Ling</td></tr>
+
+	<tr><td></td>
+		<td>Jiří Kalvoda</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Gymnázium Brno, třída Kapitána Jaroše, příspěvková organizace</td>
+		<td>8</td>
+		<td>8,5</td>
+		<td>10</td>
+		<td>0</td>
+		<td><b>26,5</b></td>
+		<td>úspěšný</td>
+		<td>Tomáš Nečas</td></tr>
+
+	<tr><td></td>
+		<td>Robert Gemrot</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Gymnázium Komenského Havířov</td>
+		<td>9</td>
+		<td>5,5</td>
+		<td>3</td>
+		<td>7,5</td>
+		<td><b>25</b></td>
+		<td>úspěšný</td>
+		<td>Irena Fikačková</td></tr>
+
+	<tr><td></td>
+		<td>Jindřich Matuška</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>G. Brno, tř. Kpt. Jaroše, p.o.</td>
+		<td>7</td>
+		<td>9</td>
+		<td>8,5</td>
+		<td>0</td>
+		<td><b>24,5</b></td>
+		<td>úspěšný</td>
+		<td>Tomáš Nečas</td></tr>
+
+	<tr><td></td>
+		<td>Pavel Provazník</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium, Pardubice, Dašická 1083</td>
+		<td>8</td>
+		<td>5,5</td>
+		<td>5</td>
+		<td>6</td>
+		<td><b>24,5</b></td>
+		<td>úspěšný</td>
+		<td>Vladimír Vícha</td></tr>
+
+	<tr><td></td>
+		<td>Tomáš Čajan</td>
+		<td style="display:none;">Zlínský kraj</td>
+		<td>Gymnázium Františka Palackého Valašské Meziříčí</td>
+		<td>6</td>
+		<td>6</td>
+		<td>5,5</td>
+		<td>7</td>
+		<td><b>24,5</b></td>
+		<td>úspěšný</td>
+		<td>Bronislav Zachrdla</td></tr>
+
+	<tr><td></td>
+		<td>Václav Maštera</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Gymnázium Pierra de Coubertina, Tábor</td>
+		<td>10</td>
+		<td>4</td>
+		<td>3</td>
+		<td>7</td>
+		<td><b>24</b></td>
+		<td>úspěšný</td>
+		<td>Marie Žilavá</td></tr>
+
+	<tr><td></td>
+		<td>Kryštof Boura</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium Jaroslava Vrchlického, Klatovy</td>
+		<td>10</td>
+		<td>7</td>
+		<td>0</td>
+		<td>7</td>
+		<td><b>24</b></td>
+		<td>úspěšný</td>
+		<td>Josef Veselý</td></tr>
+
+	<tr><td></td>
+		<td>Štěpán Pressl</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium Jaroslava Vrchlického v Klatovech</td>
+		<td>7,5</td>
+		<td>4,5</td>
+		<td>5,5</td>
+		<td>6</td>
+		<td><b>23,5</b></td>
+		<td>úspěšný</td>
+		<td>Josef Veselý</td></tr>
+
+	<tr><td></td>
+		<td>Vojtěch David</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Wichterlovo gymnázium, Čs. exilu 669, Ostrava-Poruba</td>
+		<td>5</td>
+		<td>4</td>
+		<td>3</td>
+		<td>10</td>
+		<td><b>22</b></td>
+		<td>úspěšný</td>
+		<td>Antonín Balnar</td></tr>
+
+	<tr><td></td>
+		<td>Jan Červeňan</td>
+		<td style="display:none;">Zlínský kraj</td>
+		<td>GJP Slavičín</td>
+		<td>6</td>
+		<td>9</td>
+		<td>0</td>
+		<td>7</td>
+		<td><b>22</b></td>
+		<td>úspěšný</td>
+		<td>Ivo Rohlena</td></tr>
+
+	<tr><td></td>
+		<td>Martin Beneš</td>
+		<td style="display:none;">Kraj Vysočina</td>
+		<td>Gymnázium Jihlava</td>
+		<td>8,5</td>
+		<td>2</td>
+		<td>4,5</td>
+		<td>6</td>
+		<td><b>21</b></td>
+		<td>úspěšný</td>
+		<td>Ladislav Karel</td></tr>
+
+	<tr><td></td>
+		<td>Vojtěch Kuchař</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Wichterlovo gymnázium</td>
+		<td>5</td>
+		<td>4,5</td>
+		<td>3</td>
+		<td>8</td>
+		<td><b>20,5</b></td>
+		<td>úspěšný</td>
+		<td>Petra Kňurová</td></tr>
+
+	<tr><td></td>
+		<td>Filip Gregora</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium Lanškroun</td>
+		<td>7</td>
+		<td>5,5</td>
+		<td>2</td>
+		<td>5,5</td>
+		<td><b>20</b></td>
+		<td>úspěšný</td>
+		<td>Naděžda Vlčková</td></tr>
+
+	<tr><td></td>
+		<td>Jakub Kislinger</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium Jaroslava Vrchlického Klatovy</td>
+		<td>10</td>
+		<td>5</td>
+		<td>0</td>
+		<td>5</td>
+		<td><b>20</b></td>
+		<td>úspěšný</td>
+		<td>Josef Veselý</td></tr>
+
+	<tr><td></td>
+		<td>Karel Mudruňka</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium Pardubice, Dašická 1083</td>
+		<td>9</td>
+		<td>3</td>
+		<td>2</td>
+		<td>5,5</td>
+		<td><b>19,5</b></td>
+		<td>úspěšný</td>
+		<td>Pavel Kycl, Vladimír Vícha</td></tr>
+
+	<tr><td></td>
+		<td>Marek Hanzl</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium Luďka Pika</td>
+		<td>10</td>
+		<td>7</td>
+		<td>0</td>
+		<td>2</td>
+		<td><b>19</b></td>
+		<td>úspěšný</td>
+		<td>Ivana Sirotková</td></tr>
+
+	<tr><td></td>
+		<td>Markéta Nerodilová</td>
+		<td style="display:none;">Zlínský kraj</td>
+		<td>Masarykovo gymnázium, Střední zdravotnická škola a Vyšší odborná škola zdravotnická Vsetín</td>
+		<td>9,5</td>
+		<td>9</td>
+		<td>0</td>
+		<td>&nbsp;</td>
+		<td><b>18,5</b></td>
+		<td>úspěšný</td>
+		<td>Milan Staněk</td></tr>
+
+	<tr><td></td>
+		<td>Karel Chwistek</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Mendelovo gymnázium Opava</td>
+		<td>5</td>
+		<td>3</td>
+		<td>10</td>
+		<td>0</td>
+		<td><b>18</b></td>
+		<td>úspěšný</td>
+		<td>Zuzana Baďurová</td></tr>
+
+	<tr><td></td>
+		<td>Ondřej Sladký</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium, Plzeň, Mikulášské nám. 23</td>
+		<td>8</td>
+		<td>6</td>
+		<td>3</td>
+		<td>1</td>
+		<td><b>18</b></td>
+		<td>úspěšný</td>
+		<td>Hana Radová</td></tr>
+
+	<tr><td></td>
+		<td>Jonáš Dej</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Wichterlovo gymnázium, Ostrava - Poruba</td>
+		<td>5,5</td>
+		<td>5</td>
+		<td>0</td>
+		<td>7</td>
+		<td><b>17,5</b></td>
+		<td>úspěšný</td>
+		<td>Lenka Hořenková</td></tr>
+
+	<tr><td></td>
+		<td>Vojtěch Fošum</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Gymnázium, Český Krumlov</td>
+		<td>6</td>
+		<td>7</td>
+		<td>0</td>
+		<td>4</td>
+		<td><b>17</b></td>
+		<td>úspěšný</td>
+		<td>Petr Florián</td></tr>
+
+	<tr><td></td>
+		<td>Václav Janáček</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Gymnáziu Brno, tř. Kpt. Jaroše</td>
+		<td>10</td>
+		<td>5</td>
+		<td>2</td>
+		<td>0</td>
+		<td><b>17</b></td>
+		<td>úspěšný</td>
+		<td>Tomáš Nečas</td></tr>
+
+	<tr><td></td>
+		<td>Michal Žáček</td>
+		<td style="display:none;">Ústecký kraj</td>
+		<td>Gymnázium Lovosice</td>
+		<td>9</td>
+		<td>5,5</td>
+		<td>2</td>
+		<td>&nbsp;</td>
+		<td><b>16,5</b></td>
+		<td>úspěšný</td>
+		<td>Lucie Jonášová</td></tr>
+
+	<tr><td></td>
+		<td>František Krůs </td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Masarykovo gymnázium, Plzeň </td>
+		<td>8,5</td>
+		<td>7</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>15,5</b></td>
+		<td>úspěšný</td>
+		<td>Vlasta Nováková</td></tr>
+
+	<tr><td></td>
+		<td>David Podrápský</td>
+		<td style="display:none;">Ústecký kraj</td>
+		<td>Gymnázium Teplice</td>
+		<td> </td>
+		<td>5,5</td>
+		<td>3</td>
+		<td>7</td>
+		<td><b>15,5</b></td>
+		<td>úspěšný</td>
+		<td>Zdeněk Vácha</td></tr>
+
+	<tr><td></td>
+		<td>Blanka Vrbová</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Klvaňovo gymnázium a střední zdravotnická škola Kyjov</td>
+		<td>7</td>
+		<td>5,5</td>
+		<td>1</td>
+		<td>1</td>
+		<td><b>14,5</b></td>
+		<td>úspěšný</td>
+		<td>Vladimír Kotík</td></tr>
+
+	<tr><td></td>
+		<td>Ondřej Chwiedziuk</td>
+		<td style="display:none;">Liberecký kraj</td>
+		<td>Gymnázium F. X. Šaldy</td>
+		<td>7</td>
+		<td>5,5</td>
+		<td>0</td>
+		<td>2</td>
+		<td><b>14,5</b></td>
+		<td>úspěšný</td>
+		<td>Stanislav Panoš</td></tr>
+
+	<tr><td></td>
+		<td>Oto Ulrich</td>
+		<td style="display:none;">Zlínský kraj</td>
+		<td>Gymnázium Uherské Hradiště</td>
+		<td>6</td>
+		<td>6</td>
+		<td>0</td>
+		<td>2</td>
+		<td><b>14</b></td>
+		<td>úspěšný</td>
+		<td>Miroslava Maňásková</td></tr>
+
+	<tr><td></td>
+		<td>Patrik Kašpárek</td>
+		<td style="display:none;">Kraj Vysočina</td>
+		<td>Katolické gymnázium Třebíč</td>
+		<td>10</td>
+		<td>4,5</td>
+		<td>2</td>
+		<td>4</td>
+		<td><b>20,5</b></td>
+		<td>&nbsp;</td>
+		<td>Vít Feldbabel</td></tr>
+
+	<tr><td></td>
+		<td>Ondřej Štorek</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium, Pardubice, Dašická 1083</td>
+		<td>8</td>
+		<td>4</td>
+		<td>2</td>
+		<td>3,5</td>
+		<td><b>17,5</b></td>
+		<td>&nbsp;</td>
+		<td>Vladimír Vícha</td></tr>
+
+	<tr><td></td>
+		<td>Michal Mrkos</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium Polička</td>
+		<td>9</td>
+		<td>4</td>
+		<td>0</td>
+		<td>4</td>
+		<td><b>17</b></td>
+		<td>&nbsp;</td>
+		<td>Miroslav Jílek</td></tr>
+
+	<tr><td></td>
+		<td>Josef Ander</td>
+		<td style="display:none;">Olomoucký kraj</td>
+		<td>Gymnázium Olomouc-Hejčín</td>
+		<td>3,5</td>
+		<td>4</td>
+		<td>2</td>
+		<td>7</td>
+		<td><b>16,5</b></td>
+		<td>&nbsp;</td>
+		<td>Petr Ferenc</td></tr>
+
+	<tr><td></td>
+		<td>Lukáš Buček</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Gymnázium Trutnov Jiráskovo náměstí 325</td>
+		<td>10</td>
+		<td>2,5</td>
+		<td>0</td>
+		<td>3</td>
+		<td><b>15,5</b></td>
+		<td>&nbsp;</td>
+		<td>Libor Turek</td></tr>
+
+	<tr><td></td>
+		<td>Štěpán Skalka</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Gymnázium, České Budějovice, Jírovcova 8</td>
+		<td>8</td>
+		<td>4,5</td>
+		<td>&nbsp;</td>
+		<td>2</td>
+		<td><b>14,5</b></td>
+		<td>&nbsp;</td>
+		<td>Jiří Podpěra</td></tr>
+
+	<tr><td></td>
+		<td>Kryštof Rais</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium, Plzeň, Mikulášské náměstí 23</td>
+		<td>4</td>
+		<td>4</td>
+		<td>0</td>
+		<td>6</td>
+		<td><b>14</b></td>
+		<td>&nbsp;</td>
+		<td>Jaroslav Pytlík</td></tr>
+
+	<tr><td></td>
+		<td>Jakub Genčur</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Gymnázium Matyáše Lercha</td>
+		<td>10</td>
+		<td>3,5</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>13,5</b></td>
+		<td>&nbsp;</td>
+		<td>Vojtěch Beneš</td></tr>
+
+	<tr><td></td>
+		<td>Petr Laštovička</td>
+		<td style="display:none;">Kraj Vysočina</td>
+		<td>Gymnázium a Obchodní akademie Pelhřimov</td>
+		<td>8</td>
+		<td>3,5</td>
+		<td>&nbsp;</td>
+		<td>2</td>
+		<td><b>13,5</b></td>
+		<td>&nbsp;</td>
+		<td>Josef Jírů</td></tr>
+
+	<tr><td></td>
+		<td>Štěpán Březovják</td>
+		<td style="display:none;">Zlínský kraj</td>
+		<td>Gymnázium Kroměříž</td>
+		<td>5</td>
+		<td>6</td>
+		<td>0</td>
+		<td>2,5</td>
+		<td><b>13,5</b></td>
+		<td>&nbsp;</td>
+		<td>Oldřich Kozmík</td></tr>
+
+	<tr><td></td>
+		<td>Jakub Ferenčík</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium, Pardubice, Dašická 1083</td>
+		<td>8</td>
+		<td>3</td>
+		<td>0</td>
+		<td>2</td>
+		<td><b>13</b></td>
+		<td>&nbsp;</td>
+		<td>Vladimír Vícha</td></tr>
+
+	<tr><td></td>
+		<td>Vojtěch Janota</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Gymnázium Strakonice</td>
+		<td>7,5</td>
+		<td>4</td>
+		<td>1</td>
+		<td>&nbsp;</td>
+		<td><b>12,5</b></td>
+		<td>&nbsp;</td>
+		<td>Pavel Navrátil</td></tr>
+
+	<tr><td></td>
+		<td>Libor Šabaka</td>
+		<td style="display:none;">Liberecký kraj</td>
+		<td>Gymnázium Česká Lípa</td>
+		<td>5</td>
+		<td>0</td>
+		<td>0</td>
+		<td>7,5</td>
+		<td><b>12,5</b></td>
+		<td>&nbsp;</td>
+		<td>Zdeněk Ježák</td></tr>
+
+	<tr><td></td>
+		<td>Vojtěch Smola</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Gymnázium Komenského Havířov</td>
+		<td>2</td>
+		<td>2</td>
+		<td>2,5</td>
+		<td>6</td>
+		<td><b>12,5</b></td>
+		<td>&nbsp;</td>
+		<td>Vít Tomis</td></tr>
+
+	<tr><td></td>
+		<td>Jan Modrianský</td>
+		<td style="display:none;">Olomoucký kraj</td>
+		<td>Gymnázium Olomouc-Hejčín</td>
+		<td>3,5</td>
+		<td>4,5</td>
+		<td>&nbsp;</td>
+		<td>4,5</td>
+		<td><b>12,5</b></td>
+		<td>&nbsp;</td>
+		<td>Petr Ferenc</td></tr>
+
+	<tr><td></td>
+		<td>Michal Polák</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>MG Plzeň</td>
+		<td>7,5</td>
+		<td>5</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>12,5</b></td>
+		<td>&nbsp;</td>
+		<td>Petra Komprdová</td></tr>
+
+	<tr><td></td>
+		<td>Jakub Herec</td>
+		<td style="display:none;">Středočeský kraj</td>
+		<td>Gymnázium J. S. Machara, Brandýs n. L.</td>
+		<td>4</td>
+		<td>3</td>
+		<td>5,5</td>
+		<td>0</td>
+		<td><b>12,5</b></td>
+		<td>&nbsp;</td>
+		<td>Eva Kospachová</td></tr>
+
+	<tr><td></td>
+		<td>Matěj Mezera </td>
+		<td style="display:none;">Středočeský kraj</td>
+		<td>Gymnázium Kladno </td>
+		<td>8,5</td>
+		<td>4</td>
+		<td>&nbsp;</td>
+		<td>0</td>
+		<td><b>12,5</b></td>
+		<td>&nbsp;</td>
+		<td>Ivana Čápová</td></tr>
+
+	<tr><td></td>
+		<td>Tomáš Heger</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Jiráskovo gymnázium Náchod</td>
+		<td>6</td>
+		<td>5,5</td>
+		<td>0,5</td>
+		<td>0</td>
+		<td><b>12</b></td>
+		<td>&nbsp;</td>
+		<td>Zdeněk Polák</td></tr>
+
+	<tr><td></td>
+		<td>Michal Lindner</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium Luďka Pika</td>
+		<td>5</td>
+		<td>4</td>
+		<td>3</td>
+		<td>0</td>
+		<td><b>12</b></td>
+		<td>&nbsp;</td>
+		<td>Ivana Sirotková</td></tr>
+
+	<tr><td></td>
+		<td>Martin Kysilka</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium Polička</td>
+		<td>7,5</td>
+		<td>1</td>
+		<td>3</td>
+		<td>0</td>
+		<td><b>11,5</b></td>
+		<td>&nbsp;</td>
+		<td>Miroslav Jílek</td></tr>
+
+	<tr><td></td>
+		<td>Filip Erben</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Biskupské gymnázium J. N. Neumanna</td>
+		<td>8</td>
+		<td>3</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>11</b></td>
+		<td>&nbsp;</td>
+		<td>Václav Šlouf</td></tr>
+
+	<tr><td></td>
+		<td>Jan Klivan</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Gymnázium Dačice</td>
+		<td>6,5</td>
+		<td>4,5</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><b>11</b></td>
+		<td>&nbsp;</td>
+		<td>Jakub Nemčik</td></tr>
+
+	<tr><td></td>
+		<td>Jakub Mikeš</td>
+		<td style="display:none;">Olomoucký kraj</td>
+		<td>Gymnázium Jakuba Škody</td>
+		<td>6</td>
+		<td>5</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><b>11</b></td>
+		<td>&nbsp;</td>
+		<td>Bohdan Borůvka</td></tr>
+
+	<tr><td></td>
+		<td>Tomáš Indruch</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium Polička</td>
+		<td>5</td>
+		<td>6</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>11</b></td>
+		<td>&nbsp;</td>
+		<td>Miroslav Jílek</td></tr>
+
+	<tr><td></td>
+		<td>Eliška Pirnosová</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium, Plzeň, Mikulášské náměstí 23</td>
+		<td>7</td>
+		<td>1,5</td>
+		<td>2,5</td>
+		<td>0</td>
+		<td><b>11</b></td>
+		<td>&nbsp;</td>
+		<td>Hana Radová</td></tr>
+
+	<tr><td></td>
+		<td>Radek Josefik</td>
+		<td style="display:none;">Karlovarský kraj</td>
+		<td>První české gymnázium v Karlových Varech</td>
+		<td>4</td>
+		<td>5,5</td>
+		<td>0</td>
+		<td>1</td>
+		<td><b>10,5</b></td>
+		<td>&nbsp;</td>
+		<td>Michal Wirth</td></tr>
+
+	<tr><td></td>
+		<td>Barbora Říhová</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Gymnázium Olgy Havlové</td>
+		<td>4</td>
+		<td>4,5</td>
+		<td>0</td>
+		<td>2</td>
+		<td><b>10,5</b></td>
+		<td>&nbsp;</td>
+		<td>Jarmila Kučerová</td></tr>
+
+	<tr><td></td>
+		<td>Vojtěch Stránský</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Gymnázium Brno, třída Kapitána Jaroše 14</td>
+		<td>4,5</td>
+		<td>4</td>
+		<td>1,5</td>
+		<td>0</td>
+		<td><b>10</b></td>
+		<td>&nbsp;</td>
+		<td>Tomáš Nečas</td></tr>
+
+	<tr><td></td>
+		<td>Ditmar Hadera</td>
+		<td style="display:none;">Středočeský kraj</td>
+		<td>Gymnázium J. S. Machara</td>
+		<td>6</td>
+		<td>4</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><b>10</b></td>
+		<td>&nbsp;</td>
+		<td>Eva Kospachová</td></tr>
+
+	<tr><td></td>
+		<td>Tomáš Jaroš</td>
+		<td style="display:none;">Kraj Vysočina</td>
+		<td>Gymnázium a Obchodní akademie Pelhřimov</td>
+		<td>6</td>
+		<td>3,5</td>
+		<td>&nbsp;</td>
+		<td>0</td>
+		<td><b>9,5</b></td>
+		<td>&nbsp;</td>
+		<td>Josef Jírů</td></tr>
+
+	<tr><td></td>
+		<td>Ondřej Hráček</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Gymnázium Olgy Havlové</td>
+		<td>4,5</td>
+		<td>3</td>
+		<td>2</td>
+		<td>0</td>
+		<td><b>9,5</b></td>
+		<td>&nbsp;</td>
+		<td>Jarmila Kučerová</td></tr>
+
+	<tr><td></td>
+		<td>Julie Kalná</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Biskupské gymnázium J. N. Neumanna</td>
+		<td>6</td>
+		<td>1</td>
+		<td>0</td>
+		<td>2</td>
+		<td><b>9</b></td>
+		<td>&nbsp;</td>
+		<td>Václav Šlouf</td></tr>
+
+	<tr><td></td>
+		<td>Dominik Farhan</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium, Plzeň, Mikulášské nám. 23</td>
+		<td>1</td>
+		<td>6</td>
+		<td>2</td>
+		<td>0</td>
+		<td><b>9</b></td>
+		<td>&nbsp;</td>
+		<td>Hana Radová</td></tr>
+
+	<tr><td></td>
+		<td>Matyáš Maleček</td>
+		<td style="display:none;">Jihočeský kraj</td>
+		<td>Gymnázium, Český Krumlov</td>
+		<td>6</td>
+		<td>1</td>
+		<td>&nbsp;</td>
+		<td>1,5</td>
+		<td><b>8,5</b></td>
+		<td>&nbsp;</td>
+		<td>Petr Florián</td></tr>
+
+	<tr><td></td>
+		<td>Tomáš Trejtnar</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Zemědělská akademie a Gymnázium Hořice – střední škola a vyšší odborná škola, příspěvková organizace</td>
+		<td>2</td>
+		<td>1,5</td>
+		<td>0</td>
+		<td>5</td>
+		<td><b>8,5</b></td>
+		<td>&nbsp;</td>
+		<td>Jiří Holubička</td></tr>
+
+	<tr><td></td>
+		<td>Veronika Janů</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Masarykovo gymnázium, Petákova 2, 301 00 Plzeň</td>
+		<td>3</td>
+		<td>3,5</td>
+		<td>0</td>
+		<td>2</td>
+		<td><b>8,5</b></td>
+		<td>&nbsp;</td>
+		<td>Miroslav Randa</td></tr>
+
+	<tr><td></td>
+		<td>Petr Matas</td>
+		<td style="display:none;">Plzeňský kraj</td>
+		<td>Gymnázium Luďka Pika</td>
+		<td>4</td>
+		<td>4</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>8</b></td>
+		<td>&nbsp;</td>
+		<td>Ivana Sirotková</td></tr>
+
+	<tr><td></td>
+		<td>Daniel Ježek</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Jiráskovo gymnázium Náchod</td>
+		<td>4</td>
+		<td>3,5</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>7,5</b></td>
+		<td>&nbsp;</td>
+		<td>Richard Brát, Zdeněk Polák</td></tr>
+
+	<tr><td></td>
+		<td>Vojtěch Váňa</td>
+		<td style="display:none;">Pardubický kraj</td>
+		<td>Gymnázium Pardubice, Dašická 1083</td>
+		<td>6,5</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>7,5</b></td>
+		<td>&nbsp;</td>
+		<td>Vladimír Vícha</td></tr>
+
+	<tr><td></td>
+		<td>Lukáš Fidler</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Jiráskovo gymnázium, Náchod</td>
+		<td>3,5</td>
+		<td>2</td>
+		<td>1</td>
+		<td>0</td>
+		<td><b>6,5</b></td>
+		<td>&nbsp;</td>
+		<td>Zdeněk Polák</td></tr>
+
+	<tr><td></td>
+		<td>Michal Janata</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Zemědělská akademie a Gymnázium Hořice</td>
+		<td>1,5</td>
+		<td>3,5</td>
+		<td>1</td>
+		<td>0</td>
+		<td><b>6</b></td>
+		<td>&nbsp;</td>
+		<td>Jiří Holubička</td></tr>
+
+	<tr><td></td>
+		<td>Richard Rubáš</td>
+		<td style="display:none;">Středočeský kraj</td>
+		<td>Gymnázium Kladno Nám E Beneše</td>
+		<td>2</td>
+		<td>3,5</td>
+		<td>&nbsp;</td>
+		<td>0</td>
+		<td><b>5,5</b></td>
+		<td>&nbsp;</td>
+		<td>Ivana Čápová</td></tr>
+
+	<tr><td></td>
+		<td>Matěj Dřeveňák</td>
+		<td style="display:none;">Karlovarský kraj</td>
+		<td>První české gymnázium v Karlových varech</td>
+		<td>4</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+		<td><b>5</b></td>
+		<td>&nbsp;</td>
+		<td>Michal Wirth, Jan Thomas</td></tr>
+
+	<tr><td></td>
+		<td>Matyáš Háze</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Jiráskovo gymnázium Náchod</td>
+		<td>4</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>5</b></td>
+		<td>&nbsp;</td>
+		<td>Zdeněk Polák</td></tr>
+
+	<tr><td></td>
+		<td>Kristýna Saforková</td>
+		<td style="display:none;">Moravskoslezský kraj</td>
+		<td>Gymnázium Petra Bezruče, Frýdek-Místek</td>
+		<td>2</td>
+		<td>2</td>
+		<td>1</td>
+		<td>0</td>
+		<td><b>5</b></td>
+		<td>&nbsp;</td>
+		<td>Zuzana Lišková</td></tr>
+
+	<tr><td></td>
+		<td>Marek Čermák</td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Jiráskovo gymnázium Náchod</td>
+		<td>1,5</td>
+		<td>3</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>4,5</b></td>
+		<td>&nbsp;</td>
+		<td>Zdeněk Polák</td></tr>
+
+	<tr><td></td>
+		<td>Jaroslav Grulich </td>
+		<td style="display:none;">Královéhradecký kraj</td>
+		<td>Jiráskovo gymnázium Náchod </td>
+		<td>1,5</td>
+		<td>2,5</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>4</b></td>
+		<td>&nbsp;</td>
+		<td>Iva Sršňová </td></tr>
+
+	<tr><td></td>
+		<td>Šimon Genčur</td>
+		<td style="display:none;">Jihomoravský kraj</td>
+		<td>Biskupské gymnázium, Brno</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td><b>3</b></td>
+		<td>&nbsp;</td>
+		<td>Jiří Vondra</td></tr>
+
+	<tr><td></td>
+		<td>Marie Lausová</td>
+		<td style="display:none;">Kraj Vysočina</td>
+		<td>Gymnázium Jihlava</td>
+		<td>1</td>
+		<td>1,5</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>2,5</b></td>
+		<td>&nbsp;</td>
+		<td>Tomáš Krásenský</td></tr>
+
+	<tr><td></td>
+		<td>Jitka Vysloužilová</td>
+		<td style="display:none;">Karlovarský kraj</td>
+		<td>Gymnázium Cheb</td>
+		<td>0</td>
+		<td>2</td>
+		<td>0</td>
+		<td>0</td>
+		<td><b>2</b></td>
+		<td>&nbsp;</td>
+		<td>Vítězslav Kubín</td></tr>
+
+	<tr><td></td>
+		<td>Antonín Hejný</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Litoměřická</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Tomáš Franc</td></tr>
+
+	<tr><td></td>
+		<td>Jan Čarvaš</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Nad Alejí</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Jiří Benda</td></tr>
+
+	<tr><td></td>
+		<td>Magdaléna Mišinová</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Jana Keplera</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Martin Kapoun</td></tr>
+
+	<tr><td></td>
+		<td>Marek Fürst</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Christana Dopplera</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Štěpánka Jirošová</td></tr>
+
+	<tr><td></td>
+		<td>Matěj Dvořák</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Jana Keplera</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Martin Kapoun</td></tr>
+
+	<tr><td></td>
+		<td>Ondřej Marek</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Christiana Dopplera</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Štěpánka Jirošová</td></tr>
+
+	<tr><td></td>
+		<td>Ondřej Zikmund</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Jana Nerudy</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Jaromír Kekule</td></tr>
+
+	<tr><td></td>
+		<td>Tomáš Veselý</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Jaroslava Heyrovského</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Lenka Giannitsi</td></tr>
+
+	<tr><td></td>
+		<td>Viktor Fukala</td>
+		<td style="display:none;">Hlavní město Praha</td>
+		<td>Gymnázium Jana Keplera</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>Martin Kapoun</td></tr>
+
+</tbody></table>
+</div>
+<script type="text/javascript">
+	krajkat()
+</script>
