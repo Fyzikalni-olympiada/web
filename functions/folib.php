@@ -174,6 +174,8 @@ function menu()
 
     }
     $strHTML[strlen($strHTML) - 6] = ' ';
+	$strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády" 
+		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">Osmo</a></li>';
     $strHTML .= '
                 </ul>';
 
