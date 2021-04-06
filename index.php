@@ -187,7 +187,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
                         <li><a href="http://www.sportgym.cz/aktivity/fyzikalni-olympiada" title="Stránky libereckého kraje">Liberecký kraj</a></li>
                         <li><a href="http://www.svcoo.cz/souteze/souteze_fyzika.html" title="Stránky moravskoslezského kraje">Moravskoslezský kraj</a></li>
                         <li><a href="http://www.ktf.upol.cz/fo/" title="Stránky olomouckého kraje">Olomoucký kraj</a></li>
-                        <li><a href="http://www.gypce.cz/fyzikalni-olympiada-pardubickeho-kraje-2/" title="Stránky pardubického kraje">Pardubický kraj</a></li>
+                        <li><a href="http://souteze.ccvpardubice.cz/soutez/310/" title="Stránky pardubického kraje">Pardubický kraj</a></li>
                         <li><a href="http://kof.zcu.cz/fo/" title="Stránky plzeňského kraje">Plzeňský kraj</a></li>
                         <li><a href="http://fo.czechian.net/" title="Stránky středočeského kraje">Středočeský kraj</a></li>
                         <li><a href="http://physics.ujep.cz/~fo/" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
