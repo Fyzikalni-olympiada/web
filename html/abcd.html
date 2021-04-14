@@ -287,13 +287,6 @@ strany řešení.
 <h3 class="accordion<?if ($krajBeforeA && !$beforeA || $krajBeforeBCD && !$beforeBCD):?> accordion-main<? endif; ?>" id="organizace">Krajské kolo</h3>
 
 <div>
-<ul class="nav nav-tabs">
-	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
-	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
-	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
-</ul>
-<div class="tab-content">
-<div class="tab-pane active" id="organizace-student">
 <p>
 Krajské kolo v&nbsp;kategorii&nbsp;A proběhne <a href="/krajske-kolo-online">online
 	<strong><?php echo v($krajTerminA) ?></strong></a>,
@@ -326,66 +319,6 @@ Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtí�
 <p>
 Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude vybráno nejvíce 50&nbsp;účastníků do třetího, ústředního kola soutěže.
 </p>
-</div>
-
-<div id="organizace-ucitel" class="tab-pane">
-<p>
-Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-<strong><?php echo v($krajTerminA) ?></strong>,
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-<strong><?php echo v($krajTerminBCD) ?></strong>.
-</p>
-<p>
-Pozvánku na krajské kolo pro své studenty obdržíte od příslušné krajské komise FO.
-O&nbsp;postupu rozhodují jejich výsledky v&nbsp;domácím kole. Pozvánky rozdejte studentům,
-aby věděli o&nbsp;místě a&nbsp;času konání krajského kola, případně je tam můžete přímo doprovodit.
-V&nbsp;krajském kole jsou zadané čtyři teoretické úlohy. Některé
-z&nbsp;nich kontrolují, jak vaši studenti prostudovali zadané <a href="/studijni-texty" title="studijní téma">studijní téma</a>.
-Čas na řešení úloh je 4&nbsp;hodiny čistého času.
-V&nbsp;krajském kole mohou studenti používat Matematické,
-fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
-</p>
-<p>
-Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO
-nejvíce 50&nbsp;účastníků do třetího, ústředního kola soutěže.
-</p>
-</div>
-
-<div id="organizace-organizator" class="tab-pane">
-<p>
-Krajské kolo v&nbsp;kategorii&nbsp;A proběhne
-<strong><?php echo v($krajTerminA) ?></strong>,
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D
-<strong><?php echo v($krajTerminBCD) ?></strong>.
-</p>
-<p>
-V&nbsp;krajském kole, na které zve příslušný krajská komise FO soutěžící podle
-výsledků v&nbsp;domácím kole
-prostřednictvím ředitelů škol, jsou zadané jen čtyři teoretické úlohy.
-Čas na řešení úloh je 4&nbsp;hodiny čistého času. Maximální dosažitelný počet bodů
-z&nbsp;jedné úlohy je&nbsp;10.
-</p>
-<p>
-Za <b>úspěšného řešitele</b> se považuje každý soutěžící, který celkové dosáhl minimálně 14 bodů, přičemž bodové hodnocení alespoň dvou úloh bylo 5 bodů nebo více. Ve výsledném pořadí jsou nejprve uvedeni úspěšní řešitelé seřazeni podle počtu bodů a teprve za nimi jsou další účastníci. Při shodném počtu bodů o pořadí rozhoduje:
-<ol>
-    <li>Vyšší počet „modifikovaných bodů“, které se vypočítají dle vzorce &Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>),
-        kde <i>b</i> je bodový zisk z dané úlohy, <i>max</i> je maximum bodů dané úlohy a&nbsp;<i>prum</i> je průměrný bodový zisk z&nbsp;dané úlohy v daném kraji.
-Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.</li>
-    <li>Ročník studia soutěžícího, příp. datum narození. Mladší mají přednost.</li>
-    <li>Pokud nerozhodne ani jedno z předchozích kritérií, rozhoduje los.</li>
-</ol>
-<p>
-Úspěšní řešitelé obdrží diplom úspěšného řešitele, úspěšní řešitelé na 1. až 3. místě obdrží kromě diplomu i věcný dar. Ostatní soutěžící obdrží diplom za účast.
-</p>
-<p>
-Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh KK&nbsp;FO nejvíce 50&nbsp;účastníků do třetího, ústředního kola soutěže.
-</p>
-<p>
-V&nbsp;krajském kole mohou soutěžící používat Matematické,
-fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
-</p>
-</div>
-</div>
 </div>
 
 <? if (!$krajBeforeA) : ?>
