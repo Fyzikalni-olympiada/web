@@ -25,73 +25,9 @@ if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
 }		
 ?>
 
-<h3 class="accordion accordion-main" id="ulohy">Zadání a řešení úloh</h3>
-
-<div>
-<p>
-Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
-</p>
-
-<div class="table-responsive">
-<table class="zadani table">
-<tr>
-	<th></th>
-	<th scope="col">Zadání úloh</th>
-	<th scope="col">Řešení úloh</th>
-</tr>
-<tr>
-	<th scope="row">Teorie</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62a3_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62a3_r.pdf"><i class="pdf">pdf</i></a></td>
-</tr>
-<tr>
-	<th scope="row">Experiment</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62a3_pz.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/62/fo62a3_pr.pdf"><i class="pdf">pdf</i></a></td>
-</tr>
-</table>
-
-<p>
-<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/3/vysledky" class="btn btn-lg btn-default">Výsledky</a>
-</div>
-</div>
-
 <h3 class="accordion accordion-main" id="organizace">Organizace</h3>
 <div>
 <p>
-Ústřední kolo kategorie A proběhne pomocí prostředků komunikace na dálku. Pro
-postup do ústředního kola letos výjimečně z rozhodnutí ÚK FO stačí dosáhnou
-hranice 14 bodů v krajském kole, tedy bez podmínky úspěšného řešitele (alespoň
-dvě úlohy za minimálně 5 bodů).  </p>
-<p>
-<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/3/ucastnici">Seznam
-	soutěžících</a> nominovaných do ústředního kola.  <p>
-Soutěžící budou <b>ve středu 10. 3. od 8:30 do 13:30</b> řešit 4 teoretické
-úlohy, <b>ve čtvrtek 11. 3. od 9:00 do 13:00</b> bude zadána úloha simulující
-experimentální úlohu. Registrace do ústředního kola, zadání úloh i upload
-výsledků bude probíhat v prostředí <a
-href="https://osmo.fyzikalniolympiada.cz/user/contest/173/">Osmo</a>.
-</p>
-<p>
-Pro účast v soutěži budete potřebovat:
-</p>
-<ul>
-	<li>počítač s připojením k internetu,
-	<li>webovou kameru,
-	<li>papíry,
-	<li><a href="/dokumenty/mmpapir_zeleny.pdf">milimetrové papíry</a>,
-	<li>psací potřeby,
-	<li>mobil se <b>skenovací aplikací</b> (ClearScanner, AdobeScan, Cam Scanner a další),
-		<li>nebo <b>skener</b>.
-</ul>
-<p>
-Hodit se vám můžou:
-</p>
-<ul>
-	<li>neprogramovatelné kalkulačky a
-	<li>Matematické, fyzikální a chemické tabulky pro střední školy.
-</ul>
-<!--p>
 Termín a místo konání: <strong><?php echo $termin ?></strong> (úterý až pátek), <?php echo $misto ?>.
 </p>
 <p>
@@ -107,7 +43,7 @@ ceny.
 <p>
 V&nbsp;ústředním kole mohou soutěžící používat Matematické,
 fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
-</p-->
+</p>
 <p>
 Úspěšní řešitelé a jejich pořadí bude stanoveno na základě bodovacího systému. Za každou teoretickou úlohu je možno získat 10&nbsp;bodů, za experimentální bodů&nbsp;20.  
 Bodovou hranici pro <em>úspěšného řešitele</em> stanovuje ÚK FO po sečtení všech bodů tak, že je nutné dosáhnout zpravidla alespoň polovinu bodů z průměrného hodnocení prvních tří soutěžících. Počet <em>vítězů</em> by měl být v rozmezí 18–24 procent z celkového počtu soutěžících (všichni vítězové však musí být úspěšnými řešiteli). Při shodném počtu bodů o pořadí dále rozhoduje:
@@ -125,104 +61,6 @@ Soutěžící, kteří se stali vítězi, obdrží diplom vítěze. Soutěžíc�
 Z&nbsp;vítězů ústředního kola bude na základě výsledků na <a href="/pripravne-soustredeni">výběrovém soustředění</a> uspořádaném ÚK&nbsp;FO proveden výběr 5&nbsp;účastníků (a jednoho náhradníka)
 <strong><?php echo AKTUALNI_ROCNIK - 11 ?>.&nbsp;Mezinárodní fyzikální olympiády</strong> (<?php echo $terminMFO ?>, <?php echo $mistoMFO ?>).
 </p>
-</div>
-
-<h3 class="accordion accordion-main" id="pokyny">Pravidla</h3>
-<div>
-	<p>Důkladně se prosím seznamte s pravidly pro online ústřední kolo:</p>
-	<ol>
-		<li>K řešení můžete používat psací a rýsovací potřeby, milimetrový
-			papír, Matematické, fyzikální a chemické tabulky pro střední školy
-			a neprogramovatelné kalkulačky. Jiné pomůcky, informační zdroje a
-			prameny povolené nejsou.</li>
-		<li>Pochopitelně jsou zakázany konzultace a porady s kamarády,
-			spolužáky, rodiči, učiteli, přítelem na telefonu, zkrátka radit se
-			nesmíte s nikým. Toto potvrzujete čestným prohlášením.</li>
-		<li>Během souteže budete připojeni na Zoom, kde budete vystupovat pod
-			svým civilním jménem.</li>
-		<li>Kameru budete mít nastavenou na své pracovní místo. Do záběru
-			kamery umístíte hodiny (budík, mobil).</li>
-		<li>Od okamžiku zobrazení zadání úloh na svém počítači do odevzdání
-			svých řešení nesmíte sahat na klávesnici (s výjimkou pravidel 6, 7
-			a 8). Můžete pouze myší posouvat zadání. U experimentální úlohy
-			toto neplatí.</li>
-		<li>Pokud si budete chtít zadání vytisknout, napište od chatu aplikace
-			Zoom: <em>„Tisknu úlohy“</em>.</li>
-		<li>Pokud budete potřebovat na toaletu, napiště před odchodem do chatu
-			aplikace Zoom: <em>„WC“</em>. Musíte se vrátit do dvou minut.</li>
-		<li>Pokud budete chtít odevzdat řešení dříve než ve stanovený termín,
-			napište do chatu aplikace Zoom: <em>„Odevzdávám úlohy“</em>.
-		<li>Vypracovaná řešení budete skenovat nebo fotit mobilem. Ke každé
-			úloze odevzdáte jeden soubor ve formátu pdf.</li>
-		<li>Srozumění se s pravidly potvrdíte vlastnoručním čestným prohlášením:</li>
-	</ol>
-	<p>
-		<blockquote>
-			Já, níže podepsaný, <var>(Fridolín Centimetr)</var>, žák
-			<var>(Gymnázia Járy Cimrmana v Cerekvici nad Bystřicí)</var> čestně
-			prohlašuji, že jsem tuto úlohu Fyzikální olympiády řešil
-			samostatně, bez jakékoliv pomoci jiné osoby a pouze s povolenými
-			pomůckami.<br><br>
-
-			V <var>(Cerekvici nad Bystřicí)</var> dne 10. 3. 2021
-		</blockquote>
-	</p>
-</div>
-<h3 class="accordion accordion-main" id="pokyny">Podrobné pokyny</h3>
-<div>
-	<h4>Příprava před zahájením</h4>
-	<ul>
-		<li>S přípravou v den soutěže začněte včas. Doporučujeme začít
-			nejpozději v hodinu před začátkem soutěže.</li>
-		<li>Připravte si dostatek papírů na psaní, <a
-				href="/dokumenty/mmpapir_zeleny.pdf">milimetrový papír</a> a
-			psací potřeby. Jistě se bude také hodit pití a svačina.</li>
-		<li>Pro každou úlohu si připravte papír s <em>hlavičkou</em>, kde
-			uveďte své <b>jméno</b>, <b>název školy</b>, <b>číslo úlohy</b> a
-			<b>čestné prohlášení</b> dle bodu 9 pravidel.</li>
-		<li>Emailem by vám měl již dorazit odkaz na Zoom, prostřednictvím
-			kterého se <b>nejpozději 15 minut</b> před začátkem přihlašte do
-			místnosti, kde budou další soutěžící a dohlížitel. <a
-					href="/dokumenty/zoom_navod.pdf">Podrobný návod, jak se
-					připojit na Zoom</a>.</li>
-		<li>Kameru nasměrujte na sebe. Do záběru kamery umístěte také hodiny
-			(budík, mobil).</li>
-		<li>Přesně v 8:30 (10. 3. 2021), resp v 9:00 (11. 3. 2021) se v <a
-				href="https://osmo.fyzikalniolympiada.cz/user/contest/173/">Osmo</a>
-			objeví zadání úloh.</li>
-		<li>Pokud máte možnost a chcete si zadání vytisknout, je to možné.
-			Papír ukážete na začátku na kameru, aby bylo jasné, že na něm je
-			jen zadání.</li>
-		<li>Nezapomeňte, že řešení každé úlohy je třeba začít psát na nový
-			papír. Není přípustné, aby na jednom papíru bylo řešení více úloh,
-			protože každou úlohu bude opravovat někdo jiný.</li>
-		<li>V případě problémů s platformou Zoom volejte na 734 420 623 (Jan
-			Kříž).</li>
-		</ul>
-
-	<h4>Odeslání vypracovaných řešení</h4>
-	<ul>
-		<li>Ve 13:30 (10. 3. 2021), resp. 13:00 (11. 3. 2021) čas na řešení
-			končí. Dalších <b>30 minut</b> máte na to, abyste své protokoly
-			odeslali.  Nic vám však nebrání odeslat je dříve, pokud budete se
-			vším hotovi (viz pravidlo 8).</li>
-		<li>Vypracované řešení naskenujte nebo vyfoťte a pomocí skenovací
-			aplikace vytvořte pro každou úlohu jeden pdf soubor.</li>
-		<li>Ke skenování řešení do požadovaného formátu pdf doporučujeme
-			skenovací aplikace pro mobilní telefony, např. ClearScanner,
-			AdobeScan, Cam Scanner a další.</li>
-		<li>Soubory odešlete prostřednictvím platformy <a
-				href="https://osmo.fyzikalniolympiada.cz/user/contest/173/">Osmo</a>.</li>
-		<li>K dané úloze můžete odevzdat řešení vícekrát. To poslední odevzdané
-			před termínem se počítá jako platné. Ve výjimečných případech
-			můžeme uznat i řešení odevzdaná po termínu (tj. více než půl hodiny
-			pokonci soutěže).</li>
-		<li>V případě jakýchkoliv technických problémů s odevzdáváním pište na
-			osmo@fyzikalniolympiada.cz nebo volejte na 608 613 117 (Jan
-			Prachař).</li>
-	</ul>
-
-	<p>Mnoho zdaru přejí organizátoři!</p>
 </div>
 
 <?php if (false): ?>
