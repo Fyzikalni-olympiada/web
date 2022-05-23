@@ -215,25 +215,6 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 
 <div id="photoGallery">
 <?php
-define ('POCET_FOTEK_NA_STRANKU', 50);
-if (isset($_GET['page'])) {
-	$strana = $_GET['page'];
-} else {
-	$strana = 1;
-}
-
-//nacte soubor s popiskami obrazku - pouze pro ceskou cast stranek
-$popisky = array();
-
-$file_popisky = ROOT_DIR.'archiv/celost/63/popisky.csv';
-if (file_exists($file_popisky)) {
-	$handle = @fopen($file_popisky, 'r');
-	$row=0;
-	while (($data = fgetcsv($handle, filesize($file_popisky), ";")) !== FALSE) {
-		$popisky = array_merge($popisky, array($data[0]=>$data[1]));
-	}
-	fclose($handle);
-}
 
 $cesta = 'archiv/celost/63/photos';
 $cesta_male = 'archiv/celost/63/thumbnails';
@@ -256,9 +237,7 @@ if (is_dir(ROOT_DIR.$cesta)) {
 	// srovna nazvy souboru
 }	
 	
-$obrazek_start = ($strana - 1) * (POCET_FOTEK_NA_STRANKU);
-// ktery obrazek bude prvni
-for ($i = $obrazek_start; ($i < $obrazek_start+POCET_FOTEK_NA_STRANKU && $i<sizeof($soubor)); $i++) {
+foreach ($soubor as $i=>$s) {
 // opakuj dokud nevycerpame vsechny obrazky
 	if (file_exists(ROOT_DIR.$cesta_male.'/'.$soubor[$i])) { //existuje nahled?
 		$title = '';
@@ -278,28 +257,6 @@ for ($i = $obrazek_start; ($i < $obrazek_start+POCET_FOTEK_NA_STRANKU && $i<size
 	</div><?php
 	}
 }
-
-$pocet_stran = ceil( count($soubor) / (POCET_FOTEK_NA_STRANKU) );
-// spocitame pocet stran galerie
-
-echo '
-<div style="text-align:center; clear:left">';
-if ($strana!=1){
-	echo '<a href="?page='.($strana-1).'" title="Předchozí strana">&lt;&ndash;</a> | '; //da predchozi, kdyz nutne
-}
-for ($i=1; $i<=$pocet_stran; $i++) {
-// cyklus pro zobrazeni navigacni listy
-	if ($i!=$strana) {
-		echo '<a href="?page='.($i).'" title="Strana '.$i.'">'.$i.'</a> | ';
-	} else {
-		echo $i.' | ';
-	}
-}
-if ($strana!=$pocet_stran){
-	echo ' <a href="?page='.($strana+1).'" title="Následující strana">&ndash;&gt;</a>'; //da nasledujici, kdyz nutne
-}
-echo '
-</div>';
 ?>
 </div>
 </div>
