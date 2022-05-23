@@ -25,7 +25,7 @@ if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
 }		
 ?>
 
-<h3 class="accordion accordion-main" id="organizace">Organizace</h3>
+<h3 class="accordion" id="organizace">Organizace</h3>
 <div>
 <p>
 Termín a místo konání: <strong><?php echo $termin ?></strong> (úterý až pátek), <?php echo $misto ?>.
@@ -191,29 +191,6 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 <h3 class="accordion accordion-main" id="fotky">Fotogalerie</h3>
 <div>
 
-<script src="js/jquery.lightbox-0.5.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function() {
-        $('.photoContainer a').lightBox(
-        	{
-        	fixedNavigation:		true,
-			imageLoading:			'pic/lightboxes/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
-			imageBtnPrev:			'pic/lightboxes/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
-			imageBtnNext:			'pic/lightboxes/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
-			imageBtnClose:			'pic/lightboxes/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
-			imageBlank:				'pic/lightboxes/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
-			// Configuration related to container image box
-			containerBorderSize:	10,			// (integer) If you adjust the padding in the CSS for the container, #lightbox-container-image-box, you will need to update this value
-			containerResizeSpeed:	400,		// (integer) Specify the resize duration of container image. These number are miliseconds. 400 is default.
-			// Configuration related to texts in caption. For example: Image 2 of 8. You can alter either "Image" and "of" texts.
-			txtImage:				'Obrázek',	// (string) Specify text "Image"
-			txtOf:					'z'		// (string) Specify text "of"
-        	}
-        );
-    });
-</script>
-
-<div id="photoGallery">
 <?php
 
 $cesta = 'archiv/celost/63/photos';
@@ -236,27 +213,23 @@ if (is_dir(ROOT_DIR.$cesta)) {
 	sort($soubor);
 	// srovna nazvy souboru
 }	
-	
-foreach ($soubor as $i=>$s) {
-// opakuj dokud nevycerpame vsechny obrazky
-	if (file_exists(ROOT_DIR.$cesta_male.'/'.$soubor[$i])) { //existuje nahled?
-		$title = '';
-		$rok = substr($soubor[$i],0,4);
-		$mes = ltrim(substr($soubor[$i],4,2), '0');
-		$den = ltrim(substr($soubor[$i],6,2), '0');
-
-		$title .= "$den. $mes. $rok";
-		if ($popisky[$soubor[$i]]) {
-			$title .= ' &ndash; '.$popisky[$soubor[$i]];
-		}
-		list($width, $height, $type, $attr) = getimagesize(ROOT_DIR.$cesta_male.'/'.$soubor[$i]);?>
-	<div class="photoContainer">
-		<a href="<?= (ROOT_WWW.$cesta.'/'.$soubor[$i]) ?>" title="<?= $title ?>">
-		<img src="<?= (ROOT_WWW.$cesta_male.'/'.$soubor[$i]) ?>" alt="<?= $title ?>" style="margin-top: <?=(round(175-$height)/2)?>px" />
-		</a>
-	</div><?php
-	}
-}
 ?>
-</div>
+	
+<?php foreach ($soubor as $i=>$s): ?>
+	<?php if ($i%3 == 0): ?>
+	<div class="row" style="margin-bottom: 10px">
+	<?php endif; ?>
+	<?php if (file_exists(ROOT_DIR.$cesta_male.'/'.$soubor[$i])): ?>
+	<?php list($width, $height, $type, $attr) = getimagesize(ROOT_DIR.$cesta_male.'/'.$soubor[$i]);?>
+	<div class="col-xs-4">
+		<a href="<?= (ROOT_WWW.$cesta.'/'.$soubor[$i]) ?>">
+		<img src="<?= (ROOT_WWW.$cesta_male.'/'.$soubor[$i]) ?>" class="img-thumbnail">
+		</a>
+	</div>
+	<?php endif; ?>
+	<?php if ($i%3 == 2): ?>
+	</div>
+	<?php endif; ?>
+<?php endforeach; ?>
+
 </div>
