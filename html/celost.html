@@ -155,6 +155,7 @@ Za organizátory se těší Vladimír Kulich
 	<li>Vlakové a autobusové nádraží</li>
 </ol>
 </div-->
+<?php endif; ?>
 
 <h3 class="accordion accordion-main" id="ulohy">Zadání a řešení úloh</h3>
 
@@ -172,49 +173,133 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 </tr>
 <tr>
 	<th scope="row">Teorie</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61a3_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61a3_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_r.pdf"><i class="pdf">pdf</i></a></td>
 </tr>
 <tr>
 	<th scope="row">Experiment</th>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61a3_pz.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/61/fo61a3_pr.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_pz.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_pr.pdf"><i class="pdf">pdf</i></a></td>
 </tr>
 </table>
 </div>
+
+<p>
+<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/31/vysledky" class="btn btn-lg btn-default">Výsledky</a>
 </div>
 
-<h3 class="accordion accordion-main" id="vysledky">Výsledky</h3>
-
+<h3 class="accordion accordion-main" id="fotky">Fotogalerie</h3>
 <div>
 
-<p>
-Výsledky si můžete rovněž stáhnout ve formátu <code>pdf</code>&nbsp;&ndash; <a href="<?php echo ROOT_WWW ?>vysledky/61_A_3.pdf"><i class="pdf">pdf</i></a>.
-</p>
-<table class="vysledkovka" cellpadding=3>
+<script src="js/jquery.lightbox-0.5.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.photoContainer a').lightBox(
+        	{
+        	fixedNavigation:		true,
+			imageLoading:			'pic/lightboxes/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
+			imageBtnPrev:			'pic/lightboxes/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
+			imageBtnNext:			'pic/lightboxes/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
+			imageBtnClose:			'pic/lightboxes/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
+			imageBlank:				'pic/lightboxes/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
+			// Configuration related to container image box
+			containerBorderSize:	10,			// (integer) If you adjust the padding in the CSS for the container, #lightbox-container-image-box, you will need to update this value
+			containerResizeSpeed:	400,		// (integer) Specify the resize duration of container image. These number are miliseconds. 400 is default.
+			// Configuration related to texts in caption. For example: Image 2 of 8. You can alter either "Image" and "of" texts.
+			txtImage:				'Obrázek',	// (string) Specify text "Image"
+			txtOf:					'z'		// (string) Specify text "of"
+        	}
+        );
+    });
+</script>
 
-</tbody></table>
+<div id="photoGallery">
+<?php
+define ('POCET_FOTEK_NA_STRANKU', 50);
+if (isset($_GET['page'])) {
+	$strana = $_GET['page'];
+} else {
+	$strana = 1;
+}
 
-<p>
-Tučně jsou vyznačena nejlepší řešení dané úlohy.
-</p>
-<p>
-V případě rovnosti bodů je potřeba rozlišit pořadí (požadavek programu Excelence). K tomu slouží pomocné kritérium, tzv. modifiované body.
-Modifiované body: <i>MB</i>&nbsp;=&nbsp;&Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>), kde <i>b</i> je bodový zisk z dané úlohy, max je maximum bodů dané úlohy a prum je průměrný bodový zisk z dané úlohy.
-Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.
-</p>
+//nacte soubor s popiskami obrazku - pouze pro ceskou cast stranek
+$popisky = array();
+
+$file_popisky = ROOT_DIR.'archiv/celost/63/popisky.csv';
+if (file_exists($file_popisky)) {
+	$handle = @fopen($file_popisky, 'r');
+	$row=0;
+	while (($data = fgetcsv($handle, filesize($file_popisky), ";")) !== FALSE) {
+		$popisky = array_merge($popisky, array($data[0]=>$data[1]));
+	}
+	fclose($handle);
+}
+
+$cesta = 'archiv/celost/63/photos';
+$cesta_male = 'archiv/celost/63/thumbnails';
+
+$soubor = array(); // zinicializuje pole
+if (is_dir(ROOT_DIR.$cesta)) {
+	$adresar = opendir(ROOT_DIR.$cesta);
+	// otevre adresar
+	while ($zaznam = readdir($adresar)) {
+	// nacte nazev souboru
+		if (!is_dir(ROOT_DIR.$cesta.'/'.$zaznam)) {
+		// zkontroluje zda neni nazev adresar
+			$soubor[] = $zaznam;
+			// ulozi do pole soubor
+		}
+	}
+	closedir($adresar);
+	// uzavre adresar
+	sort($soubor);
+	// srovna nazvy souboru
+}	
+	
+$obrazek_start = ($strana - 1) * (POCET_FOTEK_NA_STRANKU);
+// ktery obrazek bude prvni
+for ($i = $obrazek_start; ($i < $obrazek_start+POCET_FOTEK_NA_STRANKU && $i<sizeof($soubor)); $i++) {
+// opakuj dokud nevycerpame vsechny obrazky
+	if (file_exists(ROOT_DIR.$cesta_male.'/'.$soubor[$i])) { //existuje nahled?
+		$title = '';
+		$rok = substr($soubor[$i],0,4);
+		$mes = ltrim(substr($soubor[$i],4,2), '0');
+		$den = ltrim(substr($soubor[$i],6,2), '0');
+
+		$title .= "$den. $mes. $rok";
+		if ($popisky[$soubor[$i]]) {
+			$title .= ' &ndash; '.$popisky[$soubor[$i]];
+		}
+		list($width, $height, $type, $attr) = getimagesize(ROOT_DIR.$cesta_male.'/'.$soubor[$i]);?>
+	<div class="photoContainer">
+		<a href="<?= (ROOT_WWW.$cesta.'/'.$soubor[$i]) ?>" title="<?= $title ?>">
+		<img src="<?= (ROOT_WWW.$cesta_male.'/'.$soubor[$i]) ?>" alt="<?= $title ?>" style="margin-top: <?=(round(175-$height)/2)?>px" />
+		</a>
+	</div><?php
+	}
+}
+
+$pocet_stran = ceil( count($soubor) / (POCET_FOTEK_NA_STRANKU) );
+// spocitame pocet stran galerie
+
+echo '
+<div style="text-align:center; clear:left">';
+if ($strana!=1){
+	echo '<a href="?page='.($strana-1).'" title="Předchozí strana">&lt;&ndash;</a> | '; //da predchozi, kdyz nutne
+}
+for ($i=1; $i<=$pocet_stran; $i++) {
+// cyklus pro zobrazeni navigacni listy
+	if ($i!=$strana) {
+		echo '<a href="?page='.($i).'" title="Strana '.$i.'">'.$i.'</a> | ';
+	} else {
+		echo $i.' | ';
+	}
+}
+if ($strana!=$pocet_stran){
+	echo ' <a href="?page='.($strana+1).'" title="Následující strana">&ndash;&gt;</a>'; //da nasledujici, kdyz nutne
+}
+echo '
+</div>';
+?>
 </div>
-
-<h3 class="accordion accordion-main" id="seznam">Seznam postupujících</h3>
-
-<div>
-
-<p>
-U&nbsp;každého postupujícího uvádíme body získané v&nbsp;krajském kole.
-</p>
-
-<table class="vysledkovka" cellpadding=3>
-<thead>
-</tbody></table>
 </div>
-<?php endif; ?>
