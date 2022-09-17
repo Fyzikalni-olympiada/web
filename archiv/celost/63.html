@@ -1,0 +1,79 @@
+<h2>Plzeň 2022</h2>
+
+<p>
+Ústřední kolo 63. ročníku Fyzikální olympiády kategorie A proběhlo 15.–18. března 2022 v Plzni.
+</p>
+
+<h3>Zadání a řešení úloh</h3>
+
+<p>
+Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
+</p>
+
+<div class="table-responsive">
+<table class="zadani table">
+<tr>
+	<th></th>
+	<th scope="col">Zadání úloh</th>
+	<th scope="col">Řešení úloh</th>
+</tr>
+<tr>
+	<th scope="row">Teorie</th>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_r.pdf"><i class="pdf">pdf</i></a></td>
+</tr>
+<tr>
+	<th scope="row">Experiment</th>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_pz.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/63/fo63a3_pr.pdf"><i class="pdf">pdf</i></a></td>
+</tr>
+</table>
+</div>
+
+<p>
+<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/31/vysledky" class="btn btn-lg btn-default">Výsledky</a>
+
+
+<h3>Fotogalerie</h3>
+
+<?php
+
+$cesta = 'archiv/celost/63/photos';
+$cesta_male = 'archiv/celost/63/thumbnails';
+
+$soubor = array(); // zinicializuje pole
+if (is_dir(ROOT_DIR.$cesta)) {
+	$adresar = opendir(ROOT_DIR.$cesta);
+	// otevre adresar
+	while ($zaznam = readdir($adresar)) {
+	// nacte nazev souboru
+		if (!is_dir(ROOT_DIR.$cesta.'/'.$zaznam)) {
+		// zkontroluje zda neni nazev adresar
+			$soubor[] = $zaznam;
+			// ulozi do pole soubor
+		}
+	}
+	closedir($adresar);
+	// uzavre adresar
+	sort($soubor);
+	// srovna nazvy souboru
+}	
+?>
+	
+<?php foreach ($soubor as $i=>$s): ?>
+	<?php if ($i%3 == 0): ?>
+	<div class="row" style="margin-bottom: 10px">
+	<?php endif; ?>
+	<?php if (file_exists(ROOT_DIR.$cesta_male.'/'.$soubor[$i])): ?>
+	<?php list($width, $height, $type, $attr) = getimagesize(ROOT_DIR.$cesta_male.'/'.$soubor[$i]);?>
+	<div class="col-xs-4">
+		<a href="<?= (ROOT_WWW.$cesta.'/'.$soubor[$i]) ?>">
+		<img src="<?= (ROOT_WWW.$cesta_male.'/'.$soubor[$i]) ?>" class="img-thumbnail">
+		</a>
+	</div>
+	<?php endif; ?>
+	<?php if ($i%3 == 2): ?>
+	</div>
+	<?php endif; ?>
+<?php endforeach; ?>
+<p>Autor fotografií: Jindra Radová</p>

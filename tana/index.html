@@ -3,7 +3,7 @@ $GLOBALS['mysql']->query('
 	SELECT termin
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%celostátní soustředění%\'
-	AND rocnik="' . 61 . '"
+	AND rocnik="' . 63 . '"
 '); // (AKTUALNI_ROCNIK-1)
 list($termin) = $GLOBALS['mysql']->fetch_array();
  
