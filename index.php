@@ -184,14 +184,14 @@ Fyzikální olympiáda – <?= nadpis() ?>
                         <li><a href="http://kvary.fyzikalniolympiada.cz/" title="Stránky karlovarského kraje">Karlovarský kraj</a></li>
                         <li><a href="http://vysocina.fyzikalniolympiada.cz/" title="Stránky kraje Vysočina">Kraj Vysočina</a></li>
                         <li><a href="https://www.gjkt.cz/fyzikalni-olympiada/" title="Stránky královéhradeckého kraje">Královéhradecký kraj</a></li>
-                        <li><a href="http://www.sportgym.cz/aktivity/fyzikalni-olympiada" title="Stránky libereckého kraje">Liberecký kraj</a></li>
-                        <li><a href="http://www.svcoo.cz/souteze/souteze_fyzika.html" title="Stránky moravskoslezského kraje">Moravskoslezský kraj</a></li>
+                        <li><a href="https://fo.randovka.cz/" title="Stránky libereckého kraje">Liberecký kraj</a></li>
+                        <li><a href="http://www.svcoo.cz/souteze-msmt-fyzika" title="Stránky moravskoslezského kraje">Moravskoslezský kraj</a></li>
                         <li><a href="http://www.ktf.upol.cz/fo/" title="Stránky olomouckého kraje">Olomoucký kraj</a></li>
-                        <li><a href="http://souteze.ccvpardubice.cz/soutez/310/" title="Stránky pardubického kraje">Pardubický kraj</a></li>
+                        <li><a href="http://souteze.ccvpardubice.cz/soutez/332/" title="Stránky pardubického kraje">Pardubický kraj</a></li>
                         <li><a href="http://kof.zcu.cz/fo/" title="Stránky plzeňského kraje">Plzeňský kraj</a></li>
                         <li><a href="http://fo.czechian.net/" title="Stránky středočeského kraje">Středočeský kraj</a></li>
-                        <li><a href="http://physics.ujep.cz/~fo/" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
-                        <li><a href="http://www.guh.cz/?page_id=272" title="Stránky zlínského kraje">Zlínský kraj</a></li>
+                        <li><a href="https://www.ddmul.cz/souteze-msmt-fyzikalni-olympiada" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
+                        <li><a href="https://www.guh.cz/fyzikalni-olympiada/" title="Stránky zlínského kraje">Zlínský kraj</a></li>
                     </ul>
                 </div>
             </div>
