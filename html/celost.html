@@ -25,10 +25,10 @@ if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
 }		
 ?>
 
-<h3 class="accordion accordion-main" id="organizace">Organizace</h3>
+<h3 class="accordion" id="organizace">Organizace</h3>
 <div>
 <p>
-Termín a místo konání: <strong><?php echo $termin ?></strong> (úterý až pátek), <?php echo $misto ?>.
+Termín a místo konání: <strong><?php echo $termin ?></strong> (pondělí až čtvrtek), <?php echo $misto ?>.
 </p>
 <p>
 Z nejúspěšnějších řešitelů krajského kola kategorie&nbsp;A vybere ÚK&nbsp;FO na návrh krajských komisí
@@ -63,99 +63,74 @@ Z&nbsp;vítězů ústředního kola bude na základě výsledků na <a href="/pr
 </p>
 </div>
 
-<?php if (false): ?>
 <h3 class="accordion accordion-main" id="venue">Informace pro účastníky</h3>
 <div>
 
 <p>
-Zveme Vás do Ústředního kola fyzikální olympiády kategorie A, které se bude konat od úterý 25. 2. 2020 do pátku 28. 2. 2020 na Gymnáziu Václava Beneše Třebízského ve Slaném. Každý soutěžící bude potřebovat psací potřeby, kalkulačku a tabulky. Stravování je zajištěno, jídelníček je najdete dále. V úterý se po slavnostním zahájení uskuteční raut. Účastníci jsou ubytováni v hotelu VSH Slaný (zimní stadion). 
-</p>
-<p>
-Prezence proběhne od 14:00 do 17:30 v hotelu VHS Slaný.
-</p>
-<p>
-Cestovné bude vyplaceno na základě jednosměrné jízdenky. Nekupujte si, prosím, zpáteční jízdenky, neboť jízdenka zůstává jako doklad u organizátora. Při dopravě autem, v němž cestuje více osob, se cestovné vyplácí pouze řidiči (tj. jedné osobě) ve výši cestovného hromadným prostředkem (výši cestovného doloží účastník — podklady možno získat v informačních pokladnách ČSAD a ČD, event. na internetu). 
-</p>
-<p>
-Kdo má zájem navštívit plavecký bazén, vezme si s sebou plavky. Bazén se nachází v blízkosti zimního stadionu, v němž je zajištěno ubytování. 
-</p>
-<p>
-Ve středu 26. 2. 2020 jsme schopni ve večerních hodinách zorganizovat procházku po městě s místním regionálním historikem. 
-</p>
-<p>
-Za organizátory se těší Vladimír Kulich
+Zveme vás na ústřední kola Fyzikální olympiády kategorie A, které se bude konat od pondělí 6. 3. 2023 do čtvrtka 8. 3. 2023 na Gymnáziu Cheb. 
 </p>
 
 <p>
-Ústřední kolo proběhne se podporou:
+Ústřední kolo proběhne s podporou:
 </p>
 <div>
 <ul>
-	<li>Gymnázia Václava Beneše Třebízského ve Slaném,</li>
-	<li>města Slaný,</li>
-	<li>Ministerstva školství mládeže a tělovýchovy,</li>
-	<li>skupiny ČEZ,</li>
-	<li>Středočeského kraje</li>
+	<li>Gymnázia Cheb,</li>
+	<li>města Cheb,</li>
+	<li>Karlovarského kraje a</li>
+	<li>skupiny ČEZ.</li>
 </ul>
 </div>
 
 <!--p><i class="pdf">pdf</i>&nbsp;<a href="/archiv/celost/61/2019_pozvanka.pdf"><b>Oficiální pozvánka</b></a></p-->
-<p><i class="pdf">pdf</i>&nbsp;<a href="/archiv/celost/61/2020_program.pdf"><b>Program ústředního kola</b></a></p>
-<p><i class="pdf">pdf</i>&nbsp;<a href="/archiv/celost/61/2020_jidelnicek.pdf"><b>Jídelní lístek</b></a></p>
 </div>
 
 <!--h3><a href="<?php echo odkaz('archiv/celost/56/photos.html')?>" title="Fotogalerie ústředního kola 56. ročníku FO">Fotogalerie</a></h3-->
 
 
-<!--h3 class="accordion" id="program">Program</h3>
+<h3 class="accordion accordion-main" id="program">Program</h3>
 
 <div>
 
-<h4>Úterý 7. 2. 2017</h4>
-<table cellpadding="3" style="width: 100%">
-<tr><td>14:00 – 18:00</td><td>Příjezd, registrace a ubytování</td></tr>
-<tr><td>19:00</td><td>Slavnostní zahájení – Dům kultury Střelnice Rumburk</td></tr>
+<h4>Pondělí 6. 3.</h4>
+<table style="width: 100%">
+	<tr><td>15:30 – 17:30</td><td>Otevřena prezence – gymnázium Cheb planetárium, pak ubytování</td></tr>
+	<tr><td>18:30 – 21:00</td><td>Slavnostní zahájení CK FO 2023 v aule FEK ZČU v Chebu, občerstvení</td></tr>
 </table>
-<h4>Středa 8. 2. 2017</h4>
-<table cellpadding="3" style="width: 100%">
-<tr><td>7:00 – 8:00</td><td>Snídaně dle ubytování</td></tr>
-<tr><td>8:30 – 13:30</td><td>Řešení teoretických úloh – Gymnázium Rumburk</td></tr>
-<tr><td>9:00 – 13:00</td><td>Zasedání ÚK FO</td></tr>
-<tr><td>13:30 – 14:30</td><td>Oběd – jídelna SZŠ a OA</td></tr>
-<tr><td></td><td>Oprava teoretických úloh</td></tr>
-<tr><td>15:00</td><td>Přednáška: p. Václav Sojka, <em>„Českosaské Švýcarsko“</em> – sál knihovny Rumburk (skR)</td></tr>
-<tr><td>17.30 – 18:30</td><td>Večeře – jídelna SZŠ a OA</td></tr>
-<tr><td>19:30</td><td>Přednáška: prof. RNDr. Jiří Podolský, CSc., DSc.,<br><em>„Maxwell a Einstein – elektromagnetické a gravitační vlny“</em> – skR</td></tr>
+<h4>Úterý 7. 3.</h4>
+<table style="width: 100%">
+	<tr><td>6:00 – 7:30</td><td>Snídaně ISŠ Cheb, jídelna</td></tr>
+	<tr><td>8:30 – 13:00</td><td>Řešení teoretických úloh</td></tr>
+	<tr><td>9:00 – 12:30</td><td>Zasedání ÚK FO</td></tr>
+	<tr><td>13:15 – 14:15</td><td>Oběd ISŠ Cheb, jídelna</td></tr>
+	<tr><td>14:30 – 16:00</td><td>Komentovaná prohlídka historické části Chebu</td></tr>
+	<tr><td>14:30 – 22:00</td><td>Oprava teoretických úloh</td></tr>
+	<tr><td>18:30 – 19:30</td><td>Večeře ISŠ Cheb, jídelna</td></tr>
+	<tr><td>19:00 – 21:00</td><td>Zvaná přednáška</td></tr>
 </table>
-<h4>Čtvrtek 9. 2. 2017</h4>
-<table cellpadding="3" style="width: 100%">
-<tr><td>7:00 – 8:00</td><td>Snídaně dle ubytování</td></tr>
-<tr><td>7:45 – 13:45</td><td>Řešení experimentální úlohy – Gymnázium Rumburk</td></tr>
-<tr><td>13:30 – 14:30</td><td>Oběd – jídelna SZŠ a OA</td></tr>
-<tr><td>15:00</td><td>Komentovaná prohlídka Lorety Rumburk</td></tr>
-<tr><td>16:30 – 17:30</td><td>Konzultace opravených úloh</td></tr>
-<tr><td>17.30 – 18:30</td><td>Večeře – jídelna SZŠ a OA</td></tr>
-<tr><td>19:00</td><td>Přednáška: prof. RNDr. Petr Kulhánek, CSc., <em>„Plazma ve vesmíru a v laboratoři“</em> – skR</td></tr>
-<tr><td>21:30</td><td>Závěrečné zasedání ÚK FO</td></tr>
+<h4>Středa 8. 3.</h4>
+<table style="width: 100%">
+	<tr><td>6:00 – 7:30</td><td>Snídaně ISŠ Cheb, jídelna</td></tr>
+	<tr><td>9:00 – 12:30</td><td>1. skupina řešení experimentální úlohy, 2. skupina program v planetáriu</td></tr>
+	<tr><td>12:45 – 13:30</td><td>Oběd ISŠ Cheb, jídelna a studená večeře, balíček</td></tr>
+	<tr><td>14:00 – 17:30</td><td>2. skupina řešení experimentální úlohy, 1. skupina program v planetáriu</td></tr>
+	<tr><td>19:00 – 20:00</td><td>Moderace teoretických úloh</td></tr>
+	<tr><td>20:00 – 22:00</td><td>Závěrečné zasedání komise</td></tr>
 </table>
-<h4>Pátek 10. 2. 2017</h4>
-<table cellpadding="3" style="width: 100%">
-<tr><td>7:30 – 8:30</td><td>Snídaně dle ubytování</td></tr>
-<tr><td>9:00</td><td>Slavnostní vyhlášení výsledků – aula Gymnázia Rumburk</td></tr>
+<h4>Čtvrtek 9. 3.</h4>
+<table style="width: 100%">
+	<tr><td>6:00 – 7:30</td><td>Snídaně ISŠ Cheb, jídelna. Uvolnění pokojů a přesun zavazadel do auly FEK ZČU Cheb</td></tr>
+	<tr><td>8:00 – 10:30</td><td>Vyhlášení výsledků a slavnostní zakončení FO</td></tr>
+	<tr><td>10:30</td><td>Obědové balíčky a odjezd</td></tr>
 </table>
 
-<p>
-<img src="/archiv/celost/59/mapa.jpg" class="center" style="width: 100%">
-</p>
-<ol>
-	<li>Autobusová zastávka Bytex 01</li>
-	<li>Gymnázium Rumburk</li>
-	<li>Internát SZŠ a OA</li>
-	<li>Penzion  U Parku</li>
-	<li>Vlakové a autobusové nádraží</li>
-</ol>
-</div-->
-<?php endif; ?>
+<div class="hide visible-xs">
+<iframe style="border:none" src="https://en.frame.mapy.cz/s/heruhevemo" width="313" height="219" frameborder="0"></iframe>
+</div>
+<div class="hide visible-sm">
+<iframe style="border:none" src="https://en.frame.mapy.cz/s/heruhevemo" width="500" height="333" frameborder="0"></iframe>
+</div>
+</div>
 
 <!--h3 class="accordion accordion-main" id="ulohy">Zadání a řešení úloh</h3>
 
