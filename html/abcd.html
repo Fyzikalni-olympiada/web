@@ -50,119 +50,114 @@ $krajBeforeA = $krajDateA > date('Y-m-d');
 $krajBeforeWeekAfterA = $krajDateA > date('Y-m-d', strtotime("-1 week"));
 $krajBeforeBCD = $krajDateBCD > date('Y-m-d');
 ?>
-<h3 class="accordion" id="organizace">Školní kolo</h3>
+<h3 class="accordion" id="organizace">Jak se zapojit</h3>
 
 <div>
 <ul class="nav nav-tabs">
 	<li class="active"><a href="#organizace-student" data-toggle="tab">Student</a></li>
 	<li><a href="#organizace-ucitel" data-toggle="tab">Učitel</a></li>
-	<li><a href="#organizace-organizator" data-toggle="tab">Organizátor</a></li>
 </ul>
 <div class="tab-content">
-<p>
-Kategorie&nbsp;A,&nbsp;B,&nbsp;C,&nbsp;D jsou určeny pro žáky středních
-škol (a odpovídajících ročníků víceletých gymnázií):</p>
-<ul>
-	<li>Kategorie A &ndash; 4. ročník</li>
-	<li>Kategorie B &ndash; 3. ročník</li>
-	<li>Kategorie C &ndash; 2. ročník</li>
-	<li>Kategorie D &ndash; 1. ročník</li>
-</ul>
-<p>
-Všechny kategorie mají školní a&nbsp;krajské kolo.
-Kategorie&nbsp;A navíc vrcholí <a href="<?php echo odkaz("celost.html"); ?>" title="ústřední kolo">ústředním kolem</a>.
-Každý řešitel se může zúčastnit i kategorie vyšší, než mu odpovídá, pokud se na to cítí.
-</p>
-<div class="tab-pane active" id="organizace-student">
-<p>
-Ve&nbsp;školním kole máte za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="/studijni-texty" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
-fyzikální olympiády.
-Jeho úkolem je vás jednak seznámit s&nbsp;typem úloh, které se v&nbsp;dané kategorii mohou v&nbsp;dalších kolech vyskytnout, a&nbsp;hlavně také prověřit vaši
-schopnost tyto úlohy řešit.
-První tři úlohy řešte nejlépe do konce listopadu,
-potom řešte další čtyři úlohy včetně experimentální úlohy.
 
+<div class="tab-pane active" id="organizace-student">
+<h4>Milí studenti!</h4>
 <p>
-Termín odevzdání řešení pro kategorii&nbsp;A je začátek ledna
-(<strong><?=$terminA?></strong>),
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D začátek dubna
-(<strong><?=$terminBCD?></strong>)
+Středoškolské kategorie&nbsp;A,&nbsp;B,&nbsp;C,&nbsp;D mají školní a&nbsp;krajské kolo.
+Kategorie&nbsp;A navíc vrcholí <a href="<?php echo odkaz("celost.html"); ?>" title="ústřední kolo">ústředním kolem</a>.
+Pokud se na to cítíte, můžete se kategorie A zúčastnit, i když nejste v posledním ročníku střední školy.
+</p>
+<p>
+Ve&nbsp;<b>školním kole</b> máte za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat
+fyzikální <a href="/studijni-texty" title="studijní témata">studijní
+téma</a>. Jeho úkolem je vás jednak seznámit s&nbsp;typem úloh, které se
+v&nbsp;dané kategorii mohou v&nbsp;dalších kolech vyskytnout, a&nbsp;také
+procvičit schopnost tyto úlohy řešit.
+</p>
+<p>
+Do souteže se <b>přihlásíte</b> prostřednictvím <a
+	href="https://osmo.fyzikalniolympiada.cz/">Osmo</a>. Prosíme, abyste si v
+Osmo založili účet, pokud ho již nemáte z loňského roku. Poté se přihlaste do
+správné kategorie. Věnujte pozornost, abyste správně vybrali svoji školu. Pokud
+svoji školu nenajdete, nebo narazíte na jiný problém, napište na
+osmo@fyzikalniolympiada.cz.
+</p>
+<p>
+Do Osmo nahrajte svá řešení školního kola. Stačí papíry nafotit mobilem a fotky
+potom vložit ke správné úloze.
 </p>
 <p>
 Vypracovaná řešení odevzdejte svému učiteli fyziky, který je opraví
 a&nbsp;oklasifikuje. Za každou úlohu můžete získat maximálně 10&nbsp;bodů.
 Řešení je vyhovující, pokud získáte za úlohu alespoň 5&nbsp;bodů.
 </p>
+
+<p>
+Termín odevzdání řešení pro kategorii&nbsp;A je <strong><?=$terminA?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D <strong><?=$terminBCD?></strong>.
+</p>
 <p>
 <b>Úspěšní řešitelé</b> prvního kola jsou ti z&nbsp;vás, kteří vyřeší alespoň
 pět úloh za pět bodů a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentální úlohu.
-O&nbsp;postupu do krajského kola a&nbsp;místě jeho konání se dozvíte prostřednictvím svého
-učitele fyziky. Na pomoc
-při řešení úloh mohou organizovat vaši učitelé fyziky konzultace, kroužky nebo
-semináře.
+O&nbsp;postupu do krajského kola a&nbsp;místě jeho konání se dozvíte emailem
+(který máte v Osmo), příp. prostřednictvím svého učitele fyziky.
 </p>
 <p>
-Nepodceňujte řešení školního kola! Úlohy ve druhém kole soutěže jsou velmi
+<em>Nepodceňujte řešení školního kola! Úlohy ve druhém kole soutěže jsou velmi
 často podobné těm z&nbsp;kola prvního. Proto se velmi nedoporučuje opisovat řešení
 od kamaráda. Může se totiž stát, že budete úlohami ve druhém kole zaskočeni,
 vyvarovat se tomu můžete tím, že vyřešíte poctivě úlohy školního kola.
-Neopomeňte si také prostudovat studijní témata ze studijních textů, které
-jsou distribuovány na školy. V&nbsp;každém kole se vždy jedna úloha týká studijního tématu.
-</p>
+Neopomeňte si také prostudovat studijní téma. V&nbsp;každém kole se vždy jedna
+úloha týká studijního tématu.</em> </p>
 </div>
 
 <div id="organizace-ucitel" class="tab-pane">
+<h4>Vážení kolegové!</h4>
 <p>
-Ve&nbsp;školním kole mají žáci za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="/studijni-texty" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
-fyzikální olympiády.
-Termín odevzdání řešení pro kategorii&nbsp;A je začátek ledna
-(<strong><?php echo $terminA ?></strong>),
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D začátek dubna
-(<strong><?php echo $terminBCD ?></strong>).
-Vypracovaná řešení od svých žáků vyberte, opravte a&nbsp;oklasifikujte
-je bodovým systémem, který zohledňuje kvalitu a&nbsp;úplnost řešení. Za každou úlohu může student získat maximálně 10&nbsp;bodů.
-Řešení je vyhovující, pokud řešitel získal za úlohu alespoň 5&nbsp;bodů. Řešení nevyhovuje, jsou-li odborné nedostatky závažné nebo je řešení z&nbsp;větší části neúplné, jestliže chybí výklad nebo je neúplný, takže se z&nbsp;něho
-nedá usuzovat na myšlenkový postup řešení. Bodový systém objektivizuje
-hodnocení a&nbsp;usnadňuje výběr postupujících do dalšího kola.
+Středoškolské kategorie A, B, C, D mají školní a krajské kolo.
+Ve&nbsp;školním kole mají studenti za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat
+fyzikální <a href="/studijni-texty" title="studijní témata">studijní
+témata</a>.
 </p>
 <p>
-Jako pomůcka pro hodnocení úloh přijde k&nbsp;vám na školu instruktážní řešení. Po
-ukončení prvního kola soutěže odešlete všechna opravená řešení (i&nbsp;neúspěšných řešitelů) na příslušnou KK&nbsp;FO. Od nich se dozvíte, kteří řešitelé budou zařazeni do
-druhého (krajského) kola, a&nbsp;kde se krajské kolo koná. Tyto informace oznámíte
-svým studentům, případně se s&nbsp;nimi na krajské kolo dostavíte.
+Studenti se do soutěže přihlašují prostřednictvím <a
+	href="https://osmo.fyzikalniolympiada.cz/">Osmo</a>, kde také nahrávají
+elektronickou verzi svých řešení. Papírovou verzi odevzdávájí vám.</p>
+<p>
+Na pomoc řešitelům při řešení úloh můžete organizovat konzultace, kroužky nebo
+semináře.  </p>
+
+<p>
+Termín odevzdání řešení pro kategorii&nbsp;A je <strong><?php echo $terminA ?></strong>,
+v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D <strong><?php echo $terminBCD ?></strong>.
 </p>
 <p>
-Na pomoc
-řešitelům při řešení úloh můžete organizovat konzultace, kroužky nebo
-semináře.
+Vypracovaná řešení svých studentů opravte a&nbsp;ohodnoťte je bodovým
+schématem podle autorského řešení. Zohledněte kvalitu a&nbsp;úplnost řešení. Za
+každou úlohu může student získat maximálně 10&nbsp;bodů. Řešení je vyhovující,
+pokud řešitel získal za úlohu alespoň 5&nbsp;bodů. Řešení nevyhovuje, jsou-li
+odborné nedostatky závažné nebo je řešení z&nbsp;větší části neúplné, jestliže
+chybí výklad nebo je neúplný, takže se z&nbsp;něho nedá usuzovat na myšlenkový
+postup řešení. Bodový systém objektivizuje hodnocení a&nbsp;usnadňuje výběr
+postupujících do dalšího kola.
+</p>
+<p>
+Autorská řešení získáte od vám příslušné krajské komise. Pokud jste se do
+Fyzikální olympiády zapojili i v minulém ročníku, měli byste obdržet autorská
+řešení automaticky.
+</p>
+<p>
+Soutěžní protokoly všech řešitelů pošlete krajské komisi preferovným
+způsobem dané komise (poštou, e-mailem, nebo s využítím Osmo). Pokud potřebuje
+účet v eletronickém systému Osmo, <a
+href="https://osmo.fyzikalniolympiada.cz/acct/create">založte si ho</a>, a pak
+požádejte na emailu osmo@fyzikalniolympiada.cz, aby vám byla přidělena role
+školního garanta ve vaší škole.  
+</p>
+<p>
+Pozvánky do krajského kola obdrží přímo soutěžící na email, kterým se registrovali v Osmo.
 </p>
 </div>
 
-<div id="organizace-organizator" class="tab-pane">
-<p>
-Ve&nbsp;školním kole mají žáci za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat fyzikální <a href="/studijni-texty" title="studijní témata">studijní témata</a>, která byla publikována jako brožury Knihovničky
-fyzikální olympiády.
-Termín odevzdání řešení pro kategorii&nbsp;A je začátek ledna
-(<strong><?php echo $terminA ?></strong>),
-v&nbsp;kategoriích B,&nbsp;C,&nbsp;D začátek dubna
-(<strong><?php echo $terminBCD ?></strong>).
-Učitel fyziky opraví řešení úloh a&nbsp;klasifikuje je bodovým systémem, který zohledňuje kvalitu a&nbsp;úplnost řešení. Za každou úlohu může student získat maximálně 10&nbsp;bodů.
-Řešení je vyhovující, pokud řešitel získal za úlohu alespoň 5&nbsp;bodů. Řešení nevyhovuje, jsou-li odborné nedostatky závažné nebo je řešení z&nbsp;větší části neúplné, jestliže chybí výklad nebo je neúplný, takže se z&nbsp;něho
-nedá usuzovat na myšlenkový postup řešení. Bodový systém objektivizuje
-hodnocení a&nbsp;usnadňuje výběr postupujících do dalšího kola.
-</p>
-<p>
-Referent FO na škole odešle po ukončení prvního kola soutěže všechna opravená řešení (i&nbsp;neúspěšných řešitelů) na příslušnou KK&nbsp;FO. Referenti KK&nbsp;FO pro kategorie
-provedou kontrolu řešení a&nbsp;KK&nbsp;FO rozhodne, kteří řešitelé budou zařazeni do
-druhého (krajského) kola, a&nbsp;oznámí to referentům na školách.
-</p>
-<p>
-Úspěšní řešitelé prvního kola jsou ti soutěžící, kteří úspěšně vyřeší alespoň
-pět úloh a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentální úlohu. Na pomoc
-řešitelům při řešení úloh organizují učitelé fyziky konzultace, kroužky nebo
-semináře v&nbsp;střediskových školách pod patronátem JČMF.
-</p>
-</div>
 </div>
 </div>
 
@@ -180,22 +175,22 @@ semináře v&nbsp;střediskových školách pod patronátem JČMF.
 </tr>
 <tr>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/64/fo64a1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/65/fo65a1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminA?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/64/fo64b1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/65/fo65b1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/64/fo64c1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/65/fo65c1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/64/fo64d1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?php echo ROOT_WWW ?>archiv/65/fo65d1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
@@ -258,14 +253,14 @@ strany řešení.
 </tr>
 <tr>
 <? if (!$beforeA) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64a1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65a1_r.pdf"><i class="pdf">pdf</i></a></td>
 <? else :?>
 	<td></td>
 <? endif; ?>
 <? if (!$beforeBCD) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64b1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64c1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64d1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65b1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65c1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65d1_r.pdf"><i class="pdf">pdf</i></a></td>
 <? else :?>
 	<td></td>
 	<td></td>
@@ -304,14 +299,17 @@ z&nbsp;nich kontrolují, jak dobře jste prostudovali zadané <a href="/studijni
 z&nbsp;jedné úlohy je&nbsp;10. V&nbsp;krajském kole můžete používat Matematické, fyzikální a&nbsp;chemické tabulky pro střední školy a&nbsp;neprogramovatelné kalkulačky.
 </p>
 <p>
-Za <b>úspěšného řešitele</b> se považuje každý soutěžící, který celkové dosáhl minimálně 14 bodů, přičemž bodové hodnocení alespoň dvou úloh bylo 5 bodů nebo více. Ve výsledném pořadí jsou nejprve uvedeni úspěšní řešitelé seřazeni podle počtu bodů a teprve za nimi jsou další účastníci. Při shodném počtu bodů o pořadí rozhoduje:
+Za <b>úspěšného řešitele</b> se považuje každý soutěžící, který celkové dosáhl minimálně 14 bodů, přičemž bodové hodnocení alespoň dvou úloh bylo 5 bodů nebo více.
+</p>
+<!--
+Ve výsledném pořadí jsou nejprve uvedeni úspěšní řešitelé seřazeni podle počtu bodů a teprve za nimi jsou další účastníci. Při shodném počtu bodů o pořadí rozhoduje:
 <ol>
     <li>Vyšší počet „modifikovaných bodů“, které se vypočítají dle vzorce &Sum;&nbsp;<i>b</i>&middot;(<i>max</i>&minus;<i>prum</i>),
         kde <i>b</i> je bodový zisk z dané úlohy, <i>max</i> je maximum bodů dané úlohy a&nbsp;<i>prum</i> je průměrný bodový zisk z&nbsp;dané úlohy v daném kraji.
 Znamená to, že v modifikovaných bodech má větší váhu zisk bodů z obtížnějších úloh.</li>
     <li>Ročník studia soutěžícího, příp. datum narození. Mladší mají přednost.</li>
     <li>Pokud nerozhodne ani jedno z předchozích kritérií, rozhoduje los.</li>
-</ol>
+</ol-->
 <p>
 Úspěšní řešitelé obdrží diplom úspěšného řešitele, úspěšní řešitelé na 1. až 3. místě obdrží kromě diplomu i věcný dar. Ostatní soutěžící obdrží diplom za účast.
 </p>
@@ -335,11 +333,11 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-    <td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64a2_z.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65a2_z.pdf"><i class="pdf">pdf</i></a></td>
 <? if (!$krajBeforeBCD) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64b2_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64c2_z.pdf"><i class="pdf">pdf</i></a></td>
-    <td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64d2_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65b2_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65c2_z.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65d2_z.pdf"><i class="pdf">pdf</i></a></td>
 <? else :?>
 	<td></td>
 	<td></td>
@@ -360,11 +358,11 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64a2_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65a2_r.pdf"><i class="pdf">pdf</i></a></td>
 <? if (!$krajBeforeBCD) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64b2_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64c2_r.pdf"><i class="pdf">pdf</i></a></td>
-    <td><a href="<?php echo ROOT_WWW ?>archiv/64/fo64d2_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65b2_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65c2_r.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?php echo ROOT_WWW ?>archiv/65/fo65d2_r.pdf"><i class="pdf">pdf</i></a></td>
 <? else :?>
 	<td></td>
 	<td></td>
