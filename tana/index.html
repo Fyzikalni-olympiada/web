@@ -3,7 +3,7 @@ $GLOBALS['mysql']->query('
 	SELECT termin
 	FROM ' . TABLE_TERMS . '
 	WHERE nazev LIKE \'%celostátní soustředění%\'
-	AND rocnik="' . 63 . '"
+	AND rocnik="' . 65 . '"
 '); // (AKTUALNI_ROCNIK-1)
 list($termin) = $GLOBALS['mysql']->fetch_array();
  
@@ -13,7 +13,7 @@ list($termin) = $GLOBALS['mysql']->fetch_array();
   
   <p>
 Táňa je soustředění pořádané Ústřední komisí Fyzikální olympiády (ÚK&nbsp;FO),
-které se již tradičně koná na chatě Táňa v&nbsp;Peci pod&nbsp;Sněžkou.
+které se již tradičně koná na chatě Táňa v&nbsp;Peci pod&nbsp;Sněžkou <b>(letos výjimečně na sousední chatě Pampeliška).</b> 
 Soustředění je určeno pro cca 25 nejúspěšnějších řešitelů
 v&nbsp;kategorii&nbsp;B a&nbsp;C, tj. zpravidla 1 až 3 účastníci z&nbsp;každého
 kraje.
@@ -32,11 +32,11 @@ soustředění">fotografií</a> z&nbsp;proběhlých soustředění.
 
   <p>
 Letošní soustředění se koná
-v&nbsp;termínu&nbsp;<strong><!--<?php echo $termin ?>-->10. až 20. září 2023</strong>, tj. od neděle do středy.
+v&nbsp;termínu&nbsp;<strong><!--<?php echo $termin ?>-->6. až 18. října 2024</strong>, tj. od neděle do pátku.
   </p>
 
 <p><b>
-Přečtěte si oficiální <a href="/tana/tana_2023_pozvanka.pdf">pozvánku</a>. Pokud
+Přečtěte si oficiální <a href="/tana/tana_2024_pozvanka.pdf">pozvánku</a>. Pokud
 jste obdrželi pozvánku e-mailem či přes školu, ozvěte se prosím co nejdříve organizátorům
 přímo e-mailem na <a href="mailto:jan@houstek.net">jan@houstek.net</a> nebo
 telefonem na 724&nbsp;666&nbsp;702 pro potvrzení účasti.
@@ -45,7 +45,7 @@ telefonem na 724&nbsp;666&nbsp;702 pro potvrzení účasti.
  <h3>Informace pro přihlášené</h3>
 
  <p>
-Nástup na soustředění je <strong>v&nbsp;neděli 10.&nbsp;září</strong>, snažte se
+Nástup na soustředění je <strong>v&nbsp;neděli 6.&nbsp;října</strong>, snažte se
 dostat na místo zhruba <strong>do 18:00</strong> (později příchozím nezaručíme, že
 dostanou večeři). Pokud pojedete autem až k chatě a chcete dodržet všechny
 předpisy, je třeba si v informačním centru KRNAP v Peci p. Sněžkou (v neděli
@@ -78,22 +78,24 @@ nového dozvědět.
   </p>
   <p>
 V případě jakýchkoliv dotazů neváhejte kontaktovat přímo
-<a href="<?php echo odkaz("tana/organizatori.html"); ?>" title="Organizátoři soustředění">organizátory</a>. Těšíme se na vás na Táně.
+<a href="<?php echo odkaz("tana/organizatori.html"); ?>" title="Organizátoři soustředění">organizátory</a>. Těšíme se na vás na soustředění.
   </p>
   
 
  <h3>Cesta na chatu</h3>
   
   <p>
+Adresa: Velká Úpa 155, 542 21 Pec pod Sněžkou<br>
+GPS: 50.6928N 15.7536E<br>
 Z&nbsp;autobusového nádraží v&nbsp;Peci pod&nbsp;Sněžkou se vydejte po hlavní
 silnici zpět směrem na Velkou Úpu. Ihned poté, co přejdete most přes Úpu,
 zahněte doleva a&nbsp;vydejte se směrem nahoru do lesa. U odbočky je dobře
 viditelný ukazatel na chaty Táňa a Irena. Cesta vede do prudkého kopce lesem. Poté les
 končí, cesta vede střídavě mírně z&nbsp;kopce a&nbsp;do&nbsp;kopce. Jděte po této
-cestě stále rovně, na poslední křižovatce je směr na Táňu vyznačen, chata je od
-křižovatky vzdálená asi 100&nbsp;m. Celkem je chata od autobusového nádraží
-vzdálená asi&nbsp;1500&nbsp;m, viz mapa, GPS souřadnice jsou 50°41'35.8"N,
-15°45'18.7"E. Nelze příliš doporučit přímou cestou svahem od penzionu Tetřívek,
+cestě stále rovně, na poslední křižovatce asfaltová silnice pokračuje do kopce mírně vlevo,
+rovně je odbočka na chatu Táňa a mírně vpravo s kopce dolů na chatu Pampeliška. Chata je od
+křižovatky vzdálená asi 150&nbsp;m. Celkem je chata od autobusového nádraží
+vzdálená asi&nbsp;1500&nbsp;m. Nelze příliš doporučit přímou cestou svahem od penzionu Tetřívek,
 zejména ne se zavazadly.
   </p>
 
@@ -122,10 +124,9 @@ zejména ne se zavazadly.
 	m.addLayer(layer).enable();
 
 	var autobus = SMap.Coords.fromWGS84(15.7352289, 50.6948275);
-	var kriz = SMap.Coords.fromWGS84(15.7508542, 50.6936778);
-	var tana = SMap.Coords.fromWGS84(15.7552725, 50.6932333);
+	var pampeliska = SMap.Coords.fromWGS84(15.7536, 50.6928);
 
-	var route = new SMap.Route([autobus, kriz], function (route) {
+	var route = new SMap.Route([autobus, pampeliska], function (route) {
 			var layer = new SMap.Layer.Geometry();
 			m.addLayer(layer).enable();
 
@@ -135,10 +136,10 @@ zejména ne se zavazadly.
 			layer.addGeometry(g);
 		}, {'criterion': 'turist1'});
 
-	var cz = m.computeCenterZoom([autobus, kriz, tana]);
+	var cz = m.computeCenterZoom([autobus, pampeliska]);
 	m.setCenterZoom(cz[0], cz[1]);
 
 	layer.addMarker(new SMap.Marker(autobus, null, {title: 'Autobus'}));
-	layer.addMarker(new SMap.Marker(tana, null, {title: 'Táňa'}));
+	layer.addMarker(new SMap.Marker(pampeliska, null, {title: 'Pampeliška'}));
 </script>
 
