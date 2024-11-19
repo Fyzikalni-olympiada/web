@@ -209,7 +209,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
                     <ul class="nice-list">
 						<li><a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a></li>
 						<li>
-							<a href="http://fykos.cz/" title="Fyzikální korespondenční seminář MFF UK">Korespondenční seminář FYKOS</a>
+						<a href="http://fykos.cz/" title="Fyzikální korespondenční seminář FYKOS">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 962.02 250" style="enable-background:new 0 0 962.02 250;" xml:space="preserve">
 								<style type="text/css">
@@ -235,21 +235,19 @@ Fyzikální olympiáda – <?= nadpis() ?>
 									92.72,168.12 83.41,183.15 48.74,185.84 80.38,195.12 103.65,182.68 147.98,165.02 159.65,144.67 174.86,122.57 209.49,95.22
 									188.16,103.95 221.1,68.78 182.84,97.43 "/>
 							</svg>
+						</a>
+						</li>
+						<li>
+							<img src="/pic/logo_CEZ.png" alt="Skupina ČEZ" style="width: 99px; height: 99px; float: right;" />
+							Skupina ČEZ
+							<br style="clear: right" />
+						</li>
+						<li><i>Mediální partner</i>
+							<a href="https://ccf.fzu.cz/">
+								<img src="/pic/logo_ccf.png" alt="Československý časopis pro fyziku" class="cscas" />
+							</a>
 						</li>
 					</ul>
-					<br style="clear: right" />
-                    <div style="margin: 20px 0;">
-                       <img src="/pic/logo_CEZ.png" alt="Skupina ČEZ" style="width: 99px; height: 99px; float: right;" />
-                       Skupina ČEZ
-                       <br style="clear: right" />
-                    </div>
-                    <div>
-                       <i>Mediální partner</i>
-                       <a href="https://ccf.fzu.cz/">
-                        <img src="/pic/logo_ccf.png" alt="Československý časopis pro fyziku" class="cscas" />
-                       </a>
-                       <br style="clear: right" />
-                    </div>
                 </div>
             </div>
         </div>
