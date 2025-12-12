@@ -30,8 +30,8 @@ define('SITE', '');
 
 require_once('configure.php');
 
-define('AKTUALNI_ROCNIK', 66);
-define('AKTUALNI_ROK', '2024/2025');
+define('AKTUALNI_ROCNIK', 67);
+define('AKTUALNI_ROK', '2025/2026');
 
 /* Pocitadlo */
 define('INTERVAL_MEZI_NAVSTEVAMI', 60); //minimalni interval mezi navstevami v minutach
