@@ -207,7 +207,10 @@ Fyzikální olympiáda – <?= nadpis() ?>
                 <div class="section-title">Partneři soutěže a sponzoři</div>
                 <div class="section-content">
                     <ul class="nice-list">
-						<li><a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a></li>
+						<li>
+						<a href="https://www.conatex.cz/" title="Conatex – vše pro přírodní vědy">
+							<img src="/pic/logoConatexCZ.svg" />
+						</a>
 						<li>
 						<a href="http://fykos.cz/" title="Fyzikální korespondenční seminář FYKOS">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -262,7 +265,8 @@ Fyzikální olympiáda – <?= nadpis() ?>
                 <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
                 <a href="<?php echo ROOT_WWW ?>dokumenty/pravidla-pro-urcovani-poradi.pdf">Pravidla pro určování pořadí</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('jine_olym.html') ?>">Další předmětové olympiády</a> <span class="text-separator">|</span>
-                <a href="<?php echo odkaz('odkazy.html') ?>">Odkazy</a>
+				<a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a>
+                <!--a href="<?php echo odkaz('odkazy.html') ?>">Odkazy</a-->
 			</p>
             <p class="pull-right">
                 <a href="http://www.facebook.com/fyzikalniolympiada" title="Fyzikální olympiáda na Facebooku"><img class="fb" src="/pic/ico-facebook.png" alt="Fyzikální olympiáda na Facebooku"/></a>
