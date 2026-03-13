@@ -190,7 +190,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
                         <li><a href="https://souteze.ccvpardubice.cz/" title="Stránky pardubického kraje">Pardubický kraj</a></li>
                         <li><a href="http://kof.zcu.cz/fo/" title="Stránky plzeňského kraje">Plzeňský kraj</a></li>
                         <li><a href="http://fo.czechian.net/" title="Stránky středočeského kraje">Středočeský kraj</a></li>
-                        <li><a href="https://www.ddmul.cz/souteze-msmt-fyzikalni-olympiada" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
+                        <li><a href="https://www.ddmul.cz/souteze-msmt/477-fyzikalni-olympiada" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
                         <li><a href="https://www.guh.cz/fyzikalni-olympiada/" title="Stránky zlínského kraje">Zlínský kraj</a></li>
                     </ul>
                 </div>
