@@ -59,8 +59,8 @@ function zpracuj_form()
         } else {
             $GLOBALS['chyba'] .= lng('Chybí nadpis novinky!','Fill in the title!') . '<br />';
         }
-        if (strtolower($_POST["guest_test"]) != GUEST_TEST_TEXT) {
-            $GLOBALS['chyba'] .= lng('1 a 1 není','The name of our competition is not') . ' ' . strtoupper($_POST["guest_test"]) . lng(', ale 2',' but 2') . '!<br />';
+        if (!forum_guest_test_check(isset($_POST["guest_test"]) ? $_POST["guest_test"] : null)) {
+            $GLOBALS['chyba'] .= lng('Kontrolní fyzikální příklad není vypočítaný správně. Uveďte prosím pouze číselnou hodnotu.','The anti-spam physics example is not solved correctly. Please enter only the number.') . '<br />';
         }
         if (!($err = spam($_POST["text"], $_POST["name"], $_POST["title"], $_POST["email"]))) {
         } else {
@@ -83,7 +83,7 @@ function zpracuj_form()
             /** Nastavení cookies, pro automatické vyplnění polí name a email */
             setcookie('fo_forum[name]', $_POST['name'], mktime(0, 0, 0, 12, 31, 2020));
             setcookie('fo_forum[email]', $_POST['email'], mktime(0, 0, 0, 12, 31, 2020));
-            setcookie('fo_forum[test]', $_POST['guest_test'], time()+(60*60*24*180));//vyprsi za pul roku
+            forum_guest_test_reset();
 
             /** Reakce na příspěvek nebo úprava - kontrola ID */
             $forum_id = null;
@@ -205,6 +205,109 @@ function zpracuj_form()
     }
 
     return $r;
+}
+
+function forum_guest_test_start_session()
+{
+    static $session_start_called = false;
+    if (!$session_start_called && function_exists('session_id') && session_id() == '') {
+        $session_start_called = true;
+        @session_start();
+    }
+}
+
+function forum_guest_test_reset()
+{
+    forum_guest_test_start_session();
+    $_SESSION['forum_guest_test'] = forum_guest_test_generate();
+    return $_SESSION['forum_guest_test'];
+}
+
+function forum_guest_test_get()
+{
+    forum_guest_test_start_session();
+    if (!isset($_SESSION['forum_guest_test'])
+        || !is_array($_SESSION['forum_guest_test'])
+        || !isset($_SESSION['forum_guest_test']['question'])
+        || !isset($_SESSION['forum_guest_test']['answer'])
+    ) {
+        return forum_guest_test_reset();
+    }
+    return $_SESSION['forum_guest_test'];
+}
+
+function forum_guest_test_check($answer)
+{
+    forum_guest_test_start_session();
+    if (isset($_SESSION['id'])) {
+        return true;
+    }
+
+    if (!isset($_SESSION['forum_guest_test'])
+        || !is_array($_SESSION['forum_guest_test'])
+        || !isset($_SESSION['forum_guest_test']['answer'])
+    ) {
+        forum_guest_test_reset();
+        return false;
+    }
+
+    $answer = forum_guest_test_normalize_answer($answer);
+    $test = $_SESSION['forum_guest_test'];
+    return $answer !== '' && abs(floatval($answer) - floatval($test['answer'])) < 0.000001;
+}
+
+function forum_guest_test_normalize_answer($answer)
+{
+    $answer = str_replace(',', '.', trim((string) $answer));
+    if (preg_match('/^-?[0-9]+(\.[0-9]+)?/', $answer, $matches)) {
+        return $matches[0];
+    }
+    return '';
+}
+
+function forum_guest_test_generate()
+{
+    switch (mt_rand(1, 5)) {
+        case 1:
+            $mass = mt_rand(2, 9);
+            $acceleration = mt_rand(2, 8);
+            return array(
+                'question' => 'Těleso o hmotnosti ' . $mass . ' kg má zrychlení ' . $acceleration . ' m/s^2. Jaká síla na něj působí v N?',
+                'answer' => (string) ($mass * $acceleration),
+            );
+
+        case 2:
+            $current = mt_rand(2, 9);
+            $resistance = mt_rand(3, 12);
+            return array(
+                'question' => 'Rezistorem o odporu ' . $resistance . ' ohm teče proud ' . $current . ' A. Jaké je napětí ve V?',
+                'answer' => (string) ($resistance * $current),
+            );
+
+        case 3:
+            $speed = mt_rand(3, 12) * 10;
+            $time = mt_rand(2, 5);
+            return array(
+                'question' => 'Auto jede rychlostí ' . $speed . ' km/h po dobu ' . $time . ' h. Jakou vzdálenost urazí v km?',
+                'answer' => (string) ($speed * $time),
+            );
+
+        case 4:
+            $force = mt_rand(4, 12);
+            $distance = mt_rand(2, 9);
+            return array(
+                'question' => 'Síla ' . $force . ' N posune těleso po dráze ' . $distance . ' m. Jakou práci vykoná v J?',
+                'answer' => (string) ($force * $distance),
+            );
+
+        default:
+            $density = mt_rand(2, 9) * 100;
+            $volume = mt_rand(2, 6);
+            return array(
+                'question' => 'Látka má hustotu ' . $density . ' kg/m^3 a objem ' . $volume . ' m^3. Jaká je její hmotnost v kg?',
+                'answer' => (string) ($density * $volume),
+            );
+    }
 }
 
 function vypis_forum_vlakna($reakcena_id,$stranka)

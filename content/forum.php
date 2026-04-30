@@ -10,6 +10,7 @@ if (TABLE_FORUM != 'forum') {
 }
 
 include_once(ROOT_DIR.'functions/forum.php');
+forum_guest_test_start_session();
 
 /** Načtení strany */
 if (!isset($GLOBALS['get']['page']) || empty($GLOBALS['get']['page']) || intval($GLOBALS['get']['page']) < 1) {
@@ -113,9 +114,6 @@ if (!empty($chyba) || isset($_POST['ok'])) {
 	}
 } else {
 	/** Prvni moznost je natahnout to z Cookies */
-	if (isset($_COOKIE['fo_forum']['test'])) {
-		$guest_test = $_COOKIE['fo_forum']['test'];
-	}
 	if (isset($_COOKIE['fo_forum']['name'])) {
 		$name = $_COOKIE['fo_forum']['name'];
 	}
@@ -127,7 +125,6 @@ if (!empty($chyba) || isset($_POST['ok'])) {
 	if (isset($_SESSION['id'])) {
 		$name = $_SESSION['nickname'];
 		$email = $_SESSION['email'];
-		$guest_test = GUEST_TEST_TEXT;
 	}
 
 	/** Reakce nebo uprava */
@@ -183,15 +180,16 @@ echo '
 						</div>
 					</div>
 ';
-if (strtolower($guest_test) == GUEST_TEST_TEXT) {
+if (isset($_SESSION['id'])) {
 	echo '
-                    <input type="hidden" name="guest_test" value="'.GUEST_TEST_TEXT.'" />';
+	                    <input type="hidden" name="guest_test" value="" />';
 } else {
+	$guest_test_data = forum_guest_test_get();
 	echo '
-                    <div class="form-group">
-                        <label for="guest_test" class="col-sm-2">1 a 1 je</label>
-                        <div class="col-sm-10"><input type="text" name="guest_test" id="guest_test" value="' . $guest_test . '"  tabindex="5" class="form-control" /></div>
-                    </div>';
+	                    <div class="form-group">
+	                        <label for="guest_test" class="col-sm-8">Kontrolní příklad: ' . $guest_test_data['question'] . '</label>
+	                        <div class="col-sm-4"><input type="text" name="guest_test" id="guest_test" value="' . $guest_test . '"  tabindex="5" class="form-control" placeholder="Výsledek" /></div>
+	                    </div>';
 }
 echo '
                     <div class="form-group">
