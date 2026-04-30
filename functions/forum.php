@@ -81,8 +81,8 @@ function zpracuj_form()
             $_POST["text"] = str_replace("\r\n","<br />",$_POST["text"]);
 
             /** Nastavení cookies, pro automatické vyplnění polí name a email */
-            setcookie('fo_forum[name]', $_POST['name'], mktime(0, 0, 0, 12, 31, 2020));
-            setcookie('fo_forum[email]', $_POST['email'], mktime(0, 0, 0, 12, 31, 2020));
+            setcookie('fo_forum[name]', $_POST['name'], forum_cookie_expiration());
+            setcookie('fo_forum[email]', $_POST['email'], forum_cookie_expiration());
             forum_guest_test_reset();
 
             /** Reakce na příspěvek nebo úprava - kontrola ID */
@@ -253,13 +253,18 @@ function forum_guest_test_remember_passed()
 {
     forum_guest_test_start_session();
     $_SESSION['forum_guest_test_passed'] = true;
-    setcookie('fo_forum[guest_test_passed]', forum_guest_test_cookie_value(), time()+(60*60*24*180));
+    setcookie('fo_forum[guest_test_passed]', forum_guest_test_cookie_value(), forum_cookie_expiration());
 }
 
 function forum_guest_test_cookie_value()
 {
     $server_name = defined('SERVER_NAME') ? SERVER_NAME : '';
     return sha1('forum_guest_test_passed|' . $server_name);
+}
+
+function forum_cookie_expiration()
+{
+    return time()+(60*60*24*180);
 }
 
 function forum_guest_test_get()
