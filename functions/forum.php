@@ -134,34 +134,6 @@ function zpracuj_form()
                     )
                 ");
 
-                $forum_last_id = mysql_insert_id($GLOBALS['mysql']->dbc);
-
-                $telo = 'Na ' . SERVER_NAME . ' je novy diskusni prispevek od ' . $_POST['name'] . ' (' . $_POST['email'] . "):\n\n" . $_POST['title'] . "\n\n" . $zaloha_text . "\n\nhttp://" . SERVER_NAME . rtrim(ROOT_WWW, '/') . odkaz2('content/forum.php', array('forum_id' => $forum_last_id, 'sort' => 'vlakno', 'news_id' => $GLOBALS['news_id']), 0);
-
-                $GLOBALS['mysql']->query('
-                    SELECT email
-                    FROM ' . TABLE_USERS . '
-                    WHERE send_forum="1"
-                ');
-                while ($row = $GLOBALS['mysql']->fetch_array()) {
-                    @mail($row['email'], 'Novy diskusni prispevek na ' . SERVER_NAME, $telo, MAIL_HEADERS);
-                }
-
-                /** Reakce na jiny prispevek, tak pošleme email */
-                if (!empty($reakcena_id)) {
-                    $GLOBALS['mysql']->query("
-                        SELECT name, email, title, datum_cas
-                        FROM " . VIEW_FORUM . "
-                        WHERE id=" . db::escape_string($reakcena_id)
-                    );
-                    $row = $GLOBALS['mysql']->fetch_array();
-                    if (!is_null($row['email'])) {
-                        $datum = explode('-',$row["date"]);
-                        $telo = "Dobry den " . $row["name"] . ".\n\nV diskusnim foru na " . SERVER_NAME . " byla pridana nova reakce na Vas pripevek \"" . $row["title"] . "\" z " . $row['datum_cas'] . "\n\nhttp://" . SERVER_NAME . ROOT_WWW . odkaz2('content/forum.php', array('forum_id' => $forum_last_id, 'sort' => 'vlakno', 'news_id' => $GLOBALS['news_id']), 0);
-                        @mail($row['email'], "Reakce na vas prispevek ve foru " . SERVER_NAME, $telo, MAIL_HEADERS);
-                    }
-                }
-
             /** Editace příspěvku */
             } elseif (isset($GLOBALS['get']['upravit']) && je_opravnen($forum_id)) {
                 $GLOBALS['mysql']->query('

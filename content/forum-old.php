@@ -185,7 +185,6 @@ if (isset($_POST["ok"])) {     //update odeslán
   else
     $chyba .= "Chybí nadpis novinky!<br />";
   if (!($err = spam($_POST["text"],$_POST["name"],$_POST["titleline"],$_POST["email"]))) {
-	$zaloha = $_POST["text"];
 	$_POST["text"] = ucfirst($_POST["text"]);
 	$_POST["text"] = strip_tags($_POST["text"]);
   	$_POST["text"] = str_replace("\n", "<br />", $_POST["text"]);
@@ -229,20 +228,6 @@ if (isset($_POST["ok"])) {     //update odeslán
 			)
 		");
 	
-		$telo = "Na fo.cuni.cz je novy prispevek v diskusi od " . $_POST["name"] . " (" . $_POST["email"] . "):\n\n" . $_POST["titleline"] . "\n\n" . $zaloha;
-		mail($webmaster, "Novy prispevek do diskuse na ".SERVER_NAME, $telo, $headers);
-   
-		if ( $_POST["vnoreni"] ) {
-			$mysql->query("
-				SELECT name, email, title, date
-				FROM " . TABLE_FORUM . "
-				WHERE id=" . $_POST["id"]
-			);
-			$row = $mysql->fetch_array();
-			$datum = explode('-',$row["date"]);
-			$telo = "Dobry den " . $row["name"] . ",\n\nV diskusnim foru na http://fo.cuni.cz byla pridana nova reakce na Vas pripevek \"" . $row["title"] . "\" z " . ((int) $datum[2]) . ". " . ((int) $datum[1]) . ". " . $datum[0] . ".\n\n--\nDekuji, Jan Prachar";
-			mail($row["email"], "Reakce na vas prispevek ve foru fo.cuni.cz", $telo, $headers);
-		} 
 	}
 
 	echo '
