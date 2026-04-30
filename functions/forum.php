@@ -272,7 +272,7 @@ function forum_guest_test_generate()
             $mass = mt_rand(2, 9);
             $acceleration = mt_rand(2, 8);
             return array(
-                'question' => 'Těleso o hmotnosti ' . $mass . ' kg má zrychlení ' . $acceleration . ' m/s^2. Jaká síla na něj působí v N?',
+                'question' => 'Těleso o hmotnosti ' . $mass . ' kg má zrychlení ' . $acceleration . ' m/s². Jaká síla na něj působí v N?',
                 'answer' => (string) ($mass * $acceleration),
             );
 
@@ -304,7 +304,7 @@ function forum_guest_test_generate()
             $density = mt_rand(2, 9) * 100;
             $volume = mt_rand(2, 6);
             return array(
-                'question' => 'Látka má hustotu ' . $density . ' kg/m^3 a objem ' . $volume . ' m^3. Jaká je její hmotnost v kg?',
+                'question' => 'Látka má hustotu ' . $density . ' kg/m³ a objem ' . $volume . ' m³. Jaká je její hmotnost v kg?',
                 'answer' => (string) ($density * $volume),
             );
     }
