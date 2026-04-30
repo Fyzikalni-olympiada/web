@@ -180,7 +180,7 @@ echo '
 						</div>
 					</div>
 ';
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['id']) || forum_guest_test_passed()) {
 	echo '
 	                    <input type="hidden" name="guest_test" value="" />';
 } else {

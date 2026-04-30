@@ -223,6 +223,45 @@ function forum_guest_test_reset()
     return $_SESSION['forum_guest_test'];
 }
 
+function forum_guest_test_passed()
+{
+    forum_guest_test_start_session();
+    if (isset($_SESSION['forum_guest_test_passed']) && $_SESSION['forum_guest_test_passed']) {
+        return true;
+    }
+    if (isset($_COOKIE['fo_forum'])
+        && is_array($_COOKIE['fo_forum'])
+        && isset($_COOKIE['fo_forum']['guest_test_passed'])
+        && $_COOKIE['fo_forum']['guest_test_passed'] == forum_guest_test_cookie_value()
+    ) {
+        $_SESSION['forum_guest_test_passed'] = true;
+        return true;
+    }
+    if (defined('GUEST_TEST_TEXT')
+        && isset($_COOKIE['fo_forum'])
+        && is_array($_COOKIE['fo_forum'])
+        && isset($_COOKIE['fo_forum']['test'])
+        && strtolower($_COOKIE['fo_forum']['test']) == GUEST_TEST_TEXT
+    ) {
+        $_SESSION['forum_guest_test_passed'] = true;
+        return true;
+    }
+    return false;
+}
+
+function forum_guest_test_remember_passed()
+{
+    forum_guest_test_start_session();
+    $_SESSION['forum_guest_test_passed'] = true;
+    setcookie('fo_forum[guest_test_passed]', forum_guest_test_cookie_value(), time()+(60*60*24*180));
+}
+
+function forum_guest_test_cookie_value()
+{
+    $server_name = defined('SERVER_NAME') ? SERVER_NAME : '';
+    return sha1('forum_guest_test_passed|' . $server_name);
+}
+
 function forum_guest_test_get()
 {
     forum_guest_test_start_session();
@@ -239,7 +278,7 @@ function forum_guest_test_get()
 function forum_guest_test_check($answer)
 {
     forum_guest_test_start_session();
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION['id']) || forum_guest_test_passed()) {
         return true;
     }
 
@@ -253,7 +292,11 @@ function forum_guest_test_check($answer)
 
     $answer = forum_guest_test_normalize_answer($answer);
     $test = $_SESSION['forum_guest_test'];
-    return $answer !== '' && abs(floatval($answer) - floatval($test['answer'])) < 0.000001;
+    if ($answer !== '' && abs(floatval($answer) - floatval($test['answer'])) < 0.000001) {
+        forum_guest_test_remember_passed();
+        return true;
+    }
+    return false;
 }
 
 function forum_guest_test_normalize_answer($answer)
@@ -280,7 +323,7 @@ function forum_guest_test_generate()
             $current = mt_rand(2, 9);
             $resistance = mt_rand(3, 12);
             return array(
-                'question' => 'Rezistorem o odporu ' . $resistance . ' ohm teče proud ' . $current . ' A. Jaké je napětí ve V?',
+                'question' => 'Rezistorem o odporu ' . $resistance . ' Ω teče proud ' . $current . ' A. Jaké je napětí ve V?',
                 'answer' => (string) ($resistance * $current),
             );
 
