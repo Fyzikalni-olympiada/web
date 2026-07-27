@@ -24,7 +24,6 @@ define('FILE_NEWS', 'content/news.php');
 define('FILE_FORUM', 'content/forum.php');
 
 define('FILE_DB_LOG', 'logs/db_error.log');
-define('FILE_DB_LOG_TIME', 'logs/db_error_time.txt');
 
 define('SITE', '');
 
@@ -45,9 +44,6 @@ define('NOVINKY_INTERVAL', 250); //maximalni stari zobrazene novinky ve dnech
 /* Menu */
 define('MENU_ODDELOVAC', '');
 define('SUBMENU_ODRAZKA', '');
-
-/* Log */
-define('ERROR_MAIL_INTERVAL', 1); //interval posilani chybovych mailu in days
 
 /* GLOBALNI PROMENNE 
  *
@@ -72,7 +68,7 @@ $GLOBALS['get'] = $_GET;
  * TRACY
  */
 require_once(ROOT_DIR.'tracy/src/tracy.php');
-Tracy\Debugger::enable(Tracy\Debugger::DETECT, __DIR__ . '/logs', 'jan@prachar.eu');
+Tracy\Debugger::enable(Tracy\Debugger::DETECT, __DIR__ . '/logs');
 
 
 require_once(ROOT_DIR.'classes/db.php');

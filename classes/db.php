@@ -124,29 +124,7 @@ class db {
 		}
 		fwrite($file_log_handle, $chyba);
 		fclose($file_log_handle);
-		
-		$timestamp_old = intval(file_get_contents(ROOT_DIR.FILE_DB_LOG_TIME));
-		
-		/* Pokud uběhl alespoň den, pošleme email o chybě */
-		if ((($timestamp-$timestamp_old) > ERROR_MAIL_INTERVAL*24*60*60) && !$debug) {
-			$headers = 'From: ' . ERROR_MAIL_FROM . "\r\n"
-					.'Reply-To: ' . ERROR_MAIL_FROM . "\r\n"
-					.'MIME-Version: 1.0'."\r\n"
-					.'X-Mailer: PHP'."\r\n"
-					.'Content-type: text/plain; charset="utf-8"'."\r\n"
-					.'Content-transfer-encoding: 8bit';
-			$subject = 'Chyba databaze na ' . SERVER_NAME;
-			$body = 'Na serveru ' . SERVER_NAME . ' doslo k chybe databaze.'."\r\n"."\r\n".$chyba;
 
-	        mail(ERROR_MAIL_TO, $subject, $body, $headers); 
-
-	        if (!$file_time_handle = @fopen(ROOT_DIR.FILE_DB_LOG_TIME, 'w')) {
-				die();
-			}
-			fwrite($file_time_handle, $timestamp);
-			fclose($file_time_handle);
-		}
-		
 		die();
     }
 }

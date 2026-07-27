@@ -48,8 +48,6 @@ if (!isset($GLOBALS['get']['news_id']) || empty($GLOBALS['get']['news_id'])) {
 	}
 }
 
-posli_forum_digest();
-
 if ($kdo == "student")
 	echo '
 	<h2>Diskusní fórum pro studenty</h2>';

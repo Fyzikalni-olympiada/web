@@ -20,7 +20,6 @@ define('FILE_NEWS', 'content/news.php');
 define('FILE_FORUM', 'content/forum-old.php');
 
 define('FILE_DB_LOG', 'logs/db_error.log');
-define('FILE_DB_LOG_TIME', 'logs/db_error_time.txt');
 
 define('SITE', 'kvary');
 
@@ -44,9 +43,6 @@ define('SUBMENU_ODRAZKA', '&raquo;&nbsp;');
 
 /* Adresare */
 define('DIR_VYSLEDKY', 'kvary/vysledky/');
-
-/* Log */
-define('ERROR_MAIL_INTERVAL', 1); //interval posilani chybovych mailu in days
 
 /* GLOBALNI PROMENNE 
  *

@@ -6,12 +6,6 @@ require_once('init.php');
 $chyba = '';
 $qw = '56376d48b6b39b32cbd9a97662f50cbd';
 //kL7139eR;
-$headers = "From: webmaster@fyzikalniolympiada.cz\r\n"
-    ."Reply-To: webmaster@fyzikalniolympiada.cz\r\n"
-	."MIME-Version: 1.0\r\n"
-    ."X-Mailer: PHP\r\n"
-	."Content-type: text/plain; charset=\"utf-8\"\r\n"
-	."Content-transfer-encoding: 8bit";
 $monthz = Array('', 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
 $options = '';
 
@@ -191,17 +185,6 @@ if (isset($_POST["ok"])) {
 			$query .= 'WHERE id="' . mysql_escape_string($_GET['id']) . '"';
 		}
 		if($result = $mysql_w->query($query)) {
-			if (array_key_exists('mail', $_POST)) { //poslat e-maily
-				$query = "SELECT name, email FROM `" . TABLE_USERS . "`";
-				$result = $GLOBALS['mysql']->query($query);
-				$subject = "Novinky na strance " . SERVER_NAME . " z " . date("d.m.Y");
-				while ( $row = mysql_fetch_array($result) ) {
-					$telo = "Vazeny " . $row["name"] . ",\nna " . SERVER_NAME . " je novy clanek " . $_POST["titleline"] . " od " . $_POST["name"] . ".
-					
-					webmaster@fyzikalniolympiada.cz";
-					mail($row["email"], $subject, $telo, $headers);
-				}
-			}
 			header('Location: http://' . $_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']));
 		}
 	} else {
@@ -471,7 +454,6 @@ config.toolbar = [
     <td></td>
 	<td>
 	<input tabindex="16" type="submit" class="submit" name="ok" value="Uložit">
-	<input type="checkbox" name="mail" checked>e-mail
     </td>
   </tr>
   

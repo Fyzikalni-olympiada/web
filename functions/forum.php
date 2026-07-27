@@ -120,12 +120,6 @@ function vypis_forum_chronologicky($stranka)
     return $s;
 }
 
-function posli_forum_digest()
-{
-
-}
-
-
 /**
 *       Formát $row
 *               * SELECT * FROM V_forum
