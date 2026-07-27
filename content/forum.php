@@ -50,23 +50,16 @@ if (!isset($GLOBALS['get']['news_id']) || empty($GLOBALS['get']['news_id'])) {
 
 posli_forum_digest();
 
-$chyba = '';
-$zpracuj_form = zpracuj_form();
-
 if ($kdo == "student")
 	echo '
-	<h2>Diskusní fórum pro studenty</h2>
-	<p>Toto diskusní fórum je určeno pro studenty. Můžete se zde vyjadřovat ohledně průběhu olympiády, případně mít nějaké jiné připomínky či dotazy.';
+	<h2>Diskusní fórum pro studenty</h2>';
 if ($kdo == "ucitel")
 	echo '
-	<h2>Diskusní fórum pro učitele</h2>
-	<p>Toto diskusní fórum je určeno pro učitele. Můžete se zde vyjadřovat ohledně průběhu olympiády, případně mít nějaké jiné připomínky či dotazy.';
-if ($kdo == "organizator")
-	echo '
-	<p>Toto diskusní fórum je určeno pro organizátory. Můžete se zde vyjadřovat ohledně průběhu olympiády, kvality úloh, případně mít nějaké jiné připomínky či dotazy.';
+	<h2>Diskusní fórum pro učitele</h2>';
 
 echo '
-</p>';
+<p><strong>' . lng('Diskusní fórum je uzavřeno a slouží už jen jako archiv starších příspěvků.','The discussion forum is closed and serves only as an archive of older posts.') . '</strong>
+' . lng('Máte-li dotaz nebo připomínku, napište nám na','If you have a question or a comment, please e-mail us at') . ' <a href="mailto:info@fyzikalniolympiada.cz">info@fyzikalniolympiada.cz</a>.</p>';
 
 
 echo '
@@ -86,90 +79,6 @@ if ($sort == 'chronologicky') {
 echo '
 </p>
 ';
-
-$title = null;
-$text = null;
-$name = null;
-$email = null;
-
-if (!empty($chyba) || isset($_POST['ok'])) {
-	/* Chyba nebo odeslán formulář */
-	if (isset($_POST['title'])) {
-		$title = db::odstran_problemy($_POST['title']);
-	}
-	if (isset($_POST['text'])) {
-		$text = db::odstran_problemy($_POST['text']);
-	}
-	if (isset($_POST['name'])) {
-		$name = db::odstran_problemy($_POST['name']);
-	}
-	if (isset($_POST['email'])) {
-		$email = db::odstran_problemy($_POST['email']);
-	}
-} else {
-	/** Prvni moznost je natahnout to z Cookies */
-	if (isset($_COOKIE['fo_forum']['name'])) {
-		$name = $_COOKIE['fo_forum']['name'];
-	}
-	if (isset($_COOKIE['fo_forum']['email'])) {
-		$email = $_COOKIE['fo_forum']['email'];
-	}
-
-	/** Reakce na prispevek */
-	if (isset($GLOBALS['get']['forum_id']) && isset($GLOBALS['get']['reagovat'])) {
-		$result = $GLOBALS['mysql']->query('
-			SELECT id, title
-			FROM ' . TABLE_FORUM . '
-			WHERE id=' . db::escape_string($GLOBALS['get']['forum_id']) . '
-			AND lang="' . lng() . '"
-		');
-		if ($row = mysql_fetch_array($result)) {
-			if (preg_match("/^Re:/i", $row['title'])) {
-				$title = $row['title'];
-			} else {
-				$title = 'Re: ' . $row['title'];
-			}
-		} else {
-			$GLOBALS['get']['reagovat'] = null;
-			$GLOBALS['get']['forum_id'] = null;
-		}
-
-	}
-}
-
-echo $zpracuj_form;
-
-echo '
-<div class="legend" id="comment-form-title">
-	<h3>Vložit příspěvek</h3>
-
-            <form class="form-horizontal" action="' . odkaz2() . '" method="post" id="commentform">
-
-                    <div class="form-group">
-                        <label for="title" class="sr-only">Nadpis</label>
-                        <div class="col-sm-12"><input type="text" name="title" id="title" value="' . $title . '" tabindex="1" class="form-control" placeholder="Nadpis" /></div>
-                    </div>
-
-					<div class="form-group">
-						<div class="col-sm-12">
-							<textarea class="form-control" placeholder="Text" name="text" id="comment" cols="10" rows="10" tabindex="2">' . $text . '</textarea>
-						</div>
-					</div>
-
-                    <div class="form-group">
-                        <label for="author" class="col-sm-2">Jméno</label>
-                        <div class="col-sm-10"><input type="text" name="name" id="name" value="' . $name . '" tabindex="3" class="form-control" /></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="col-sm-2">Email</label>
-                        <div class="col-sm-10"><input type="email" name="email" id="email" value="' . $email . '" tabindex="4" class="form-control" /></div>
-                    </div>
-
-					<input type="hidden" name="ok" value=1/>
-					<button type="submit" class="btn btn-default">Odeslat</button>
-            </form>
-</div>';
 
 echo '
 
