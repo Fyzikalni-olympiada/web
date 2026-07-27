@@ -42,9 +42,6 @@ define('NOVINKY_WHERES', 'celost');
 define('NOVINKY_NA_STRANKU', 6);
 define('NOVINKY_INTERVAL', 250); //maximalni stari zobrazene novinky ve dnech
 
-define('GUEST_TEST_TEXT', '2'); //kontrolni text pro prispevatele ve foru
-
-
 /* Menu */
 define('MENU_ODDELOVAC', '');
 define('SUBMENU_ODRAZKA', '');

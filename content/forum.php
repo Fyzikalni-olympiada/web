@@ -10,7 +10,6 @@ if (TABLE_FORUM != 'forum') {
 }
 
 include_once(ROOT_DIR.'functions/forum.php');
-forum_guest_test_start_session();
 
 /** Načtení strany */
 if (!isset($GLOBALS['get']['page']) || empty($GLOBALS['get']['page']) || intval($GLOBALS['get']['page']) < 1) {
@@ -50,7 +49,6 @@ if (!isset($GLOBALS['get']['news_id']) || empty($GLOBALS['get']['news_id'])) {
 }
 
 posli_forum_digest();
-uloz_cas_posledni_navstevy();
 
 $chyba = '';
 $zpracuj_form = zpracuj_form();
@@ -93,9 +91,8 @@ $title = null;
 $text = null;
 $name = null;
 $email = null;
-$guest_test = null;
 
-if (!empty($chyba) || isset($_POST['ok'])) { 
+if (!empty($chyba) || isset($_POST['ok'])) {
 	/* Chyba nebo odeslán formulář */
 	if (isset($_POST['title'])) {
 		$title = db::odstran_problemy($_POST['title']);
@@ -109,9 +106,6 @@ if (!empty($chyba) || isset($_POST['ok'])) {
 	if (isset($_POST['email'])) {
 		$email = db::odstran_problemy($_POST['email']);
 	}
-	if (isset($_POST['guest_test'])) {
-		$guest_test = db::odstran_problemy($_POST['guest_test']);
-	}
 } else {
 	/** Prvni moznost je natahnout to z Cookies */
 	if (isset($_COOKIE['fo_forum']['name'])) {
@@ -121,42 +115,24 @@ if (!empty($chyba) || isset($_POST['ok'])) {
 		$email = $_COOKIE['fo_forum']['email'];
 	}
 
-	/** Nekdo je nalogovany */
-	if (isset($_SESSION['id'])) {
-		$name = $_SESSION['nickname'];
-		$email = $_SESSION['email'];
-	}
-
-	/** Reakce nebo uprava */
-	if (isset($GLOBALS['get']['forum_id']) && (isset($GLOBALS['get']['upravit']) || isset($GLOBALS['get']['reagovat']))) {
+	/** Reakce na prispevek */
+	if (isset($GLOBALS['get']['forum_id']) && isset($GLOBALS['get']['reagovat'])) {
 		$result = $GLOBALS['mysql']->query('
-			SELECT id, title, text, name, email, users_id
+			SELECT id, title
 			FROM ' . TABLE_FORUM . '
 			WHERE id=' . db::escape_string($GLOBALS['get']['forum_id']) . '
 			AND lang="' . lng() . '"
 		');
 		if ($row = mysql_fetch_array($result)) {
-			/** Reakce na prispevek */
-			if (isset($GLOBALS['get']['reagovat'])) {
-				if (preg_match("/^Re:/i", $row['title'])) {
-					$title = $row['title'];
-				} else {
-					$title = 'Re: ' . $row['title'];
-				}
-				
-			/** Úprava příspěvku (musí být nalogován nebo administrátor) */
-			} elseif( (isset($_SESSION['id']) && !is_null($row['users_id']) && $_SESSION['id'] == $row['users_id']) 
-				|| (isset($_SESSION['administrator']) && $_SESSION['administrator'] == 1) ) {
+			if (preg_match("/^Re:/i", $row['title'])) {
 				$title = $row['title'];
-				$text = $row['text'];
-				$name = $row['name'];
-				$email = $row['email'];
+			} else {
+				$title = 'Re: ' . $row['title'];
 			}
 		} else {
 			$GLOBALS['get']['reagovat'] = null;
-			$GLOBALS['get']['upravit'] = null;
 			$GLOBALS['get']['forum_id'] = null;
-		}		
+		}
 
 	}
 }
@@ -179,19 +155,7 @@ echo '
 							<textarea class="form-control" placeholder="Text" name="text" id="comment" cols="10" rows="10" tabindex="2">' . $text . '</textarea>
 						</div>
 					</div>
-';
-if (isset($_SESSION['id']) || forum_guest_test_passed()) {
-	echo '
-	                    <input type="hidden" name="guest_test" value="" />';
-} else {
-	$guest_test_data = forum_guest_test_get();
-	echo '
-	                    <div class="form-group">
-	                        <label for="guest_test" class="col-sm-8">Kontrolní příklad: ' . $guest_test_data['question'] . '</label>
-	                        <div class="col-sm-4"><input type="text" name="guest_test" id="guest_test" value="' . $guest_test . '"  tabindex="5" class="form-control" placeholder="Výsledek" /></div>
-	                    </div>';
-}
-echo '
+
                     <div class="form-group">
                         <label for="author" class="col-sm-2">Jméno</label>
                         <div class="col-sm-10"><input type="text" name="name" id="name" value="' . $name . '" tabindex="3" class="form-control" /></div>

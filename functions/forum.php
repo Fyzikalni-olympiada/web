@@ -6,61 +6,13 @@ function zpracuj_form()
 {
     $r = ''; //return
 
-    /* Smazat příspěvek - musí být přihlášen */
-    if (isset($GLOBALS['get']['delete']) && je_opravnen($GLOBALS['get']['forum_id']) && isset($GLOBALS['get']['forum_id'])) {
-        $GLOBALS['get']['delete'] = null;
-        /* Kontrola ID v databázi */
-        $GLOBALS['mysql']->query('
-            SELECT id, reakcena_id
-            FROM ' . TABLE_FORUM . '
-            WHERE id=' . db::escape_string(db::odstran_problemy($GLOBALS['get']['forum_id'])) . '
-        ');
-        if ($row = $GLOBALS['mysql']->fetch_array()) {
-            $forum_id = $row['id'];
-            $reakcena_id = $row['reakcena_id'];
-        } else {
-            $GLOBALS['chyba'] .= lng('Neplané ID příspěvku.','Invalid ID.') . '<br />';
-        }
-
-        /* Smaže příspěvěk a potomky přepojí na předka */
-        if ($GLOBALS['chyba'] == "") {
-            $result = $GLOBALS['mysql']->query('
-                SELECT id
-                FROM ' . TABLE_FORUM . '
-                WHERE reakcena_id=' . db::escape_string($forum_id) . '
-            ');
-
-            while((list($id) = mysql_fetch_array($result))) {
-                $GLOBALS['mysql']->query('
-                    UPDATE ' . TABLE_FORUM . '
-                    SET reakcena_id=' . db::escape_string($reakcena_id) . '
-                    WHERE id=' . db::escape_string($id) . '
-                ');
-            }
-
-            $GLOBALS['mysql']->query('
-                DELETE FROM ' . TABLE_FORUM . '
-                WHERE id=' . db::escape_string($forum_id) . '
-                LIMIT 1
-            ');
-            if ($smazano_pocet = mysql_affected_rows($GLOBALS['mysql']->dbc)) {
-                $hlaska = lng('Smazán jeden příspěvek','The question was deleted');
-            } else {
-                $hlaska = lng('Nesmazán žádný příspěvek','No question was deleted');
-            }
-            $r .= '<p class="chyba">' . $hlaska . '</p>';
-        }
-
     /** Odeslán formulář */
-    } elseif (isset($_POST["ok"])) {
+    if (isset($_POST["ok"])) {
 
         if (!empty($_POST["title"])) {
             $_POST["title"] = ucfirst($_POST["title"]);
         } else {
             $GLOBALS['chyba'] .= lng('Chybí nadpis novinky!','Fill in the title!') . '<br />';
-        }
-        if (!forum_guest_test_check(isset($_POST["guest_test"]) ? $_POST["guest_test"] : null)) {
-            $GLOBALS['chyba'] .= lng('Kontrolní fyzikální příklad není vypočítaný správně. Uveďte prosím pouze číselnou hodnotu.','The anti-spam physics example is not solved correctly. Please enter only the number.') . '<br />';
         }
         if (!($err = spam($_POST["text"], $_POST["name"], $_POST["title"], $_POST["email"]))) {
         } else {
@@ -71,7 +23,6 @@ function zpracuj_form()
 
             /** Ošetření pole text */
 			$_POST["text"] = stripslashes($_POST["text"]);
-            $zaloha_text = $_POST["text"];
             $regex  = '@</?\w+((\s+\w+(\s*=\s*';
             $regex .= '(?:".*?"|\'.*?\'|[^\'">\s]+))?)+';
             $regex .= '\s*|\s*)/?>@i';
@@ -83,30 +34,19 @@ function zpracuj_form()
             /** Nastavení cookies, pro automatické vyplnění polí name a email */
             setcookie('fo_forum[name]', $_POST['name'], forum_cookie_expiration());
             setcookie('fo_forum[email]', $_POST['email'], forum_cookie_expiration());
-            forum_guest_test_reset();
 
-            /** Reakce na příspěvek nebo úprava - kontrola ID */
-            $forum_id = null;
+            /** Reakce na příspěvek - kontrola ID */
             $reakcena_id = 0;
             $news_id = $GLOBALS['news_id'];
-            if (isset($_SESSION['id'])) {
-                $users_id = $_SESSION['id'];
-            } else {
-                $users_id = null;
-            }
-            if ((isset($GLOBALS['get']['upravit']) || isset($GLOBALS['get']['reagovat'])) && isset($GLOBALS['get']['forum_id'])) {
+            if (isset($GLOBALS['get']['reagovat']) && isset($GLOBALS['get']['forum_id'])) {
                 $GLOBALS['mysql']->query('
                     SELECT id, news_id
                     FROM ' . TABLE_FORUM . '
                     WHERE id=' . db::escape_string(db::odstran_problemy($GLOBALS['get']['forum_id'])) . '
                 ');
                 if ($row = $GLOBALS['mysql']->fetch_array()) {
-                    if (isset($GLOBALS['get']['reagovat'])) {
-                        $reakcena_id = $row['id'];
-                        $news_id = $row['news_id']; /* news_id prevezmeme od predka */
-                    } elseif (isset($_SESSION['id'])) { /* Přihlášený uživatel edituje příspěvek */
-                        $forum_id = $row['id'];
-                    }
+                    $reakcena_id = $row['id'];
+                    $news_id = $row['news_id']; /* news_id prevezmeme od predka */
                 }
             }
 
@@ -116,53 +56,27 @@ function zpracuj_form()
             }
 
             /** Nový příspěvek */
-            if (empty($forum_id)) {
-                $GLOBALS['mysql']->query("
-                    INSERT INTO `" . TABLE_FORUM . "`
-                        ( `name`, `email`, `title`, `text`, `reakcena_id`, `news_id`, `users_id`, `lang`, `who` )
-                    VALUES (
-                        " .
-                        db::escape_string(db::odstran_problemy($_POST["name"])) . ", " .
-                        db::escape_string(db::odstran_problemy($_POST["email"])) . ", " .
-                        db::escape_string(db::odstran_problemy($_POST["title"])) . ", " .
-                        db::escape_string($_POST["text"]) . ", " .
-                        db::escape_string($reakcena_id) . ", " .
-                        db::escape_string($news_id) . ", " .
-                        db::escape_string($users_id) . ", " .
-                        db::escape_string(lng()) . ", " .
-                        db::escape_string($GLOBALS['kdo']) . "
-                    )
-                ");
-
-            /** Editace příspěvku */
-            } elseif (isset($GLOBALS['get']['upravit']) && je_opravnen($forum_id)) {
-                $GLOBALS['mysql']->query('
-                    UPDATE ' . TABLE_FORUM . ' SET
-                        name=' . db::escape_string(db::odstran_problemy($_POST['name'])) . ',
-                        email=' . db::escape_string(db::odstran_problemy($_POST['email'])) . ',
-                        title=' . db::escape_string(db::odstran_problemy($_POST['title'])) . ',
-                        text=' . db::escape_string(db::odstran_problemy($zaloha_text)) . '
-                    WHERE id=' . db::escape_string($forum_id) . '
-                ');
-                /** Zmeni news_id u celeho vlakna - pouze administrátor */
-                if (isset($_POST['news_id']) && je_korenovy_prispevek($forum_id) && (isset($_SESSION['administrator']) && $_SESSION['administrator'] == 1) ) {
-                    if ($_POST['news_id'] == 0) {
-                        $news_id = null;
-                    } else {
-                        $news_id = $_POST['news_id'];
-                    }
-                    nastav_news_id_strom($forum_id, $news_id);
-                }
-            }
+            $GLOBALS['mysql']->query("
+                INSERT INTO `" . TABLE_FORUM . "`
+                    ( `name`, `email`, `title`, `text`, `reakcena_id`, `news_id`, `users_id`, `lang`, `who` )
+                VALUES (
+                    " .
+                    db::escape_string(db::odstran_problemy($_POST["name"])) . ", " .
+                    db::escape_string(db::odstran_problemy($_POST["email"])) . ", " .
+                    db::escape_string(db::odstran_problemy($_POST["title"])) . ", " .
+                    db::escape_string($_POST["text"]) . ", " .
+                    db::escape_string($reakcena_id) . ", " .
+                    db::escape_string($news_id) . ", " .
+                    "NULL, " .
+                    db::escape_string(lng()) . ", " .
+                    db::escape_string($GLOBALS['kdo']) . "
+                )
+            ");
 
             $r .= '
     <p style="text-align: center">Přidání názoru proběhlo v pořádku.</p>';
 
-            /** Při zobrazení jediného vlákna, ponechat $forum_id v GET */
-            if (!isset($GLOBALS['get']['sort']) || $GLOBALS['get']['sort'] != 'vlakno') {
-                $forum_id = null;
-            }
-            header('Location: ' . odkaz2(null, array('reagovat'=>null,'upravit'=>null,'forum_id'=>$forum_id), 0));
+            header('Location: ' . odkaz2(null, array('reagovat'=>null,'forum_id'=>null), 0));
             ob_end_clean();
             exit();
 
@@ -179,155 +93,9 @@ function zpracuj_form()
     return $r;
 }
 
-function forum_guest_test_start_session()
-{
-    static $session_start_called = false;
-    if (!$session_start_called && function_exists('session_id') && session_id() == '') {
-        $session_start_called = true;
-        @session_start();
-    }
-}
-
-function forum_guest_test_reset()
-{
-    forum_guest_test_start_session();
-    $_SESSION['forum_guest_test'] = forum_guest_test_generate();
-    return $_SESSION['forum_guest_test'];
-}
-
-function forum_guest_test_passed()
-{
-    forum_guest_test_start_session();
-    if (isset($_SESSION['forum_guest_test_passed']) && $_SESSION['forum_guest_test_passed']) {
-        return true;
-    }
-    if (isset($_COOKIE['fo_forum'])
-        && is_array($_COOKIE['fo_forum'])
-        && isset($_COOKIE['fo_forum']['guest_test_passed'])
-        && $_COOKIE['fo_forum']['guest_test_passed'] == forum_guest_test_cookie_value()
-    ) {
-        $_SESSION['forum_guest_test_passed'] = true;
-        return true;
-    }
-    if (defined('GUEST_TEST_TEXT')
-        && isset($_COOKIE['fo_forum'])
-        && is_array($_COOKIE['fo_forum'])
-        && isset($_COOKIE['fo_forum']['test'])
-        && strtolower($_COOKIE['fo_forum']['test']) == GUEST_TEST_TEXT
-    ) {
-        $_SESSION['forum_guest_test_passed'] = true;
-        return true;
-    }
-    return false;
-}
-
-function forum_guest_test_remember_passed()
-{
-    forum_guest_test_start_session();
-    $_SESSION['forum_guest_test_passed'] = true;
-    setcookie('fo_forum[guest_test_passed]', forum_guest_test_cookie_value(), forum_cookie_expiration());
-}
-
-function forum_guest_test_cookie_value()
-{
-    $server_name = defined('SERVER_NAME') ? SERVER_NAME : '';
-    return sha1('forum_guest_test_passed|' . $server_name);
-}
-
 function forum_cookie_expiration()
 {
     return time()+(60*60*24*180);
-}
-
-function forum_guest_test_get()
-{
-    forum_guest_test_start_session();
-    if (!isset($_SESSION['forum_guest_test'])
-        || !is_array($_SESSION['forum_guest_test'])
-        || !isset($_SESSION['forum_guest_test']['question'])
-        || !isset($_SESSION['forum_guest_test']['answer'])
-    ) {
-        return forum_guest_test_reset();
-    }
-    return $_SESSION['forum_guest_test'];
-}
-
-function forum_guest_test_check($answer)
-{
-    forum_guest_test_start_session();
-    if (isset($_SESSION['id']) || forum_guest_test_passed()) {
-        return true;
-    }
-
-    if (!isset($_SESSION['forum_guest_test'])
-        || !is_array($_SESSION['forum_guest_test'])
-        || !isset($_SESSION['forum_guest_test']['answer'])
-    ) {
-        forum_guest_test_reset();
-        return false;
-    }
-
-    $answer = forum_guest_test_normalize_answer($answer);
-    $test = $_SESSION['forum_guest_test'];
-    if ($answer !== '' && abs(floatval($answer) - floatval($test['answer'])) < 0.000001) {
-        forum_guest_test_remember_passed();
-        return true;
-    }
-    return false;
-}
-
-function forum_guest_test_normalize_answer($answer)
-{
-    $answer = str_replace(',', '.', trim((string) $answer));
-    if (preg_match('/^-?[0-9]+(\.[0-9]+)?/', $answer, $matches)) {
-        return $matches[0];
-    }
-    return '';
-}
-
-function forum_guest_test_generate()
-{
-    switch (mt_rand(1, 5)) {
-        case 1:
-            $mass = mt_rand(2, 9);
-            $acceleration = mt_rand(2, 8);
-            return array(
-                'question' => 'Těleso o hmotnosti ' . $mass . ' kg má zrychlení ' . $acceleration . ' m/s². Jaká síla na něj působí v N?',
-                'answer' => (string) ($mass * $acceleration),
-            );
-
-        case 2:
-            $current = mt_rand(2, 9);
-            $resistance = mt_rand(3, 12);
-            return array(
-                'question' => 'Rezistorem o odporu ' . $resistance . ' Ω teče proud ' . $current . ' A. Jaké je napětí ve V?',
-                'answer' => (string) ($resistance * $current),
-            );
-
-        case 3:
-            $speed = mt_rand(3, 12) * 10;
-            $time = mt_rand(2, 5);
-            return array(
-                'question' => 'Auto jede rychlostí ' . $speed . ' km/h po dobu ' . $time . ' h. Jakou vzdálenost urazí v km?',
-                'answer' => (string) ($speed * $time),
-            );
-
-        case 4:
-            $force = mt_rand(4, 12);
-            $distance = mt_rand(2, 9);
-            return array(
-                'question' => 'Síla ' . $force . ' N posune těleso po dráze ' . $distance . ' m. Jakou práci vykoná v J?',
-                'answer' => (string) ($force * $distance),
-            );
-
-        default:
-            $density = mt_rand(2, 9) * 100;
-            $volume = mt_rand(2, 6);
-            return array(
-                'question' => 'Látka má hustotu ' . $density . ' kg/m³ a objem ' . $volume . ' m³. Jaká je její hmotnost v kg?',
-                'answer' => (string) ($density * $volume),
-            );
-    }
 }
 
 function vypis_forum_vlakna($reakcena_id,$stranka)
@@ -500,24 +268,6 @@ function posli_forum_digest()
 
 
 /**
- * Uloží do tabulky fykos.users čas poslední návštěvy fóra
- */
-function uloz_cas_posledni_navstevy()
-{
-    if (!empty($_SESSION['id'])) {
-        $GLOBALS['mysql']->query('
-            UPDATE ' . TABLE_USERS . ' SET
-            last_forum_visit_datetime=NOW()
-            WHERE id=' . db::escape_string($_SESSION['id']) . '
-        ');
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-/**
 *       Formát $row
 *               * SELECT * FROM V_forum
 */
@@ -553,7 +303,7 @@ function get_html_prispevek($row)
             <div class="left"><img src="images/sample-gravatar.gif" height="14" width="14" alt="" />
                 <span class="loud">' . $s_email . '</span>
                 &ndash; ' . $row['datum_cas'] . '
-                <span class="text-separator">|</span> <a href="' . odkaz2(null, array('forum_id'=>$row['id'],'reagovat'=>1,'delete'=>null,'upravit'=>null)) . '">Reagovat &#187;</a></div>
+                <span class="text-separator">|</span> <a href="' . odkaz2(null, array('forum_id'=>$row['id'],'reagovat'=>1)) . '">Reagovat &#187;</a></div>
 ';
     if ($GLOBALS['sort'] != 'vlakno') {
         $s .= '
@@ -574,123 +324,6 @@ function get_html_prispevek($row)
 ';
 
     return $s;      
-}
-
-/**
-*    Smaže příspěvek i všechny potomky
-*/
-function smazat_prispevek_strom($forum_id)
-{
-    $result = $GLOBALS['mysql']->query('
-        SELECT id
-        FROM ' . TABLE_FORUM . '
-        WHERE reakcena_id=' . db::escape_string($forum_id) . '
-    ');
-
-    while((list($id) = mysql_fetch_array($result))) {
-        smazat_prispevek_strom($id);
-    }
-
-    $GLOBALS['mysql']->query('
-        DELETE FROM ' . TABLE_FORUM . '
-        WHERE id=' . db::escape_string($forum_id) . '
-    ');
-    return $GLOBALS['smazano']++;
-}
-
-/**
-*    Změní news_id u celeho vlakna pripojeneho k $forum_id
-*    Pri chybe vrati 0, jinak pocet presunutych prispevku
-*/
-function nastav_news_id_strom($forum_id, $news_id)
-{
-    $presunuto = 0;
-
-    /** kontrola news_id */
-    if (!is_null($news_id)) {
-        $GLOBALS['mysql']->query('
-            SELECT id
-            FROM ' . TABLE_NEWS . '
-            WHERE id=' . db::escape_string($news_id) . '
-        ');
-        if ($row = $GLOBALS['mysql']->fetch_array()) {
-            $news_id = $row['id'];
-        } else {
-            // Chybny vstup, nic neprovede a vrati 0
-            return 0;
-        }
-    }
-
-    $result = $GLOBALS['mysql']->query('
-        SELECT id
-        FROM ' . TABLE_FORUM . '
-        WHERE reakcena_id=' . db::escape_string($forum_id) . '
-    ');
-
-    while((list($id) = mysql_fetch_array($result))) {
-        $presunuto += nastav_news_id_strom($id, $news_id);
-    }
-
-    $GLOBALS['mysql']->query('
-        UPDATE ' . TABLE_FORUM . '
-        SET news_id=' . db::escape_string($news_id) . '
-        WHERE id=' . db::escape_string($forum_id) . '
-    ');
-    $presunuto++;
-    return $presunuto;
-}
-
-/**
-*    Zjistí, zda je příspěvěk kořenový, tedy jestli reakcena_id == 0
-*/
-function je_korenovy_prispevek($forum_id)
-{
-    $GLOBALS['mysql']->query('
-        SELECT reakcena_id
-        FROM ' . TABLE_FORUM . '
-        WHERE id' . db::escape_string_where($forum_id) . '
-    ');
-    if ($row = $GLOBALS['mysql']->fetch_array()) {
-        if ($row['reakcena_id'] == 0) {
-            $r = true;
-        } else {
-            $r = false;
-        }
-    } else { /* Pro chybny vstup vrati take false */
-        $r = false;
-    }
-    return $r;
-}
-
-
-/**
- * Zjistí, zda má přihlášený uživatel právo UPDATE a DELETE na $forum_id
- */
-function je_opravnen($forum_id)
-{
-    // Administator
-    if (isset($_SESSION['administrator']) && $_SESSION['administrator'] == 1) {
-        return true;
-    }
-
-    // nebo autor prispevku
-    if (isset($_SESSION['id'])) {
-        $GLOBALS['mysql']->query('
-            SELECT users_id FROM ' . TABLE_FORUM . '
-            WHERE id=' . db::escape_string($forum_id) . '
-        ');
-        if (list($users_id) = $GLOBALS['mysql']->fetch_array()) {
-            if ( !is_null($users_id) && $_SESSION['id'] == $users_id) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
 }
 
 /**
