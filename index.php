@@ -33,16 +33,16 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <meta name='copyright' content='&copy;2002-<?= date('Y') ?> Fyzikalní olympiáda' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<base href="<?= BASE_URL ?>" />
+<base href="/" />
 
 <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
 <? if ($napln == FILE_FORUM) : ?>
-<link rel='alternate' type='application/rss+xml' title='Diskuse Fyzikální olympiády' href='<?= BASE_URL ?>rss_forum.xml' />
+<link rel='alternate' type='application/rss+xml' title='Diskuse Fyzikální olympiády' href='/rss_forum.xml' />
 <? else: ?>
-<link rel='alternate' type='application/rss+xml' title='Aktuality Fyzikální olympiády' href='<?= BASE_URL ?>rss.xml' />
+<link rel='alternate' type='application/rss+xml' title='Aktuality Fyzikální olympiády' href='/rss.xml' />
 <? endif; ?>
-<link rel='home' href='<?= BASE_URL ?>' />
+<link rel='home' href='/' />
 
 <link rel='stylesheet' type='text/css' media='screen' href='/css/bootstrap.css' />
 <link rel='stylesheet' type='text/css' media='screen,projection,tv' href='/css/layout.css' />
