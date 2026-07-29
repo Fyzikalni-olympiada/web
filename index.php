@@ -77,9 +77,6 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 				});
 			}
 		});
-		$('#sidebar .section-title-image a').attr('rel', 'gallery[]').prettyPhoto({
-			social_tools: false
-		});
     });
 </script>
 

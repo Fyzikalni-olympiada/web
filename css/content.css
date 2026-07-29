@@ -171,3 +171,8 @@ table.zadani td br + small {
 }
 
 
+
+/* Nejbližší nadcházející termín (zvýrazňuje js/fo.js) */
+tr.aktualni td, span.aktualni {
+	font-weight: bold;
+}

@@ -16,6 +16,13 @@ if ($path === '/data/terms.json') {
     return true;
 }
 
+if ($path === '/data/thumbs.json') {
+    header('Content-Type: application/json; charset=utf-8');
+    echo is_file($root . '/temp/thumbs.json')
+        ? file_get_contents($root . '/temp/thumbs.json') : '[]';
+    return true;
+}
+
 if ($path === '/rss.xml') {
     require $root . '/rss.php';
     return true;

@@ -130,8 +130,11 @@ foreach ($iter as $file) {
     }
     $manifest[] = ['thumb' => '/' . $thumb_rel, 'full' => '/' . $rel];
 }
+/* manifest i do temp/ pro lokální náhled (router.php) */
+file_put_contents(ROOT_DIR . 'temp/thumbs.json', json_encode($manifest, JSON_UNESCAPED_SLASHES));
 write_file($DIST . 'data/thumbs.json', json_encode($manifest, JSON_UNESCAPED_SLASHES));
-exec('cp -aT ' . escapeshellarg(ROOT_DIR . 'temp') . ' ' . escapeshellarg($DIST . 'temp'));
+mkdir($DIST . 'temp');
+exec('cp -aT ' . escapeshellarg(ROOT_DIR . 'temp/images') . ' ' . escapeshellarg($DIST . 'temp/images'));
 
 /* ---------- 4. statické soubory ---------- */
 
