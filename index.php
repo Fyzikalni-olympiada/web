@@ -195,13 +195,6 @@ Fyzikální olympiáda – <?= nadpis() ?>
             </div>
 
             <div class="section">
-                <div class="section-title">Novinky</div>
-                <div class="section-content">
-                       <?php echo novinky(); ?>
-                </div>
-            </div>
-
-            <div class="section">
                 <div class="section-title">Partneři soutěže a sponzoři</div>
                 <div class="section-content">
                     <ul class="nice-list">

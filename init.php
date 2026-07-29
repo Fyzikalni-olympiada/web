@@ -20,9 +20,6 @@ define('FILE_FORUM', 'content/forum.php');
 
 require_once(ROOT_DIR.'config.php');
 
-/* Novinky */
-define('NOVINKY_NA_STRANKU', 6);
-
 /* Diskuse (zmrazený archiv) */
 define('FORUM_VLAKEN_NA_STRANKU', 7);
 

@@ -191,30 +191,6 @@ function news_homepage()
 
 
 
-/** Boční panel s novinkami */
-function novinky()
-{
-    $monthz = Array(1 => 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
-    $strHTML = '
-        <ul class="nice-list">';
-
-    $poradi = 0;
-    foreach (array_slice(news_homepage(), 0, NOVINKY_NA_STRANKU) as $item) {
-        list($y, $m, $d) = explode('-', $item['date']);
-        $strHTML .= '
-            <li>
-                <div class="left"><a href="' . ROOT_WWW . '#' . ++$poradi . '">' . $item['subject'] . '</a></div>
-                <div class="right">' . (int) $d . '. ' . $monthz[(int) $m] . '</div>
-                <div class="clearer">&nbsp;</div>
-            </li>';
-    }
-    $strHTML .= '
-        </ul>';
-    return $strHTML;
-}
-
-
-
 function nadpis()
 {
 	if ($GLOBALS['nadpis'] === NULL) {
