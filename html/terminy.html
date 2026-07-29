@@ -1,104 +1,57 @@
 <h2>Termíny <?php echo AKTUALNI_ROCNIK ?>. ročníku Fyzikální olympiády <?php echo AKTUALNI_ROK ?></h2>
 
 
-<?php 
-if (FILE_INDEX == 'index.php') {
+<?php
 echo '<p>Termíny odevzdání úloh domácího kola jsou jen <strong>orientační</strong>. Závazné termíny v&nbsp;jednotlivých krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajských komisí">webových stránkách</a>.</p>';
+
+$terminy = data_terms(AKTUALNI_ROCNIK);
+
+function terminy_public($kategorie)
+{
+	global $terminy;
+	if (!isset($terminy[$kategorie])) {
+		return array();
+	}
+	return array_filter($terminy[$kategorie], function ($t) {
+		return $t['duvernost'] === 'public';
+	});
 }
 
+if (!function_exists('mb_ucfirst')) { // nativní od PHP 8.4
+	function mb_ucfirst($s) {
+		return mb_strtoupper(mb_substr($s, 0, 1)) . mb_substr($s, 1);
+	}
+}
 
-$GLOBALS['mysql']->query('
-	SELECT nazev, termin, UNIX_TIMESTAMP(date) AS timestamp, duvernost
-	FROM ' . TABLE_TERMS . '
-	WHERE kategorie="0"
-	AND rocnik="' . AKTUALNI_ROCNIK . '"
-	ORDER BY date
-');	
-
+/* Společné termíny; nejbližší nadcházející zvýrazní js/fo.js podle data-date */
 echo '
-<p>';
-
-$oznaceno = false;
-while ($row = $GLOBALS['mysql']->fetch_array())	{
-	if ($row['duvernost'] == 'public' || ($row['duvernost'] == 'private' && $GLOBALS['kdo'] == 'organizator' )) {
-		if ( ($row['timestamp']+60*60*24) > time() && !$oznaceno ) {
-			$strong1 = '<strong>';
-			$strong2 = '</strong>';
-			$oznaceno = true;
-		} else {
-			$strong1 = $strong2 = '';
-		}
-		echo $strong1 . ucfirst($row['nazev']) . ' &ndash; ' . $row['termin'] . $strong2 . '<br />';
-	}		
+<p class="terminy" data-terminy-kategorie="0">';
+foreach (terminy_public(0) as $row) {
+	echo '<span data-date="' . $row['date'] . '">' . mb_ucfirst($row['nazev']) . ' &ndash; ' . $row['termin'] . '</span><br />';
 }
 echo '
 </p>';
 
+foreach (array(
+	1 => 'Kategorie A &ndash; střední školy',
+	2 => 'Kategorie B, C, D &ndash; střední školy',
+	3 => 'Kategorie E, F &ndash; základní školy',
+	4 => 'Kategorie G &ndash; základní školy',
+) as $kategorie => $nadpis_kat) {
+	echo '<h3>' . $nadpis_kat . '</h3>';
 
-
-for ( $i = 1; $i < 5; $i++ ) {
-	switch ($i) {
-		case 1:
-			echo '<h3>Kategorie A &ndash; střední školy</h3>';
-			break;
-		case 2:
-			echo '<h3>Kategorie B, C, D &ndash; střední školy</h3>';
-			break;
-		case 3:
-			echo '<h3>Kategorie E, F &ndash; základní školy</h3>';
-			break;
-		case 4:
-			echo '<h3>Kategorie G &ndash; základní školy</h3>';
-			break;
-		default:
-			break;
-	}
-
-	$GLOBALS['mysql']->query('
-		SELECT nazev, termin, UNIX_TIMESTAMP(date) AS timestamp, misto, kompetence, duvernost
-		FROM ' . TABLE_TERMS . '
-		WHERE kategorie="' . $i . '"
-		AND rocnik="' . AKTUALNI_ROCNIK . '"
-		ORDER BY date
-	');	
-	
 	echo '
-	<table class="table">';
-	
-	$oznaceno = false;
-	while ($row = $GLOBALS['mysql']->fetch_array())	{
-		if ($row['duvernost'] == 'public' || ($row['duvernost'] == 'private' && $GLOBALS['kdo'] == 'organizator' )) {
-			if ( ($row['timestamp']+60*60*24) > time() && !$oznaceno ) {
-				$strong1 = '<strong>';
-				$strong2 = '</strong>';
-				$oznaceno = true;
-			} else {
-				$strong1 = $strong2 = '';
-			}
-			/* Pro prahu jiný termín domácích kol */
-			if ($row['termin'] == 'do 13. 1. 2014' && FILE_INDEX == 'praha/index.php') {
-				$row['termin'] = 'do 6. 1. 2014';
-			}
-			if ($row['termin'] == 'do 19. 4. 2013' && FILE_INDEX == 'praha/index.php') {
-				$row['termin'] = 'do 12. 4. 2013';
-			}
-			echo '
-	<tr>
-		<td width="30%">' . $strong1 . mb_ucfirst($row['nazev']) . $strong2 . '</td>
-		<td width="30%">' . $strong1 . $row['termin'] . $strong2 . '</td>
-		<td width="20%">' . $strong1 . $row['misto'] . $strong2 . '</td>
+	<table class="table terminy" data-terminy-kategorie="' . $kategorie . '">';
+	foreach (terminy_public($kategorie) as $row) {
+		echo '
+	<tr data-date="' . $row['date'] . '">
+		<td width="30%">' . mb_ucfirst($row['nazev']) . '</td>
+		<td width="30%">' . $row['termin'] . '</td>
+		<td width="20%">' . (isset($row['misto']) ? $row['misto'] : '') . '</td>
 	</tr>';
-		}		
 	}
 	echo '
 	</table>
 	';
-	
 }
-
-function mb_ucfirst($s) {
-	return mb_strtoupper(mb_substr($s, 0, 1)) . mb_substr($s, 1);
-}
-
-	
 ?>

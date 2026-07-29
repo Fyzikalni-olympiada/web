@@ -1,14 +1,8 @@
 <h2>Soutěž pro střední školy</h2>
 
 <?php
-$GLOBALS['mysql']->query('
-	SELECT termin, date, kategorie
-	FROM ' . TABLE_TERMS . '
-	WHERE nazev LIKE \'%školní%\'
-	AND rocnik="' . AKTUALNI_ROCNIK . '"
-	ORDER BY kategorie
-');
-while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
+foreach (terms_hledej('školní') as $termin_row) {
+	$termin = $termin_row['termin']; $date = $termin_row['date']; $kategorie = $termin_row['kategorie'];
 	switch ($kategorie) {
 			case 1:
 				$terminA = $termin;
@@ -25,14 +19,8 @@ while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
 $beforeA = $dateA >= date('Y-m-d');
 $beforeBCD = $dateBCD >= date('Y-m-d');
 
-$GLOBALS['mysql']->query('
-        SELECT termin, date, kategorie
-        FROM ' . TABLE_TERMS . '
-        WHERE nazev LIKE \'%krajské kolo%\'
-        AND rocnik="' . (AKTUALNI_ROCNIK) . '"
-        ORDER BY kategorie
-');
-while (list($termin, $date, $kategorie) = $GLOBALS['mysql']->fetch_array()) {
+foreach (terms_hledej('krajské kolo') as $termin_row) {
+	$termin = $termin_row['termin']; $date = $termin_row['date']; $kategorie = $termin_row['kategorie'];
         switch ($kategorie) {
                         case 1:
                                 $krajTerminA = $termin;

@@ -1,50 +1,38 @@
 <?php
 define("VALID_ACCESS", 1);
-define("INTERVAL", "150");
+define("RSS_POLOZEK", 15);
 include_once('init.php');
-
-$mysql->query("
-	SELECT id, name, email, UNIX_TIMESTAMP(CONCAT(date, ' ' , time)) AS unix_time, subject, text
-	FROM " . TABLE_NEWS . "
-	WHERE wheres='" . NOVINKY_WHERES . "'
-	AND who LIKE '%" . $GLOBALS['kdo'] . "%'
-	AND DATE_SUB(CURDATE(),INTERVAL " . INTERVAL . " DAY) <= date
-	ORDER BY date DESC, time DESC
-");
 
 $strRSS = '<?xml version=\'1.0\' encoding=\'utf-8\'?>
 <rss version=\'2.0\'>
 	<channel>
 		<title>Fyzikální olympiáda</title>
-		<link>http://fyzikalniolympiada.cz</link>
+		<link>' . rtrim(BASE_URL, '/') . '</link>
 		<description>Fyzikální olympiáda, aktuality.</description>
 		<language>cs</language>
-		<copyright>Copyright 2004-2005, Jan Prachař</copyright>
-		<managingEditor>jan.prachar@fyzikalniolympiada.cz (Prachař, Jan)</managingEditor>
+		<copyright>Copyright 2004-' . date('Y') . ', Fyzikální olympiáda</copyright>
 		<webMaster>webmaster@fyzikalniolympiada.cz (Prachař, Jan)</webMaster>
 		<pubDate>' . date('r') . '</pubDate>
 		<docs>http://backend.userland.com/rss2/</docs>
 		<image>
-			<url>http://fyzikalniolympiada.cz/pic/fo_logo.gif</url>
+			<url>' . BASE_URL . 'pic/fo_logo.gif</url>
 			<title>Fyzikální olympiáda - oficiální stránky</title>
-			<link>http://fyzikalniolympiada.cz</link>
+			<link>' . rtrim(BASE_URL, '/') . '</link>
 			<width>62</width>
 			<height>83</height>
 			<description>Fyzikální olympiáda - oficiální stránky středoškolské soutěže</description>
 		</image>';
 
-while ($row = $mysql->fetch_array()) {
-	eval("\$row[\"text\"] = \"$row[text]\";");
+foreach (array_slice(data_news(), 0, RSS_POLOZEK) as $item) {
+	$url = BASE_URL . 'novinka/' . $item['id'];
 	$strRSS .= '
 		<item>
-			<title>' . decode($row['subject']) . '</title>
-			<link>http://fyzikalniolympiada.cz/novinka?id=' . $row['id'] . '&amp;who=' . $GLOBALS['kdo'] . '</link>
-			<description>' . decode($row['text']) . '</description>
-			<author>' . $row['email'] . ' (' . $row['name'] . ')</author>';
-	$strRSS .= '
-			<comments>' . odkaz('diskuse/forum.php') . '</comments>
-			<guid>http://fyzikalniolympiada.cz/novinka?id=' . $row['id'] . '&amp;who=' . $GLOBALS['kdo'] . '</guid>
-			<pubDate>' . date('r', $row['unix_time']) . '</pubDate>
+			<title>' . decode($item['subject']) . '</title>
+			<link>' . $url . '</link>
+			<description>' . decode($item['body']) . '</description>
+			<author>' . $item['email'] . ' (' . $item['author'] . ')</author>
+			<guid>' . $url . '</guid>
+			<pubDate>' . date('r', strtotime($item['date'] . ' ' . $item['time'])) . '</pubDate>
 		</item>';
 }
 
@@ -52,19 +40,12 @@ $strRSS .= '
 	</channel>
 </rss>';
 
-//header("Content-type: application/rss+xml; charset=windows-1250"); 
 Header("Content-type: text/xml; charset=utf-8");
-Header("Pragma: no-cache");
-Header("Cache-Control: no-cache");
-Header("Expires: ".GMDate("D, d M Y H:i:s")." GMT");
 echo $strRSS;
-
-$mysql->close();
-$mysql_odkazy->close();
 
 function decode($text)
 {
 	$text = str_replace('&nbsp;', ' ', $text);
 	$text = str_replace('&ndash;', '-', $text);
-	return strip_tags($text);
+	return htmlspecialchars(strip_tags($text), ENT_XML1);
 }

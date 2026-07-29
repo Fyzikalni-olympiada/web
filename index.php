@@ -3,6 +3,9 @@ define("VALID_ACCESS", 1);
 ob_start();
 require_once('init.php');
 
+/* urcime napln, nadpis, pathname */
+parsuj();
+
 /*
  * HTML KOD
  */
@@ -26,16 +29,16 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <meta name='copyright' content='&copy;2002-<?= date('Y') ?> Fyzikalní olympiáda' />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<base href="http://<?= SERVER_NAME ?>/" />
+<base href="<?= BASE_URL ?>" />
 
 <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
 <? if ($napln == FILE_FORUM) : ?>
-<link rel='alternate' type='application/rss+xml' title='Diskuse Fyzikální olympiády' href='http://<?= SERVER_NAME ?>/rss_forum.php' />
+<link rel='alternate' type='application/rss+xml' title='Diskuse Fyzikální olympiády' href='<?= BASE_URL ?>rss_forum.xml' />
 <? else: ?>
-<link rel='alternate' type='application/rss+xml' title='Aktuality Fyzikální olympiády' href='http://<?= SERVER_NAME ?>/rss.php' />
+<link rel='alternate' type='application/rss+xml' title='Aktuality Fyzikální olympiády' href='<?= BASE_URL ?>rss.xml' />
 <? endif; ?>
-<link rel='home' href='http://<?= SERVER_NAME ?>/' />
+<link rel='home' href='<?= BASE_URL ?>' />
 
 <link rel='stylesheet' type='text/css' media='screen' href='/css/bootstrap.css' />
 <link rel='stylesheet' type='text/css' media='screen,projection,tv' href='/css/layout.css' />
@@ -152,11 +155,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
             <div class="section">
                 <div class="section-title">Nejbližší termíny</div>
                 <div class="section-content">
-                    <?php foreach (latest_terms() as $title=>$term) : ?>
-                        <h6><?php echo $title; ?></h6>
-                        <?php echo $term; ?>
-                        <div class="clearer">&nbsp;</div>
-                    <?php endforeach;?>
+                    <div id="nejblizsi-terminy"><!-- plní js/fo.js z /data/terms.json --></div>
 					<p class="text-center">
 						<a href="<?php echo odkaz('terminy.html') ?>">Všechny termíny</a>
 					</p>
@@ -164,9 +163,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
             </div>
 
             <div class="section">
-                <div class="section-title-image">
-                    <?php echo rand_thumb(); ?>
-                </div>
+                <div class="section-title-image" id="nahodna-fotka"><!-- plní js/fo.js z /data/thumbs.json --></div>
             </div>
 
             <div class="section">
@@ -285,19 +282,8 @@ Fyzikální olympiáda – <?= nadpis() ?>
         </div>
     </div>
 </div>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-44541919-1', 'fyzikalniolympiada.cz');
-  ga('send', 'pageview');
-</script>
+<script src="/js/fo.js" type="text/javascript"></script>
 </body>
 </html>
 <?php
-$mysql->close();
-$mysql_odkazy->close();
-
 ob_end_flush();

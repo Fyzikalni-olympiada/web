@@ -12,7 +12,6 @@ function datetime()
     $month = date("n");
     $year = date("Y");
     $monthz = array(1=>'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
-    //$dni = Array('', 'neděle','pondělí','úterý','středa','čtvrtek','pátek','sobota');
     return $day . '. ' . $monthz[$month] . ' ' . $year;
 }
 
@@ -20,161 +19,100 @@ function datetime()
 
 
 
-/**
- * Nepoužívat, jen kvůli BC
- * @deprecated
- * @param string $souborName
- * @param string $kdo
- * @param int $amp_entity
- * @return string
- */
-function odkaz($souborName = null, $kdo = null, $amp_entity = 1)
+/** URL stránky podle pathname z data/files.yaml */
+function url_for_pathname($pathname)
 {
-    if (is_null($kdo)) {
-        $r = odkaz2($souborName, null, $amp_entity, true);
-    } else {
-        $r = odkaz2($souborName, array('who' => $kdo), $amp_entity, true);
-    }
-
-    if (strpos($souborName, 'content/listina.php') && strpos($r, '?') === FALSE) {
-        $r .= '?';
-    }
-
-    return $r;
+    return $pathname === '/' ? ROOT_WWW : ROOT_WWW . ltrim($pathname, '/');
 }
 
 
 
-function odkaz2($path = null, $addget = null, $amp_entity = 1, $erase = false)
+/**
+ * Odkaz na obsahový soubor (např. 'terminy.html' nebo 'html/terminy.html').
+ * Parametr $kdo je ponechán kvůli BC, web je jen studentský.
+ */
+function odkaz($souborName, $kdo = null, $amp_entity = 1)
 {
-    if ($erase) {
-        $get['file'] = $_GET['file'];
-        if (isset($_GET['who'])) {
-            $get['who'] = $_GET['who'];
-        }
-        $get = (array) $addget + $get;
-    } elseif (!is_null($addget)) {
-        $get = array_merge($_GET, $addget);
-    } else {
-        $get = $_GET;
+    $map = data_pathname_by_file();
+    if (isset($map[$souborName])) {
+        return url_for_pathname($map[$souborName]);
     }
-
-    $pathname = false;
-
-    if (!is_null($path)) {
-        $GLOBALS['mysql_odkazy']->query("
-                        SELECT `id`, pathname
-                        FROM `" . TABLE_FILES . "`
-                        WHERE `filename`=" . $GLOBALS['mysql_odkazy']->escape_string($path) . "
-                        OR `filename`=" . $GLOBALS['mysql_odkazy']->escape_string("html/" . $path) . "
-                ");
-        if ($row = $GLOBALS['mysql_odkazy']->fetch_array()) {
-            $get['file'] = $row['id'];
-            $pathname = $row['pathname'];
-        }
-    } else {
-        $GLOBALS['mysql_odkazy']->query("
-                        SELECT pathname
-                        FROM `" . TABLE_FILES . "`
-                        WHERE `id`=" . $GLOBALS['mysql_odkazy']->escape_string($get['file']) . "
-                ");
-        if ($row = $GLOBALS['mysql_odkazy']->fetch_array()) {
-            $pathname = $row['pathname'];
-        }
+    if (isset($map['html/' . $souborName])) {
+        return url_for_pathname($map['html/' . $souborName]);
     }
-    if ($amp_entity) {
-        $amp = '&amp;';
-    } else {
-        $amp = '&';
-    }
-
-    if ($pathname) {
-        unset($get['file']);
-        $url = ROOT_WWW/* . DIR_INDEX*/ . ltrim($pathname, '/');
-    } else {
-        $url = ROOT_WWW/* . DIR_INDEX*/;
-    }
-
-    if (isset($get['who']) && $get['who'] == 'student') {
-        unset($get['who']);
-    }
-
-    $query = array();
-    foreach ($get as $name => $value) {
-        if (!empty($value) || $value === 0 || $value === '0') {
-            $query[] = $name . '=' . $value;
-        }
-    }
-    $url = ($query ? trim($url, '?') . '?' . implode($amp, $query) : $url );
-
-    return $url;
+    return ROOT_WWW;
 }
 
 /* ----- Menu ----- */
 
 
 
+/** Cíl položky menu; položka bez vlastního cíle odkazuje na svého prvního potomka */
+function menu_target($node)
+{
+    if (isset($node['file'])) {
+        return url_for_pathname($node['file']);
+    }
+    if (isset($node['href'])) {
+        return $node['href'];
+    }
+    if (!empty($node['children'])) {
+        return menu_target($node['children'][0]);
+    }
+    return ROOT_WWW;
+}
+
+
+
+/** Je aktuální stránka v podstromu položky? */
+function menu_contains($node, $pathname)
+{
+    if (isset($node['file']) && $node['file'] === $pathname) {
+        return true;
+    }
+    foreach (isset($node['children']) ? $node['children'] : [] as $child) {
+        if (menu_contains($child, $pathname)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
 function menu()
 {
+    $current = isset($GLOBALS['pathname']) ? $GLOBALS['pathname'] : null;
     $strHTML = '
                 <ul class="tabbed">';
-    $GLOBALS['mysql_odkazy']->query("
-        SELECT id, poradi, type, file_id, href, name, title
-        FROM " . TABLE_MENU_STRUCTURE . "
-        WHERE parent_id IS NULL
-        AND path='" . FILE_INDEX . "'
-        ORDER BY poradi
-    ");
-    $result = $GLOBALS['mysql_odkazy']->vysledek;
 
-	$i = 1;
-    while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-        if (empty($row['type'])) { //zjistime, na jaky soubor mame vlastne odkazovat
-            $GLOBALS['mysql_odkazy']->query("
-                SELECT poradi, type, file_id, href
-                FROM " . TABLE_MENU_STRUCTURE . "
-                WHERE parent_id=" . $row['id'] . "
-                AND path='" . FILE_INDEX . "'
-                ORDER BY poradi
-                LIMIT 1
-            ");
-            if ($subrow = $GLOBALS['mysql_odkazy']->fetch_array())
-                $row = array_merge($row, $subrow);
-        }
+    $i = 1;
+    foreach (data_menu() as $node) {
+        $url = menu_target($node);
+        $title = isset($node['title']) ? $node['title'] : $node['name'];
+        $selected = menu_contains($node, $current)
+            || (isset($node['file']) && $node['file'] === 'diskuse' && strpos((string) $current, 'diskuse') === 0);
 
-        if ($row['type'] == 'file')
-            $url = odkaz2(null, array('file' => $row['file_id']));
-        else
-            $url = $row['href'];
-        if ($row['id'] == $GLOBALS['parentID'] || $row['id'] == $GLOBALS['structureID'])
-            $selected = true;
-        else
-            $selected = false;
-
-		if ($row['file_id'] == 19) {//diskuse
-			$urlS = odkaz2(null, array('file' => $row['file_id'], 'who' => 'student'));
-			$urlU = odkaz2(null, array('file' => $row['file_id'], 'who' => 'ucitel'));
-			$strHTML .= '
+        if (isset($node['file']) && $node['file'] === 'diskuse') { //diskuse: studenti/ucitele
+            $strHTML .= '
 				<li class="dropdown' . ($selected ? ' current-tab' : '') . ($i++ > 5 ? ' smaller' : '') . '">
-				<a href="' . $url . '" title="' . $row['title'] . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $row['name'] . '<b class="caret"></b></a>
+				<a href="' . $url . '" title="' . $title . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $node['name'] . '<b class="caret"></b></a>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
-					<li><a href="' . $urlS . '">Studenti</a></li>
-					<li><a href="' . $urlU . '">Učitelé</a></li>
+					<li><a href="' . ROOT_WWW . 'diskuse">Studenti</a></li>
+					<li><a href="' . ROOT_WWW . 'diskuse-ucitele">Učitelé</a></li>
 				</ul>';
-		} else {
-			$dropdown = ($submenu = submenu($row['id'], true));
-			$strHTML .= '
+        } else {
+            $dropdown = ($submenu = submenu($node, true));
+            $strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 5 ? ' smaller' : '') . '">
-			<a href="' . $url . '" title="' . $row['title'] . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $row['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
-			if ($dropdown) {
-				$strHTML .= $submenu;
-			}
-		}
-		$strHTML .= ' ' . MENU_ODDELOVAC . '</li>';
-
+			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
+            if ($dropdown) {
+                $strHTML .= $submenu;
+            }
+        }
+        $strHTML .= ' ' . MENU_ODDELOVAC . '</li>';
     }
-    $strHTML[strlen($strHTML) - 6] = ' ';
-	$strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády" 
+    $strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády"
 		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">Osmo</a></li>';
     $strHTML .= '
                 </ul>';
@@ -184,143 +122,95 @@ function menu()
 
 
 
-function submenu($parentID = 1, $dropdown = false)
+function submenu($node, $dropdown = false)
 {
+    if (empty($node['children'])) {
+        return '';
+    }
+    $current = isset($GLOBALS['pathname']) ? $GLOBALS['pathname'] : null;
     $strHTML = '
                 <ul ' . ($dropdown ? 'class="dropdown-menu" role="menu"' : 'class="tabbed"') . '>';
-    $result = $GLOBALS['mysql_odkazy']->query("
-        SELECT id, poradi, type, file_id, href, name, title
-        FROM " . TABLE_MENU_STRUCTURE . "
-        WHERE parent_id='" . $parentID . "'
-        AND path='" . FILE_INDEX . "'
-        ORDER BY poradi
-    ");
 
-    while ($row = mysql_fetch_assoc($result)) {
-        if ($row['type'] == 'file')
-            $url = odkaz2(null, array('file' => $row['file_id']));
-        else
-            $url = $row['href'];
-        if (isset($GLOBALS['structureID']) && $row['id'] == $GLOBALS['structureID'])
-            $selected = ' class="current-tab"';
-        else
-            $selected = '';
+    foreach ($node['children'] as $child) {
+        $url = menu_target($child);
+        $title = isset($child['title']) ? $child['title'] : $child['name'];
+        $selected = (isset($child['file']) && $child['file'] === $current) ? ' class="current-tab"' : '';
 
-		$strHTML .= '
-				<li' . $selected . '>' . SUBMENU_ODRAZKA . '<a href="' . $url . '" title="' . $row['title'] . '"' . $selected . '>' . $row['name'] . '</a></li>';
+        $strHTML .= '
+				<li' . $selected . '>' . SUBMENU_ODRAZKA . '<a href="' . $url . '" title="' . $title . '"' . $selected . '>' . $child['name'] . '</a></li>';
     }
     $strHTML .= '
                 </ul>';
-    return isset($url) ? $strHTML : '';
-}
-
-
-
-function novinka($poradi)
-{
-    $monthz = Array(1 => 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
-
-    $GLOBALS['mysql']->query('
-        SELECT id, YEAR(date) AS year, MONTH(date) AS month, DAYOFMONTH(date) AS day, date, time, subject, text, pic_id, name, email
-        FROM news
-        WHERE wheres = \'' . NOVINKY_WHERES . '\'
-        AND who LIKE \'%' . $GLOBALS['who'] . '%\'
-        ORDER BY date DESC, time DESC
-        LIMIT ' . intval($poradi - 1) . ', 1
-    ', 0);
-    $result = $GLOBALS['mysql']->vysledek;
-    $row = mysql_fetch_array($result, MYSQL_ASSOC);
-
-    eval("\$row[\"text\"] = \"$row[text]\";");
-    $texT = preg_replace("/^((.+?\s+){1,15}).*/s", '\\1', strip_tags($row['text']));
-
-    $strHTML = '';
-    $strHTML .= '<h2 class="title">' . $row["subject"] . '</h2>';
-    $strHTML .= '<p><span class="date">' . $row["day"] . '. ' . $monthz[$row["month"]] . ' ' . $row["year"] . '</span> &mdash; ' . $texT . ' <a href="' . odkaz('content/news.php') . '#' . $poradi . '">Více...</a></p>';
     return $strHTML;
 }
 
+/* ----- Termíny ----- */
 
 
+
+/** Termíny dané kategorie (výchozí je aktuální ročník) */
+function terms_kategorie($kategorie, $rocnik = null)
+{
+    $rocnik = $rocnik === null ? AKTUALNI_ROCNIK : $rocnik;
+    $terms = data_terms($rocnik);
+    return isset($terms[$kategorie]) ? $terms[$kategorie] : array();
+}
+
+
+
+/** Termíny podle podřetězce názvu, volitelně kategorie; seřazeno podle kategorie */
+function terms_hledej($nazev, $kategorie = null, $rocnik = null)
+{
+    $rocnik = $rocnik === null ? AKTUALNI_ROCNIK : $rocnik;
+    $vysledek = array();
+    foreach (data_terms($rocnik) as $kat => $list) {
+        if ($kategorie !== null && $kat != $kategorie) {
+            continue;
+        }
+        foreach ($list as $t) {
+            if (mb_stripos($t['nazev'], $nazev) !== false) {
+                $t['kategorie'] = $kat;
+                $vysledek[] = $t;
+            }
+        }
+    }
+    return $vysledek;
+}
+
+/* ----- Novinky ----- */
+
+
+
+/** Novinky zobrazované na hlavní stránce (homepage: true) */
+function news_homepage()
+{
+    return array_values(array_filter(data_news(), function ($item) {
+        return !empty($item['homepage']);
+    }));
+}
+
+
+
+/** Boční panel s novinkami */
 function novinky()
 {
     $monthz = Array(1 => 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
     $strHTML = '
         <ul class="nice-list">';
 
-    $GLOBALS['mysql']->query('
-        SELECT id, YEAR(date) AS year, MONTH(date) AS month, DAYOFMONTH(date) AS day, date, time, subject, text, pic_id, name, email
-        FROM news
-        WHERE DATE_SUB(CURDATE(),INTERVAL ' . NOVINKY_INTERVAL . ' DAY) <= date
-        AND wheres = \'' . NOVINKY_WHERES . '\'
-        AND who LIKE \'%' . $GLOBALS['who'] . '%\'
-        ORDER BY date DESC, time DESC
-        LIMIT ' . NOVINKY_NA_STRANKU . '
-    ', 0);
-    $result = $GLOBALS['mysql']->vysledek;
     $poradi = 0;
-    while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+    foreach (array_slice(news_homepage(), 0, NOVINKY_NA_STRANKU) as $item) {
+        list($y, $m, $d) = explode('-', $item['date']);
         $strHTML .= '
             <li>
-                <div class="left"><a href="' . odkaz('content/news.php') . '#' . ++$poradi . '">' . $row["subject"] . '</a></div>
-                <div class="right">' . $row["day"] . '. ' . $monthz[$row["month"]] . '</div>
+                <div class="left"><a href="' . ROOT_WWW . '#' . ++$poradi . '">' . $item['subject'] . '</a></div>
+                <div class="right">' . (int) $d . '. ' . $monthz[(int) $m] . '</div>
                 <div class="clearer">&nbsp;</div>
             </li>';
     }
+    $strHTML .= '
+        </ul>';
     return $strHTML;
-}
-
-require_once(ROOT_DIR . 'libs/Nette/Utils/exceptions.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Framework.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/ObjectMixin.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Object.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Iterators/CallbackFilterIterator.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Iterators/RecursiveCallbackFilterIterator.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Iterators/MapIterator.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Tools.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Finder.php');
-require_once(ROOT_DIR . 'libs/Nette/Caching/Cache.php');
-require_once(ROOT_DIR . 'libs/Nette/Caching/ICacheStorage.php');
-require_once(ROOT_DIR . 'libs/Nette/Caching/FileStorage.php');
-require_once(ROOT_DIR . 'libs/Nette/Caching/ICacheJournal.php');
-require_once(ROOT_DIR . 'libs/Nette/Caching/FileJournal.php');
-require_once(ROOT_DIR . 'libs/Nette/Utils/Image.php');
-
-
-
-function rand_thumb()
-{
-    function getPath($f)
-    {
-        return $f->getPath();
-    }
-
-    $cache = new NCache(new NFileStorage(ROOT_DIR . 'temp', new NFileJournal(ROOT_DIR . 'temp')), 'folib');
-    if (isset($cache['thumbs'])) {
-        $thumbs = $cache['thumbs'];
-    } else {
-        $thumbs = iterator_to_array(new NMapIterator(NFinder::findFiles('*.jpg')->size('>27kB')->from(ROOT_DIR)->exclude('temp', 'thumbnails', 'pic', 'images', 'cd', 'kvary', 'upload', '_ukrajina', '_norsko'), 'getPath'));
-        $cache->save('thumbs', $thumbs);
-    }
-
-    $s = '';
-    for ($i = 0; $i < 5; $i++) {
-        $rand_pic = array_rand($thumbs);
-        $rand_thumb = ROOT_DIR . 'temp/images/' . md5($rand_pic) . '.jpg';
-        if (!is_file($rand_thumb)) {
-            $image = NImage::fromFile($rand_pic);
-            $image->resize(260, 260, NImage::FIT);
-            //$image->sharpen();
-            $image->save($rand_thumb, 95);
-        }
-        $path_pic = ROOT_WWW . substr($rand_pic, strlen(ROOT_DIR));
-        $path_thumb = ROOT_WWW . substr($rand_thumb, strlen(ROOT_DIR));
-
-
-        $s .= "<a href=\"$path_pic\"" . ($i == 0 ? '' : ' style="display: none;"') . "><img src=\"$path_thumb\" alt=\"Ze života Fyzikální olympiády\"/></a>";
-    }
-
-    return $s;
 }
 
 
@@ -330,134 +220,89 @@ function nadpis()
 	if ($GLOBALS['nadpis'] === NULL) {
 		return '404';
 	}
-    $headline = '';
-    /* $GLOBALS['mysql_odkazy']->query("
-      SELECT name
-      FROM " . TABLE_MENU_STRUCTURE . "
-      WHERE id='" . $GLOBALS['parentID'] . "'
-      ");
-      if ($row = $GLOBALS['mysql_odkazy']->fetch_array())
-      $headline = $row['name'] . ' :: ';
-     */
-
-    return $headline . $GLOBALS['nadpis'];
-}
-
-
-
-function text()
-{
-
+    return $GLOBALS['nadpis'];
 }
 
 
 
 /**
- * Parsovani GET pozadavku
+ * Parsovani pozadavku: podle PATH_INFO nastavi $napln, $nadpis, $pathname
  */
 function parsuj()
 {
     setlocale(LC_CTYPE, 'cs_CZ.utf8');
 
 	if (isset($_GET['file'])) {
-		$location = odkaz2(null, null, 0);
-		if (strpos($location, 'file=')) {
-			//soubor jsme nenašli
-			$location = '/';
-		}
-		header('Location: ' . $location, TRUE, 301);
-		exit();
-	}
-
-	$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '';
-	if ($pos = strpos($path_info, '/', 0) !== FALSE)
-		$pathname = substr($path_info, $pos) or $pathname = '/';
-	else
-		$pathname = '/';
-
-	$pathname = iconv('UTF-8', 'ASCII//TRANSLIT', $pathname);
-
-	// 301
-	if ($pathname === 'zajimavosti/korespondencni-seminare') {
-		header('Location: /korespondencni-seminare', TRUE, 301);
-		exit();
-	}
-	if ($pathname === 'zajimavosti/jine-olympiady') {
-		header('Location: /jine-olympiady', TRUE, 301);
-		exit();
-	}
-	if ($pathname === 'zajimavosti/odkazy') {
-		header('Location: /odkazy', TRUE, 301);
-		exit();
-	}
-	if ($pathname === 'archiv/studijni-texty') {
-		header('Location: /studijni-texty', TRUE, 301);
-		exit();
-	}
-	if ($pathname === 'novinky') {
+		// prastaré odkazy ?file=N už nepřekládáme
 		header('Location: /', TRUE, 301);
 		exit();
 	}
-	$row = $GLOBALS['mysql_odkazy']->query('
-				SELECT id
-				FROM ' . TABLE_FILES . '
-				WHERE pathname=' . $GLOBALS['mysql_odkazy']->escape_string($pathname) . '
-				AND (dir_index="' . SITE . '"
-					OR dir_index="")
-				ORDER BY dir_index DESC
-		');
-	$result = $GLOBALS['mysql_odkazy']->vysledek;
-	$row = mysql_fetch_array($result, MYSQL_ASSOC);
-	$_GET["file"] = $row['id'];
 
-	$GLOBALS['mysql_odkazy']->query("
-        SELECT filename, " . TABLE_FILES . ".title, " . TABLE_MENU_STRUCTURE . ".id, parent_id
-        FROM " . TABLE_FILES . " LEFT JOIN " . TABLE_MENU_STRUCTURE . "
-        ON " . TABLE_FILES . ".id=" . TABLE_MENU_STRUCTURE . ".file_id
-        WHERE " . TABLE_FILES . ".id=" . $GLOBALS['mysql_odkazy']->escape_string($_GET["file"]) . "
-        AND " . TABLE_MENU_STRUCTURE . ".path='" . FILE_INDEX . "'
-    ");
-    $result = $GLOBALS['mysql_odkazy']->vysledek;
-    if ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-        $GLOBALS['mysql_odkazy']->query("
-            SELECT parent_id, id
-            FROM " . TABLE_MENU_STRUCTURE . "
-            WHERE id='" . $row['parent_id'] . "'
-            AND path='" . FILE_INDEX . "'
-        ");
-        if ($subrow = $GLOBALS['mysql_odkazy']->fetch_array()) {//file je soucasti menu_structure
-            if ($subrow['parent_id'] == NULL) { //file je soucasti submenu
-                $GLOBALS['parentID'] = $row['parent_id'];
-                $GLOBALS['structureID'] = $row['id'];
-            } else { //neni soucasti submenu
-                $GLOBALS['parentID'] = $subrow['parent_id'];
-                $GLOBALS['structureID'] = $row['parent_id'];
-            }
-        } else {
-            $GLOBALS['parentID'] = NULL;
-            $GLOBALS['structureID'] = $row['id'];
-        }
-	} else {
-		$GLOBALS['parentID'] = NULL;
-		$GLOBALS['structureID'] = NULL;
+	$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
+	$pathname = ltrim($path_info, '/');
+	$pathname = iconv('UTF-8', 'ASCII//TRANSLIT', $pathname);
+	if ($pathname === '' || $pathname === false) {
+		$pathname = '/';
 	}
 
-    /* Soubor bude zobrazen i kdyz neni ve stromu menu */
-    $GLOBALS['mysql_odkazy']->query("
-        SELECT filename, title, difference
-        FROM " . TABLE_FILES . "
-        WHERE " . TABLE_FILES . ".id=" . $GLOBALS['mysql_odkazy']->escape_string($_GET["file"]) . "
-    ");
-    $result = $GLOBALS['mysql_odkazy']->vysledek;
-    if (($row = mysql_fetch_array($result, MYSQL_ASSOC)) && file_exists(ROOT_DIR . $row["filename"])) {
-		$GLOBALS['nadpis'] = $row["title"];
-		$GLOBALS['napln'] = $row["filename"];
-		$GLOBALS['difference'] = $row['difference'];
+	// 301
+	$redirects = array(
+		'zajimavosti/korespondencni-seminare' => '/korespondencni-seminare',
+		'zajimavosti/jine-olympiady' => '/jine-olympiady',
+		'zajimavosti/odkazy' => '/odkazy',
+		'archiv/studijni-texty' => '/studijni-texty',
+		'novinky' => '/',
+	);
+	if (isset($redirects[$pathname])) {
+		header('Location: ' . $redirects[$pathname], TRUE, 301);
+		exit();
+	}
+
+	$GLOBALS['pathname'] = $pathname;
+	$GLOBALS['news_archiv'] = false;
+	$GLOBALS['novinka_id'] = null;
+	$GLOBALS['forum_who'] = null;
+	$GLOBALS['forum_page'] = 1;
+	$GLOBALS['forum_thread'] = null;
+
+	/* Zvláštní stránky mimo data/files.yaml */
+	if ($pathname === 'archiv-novinek') {
+		$GLOBALS['nadpis'] = 'Archiv novinek';
+		$GLOBALS['napln'] = FILE_NEWS;
+		$GLOBALS['news_archiv'] = true;
+		return;
+	}
+	if (preg_match('~^novinka/(\d+)$~', $pathname, $m)) {
+		$novinka = data_news_by_id((int) $m[1]);
+		if ($novinka !== null) {
+			$GLOBALS['nadpis'] = 'Aktuality';
+			$GLOBALS['napln'] = 'content/novinka.php';
+			$GLOBALS['novinka_id'] = (int) $m[1];
+			return;
+		}
+	}
+	if (preg_match('~^diskuse(-ucitele)?(?:/(\d+))?$~', $pathname, $m)) {
+		$GLOBALS['nadpis'] = 'Diskusní fórum';
+		$GLOBALS['napln'] = FILE_FORUM;
+		$GLOBALS['forum_who'] = empty($m[1]) ? 'student' : 'ucitel';
+		$GLOBALS['forum_page'] = empty($m[2]) ? 1 : (int) $m[2];
+		return;
+	}
+	if (preg_match('~^diskuse/vlakno/(\d+)$~', $pathname, $m)) {
+		$GLOBALS['nadpis'] = 'Diskusní fórum';
+		$GLOBALS['napln'] = FILE_FORUM;
+		$GLOBALS['forum_thread'] = (int) $m[1];
+		return;
+	}
+
+	$routes = data_routes();
+	if (isset($routes[$pathname]) && file_exists(ROOT_DIR . $routes[$pathname]['file'])) {
+		$GLOBALS['nadpis'] = $routes[$pathname]['title'];
+		$GLOBALS['napln'] = $routes[$pathname]['file'];
 	} else {
 		header("HTTP/1.1 404 Not Found");
 		$GLOBALS['nadpis'] = NULL;
 		$GLOBALS['napln'] = 404;
-		$GLOBALS['parentID'] = 1;
 	}
 }
 
@@ -500,126 +345,4 @@ function v($termin) {
 	}
 	$termin = str_replace(' ', '&nbsp;', $termin);
 	return "$v&nbsp;$termin";
-}
-
-
-
-function latest_terms()
-{
-    $GLOBALS['mysql']->query('
-        SELECT nazev, termin, UNIX_TIMESTAMP(date) AS timestamp, duvernost
-        FROM ' . TABLE_TERMS . '
-        WHERE kategorie IN (0, 1)
-        AND rocnik="' . AKTUALNI_ROCNIK . '"
-        AND DATE >= NOW()
-        AND duvernost="public"
-        ORDER BY date
-        LIMIT 1
-    ');
-    if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Kategorie A (4.&nbsp;ročník SŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
-    }
-
-    $GLOBALS['mysql']->query('
-        SELECT nazev, termin, UNIX_TIMESTAMP(date) AS timestamp, duvernost
-        FROM ' . TABLE_TERMS . '
-        WHERE kategorie IN (0, 2)
-        AND rocnik="' . AKTUALNI_ROCNIK . '"
-        AND DATE >= NOW()
-        AND duvernost="public"
-        ORDER BY date
-        LIMIT 1
-    ');
-    if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Kategorie B&ndash;D (1.&ndash;3.&nbsp;ročník SŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
-    }
-
-    $GLOBALS['mysql']->query('
-        SELECT nazev, termin, UNIX_TIMESTAMP(date) AS timestamp, duvernost
-        FROM ' . TABLE_TERMS . '
-        WHERE kategorie IN (0, 3)
-        AND rocnik="' . AKTUALNI_ROCNIK . '"
-        AND DATE >= NOW()
-        AND duvernost="public"
-        ORDER BY date
-        LIMIT 1
-    ');
-    if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Kategorie E, F (8. a&nbsp;9. třída ZŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
-    }
-
-    $GLOBALS['mysql']->query('
-        SELECT nazev, termin, UNIX_TIMESTAMP(date) AS timestamp, duvernost
-        FROM ' . TABLE_TERMS . '
-        WHERE kategorie = 4
-        AND rocnik="' . AKTUALNI_ROCNIK . '"
-        AND DATE >= NOW()
-        AND duvernost="public"
-        ORDER BY date
-        LIMIT 1
-    ');
-    if ($row = $GLOBALS['mysql']->fetch_array()) {
-        $r['Archimediáda (7.&nbsp;třída ZŠ)'] = '<div class="left">' . $row['nazev'] . '</div><div class="right">' . $row['termin'] . '</div>';
-    }
-
-    return $r;
-}
-
-
-
-
-if (!function_exists('imageconvolution')) {
-    function imageconvolution($src, $filter, $filter_div, $offset)
-    {
-        if ($src == NULL) {
-            return 0;
-        }
-
-        $sx = imagesx($src);
-        $sy = imagesy($src);
-        $srcback = ImageCreateTrueColor($sx, $sy);
-        ImageCopy($srcback, $src, 0, 0, 0, 0, $sx, $sy);
-
-        if ($srcback == NULL) {
-            return 0;
-        }
-
-        for ($y = 0; $y < $sy; ++$y) {
-            for ($x = 0; $x < $sx; ++$x) {
-                $new_r = $new_g = $new_b = 0;
-                $alpha = imagecolorat($srcback, $pxl[0], $pxl[1]);
-                $new_a = $alpha >> 24;
-
-                for ($j = 0; $j < 3; ++$j) {
-                    $yv = min(max($y - 1 + $j, 0), $sy - 1);
-                    for ($i = 0; $i < 3; ++$i) {
-                        $pxl = array(min(max($x - 1 + $i, 0), $sx - 1), $yv);
-                        $rgb = imagecolorat($srcback, $pxl[0], $pxl[1]);
-                        $new_r += ( ($rgb >> 16) & 0xFF) * $filter[$j][$i];
-                        $new_g += ( ($rgb >> 8) & 0xFF) * $filter[$j][$i];
-                        $new_b += ( $rgb & 0xFF) * $filter[$j][$i];
-                    }
-                }
-
-                $new_r = ($new_r / $filter_div) + $offset;
-                $new_g = ($new_g / $filter_div) + $offset;
-                $new_b = ($new_b / $filter_div) + $offset;
-
-                $new_r = ($new_r > 255) ? 255 : (($new_r < 0) ? 0 : $new_r);
-                $new_g = ($new_g > 255) ? 255 : (($new_g < 0) ? 0 : $new_g);
-                $new_b = ($new_b > 255) ? 255 : (($new_b < 0) ? 0 : $new_b);
-
-                $new_pxl = ImageColorAllocateAlpha($src, (int) $new_r, (int) $new_g, (int) $new_b, $new_a);
-                if ($new_pxl == -1) {
-                    $new_pxl = ImageColorClosestAlpha($src, (int) $new_r, (int) $new_g, (int) $new_b, $new_a);
-                }
-                if (($y >= 0) && ($y < $sy)) {
-                    imagesetpixel($src, $x, $y, $new_pxl);
-                }
-            }
-        }
-        imagedestroy($srcback);
-        return 1;
-    }
-
 }

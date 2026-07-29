@@ -1,11 +1,6 @@
 <?php
-$GLOBALS['mysql']->query('
-	SELECT termin
-	FROM ' . TABLE_TERMS . '
-	WHERE nazev LIKE \'%celostátní soustředění%\'
-	AND rocnik="' . 65 . '"
-'); // (AKTUALNI_ROCNIK-1)
-list($termin) = $GLOBALS['mysql']->fetch_array();
+$sous_rows = terms_hledej('celostátní soustředění', null, 65); // (AKTUALNI_ROCNIK-1)
+$termin = $sous_rows ? $sous_rows[0]['termin'] : '';
  
 ?> 
 

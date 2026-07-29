@@ -1,153 +1,78 @@
 <?php
-if(!defined("VALID_ACCESS"))    {die("Neoprávněný přístup!");}                         
+if(!defined("VALID_ACCESS"))    {die("Neoprávněný přístup!");}
 //      Ochrana proti neoprávněnému přístupu ke skriptům
 
-function vypis_forum_vlakna($reakcena_id,$stranka)
-{
-    /* Nejprve zjistíme, kolik je reakci*/
-    $query = '
-        SELECT COUNT(id)
-        FROM ' . VIEW_FORUM . '
-        WHERE reakcena_id=' . $reakcena_id . '
-        AND lang="' . lng() . '"
-           AND news_id'.db::escape_string_where($GLOBALS['news_id']).'
-        AND who='. db::escape_string($GLOBALS['kdo']).'
-    ';
-    $GLOBALS['mysql']->query($query);
-    list($pocet_reakci) = $GLOBALS['mysql']->fetch_array();
-    if ($pocet_reakci == 0) {
-        return '';
-    }
-
-    /* Vypíšeme reakce (rekurzivne) */
-    $query = '
-        SELECT *
-        FROM ' . VIEW_FORUM . '
-        WHERE reakcena_id=' . $reakcena_id . '
-        AND lang="' . lng() . '"
-        AND who='. db::escape_string($GLOBALS['kdo']).'
-           AND news_id'.db::escape_string_where($GLOBALS['news_id']);
-    if ( $reakcena_id == 0 ) {
-        $query .= '
-        ORDER BY posted_timestamp DESC
-        LIMIT ?, ?';
-
-        $GLOBALS['mysql']->query('SET @skip=(' . ($stranka-1) . '*(SELECT value FROM ' . TABLE_CONSTANTS . ' WHERE name="POCET_PRISPEVKU_NA_STRANKU"))');
-        $GLOBALS['mysql']->query('SET @numrows=(SELECT value FROM ' . TABLE_CONSTANTS . ' WHERE name="POCET_PRISPEVKU_NA_STRANKU")');
-        $GLOBALS['mysql']->query('PREPARE STMT FROM \'' . $query . '\'');
-        $query = 'EXECUTE STMT USING @skip, @numrows';
-    } else {
-        $query .= '
-        ORDER BY posted_timestamp';
-    }
-    $GLOBALS['mysql']->query($query);
-    $result = $GLOBALS['mysql']->vysledek;
-    $pocet = 1;
-    if ( $reakcena_id == 0 ) { //kořenové vlákno
-        $class_ul = ' class="comment-list"';
-    } else {
-        $class_ul = ' class="children"';
-    }
-    $s = '
-<ul'.$class_ul.'>';
-    while ( $row = mysql_fetch_array($result) ) {
-        $vlakno = vypis_forum_vlakna($row["id"],$stranka);
-        if ( $reakcena_id == 0 ) { //kořenový příspěvek
-            $class = 'comment-parent';
-        } elseif ($pocet == $pocet_reakci) {
-            $class = 'comment'; //posledni
-        } else {
-            $class = 'comment';
-        }
-        $s .= '
-    <li class="' . $class . '">';
-        $s .= get_html_prispevek($row);
-        $s .= $vlakno;
-        $s .= '
-    </li>';
-        $pocet++;
-    }
-    $s .= '
-</ul>';
-
-    return $s;
-}
-
-function vypis_forum_chronologicky($stranka)
-{
-    /* Nejprve zjistíme, kolik je prispevku*/
-    $query = '
-        SELECT COUNT(id)
-        FROM ' . VIEW_FORUM . '
-        WHERE lang="' . lng() . '"
-           AND news_id'.db::escape_string_where($GLOBALS['news_id']).'
-        AND who='. db::escape_string($GLOBALS['kdo']).'
-    ';
-    $GLOBALS['mysql']->query($query);
-    list($pocet_reakci) = $GLOBALS['mysql']->fetch_array();
-    /*if ($pocet_reakci < (($stranka-1)*$nastranku)) {
-        return '';
-    }*/
-
-    $query = '
-        SELECT *
-        FROM ' . VIEW_FORUM . '
-        WHERE lang="' . lng() . '"
-           AND news_id'.db::escape_string_where($GLOBALS['news_id']).'
-        AND who='. db::escape_string($GLOBALS['kdo']).'
-        ORDER BY posted_timestamp DESC
-        LIMIT ?, ?';
-
-    $GLOBALS['mysql']->query('SET @skip=(' . ($stranka-1) . '*(SELECT value FROM ' . TABLE_CONSTANTS . ' WHERE name="POCET_PRISPEVKU_NA_STRANKU_CHRON"))');
-    $GLOBALS['mysql']->query('SET @numrows=(SELECT value FROM ' . TABLE_CONSTANTS . ' WHERE name="POCET_PRISPEVKU_NA_STRANKU_CHRON")');
-    $GLOBALS['mysql']->query('PREPARE STMT FROM \'' . $query . '\'');
-    $GLOBALS['mysql']->query('EXECUTE STMT USING @skip, @numrows');
-    $result = $GLOBALS['mysql']->vysledek;
-    $s = '
-<ul class="comment-list">';
-    $pocet = 1;
-    while ( $row = mysql_fetch_array($result) ) {
-        $s .= '
-    <li class="comment-parent">';
-        $s .= get_html_prispevek($row);
-        $s .= '
-    </li>';
-        $pocet++;
-    }
-    $s .= '
-</ul>';
-
-    return $s;
-}
-
 /**
-*       Formát $row
-*               * SELECT * FROM V_forum
-*/
-function get_html_prispevek($row)
+ * Zmrazený archiv diskusního fóra, čte data/forum.yaml.
+ * Seznam vláken: /diskuse[/N], /diskuse-ucitele[/N]; vlákno: /diskuse/vlakno/<id>.
+ */
+
+
+
+/** Kořenové příspěvky pro danou skupinu, od nejnovějšího (shodná sémantika s WHERE who="...") */
+function forum_roots($who)
+{
+    $roots = array_values(array_filter(data_forum(), function ($node) use ($who) {
+        return $node['who'] === $who && (!isset($node['lang']) || $node['lang'] === 'cz');
+    }));
+    usort($roots, function ($a, $b) {
+        return strcmp($b['posted'], $a['posted']);
+    });
+    return $roots;
+}
+
+
+
+/** Najde kořenový příspěvek vlákna obsahujícího příspěvek $id */
+function forum_find_root($id)
+{
+    $obsahuje = function ($node) use ($id, &$obsahuje) {
+        if ($node['id'] == $id) {
+            return true;
+        }
+        foreach (isset($node['children']) ? $node['children'] : [] as $child) {
+            if ($obsahuje($child)) {
+                return true;
+            }
+        }
+        return false;
+    };
+    foreach (data_forum() as $root) {
+        if ($obsahuje($root)) {
+            return $root;
+        }
+    }
+    return null;
+}
+
+
+
+function forum_datum_cas($posted)
+{
+    $monthz = array(1 => 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
+    $ts = strtotime($posted);
+    return (int) date('j', $ts) . '. ' . $monthz[(int) date('n', $ts)] . date(' Y, G:i', $ts);
+}
+
+
+
+function forum_post_html($node, $root_id)
 {
     $s = '';
-    if ($row['online'] == 1) {
-        $extra = ' class="online"';
-    } elseif ($row['actual'] == 1) {
-        $extra = ' class="actual"';
-    } else {
-        $extra = '';
-    }
-    if (preg_match("/@fykos.mff.cuni.cz$/", $row["email"]) || $row['organizator'] == 1) { //email organizatora nebo organizator
+    if (isset($node['email']) && preg_match("/@fykos.mff.cuni.cz$/", $node['email'])) {
         $extra_dt = ' class="org"';
     } else {
         $extra_dt = '';
     }
-    if (!is_null($row['email'])) {
-        $row["email"] = str_replace("@", "(zavinac)", $row["email"]);
-        $s_email = '<a href="e-mail:' . $row["email"] . '" title="' . lng('Autor příspěvku','Author of the post') . '">' . nahrad_smajliky($row["name"]) . '</a>';
+    if (isset($node['email'])) {
+        $email = str_replace("@", "(zavinac)", $node['email']);
+        $s_email = '<a href="e-mail:' . $email . '" title="' . lng('Autor příspěvku', 'Author of the post') . '">' . $node['author'] . '</a>';
     } else {
-        $s_email = nahrad_smajliky($row["name"]);
+        $s_email = $node['author'];
     }
 
     $s .= '
-<div class="comment-content"' . $extra . '>
+<div class="comment-content" id="p' . $node['id'] . '"' . $extra_dt . '>
 
     <div class="comment-body">
 
@@ -155,11 +80,11 @@ function get_html_prispevek($row)
 
             <div class="left"><img src="images/sample-gravatar.gif" height="14" width="14" alt="" />
                 <span class="loud">' . $s_email . '</span>
-                &ndash; ' . $row['datum_cas'] . '</div>
+                &ndash; ' . forum_datum_cas($node['posted']) . '</div>
 ';
-    if ($GLOBALS['sort'] != 'vlakno') {
+    if ($GLOBALS['forum_thread'] === null) {
         $s .= '
-            <div class="right"><a href="' . odkaz2(null, array('forum_id'=>$row["id"],'sort'=>'vlakno')) . '">#'.$row['id'].'</a></div>';
+            <div class="right"><a href="' . ROOT_WWW . 'diskuse/vlakno/' . $root_id . '#p' . $node['id'] . '">#' . $node['id'] . '</a></div>';
     }
     $s .= '
             <div class="clearer">&nbsp;</div>
@@ -167,7 +92,7 @@ function get_html_prispevek($row)
         </div>
 
         <div class="comment-text">
-            <p><span class="large">' . htmlspecialchars($row['title'], ENT_NOQOUTES | ENT_XHTML) . '</span><br />' . nahrad_smajliky($row["text"]) . '</p>
+            <p><span class="large">' . htmlspecialchars(isset($node['title']) ? $node['title'] : '', ENT_NOQUOTES | ENT_XHTML) . '</span><br />' . $node['text'] . '</p>
         </div>
 
     </div>
@@ -175,15 +100,67 @@ function get_html_prispevek($row)
 </div>
 ';
 
-    return $s;      
+    return $s;
 }
 
-/**
-*       V textu nahradi textove smajliky obrazkama
-*/
-function nahrad_smajliky($text) 
+
+
+/** Vnořené odpovědi (rekurzivně) */
+function forum_replies_html($node, $root_id)
 {
-    return $text;
+    if (empty($node['children'])) {
+        return '';
+    }
+    $s = '
+<ul class="children">';
+    foreach ($node['children'] as $child) {
+        $s .= '
+    <li class="comment">';
+        $s .= forum_post_html($child, $root_id);
+        $s .= forum_replies_html($child, $root_id);
+        $s .= '
+    </li>';
+    }
+    $s .= '
+</ul>';
+    return $s;
 }
 
-?>
+
+
+/** Jedna stránka seznamu vláken (vlákna rozbalená jako dřív) */
+function forum_list_html($who, $strana)
+{
+    $roots = forum_roots($who);
+    $zacatek = ($strana - 1) * FORUM_VLAKEN_NA_STRANKU;
+
+    $s = '
+<ul class="comment-list">';
+    foreach (array_slice($roots, $zacatek, FORUM_VLAKEN_NA_STRANKU) as $root) {
+        $s .= '
+    <li class="comment comment-parent">';
+        $s .= forum_post_html($root, $root['id']);
+        $s .= forum_replies_html($root, $root['id']);
+        $s .= '
+    </li>';
+    }
+    $s .= '
+</ul>';
+    return $s;
+}
+
+
+
+function forum_pocet_stranek($who)
+{
+    return max(1, (int) ceil(count(forum_roots($who)) / FORUM_VLAKEN_NA_STRANKU));
+}
+
+
+
+/** Cesta na stránku seznamu */
+function forum_list_url($who, $strana)
+{
+    $base = ROOT_WWW . ($who === 'ucitel' ? 'diskuse-ucitele' : 'diskuse');
+    return $strana > 1 ? $base . '/' . $strana : $base;
+}

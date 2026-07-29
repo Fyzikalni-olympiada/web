@@ -2,95 +2,46 @@
 
 if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana proti neoprávněnému přístupu ke skriptům
 
-if (function_exists('date_default_timezone_set'))
-	date_default_timezone_set('Europe/Prague');
+date_default_timezone_set('Europe/Prague');
 
-ini_set('default_encoding', 'utf-8');
+define('ROOT_DIR', __DIR__ . '/');
+define('ROOT_WWW', '/');
 
-define("TABLE_FILES", "files");
-define("TABLE_MENU_STRUCTURE", "menu_structure");
-define("TABLE_FORUM", "forum");
-define("TABLE_CONSTANTS", "constants");
-define("TABLE_IMAGES", "images");
-define("TABLE_NEWS", "news");
-define("TABLE_USERS", "users");
-define("TABLE_TERMS", "terms");
-define("TABLE_COUNTER_ALL", "counter_all");
-define("TABLE_COUNTER_ONLINE", "counter_online");
-define("VIEW_FORUM", "V_forum");
+/* Kanonická adresa webu (build); při lokálním náhledu se odvodí z requestu */
+if (PHP_SAPI === 'cli' || getenv('FO_BUILD')) {
+	define('BASE_URL', 'https://fyzikalniolympiada.cz/');
+} else {
+	define('BASE_URL', 'http://' . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost') . '/');
+}
 
 define('FILE_INDEX', 'index.php');
 define('FILE_NEWS', 'content/news.php');
 define('FILE_FORUM', 'content/forum.php');
 
-define('FILE_DB_LOG', 'logs/db_error.log');
-
-define('SITE', '');
-
-require_once('configure.php');
-
-define('AKTUALNI_ROCNIK', 67);
-define('AKTUALNI_ROK', '2025/2026');
-
-/* Pocitadlo */
-define('INTERVAL_MEZI_NAVSTEVAMI', 60); //minimalni interval mezi navstevami v minutach
-define('INTERVAL_ONLINE', 20); //maximalni doba necinnosti v minutach, kdy je clovek povazovan online
+require_once(ROOT_DIR.'config.php');
 
 /* Novinky */
-define('NOVINKY_WHERES', 'celost');
 define('NOVINKY_NA_STRANKU', 6);
-define('NOVINKY_INTERVAL', 250); //maximalni stari zobrazene novinky ve dnech
+
+/* Diskuse (zmrazený archiv) */
+define('FORUM_VLAKEN_NA_STRANKU', 7);
 
 /* Menu */
 define('MENU_ODDELOVAC', '');
 define('SUBMENU_ODRAZKA', '');
 
-/* GLOBALNI PROMENNE 
+/* GLOBALNI PROMENNE
  *
- * $who
- * $difference
  * $parentID
  * $structureID
  * $nadpis
  * $napln
 */
- 
-// Defaultní hodnoty, pokud je prázdné GET 
+
 $GLOBALS['who'] = 'student';
+$GLOBALS['kdo'] = 'student';
 
 $GLOBALS['get'] = $_GET;
 
-/*
- * KONEC GLOBALNICH PROMENNYCH
- */
-
-/*
- * TRACY
- */
-require_once(ROOT_DIR.'tracy/src/tracy.php');
-Tracy\Debugger::enable(Tracy\Debugger::DETECT, __DIR__ . '/logs');
-
-
-require_once(ROOT_DIR.'classes/db.php');
+require_once(ROOT_DIR.'functions/data.php');
 require_once(ROOT_DIR.'functions/folib.php');
-
-/*
- * SPOJENÍ S DATABÁZÍ
- */
-
-$mysql_odkazy = new db("r",0);
-$mysql = new db("w",0);
-
-
-/*
- * PARSOVÁNÍ DOTAZU
- */
-
-/* urcime napln, nadpis, parentID, structureID */
-parsuj();
-$GLOBALS['get'] = $_GET;
-
-if (isset($_GET['who']) && in_array($_GET['who'], array('student','ucitel','organizator')) ) {
-	$GLOBALS['who'] = $_GET['who'];
-}
-$GLOBALS['kdo'] = $GLOBALS['who'];

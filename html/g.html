@@ -1,13 +1,8 @@
 <h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?></h2>
 
 <?php
-$GLOBALS['mysql']->query('
-	SELECT termin, date, nazev
-	FROM ' . TABLE_TERMS . '
-	WHERE kategorie="4"
-	AND rocnik="' . AKTUALNI_ROCNIK . '"
-');
-while (list($termin, $date, $nazev) = $GLOBALS['mysql']->fetch_array()) {
+foreach (terms_kategorie(4) as $termin_row) {
+	$termin = $termin_row['termin']; $date = $termin_row['date']; $nazev = $termin_row['nazev'];
 	switch ($nazev) {
 			case 'školní kolo':
 				$termin1 = $termin;

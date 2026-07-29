@@ -38,27 +38,16 @@ budou řešit náročné teoretické i experimentální úlohy.
 <h2>Přípravné soustředění před 51.&nbsp;Mezinárodní FO</h2>
 
 <?php
-$GLOBALS['mysql']->query('
-	SELECT termin, misto
-	FROM ' . TABLE_TERMS . '
-	WHERE nazev LIKE \'%Mezinárodní FO%\'
-	AND rocnik="' . AKTUALNI_ROCNIK . '"
-	AND kategorie="1"
-');
-if (!(list($terminMFO, $mistoMFO) = $GLOBALS['mysql']->fetch_array())) {
+$mfo_rows = terms_hledej('Mezinárodní FO', 1);
+if ($mfo_rows) {
+	$terminMFO = $mfo_rows[0]['termin'];
+	$mistoMFO = isset($mfo_rows[0]['misto']) ? $mfo_rows[0]['misto'] : '';
+} else {
 	$terminMFO = 'červenec '.AKTUALNI_ROK;
 	$mistoMFO = 'světa';
 }		
-$GLOBALS['mysql']->query('
-	SELECT termin
-	FROM ' . TABLE_TERMS . '
-	WHERE nazev LIKE \'%soustředění před MFO%\'
-	AND rocnik="' . AKTUALNI_ROCNIK . '"
-	AND kategorie="1"
-');
-if (!(list($termin) = $GLOBALS['mysql']->fetch_array())) {
-	$termin = 'červen '.AKTUALNI_ROK;
-}		
+$sous_rows = terms_hledej('soustředění před MFO', 1);
+$termin = $sous_rows ? $sous_rows[0]['termin'] : 'červen '.AKTUALNI_ROK;		
 ?>
 
 <h3>Organizace</h3>
