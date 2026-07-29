@@ -1,0 +1,86 @@
+0:
+- nazev: zahájení nového ročníku
+  termin: 1. 10. 2024
+  date: 2024-10-12
+  kompetence: KKFO, referenti
+  duvernost: public
+1:
+- nazev: školní kolo
+  termin: do 3. ledna 2025
+  date: 2025-01-03
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: pátek 24. ledna 2025
+  date: 2025-01-24
+  kompetence: KKFO
+  duvernost: public
+- nazev: ústřední kolo
+  termin: 4.–7. března 2025
+  date: 2025-03-07
+  misto: Jihlava
+  kompetence: KKFO
+  duvernost: public
+- nazev: výběrové minisoustředění s testy
+  termin: duben 2025
+  date: 2025-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- nazev: přípravné soustředění před MFO
+  termin: červen 2025
+  date: 2025-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: 55. Mezinárodní FO
+  termin: červenec 2025
+  date: 2025-08-31
+  misto: Francie
+  kompetence: public
+  duvernost: public
+2:
+- nazev: školní kolo
+  termin: do 28. března 2025
+  date: 2025-03-28
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: středa 23. dubna 2025
+  date: 2025-04-23
+  kompetence: KKFO
+  duvernost: public
+- nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2025
+  date: 2025-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+3:
+- nazev: školní kolo
+  termin: do 21. února 2025
+  date: 2025-02-21
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: středa 19. března 2025
+  date: 2025-03-19
+  kompetence: OKFO, KKFO
+  duvernost: public
+- nazev: krajské kolo E
+  termin: středa 9. dubna 2025
+  date: 2025-04-09
+  kompetence: KKFO
+  duvernost: public
+4:
+- nazev: školní kolo
+  termin: 1. února – 31. března 2025
+  date: 2025-03-31
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: 7. dubna – 31. května 2025
+  date: 2025-05-31
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public

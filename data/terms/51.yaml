@@ -1,0 +1,99 @@
+0:
+- nazev: zahájení soutěže
+  termin: 15. 9. 2009
+  date: 2009-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+1:
+- nazev: domácí kolo
+  termin: do 11. 1. 2010
+  date: 2010-01-11
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: pátek 15. 1. 2010
+  date: 2010-01-15
+  kompetence: KKFO
+  duvernost: public
+- nazev: zpráva o výsledku krajského kola
+  termin: do pondělí 1. 2. 2010
+  date: 2010-02-01
+  kompetence: předsedové KKFO
+  duvernost: private
+- nazev: celostátní kolo
+  termin: 9. &ndash; 12. února 2010
+  date: 2010-02-12
+  misto: Pelhřimov
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: soustředění před MFO
+  termin: '?'
+  date: 2010-06-01
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: 41. mezinárodní FO
+  termin: červenec 2010
+  date: 2010-07-31
+  misto: Chorvatsko (Záhřeb)
+  kompetence: ÚKFO
+  duvernost: public
+2:
+- nazev: domácí kolo
+  termin: do 19. 4. 2010
+  date: 2010-04-19
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: pátek 30. 4. 2010
+  date: 2010-04-30
+  kompetence: KKFO
+  duvernost: public
+- nazev: výsledky kategorie B pro soustředění
+  termin: 11. 5. 2010
+  date: 2010-05-11
+  kompetence: předsedové KKFO
+  duvernost: private
+- nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 4. 9. &ndash; 18. 9. 2010
+  date: 2010-09-18
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+3:
+- nazev: zahájení soutěže
+  termin: 15. 9. 2009
+  date: 2009-09-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: domácí kolo
+  termin: do 15. 3. 2010
+  date: 2010-03-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: středa 31. 3. 2010
+  date: 2010-03-31
+  kompetence: OKFO
+  duvernost: public
+- nazev: krajské kolo
+  termin: čtvrtek 29. 4. 2010
+  date: 2010-04-29
+  kompetence: KKFO
+  duvernost: public
+4:
+- nazev: zahájení soutěže
+  termin: 1. 2. 2010
+  date: 2010-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: domácí kolo
+  termin: '?'
+  date: 2010-05-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: školní či okresní kolo
+  termin: kolem 26. 5. 2010
+  date: 2010-05-26
+  kompetence: OKFO, referenti
+  duvernost: public

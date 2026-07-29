@@ -1,0 +1,86 @@
+0:
+- nazev: zahájení nového ročníku
+  termin: 1. 10. 2025
+  date: 2025-10-12
+  kompetence: KKFO, referenti
+  duvernost: public
+1:
+- nazev: školní kolo
+  termin: do 5. ledna 2026
+  date: 2026-01-05
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: středa 14. ledna 2026
+  date: 2026-01-14
+  kompetence: KKFO
+  duvernost: public
+- nazev: ústřední kolo
+  termin: 3.–6. února 2026
+  date: 2026-02-07
+  misto: Olomouc
+  kompetence: KKFO
+  duvernost: public
+- nazev: výběrové minisoustředění s testy
+  termin: duben 2026
+  date: 2026-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- nazev: přípravné soustředění před MFO
+  termin: červen 2026
+  date: 2026-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: 56. Mezinárodní FO
+  termin: červenec 2026
+  date: 2026-08-31
+  misto: Kolumbie
+  kompetence: public
+  duvernost: public
+2:
+- nazev: školní kolo
+  termin: do 27. března 2026
+  date: 2026-03-27
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: středa 22. dubna 2026
+  date: 2026-04-22
+  kompetence: KKFO
+  duvernost: public
+- nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2026
+  date: 2026-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+3:
+- nazev: školní kolo
+  termin: do 20. února 2026
+  date: 2026-02-20
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: pondělí 16. března 2026
+  date: 2026-03-16
+  kompetence: OKFO, KKFO
+  duvernost: public
+- nazev: krajské kolo E
+  termin: úterý 31. března 2026
+  date: 2026-03-31
+  kompetence: KKFO
+  duvernost: public
+4:
+- nazev: školní kolo
+  termin: 2. února – 31. března 2026
+  date: 2026-03-31
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: 6. dubna – 31. května 2026
+  date: 2026-05-31
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public

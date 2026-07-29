@@ -1,0 +1,114 @@
+0:
+- nazev: zahájení soutěže
+  termin: do 15. 9. 2005
+  date: 2005-09-15
+  kompetence: RVFO, referenti
+  duvernost: public
+- nazev: zpráva o průběhu soutěže na KVFO
+  termin: do 4. 6. 2006
+  date: 2006-06-04
+  kompetence: RVFO
+  duvernost: private
+- nazev: zpráva o průběhu 47. ročníku FO
+  termin: do 2. 7. 2006
+  date: 2006-07-02
+  kompetence: předsedové RVFO
+  duvernost: private
+1:
+- nazev: domácí kolo
+  termin: do 13. 1. 2006
+  date: 2006-01-13
+  kompetence: RVFO, referenti
+  duvernost: public
+- nazev: regionální kolo
+  termin: pátek 20. 1. 2006
+  date: 2006-01-20
+  kompetence: RVFO
+  duvernost: public
+- nazev: zpráva o výsledku regionálního kola
+  termin: do 3. 2. 2006
+  date: 2006-02-03
+  kompetence: předsedové RVFO
+  duvernost: private
+- nazev: celostátní kolo
+  termin: 21. &ndash; 24. 2. 2006
+  date: 2006-02-24
+  misto: Plzeň
+  kompetence: ÚVFO
+  duvernost: public
+- nazev: korespondenční seminář
+  termin: 11. 3. &ndash; 26. 5. 2006
+  date: 2006-05-26
+  kompetence: ÚVFO
+  duvernost: public
+- nazev: soustředění před MFO
+  termin: 5. 6. &ndash; 17. 6. 2006
+  date: 2006-06-17
+  misto: Hradec Králové
+  kompetence: ÚVFO
+  duvernost: public
+- nazev: 37. Mezinárodní FO
+  termin: červenec 2006
+  date: 2006-07-31
+  misto: Singapore
+  kompetence: ÚVFO
+  duvernost: public
+2:
+- nazev: domácí kolo
+  termin: do 7. 4. 2006
+  date: 2006-04-07
+  kompetence: RVFO, referenti
+  duvernost: public
+- nazev: regionální kolo
+  termin: pátek 21. 4. 2006
+  date: 2006-04-21
+  kompetence: RVFO
+  duvernost: public
+- nazev: výsledky kategorie B pro soustředění
+  termin: 5. 5. 2006
+  date: 2006-05-05
+  kompetence: předsedové RVFO
+  duvernost: private
+- nazev: celostátní soustředění v kategoriích B a C
+  termin: 3. 6. &ndash; 17. 6. 2006
+  date: 2006-06-17
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚVFO
+  duvernost: public
+3:
+- nazev: zahájení soutěže
+  termin: do 15. 9. 2005
+  date: 2005-09-15
+  kompetence: OVFO, referenti
+  duvernost: public
+- nazev: domácí kolo
+  termin: do 17. 3. 2006
+  date: 2006-03-17
+  kompetence: OVFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: 29. 3. 2006
+  date: 2006-03-29
+  kompetence: OVFO
+  duvernost: public
+- nazev: oblastní kolo
+  termin: 12. 5. 2006
+  date: 2006-05-12
+  kompetence: RVFO
+  duvernost: public
+4:
+- nazev: zahájení soutěže
+  termin: 1. 2. 2006
+  date: 2006-02-01
+  kompetence: OVFO, referenti
+  duvernost: public
+- nazev: domácí kolo
+  termin: do 5. 5. 2006
+  date: 2006-05-05
+  kompetence: OVFO, referenti
+  duvernost: public
+- nazev: školní či okresní kolo
+  termin: kolem 24. 5. 2006
+  date: 2006-05-24
+  kompetence: OVFO, referenti
+  duvernost: public

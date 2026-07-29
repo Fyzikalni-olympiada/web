@@ -1,0 +1,85 @@
+0:
+- nazev: zahájení nového ročníku
+  termin: 15. 9. 2014
+  date: 2014-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+1:
+- nazev: domácí kolo
+  termin: do 16. 1. 2015
+  date: 2015-01-16
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: pátek 23. 1. 2015
+  date: 2015-01-23
+  kompetence: KKFO
+  duvernost: public
+- nazev: celostátní kolo
+  termin: 17.&ndash;20. února 2015
+  date: 2015-02-22
+  misto: České Budějovice
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: výběrové minisoustředění s testy
+  termin: 1. 4&ndash;3. 4. 2015
+  date: 2015-04-03
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: přípravné soustředění před MFO
+  termin: 7. 6&ndash;19. 6. 2015
+  date: 2015-06-19
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: 46. Mezinárodní FO
+  termin: 5.&ndash;12. 7. 2015
+  date: 2015-07-12
+  misto: Indie, Bombaj
+  kompetence: ÚKFO
+  duvernost: public
+2:
+- nazev: domácí kolo
+  termin: do 10. 4. 2015
+  date: 2015-04-10
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: pátek 24. 4. 2015
+  date: 2015-04-24
+  kompetence: KKFO
+  duvernost: public
+- nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 5. 9&ndash;19. 9. 2015
+  date: 2015-09-19
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+3:
+- nazev: domácí kolo
+  termin: do 16. 3. 2015
+  date: 2015-03-16
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: čtvrtek 26.&nbsp;3.&nbsp;2015
+  date: 2015-03-26
+  kompetence: OKFO, KKFO
+  duvernost: public
+- nazev: krajské kolo E
+  termin: čtvrtek 30.&nbsp;4.&nbsp;2015
+  date: 2015-04-30
+  kompetence: KKFO
+  duvernost: public
+4:
+- nazev: školní kolo
+  termin: 1. 2.&ndash;7. 5. 2015
+  date: 2015-05-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: druhé kolo
+  termin: 18. 5.&ndash;22. 5. 2015
+  date: 2015-05-22
+  kompetence: KKFO, OKFO
+  duvernost: public

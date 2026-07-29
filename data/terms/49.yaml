@@ -1,0 +1,109 @@
+0:
+- nazev: zahájení soutěže
+  termin: do 14. 9. 2007
+  date: 2007-09-14
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: zpráva o průběhu 49. ročníku FO
+  termin: do 4. 7. 2008
+  date: 2008-07-04
+  kompetence: předsedové KKFO
+  duvernost: private
+1:
+- nazev: domácí kolo
+  termin: do 11. 1. 2008
+  date: 2008-01-11
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: pátek 18. 1. 2008
+  date: 2008-01-18
+  kompetence: KKFO
+  duvernost: public
+- nazev: zpráva o výsledku krajského kola
+  termin: do 4. 2. 2008
+  date: 2008-02-04
+  kompetence: předsedové KKFO
+  duvernost: private
+- nazev: celostátní kolo
+  termin: 26. &ndash; 29. února 2008
+  date: 2008-02-29
+  misto: Karlovy Vary
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: korespondenční seminář
+  termin: 17. 3. &ndash; 31. 5. 2008
+  date: 2008-05-31
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: soustředění před MFO
+  termin: 2. 6. &ndash; 14. 6. 2008
+  date: 2008-06-14
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- nazev: 39. Mezinárodní FO
+  termin: 20. &ndash; 29. července 2008
+  date: 2008-07-29
+  misto: Vietnam (Hanoi)
+  kompetence: ÚKFO
+  duvernost: public
+2:
+- nazev: domácí kolo
+  termin: do 4. 4. 2008
+  date: 2008-04-04
+  kompetence: KKFO, referenti
+  duvernost: public
+- nazev: krajské kolo
+  termin: čtvrtek 17. 4. 2008
+  date: 2008-04-17
+  kompetence: KKFO
+  duvernost: public
+- nazev: výsledky kategorie B pro soustředění
+  termin: 5. 5. 2008
+  date: 2008-05-05
+  kompetence: předsedové KKFO
+  duvernost: private
+- nazev: celostátní soustředění v kategoriích B a C
+  termin: 31. 5. &ndash; 14. 6. 2008
+  date: 2008-06-14
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+3:
+- nazev: zahájení soutěže
+  termin: do 21. 9. 2007
+  date: 2007-09-21
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: domácí kolo
+  termin: do 21. 3. 2008
+  date: 2008-03-21
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: okresní kolo
+  termin: 2. 4. 2008
+  date: 2008-04-02
+  kompetence: OKFO
+  duvernost: public
+- nazev: krajské kolo
+  termin: 16. 5. 2008
+  date: 2008-05-16
+  kompetence: KKFO
+  duvernost: public
+4:
+- nazev: zahájení soutěže
+  termin: 1. 2. 2008
+  date: 2008-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: domácí kolo
+  termin: do 7. 5. 2008
+  date: 2008-05-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- nazev: školní či okresní kolo
+  termin: kolem 21. 5. 2008
+  date: 2008-05-21
+  kompetence: OKFO, referenti
+  duvernost: public
