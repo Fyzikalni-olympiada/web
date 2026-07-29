@@ -1,9 +1,11 @@
 <?php
 if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana proti neoprávněnému přístupu ke skriptům
 
-$item = data_news_by_id($GLOBALS['novinka_id']);
+$item = $GLOBALS['novinka_id'] === null ? null : data_news_by_id($GLOBALS['novinka_id']);
 if ($item === null) {
-    die('<p>Novinka nenalezena</p>');
+    /* sem vedou i staré odkazy /novinka?id=N – přesměruje je js/fo.js */
+    echo '<p>Novinka nenalezena. <a href="' . ROOT_WWW . '">Všechny novinky</a></p>';
+    return;
 }
 
 $monthz = array('', 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');

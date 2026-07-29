@@ -1,5 +1,5 @@
 <?php
-define("VALID_ACCESS", 1);
+if (!defined("VALID_ACCESS")) { define("VALID_ACCESS", 1); }
 define("RSS_POLOZEK", 15);
 include_once('init.php');
 

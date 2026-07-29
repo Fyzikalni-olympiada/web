@@ -1,10 +1,14 @@
 <?php
-define("VALID_ACCESS", 1);
+if (!defined("VALID_ACCESS")) { define("VALID_ACCESS", 1); }
 ob_start();
 require_once('init.php');
 
 /* urcime napln, nadpis, pathname */
 parsuj();
+// index.php může běžet i ve funkci (build), globály zpřístupníme lokálně
+$napln = $GLOBALS['napln'];
+$kdo = $GLOBALS['kdo'];
+$who = $GLOBALS['who'];
 
 /*
  * HTML KOD
