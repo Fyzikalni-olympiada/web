@@ -4,14 +4,10 @@ configure.php*
 .buildpath
 .settings
 .project
-upload/
 webalizer/
 _\!*/
 kvary/propozice/
 praha/fotky/
-tana/photos_*/**/*.jpg
-archiv/celost/*/photos/
-archiv/celost/*/thumbnails/
 archiv/celost/41a/
 archiv/mfo/*/*prezentace.pdf
 /google*
