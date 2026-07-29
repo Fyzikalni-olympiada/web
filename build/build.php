@@ -24,6 +24,9 @@ $ASSET_DIRS = ['css', 'js', 'pic', 'images', 'fonts', 'dokumenty',
                'archiv', 'texty', 'vysledky', 'tana', 'upload'];
 $ASSET_FILES = ['favicon.ico', 'robots.txt', 'rss_forum.xml'];
 
+/* Nepublikované podadresáře (úspora místa) – vynechají se z kopie i miniatur */
+$NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails'];
+
 /* Náhodná fotka: stejná pravidla jako staré rand_thumb() */
 $THUMB_EXCLUDE = ['temp', 'thumbnails', 'pic', 'images', 'cd', 'kvary', 'upload',
                   '_ukrajina', '_norsko', 'dist', 'vendor', 'data', '.git', 'node_modules'];
@@ -117,6 +120,11 @@ foreach ($iter as $file) {
         continue;
     }
     $rel = substr($file->getPathname(), strlen(ROOT_DIR));
+    foreach ($NEPUBLIKOVAT as $prefix) {
+        if (strpos($rel, $prefix . '/') === 0) {
+            continue 2;
+        }
+    }
     $thumb_rel = 'temp/images/' . md5($rel) . '.jpg';
     if (!is_file(ROOT_DIR . $thumb_rel)) {
         exec('convert ' . escapeshellarg($file->getPathname())
@@ -130,6 +138,14 @@ foreach ($iter as $file) {
     }
     $manifest[] = ['thumb' => '/' . $thumb_rel, 'full' => '/' . $rel];
 }
+/* smaž z cache miniatury, které už manifest neobsahuje */
+$platne = array_flip(array_column($manifest, 'thumb'));
+foreach (glob(ROOT_DIR . 'temp/images/*.jpg') as $cached) {
+    if (!isset($platne['/temp/images/' . basename($cached)])) {
+        unlink($cached);
+    }
+}
+
 /* manifest i do temp/ pro lokální náhled (router.php) */
 file_put_contents(ROOT_DIR . 'temp/thumbs.json', json_encode($manifest, JSON_UNESCAPED_SLASHES));
 write_file($DIST . 'data/thumbs.json', json_encode($manifest, JSON_UNESCAPED_SLASHES));
@@ -144,6 +160,9 @@ foreach ($ASSET_DIRS as $dir) {
 }
 foreach ($ASSET_FILES as $file) {
     copy(ROOT_DIR . $file, $DIST . $file);
+}
+foreach ($NEPUBLIKOVAT as $prefix) {
+    exec('rm -rf ' . escapeshellarg($DIST . $prefix));
 }
 
 /* ---------- 5. fragmenty s PHP se předrenderují ---------- */

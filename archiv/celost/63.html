@@ -34,7 +34,7 @@ Texty i řešení úloh si můžete stáhnout ve formátu <code>pdf</code>.
 <a href="https://osmo.fyzikalniolympiada.cz/public/kolo/31/vysledky" class="btn btn-lg btn-default">Výsledky</a>
 
 
-<h3>Fotogalerie</h3>
+<?php /* Fotogalerie nepublikována kvůli velikosti (399 MB), fotky zůstávají jen lokálně */ ?>
 
 <?php
 
@@ -42,7 +42,7 @@ $cesta = 'archiv/celost/63/photos';
 $cesta_male = 'archiv/celost/63/thumbnails';
 
 $soubor = array(); // zinicializuje pole
-if (is_dir(ROOT_DIR.$cesta)) {
+if (false && is_dir(ROOT_DIR.$cesta)) {
 	$adresar = opendir(ROOT_DIR.$cesta);
 	// otevre adresar
 	while ($zaznam = readdir($adresar)) {
@@ -76,4 +76,3 @@ if (is_dir(ROOT_DIR.$cesta)) {
 	</div>
 	<?php endif; ?>
 <?php endforeach; ?>
-<p>Autor fotografií: Jindra Radová</p>
