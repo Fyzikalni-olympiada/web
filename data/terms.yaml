@@ -1,0 +1,2532 @@
+- rocnik: 47
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: do 15. 9. 2005
+  date: 2005-09-15
+  kompetence: RVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: do 15. 9. 2005
+  date: 2005-09-15
+  kompetence: OVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 13. 1. 2006
+  date: 2006-01-13
+  kompetence: RVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 1
+  nazev: regionální kolo
+  termin: pátek 20. 1. 2006
+  date: 2006-01-20
+  kompetence: RVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2006
+  date: 2006-02-01
+  kompetence: OVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 1
+  nazev: zpráva o výsledku regionálního kola
+  termin: do 3. 2. 2006
+  date: 2006-02-03
+  kompetence: předsedové RVFO
+  duvernost: private
+- rocnik: 47
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 21. &ndash; 24. 2. 2006
+  date: 2006-02-24
+  misto: Plzeň
+  kompetence: ÚVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 17. 3. 2006
+  date: 2006-03-17
+  kompetence: OVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 3
+  nazev: okresní kolo
+  termin: 29. 3. 2006
+  date: 2006-03-29
+  kompetence: OVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 7. 4. 2006
+  date: 2006-04-07
+  kompetence: RVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 2
+  nazev: regionální kolo
+  termin: pátek 21. 4. 2006
+  date: 2006-04-21
+  kompetence: RVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 2
+  nazev: výsledky kategorie B pro soustředění
+  termin: 5. 5. 2006
+  date: 2006-05-05
+  kompetence: předsedové RVFO
+  duvernost: private
+- rocnik: 47
+  kategorie: 4
+  nazev: domácí kolo
+  termin: do 5. 5. 2006
+  date: 2006-05-05
+  kompetence: OVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 3
+  nazev: oblastní kolo
+  termin: 12. 5. 2006
+  date: 2006-05-12
+  kompetence: RVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 24. 5. 2006
+  date: 2006-05-24
+  kompetence: OVFO, referenti
+  duvernost: public
+- rocnik: 47
+  kategorie: 1
+  nazev: korespondenční seminář
+  termin: 11. 3. &ndash; 26. 5. 2006
+  date: 2006-05-26
+  kompetence: ÚVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 0
+  nazev: zpráva o průběhu soutěže na KVFO
+  termin: do 4. 6. 2006
+  date: 2006-06-04
+  kompetence: RVFO
+  duvernost: private
+- rocnik: 47
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a C
+  termin: 3. 6. &ndash; 17. 6. 2006
+  date: 2006-06-17
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 1
+  nazev: soustředění před MFO
+  termin: 5. 6. &ndash; 17. 6. 2006
+  date: 2006-06-17
+  misto: Hradec Králové
+  kompetence: ÚVFO
+  duvernost: public
+- rocnik: 47
+  kategorie: 0
+  nazev: zpráva o průběhu 47. ročníku FO
+  termin: do 2. 7. 2006
+  date: 2006-07-02
+  kompetence: předsedové RVFO
+  duvernost: private
+- rocnik: 47
+  kategorie: 1
+  nazev: 37. Mezinárodní FO
+  termin: červenec 2006
+  date: 2006-07-31
+  misto: Singapore
+  kompetence: ÚVFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: do 15. 9. 2006
+  date: 2006-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: do 15. 9. 2006
+  date: 2006-09-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 12. 1. 2007
+  date: 2007-01-12
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 19. 1. 2007
+  date: 2007-01-19
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2007
+  date: 2007-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 1
+  nazev: zpráva o výsledku krajského kola
+  termin: do 2. 2. 2007
+  date: 2007-02-02
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 48
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 28. 2. &ndash; 3. 3. 2007
+  date: 2007-03-03
+  misto: Bílovec
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 23. 3. 2007
+  date: 2007-03-23
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 4. 4. 2007
+  date: 2007-04-04
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 3
+  nazev: okresní kolo
+  termin: 4. 4. 2007
+  date: 2007-04-04
+  kompetence: OKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 20. 4. 2007
+  date: 2007-04-20
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 2
+  nazev: výsledky kategorie B pro soustředění
+  termin: 4. 5. 2007
+  date: 2007-05-04
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 48
+  kategorie: 4
+  nazev: domácí kolo
+  termin: do 4. 5. 2007
+  date: 2007-05-04
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 3
+  nazev: krajské kolo
+  termin: 18. 5. 2007
+  date: 2007-05-18
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 23. 5. 2007
+  date: 2007-05-23
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 48
+  kategorie: 1
+  nazev: korespondenční seminář
+  termin: 12. 3. &ndash; 31. 5. 2007
+  date: 2007-05-31
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 0
+  nazev: zpráva o průběhu soutěže na KKFO
+  termin: do 6. 6. 2007
+  date: 2007-06-06
+  kompetence: KKFO
+  duvernost: private
+- rocnik: 48
+  kategorie: 1
+  nazev: soustředění před MFO
+  termin: 4. 6. &ndash; 15. 6. 2007
+  date: 2007-06-15
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a C
+  termin: 2. 6. &ndash; 16. 6. 2007
+  date: 2007-06-16
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 48
+  kategorie: 0
+  nazev: zpráva o průběhu 48. ročníku FO
+  termin: do 4. 7. 2007
+  date: 2007-07-04
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 48
+  kategorie: 1
+  nazev: 38. Mezinárodní FO
+  termin: 13. &ndash; 22. července 2007
+  date: 2007-07-22
+  misto: Írán (Isfahán)
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: do 14. 9. 2007
+  date: 2007-09-14
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: do 21. 9. 2007
+  date: 2007-09-21
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 11. 1. 2008
+  date: 2008-01-11
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 18. 1. 2008
+  date: 2008-01-18
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2008
+  date: 2008-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 1
+  nazev: zpráva o výsledku krajského kola
+  termin: do 4. 2. 2008
+  date: 2008-02-04
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 49
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 26. &ndash; 29. února 2008
+  date: 2008-02-29
+  misto: Karlovy Vary
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 21. 3. 2008
+  date: 2008-03-21
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 3
+  nazev: okresní kolo
+  termin: 2. 4. 2008
+  date: 2008-04-02
+  kompetence: OKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 4. 4. 2008
+  date: 2008-04-04
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 2
+  nazev: krajské kolo
+  termin: čtvrtek 17. 4. 2008
+  date: 2008-04-17
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 2
+  nazev: výsledky kategorie B pro soustředění
+  termin: 5. 5. 2008
+  date: 2008-05-05
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 49
+  kategorie: 4
+  nazev: domácí kolo
+  termin: do 7. 5. 2008
+  date: 2008-05-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 3
+  nazev: krajské kolo
+  termin: 16. 5. 2008
+  date: 2008-05-16
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 21. 5. 2008
+  date: 2008-05-21
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 49
+  kategorie: 1
+  nazev: korespondenční seminář
+  termin: 17. 3. &ndash; 31. 5. 2008
+  date: 2008-05-31
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a C
+  termin: 31. 5. &ndash; 14. 6. 2008
+  date: 2008-06-14
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 1
+  nazev: soustředění před MFO
+  termin: 2. 6. &ndash; 14. 6. 2008
+  date: 2008-06-14
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 49
+  kategorie: 0
+  nazev: zpráva o průběhu 49. ročníku FO
+  termin: do 4. 7. 2008
+  date: 2008-07-04
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 49
+  kategorie: 1
+  nazev: 39. Mezinárodní FO
+  termin: 20. &ndash; 29. července 2008
+  date: 2008-07-29
+  misto: Vietnam (Hanoi)
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: 15. 9. 2008
+  date: 2008-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: do 15. 9. 2008
+  date: 2008-09-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 16. 1. 2009
+  date: 2009-01-16
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 23. 1. 2009
+  date: 2009-01-23
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2009
+  date: 2009-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 1
+  nazev: zpráva o výsledku krajského kola
+  termin: do pondělí 2. 2. 2009
+  date: 2009-02-02
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 50
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 26. února &ndash; 1. března 2009
+  date: 2009-03-01
+  misto: Praha
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 20. 3. 2009
+  date: 2009-03-20
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 1. 4. 2009
+  date: 2009-04-01
+  kompetence: OKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 3. 4. 2009
+  date: 2009-04-03
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 24. 4. 2009
+  date: 2009-04-24
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 3
+  nazev: krajské kolo
+  termin: středa 29. 4. 2009
+  date: 2009-04-29
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 2
+  nazev: výsledky kategorie B pro soustředění
+  termin: 5. 5. 2009
+  date: 2009-05-05
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 50
+  kategorie: 4
+  nazev: domácí kolo
+  termin: do 7. 5. 2009
+  date: 2009-05-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 20. 5. 2009
+  date: 2009-05-20
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 50
+  kategorie: 1
+  nazev: korespondenční seminář
+  termin: 16. 3. &ndash; 31. 5. 2009
+  date: 2009-05-31
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 1
+  nazev: soustředění před MFO
+  termin: 8. 6. &ndash; 19. 6. 2009
+  date: 2009-06-19
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 1
+  nazev: 40. Mezinárodní FO
+  termin: 11. &ndash; 19. července 2009
+  date: 2009-07-19
+  misto: Mexiko (Mérida Yucatán)
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 50
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a C
+  termin: 5. 9. &ndash; 19. 9. 2009
+  date: 2009-09-19
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: 15. 9. 2009
+  date: 2009-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: 15. 9. 2009
+  date: 2009-09-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 11. 1. 2010
+  date: 2010-01-11
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 15. 1. 2010
+  date: 2010-01-15
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 1
+  nazev: zpráva o výsledku krajského kola
+  termin: do pondělí 1. 2. 2010
+  date: 2010-02-01
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 51
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2010
+  date: 2010-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 9. &ndash; 12. února 2010
+  date: 2010-02-12
+  misto: Pelhřimov
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 15. 3. 2010
+  date: 2010-03-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 31. 3. 2010
+  date: 2010-03-31
+  kompetence: OKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 19. 4. 2010
+  date: 2010-04-19
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 3
+  nazev: krajské kolo
+  termin: čtvrtek 29. 4. 2010
+  date: 2010-04-29
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 30. 4. 2010
+  date: 2010-04-30
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 4
+  nazev: domácí kolo
+  termin: '?'
+  date: 2010-05-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 2
+  nazev: výsledky kategorie B pro soustředění
+  termin: 11. 5. 2010
+  date: 2010-05-11
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 51
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 26. 5. 2010
+  date: 2010-05-26
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 51
+  kategorie: 1
+  nazev: soustředění před MFO
+  termin: '?'
+  date: 2010-06-01
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 1
+  nazev: 41. mezinárodní FO
+  termin: červenec 2010
+  date: 2010-07-31
+  misto: Chorvatsko (Záhřeb)
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 51
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 4. 9. &ndash; 18. 9. 2010
+  date: 2010-09-18
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: 15. 9. 2010
+  date: 2010-09-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: 15. 9. 2010
+  date: 2010-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 10. 1. 2011
+  date: 2011-01-10
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 14. 1. 2011
+  date: 2011-01-14
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 1
+  nazev: zpráva o výsledku krajského kola
+  termin: do pondělí 31. 1. 2011
+  date: 2011-01-31
+  kompetence: předsedové KKFO
+  duvernost: private
+- rocnik: 52
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2011
+  date: 2011-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 1. 3.&nbsp;&ndash; 4. 3. 2011
+  date: 2011-03-04
+  misto: Olomouc
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 15. 3. 2011
+  date: 2011-03-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 30. 3. 2011
+  date: 2011-03-30
+  kompetence: OKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 18. 4. 2011
+  date: 2011-04-18
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 1
+  nazev: výběrové soustředění pro MFO
+  termin: 20.&ndash;22. 4. 2011
+  date: 2011-04-22
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 29. 4. 2011
+  date: 2011-04-29
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 3
+  nazev: krajské kolo
+  termin: pátek 29. 4. 2011
+  date: 2011-04-29
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 4
+  nazev: domácí kolo
+  termin: 9. 5. 2011
+  date: 2011-05-09
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 25. 5. 2011
+  date: 2011-05-25
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 52
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: 5.&ndash;18.&nbsp;června 2011
+  date: 2011-06-18
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 1
+  nazev: 42. mezinárodní FO
+  termin: 10.&ndash;18. 7. 2011
+  date: 2011-07-19
+  misto: Thajské království
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 52
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 10.&ndash;24. září 2011
+  date: 2011-09-18
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: 15. 9. 2011
+  date: 2011-09-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 53
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: 15. 9. 2011
+  date: 2011-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 53
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 9. 1. 2012
+  date: 2012-01-09
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 53
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 20. 1. 2012
+  date: 2012-01-20
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2012
+  date: 2012-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 53
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 21.&ndash;24. 2. 2012
+  date: 2012-02-24
+  misto: Pardubice
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 16. 3. 2012
+  date: 2012-03-16
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 53
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 28. 3. 2012
+  date: 2012-03-28
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 1
+  nazev: výběrové soustředění pro MFO
+  termin: 4.&ndash;6. 4. 2012
+  date: 2012-04-06
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 10. 4. 2012
+  date: 2012-04-10
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 53
+  kategorie: 3
+  nazev: krajské kolo
+  termin: středa 18. 4. 2012
+  date: 2012-04-18
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 4. 5. 2012
+  date: 2012-05-04
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 4
+  nazev: domácí kolo
+  termin: 9. 5. 2012
+  date: 2012-05-09
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 53
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 25. 5. 2012
+  date: 2012-05-25
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2012
+  date: 2012-06-18
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 1
+  nazev: 43. mezinárodní FO
+  termin: 15.&ndash;24. července 2012
+  date: 2012-07-24
+  misto: Estonsko
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 53
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 1.&ndash;15. září 2012
+  date: 2012-09-01
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 0
+  nazev: zahájení soutěže
+  termin: 15. 9. 2012
+  date: 2012-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 54
+  kategorie: 3
+  nazev: zahájení soutěže
+  termin: 15. 9. 2012
+  date: 2012-09-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 54
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 14. 1. 2013
+  date: 2013-01-14
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 54
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 25. 1. 2013
+  date: 2013-01-25
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 4
+  nazev: zahájení soutěže
+  termin: 1. 2. 2013
+  date: 2013-02-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 54
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 26. 2.&ndash;1. 3. 2013
+  date: 2013-02-28
+  misto: Brno
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 15. 3. 2013
+  date: 2013-03-15
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 54
+  kategorie: 3
+  nazev: okresní kolo
+  termin: úterý 26. 3. 2013
+  date: 2013-03-26
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 1
+  nazev: výběrové soustředění pro MFO
+  termin: duben 2013
+  date: 2013-04-06
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 3
+  nazev: krajské kolo
+  termin: čtvrtek 18. 4. 2013
+  date: 2013-04-18
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 19. 4. 2013
+  date: 2013-04-19
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 54
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 3. 5. 2013
+  date: 2013-05-03
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 4
+  nazev: domácí kolo
+  termin: 7. 5. 2013
+  date: 2013-05-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 54
+  kategorie: 4
+  nazev: školní či okresní kolo
+  termin: kolem 25. 5. 2013
+  date: 2013-05-25
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2013
+  date: 2013-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 1
+  nazev: 44. mezinárodní FO
+  termin: 7.&ndash;15. července 2013
+  date: 2013-07-15
+  misto: Dánsko
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 54
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 14.&ndash;28. září 2013
+  date: 2013-09-15
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 15. 9. 2013
+  date: 2013-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 55
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 13. 1. 2014
+  date: 2014-01-13
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 55
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 24. 1. 2014
+  date: 2014-01-24
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 24. 2.&ndash;27. 2. 2014
+  date: 2014-02-28
+  misto: "Hole\x9Aov"
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 14. 3. 2014
+  date: 2014-03-14
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 55
+  kategorie: 3
+  nazev: okresní kolo
+  termin: čtvrtek 27.&nbsp;3.&nbsp;2014
+  date: 2014-03-27
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 4. 4. 2014
+  date: 2014-04-04
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 55
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: středa 16. 4. 2014
+  date: 2014-04-16
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: 16. 4.&ndash;18. 4. 2014
+  date: 2014-04-18
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 25. 4. 2014
+  date: 2014-04-25
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. 2.&ndash;7. 5. 2014
+  date: 2014-05-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 55
+  kategorie: 4
+  nazev: druhé kolo
+  termin: 21. 5.&ndash;25. 5. 2014
+  date: 2014-05-25
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: 8. 6.&ndash;21. 6. 2014
+  date: 2014-06-21
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 1
+  nazev: 45. Mezinárodní FO
+  termin: červenec 2014
+  date: 2014-07-15
+  misto: Kazachstán
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 55
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 7.&ndash;20. září 2014
+  date: 2014-09-07
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 15. 9. 2014
+  date: 2014-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 56
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 16. 1. 2015
+  date: 2015-01-16
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 56
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 23. 1. 2015
+  date: 2015-01-23
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 17.&ndash;20. února 2015
+  date: 2015-02-22
+  misto: České Budějovice
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 16. 3. 2015
+  date: 2015-03-16
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 56
+  kategorie: 3
+  nazev: okresní kolo
+  termin: čtvrtek 26.&nbsp;3.&nbsp;2015
+  date: 2015-03-26
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: 1. 4&ndash;3. 4. 2015
+  date: 2015-04-03
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 10. 4. 2015
+  date: 2015-04-10
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 56
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pátek 24. 4. 2015
+  date: 2015-04-24
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: čtvrtek 30.&nbsp;4.&nbsp;2015
+  date: 2015-04-30
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. 2.&ndash;7. 5. 2015
+  date: 2015-05-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 56
+  kategorie: 4
+  nazev: druhé kolo
+  termin: 18. 5.&ndash;22. 5. 2015
+  date: 2015-05-22
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: 7. 6&ndash;19. 6. 2015
+  date: 2015-06-19
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 1
+  nazev: 46. Mezinárodní FO
+  termin: 5.&ndash;12. 7. 2015
+  date: 2015-07-12
+  misto: Indie, Bombaj
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 56
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 5. 9&ndash;19. 9. 2015
+  date: 2015-09-19
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 15. 9. 2015
+  date: 2015-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 57
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 4. 1. 2016
+  date: 2016-01-04
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 57
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 15. 1. 2016
+  date: 2016-01-15
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 2.&ndash;5. února 2016
+  date: 2016-02-05
+  misto: Bílovec
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 9. 3. 2016
+  date: 2016-03-09
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 57
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 23.&nbsp;3.&nbsp;2016
+  date: 2016-03-23
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: 22.&ndash;24.&nbsp;3. 2016
+  date: 2016-03-24
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 4. 4. 2016
+  date: 2016-04-04
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 57
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 20. 4. 2016
+  date: 2016-04-20
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: pátek 29.&nbsp;4.&nbsp;2016
+  date: 2016-04-29
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. 2.&ndash;6. 5. 2016
+  date: 2016-05-06
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 57
+  kategorie: 4
+  nazev: druhé kolo
+  termin: 16. 5.&ndash;27. 5. 2016
+  date: 2016-05-27
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2016
+  date: 2016-06-19
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 1
+  nazev: 47. Mezinárodní FO
+  termin: 10.&ndash;18. 7. 2016
+  date: 2016-07-18
+  misto: "Zürich, \x8Avýcarsko"
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 57
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: "4.\x9617. září 2016"
+  date: 2016-09-19
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 15. 9. 2016
+  date: 2016-09-15
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 58
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 5. 1. 2017
+  date: 2017-01-05
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 58
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 18. 1. 2017
+  date: 2017-01-18
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 7.&ndash;10. února 2017
+  date: 2017-02-10
+  misto: Rumburk
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 8. 3. 2017
+  date: 2017-03-09
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 58
+  kategorie: 3
+  nazev: okresní kolo
+  termin: čtvrtek 23.&nbsp;3.&nbsp;2017
+  date: 2017-03-23
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: "26.\x9628.&nbsp;dubna 2017"
+  date: 2017-03-24
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 3. 4. 2017
+  date: 2017-04-03
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 58
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 19. 4. 2017
+  date: 2017-04-19
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: pátek 28.&nbsp;4.&nbsp;2017
+  date: 2017-04-28
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. 2.&ndash;30. 4. 2017
+  date: 2017-04-30
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 58
+  kategorie: 4
+  nazev: druhé kolo
+  termin: květen 2017 (přesné datum určují okresní komise)
+  date: 2017-05-30
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2017
+  date: 2017-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 1
+  nazev: 48. Mezinárodní FO
+  termin: "16.\x9624.&nbsp;července 2017"
+  date: 2017-07-31
+  misto: Tangerang, Indonésie
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 58
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: 9.&ndash;22. září 2017
+  date: 2017-09-19
+  misto: Chata Táňa, Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 18. 9. 2017
+  date: 2017-09-18
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 59
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 10.&nbsp;ledna 2018
+  date: 2018-01-10
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 59
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 24.&nbsp;ledna 2018
+  date: 2018-01-24
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: "27.2.\x962.3.&nbsp;2018"
+  date: 2018-03-02
+  misto: Jablonec nad Nisou
+  kompetence: ''
+  duvernost: public
+- rocnik: 59
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 7.&nbsp;března 2018
+  date: 2018-03-07
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 59
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 3.&nbsp;dubna 2018
+  date: 2018-04-03
+  misto: Praha do 26. března 2018
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 59
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 4.&nbsp;dubna&nbsp;2018
+  date: 2018-04-04
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 25.&nbsp;dubna 2018
+  date: 2018-04-25
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: pátek 27.&nbsp;dubna&nbsp;2018
+  date: 2018-04-27
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2018
+  date: 2018-04-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 4
+  nazev: Školní kolo
+  termin: "1.&nbsp;února \x96 4.&nbsp;května 2018"
+  date: 2018-05-04
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 59
+  kategorie: 4
+  nazev: okresní kolo
+  termin: "14.\x9631.&nbsp;května 2018 (přesné datum určují okresní komise)"
+  date: 2018-05-31
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2018
+  date: 2018-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 59
+  kategorie: 1
+  nazev: 49. Mezinárodní FO
+  termin: "21.\x9629.&nbsp;července 2018"
+  date: 2018-07-31
+  misto: Lisabon, Portugalsko
+  kompetence: ''
+  duvernost: public
+- rocnik: 59
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: "8.\x9621.&nbsp;září 2018"
+  date: 2018-09-16
+  misto: Pec pod Sněžkou
+  kompetence: ''
+  duvernost: public
+- rocnik: 60
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 18. 9. 2018
+  date: 2018-09-17
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 60
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 11.&nbsp;ledna 2019
+  date: 2019-01-11
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 60
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 23.&nbsp;ledna 2019
+  date: 2019-01-23
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 60
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: "26.2.\x961.3.&nbsp;2019"
+  date: 2019-03-01
+  misto: Hradec Králové
+  kompetence: ''
+  duvernost: public
+- rocnik: 60
+  kategorie: 3
+  nazev: domácí kolo
+  termin: do 13.&nbsp;března 2019
+  date: 2019-03-13
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 60
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 3.&nbsp;dubna&nbsp;2019
+  date: 2019-04-03
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 60
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 10.&nbsp;dubna 2019
+  date: 2019-04-10
+  misto: Praha do 25. března 2019
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 60
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: středa 24.&nbsp;dubna&nbsp;2019
+  date: 2019-04-24
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 60
+  kategorie: 2
+  nazev: krajské kolo
+  termin: pondělí 29.&nbsp;dubna 2019
+  date: 2019-04-29
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 60
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2019
+  date: 2019-04-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 60
+  kategorie: 4
+  nazev: Školní kolo
+  termin: "1.&nbsp;února \x96 4.&nbsp;května 2019"
+  date: 2019-05-04
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 60
+  kategorie: 4
+  nazev: okresní kolo
+  termin: "13.\x9631.&nbsp;května 2019 (přesné datum určují okresní komise)"
+  date: 2019-05-31
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 60
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2019
+  date: 2019-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 60
+  kategorie: 1
+  nazev: 50. Mezinárodní FO
+  termin: "7.\x9615.&nbsp;července 2019"
+  date: 2019-07-31
+  misto: Tel Aviv, Izrael
+  kompetence: ''
+  duvernost: public
+- rocnik: 60
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2019
+  date: 2019-09-16
+  misto: Pec pod Sněžkou
+  kompetence: ''
+  duvernost: public
+- rocnik: 61
+  kategorie: 2
+  nazev: domácí kolo
+  termin: do 24. dubna 2020
+  date: null
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 61
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 30. 9. 2019
+  date: 2019-09-30
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 61
+  kategorie: 1
+  nazev: domácí kolo
+  termin: do 10. ledna 2020
+  date: 2020-01-10
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 61
+  kategorie: 3
+  nazev: školní kolo
+  termin: do 10. ledna 2020
+  date: 2020-01-10
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 61
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 22. ledna 2020
+  date: 2020-01-22
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 61
+  kategorie: 3
+  nazev: okresní kolo
+  termin: pátek 24. ledna 2020
+  date: 2020-01-24
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 61
+  kategorie: 1
+  nazev: celostátní kolo
+  termin: 25.–28. února 2020
+  date: 2020-02-28
+  misto: Slaný
+  kompetence: ''
+  duvernost: public
+- rocnik: 61
+  kategorie: 4
+  nazev: školní kolo
+  termin: 4. února – 30. března 2020
+  date: 2020-03-30
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 61
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2020
+  date: 2020-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 61
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 27. května
+  date: 2020-05-27
+  misto: online
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 61
+  kategorie: 4
+  nazev: okresní kolo
+  termin: 15. dubna – 29. května 2020
+  date: 2020-05-29
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 61
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: zrušeno
+  date: 2020-06-30
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 61
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2020
+  date: 2020-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 61
+  kategorie: 1
+  nazev: 51. Mezinárodní FO
+  termin: odloženo na červenec 2021
+  date: 2020-08-31
+  misto: Vilnius, Litva
+  kompetence: public
+  duvernost: public
+- rocnik: 61
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2020
+  date: 2020-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 3. 11. 2020
+  date: 2020-11-03
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 62
+  kategorie: 1
+  nazev: školní kolo
+  termin: do 8. ledna 2021
+  date: 2021-01-08
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 62
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 20. ledna 2021
+  date: 2021-01-20
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 3
+  nazev: školní kolo
+  termin: do 26. února 2021
+  date: 2021-02-26
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 62
+  kategorie: 1
+  nazev: ústřední kolo
+  termin: 9.–12. března 2021
+  date: 2021-03-12
+  misto: Plzeň
+  kompetence: ''
+  duvernost: public
+- rocnik: 62
+  kategorie: 3
+  nazev: okresní kolo
+  termin: čtvrtek 18. března 2021
+  date: 2021-03-18
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. února – 31. března 2021
+  date: 2021-03-31
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 62
+  kategorie: 2
+  nazev: školní kolo
+  termin: do 6. dubna 2021
+  date: 2021-04-06
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 62
+  kategorie: 2
+  nazev: krajské kolo
+  termin: úterý 20. dubna 2021
+  date: 2021-04-20
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: čtvrtek 22. dubna 2021
+  date: 2021-04-22
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2021
+  date: 2021-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 4
+  nazev: okresní kolo
+  termin: 12. dubna – 28. května 2021
+  date: 2021-05-28
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2021
+  date: 2021-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 62
+  kategorie: 1
+  nazev: 51. Mezinárodní FO
+  termin: 17.–25. července 2021
+  date: 2021-08-31
+  misto: Vilnius, Litva
+  kompetence: public
+  duvernost: public
+- rocnik: 62
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2021
+  date: 2021-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 4. 10. 2021
+  date: 2021-11-03
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 63
+  kategorie: 1
+  nazev: školní kolo
+  termin: do 5. ledna 2022
+  date: 2022-01-05
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 63
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 19. ledna 2022
+  date: 2022-01-19
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 3
+  nazev: školní kolo
+  termin: do 23. února 2022
+  date: 2022-02-23
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 63
+  kategorie: 1
+  nazev: ústřední kolo
+  termin: 15.–18. března 2022
+  date: 2022-03-19
+  misto: Plzeň
+  kompetence: ''
+  duvernost: public
+- rocnik: 63
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 23. března 2022
+  date: 2022-03-23
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 2
+  nazev: školní kolo
+  termin: do 29. března 2022
+  date: 2022-03-29
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 63
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. února – 1. dubna 2022
+  date: 2022-04-01
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 63
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: čtvrtek 21. dubna 2022
+  date: 2022-04-21
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 2
+  nazev: krajské kolo
+  termin: úterý 26. dubna 2022
+  date: 2022-04-26
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2022
+  date: 2022-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 4
+  nazev: okresní kolo
+  termin: 11. dubna – 31. května 2022
+  date: 2022-05-31
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2022
+  date: 2022-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 63
+  kategorie: 1
+  nazev: 52. Mezinárodní FO
+  termin: červenec 2022
+  date: 2022-08-31
+  misto: Bělorusko
+  kompetence: public
+  duvernost: public
+- rocnik: 63
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2022
+  date: 2022-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 1. 10. 2022
+  date: 2022-10-31
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 64
+  kategorie: 1
+  nazev: školní kolo
+  termin: do 4. ledna 2023
+  date: 2023-01-04
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 64
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 18. ledna 2023
+  date: 2023-01-18
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 3
+  nazev: školní kolo
+  termin: do 24. února 2023
+  date: 2023-02-24
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 64
+  kategorie: 1
+  nazev: ústřední kolo
+  termin: 6.–9. března 2023
+  date: 2023-03-10
+  misto: Cheb
+  kompetence: ''
+  duvernost: public
+- rocnik: 64
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 22. března 2023
+  date: 2023-03-22
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 2
+  nazev: školní kolo
+  termin: do 29. března 2023
+  date: 2023-03-29
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 64
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. února – 31. března 2023
+  date: 2023-03-31
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 64
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: čtvrtek 20. dubna 2023
+  date: 2023-04-20
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 26. dubna 2023
+  date: 2023-04-26
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2023
+  date: 2023-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 4
+  nazev: okresní kolo
+  termin: 10. dubna – 31. května 2023
+  date: 2023-05-31
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2023
+  date: 2023-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 64
+  kategorie: 1
+  nazev: 53. Mezinárodní FO
+  termin: červenec 2023
+  date: 2023-08-31
+  misto: Tokyo, Japonsko
+  kompetence: public
+  duvernost: public
+- rocnik: 64
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2023
+  date: 2023-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 21. 9. 2023
+  date: 2023-10-31
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 65
+  kategorie: 1
+  nazev: školní kolo
+  termin: do 3. ledna 2024
+  date: 2024-01-03
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 65
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 17. ledna 2024
+  date: 2024-01-17
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 3
+  nazev: školní kolo
+  termin: do 23. února 2024
+  date: 2024-02-23
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 65
+  kategorie: 1
+  nazev: Ústřední kolo
+  termin: 12.–15. března 2024
+  date: 2024-03-15
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 20. března 2024
+  date: 2024-03-20
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 2
+  nazev: školní kolo
+  termin: do 27. března 2024
+  date: 2024-03-27
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 65
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. února – 31. března 2024
+  date: 2024-03-31
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 65
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: čtvrtek 11. dubna 2024
+  date: 2024-04-11
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 24. dubna 2024
+  date: 2024-04-24
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2024
+  date: 2024-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 4
+  nazev: okresní kolo
+  termin: 10. dubna – 31. května 2024
+  date: 2024-05-31
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2024
+  date: 2024-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 65
+  kategorie: 1
+  nazev: 54. Mezinárodní FO
+  termin: červenec 2024
+  date: 2024-08-31
+  misto: Írán
+  kompetence: public
+  duvernost: public
+- rocnik: 65
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2024
+  date: 2024-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 1. 10. 2024
+  date: 2024-10-12
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 66
+  kategorie: 1
+  nazev: školní kolo
+  termin: do 3. ledna 2025
+  date: 2025-01-03
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 66
+  kategorie: 1
+  nazev: krajské kolo
+  termin: pátek 24. ledna 2025
+  date: 2025-01-24
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 3
+  nazev: školní kolo
+  termin: do 21. února 2025
+  date: 2025-02-21
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 66
+  kategorie: 1
+  nazev: ústřední kolo
+  termin: 4.–7. března 2025
+  date: 2025-03-07
+  misto: Jihlava
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 3
+  nazev: okresní kolo
+  termin: středa 19. března 2025
+  date: 2025-03-19
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 2
+  nazev: školní kolo
+  termin: do 28. března 2025
+  date: 2025-03-28
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 66
+  kategorie: 4
+  nazev: školní kolo
+  termin: 1. února – 31. března 2025
+  date: 2025-03-31
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 66
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: středa 9. dubna 2025
+  date: 2025-04-09
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 23. dubna 2025
+  date: 2025-04-23
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2025
+  date: 2025-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 4
+  nazev: okresní kolo
+  termin: 7. dubna – 31. května 2025
+  date: 2025-05-31
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2025
+  date: 2025-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 66
+  kategorie: 1
+  nazev: 55. Mezinárodní FO
+  termin: červenec 2025
+  date: 2025-08-31
+  misto: Francie
+  kompetence: public
+  duvernost: public
+- rocnik: 66
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2025
+  date: 2025-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 0
+  nazev: zahájení nového ročníku
+  termin: 1. 10. 2025
+  date: 2025-10-12
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 67
+  kategorie: 1
+  nazev: školní kolo
+  termin: do 5. ledna 2026
+  date: 2026-01-05
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 67
+  kategorie: 1
+  nazev: krajské kolo
+  termin: středa 14. ledna 2026
+  date: 2026-01-14
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 1
+  nazev: ústřední kolo
+  termin: 3.–6. února 2026
+  date: 2026-02-07
+  misto: Olomouc
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 3
+  nazev: školní kolo
+  termin: do 20. února 2026
+  date: 2026-02-20
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 67
+  kategorie: 3
+  nazev: okresní kolo
+  termin: pondělí 16. března 2026
+  date: 2026-03-16
+  kompetence: OKFO, KKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 2
+  nazev: školní kolo
+  termin: do 27. března 2026
+  date: 2026-03-27
+  kompetence: KKFO, referenti
+  duvernost: public
+- rocnik: 67
+  kategorie: 3
+  nazev: krajské kolo E
+  termin: úterý 31. března 2026
+  date: 2026-03-31
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 4
+  nazev: školní kolo
+  termin: 2. února – 31. března 2026
+  date: 2026-03-31
+  kompetence: OKFO, referenti
+  duvernost: public
+- rocnik: 67
+  kategorie: 2
+  nazev: krajské kolo
+  termin: středa 22. dubna 2026
+  date: 2026-04-22
+  kompetence: KKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 1
+  nazev: výběrové minisoustředění s testy
+  termin: duben 2026
+  date: 2026-04-30
+  misto: Hradec Králové
+  kompetence: UKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 4
+  nazev: okresní kolo
+  termin: 6. dubna – 31. května 2026
+  date: 2026-05-31
+  misto: přesné datum určují OKFO
+  kompetence: KKFO, OKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 1
+  nazev: přípravné soustředění před MFO
+  termin: červen 2026
+  date: 2026-06-30
+  misto: Hradec Králové
+  kompetence: ÚKFO
+  duvernost: public
+- rocnik: 67
+  kategorie: 1
+  nazev: 56. Mezinárodní FO
+  termin: červenec 2026
+  date: 2026-08-31
+  misto: Kolumbie
+  kompetence: public
+  duvernost: public
+- rocnik: 67
+  kategorie: 2
+  nazev: celostátní soustředění v kategoriích B a&nbsp;C
+  termin: září 2026
+  date: 2026-09-30
+  misto: Pec pod Sněžkou
+  kompetence: ÚKFO
+  duvernost: public

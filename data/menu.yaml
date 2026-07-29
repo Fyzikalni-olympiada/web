@@ -1,0 +1,247 @@
+- name: Soutěžní kola
+  title: Soutěžní kola aktuálního ročníku Fyzikální olympiády
+  children:
+  - name: Střední školy
+    title: Kategorie A, B, C a D pro střední školy
+    file: stredni-skoly
+  - name: Základní školy
+    title: Kategorie E a F pro základní školy
+    file: zakladni-skoly
+  - name: Archimediáda
+    title: Archimediáda - pro nejmladší řešitele FO
+    file: archimediada
+  - name: Ústřední kolo
+    title: Celostátní kolo kategorie A (nejvyšší kategorie pro střední školy)
+    file: ustredni-kolo
+  - name: Termíny
+    title: Přehled termínů aktuálního ročníku FO
+    file: terminy
+- name: Studijní texty
+  title: Studijní texty z Knihovničky fyzikální olympiády
+  file: studijni-texty
+- name: Táňa
+  title: Celostátní soustředění Táňa pro úspěšné řešitele kategorií B a C
+  file: Tana
+  children:
+  - name: Aktuální soustředění
+    title: Informace o celostátním soustředění Táňa
+    file: Tana
+    children:
+    - name: Oficiální pozvánka
+      title: Oficiální pozvánka na soustředění
+    - name: Účastníci soustředění
+      title: Účastníci soustředění
+      file: Tana/ucastnici
+  - name: Organizátoři
+    title: Kontakt na organizátory soustředění
+    file: Tana/organizatori
+  - name: Historie
+    title: Článek o historii soustředění
+    file: Tana/historie
+  - name: Fotogalerie
+    title: Fotky ze soustředění na chatě Táňa
+    file: Tana/fotky
+- name: Příprava
+  title: Příprava pro úspěšnou účast ve Fyzikální olympiádě
+  children:
+  - name: Studijní texty
+    title: Studijní texty ke studijním tématům aktuálního ročníku FO
+    file: studijni-texty
+  - name: Soustředění Táňa
+    title: Celostátní soustředění Táňa pro úspěšné řešitele kategorií B a C
+    file: Tana
+  - name: Korespondenční semináře
+    title: Korespondenční semináře s matematicko-fyzikálním zameřením
+    file: korespondencni-seminare
+  - name: Literatura
+    title: Literatura vhodná jako příprava pro FO
+    file: literatura
+- name: Mezinárodní soutěž
+  title: Mezinárodní fyzikální olympiáda
+  children:
+  - name: Přípravné soustředění
+    title: Přípravné a výběrové soustředění pro Mezinárodní fyzikální olympiádu
+    file: pripravne-soustredeni
+  - name: Odkazy
+    title: Odkazy na starší ročníky MFO
+    file: mfo/odkazy-na-starsi-rocniky
+  - name: České úspěchy
+    title: Přehled českých úspěchů na MFO
+    file: mfo/ceske-uspechy
+  - name: 52. MFO, Německo
+    title: Zpráva o konání 52. Mezinárodní fyzikální olympiády
+    file: mfo/52
+  - name: 2. EFO, Rusko
+    title: Zpráva o konání 2. Evropské fyzikální olympiády v Ruské federaci v roce 2018
+    file: efo/2
+  - name: 50. MFO, Izrael
+    title: 50. Mezinárodní fyzikální olympiády ve státě Izrael
+    file: mfo/50
+  - name: 49. MFO, Portugalsko
+    title: 49. Mezinárodní fyzikální olympiáda, Portugalsko 2018
+    file: mfo/49
+  - name: 48. MFO, Indonésie
+    title: Zpráva o konání 48. Mezinárodní fyzikální olympiády V Indonéské republice v roce 2017
+    file: mfo/48
+  - name: 47. MFO, Švýcarsko
+    title: Zpráva o konání 47. Mezinárodní fyzikální olympiády ve Švýcarské konfederaci a Lichtenštejnském knížectví v roce 2016
+    file: mfo/47
+  - name: 46. MFO, Indie
+    title: Zpráva o konání 46. Mezinárodní fyzikální olympiády
+    file: mfo/46
+  - name: 45. MFO, Kazachstán
+    title: Zpráva o konání 45. Mezinárodní fyzikální olympiády v Kazachstánu 2015
+    file: mfo/45
+  - name: 44. MFO, Dánsko
+    title: 44. Mezinárodní fyzikální olympiáda, Dánsko 2013
+    file: mfo/44
+  - name: 43. MFO, Estonsko
+    title: Zpráva ze 43. Mezinárodní fyzikální olymipády
+    file: mfo/43
+  - name: 42. MFO, Thajské království
+    title: Zpráva o 42. mezinárodní fyzikální olympiádě v Thajsku
+    file: mfo/42
+  - name: 41. MFO, Chorvatsko
+    title: Zpráva o 41. Mezinárodní fyzikální olympiádě v Chorvatsku
+    file: mfo/41
+  - name: 40. MFO, Mexiko
+    title: 40. Mezinárodní fyzikální olympiáda, Mexiko 2009
+    file: mfo/40
+  - name: 39. MFO, Vietnam
+    title: 39. Mezinárodní fyzikální olympiáda, Hanoj, Vienam
+    file: mfo/39
+  - name: 38. MFO, Írán
+    title: 38. Mezinárodní fyzikální olympiáda, Írán 2007
+    file: mfo/38
+  - name: 37. MFO, Singapur
+    title: 37. Mezinárodní fyzikální olympiáda, Singapur 2006
+    file: mfo/37
+- name: Diskuse
+  title: Diskuse nejenom o Fyzikální olympiádě
+  file: diskuse
+- name: Ústřední komise
+  title: Adresář ústřední komise (a předsedů krajských komisí) FO
+  file: ukfo
+- name: Archiv
+  title: Archiv úloh a celostátních kol
+  children:
+  - name: Zadání a řešení
+    title: Archiv zadání a řešení soutěžních úloh FO
+    file: archiv/zadani-a-reseni
+    children:
+    - name: Kategorie E, F 45. ročníku
+      title: Kategorie E, F 45. ročníku FO ve školním roce 2003/2004
+    - name: Archimediáda 2003
+      title: Archimediáda 2003 – kategorie G fyzikální olympiády
+    - name: Kategorie E, F 46. ročníku
+      title: Kategorie E, F 46. ročníku FO ve školním roce 2004/2005
+    - name: Archimediáda 2004
+      title: Archimediáda 2004 – kategorie G fyzikální olympiády
+    - name: Kategorie E, F 47. ročníku
+      title: Kategorie E, F 47. ročníku FO ve školním roce 2005/2006
+    - name: Archimediáda 2005
+      title: Archimediáda 2005 – kategorie G fyzikální olympiády
+    - name: Kategorie E, F 48. ročníku
+      title: Zadání úloh kategorie E, F 48. ročníku FO
+    - name: Archimediáda 2007
+      title: Zadání úloh Archidiády 2007 - kategorie G FO
+    - name: Kategorie E, F 49. ročníku
+      title: Zadání domácího kola kategorie E, F 49. ročníku FO
+    - name: Archimediáda 2008
+      title: Zadání domácího kola Archimediády 2008
+    - name: Kategorie E, F 50. ročníku
+      title: Zadání domácího kola kategorie E, F 50. ročníku FO
+    - name: Archimediáda 2009
+      title: Zadání domácího kola Archimediády 2009
+    - name: Simulace k úlohám 50. ročníku
+      title: Simulace pohybů k některým úlohám z 1. kola  50. ročníku FO
+      file: archiv/rocnik-50/simulace
+    - name: Kategorie E, F 51. ročníku
+      title: Kategorie E a F 51. ročníku FO
+    - name: Archimediáda 2010
+      title: Kategorie G 51. ročníku FO - Archimediáda 2010
+    - name: Výsledky krajského kola 61. ročníku FO
+      title: Výsledky krajského kola 61. ročníku FO v roce 2020
+      file: archiv/61/vysledky-krajskeho-kola
+  - name: Celostátní kola
+    title: Archiv celostátních kol
+    file: archiv/celostatni-kola
+    children:
+    - name: Brno, 2000
+      title: Celostátní kolo Brno, 2000
+      file: archiv/celostatni-kola/41
+    - name: Mladá Boleslav, 2004
+      title: Celostátní kolo Mladá Boleslav, 2004
+      file: archiv/celostatni-kola/45
+    - name: Hradec Králové, 2005
+      title: Celostátní kolo Hradec Králové, 2005
+      file: archiv/celostatni-kola/46
+    - name: Plzeň, 2006
+      title: Celostátní kolo Plzeň, 2006
+      file: archiv/celostatni-kola/47
+    - name: Bílovec, 2007
+      title: Účastníci, zadání, řešení a výsledky celostátního kola 48. ročníku FO
+      file: archiv/celostatni-kola/48
+    - name: Karlovy Vary, 2008
+      title: Celostátní kolo 49. ročníku FO, Karlovy Vary, 2008
+      file: archiv/celostatni-kola/49
+    - name: Praha, 2009
+      title: Celostátní kolo 50. ročníku FO v Praze 2009
+      file: archiv/celostatni-kola/50
+    - name: Praha, 2009 - závěrečná zráva
+      title: Závarečná zpráva a fotogalerie celostátního kola 50. ročníku FO
+      file: archiv/celostatni-kola/50/zprava
+    - name: Praha, 2009 - fotogalerie
+      title: Fotogalerie celostátního kola 50. ročníku FO
+      file: archiv/celostatni-kola/50/fotky
+    - name: Pelhřimov 2010
+      title: Celostání kolo 51. ročníku FO - Pelhřimov 2010
+      file: archiv/celostatni-kola/51
+    - name: Pelhřimov, 2010 - fotogalerie
+      title: Fotogalerie celostátního kola 51. ročníku FO
+      file: archiv/celostatni-kola/51/fotky
+    - name: Pelhřimov, 2010 - závěrečná zpráva
+      title: Zpráva z celostátního kola 51. ročníku od Martina Kapouna
+      file: archiv/celostatni-kola/51/zprava
+    - name: Olomouc 2011
+      title: Celostátní kolo v Olomouci 2011, 52. ročník FO
+      file: archiv/celostatni-kola/52
+    - name: Olomouc 2011 - fotogalerie
+      title: Fotogalerie celostátního kola v Olomouci 2011, 52. ročník FO
+      file: archiv/celostatni-kola/52/fotky
+    - name: Pardubice 2012
+      title: Celostátní kolo 53. ročníku
+      file: archiv/celostatni-kola/53
+    - name: Pardubice 2012 - fotogalerie
+      title: Fotogalerie celostátního kola 53. ročníku FO
+      file: archiv/celostatni-kola/53/fotky
+    - name: Brno 2013
+      title: Celostátní kolo 54. ročníku FO, Brno 2013
+      file: archiv/celostatni-kola/54
+    - name: Brno 2013 - závěrečná zpráva
+      title: Závěrečná zpráva z celostátního kola 54. ročníku, Brno 2013
+      file: archiv/celostatni-kola/54/zprava
+    - name: Holešov 2014
+      title: Celostátní kolo 55. ročníku FO, Holešov 2014
+      file: archiv/celostatni-kola/55
+    - name: České Budějovice 2015
+      title: Celostátní kolo FO České Budějovice 2015
+      file: archiv/celostatni-kola/56
+    - name: Bílovec 2016
+      title: Celostátní kolo 57. ročníku FO v Bílovci
+      file: archiv/celostatni-kola/57
+    - name: Jablonec nad Nisou 2018
+      title: Celostátní kolo 59. ročníku FO
+      file: archiv/celostatni-kola/59
+    - name: Slaný 2020
+      title: Celostátní kolo 61. ročníku FO
+      file: archiv/celostatni-kola/61
+    - name: Online 2021
+      title: Ústřední kolo 62. ročníku FO
+      file: archiv/celostatni-kola/62
+    - name: Plzeň 2022
+      title: Ústřední kolo 63. ročníku FO v Plzni
+      file: archiv/celostatni-kola/63
+    - name: Karlovy Vary 2023
+      title: Celostátní kolo 64. ročníku FO, Karlovy Vary
+      file: archiv/celostatni-kola/64

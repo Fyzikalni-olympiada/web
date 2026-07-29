@@ -1,0 +1,255 @@
+/:
+  file: content/news.php
+  title: Aktuality
+Tana:
+  file: tana/index.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky:
+  file: tana/foto.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky/2000-i:
+  file: tana/photos_2000/index_I.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky/2000-ii:
+  file: tana/photos_2000/index_II.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky/2001:
+  file: tana/photos_2001/index.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky/2002:
+  file: tana/photos_2002/index.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky/2007:
+  file: tana/photos_2007/index.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky/2008:
+  file: tana/photos_2008/index.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/fotky/2021:
+  file: tana/photos_2021/index.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/historie:
+  file: tana/historie.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/organizatori:
+  file: tana/organizatori.html
+  title: Celostátní soustředění, Chata Táňa
+Tana/ucastnici:
+  file: tana/ucastnici.html
+  title: Celostátní soustředění, Chata Táňa
+archimediada:
+  file: html/g.html
+  title: Kategorie G
+archiv/61/vysledky-krajskeho-kola:
+  file: archiv/61/bcd2_vysledky.html
+  title: Archiv krajských kol
+archiv/62/A/vysledky-krajskeho-kola:
+  file: archiv/62/a2_vysledky.html
+  title: Archiv krajských kol
+archiv/celostatni-kola:
+  file: html/celost_arch.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/41:
+  file: archiv/celost/41.html
+  title: Celostátní kolo 41. ročníku FO
+archiv/celostatni-kola/45:
+  file: archiv/celost/45.html
+  title: Celostátní kolo 45. ročníku FO
+archiv/celostatni-kola/46:
+  file: archiv/celost/46.html
+  title: Celostátní kolo 46. ročníku FO
+archiv/celostatni-kola/47:
+  file: archiv/celost/47.html
+  title: Celostátní kolo 47. ročníku FO
+archiv/celostatni-kola/48:
+  file: archiv/celost/48.html
+  title: Celostátní kolo 48. ročníku FO
+archiv/celostatni-kola/49:
+  file: archiv/celost/49.html
+  title: Celostátní kolo 49. ročníku FO
+archiv/celostatni-kola/50:
+  file: archiv/celost/50.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/50/fotky:
+  file: archiv/celost/50/photos.html
+  title: Celostátní kolo
+archiv/celostatni-kola/50/zprava:
+  file: archiv/celost/50-zprava.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/51:
+  file: archiv/celost/51.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/51/fotky:
+  file: archiv/celost/51/photos.html
+  title: Celostátní kolo
+archiv/celostatni-kola/51/zprava:
+  file: archiv/celost/51-zprava.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/52:
+  file: archiv/celost/52.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/52/fotky:
+  file: archiv/celost/52/photos.html
+  title: Celostátní kolo
+archiv/celostatni-kola/53:
+  file: archiv/celost/53.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/53/fotky:
+  file: archiv/celost/53/photos.html
+  title: Celostátní kolo
+archiv/celostatni-kola/54:
+  file: archiv/celost/54.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/54/zprava:
+  file: archiv/celost/54-zprava.html
+  title: Celostátní kolo
+archiv/celostatni-kola/55:
+  file: archiv/celost/55.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/56:
+  file: archiv/celost/56.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/57:
+  file: archiv/celost/57.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/58:
+  file: archiv/celost/58.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/59:
+  file: archiv/celost/59.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/60:
+  file: archiv/celost/60.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/61:
+  file: archiv/celost/61.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/62:
+  file: archiv/celost/62.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/63:
+  file: archiv/celost/63.html
+  title: Archiv celostátních kol
+archiv/celostatni-kola/64:
+  file: archiv/celost/64.html
+  title: Archiv celostátních kol
+archiv/rocnik-50/simulace:
+  file: archiv/50/fo50-simulace.html
+  title: Simulace
+archiv/zadani-a-reseni:
+  file: html/archiv.html
+  title: Archiv zadání a řešení
+cena-praemium-bohemiae:
+  file: html/nadace.html
+  title: Praemium Bohemiae
+cena-praemium-bohemiae/2010:
+  file: archiv/nadace/2010.html
+  title: Praemium Bohemiae
+cena-praemium-bohemiae/2011:
+  file: archiv/nadace/2011.html
+  title: Praemium Bohemiae
+co-je-fo:
+  file: html/cojefo.html
+  title: Co je Fyzikální olympiáda
+diskuse:
+  file: content/forum.php
+  title: Diskusní fórum
+efo/2:
+  file: archiv/efo/2.html
+  title: Evropská fyzikální olympiáda
+jine-olympiady:
+  file: html/jine_olym.html
+  title: Jiné olympiády
+kkfo:
+  file: html/rvfo.html
+  title: Krajské komise FO
+korespondencni-seminare:
+  file: html/koresem.html
+  title: Korespondenční semináře
+literatura:
+  file: html/literatura.html
+  title: Literatura
+mfo/37:
+  file: archiv/mfo/37.html
+  title: 37. Mezinárodní fyzikální olympiáda
+mfo/38:
+  file: archiv/mfo/38.html
+  title: 38. Mezinárodní fyzikální olympiáda
+mfo/39:
+  file: archiv/mfo/39.html
+  title: 39. Mezinárodní fyzikální olympiáda
+mfo/40:
+  file: archiv/mfo/40.html
+  title: 40. Mezinárodní fyzikální olympiáda
+mfo/41:
+  file: archiv/mfo/41.html
+  title: 41. Mezinárodní fyzikální olympiáda
+mfo/42:
+  file: archiv/mfo/42.html
+  title: 42. Mezinárodní fyzikální olympiáda
+mfo/43:
+  file: archiv/mfo/43.html
+  title: 43. Mezinárodní fyzikální olympiáda
+mfo/44:
+  file: archiv/mfo/44.html
+  title: 44. Mezinárodní fyzikální olympiáda
+mfo/45:
+  file: archiv/mfo/45.html
+  title: 45. Mezinárodní fyzikální olympiáda
+mfo/46:
+  file: archiv/mfo/46.html
+  title: 45. Mezinárodní fyzikální olympiáda
+mfo/47:
+  file: archiv/mfo/47.html
+  title: 47. Mezinárodní fyzikální olympiáda
+mfo/48:
+  file: archiv/mfo/48.html
+  title: 48. Mezinárodní fyzikální olympiáda
+mfo/49:
+  file: archiv/mfo/49.html
+  title: 49. Mezinárodní fyzikální olympiáda
+mfo/50:
+  file: archiv/mfo/50.html
+  title: 50. Mezinárodní fyzikální olympiáda
+mfo/52:
+  file: archiv/mfo/52.html
+  title: 52. Mezinárodní fyzikální olympiáda
+mfo/ceske-uspechy:
+  file: html/mfo_czu.html
+  title: České úspěchy na MFO
+mfo/odkazy-na-starsi-rocniky:
+  file: html/mfo_odkazy.html
+  title: Odkazy na starší ročníky MFO
+novinka:
+  file: content/novinka.php
+  title: Novinka
+odkazy:
+  file: html/odkazy.html
+  title: Odkazy
+pripravne-soustredeni:
+  file: html/vyberko.html
+  title: Přípravné soustředění
+stranky-regionu:
+  file: html/stranky_regionu.html
+  title: Stránky krajských komisí
+stredni-skoly:
+  file: html/abcd.html
+  title: Kategorie ABCD
+studijni-texty:
+  file: html/texty_arch.html
+  title: Studijní texty
+terminy:
+  file: html/terminy.html
+  title: Termíny
+ukfo:
+  file: html/uvfo.html
+  title: Ústřední komise FO
+ustredni-kolo:
+  file: html/celost.html
+  title: Celostátní kolo
+vyhledavani:
+  file: html/search.html
+  title: Vyhledávání
+zakladni-skoly:
+  file: html/ef.html
+  title: Kategorie EF
