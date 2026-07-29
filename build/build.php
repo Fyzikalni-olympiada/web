@@ -24,8 +24,9 @@ $ASSET_DIRS = ['css', 'js', 'pic', 'images', 'fonts', 'dokumenty',
                'archiv', 'texty', 'vysledky', 'tana', 'upload'];
 $ASSET_FILES = ['favicon.ico', 'robots.txt', 'rss_forum.xml'];
 
-/* Nepublikované podadresáře (úspora místa) – vynechají se z kopie i miniatur */
-$NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails'];
+/* Nepublikované podadresáře a soubory (úspora místa) – vynechají se z kopie i miniatur */
+$NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails',
+                 'texty/texty.tar', 'texty/matematika/cd.tar.gz'];
 
 /* Náhodná fotka: stejná pravidla jako staré rand_thumb() */
 $THUMB_EXCLUDE = ['temp', 'thumbnails', 'pic', 'images', 'cd', 'kvary', 'upload',
