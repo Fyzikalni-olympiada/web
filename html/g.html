@@ -1,7 +1,7 @@
 <h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?></h2>
 
 <?php
-foreach (terms_kategorie(4) as $termin_row) {
+foreach (terms_kategorie('G') as $termin_row) {
 	$termin = $termin_row['termin']; $date = $termin_row['date']; $nazev = $termin_row['nazev'];
 	switch ($nazev) {
 			case 'školní kolo':

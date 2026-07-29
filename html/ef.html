@@ -1,7 +1,7 @@
 <h2>Soutěž pro základní školy</h2>
 
 <?php
-foreach (terms_kategorie(3) as $termin_row) {
+foreach (terms_kategorie('EF') as $termin_row) {
 	$termin = $termin_row['termin']; $date = $termin_row['date']; $nazev = $termin_row['nazev'];
 	switch ($nazev) {
 			case 'školní kolo':

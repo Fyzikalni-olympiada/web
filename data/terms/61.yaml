@@ -1,87 +1,57 @@
-0:
+spolecne:
 - nazev: zahájení nového ročníku
   termin: 30. 9. 2019
   date: 2019-09-30
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: domácí kolo
   termin: do 10. ledna 2020
   date: 2020-01-10
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 22. ledna 2020
   date: 2020-01-22
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní kolo
   termin: 25.–28. února 2020
   date: 2020-02-28
   misto: Slaný
-  kompetence: ''
-  duvernost: public
 - nazev: výběrové minisoustředění s testy
   termin: duben 2020
   date: 2020-04-30
   misto: Hradec Králové
-  kompetence: UKFO
-  duvernost: public
 - nazev: přípravné soustředění před MFO
   termin: červen 2020
   date: 2020-06-30
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 51. Mezinárodní FO
   termin: odloženo na červenec 2021
   date: 2020-08-31
   misto: Vilnius, Litva
-  kompetence: public
-  duvernost: public
-2:
+BCD:
 - nazev: domácí kolo
   termin: do 24. dubna 2020
   date: null
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 27. května
   date: 2020-05-27
   misto: online
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní soustředění v kategoriích B a&nbsp;C
   termin: září 2020
   date: 2020-09-30
   misto: Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: školní kolo
   termin: do 10. ledna 2020
   date: 2020-01-10
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: pátek 24. ledna 2020
   date: 2020-01-24
-  kompetence: OKFO, KKFO
-  duvernost: public
 - nazev: krajské kolo E
   termin: zrušeno
   date: 2020-06-30
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: školní kolo
   termin: 4. února – 30. března 2020
   date: 2020-03-30
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: 15. dubna – 29. května 2020
   date: 2020-05-29
   misto: přesné datum určují OKFO
-  kompetence: KKFO, OKFO
-  duvernost: public

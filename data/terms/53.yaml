@@ -1,95 +1,61 @@
-0:
+spolecne:
 - nazev: zahájení soutěže
   termin: 15. 9. 2011
   date: 2011-09-15
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: domácí kolo
   termin: do 9. 1. 2012
   date: 2012-01-09
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 20. 1. 2012
   date: 2012-01-20
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní kolo
   termin: 21.&ndash;24. 2. 2012
   date: 2012-02-24
   misto: Pardubice
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: výběrové soustředění pro MFO
   termin: 4.&ndash;6. 4. 2012
   date: 2012-04-06
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: přípravné soustředění před MFO
   termin: červen 2012
   date: 2012-06-18
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 43. mezinárodní FO
   termin: 15.&ndash;24. července 2012
   date: 2012-07-24
   misto: Estonsko
-  kompetence: ÚKFO
-  duvernost: public
-2:
+BCD:
 - nazev: domácí kolo
   termin: do 10. 4. 2012
   date: 2012-04-10
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 4. 5. 2012
   date: 2012-05-04
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní soustředění v kategoriích B a&nbsp;C
   termin: 1.&ndash;15. září 2012
   date: 2012-09-01
   misto: Chata Táňa, Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: zahájení soutěže
   termin: 15. 9. 2011
   date: 2011-09-15
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: domácí kolo
   termin: do 16. 3. 2012
   date: 2012-03-16
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: středa 28. 3. 2012
   date: 2012-03-28
-  kompetence: OKFO, KKFO
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 18. 4. 2012
   date: 2012-04-18
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: zahájení soutěže
   termin: 1. 2. 2012
   date: 2012-02-01
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: domácí kolo
   termin: 9. 5. 2012
   date: 2012-05-09
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: školní či okresní kolo
   termin: kolem 25. 5. 2012
   date: 2012-05-25
-  kompetence: KKFO, OKFO
-  duvernost: public

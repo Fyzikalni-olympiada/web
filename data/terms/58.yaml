@@ -1,85 +1,55 @@
-0:
+spolecne:
 - nazev: zahájení nového ročníku
   termin: 15. 9. 2016
   date: 2016-09-15
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: domácí kolo
   termin: do 5. 1. 2017
   date: 2017-01-05
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 18. 1. 2017
   date: 2017-01-18
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní kolo
   termin: 7.&ndash;10. února 2017
   date: 2017-02-10
   misto: Rumburk
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: výběrové minisoustředění s testy
   termin: "26.\x9628.&nbsp;dubna 2017"
   date: 2017-03-24
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: přípravné soustředění před MFO
   termin: červen 2017
   date: 2017-06-30
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 48. Mezinárodní FO
   termin: "16.\x9624.&nbsp;července 2017"
   date: 2017-07-31
   misto: Tangerang, Indonésie
-  kompetence: ÚKFO
-  duvernost: public
-2:
+BCD:
 - nazev: domácí kolo
   termin: do 3. 4. 2017
   date: 2017-04-03
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 19. 4. 2017
   date: 2017-04-19
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní soustředění v kategoriích B a&nbsp;C
   termin: 9.&ndash;22. září 2017
   date: 2017-09-19
   misto: Chata Táňa, Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: domácí kolo
   termin: do 8. 3. 2017
   date: 2017-03-09
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: čtvrtek 23.&nbsp;3.&nbsp;2017
   date: 2017-03-23
-  kompetence: OKFO, KKFO
-  duvernost: public
 - nazev: krajské kolo E
   termin: pátek 28.&nbsp;4.&nbsp;2017
   date: 2017-04-28
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: školní kolo
   termin: 1. 2.&ndash;30. 4. 2017
   date: 2017-04-30
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: druhé kolo
   termin: květen 2017 (přesné datum určují okresní komise)
   date: 2017-05-30
-  kompetence: KKFO, OKFO
-  duvernost: public

@@ -4,11 +4,11 @@
 foreach (terms_hledej('školní') as $termin_row) {
 	$termin = $termin_row['termin']; $date = $termin_row['date']; $kategorie = $termin_row['kategorie'];
 	switch ($kategorie) {
-			case 1:
+			case 'A':
 				$terminA = $termin;
 				$dateA = $date;
 				break;
-			case 2:
+			case 'BCD':
 				$terminBCD = $termin;
 				$dateBCD = $date;
 				break;
@@ -22,11 +22,11 @@ $beforeBCD = $dateBCD >= date('Y-m-d');
 foreach (terms_hledej('krajské kolo') as $termin_row) {
 	$termin = $termin_row['termin']; $date = $termin_row['date']; $kategorie = $termin_row['kategorie'];
         switch ($kategorie) {
-                        case 1:
+                        case 'A':
                                 $krajTerminA = $termin;
 								$krajDateA = $date;
                                 break;
-                        case 2:
+                        case 'BCD':
                                 $krajTerminBCD = $termin;
 								$krajDateBCD = $date;
                                 break;

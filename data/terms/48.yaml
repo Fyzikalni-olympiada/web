@@ -1,114 +1,60 @@
-0:
+spolecne:
 - nazev: zahájení soutěže
   termin: do 15. 9. 2006
   date: 2006-09-15
-  kompetence: KKFO, referenti
-  duvernost: public
-- nazev: zpráva o průběhu soutěže na KKFO
-  termin: do 6. 6. 2007
-  date: 2007-06-06
-  kompetence: KKFO
-  duvernost: private
-- nazev: zpráva o průběhu 48. ročníku FO
-  termin: do 4. 7. 2007
-  date: 2007-07-04
-  kompetence: předsedové KKFO
-  duvernost: private
-1:
+A:
 - nazev: domácí kolo
   termin: do 12. 1. 2007
   date: 2007-01-12
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 19. 1. 2007
   date: 2007-01-19
-  kompetence: KKFO
-  duvernost: public
-- nazev: zpráva o výsledku krajského kola
-  termin: do 2. 2. 2007
-  date: 2007-02-02
-  kompetence: předsedové KKFO
-  duvernost: private
 - nazev: celostátní kolo
   termin: 28. 2. &ndash; 3. 3. 2007
   date: 2007-03-03
   misto: Bílovec
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: korespondenční seminář
   termin: 12. 3. &ndash; 31. 5. 2007
   date: 2007-05-31
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: soustředění před MFO
   termin: 4. 6. &ndash; 15. 6. 2007
   date: 2007-06-15
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 38. Mezinárodní FO
   termin: 13. &ndash; 22. července 2007
   date: 2007-07-22
   misto: Írán (Isfahán)
-  kompetence: ÚKFO
-  duvernost: public
-2:
+BCD:
 - nazev: domácí kolo
   termin: do 4. 4. 2007
   date: 2007-04-04
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 20. 4. 2007
   date: 2007-04-20
-  kompetence: KKFO
-  duvernost: public
-- nazev: výsledky kategorie B pro soustředění
-  termin: 4. 5. 2007
-  date: 2007-05-04
-  kompetence: předsedové KKFO
-  duvernost: private
 - nazev: celostátní soustředění v kategoriích B a C
   termin: 2. 6. &ndash; 16. 6. 2007
   date: 2007-06-16
   misto: Chata Táňa, Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: zahájení soutěže
   termin: do 15. 9. 2006
   date: 2006-09-15
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: domácí kolo
   termin: do 23. 3. 2007
   date: 2007-03-23
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: 4. 4. 2007
   date: 2007-04-04
-  kompetence: OKFO
-  duvernost: public
 - nazev: krajské kolo
   termin: 18. 5. 2007
   date: 2007-05-18
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: zahájení soutěže
   termin: 1. 2. 2007
   date: 2007-02-01
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: domácí kolo
   termin: do 4. 5. 2007
   date: 2007-05-04
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: školní či okresní kolo
   termin: kolem 23. 5. 2007
   date: 2007-05-23
-  kompetence: OKFO, referenti
-  duvernost: public

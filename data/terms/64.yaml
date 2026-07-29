@@ -1,86 +1,56 @@
-0:
+spolecne:
 - nazev: zahájení nového ročníku
   termin: 1. 10. 2022
   date: 2022-10-31
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: školní kolo
   termin: do 4. ledna 2023
   date: 2023-01-04
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 18. ledna 2023
   date: 2023-01-18
-  kompetence: KKFO
-  duvernost: public
 - nazev: ústřední kolo
   termin: 6.–9. března 2023
   date: 2023-03-10
   misto: Cheb
-  kompetence: ''
-  duvernost: public
 - nazev: výběrové minisoustředění s testy
   termin: duben 2023
   date: 2023-04-30
   misto: Hradec Králové
-  kompetence: UKFO
-  duvernost: public
 - nazev: přípravné soustředění před MFO
   termin: červen 2023
   date: 2023-06-30
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 53. Mezinárodní FO
   termin: červenec 2023
   date: 2023-08-31
   misto: Tokyo, Japonsko
-  kompetence: public
-  duvernost: public
-2:
+BCD:
 - nazev: školní kolo
   termin: do 29. března 2023
   date: 2023-03-29
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 26. dubna 2023
   date: 2023-04-26
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní soustředění v kategoriích B a&nbsp;C
   termin: září 2023
   date: 2023-09-30
   misto: Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: školní kolo
   termin: do 24. února 2023
   date: 2023-02-24
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: středa 22. března 2023
   date: 2023-03-22
-  kompetence: OKFO, KKFO
-  duvernost: public
 - nazev: krajské kolo E
   termin: čtvrtek 20. dubna 2023
   date: 2023-04-20
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: školní kolo
   termin: 1. února – 31. března 2023
   date: 2023-03-31
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: 10. dubna – 31. května 2023
   date: 2023-05-31
   misto: přesné datum určují OKFO
-  kompetence: KKFO, OKFO
-  duvernost: public

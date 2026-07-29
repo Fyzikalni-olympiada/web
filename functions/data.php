@@ -55,8 +55,8 @@ function data_normalize_date($value)
 }
 
 /**
- * Termíny ročníku z data/terms/<rocnik>.yaml: kategorie => [nazev, termin, date, misto?, kompetence, duvernost].
- * Kategorie: 0 = společné, 1 = A, 2 = B–D, 3 = E+F, 4 = Archimediáda (G).
+ * Termíny ročníku z data/terms/<rocnik>.yaml: kategorie => [nazev, termin, date, misto?].
+ * Kategorie: spolecne, A, BCD, EF, G (Archimediáda).
  */
 function data_terms($rocnik)
 {

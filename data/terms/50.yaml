@@ -1,104 +1,60 @@
-0:
+spolecne:
 - nazev: zahájení soutěže
   termin: 15. 9. 2008
   date: 2008-09-15
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: domácí kolo
   termin: do 16. 1. 2009
   date: 2009-01-16
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 23. 1. 2009
   date: 2009-01-23
-  kompetence: KKFO
-  duvernost: public
-- nazev: zpráva o výsledku krajského kola
-  termin: do pondělí 2. 2. 2009
-  date: 2009-02-02
-  kompetence: předsedové KKFO
-  duvernost: private
 - nazev: celostátní kolo
   termin: 26. února &ndash; 1. března 2009
   date: 2009-03-01
   misto: Praha
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: korespondenční seminář
   termin: 16. 3. &ndash; 31. 5. 2009
   date: 2009-05-31
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: soustředění před MFO
   termin: 8. 6. &ndash; 19. 6. 2009
   date: 2009-06-19
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 40. Mezinárodní FO
   termin: 11. &ndash; 19. července 2009
   date: 2009-07-19
   misto: Mexiko (Mérida Yucatán)
-  kompetence: ÚKFO
-  duvernost: public
-2:
+BCD:
 - nazev: domácí kolo
   termin: do 3. 4. 2009
   date: 2009-04-03
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 24. 4. 2009
   date: 2009-04-24
-  kompetence: KKFO
-  duvernost: public
-- nazev: výsledky kategorie B pro soustředění
-  termin: 5. 5. 2009
-  date: 2009-05-05
-  kompetence: předsedové KKFO
-  duvernost: private
 - nazev: celostátní soustředění v kategoriích B a C
   termin: 5. 9. &ndash; 19. 9. 2009
   date: 2009-09-19
   misto: Chata Táňa, Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: zahájení soutěže
   termin: do 15. 9. 2008
   date: 2008-09-15
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: domácí kolo
   termin: do 20. 3. 2009
   date: 2009-03-20
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: středa 1. 4. 2009
   date: 2009-04-01
-  kompetence: OKFO
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 29. 4. 2009
   date: 2009-04-29
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: zahájení soutěže
   termin: 1. 2. 2009
   date: 2009-02-01
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: domácí kolo
   termin: do 7. 5. 2009
   date: 2009-05-07
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: školní či okresní kolo
   termin: kolem 20. 5. 2009
   date: 2009-05-20
-  kompetence: OKFO, referenti
-  duvernost: public

@@ -1,7 +1,7 @@
 <h2>Ústřední kolo <?php echo (AKTUALNI_ROCNIK) ?>. ročníku FO</h2>
 
 <?php
-$uk_rows = terms_hledej('ústřední kolo', 1);
+$uk_rows = terms_hledej('ústřední kolo', 'A');
 if ($uk_rows) {
 	$termin = $uk_rows[0]['termin'];
 	$misto = isset($uk_rows[0]['misto']) ? $uk_rows[0]['misto'] : '';
@@ -9,7 +9,7 @@ if ($uk_rows) {
 	$termin = AKTUALNI_ROK;
 	$misto = 'České republiky';
 }
-$mfo_rows = terms_hledej('Mezinárodní FO', 1);
+$mfo_rows = terms_hledej('Mezinárodní FO', 'A');
 if ($mfo_rows) {
 	$terminMFO = $mfo_rows[0]['termin'];
 	$mistoMFO = isset($mfo_rows[0]['misto']) ? $mfo_rows[0]['misto'] : '';

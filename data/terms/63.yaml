@@ -1,86 +1,56 @@
-0:
+spolecne:
 - nazev: zahájení nového ročníku
   termin: 4. 10. 2021
   date: 2021-11-03
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: školní kolo
   termin: do 5. ledna 2022
   date: 2022-01-05
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 19. ledna 2022
   date: 2022-01-19
-  kompetence: KKFO
-  duvernost: public
 - nazev: ústřední kolo
   termin: 15.–18. března 2022
   date: 2022-03-19
   misto: Plzeň
-  kompetence: ''
-  duvernost: public
 - nazev: výběrové minisoustředění s testy
   termin: duben 2022
   date: 2022-04-30
   misto: Hradec Králové
-  kompetence: UKFO
-  duvernost: public
 - nazev: přípravné soustředění před MFO
   termin: červen 2022
   date: 2022-06-30
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 52. Mezinárodní FO
   termin: červenec 2022
   date: 2022-08-31
   misto: Bělorusko
-  kompetence: public
-  duvernost: public
-2:
+BCD:
 - nazev: školní kolo
   termin: do 29. března 2022
   date: 2022-03-29
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: úterý 26. dubna 2022
   date: 2022-04-26
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní soustředění v kategoriích B a&nbsp;C
   termin: září 2022
   date: 2022-09-30
   misto: Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: školní kolo
   termin: do 23. února 2022
   date: 2022-02-23
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: středa 23. března 2022
   date: 2022-03-23
-  kompetence: OKFO, KKFO
-  duvernost: public
 - nazev: krajské kolo E
   termin: čtvrtek 21. dubna 2022
   date: 2022-04-21
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: školní kolo
   termin: 1. února – 1. dubna 2022
   date: 2022-04-01
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: 11. dubna – 31. května 2022
   date: 2022-05-31
   misto: přesné datum určují OKFO
-  kompetence: KKFO, OKFO
-  duvernost: public

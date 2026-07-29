@@ -1,85 +1,55 @@
-0:
+spolecne:
 - nazev: zahájení nového ročníku
   termin: 15. 9. 2013
   date: 2013-09-15
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: domácí kolo
   termin: do 13. 1. 2014
   date: 2014-01-13
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 24. 1. 2014
   date: 2014-01-24
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní kolo
   termin: 24. 2.&ndash;27. 2. 2014
   date: 2014-02-28
   misto: "Hole\x9Aov"
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: výběrové minisoustředění s testy
   termin: 16. 4.&ndash;18. 4. 2014
   date: 2014-04-18
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: přípravné soustředění před MFO
   termin: 8. 6.&ndash;21. 6. 2014
   date: 2014-06-21
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 45. Mezinárodní FO
   termin: červenec 2014
   date: 2014-07-15
   misto: Kazachstán
-  kompetence: ÚKFO
-  duvernost: public
-2:
+BCD:
 - nazev: domácí kolo
   termin: do 4. 4. 2014
   date: 2014-04-04
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: pátek 25. 4. 2014
   date: 2014-04-25
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní soustředění v kategoriích B a&nbsp;C
   termin: 7.&ndash;20. září 2014
   date: 2014-09-07
   misto: Chata Táňa, Pec pod Sněžkou
-  kompetence: ÚKFO
-  duvernost: public
-3:
+EF:
 - nazev: domácí kolo
   termin: do 14. 3. 2014
   date: 2014-03-14
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: čtvrtek 27.&nbsp;3.&nbsp;2014
   date: 2014-03-27
-  kompetence: OKFO, KKFO
-  duvernost: public
 - nazev: krajské kolo E
   termin: středa 16. 4. 2014
   date: 2014-04-16
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: školní kolo
   termin: 1. 2.&ndash;7. 5. 2014
   date: 2014-05-07
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: druhé kolo
   termin: 21. 5.&ndash;25. 5. 2014
   date: 2014-05-25
-  kompetence: KKFO, OKFO
-  duvernost: public

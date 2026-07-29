@@ -4,19 +4,6 @@
 <?php
 echo '<p>Termíny odevzdání úloh domácího kola jsou jen <strong>orientační</strong>. Závazné termíny v&nbsp;jednotlivých krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajských komisí">webových stránkách</a>.</p>';
 
-$terminy = data_terms(AKTUALNI_ROCNIK);
-
-function terminy_public($kategorie)
-{
-	global $terminy;
-	if (!isset($terminy[$kategorie])) {
-		return array();
-	}
-	return array_filter($terminy[$kategorie], function ($t) {
-		return $t['duvernost'] === 'public';
-	});
-}
-
 if (!function_exists('mb_ucfirst')) { // nativní od PHP 8.4
 	function mb_ucfirst($s) {
 		return mb_strtoupper(mb_substr($s, 0, 1)) . mb_substr($s, 1);
@@ -25,24 +12,24 @@ if (!function_exists('mb_ucfirst')) { // nativní od PHP 8.4
 
 /* Společné termíny; nejbližší nadcházející zvýrazní js/fo.js podle data-date */
 echo '
-<p class="terminy" data-terminy-kategorie="0">';
-foreach (terminy_public(0) as $row) {
+<p class="terminy">';
+foreach (terms_kategorie('spolecne') as $row) {
 	echo '<span data-date="' . $row['date'] . '">' . mb_ucfirst($row['nazev']) . ' &ndash; ' . $row['termin'] . '</span><br />';
 }
 echo '
 </p>';
 
 foreach (array(
-	1 => 'Kategorie A &ndash; střední školy',
-	2 => 'Kategorie B, C, D &ndash; střední školy',
-	3 => 'Kategorie E, F &ndash; základní školy',
-	4 => 'Kategorie G &ndash; základní školy',
+	'A' => 'Kategorie A &ndash; střední školy',
+	'BCD' => 'Kategorie B, C, D &ndash; střední školy',
+	'EF' => 'Kategorie E, F &ndash; základní školy',
+	'G' => 'Kategorie G &ndash; základní školy',
 ) as $kategorie => $nadpis_kat) {
 	echo '<h3>' . $nadpis_kat . '</h3>';
 
 	echo '
-	<table class="table terminy" data-terminy-kategorie="' . $kategorie . '">';
-	foreach (terminy_public($kategorie) as $row) {
+	<table class="table terminy">';
+	foreach (terms_kategorie($kategorie) as $row) {
 		echo '
 	<tr data-date="' . $row['date'] . '">
 		<td width="30%">' . mb_ucfirst($row['nazev']) . '</td>

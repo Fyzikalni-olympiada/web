@@ -38,7 +38,7 @@ budou řešit náročné teoretické i experimentální úlohy.
 <h2>Přípravné soustředění před 51.&nbsp;Mezinárodní FO</h2>
 
 <?php
-$mfo_rows = terms_hledej('Mezinárodní FO', 1);
+$mfo_rows = terms_hledej('Mezinárodní FO', 'A');
 if ($mfo_rows) {
 	$terminMFO = $mfo_rows[0]['termin'];
 	$mistoMFO = isset($mfo_rows[0]['misto']) ? $mfo_rows[0]['misto'] : '';
@@ -46,7 +46,7 @@ if ($mfo_rows) {
 	$terminMFO = 'červenec '.AKTUALNI_ROK;
 	$mistoMFO = 'světa';
 }		
-$sous_rows = terms_hledej('soustředění před MFO', 1);
+$sous_rows = terms_hledej('soustředění před MFO', 'A');
 $termin = $sous_rows ? $sous_rows[0]['termin'] : 'červen '.AKTUALNI_ROK;		
 ?>
 

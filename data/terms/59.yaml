@@ -1,86 +1,56 @@
-0:
+spolecne:
 - nazev: zahájení nového ročníku
   termin: 18. 9. 2017
   date: 2017-09-18
-  kompetence: KKFO, referenti
-  duvernost: public
-1:
+A:
 - nazev: domácí kolo
   termin: do 10.&nbsp;ledna 2018
   date: 2018-01-10
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 24.&nbsp;ledna 2018
   date: 2018-01-24
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní kolo
   termin: "27.2.\x962.3.&nbsp;2018"
   date: 2018-03-02
   misto: Jablonec nad Nisou
-  kompetence: ''
-  duvernost: public
 - nazev: výběrové minisoustředění s testy
   termin: duben 2018
   date: 2018-04-30
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: přípravné soustředění před MFO
   termin: červen 2018
   date: 2018-06-30
   misto: Hradec Králové
-  kompetence: ÚKFO
-  duvernost: public
 - nazev: 49. Mezinárodní FO
   termin: "21.\x9629.&nbsp;července 2018"
   date: 2018-07-31
   misto: Lisabon, Portugalsko
-  kompetence: ''
-  duvernost: public
-2:
+BCD:
 - nazev: domácí kolo
   termin: do 3.&nbsp;dubna 2018
   date: 2018-04-03
   misto: Praha do 26. března 2018
-  kompetence: KKFO, referenti
-  duvernost: public
 - nazev: krajské kolo
   termin: středa 25.&nbsp;dubna 2018
   date: 2018-04-25
-  kompetence: KKFO
-  duvernost: public
 - nazev: celostátní soustředění v kategoriích B a&nbsp;C
   termin: "8.\x9621.&nbsp;září 2018"
   date: 2018-09-16
   misto: Pec pod Sněžkou
-  kompetence: ''
-  duvernost: public
-3:
+EF:
 - nazev: domácí kolo
   termin: do 7.&nbsp;března 2018
   date: 2018-03-07
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: středa 4.&nbsp;dubna&nbsp;2018
   date: 2018-04-04
-  kompetence: OKFO, KKFO
-  duvernost: public
 - nazev: krajské kolo E
   termin: pátek 27.&nbsp;dubna&nbsp;2018
   date: 2018-04-27
-  kompetence: KKFO
-  duvernost: public
-4:
+G:
 - nazev: Školní kolo
   termin: "1.&nbsp;února \x96 4.&nbsp;května 2018"
   date: 2018-05-04
-  kompetence: OKFO, referenti
-  duvernost: public
 - nazev: okresní kolo
   termin: "14.\x9631.&nbsp;května 2018 (přesné datum určují okresní komise)"
   date: 2018-05-31
-  kompetence: KKFO, OKFO
-  duvernost: public
