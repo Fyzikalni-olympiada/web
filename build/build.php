@@ -12,11 +12,10 @@
  */
 
 require dirname(__DIR__) . '/init.php';
-require_once(ROOT_DIR . 'functions/forum.php');
 
 $DIST = ROOT_DIR . 'dist/';
 
-/* Adresáře a soubory kopírované tak, jak jsou (kvary/praha se nenasazují;
+/* Adresáře a soubory kopírované tak, jak jsou (kvary se nenasazuje;
  * rss_forum.xml je jednou provždy zmrazený archiv) */
 $ASSET_DIRS = ['css', 'js', 'pic', 'images', 'fonts', 'dokumenty',
                'archiv', 'texty', 'vysledky', 'tana', 'upload'];
@@ -29,12 +28,13 @@ $NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails',
                  'texty/texty.tar', 'texty/matematika/cd.tar.gz'];
 
 /* Náhodná fotka: stejná pravidla jako staré rand_thumb() */
-$THUMB_EXCLUDE = ['temp', 'thumbnails', 'pic', 'images', 'cd', 'kvary', 'upload',
-                  '_ukrajina', '_norsko', 'dist', 'vendor', 'data', '.git', 'node_modules'];
+$THUMB_EXCLUDE = ['temp', 'thumbnails', 'pic', 'images', 'kvary', 'upload',
+                  'dist', 'vendor', '.git'];
 $THUMB_MIN_BYTES = 27 * 1024;
 $THUMB_SIZE = 260;
 
 $t0 = microtime(true);
+$selhani = 0;
 
 
 
@@ -62,7 +62,6 @@ function capture($file)
 function render_page($path_info)
 {
     $_SERVER['PATH_INFO'] = $path_info;
-    $_GET = [];
     return capture(ROOT_DIR . 'index.php');
 }
 
@@ -70,10 +69,7 @@ function render_page($path_info)
 
 /* ---------- 1. stránky ---------- */
 
-if (is_dir($DIST)) {
-    exec('rm -rf ' . escapeshellarg($DIST));
-}
-mkdir($DIST);
+exec('rm -rf ' . escapeshellarg($DIST));
 
 $pages = array_keys(data_routes());
 $pages[] = 'archiv-novinek';
@@ -90,8 +86,8 @@ foreach (data_forum() as $root) {
 }
 
 foreach ($pages as $name) {
-    $out = $DIST . ($name === '/' ? 'index' : $name) . '.html';
-    write_file($out, render_page($name === '/' ? '/' : '/' . $name));
+    $out = $name === '/' ? 'index' : $name;
+    write_file($DIST . $out . '.html', render_page(url_for_pathname($name)));
 }
 write_file($DIST . '404.html', render_page('/tato-stranka-neexistuje'));
 
@@ -133,6 +129,7 @@ foreach ($iter as $file) {
             . ' -quality 95 ' . escapeshellarg(ROOT_DIR . $thumb_rel), $o, $rc);
         if ($rc !== 0) {
             fwrite(STDERR, "! miniatura selhala: $rel\n");
+            $selhani++;
             continue;
         }
         $converted++;
@@ -179,6 +176,7 @@ foreach ($fragments as $src) {
         file_put_contents($DIST . substr($src, strlen(ROOT_DIR)), implode("\n", $out));
     } else {
         fwrite(STDERR, "! fragment selhal: $src\n");
+        $selhani++;
     }
     $out = [];
 }
@@ -188,3 +186,8 @@ foreach ($fragments as $src) {
 printf("stránek: %d, miniatur: %d (nových %d), fragmentů: %d, za %.1f s\n",
     count($pages) + 1, count($manifest), $converted, count($fragments),
     microtime(true) - $t0);
+
+if ($selhani > 0 || count($manifest) === 0) {
+    fwrite(STDERR, "build selhal: $selhani chyb\n");
+    exit(1);
+}

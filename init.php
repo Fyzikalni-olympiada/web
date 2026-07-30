@@ -21,3 +21,4 @@ define('FORUM_VLAKEN_NA_STRANKU', 7);
 
 require_once(ROOT_DIR.'functions/data.php');
 require_once(ROOT_DIR.'functions/folib.php');
+require_once(ROOT_DIR.'functions/forum.php');

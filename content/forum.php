@@ -1,7 +1,5 @@
 <?php
 
-include_once(ROOT_DIR.'functions/forum.php');
-
 echo '
 <p><strong>Diskusní fórum je uzavřeno a slouží už jen jako archiv starších příspěvků.</strong>
 Máte-li dotaz nebo připomínku, napište nám na <a href="mailto:info@fyzikalniolympiada.cz">info@fyzikalniolympiada.cz</a>.</p>';
