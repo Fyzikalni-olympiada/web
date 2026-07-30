@@ -23,7 +23,9 @@ podrobnější starší vzor `archiv/mfo/52.html`) a zapojí ji do webu.
    `https://ipho-unofficial.org/timeline/<rok>/` má datum, místo, počty účastníků
    a medailové statistiky (zlaté/stříbrné/bronzové/čestná uznání).
 2. **Výsledky českých soutěžících** — `https://ipho-unofficial.org/countries/CZE/individual`
-   (jméno, ocenění, absolutní pořadí). **Pokud pro daný rok žádné záznamy nejsou,
+   (jméno, ocenění, absolutní pořadí); bodové zisky (sloupec Total) jsou na
+   `https://ipho-unofficial.org/timeline/<rok>/individual`, případně přesněji
+   v příloze zprávy (`archiv/mfo/<N>/priloha.pdf`), která má při rozporu přednost. **Pokud pro daný rok žádné záznamy nejsou,
    ČR se ročníku nezúčastnila** (např. 54. MFO 2024 v Íránu) — domluv se s uživatelem;
    obvykle pak vzniká jen krátká faktická stránka bez delegace a výsledků
    (vzor `archiv/mfo/54.html`).
@@ -65,10 +67,24 @@ Stručné a informativní, žádné vlastní úvahy a hodnocení. Struktura:
   „<N>. MFO, <země>" jako **první za „České úspěchy"**
 - `html/mfo_odkazy.html`: `<li>` s odkazem na oficiální web a logem (width 200),
   nad předchozí ročník
+- `data/mfo-uspechy.yaml`: nový záznam **na začátek** (řazeno od nejnovějšího):
+  ```yaml
+  - mfo: <N>
+    rok: <rok>
+    misto: <Město, Země>
+    ucastnici:
+    - poradi: '86'
+      jmeno: Jméno Příjmení
+      body: '27,00'        # česká desetinná čárka; vynech, pokud nejsou k dispozici
+      oceneni: stříbro     # zlato | stříbro | bronz | uznání; bez ocenění vynech
+  ```
+  Při neúčasti ČR místo `ucastnici` jen `poznamka`. Stránka /mfo/ceske-uspechy
+  i celkové statistiky se z toho vyrenderují samy.
 
 ## Ověření a commit
 
 1. `make build` bez chyb; dev server (`make dev`): `/mfo/<N>` renderuje, jména
-   sedí, menu i stránka odkazů položku mají, logo se servíruje
+   sedí, menu i stránka odkazů položku mají, logo se servíruje a ročník je
+   vidět na /mfo/ceske-uspechy včetně započtení do statistik
 2. vizuální kontrola stránky v prohlížeči
 3. commit s one-line zprávou: `zpráva o <N>. MFO (<místo> <rok>)`
