@@ -119,6 +119,14 @@ function data_parse_front_matter($file)
     return $item;
 }
 
+/** @return array[] české výsledky na MFO po ročnících (od nejnovějšího) */
+function data_mfo_uspechy()
+{
+    return Yaml::parseFile(ROOT_DIR . 'data/mfo-uspechy.yaml');
+}
+
+
+
 /** @return array[] kořenové příspěvky fóra (vnořené odpovědi v 'children') */
 function data_forum()
 {
