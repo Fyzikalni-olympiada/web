@@ -23,7 +23,10 @@ podrobnější starší vzor `archiv/mfo/52.html`) a zapojí ji do webu.
    `https://ipho-unofficial.org/timeline/<rok>/` má datum, místo, počty účastníků
    a medailové statistiky (zlaté/stříbrné/bronzové/čestná uznání).
 2. **Výsledky českých soutěžících** — `https://ipho-unofficial.org/countries/CZE/individual`
-   (jméno, ocenění, absolutní pořadí).
+   (jméno, ocenění, absolutní pořadí). **Pokud pro daný rok žádné záznamy nejsou,
+   ČR se ročníku nezúčastnila** (např. 54. MFO 2024 v Íránu) — domluv se s uživatelem;
+   obvykle pak vzniká jen krátká faktická stránka bez delegace a výsledků
+   (vzor `archiv/mfo/54.html`).
 3. **Školy soutěžících** — výsledková listina ústředního kola kategorie A příslušného
    ročníku FO: `https://osmo.fyzikalniolympiada.cz/public/kolo/<ročníkFO>-A-3/vysledky`
    (rozcestník `https://osmo.fyzikalniolympiada.cz/public/history/`). Zkratku „G" rozepiš
