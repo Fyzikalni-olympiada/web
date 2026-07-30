@@ -39,11 +39,38 @@
 	/* ---------- zobrazit / skrýt boční panel (malé displeje) ---------- */
 
 	var sidebar = document.getElementById('sidebar');
+	var zaclona = document.createElement('div');
+	zaclona.id = 'sidebar-zaclona';
+	document.body.appendChild(zaclona);
+
+	function sidebarPrepni(otevrit) {
+		sidebar.classList.toggle('open', otevrit);
+		zaclona.classList.toggle('open', otevrit);
+	}
 	document.querySelectorAll('[data-toggle=sidebar]').forEach(function (btn) {
 		btn.addEventListener('click', function () {
-			sidebar.classList.toggle('open');
+			sidebarPrepni(!sidebar.classList.contains('open'));
 		});
 	});
+	zaclona.addEventListener('click', function () {
+		sidebarPrepni(false);
+	});
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') {
+			sidebarPrepni(false);
+		}
+	});
+	/* swipe doprava panel zavře */
+	var swipeX = null;
+	sidebar.addEventListener('touchstart', function (e) {
+		swipeX = e.touches[0].clientX;
+	}, { passive: true });
+	sidebar.addEventListener('touchend', function (e) {
+		if (swipeX !== null && e.changedTouches[0].clientX - swipeX > 60) {
+			sidebarPrepni(false);
+		}
+		swipeX = null;
+	}, { passive: true });
 
 	/* ---------- pomocné ---------- */
 

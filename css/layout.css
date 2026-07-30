@@ -536,6 +536,20 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 		translate: 0 0;
 		visibility: visible;
 	}
+	#sidebar-zaclona.open {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+/* záclona pod vysunutým panelem (vkládá js/fo.js); zavírá tapnutím mimo */
+#sidebar-zaclona {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.35);
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.25s, visibility 0.25s;
 }
 
 
