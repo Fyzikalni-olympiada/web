@@ -68,6 +68,9 @@
   - name: České úspěchy
     title: Přehled českých úspěchů na MFO
     file: mfo/ceske-uspechy
+  - name: 54. MFO, Írán
+    title: 54. Mezinárodní fyzikální olympiáda
+    file: mfo/54
   - name: 53. MFO, Japonsko
     title: Zpráva o konání 53. Mezinárodní fyzikální olympiády
     file: mfo/53
