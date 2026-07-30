@@ -191,6 +191,79 @@ function news_homepage()
 
 
 
+/* ----- Fotogalerie (zmrazený archiv celostátních kol) ----- */
+
+
+
+/**
+ * Vypíše fotogalerii: fotky v $dir/photos, náhledy v $dir/thumbnails,
+ * volitelné popisky v $dir/popisky.csv (soubor;popisek).
+ * Datum v titulku se čte z prefixu názvu YYYYMMDD; pro názvy DD_HHMMSS
+ * předej mapu $dny (kód dne => datum), doplní se čas.
+ */
+function fotogalerie($dir, $dny = null)
+{
+    $popisky = array();
+    $csv = ROOT_DIR . $dir . '/popisky.csv';
+    if (is_file($csv)) {
+        $handle = fopen($csv, 'r');
+        while (($data = fgetcsv($handle, 0, ';')) !== false) {
+            $popisky[$data[0]] = $data[1];
+        }
+        fclose($handle);
+    }
+
+    echo '
+<script src="js/jquery.lightbox-0.5.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function() {
+        $(\'.photoContainer a\').lightBox({
+            fixedNavigation: true,
+            imageLoading: \'pic/lightboxes/lightbox-ico-loading.gif\',
+            imageBtnPrev: \'pic/lightboxes/lightbox-btn-prev.gif\',
+            imageBtnNext: \'pic/lightboxes/lightbox-btn-next.gif\',
+            imageBtnClose: \'pic/lightboxes/lightbox-btn-close.gif\',
+            imageBlank: \'pic/lightboxes/lightbox-blank.gif\',
+            containerBorderSize: 10,
+            containerResizeSpeed: 400,
+            txtImage: \'Obrázek\',
+            txtOf: \'z\'
+        });
+    });
+</script>
+
+<div id="photoGallery">';
+
+    $nahledy = array_flip(scandir(ROOT_DIR . $dir . '/thumbnails'));
+    foreach (glob(ROOT_DIR . $dir . '/photos/*') as $foto) {
+        $soubor = basename($foto);
+        if (!isset($nahledy[$soubor])) {
+            continue;
+        }
+        if ($dny !== null) { // názvy DD_HHMMSS…
+            $title = isset($dny[substr($soubor, 0, 2)]) ? $dny[substr($soubor, 0, 2)] : '';
+            $title .= ', ' . substr($soubor, 3, 2) . ':' . substr($soubor, 5, 2) . ':' . substr($soubor, 7, 2);
+        } else { // názvy YYYYMMDD…
+            $title = ltrim(substr($soubor, 6, 2), '0') . '. ' . ltrim(substr($soubor, 4, 2), '0') . '. ' . substr($soubor, 0, 4);
+        }
+        if (!empty($popisky[$soubor])) {
+            $title .= ' &ndash; ' . $popisky[$soubor];
+        }
+        echo '
+	<div class="photoContainer">
+		<a href="' . ROOT_WWW . $dir . '/photos/' . $soubor . '" title="' . $title . '">
+		<img src="' . ROOT_WWW . $dir . '/thumbnails/' . $soubor . '" alt="' . $title . '" loading="lazy" />
+		</a>
+	</div>';
+    }
+
+    echo '
+<div style="clear: left"></div>
+</div>';
+}
+
+
+
 function nadpis()
 {
 	if ($GLOBALS['nadpis'] === NULL) {

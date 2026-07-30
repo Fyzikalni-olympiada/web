@@ -100,12 +100,13 @@ i.html {
 }
 
 #photoGallery div.photoContainer a {
-	display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	margin:2px;
 	padding:0px;
 	width: 175px;
 	height: 175px;
-	text-align: center;
 	overflow:hidden;
 }
 
