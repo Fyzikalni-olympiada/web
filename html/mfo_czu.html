@@ -69,9 +69,16 @@ foreach ($rocniky as $r) {
 		echo '
 <img src="' . $r['logo'] . '" width="200" align="right" alt="Logo ' . $r['mfo'] . '. MFO"/>';
 	}
+	$odkazy_radek = array();
+	if (isset(data_routes()['mfo/' . $r['mfo']])) {
+		$odkazy_radek[] = '<a href="/mfo/' . $r['mfo'] . '">zpráva o konání</a>';
+	}
 	if (isset($r['web'])) {
+		$odkazy_radek[] = '<a href="' . $r['web'] . '" target="_blank">oficiální stránky ročníku</a>';
+	}
+	if ($odkazy_radek) {
 		echo '
-<p><a href="' . $r['web'] . '" target="_blank">oficiální stránky ročníku</a></p>';
+<p>' . implode(' | ', $odkazy_radek) . '</p>';
 	}
 	if (isset($r['poznamka'])) {
 		echo '
