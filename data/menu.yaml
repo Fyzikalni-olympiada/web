@@ -119,6 +119,11 @@
 - name: Diskuse
   title: Diskuse nejenom o Fyzikální olympiádě
   file: diskuse
+  children:
+  - name: Studenti
+    file: diskuse
+  - name: Učitelé
+    file: diskuse-ucitele
 - name: Ústřední komise
   title: Adresář ústřední komise (a předsedů krajských komisí) FO
   file: ukfo

@@ -83,22 +83,12 @@ function menu($current)
         $selected = menu_contains($node, $current)
             || (isset($node['file']) && $node['file'] === 'diskuse' && strpos((string) $current, 'diskuse') === 0);
 
-        if (isset($node['file']) && $node['file'] === 'diskuse') { //diskuse: studenti/ucitele
-            $strHTML .= '
-				<li class="dropdown' . ($selected ? ' current-tab' : '') . ($i++ > 5 ? ' smaller' : '') . '">
-				<a href="' . $url . '" title="' . $title . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $node['name'] . '<b class="caret"></b></a>
-				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
-					<li><a href="/diskuse">Studenti</a></li>
-					<li><a href="/diskuse-ucitele">Učitelé</a></li>
-				</ul>';
-        } else {
-            $dropdown = ($submenu = submenu($node, $current));
-            $strHTML .= '
+        $dropdown = ($submenu = submenu($node, $current));
+        $strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 5 ? ' smaller' : '') . '">
 			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
-            if ($dropdown) {
-                $strHTML .= $submenu;
-            }
+        if ($dropdown) {
+            $strHTML .= $submenu;
         }
         $strHTML .= ' </li>';
     }
