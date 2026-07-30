@@ -36,6 +36,14 @@
 		return;
 	}
 
+	/* ---------- hamburger hlavního menu (malé displeje) ---------- */
+
+	var menuTlacitko = document.getElementById('menu-tlacitko');
+	menuTlacitko.addEventListener('click', function () {
+		var otevreno = document.getElementById('main-nav').classList.toggle('open');
+		menuTlacitko.setAttribute('aria-expanded', otevreno);
+	});
+
 	/* ---------- zobrazit / skrýt boční panel (malé displeje) ---------- */
 
 	var sidebar = document.getElementById('sidebar');

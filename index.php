@@ -115,6 +115,7 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 			</small>
 		</div>
 
+		<button type="button" id="menu-tlacitko" class="visible-xs" aria-expanded="false">&#9776;&nbsp;Menu</button>
 		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">
 			<?php echo menu($route['pathname']); ?>
 		</div>

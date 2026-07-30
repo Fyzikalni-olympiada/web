@@ -444,6 +444,15 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #search {position: absolute; bottom: -35px; right: 0px;}
 
 /* Main navigation */
+#menu-tlacitko {
+	margin: 6px 15px 0;
+	padding: 4px 12px;
+	font-size: 1.3em;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #444;
+}
 #main-nav > ul > li {margin: 0 20px; position: relative}
 #main-nav > ul > li > a {
 	font-size: 1.6em;
@@ -470,8 +479,13 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	#logo img {width: 120px}
 	#logo span {font-size: 40px; line-height: 45px}
 	#logo small {font-size: 17px; padding-left: 0}
-	#main-nav > ul > li {margin: 0 12px;}
-	#main-nav > ul > li > a {font-size: 1.4em; line-height: 36px;}
+	/* hlavní menu skryté za hamburger (přepíná js/fo.js) */
+	#main-nav {display: none}
+	#main-nav.open {display: block}
+	#main-nav > ul > li {display: block; margin: 0; border-top: 1px solid #eee}
+	#main-nav > ul > li:first-child {border-top: none}
+	#main-nav > ul > li > a {display: block; font-size: 1.4em; line-height: 36px;}
+	#main-nav .dropdown-menu {position: static; float: none; width: 100%; box-shadow: none; border: none}
 	h1 {display: inline}
 }
 @media (max-width: 640px) {

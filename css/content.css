@@ -344,6 +344,9 @@ table.zadani td br + small {
 		overflow-x: auto;
 		padding-bottom: 6px;
 	}
+	#zapojeni .krok {
+		min-width: 150px;
+	}
 }
 hr.aktuality-predel {
 	margin: 30px 0 25px;
