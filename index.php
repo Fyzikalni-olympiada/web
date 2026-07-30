@@ -10,9 +10,6 @@ if ($napln === 404) {
 /*
  * HTML KOD
  */
-echo '<?xml version="1.0" encoding="utf-8"?>
-';
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='cs' lang='cs'>
@@ -53,7 +50,6 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <link rel='stylesheet' type='text/css' media='print' href='/css/print.css' />
 <link rel="stylesheet" type="text/css" media='screen' href="/css/jquery.lightbox-0.5.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="/css/prettyPhoto.css" title="prettyPhoto main stylesheet" charset="utf-8" />
-<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="/css/ie8.css" /><![endif]-->
 
 <script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
@@ -248,7 +244,7 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
     <div id="footer" class="row row-offcanvas row-offcanvas-right">
         <div class="col-sm-6 col-sm-push-6 col-lg-5 col-lg-offset-1">
             <p class="large pull-right text-right">
-                <a href="/rss" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
+                <a href="/rss.xml" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
                 <a href="/dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
                 <a href="/dokumenty/pravidla-pro-urcovani-poradi.pdf">Pravidla pro určování pořadí</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>

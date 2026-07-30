@@ -4,12 +4,6 @@
 <?php
 echo '<p>Termíny odevzdání úloh domácího kola jsou jen <strong>orientační</strong>. Závazné termíny v&nbsp;jednotlivých krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajských komisí">webových stránkách</a>.</p>';
 
-if (!function_exists('mb_ucfirst')) { // nativní od PHP 8.4
-	function mb_ucfirst($s) {
-		return mb_strtoupper(mb_substr($s, 0, 1)) . mb_substr($s, 1);
-	}
-}
-
 /* Společné termíny; nejbližší nadcházející zvýrazní js/fo.js podle data-date */
 echo '
 <p class="terminy">';

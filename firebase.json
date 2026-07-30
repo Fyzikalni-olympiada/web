@@ -3,26 +3,99 @@
 		"public": "dist",
 		"cleanUrls": true,
 		"redirects": [
-			{ "source": "/zajimavosti/korespondencni-seminare", "destination": "/korespondencni-seminare", "type": 301 },
-			{ "source": "/zajimavosti/jine-olympiady", "destination": "/jine-olympiady", "type": 301 },
-			{ "source": "/zajimavosti/odkazy", "destination": "/odkazy", "type": 301 },
-			{ "source": "/archiv/studijni-texty", "destination": "/studijni-texty", "type": 301 },
-			{ "source": "/novinky", "destination": "/", "type": 301 },
-			{ "source": "/rss.php", "destination": "/rss.xml", "type": 301 },
-			{ "source": "/rss_forum.php", "destination": "/rss_forum.xml", "type": 301 }
+			{
+				"source": "/zajimavosti/korespondencni-seminare",
+				"destination": "/korespondencni-seminare",
+				"type": 301
+			},
+			{
+				"source": "/zajimavosti/jine-olympiady",
+				"destination": "/jine-olympiady",
+				"type": 301
+			},
+			{
+				"source": "/zajimavosti/odkazy",
+				"destination": "/odkazy",
+				"type": 301
+			},
+			{
+				"source": "/archiv/studijni-texty",
+				"destination": "/studijni-texty",
+				"type": 301
+			},
+			{
+				"source": "/novinky",
+				"destination": "/",
+				"type": 301
+			},
+			{
+				"source": "/rss.php",
+				"destination": "/rss.xml",
+				"type": 301
+			},
+			{
+				"source": "/rss_forum.php",
+				"destination": "/rss_forum.xml",
+				"type": 301
+			},
+			{
+				"source": "/novinka.php",
+				"destination": "/novinka",
+				"type": 301
+			},
+			{
+				"source": "/domaci-kolo",
+				"destination": "/stredni-skoly",
+				"type": 301
+			},
+			{
+				"source": "/krajske-kolo",
+				"destination": "/stredni-skoly",
+				"type": 301
+			},
+			{
+				"source": "/celostatni-kolo",
+				"destination": "/ustredni-kolo",
+				"type": 301
+			},
+			{
+				"source": "/kategorie-e-f",
+				"destination": "/zakladni-skoly",
+				"type": 301
+			},
+			{
+				"source": "/mfo/aktualni",
+				"destination": "/mfo/52",
+				"type": 301
+			}
 		],
 		"headers": [
 			{
 				"source": "/temp/images/**",
-				"headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000" }]
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "public, max-age=2592000"
+					}
+				]
 			},
 			{
 				"source": "**/*.@(jpg|jpeg|png|gif|svg|pdf)",
-				"headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "public, max-age=604800"
+					}
+				]
 			},
 			{
 				"source": "/data/*.json",
-				"headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+				"headers": [
+					{
+						"key": "Cache-Control",
+						"value": "public, max-age=3600"
+					}
+				]
 			}
 		]
 	}
