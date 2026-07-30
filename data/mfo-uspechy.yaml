@@ -6,18 +6,23 @@
   - poradi: '74'
     jmeno: Martin Kudrna
     oceneni: stříbro
+    body: 25,60
   - poradi: '97'
     jmeno: Jakub Kubica
     oceneni: stříbro
+    body: 23,80
   - poradi: '135'
     jmeno: Matouš Mišta
     oceneni: bronz
+    body: 20,50
   - poradi: '202'
     jmeno: David Košata
     oceneni: bronz
+    body: 15,50
   - poradi: '208'
     jmeno: Daniel Viktor Theiss
     oceneni: bronz
+    body: 15,30
 - mfo: 54
   rok: 2024
   misto: Isfahán, Írán
@@ -29,18 +34,23 @@
   - poradi: '86'
     jmeno: Samuel Rosiar
     oceneni: stříbro
+    body: 27,00
   - poradi: '133'
     jmeno: Lukáš Javora
     oceneni: bronz
+    body: 22,20
   - poradi: '211'
     jmeno: David Bálek
     oceneni: bronz
+    body: 17,40
   - poradi: '222'
     jmeno: Pavel Provazník
     oceneni: uznání
+    body: 17,00
   - poradi: '225'
     jmeno: Mikuláš Fiala
     oceneni: uznání
+    body: 16,90
 - mfo: 52
   rok: 2022
   misto: online z Hamburku
@@ -48,17 +58,22 @@
   - poradi: '71'
     jmeno: Josef Vácha
     oceneni: stříbro
+    body: 18,90
   - poradi: '97'
     jmeno: Aleš Opl
     oceneni: stříbro
+    body: 16,50
   - poradi: '131'
     jmeno: Jiří Kohl
     oceneni: bronz
+    body: 14,45
   - poradi: '177'
     jmeno: Hynek Jakeš
     oceneni: bronz
+    body: 12,45
   - poradi: '306'
     jmeno: Ondřej Škrna
+    body: 6,85
 - mfo: 51
   rok: 2021
   misto: Litva, online
@@ -67,18 +82,23 @@
   - poradi: '63'
     jmeno: Hynek Jakeš
     oceneni: stříbro
+    body: 28,60
   - poradi: '113'
     jmeno: Matěj Dvořák
     oceneni: bronz
+    body: 21,60
   - poradi: '130'
     jmeno: Jiří Kohl
     oceneni: bronz
+    body: 20,00
   - poradi: '155'
     jmeno: Marek Fürst
     oceneni: bronz
+    body: 17,70
   - poradi: '173'
     jmeno: Adam Mendl
     oceneni: bronz
+    body: 16,00
 - mfo: 50
   rok: 2019
   misto: Tel Aviv, Izrael
@@ -86,18 +106,23 @@
   - poradi: '90'
     jmeno: Jindřich Jelínek
     oceneni: stříbro
+    body: 17,70
   - poradi: '133'
     jmeno: Viktor Fukala
     oceneni: bronz
+    body: 14,10
   - poradi: '154'
     jmeno: Josef Minařík
     oceneni: bronz
+    body: 12,70
   - poradi: '171'
     jmeno: Michal Jireš
     oceneni: bronz
-  - poradi: '251'
+    body: 12,00
+  - poradi: '246'
     jmeno: Martin Schmied
     oceneni: uznání
+    body: 8,30
 - mfo: 49
   rok: 2018
   misto: Lisabon, Portugalsko
@@ -105,18 +130,23 @@
   - poradi: '81'
     jmeno: Jindřich Jelínek
     oceneni: stříbro
+    body: 29,55
   - poradi: '143'
     jmeno: Šimon Karch
     oceneni: bronz
+    body: 23,60
   - poradi: '201'
     jmeno: Jakub Suchánek
     oceneni: bronz
+    body: 18,05
   - poradi: '218'
     jmeno: Martin Orság
     oceneni: uznání
+    body: 16,80
   - poradi: '255'
     jmeno: Václav Kubíček
     oceneni: uznání
+    body: 14,90
 - mfo: 48
   rok: 2017
   misto: Yogyakarta, Indonésie
@@ -143,18 +173,23 @@
   - poradi: '136'
     jmeno: Kryštof Kolář
     oceneni: bronz
+    body: 28,90
   - poradi: '150'
     jmeno: Lukáš Honsa
     oceneni: bronz
+    body: 27,30
   - poradi: '160'
     jmeno: Jiří Etrych
     oceneni: bronz
+    body: 26,30
   - poradi: '233'
     jmeno: Lukáš Supík
     oceneni: uznání
+    body: 21,10
   - poradi: '262'
     jmeno: Petr Hrubý
     oceneni: uznání
+    body: 18,50
 - mfo: 46
   rok: 2015
   misto: Bombaj, Indie
@@ -162,18 +197,23 @@
   - poradi: '82'
     jmeno: Filip Bialas
     oceneni: stříbro
+    body: 34,60
   - poradi: '83'
     jmeno: Václav Rozhoň
     oceneni: stříbro
+    body: 34,40
   - poradi: '85'
     jmeno: Jiří Kučera
     oceneni: stříbro
+    body: 34,30
   - poradi: '148'
     jmeno: Jakub Dolejší
     oceneni: bronz
+    body: 27,40
   - poradi: '153'
     jmeno: Václav Miřátský
     oceneni: bronz
+    body: 27,00
 - mfo: 45
   rok: 2014
   misto: Kazachstán
