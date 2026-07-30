@@ -68,6 +68,9 @@
   - name: České úspěchy
     title: Přehled českých úspěchů na MFO
     file: mfo/ceske-uspechy
+  - name: 56. MFO, Kolumbie
+    title: Zpráva o konání 56. Mezinárodní fyzikální olympiády
+    file: mfo/56
   - name: 55. MFO, Francie
     title: Zpráva o konání 55. Mezinárodní fyzikální olympiády
     file: mfo/55

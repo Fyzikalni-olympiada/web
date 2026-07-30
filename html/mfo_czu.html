@@ -86,7 +86,7 @@ foreach ($rocniky as $r) {
 	foreach ($r['ucastnici'] as $u) {
 		echo '
 <tr>
-  <td align="right">' . $u['poradi'] . '.</td>
+  <td align="right">' . (isset($u['poradi']) ? $u['poradi'] . '.' : '') . '</td>
   <td>' . $u['jmeno'] . '</td>'
 			. ($ma_body ? '
   <td>' . (isset($u['body']) ? $u['body'] : '') . '</td>' : '') . '
