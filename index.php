@@ -3,6 +3,9 @@ require_once('init.php');
 
 $route = parsuj();
 $napln = $route['napln'];
+if ($napln === 404) {
+	http_response_code(404); // pro dev server; v produkci řeší Firebase přes 404.html
+}
 
 /*
  * HTML KOD
