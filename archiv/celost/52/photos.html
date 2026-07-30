@@ -24,7 +24,6 @@
 
 <div id="photoGallery">
 <?php
-define ('POCET_FOTEK_NA_STRANKU', 50);
 if (isset($_GET['page'])) {
 	$strana = $_GET['page'];
 } else {
@@ -71,9 +70,9 @@ if (is_dir(ROOT_DIR.$cesta)) {
 	// srovna nazvy souboru
 }	
 	
-$obrazek_start = ($strana - 1) * (POCET_FOTEK_NA_STRANKU);
+$obrazek_start = ($strana - 1) * (PHP_INT_MAX);
 // ktery obrazek bude prvni
-for ($i = $obrazek_start; ($i < $obrazek_start+POCET_FOTEK_NA_STRANKU && $i<sizeof($soubor)); $i++) {
+for ($i = $obrazek_start; ($i < $obrazek_start+PHP_INT_MAX && $i<sizeof($soubor)); $i++) {
 // opakuj dokud nevycerpame vsechny obrazky
 	if (file_exists(ROOT_DIR.$cesta_male.'/'.$soubor[$i])) { //existuje nahled?
 		$title = '';
@@ -82,7 +81,7 @@ for ($i = $obrazek_start; ($i < $obrazek_start+POCET_FOTEK_NA_STRANKU && $i<size
 		$den = ltrim(substr($soubor[$i],6,2), '0');
 
 		$title .= "$den. $mes. $rok";
-		if ($popisky[$soubor[$i]]) {
+		if (!empty($popisky[$soubor[$i]])) {
 			$title .= ' &ndash; '.$popisky[$soubor[$i]];
 		}
 		list($width, $height, $type, $attr) = getimagesize(ROOT_DIR.$cesta_male.'/'.$soubor[$i]);?>
@@ -94,7 +93,7 @@ for ($i = $obrazek_start; ($i < $obrazek_start+POCET_FOTEK_NA_STRANKU && $i<size
 	}
 }
 
-$pocet_stran = ceil( count($soubor) / (POCET_FOTEK_NA_STRANKU) );
+$pocet_stran = ceil( count($soubor) / (PHP_INT_MAX) );
 // spocitame pocet stran galerie
 
 echo '
@@ -102,7 +101,7 @@ echo '
 if ($strana!=1){
 	echo '<a href="' . odkaz('archiv/celost/52/photos.html') . '?page='.($strana-1).'" title="' . lng('Předchozí strana','Previous Page') . '">&lt;&ndash;</a> | '; //da predchozi, kdyz nutne
 }
-for ($i=1; $i<=$pocet_stran; $i++) {
+for ($i=1; $pocet_stran>1 && $i<=$pocet_stran; $i++) {
 // cyklus pro zobrazeni navigacni listy
 	if ($i!=$strana) {
 		echo '<a href="' . odkaz('archiv/celost/52/photos.html') . '?page='.($i).'" title="' . lng('Strana','Page') . ' '.$i.'">'.$i.'</a> | ';
