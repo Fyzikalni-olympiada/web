@@ -44,7 +44,7 @@ function forum_datum_cas($posted)
 
 
 
-function forum_post_html($node, $root_id)
+function forum_post_html($node, $permalink_root_id = null)
 {
     $s = '';
     if (isset($node['email']) && preg_match("/@fykos.mff.cuni.cz$/", $node['email'])) {
@@ -70,9 +70,9 @@ function forum_post_html($node, $root_id)
                 <span class="loud">' . $s_email . '</span>
                 &ndash; ' . forum_datum_cas($node['posted']) . '</div>
 ';
-    if ($GLOBALS['forum_thread'] === null) {
+    if ($permalink_root_id !== null) {
         $s .= '
-            <div class="right"><a href="/' . 'diskuse/vlakno/' . $root_id . '#p' . $node['id'] . '">#' . $node['id'] . '</a></div>';
+            <div class="right"><a href="/diskuse/vlakno/' . $permalink_root_id . '#p' . $node['id'] . '">#' . $node['id'] . '</a></div>';
     }
     $s .= '
             <div class="clearer">&nbsp;</div>
@@ -94,7 +94,7 @@ function forum_post_html($node, $root_id)
 
 
 /** Vnořené odpovědi (rekurzivně) */
-function forum_replies_html($node, $root_id)
+function forum_replies_html($node, $permalink_root_id = null)
 {
     if (empty($node['children'])) {
         return '';
@@ -104,8 +104,8 @@ function forum_replies_html($node, $root_id)
     foreach ($node['children'] as $child) {
         $s .= '
     <li class="comment">';
-        $s .= forum_post_html($child, $root_id);
-        $s .= forum_replies_html($child, $root_id);
+        $s .= forum_post_html($child, $permalink_root_id);
+        $s .= forum_replies_html($child, $permalink_root_id);
         $s .= '
     </li>';
     }

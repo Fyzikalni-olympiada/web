@@ -1,7 +1,7 @@
 <?php
 if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana proti neoprávněnému přístupu ke skriptům
 
-$item = $GLOBALS['novinka_id'] === null ? null : data_news_by_id($GLOBALS['novinka_id']);
+$item = $route['novinka'];
 if ($item === null) {
     /* sem vedou i staré odkazy /novinka?id=N – přesměruje je js/fo.js */
     echo '<p>Novinka nenalezena. <a href="/' . '">Všechny novinky</a></p>';

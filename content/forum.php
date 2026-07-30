@@ -10,9 +10,9 @@ echo '
 <p><strong>Diskusní fórum je uzavřeno a slouží už jen jako archiv starších příspěvků.</strong>
 Máte-li dotaz nebo připomínku, napište nám na <a href="mailto:info@fyzikalniolympiada.cz">info@fyzikalniolympiada.cz</a>.</p>';
 
-if ($GLOBALS['forum_thread'] !== null) {
+if ($route['forum_thread'] !== null) {
 	/* Jedno vlákno */
-	$root = forum_find_root($GLOBALS['forum_thread']);
+	$root = forum_find_root($route['forum_thread']);
 	if ($root === null) {
 		echo '<p>Vlákno nenalezeno.</p>';
 		return;
@@ -25,8 +25,8 @@ if ($GLOBALS['forum_thread'] !== null) {
         <ul class="comment-list">
 
             <li class="comment comment-parent">';
-	echo forum_post_html($root, $root['id']);
-	echo forum_replies_html($root, $root['id']);
+	echo forum_post_html($root);
+	echo forum_replies_html($root);
 	echo '
             </li>
         </ul>
@@ -36,15 +36,11 @@ if ($GLOBALS['forum_thread'] !== null) {
 }
 
 /* Seznam vláken */
-$kdo_forum = $GLOBALS['forum_who'];
-$strana = $GLOBALS['forum_page'];
+$kdo_forum = $route['forum_who'];
+$strana = $route['forum_page'];
 
-if ($kdo_forum == "student")
-	echo '
-	<h2>Diskusní fórum pro studenty</h2>';
-if ($kdo_forum == "ucitel")
-	echo '
-	<h2>Diskusní fórum pro učitele</h2>';
+echo '
+	<h2>Diskusní fórum pro ' . ($kdo_forum === 'ucitel' ? 'učitele' : 'studenty') . '</h2>';
 
 $pocet_stranek = forum_pocet_stranek($kdo_forum);
 

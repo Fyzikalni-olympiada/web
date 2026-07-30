@@ -71,9 +71,8 @@ function menu_contains($node, $pathname)
 
 
 
-function menu()
+function menu($current)
 {
-    $current = isset($GLOBALS['pathname']) ? $GLOBALS['pathname'] : null;
     $strHTML = '
                 <ul class="tabbed">';
 
@@ -93,7 +92,7 @@ function menu()
 					<li><a href="/diskuse-ucitele">Učitelé</a></li>
 				</ul>';
         } else {
-            $dropdown = ($submenu = submenu($node));
+            $dropdown = ($submenu = submenu($node, $current));
             $strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 5 ? ' smaller' : '') . '">
 			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
@@ -113,12 +112,11 @@ function menu()
 
 
 
-function submenu($node)
+function submenu($node, $current)
 {
     if (empty($node['children'])) {
         return '';
     }
-    $current = isset($GLOBALS['pathname']) ? $GLOBALS['pathname'] : null;
     $strHTML = '
                 <ul class="dropdown-menu" role="menu">';
 
@@ -240,95 +238,49 @@ function fotogalerie($dir, $dny = null)
 
 
 
-function nadpis()
-{
-	if ($GLOBALS['nadpis'] === NULL) {
-		return '404';
-	}
-    return $GLOBALS['nadpis'];
-}
 
 
 
 /**
- * Parsovani pozadavku: podle PATH_INFO nastavi $napln, $nadpis, $pathname
+ * Route podle PATH_INFO: napln (soubor k include; 404 = stránka neexistuje),
+ * nadpis, pathname a parametry speciálních stránek (novinky, diskuse).
  */
 function parsuj()
 {
-    setlocale(LC_CTYPE, 'cs_CZ.utf8');
-
-	if (isset($_GET['file'])) {
-		// prastaré odkazy ?file=N už nepřekládáme
-		header('Location: /', TRUE, 301);
-		exit();
-	}
-
 	$path_info = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
-	$pathname = ltrim($path_info, '/');
-	$pathname = iconv('UTF-8', 'ASCII//TRANSLIT', $pathname);
-	if ($pathname === '' || $pathname === false) {
-		$pathname = '/';
-	}
+	$pathname = ltrim($path_info, '/') ?: '/';
 
-	// 301
-	$redirects = array(
-		'zajimavosti/korespondencni-seminare' => '/korespondencni-seminare',
-		'zajimavosti/jine-olympiady' => '/jine-olympiady',
-		'zajimavosti/odkazy' => '/odkazy',
-		'archiv/studijni-texty' => '/studijni-texty',
-		'novinky' => '/',
+	$route = array(
+		'pathname' => $pathname,
+		'news_archiv' => false,
+		'novinka' => null,
+		'forum_who' => null,
+		'forum_page' => 1,
+		'forum_thread' => null,
 	);
-	if (isset($redirects[$pathname])) {
-		header('Location: ' . $redirects[$pathname], TRUE, 301);
-		exit();
-	}
-
-	$GLOBALS['pathname'] = $pathname;
-	$GLOBALS['news_archiv'] = false;
-	$GLOBALS['novinka_id'] = null;
-	$GLOBALS['forum_who'] = null;
-	$GLOBALS['forum_page'] = 1;
-	$GLOBALS['forum_thread'] = null;
 
 	/* Zvláštní stránky mimo data/files.yaml */
 	if ($pathname === 'archiv-novinek') {
-		$GLOBALS['nadpis'] = 'Archiv novinek';
-		$GLOBALS['napln'] = FILE_NEWS;
-		$GLOBALS['news_archiv'] = true;
-		return;
+		return array('nadpis' => 'Archiv novinek', 'napln' => FILE_NEWS, 'news_archiv' => true) + $route;
 	}
-	if (preg_match('~^novinka/(\d+)$~', $pathname, $m)) {
-		$novinka = data_news_by_id((int) $m[1]);
-		if ($novinka !== null) {
-			$GLOBALS['nadpis'] = 'Aktuality';
-			$GLOBALS['napln'] = 'content/novinka.php';
-			$GLOBALS['novinka_id'] = (int) $m[1];
-			return;
-		}
+	if (preg_match('~^novinka/(\d+)$~', $pathname, $m)
+			&& ($novinka = data_news_by_id((int) $m[1])) !== null) {
+		return array('nadpis' => 'Aktuality', 'napln' => 'content/novinka.php', 'novinka' => $novinka) + $route;
 	}
 	if (preg_match('~^diskuse(-ucitele)?(?:/(\d+))?$~', $pathname, $m)) {
-		$GLOBALS['nadpis'] = 'Diskusní fórum';
-		$GLOBALS['napln'] = FILE_FORUM;
-		$GLOBALS['forum_who'] = empty($m[1]) ? 'student' : 'ucitel';
-		$GLOBALS['forum_page'] = empty($m[2]) ? 1 : (int) $m[2];
-		return;
+		return array('nadpis' => 'Diskusní fórum', 'napln' => FILE_FORUM,
+			'forum_who' => empty($m[1]) ? 'student' : 'ucitel',
+			'forum_page' => empty($m[2]) ? 1 : (int) $m[2]) + $route;
 	}
 	if (preg_match('~^diskuse/vlakno/(\d+)$~', $pathname, $m)) {
-		$GLOBALS['nadpis'] = 'Diskusní fórum';
-		$GLOBALS['napln'] = FILE_FORUM;
-		$GLOBALS['forum_thread'] = (int) $m[1];
-		return;
+		return array('nadpis' => 'Diskusní fórum', 'napln' => FILE_FORUM, 'forum_thread' => (int) $m[1]) + $route;
 	}
 
 	$routes = data_routes();
 	if (isset($routes[$pathname]) && file_exists(ROOT_DIR . $routes[$pathname]['file'])) {
-		$GLOBALS['nadpis'] = $routes[$pathname]['title'];
-		$GLOBALS['napln'] = $routes[$pathname]['file'];
-	} else {
-		header("HTTP/1.1 404 Not Found");
-		$GLOBALS['nadpis'] = NULL;
-		$GLOBALS['napln'] = 404;
+		return array('nadpis' => $routes[$pathname]['title'], 'napln' => $routes[$pathname]['file']) + $route;
 	}
+	return array('nadpis' => '404', 'napln' => 404) + $route;
 }
 
 

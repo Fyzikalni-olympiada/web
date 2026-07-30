@@ -12,7 +12,6 @@
  */
 
 define('VALID_ACCESS', 1);
-putenv('FO_BUILD=1');
 require dirname(__DIR__) . '/init.php';
 require_once(ROOT_DIR . 'functions/forum.php');
 

@@ -1,14 +1,9 @@
 <?php
 if (!defined("VALID_ACCESS")) { define("VALID_ACCESS", 1); }
-ob_start();
 require_once('init.php');
 
-/* urcime napln, nadpis, pathname */
-parsuj();
-// index.php může běžet i ve funkci (build), globály zpřístupníme lokálně
-$napln = $GLOBALS['napln'];
-$kdo = $GLOBALS['kdo'];
-$who = $GLOBALS['who'];
+$route = parsuj();
+$napln = $route['napln'];
 
 /*
  * HTML KOD
@@ -100,7 +95,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 </script>
 
 <title>
-Fyzikální olympiáda – <?= nadpis() ?>
+Fyzikální olympiáda – <?= $route['nadpis'] ?>
 </title>
 </head>
 <body id="fo-cuni-cz">
@@ -127,7 +122,7 @@ Fyzikální olympiáda – <?= nadpis() ?>
 		</div>
 
 		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">
-			<?php echo menu(); ?>
+			<?php echo menu($route['pathname']); ?>
 		</div>
 
 		<div class="clearfix"></div>
@@ -144,14 +139,8 @@ Fyzikální olympiáda – <?= nadpis() ?>
 			<?php if ($napln === 404): ?>
 			<p style="text-align: center; font-size: 2em">Tato stránka neexistuje</p>
 			<?php else: ?>
-            <h1><?php echo nadpis(); ?></h1>
-            <?php
-                if ($napln == FILE_NEWS) {
-                    include(ROOT_DIR.FILE_NEWS);
-                } elseif ($napln) {
-                    include(ROOT_DIR.$napln);
-                }
-            ?>
+            <h1><?php echo $route['nadpis']; ?></h1>
+            <?php include(ROOT_DIR . $napln); ?>
 			<?php endif; ?>
         </div>
 
@@ -285,5 +274,3 @@ Fyzikální olympiáda – <?= nadpis() ?>
 <script src="/js/fo.js" type="text/javascript"></script>
 </body>
 </html>
-<?php
-ob_end_flush();
