@@ -1,0 +1,17 @@
+# Cache pro prohlížeče (Cloudflare Pages); ekvivalent headers ve firebase.json
+/temp/images/*
+  Cache-Control: public, max-age=2592000
+/*.jpg
+  Cache-Control: public, max-age=604800
+/*.jpeg
+  Cache-Control: public, max-age=604800
+/*.png
+  Cache-Control: public, max-age=604800
+/*.gif
+  Cache-Control: public, max-age=604800
+/*.svg
+  Cache-Control: public, max-age=604800
+/*.pdf
+  Cache-Control: public, max-age=604800
+/data/*.json
+  Cache-Control: public, max-age=3600

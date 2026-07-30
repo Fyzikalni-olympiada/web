@@ -1,4 +1,4 @@
-name: Nasazení na Firebase Hosting
+name: Nasazení na Cloudflare Pages
 
 on:
   push:
@@ -41,9 +41,8 @@ jobs:
         run: make build
 
       - name: Deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: cloudflare/wrangler-action@v3
         with:
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FYZIKALNIOLYMPIADA_WEB }}
-          channelId: live
-          projectId: fyzikalniolympiada-web
-          firebaseToolsVersion: '15'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=fyzikalniolympiada --branch=master

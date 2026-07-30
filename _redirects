@@ -1,0 +1,15 @@
+# Přesměrování starých URL (Cloudflare Pages); ekvivalent redirects ve firebase.json
+/zajimavosti/korespondencni-seminare /korespondencni-seminare 301
+/zajimavosti/jine-olympiady /jine-olympiady 301
+/zajimavosti/odkazy /odkazy 301
+/archiv/studijni-texty /studijni-texty 301
+/novinky / 301
+/rss.php /rss.xml 301
+/rss_forum.php /rss_forum.xml 301
+/novinka.php /novinka 301
+/domaci-kolo /stredni-skoly 301
+/krajske-kolo /stredni-skoly 301
+/celostatni-kolo /ustredni-kolo 301
+/kategorie-e-f /zakladni-skoly 301
+/mfo/aktualni /mfo/52 301
+/mfo/odkazy-na-starsi-rocniky /mfo/ceske-uspechy 301

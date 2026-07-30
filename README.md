@@ -2,7 +2,7 @@
 
 Statický web Fyzikální olympiády. Obsah žije v souborech v repozitáři
 (žádná databáze), web se sestavuje PHP skriptem do `dist/` a nasazuje na
-Firebase Hosting.
+Cloudflare Pages (push do masteru → GitHub Actions).
 
 ## Struktura obsahu
 

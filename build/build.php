@@ -4,7 +4,7 @@
  *
  * Použití: php build/build.php
  *
- * - stránky z data/files.yaml -> dist/<pathname>.html (Firebase cleanUrls)
+ * - stránky z data/files.yaml -> dist/<pathname>.html (hosting servíruje bez přípony)
  * - novinky (/novinka/<id>, /archiv-novinek), diskuse (seznamy + vlákna), 404
  * - rss.xml, data/terms.json
  * - miniatury pro náhodnou fotku (ImageMagick, cache v temp/images) + data/thumbs.json
@@ -21,7 +21,7 @@ $ASSET_DIRS = ['css', 'js', 'pic', 'images', 'fonts', 'dokumenty',
                'archiv', 'texty', 'vysledky', 'tana', 'upload'];
 $ASSET_FILES = ['favicon.ico', 'favicon.svg', 'favicon-16x16.png', 'favicon-32x32.png',
                 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest',
-                'robots.txt', 'rss_forum.xml'];
+                'robots.txt', 'rss_forum.xml', '_redirects', '_headers'];
 
 /* Nepublikované podadresáře a soubory (úspora místa) – vynechají se z kopie i miniatur */
 $NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails',
