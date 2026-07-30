@@ -433,7 +433,18 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #logo img {float:right; width: 132px;}
 #logo span {font-size: 50px; line-height: 62px; font-weight: normal; color: #000; display:block;}
 #logo a:hover {text-decoration: none; color: #000;}
-#logo small {font-size: 19px; color: #888}
+#logo .vlna {display: block; width: 100%; margin-top: 2px}
+#logo .rocnik {
+	display: inline-block;
+	margin-top: 10px;
+	border: 2px solid #3E5199;
+	border-radius: 999px;
+	padding: 2px 14px;
+	font-size: 17px;
+	font-weight: bold;
+	color: #3E5199;
+}
+#logo .rocnik b {color: #222}
 
 /* Navigation */
 .navigation a {

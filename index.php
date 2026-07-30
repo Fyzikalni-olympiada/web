@@ -109,10 +109,12 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 
 		<div class="col-xs-12 col-lg-5" id="logo">
 			<a href="/"><img src="/pic/logo-fo.svg" alt="" /> </a>
-			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
-			<small>
-                    <?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník ve školním roce <?php echo AKTUALNI_ROK?>
-			</small>
+			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span>
+			<svg class="vlna" viewBox="0 0 560 22" height="22" preserveAspectRatio="xMinYMid meet" aria-hidden="true">
+				<path d="M 0 11 Q 35 -8 70 11 T 140 11 Q 170 -6 200 11 T 260 11 Q 285 -4 310 11 T 360 11 Q 380 -2 400 11 T 440 11 Q 455 1 470 11 T 500 11 Q 512 3 524 11 T 548 11"
+					fill="none" stroke="#3E5199" stroke-width="3" stroke-linecap="round"/>
+			</svg></a>
+			<span class="rocnik"><b><?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník</b> &middot; <?php echo AKTUALNI_ROK ?></span>
 		</div>
 
 		<button type="button" id="menu-tlacitko" class="visible-xs" aria-expanded="false">&#9776;&nbsp;Menu</button>
