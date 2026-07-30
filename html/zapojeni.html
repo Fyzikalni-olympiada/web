@@ -1,0 +1,93 @@
+<?php
+/* Sekce „Jak se zapojit" na homepage; PDF zadání se odvozují z AKTUALNI_ROCNIK,
+ * termíny kol z data/terms/<ročník>.yaml (bez dne v týdnu a roku, volitelně s místem) */
+$z = '/archiv/' . AKTUALNI_ROCNIK . '/fo' . AKTUALNI_ROCNIK;
+$kdy = function ($kategorie, $nazev, $s_mistem = false) {
+	$t = termin($kategorie, $nazev);
+	if (!$t) {
+		return '';
+	}
+	$s = preg_replace('~^(pondělí|úterý|středa|čtvrtek|pátek|sobota|neděle)\s+~u', '', $t['termin']);
+	$s = trim(preg_replace('~\s*\d{4}~u', '', $s));
+	if ($s_mistem && isset($t['misto'])) {
+		$s .= ', ' . $t['misto'];
+	}
+	return $s;
+};
+?>
+<div id="zapojeni">
+<div class="osa-blok">
+	<div class="osa-hlavicka">
+		<h3>Střední školy</h3>
+		<small>kategorie A&ndash;D</small>
+		<a class="btn-fo" href="/stredni-skoly">zadání a pokyny pro SŠ</a>
+	</div>
+	<div class="cesta">
+		<div class="krok aktualni">
+			<div class="tecka">1</div>
+			<div class="nazev">Školní kolo</div>
+			<div class="kdy">termíny podle kategorie viz níže</div>
+			<div class="pozn">úlohy řešíš doma, registruješ se v&nbsp;<a href="https://osmo.fyzikalniolympiada.cz/">Osmo</a> a řešení odevzdáš učiteli</div>
+		</div>
+		<div class="krok">
+			<div class="tecka">2</div>
+			<div class="nazev">Krajské kolo</div>
+			<div class="kdy">A <?= $kdy('A', 'krajské') ?> &middot; B&ndash;D <?= $kdy('BCD', 'krajské') ?></div>
+			<div class="pozn">soutěž na jednom místě v&nbsp;kraji</div>
+		</div>
+		<div class="krok vedlejsi">
+			<div class="tecka">3</div>
+			<div class="nazev">Celostátní kolo</div>
+			<div class="kdy"><?= $kdy('A', 'ústřední', true) ?></div>
+			<div class="pozn">50 nejlepších kategorie A</div>
+		</div>
+		<div class="krok vedlejsi">
+			<div class="tecka">4</div>
+			<div class="nazev">Mezinárodní FO</div>
+			<div class="kdy"><?= $kdy('A', 'Mezinárodní', true) ?></div>
+			<div class="pozn">5 reprezentantů ČR</div>
+		</div>
+	</div>
+	<p class="text-center pozn-pod-osou">Nejlepší řešitelé kategorií B a C jezdí na podzimní celostátní soustředění v&nbsp;Peci pod Sněžkou.</p>
+</div>
+
+<div class="osa-blok">
+	<div class="osa-hlavicka">
+		<h3>Základní školy a nižší gymnázia</h3>
+		<small>kategorie E, F a G (Archimediáda)</small>
+		<a class="btn-fo" href="/zakladni-skoly">zadání a pokyny pro ZŠ</a>
+	</div>
+	<div class="cesta">
+		<div class="krok aktualni">
+			<div class="tecka">1</div>
+			<div class="nazev">Školní kolo</div>
+			<div class="kdy">termíny podle kategorie viz níže</div>
+			<div class="pozn">úlohy řešíš doma, odevzdáš učiteli</div>
+		</div>
+		<div class="krok">
+			<div class="tecka">2</div>
+			<div class="nazev">Okresní kolo</div>
+			<div class="kdy">E, F <?= $kdy('EF', 'okresní') ?></div>
+			<div class="pozn">soutěž na jednom místě v&nbsp;okrese</div>
+		</div>
+		<div class="krok vedlejsi">
+			<div class="tecka">3</div>
+			<div class="nazev">Krajské kolo</div>
+			<div class="kdy"><?= $kdy('EF', 'krajské kolo E') ?></div>
+			<div class="pozn">jen kategorie E</div>
+		</div>
+	</div>
+</div>
+
+<h3>Jaká je moje kategorie?</h3>
+<div class="kategorie">
+	<a class="kat" href="<?= $z ?>g1_z.pdf"><small>7. třída ZŠ<br>sekunda</small><b>G</b><span class="termin"><?= $kdy('G', 'školní') ?></span><span class="zadani">zadání (pdf) &raquo;</span></a>
+	<a class="kat" href="<?= $z ?>ef1_z.pdf"><small>8. třída ZŠ<br>tercie</small><b>F</b><span class="termin"><?= $kdy('EF', 'školní') ?></span><span class="zadani">zadání (pdf) &raquo;</span></a>
+	<a class="kat" href="<?= $z ?>ef1_z.pdf"><small>9. třída ZŠ<br>kvarta</small><b>E</b><span class="termin"><?= $kdy('EF', 'školní') ?></span><span class="zadani">zadání (pdf) &raquo;</span></a>
+	<div class="predel"></div>
+	<a class="kat" href="<?= $z ?>d1_z.pdf"><small>1. ročník SŠ<br>kvinta</small><b>D</b><span class="termin"><?= $kdy('BCD', 'školní') ?></span><span class="zadani">zadání (pdf) &raquo;</span></a>
+	<a class="kat" href="<?= $z ?>c1_z.pdf"><small>2. ročník SŠ<br>sexta</small><b>C</b><span class="termin"><?= $kdy('BCD', 'školní') ?></span><span class="zadani">zadání (pdf) &raquo;</span></a>
+	<a class="kat" href="<?= $z ?>b1_z.pdf"><small>3. ročník SŠ<br>septima</small><b>B</b><span class="termin"><?= $kdy('BCD', 'školní') ?></span><span class="zadani">zadání (pdf) &raquo;</span></a>
+	<a class="kat" href="<?= $z ?>a1_z.pdf"><small>4. ročník SŠ<br>oktáva</small><b>A</b><span class="termin"><?= $kdy('A', 'školní') ?></span><span class="zadani">zadání (pdf) &raquo;</span></a>
+</div>
+</div>

@@ -1,4 +1,10 @@
 <?php
+if (!$route['news_archiv']) {
+	include ROOT_DIR . 'html/zapojeni.html';
+	echo '
+<hr class="aktuality-predel">';
+}
+
 $novinky_list = array_values(array_filter(data_news(), function ($item) use ($route) {
 	return empty($item['homepage']) === $route['news_archiv'];
 }));
