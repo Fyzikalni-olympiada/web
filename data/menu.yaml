@@ -62,9 +62,6 @@
   - name: Přípravné soustředění
     title: Přípravné a výběrové soustředění pro Mezinárodní fyzikální olympiádu
     file: pripravne-soustredeni
-  - name: Odkazy
-    title: Odkazy na starší ročníky MFO
-    file: mfo/odkazy-na-starsi-rocniky
   - name: České úspěchy
     title: Přehled českých úspěchů na MFO
     file: mfo/ceske-uspechy

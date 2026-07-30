@@ -1,5 +1,8 @@
 <h2>České úspěchy na mezinárodních fyzikálních olympiádách</h2>
 <p>
+<a href="https://www.ipho-new.org/" target="_blank">Oficiální stránky Mezinárodní fyzikální olympiády</a> &ndash; zde naleznete podrobné informace o MFO (historie, sylabus, statistiky, doporučená literatura, členové výboru). Dále tu jsou zadání a řešení úloh většiny minulých ročníku MFO.
+</p>
+<p>
    Účastníci 40. MFO Richard Polma, Petr Ryšavý a Michal Koutný sepsali <a href="/dokumenty/ipho-memories.pdf">své zkušenosti</a> (pdf). Píší o tom, jak se motivovali, připravovali a proč se jim tohoto úspěchu podařilo dosáhnout. V jejich textu dále najdete postřehy z průběhu soutěže a hodnocení toho, jaký pro ně měla účast na soutěži přínos.
 </p>
 
@@ -62,6 +65,14 @@ echo '
 foreach ($rocniky as $r) {
 	echo '
 <h3>' . $r['mfo'] . '. MFO (' . $r['misto'] . ', ' . $r['rok'] . ')</h3>';
+	if (isset($r['logo'])) {
+		echo '
+<img src="' . $r['logo'] . '" width="200" align="right" alt="Logo ' . $r['mfo'] . '. MFO"/>';
+	}
+	if (isset($r['web'])) {
+		echo '
+<p><a href="' . $r['web'] . '" target="_blank">oficiální stránky ročníku</a></p>';
+	}
 	if (isset($r['poznamka'])) {
 		echo '
 <p><i>' . $r['poznamka'] . '</i></p>';
@@ -95,5 +106,6 @@ foreach ($rocniky as $r) {
 	}
 	echo '
 </table>
-</div>';
+</div>
+<div style="clear: both"></div>';
 }

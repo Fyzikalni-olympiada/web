@@ -238,9 +238,6 @@ mfo/56:
 mfo/ceske-uspechy:
   file: html/mfo_czu.html
   title: České úspěchy na MFO
-mfo/odkazy-na-starsi-rocniky:
-  file: html/mfo_odkazy.html
-  title: Odkazy na starší ročníky MFO
 novinka:
   file: content/novinka.php
   title: Novinka

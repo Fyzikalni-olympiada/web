@@ -67,6 +67,11 @@
 				"source": "/mfo/aktualni",
 				"destination": "/mfo/52",
 				"type": 301
+			},
+			{
+				"source": "/mfo/odkazy-na-starsi-rocniky",
+				"destination": "/mfo/ceske-uspechy",
+				"type": 301
 			}
 		],
 		"headers": [

@@ -2,6 +2,8 @@
 - mfo: 56
   rok: 2026
   misto: Bukaramanga, Kolumbie
+  web: https://ipho2026.com/
+  logo: /pic/mfo/56.png
   ucastnici:
   - poradi: ≥132
     jmeno: Michal Stroff
@@ -21,6 +23,8 @@
 - mfo: 55
   rok: 2025
   misto: Paříž, Francie
+  web: https://www.ipho2025.fr/
+  logo: /pic/mfo/55.svg
   ucastnici:
   - poradi: '74'
     jmeno: Martin Kudrna
@@ -45,10 +49,14 @@
 - mfo: 54
   rok: 2024
   misto: Isfahán, Írán
+  web: https://www.ipho2024.ir/
+  logo: /pic/mfo/54.svg
   poznamka: Česká republika se tohoto ročníku nezúčastnila.
 - mfo: 53
   rok: 2023
   misto: Tokio, Japonsko
+  web: https://international-physics-olympiad2023-tokyo.jp/
+  logo: /pic/mfo/53.png
   ucastnici:
   - poradi: '86'
     jmeno: Samuel Rosiar
@@ -73,6 +81,8 @@
 - mfo: 52
   rok: 2022
   misto: online z Hamburku
+  web: https://ipho2022.com/
+  logo: /pic/mfo/52.png
   ucastnici:
   - poradi: '71'
     jmeno: Josef Vácha
@@ -96,6 +106,8 @@
 - mfo: 51
   rok: 2021
   misto: Litva, online
+  web: https://www.ipho2021.lt/
+  logo: /pic/mfo/51.png
   poznamka: MFO se v roce 2020 kvůli pandemii covidu-19 nekonala.
   ucastnici:
   - poradi: '63'
@@ -121,6 +133,8 @@
 - mfo: 50
   rok: 2019
   misto: Tel Aviv, Izrael
+  web: https://www.ipho2019.org.il/
+  logo: /pic/mfo/50.png
   ucastnici:
   - poradi: '90'
     jmeno: Jindřich Jelínek
@@ -145,6 +159,8 @@
 - mfo: 49
   rok: 2018
   misto: Lisabon, Portugalsko
+  web: http://ipho2018.pt/
+  logo: /pic/mfo/49.png
   ucastnici:
   - poradi: '81'
     jmeno: Jindřich Jelínek
@@ -169,6 +185,8 @@
 - mfo: 48
   rok: 2017
   misto: Yogyakarta, Indonésie
+  web: http://www.ipho2017.id/
+  logo: /pic/mfo/48.png
   ucastnici:
   - poradi: ≥65
     jmeno: Jindřich Jelínek
@@ -188,6 +206,8 @@
 - mfo: 47
   rok: 2016
   misto: Curych, Švýcarsko
+  web: http://www.ipho2016.org/
+  logo: /pic/mfo/47.svg
   ucastnici:
   - poradi: '136'
     jmeno: Kryštof Kolář
@@ -212,6 +232,8 @@
 - mfo: 46
   rok: 2015
   misto: Bombaj, Indie
+  web: http://www.ipho2015.in/
+  logo: /pic/mfo/46.png
   ucastnici:
   - poradi: '82'
     jmeno: Filip Bialas
@@ -236,6 +258,8 @@
 - mfo: 45
   rok: 2014
   misto: Kazachstán
+  web: http://ipho2014.kz/
+  logo: /pic/mfo/45.png
   ucastnici:
   - poradi: '111'
     jmeno: Jakub Dolejší
@@ -260,6 +284,8 @@
 - mfo: 44
   rok: 2013
   misto: Dánsko
+  web: http://ipho2013.dk/
+  logo: /pic/mfo/44_m.png
   ucastnici:
   - poradi: '87'
     jmeno: Lubomír Grund
@@ -284,6 +310,8 @@
 - mfo: 43
   rok: 2012
   misto: Estonsko
+  web: http://www.ipho2012.ee/
+  logo: /pic/mfo/43_m.png
   ucastnici:
   - poradi: '62'
     jmeno: Ondřej Bartoš
@@ -308,6 +336,8 @@
 - mfo: 42
   rok: 2011
   misto: Thajsko
+  web: http://www.ipho2011.org/
+  logo: /pic/mfo/42_m.gif
   ucastnici:
   - poradi: '93'
     jmeno: Stanislav Fořt
@@ -332,6 +362,8 @@
 - mfo: 41
   rok: 2010
   misto: Chorvatsko
+  web: http://ipho2010.hfd.hr/
+  logo: /pic/mfo/41_m.png
   ucastnici:
   - poradi: '17'
     jmeno: Jáchym Sýkora
@@ -356,6 +388,8 @@
 - mfo: 40
   rok: 2009
   misto: Mexiko
+  web: http://ipho2009.smf.mx/
+  logo: /pic/mfo/40_m.png
   ucastnici:
   - poradi: '98'
     jmeno: Jan Humplík
@@ -380,6 +414,8 @@
 - mfo: 39
   rok: 2008
   misto: Vietnam
+  web: http://ipho2008.hnue.edu.vn/
+  logo: /pic/mfo/39_m.gif
   ucastnici:
   - poradi: '26'
     jmeno: Jan Hermann
@@ -404,6 +440,8 @@
 - mfo: 38
   rok: 2007
   misto: Írán
+  web: http://www.ipho2007.ir/
+  logo: /pic/mfo/38_m.gif
   ucastnici:
   - poradi: '19'
     jmeno: Pavel Motloch
@@ -428,6 +466,8 @@
 - mfo: 37
   rok: 2006
   misto: Singapur
+  web: http://www.ipho2006.org/
+  logo: /pic/mfo/37_m.gif
   ucastnici:
   - poradi: '46'
     jmeno: Marek Pechal
@@ -452,6 +492,8 @@
 - mfo: 36
   rok: 2005
   misto: Salamanca, Španělsko
+  web: http://www.ipho2005.com/
+  logo: /pic/mfo/36_m.gif
   ucastnici:
   - poradi: '64'
     jmeno: Pavel Motloch
@@ -476,6 +518,8 @@
 - mfo: 35
   rok: 2004
   misto: Pohang, Korea
+  web: http://www.ipho2004.or.kr/
+  logo: /pic/mfo/35_m.gif
   ucastnici:
   - poradi: '20'
     jmeno: Matouš Ringel
@@ -500,6 +544,8 @@
 - mfo: 34
   rok: 2003
   misto: Taipei, Taiwan
+  web: http://www.phy.ntnu.edu.tw/ipho2003/
+  logo: /pic/mfo/34_m.gif
   ucastnici:
   - poradi: '30'
     jmeno: Václav Cviček
@@ -524,6 +570,8 @@
 - mfo: 33
   rok: 2002
   misto: Bali, Indonésie
+  web: http://www.fi.itb.ac.id/~ipho33/
+  logo: /pic/mfo/33_m.gif
   ucastnici:
   - poradi: '84'
     jmeno: Václav Cviček
@@ -548,6 +596,8 @@
 - mfo: 32
   rok: 2001
   misto: Antalya, Turecko
+  web: http://www.ipho2001.org.tr/
+  logo: /pic/mfo/32_m.gif
   ucastnici:
   - poradi: '43'
     jmeno: Miroslav Hejna
@@ -572,6 +622,8 @@
 - mfo: 31
   rok: 2000
   misto: Leicester, UK
+  web: http://www.star.le.ac.uk/IPhO-2000/
+  logo: /pic/mfo/31_m.gif
   ucastnici:
   - poradi: '21'
     jmeno: Jan Houštěk
@@ -596,6 +648,8 @@
 - mfo: 30
   rok: 1999
   misto: Padova, Itálie
+  web: http://www.pd.infn.it/Olifis/welcome.htm
+  logo: /pic/mfo/30_m.gif
   ucastnici:
   - poradi: '26'
     jmeno: Jan Houštěk
@@ -620,6 +674,8 @@
 - mfo: 29
   rok: 1998
   misto: Reykjavík, Island
+  web: http://www.hi.is/pub/ipho/
+  logo: /pic/mfo/29_m.gif
   ucastnici:
   - poradi: '29'
     jmeno: Karel Kolář
@@ -644,6 +700,7 @@
 - mfo: 28
   rok: 1997
   misto: Sudbury, Kanada
+  web: http://laurentian.ca/physics/OLYMPIAD/
   ucastnici:
   - poradi: '14'
     jmeno: Tomáš Brauner
@@ -668,6 +725,8 @@
 - mfo: 27
   rok: 1996
   misto: Oslo, Norsko
+  web: http://www.fys.uio.no/biofysikk/ipho/
+  logo: /pic/mfo/27_m.gif
   ucastnici:
   - poradi: '35'
     jmeno: Daniel Král
@@ -692,6 +751,8 @@
 - mfo: 26
   rok: 1995
   misto: Canberra, Austrálie
+  web: http://online.anu.edu.au/Physics/IPhO/
+  logo: /pic/mfo/26_m.gif
   ucastnici:
   - poradi: '64'
     jmeno: Jan Benedikt

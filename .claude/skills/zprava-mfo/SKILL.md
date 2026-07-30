@@ -65,13 +65,14 @@ Stručné a informativní, žádné vlastní úvahy a hodnocení. Struktura:
   title „<N>. Mezinárodní fyzikální olympiáda" (klíče drž abecedně)
 - `data/menu.yaml`: do children „Mezinárodní soutěž" položku
   „<N>. MFO, <země>" jako **první za „České úspěchy"**
-- `html/mfo_odkazy.html`: `<li>` s odkazem na oficiální web a logem (width 200),
-  nad předchozí ročník
-- `data/mfo-uspechy.yaml`: nový záznam **na začátek** (řazeno od nejnovějšího):
+- `data/mfo-uspechy.yaml`: nový záznam **na začátek** (řazeno od nejnovějšího);
+  `web` a `logo` vykreslí stránka /mfo/ceske-uspechy u sekce ročníku:
   ```yaml
   - mfo: <N>
     rok: <rok>
     misto: <Město, Země>
+    web: https://…          # oficiální stránky ročníku
+    logo: /pic/mfo/<N>.png
     ucastnici:
     - poradi: '86'
       jmeno: Jméno Příjmení
