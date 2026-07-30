@@ -40,9 +40,24 @@ jobs:
       - name: Build
         run: make build
 
+      # manifest hashů nasazených souborů pro purge změněných URL
+      # (stejný vzor vždy-nového klíče jako u miniatur)
+      - name: Cache manifestu nasazení
+        uses: actions/cache@v5
+        with:
+          path: temp/manifest.txt
+          key: manifest-${{ github.run_id }}
+          restore-keys: manifest-
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=fyzikalniolympiada --branch=master --commit-dirty=true
+
+      - name: Purge změněných URL z cache
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: bash build/purge.sh
