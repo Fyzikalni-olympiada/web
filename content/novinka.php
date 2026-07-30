@@ -8,8 +8,6 @@ if ($item === null) {
     return;
 }
 
-$monthz = array('', 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
-
 list($rok, $mesic, $den) = explode('-', $item['date']);
 $hourmin = preg_replace('~^0~', '', $item['time']);
 
@@ -37,7 +35,7 @@ if ($img && $img['align'] === 'block') {
 }
 echo '
 				<div class="post-date">
-					<span class="link">' . $hourmin . ', ' . (int) $den . '. ' . $monthz[(int) $mesic] . ' ' . $rok . '</span>
+					<span class="link">' . $hourmin . ', ' . (int) $den . '. ' . MESICE[(int) $mesic] . ' ' . $rok . '</span>
 					&bull;
 					<a href="mailto:' . $item['email'] . '" title="Autor příspěvku" class="sign">' . $item['author'] . '</a>
 				</div>

@@ -13,7 +13,6 @@ if (PHP_SAPI === 'cli' || getenv('FO_BUILD')) {
 	define('BASE_URL', 'http://' . (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : 'localhost') . '/');
 }
 
-define('FILE_INDEX', 'index.php');
 define('FILE_NEWS', 'content/news.php');
 define('FILE_FORUM', 'content/forum.php');
 
@@ -21,10 +20,6 @@ require_once(ROOT_DIR.'config.php');
 
 /* Diskuse (zmrazený archiv) */
 define('FORUM_VLAKEN_NA_STRANKU', 7);
-
-/* Menu */
-define('MENU_ODDELOVAC', '');
-define('SUBMENU_ODRAZKA', '');
 
 /* GLOBALNI PROMENNE
  *
@@ -36,8 +31,6 @@ define('SUBMENU_ODRAZKA', '');
 
 $GLOBALS['who'] = 'student';
 $GLOBALS['kdo'] = 'student';
-
-$GLOBALS['get'] = $_GET;
 
 require_once(ROOT_DIR.'functions/data.php');
 require_once(ROOT_DIR.'functions/folib.php');

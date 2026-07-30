@@ -1,15 +1,9 @@
 <?php
 if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana proti neoprávněnému přístupu ke skriptům
 
-$monthz = Array('', 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
-
-if ($GLOBALS['news_archiv']) {
-	$novinky_list = array_values(array_filter(data_news(), function ($item) {
-		return empty($item['homepage']);
-	}));
-} else {
-	$novinky_list = news_homepage();
-}
+$novinky_list = array_values(array_filter(data_news(), function ($item) {
+	return empty($item['homepage']) === $GLOBALS['news_archiv'];
+}));
 
 $i = 0;
 foreach ($novinky_list as $item) {
@@ -45,7 +39,7 @@ foreach ($novinky_list as $item) {
 	}
 	echo '
 				<div class="post-date">
-					<a href="/' . 'novinka/' . $item['id'] . '" title="Trvalý odkaz na příspěvek" class="link">' . $hourmin . ', ' . (int) $den . '. ' . $monthz[(int) $mesic] . ' ' . $rok . '</a>
+					<a href="/' . 'novinka/' . $item['id'] . '" title="Trvalý odkaz na příspěvek" class="link">' . $hourmin . ', ' . (int) $den . '. ' . MESICE[(int) $mesic] . ' ' . $rok . '</a>
                     <span title="id=' . $item['id'] . '">&bull;</span>
                     <a href="mailto:' . $item['email'] . '" title="Autor příspěvku" class="sign">' . $item['author'] . '</a>
 				</div>

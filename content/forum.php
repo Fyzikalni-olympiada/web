@@ -7,8 +7,8 @@ if(!defined("VALID_ACCESS"))	{
 include_once(ROOT_DIR.'functions/forum.php');
 
 echo '
-<p><strong>' . lng('Diskusní fórum je uzavřeno a slouží už jen jako archiv starších příspěvků.','The discussion forum is closed and serves only as an archive of older posts.') . '</strong>
-' . lng('Máte-li dotaz nebo připomínku, napište nám na','If you have a question or a comment, please e-mail us at') . ' <a href="mailto:info@fyzikalniolympiada.cz">info@fyzikalniolympiada.cz</a>.</p>';
+<p><strong>Diskusní fórum je uzavřeno a slouží už jen jako archiv starších příspěvků.</strong>
+Máte-li dotaz nebo připomínku, napište nám na <a href="mailto:info@fyzikalniolympiada.cz">info@fyzikalniolympiada.cz</a>.</p>';
 
 if ($GLOBALS['forum_thread'] !== null) {
 	/* Jedno vlákno */
@@ -18,7 +18,7 @@ if ($GLOBALS['forum_thread'] !== null) {
 		return;
 	}
 	echo '
-<p><a href="' . forum_list_url($root['who'], 1) . '">&#171; ' . lng('Zpět na seznam vláken','Back to the thread list') . '</a></p>
+<p><a href="' . forum_list_url($root['who'], 1) . '">&#171; Zpět na seznam vláken</a></p>
 
 <div id="comments">
     <div class="comment-list-wrapper">
@@ -67,7 +67,7 @@ for ( $i=max($strana-5,1); $i<=min($strana+5,$pocet_stranek); $i++ ) {
 	if ( $i == $strana ) {
 		echo $i;
 	} else {
-		echo '<a href="' . forum_list_url($kdo_forum, $i) . '" title="' . lng('Strana ','Page ') . $i . '">' . $i . '</a>';
+		echo '<a href="' . forum_list_url($kdo_forum, $i) . '" title="Strana ' . $i . '">' . $i . '</a>';
 	}
 	if ( $i < min($strana+5,$pocet_stranek) ) {
 		echo "&nbsp;| ";

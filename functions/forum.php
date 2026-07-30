@@ -13,7 +13,7 @@ if(!defined("VALID_ACCESS"))    {die("Neoprávněný přístup!");}
 function forum_roots($who)
 {
     $roots = array_values(array_filter(data_forum(), function ($node) use ($who) {
-        return $node['who'] === $who && (!isset($node['lang']) || $node['lang'] === 'cz');
+        return $node['who'] === $who;
     }));
     usort($roots, function ($a, $b) {
         return strcmp($b['posted'], $a['posted']);
@@ -23,22 +23,11 @@ function forum_roots($who)
 
 
 
-/** Najde kořenový příspěvek vlákna obsahujícího příspěvek $id */
+/** Kořenový příspěvek vlákna (stránky vláken se generují jen pro kořeny) */
 function forum_find_root($id)
 {
-    $obsahuje = function ($node) use ($id, &$obsahuje) {
-        if ($node['id'] == $id) {
-            return true;
-        }
-        foreach (isset($node['children']) ? $node['children'] : [] as $child) {
-            if ($obsahuje($child)) {
-                return true;
-            }
-        }
-        return false;
-    };
     foreach (data_forum() as $root) {
-        if ($obsahuje($root)) {
+        if ($root['id'] == $id) {
             return $root;
         }
     }
@@ -49,9 +38,8 @@ function forum_find_root($id)
 
 function forum_datum_cas($posted)
 {
-    $monthz = array(1 => 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
     $ts = strtotime($posted);
-    return (int) date('j', $ts) . '. ' . $monthz[(int) date('n', $ts)] . date(' Y, G:i', $ts);
+    return (int) date('j', $ts) . '. ' . MESICE[(int) date('n', $ts)] . date(' Y, G:i', $ts);
 }
 
 
@@ -66,7 +54,7 @@ function forum_post_html($node, $root_id)
     }
     if (isset($node['email'])) {
         $email = str_replace("@", "(zavinac)", $node['email']);
-        $s_email = '<a href="e-mail:' . $email . '" title="' . lng('Autor příspěvku', 'Author of the post') . '">' . $node['author'] . '</a>';
+        $s_email = '<a href="e-mail:' . $email . '" title="Autor příspěvku">' . $node['author'] . '</a>';
     } else {
         $s_email = $node['author'];
     }

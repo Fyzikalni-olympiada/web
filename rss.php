@@ -1,13 +1,14 @@
 <?php
 if (!defined("VALID_ACCESS")) { define("VALID_ACCESS", 1); }
-define("RSS_POLOZEK", 15);
 include_once('init.php');
+
+$base = rtrim(BASE_URL, '/');
 
 $strRSS = '<?xml version=\'1.0\' encoding=\'utf-8\'?>
 <rss version=\'2.0\'>
 	<channel>
 		<title>Fyzikální olympiáda</title>
-		<link>' . rtrim(BASE_URL, '/') . '</link>
+		<link>' . $base . '</link>
 		<description>Fyzikální olympiáda, aktuality.</description>
 		<language>cs</language>
 		<copyright>Copyright 2004-' . date('Y') . ', Fyzikální olympiáda</copyright>
@@ -17,13 +18,13 @@ $strRSS = '<?xml version=\'1.0\' encoding=\'utf-8\'?>
 		<image>
 			<url>' . BASE_URL . 'pic/fo_logo.gif</url>
 			<title>Fyzikální olympiáda - oficiální stránky</title>
-			<link>' . rtrim(BASE_URL, '/') . '</link>
+			<link>' . $base . '</link>
 			<width>62</width>
 			<height>83</height>
 			<description>Fyzikální olympiáda - oficiální stránky středoškolské soutěže</description>
 		</image>';
 
-foreach (array_slice(data_news(), 0, RSS_POLOZEK) as $item) {
+foreach (array_slice(data_news(), 0, 15) as $item) {
 	$url = BASE_URL . 'novinka/' . $item['id'];
 	$strRSS .= '
 		<item>

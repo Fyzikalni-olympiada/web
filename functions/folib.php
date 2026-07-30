@@ -6,14 +6,8 @@ if (!defined("VALID_ACCESS")) {
 
 
 
-function datetime()
-{
-    $day = date("j");
-    $month = date("n");
-    $year = date("Y");
-    $monthz = array(1=>'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
-    return $day . '. ' . $monthz[$month] . ' ' . $year;
-}
+/** Názvy měsíců v 2. pádě */
+const MESICE = array(1 => 'ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince');
 
 /* ----- Odkazy ----- */
 
@@ -22,16 +16,13 @@ function datetime()
 /** URL stránky podle pathname z data/files.yaml */
 function url_for_pathname($pathname)
 {
-    return $pathname === '/' ? '/' : '/' . ltrim($pathname, '/');
+    return '/' . ltrim($pathname, '/');
 }
 
 
 
-/**
- * Odkaz na obsahový soubor (např. 'terminy.html' nebo 'html/terminy.html').
- * Parametr $kdo je ponechán kvůli BC, web je jen studentský.
- */
-function odkaz($souborName, $kdo = null, $amp_entity = 1)
+/** Odkaz na obsahový soubor (např. 'terminy.html' nebo 'html/terminy.html') */
+function odkaz($souborName)
 {
     $map = data_pathname_by_file();
     if (isset($map[$souborName])) {
@@ -98,11 +89,11 @@ function menu()
 				<li class="dropdown' . ($selected ? ' current-tab' : '') . ($i++ > 5 ? ' smaller' : '') . '">
 				<a href="' . $url . '" title="' . $title . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $node['name'] . '<b class="caret"></b></a>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
-					<li><a href="/' . 'diskuse">Studenti</a></li>
-					<li><a href="/' . 'diskuse-ucitele">Učitelé</a></li>
+					<li><a href="/diskuse">Studenti</a></li>
+					<li><a href="/diskuse-ucitele">Učitelé</a></li>
 				</ul>';
         } else {
-            $dropdown = ($submenu = submenu($node, true));
+            $dropdown = ($submenu = submenu($node));
             $strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 5 ? ' smaller' : '') . '">
 			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
@@ -110,7 +101,7 @@ function menu()
                 $strHTML .= $submenu;
             }
         }
-        $strHTML .= ' ' . MENU_ODDELOVAC . '</li>';
+        $strHTML .= ' </li>';
     }
     $strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády"
 		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">Osmo</a></li>';
@@ -122,14 +113,14 @@ function menu()
 
 
 
-function submenu($node, $dropdown = false)
+function submenu($node)
 {
     if (empty($node['children'])) {
         return '';
     }
     $current = isset($GLOBALS['pathname']) ? $GLOBALS['pathname'] : null;
     $strHTML = '
-                <ul ' . ($dropdown ? 'class="dropdown-menu" role="menu"' : 'class="tabbed"') . '>';
+                <ul class="dropdown-menu" role="menu">';
 
     foreach ($node['children'] as $child) {
         $url = menu_target($child);
@@ -137,7 +128,7 @@ function submenu($node, $dropdown = false)
         $selected = (isset($child['file']) && $child['file'] === $current) ? ' class="current-tab"' : '';
 
         $strHTML .= '
-				<li' . $selected . '>' . SUBMENU_ODRAZKA . '<a href="' . $url . '" title="' . $title . '"' . $selected . '>' . $child['name'] . '</a></li>';
+				<li' . $selected . '><a href="' . $url . '" title="' . $title . '"' . $selected . '>' . $child['name'] . '</a></li>';
     }
     $strHTML .= '
                 </ul>';
@@ -148,17 +139,16 @@ function submenu($node, $dropdown = false)
 
 
 
-/** Termíny dané kategorie (výchozí je aktuální ročník) */
-function terms_kategorie($kategorie, $rocnik = null)
+/** Termíny dané kategorie aktuálního ročníku */
+function terms_kategorie($kategorie)
 {
-    $rocnik = $rocnik === null ? AKTUALNI_ROCNIK : $rocnik;
-    $terms = data_terms($rocnik);
+    $terms = data_terms(AKTUALNI_ROCNIK);
     return isset($terms[$kategorie]) ? $terms[$kategorie] : array();
 }
 
 
 
-/** Termíny podle podřetězce názvu, volitelně kategorie; seřazeno podle kategorie */
+/** Termíny podle podřetězce názvu, volitelně kategorie */
 function terms_hledej($nazev, $kategorie = null, $rocnik = null)
 {
     $rocnik = $rocnik === null ? AKTUALNI_ROCNIK : $rocnik;
@@ -176,20 +166,6 @@ function terms_hledej($nazev, $kategorie = null, $rocnik = null)
     }
     return $vysledek;
 }
-
-/* ----- Novinky ----- */
-
-
-
-/** Novinky zobrazované na hlavní stránce (homepage: true) */
-function news_homepage()
-{
-    return array_values(array_filter(data_news(), function ($item) {
-        return !empty($item['homepage']);
-    }));
-}
-
-
 
 /* ----- Fotogalerie (zmrazený archiv celostátních kol) ----- */
 
@@ -353,34 +329,6 @@ function parsuj()
 		$GLOBALS['nadpis'] = NULL;
 		$GLOBALS['napln'] = 404;
 	}
-}
-
-
-function lng($cz = 'cz', $en = 'en')
-{
-    return $cz;
-}
-
-
-
-function vlnka($data)
-{
-    $data = str_replace(' - ', "&nbsp;&ndash; ", $data);
-    $data = str_replace(' k ', " k&nbsp;", $data);
-    $data = str_replace(' s ', " s&nbsp;", $data);
-    $data = str_replace(' v ', " v&nbsp;", $data);
-    $data = str_replace(' u ', " u&nbsp;", $data);
-    $data = str_replace(' o ', " o&nbsp;", $data);
-    $data = str_replace(' a ', " a&nbsp;", $data);
-    $data = str_replace(' i ', " i&nbsp;", $data);
-    $data = str_replace(' K ', " K&nbsp;", $data);
-    $data = str_replace(' S ', " S&nbsp;", $data);
-    $data = str_replace(' V ', " V&nbsp;", $data);
-    $data = str_replace(' U ', " U&nbsp;", $data);
-    $data = str_replace(' O ', " O&nbsp;", $data);
-    $data = str_replace(' A ', " A&nbsp;", $data);
-    $data = str_replace(' I ', " I&nbsp;", $data);
-    return $data;
 }
 
 
