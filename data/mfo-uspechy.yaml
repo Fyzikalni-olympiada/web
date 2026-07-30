@@ -3,15 +3,20 @@
   rok: 2026
   misto: Bukaramanga, Kolumbie
   ucastnici:
-  - jmeno: Michal Stroff
+  - poradi: ≥132
+    jmeno: Michal Stroff
     oceneni: bronz
-  - jmeno: Anita Vaceková
+  - poradi: ≥132
+    jmeno: Anita Vaceková
     oceneni: bronz
-  - jmeno: Julie Pazdírková
+  - poradi: ≥132
+    jmeno: Julie Pazdírková
     oceneni: bronz
-  - jmeno: Vojtěch Černý
+  - poradi: ≥227
+    jmeno: Vojtěch Černý
     oceneni: uznání
-  - jmeno: Alex Christian Faivre
+  - poradi: ≥227
+    jmeno: Alex Christian Faivre
     oceneni: uznání
 - mfo: 55
   rok: 2025
