@@ -285,7 +285,7 @@
   rok: 2013
   misto: Dánsko
   web: http://ipho2013.dk/
-  logo: /pic/mfo/44_m.png
+  logo: /pic/mfo/44.png
   ucastnici:
   - poradi: '87'
     jmeno: Lubomír Grund
@@ -311,7 +311,7 @@
   rok: 2012
   misto: Estonsko
   web: http://www.ipho2012.ee/
-  logo: /pic/mfo/43_m.png
+  logo: /pic/mfo/43.png
   ucastnici:
   - poradi: '62'
     jmeno: Ondřej Bartoš
@@ -337,7 +337,7 @@
   rok: 2011
   misto: Thajsko
   web: http://www.ipho2011.org/
-  logo: /pic/mfo/42_m.gif
+  logo: /pic/mfo/42.gif
   ucastnici:
   - poradi: '93'
     jmeno: Stanislav Fořt
@@ -363,7 +363,7 @@
   rok: 2010
   misto: Chorvatsko
   web: http://ipho2010.hfd.hr/
-  logo: /pic/mfo/41_m.png
+  logo: /pic/mfo/41.png
   ucastnici:
   - poradi: '17'
     jmeno: Jáchym Sýkora
@@ -389,7 +389,7 @@
   rok: 2009
   misto: Mexiko
   web: http://ipho2009.smf.mx/
-  logo: /pic/mfo/40_m.png
+  logo: /pic/mfo/40.png
   ucastnici:
   - poradi: '98'
     jmeno: Jan Humplík
@@ -415,7 +415,7 @@
   rok: 2008
   misto: Vietnam
   web: http://ipho2008.hnue.edu.vn/
-  logo: /pic/mfo/39_m.gif
+  logo: /pic/mfo/39.jpg
   ucastnici:
   - poradi: '26'
     jmeno: Jan Hermann
@@ -441,7 +441,7 @@
   rok: 2007
   misto: Írán
   web: http://www.ipho2007.ir/
-  logo: /pic/mfo/38_m.gif
+  logo: /pic/mfo/38.gif
   ucastnici:
   - poradi: '19'
     jmeno: Pavel Motloch
@@ -467,7 +467,7 @@
   rok: 2006
   misto: Singapur
   web: http://www.ipho2006.org/
-  logo: /pic/mfo/37_m.gif
+  logo: /pic/mfo/37.jpg
   ucastnici:
   - poradi: '46'
     jmeno: Marek Pechal
@@ -493,7 +493,7 @@
   rok: 2005
   misto: Salamanca, Španělsko
   web: http://www.ipho2005.com/
-  logo: /pic/mfo/36_m.gif
+  logo: /pic/mfo/36.gif
   ucastnici:
   - poradi: '64'
     jmeno: Pavel Motloch
@@ -519,7 +519,7 @@
   rok: 2004
   misto: Pohang, Korea
   web: http://www.ipho2004.or.kr/
-  logo: /pic/mfo/35_m.gif
+  logo: /pic/mfo/35.gif
   ucastnici:
   - poradi: '20'
     jmeno: Matouš Ringel
@@ -545,7 +545,7 @@
   rok: 2003
   misto: Taipei, Taiwan
   web: http://www.phy.ntnu.edu.tw/ipho2003/
-  logo: /pic/mfo/34_m.gif
+  logo: /pic/mfo/34.jpeg
   ucastnici:
   - poradi: '30'
     jmeno: Václav Cviček
@@ -571,7 +571,7 @@
   rok: 2002
   misto: Bali, Indonésie
   web: http://www.fi.itb.ac.id/~ipho33/
-  logo: /pic/mfo/33_m.gif
+  logo: /pic/mfo/33.jpeg
   ucastnici:
   - poradi: '84'
     jmeno: Václav Cviček
@@ -597,7 +597,7 @@
   rok: 2001
   misto: Antalya, Turecko
   web: http://www.ipho2001.org.tr/
-  logo: /pic/mfo/32_m.gif
+  logo: /pic/mfo/32.jpeg
   ucastnici:
   - poradi: '43'
     jmeno: Miroslav Hejna
@@ -623,7 +623,7 @@
   rok: 2000
   misto: Leicester, UK
   web: http://www.star.le.ac.uk/IPhO-2000/
-  logo: /pic/mfo/31_m.gif
+  logo: /pic/mfo/31.gif
   ucastnici:
   - poradi: '21'
     jmeno: Jan Houštěk
@@ -649,7 +649,7 @@
   rok: 1999
   misto: Padova, Itálie
   web: http://www.pd.infn.it/Olifis/welcome.htm
-  logo: /pic/mfo/30_m.gif
+  logo: /pic/mfo/30.jpeg
   ucastnici:
   - poradi: '26'
     jmeno: Jan Houštěk
@@ -675,7 +675,7 @@
   rok: 1998
   misto: Reykjavík, Island
   web: http://www.hi.is/pub/ipho/
-  logo: /pic/mfo/29_m.gif
+  logo: /pic/mfo/29.jpeg
   ucastnici:
   - poradi: '29'
     jmeno: Karel Kolář
@@ -726,7 +726,7 @@
   rok: 1996
   misto: Oslo, Norsko
   web: http://www.fys.uio.no/biofysikk/ipho/
-  logo: /pic/mfo/27_m.gif
+  logo: /pic/mfo/27.gif
   ucastnici:
   - poradi: '35'
     jmeno: Daniel Král
@@ -752,7 +752,7 @@
   rok: 1995
   misto: Canberra, Austrálie
   web: http://online.anu.edu.au/Physics/IPhO/
-  logo: /pic/mfo/26_m.gif
+  logo: /pic/mfo/26.gif
   ucastnici:
   - poradi: '64'
     jmeno: Jan Benedikt
