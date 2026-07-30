@@ -165,6 +165,15 @@ function terms_hledej($nazev, $kategorie = null, $rocnik = null)
     return $vysledek;
 }
 
+/** První termín dané kategorie odpovídající názvu (viz terms_hledej), jinak null */
+function termin($kategorie, $nazev)
+{
+	$rows = terms_hledej($nazev, $kategorie);
+	return $rows ? $rows[0] : null;
+}
+
+
+
 /* ----- Novinky ----- */
 
 

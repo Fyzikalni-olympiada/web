@@ -1,30 +1,13 @@
 <h2>Soutěž pro základní školy</h2>
 
 <?php
-foreach (terms_kategorie('EF') as $termin_row) {
-	$termin = $termin_row['termin']; $date = $termin_row['date']; $nazev = $termin_row['nazev'];
-	switch ($nazev) {
-			case 'školní kolo':
-				$termin1 = $termin;
-				$date1 = $date;
-				break;
-			case 'okresní kolo':
-				$termin2 = $termin;
-				$date2 = $date;
-				break;
-			case 'krajské kolo E':
-				$termin3 = $termin;
-				$date3 = $date;
-				break;
-			default:
-				break;
-	}
-}			
+$skolni = termin('EF', 'školní kolo');
+$okresni = termin('EF', 'okresní kolo');
+$krajske = termin('EF', 'krajské kolo E');
 
-$beforeDom = $date1 >= date('Y-m-d');
-$beforeOkr = $date2 > date('Y-m-d');
-$beforeKra = $date3 > date('Y-m-d');
-
+$termin1 = $skolni['termin'];  $beforeDom = $skolni['date'] >= date('Y-m-d');
+$termin2 = $okresni['termin']; $beforeOkr = $okresni['date'] > date('Y-m-d');
+$termin3 = $krajske['termin']; $beforeKra = $krajske['date'] > date('Y-m-d');
 ?>
 
 <h3 class="accordion" id="organizace">Organizace</h3>

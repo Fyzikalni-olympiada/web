@@ -1,25 +1,12 @@
 <h2>Archimediáda <?= substr(AKTUALNI_ROK,strrpos(AKTUALNI_ROK, '/')+1) ?></h2>
 
 <?php
-foreach (terms_kategorie('G') as $termin_row) {
-	$termin = $termin_row['termin']; $date = $termin_row['date']; $nazev = $termin_row['nazev'];
-	switch ($nazev) {
-			case 'školní kolo':
-				$termin1 = $termin;
-				$date1 = $date;
-				break;
-			case 'okresní kolo':
-				$termin2 = $termin;
-				$date2 = $date;
-				break;
-			default:
-				break;
-	}
-}		
+$skolni = termin('G', 'školní kolo');
+$okresni = termin('G', 'okresní kolo');
 
-$beforeDom = $date1 >= date('Y-m-d');
-$beforeOkr = $date2 >= date('Y-m-d');
-
+$termin1 = $skolni['termin'];
+$termin2 = $okresni['termin'];
+$beforeDom = $skolni['date'] >= date('Y-m-d');
 ?>
 <h3 class="accordion accordion-main" id="organizace">Organizace</h3>
 

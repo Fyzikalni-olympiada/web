@@ -1,22 +1,12 @@
 <h2>Ústřední kolo <?php echo (AKTUALNI_ROCNIK) ?>. ročníku FO</h2>
 
 <?php
-$uk_rows = terms_hledej('ústřední kolo', 'A');
-if ($uk_rows) {
-	$termin = $uk_rows[0]['termin'];
-	$misto = isset($uk_rows[0]['misto']) ? $uk_rows[0]['misto'] : '';
-} else {
-	$termin = AKTUALNI_ROK;
-	$misto = 'České republiky';
-}
-$mfo_rows = terms_hledej('Mezinárodní FO', 'A');
-if ($mfo_rows) {
-	$terminMFO = $mfo_rows[0]['termin'];
-	$mistoMFO = isset($mfo_rows[0]['misto']) ? $mfo_rows[0]['misto'] : '';
-} else {
-	$terminMFO = 'červenec '.AKTUALNI_ROK;
-	$mistoMFO = 'světa';
-}		
+$uk = termin('A', 'ústřední kolo');
+$termin = $uk ? $uk['termin'] : AKTUALNI_ROK;
+$misto = isset($uk['misto']) ? $uk['misto'] : 'České republiky';
+$mfo = termin('A', 'Mezinárodní FO');
+$terminMFO = $mfo ? $mfo['termin'] : 'červenec ' . AKTUALNI_ROK;
+$mistoMFO = isset($mfo['misto']) ? $mfo['misto'] : 'světa';
 ?>
 
 <h3 class="accordion" id="organizace">Organizace</h3>

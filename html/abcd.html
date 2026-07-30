@@ -1,42 +1,16 @@
 <h2>Soutěž pro střední školy</h2>
 
 <?php
-foreach (terms_hledej('školní') as $termin_row) {
-	$termin = $termin_row['termin']; $date = $termin_row['date']; $kategorie = $termin_row['kategorie'];
-	switch ($kategorie) {
-			case 'A':
-				$terminA = $termin;
-				$dateA = $date;
-				break;
-			case 'BCD':
-				$terminBCD = $termin;
-				$dateBCD = $date;
-				break;
-			default:
-				break;
-	}
-}	
-$beforeA = $dateA >= date('Y-m-d');
-$beforeBCD = $dateBCD >= date('Y-m-d');
+$skolniA = termin('A', 'školní kolo');
+$skolniBCD = termin('BCD', 'školní kolo');
+$krajA = termin('A', 'krajské kolo');
+$krajBCD = termin('BCD', 'krajské kolo');
 
-foreach (terms_hledej('krajské kolo') as $termin_row) {
-	$termin = $termin_row['termin']; $date = $termin_row['date']; $kategorie = $termin_row['kategorie'];
-        switch ($kategorie) {
-                        case 'A':
-                                $krajTerminA = $termin;
-								$krajDateA = $date;
-                                break;
-                        case 'BCD':
-                                $krajTerminBCD = $termin;
-								$krajDateBCD = $date;
-                                break;
-                        default:
-                                break;
-        }
-}                       
-$krajBeforeA = $krajDateA > date('Y-m-d');
-$krajBeforeWeekAfterA = $krajDateA > date('Y-m-d', strtotime("-1 week"));
-$krajBeforeBCD = $krajDateBCD > date('Y-m-d');
+$terminA = $skolniA['termin'];       $beforeA = $skolniA['date'] >= date('Y-m-d');
+$terminBCD = $skolniBCD['termin'];   $beforeBCD = $skolniBCD['date'] >= date('Y-m-d');
+$krajTerminA = $krajA['termin'];     $krajBeforeA = $krajA['date'] > date('Y-m-d');
+$krajTerminBCD = $krajBCD['termin']; $krajBeforeBCD = $krajBCD['date'] > date('Y-m-d');
+$krajBeforeWeekAfterA = $krajA['date'] > date('Y-m-d', strtotime("-1 week"));
 ?>
 <h3 class="accordion" id="organizace">Jak se zapojit</h3>
 
