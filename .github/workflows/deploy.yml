@@ -38,7 +38,7 @@ jobs:
           restore-keys: thumbs-
 
       - name: Build
-        run: php -d short_open_tag=1 build/build.php
+        run: make build
 
       - name: Kontrola buildu
         run: |

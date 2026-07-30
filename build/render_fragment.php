@@ -4,7 +4,7 @@
  * do stdout. Volá ho build.php v podprocesu, aby se fragmenty navzájem
  * neovlivňovaly (deklarace funkcí, globální proměnné).
  *
- * Použití: php -d short_open_tag=1 build/render_fragment.php <soubor>
+ * Použití: php build/render_fragment.php <soubor>
  */
 
 define('VALID_ACCESS', 1);

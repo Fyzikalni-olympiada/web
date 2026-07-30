@@ -2,7 +2,7 @@
 /**
  * Sestaví statický web do dist/.
  *
- * Použití: php -d short_open_tag=1 build/build.php
+ * Použití: php build/build.php
  *
  * - stránky z data/files.yaml -> dist/<pathname>.html (Firebase cleanUrls)
  * - novinky (/novinka/<id>, /archiv-novinek), diskuse (seznamy + vlákna), 404

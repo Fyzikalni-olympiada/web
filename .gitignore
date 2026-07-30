@@ -20,3 +20,5 @@ texty/matematika/cd.tar.gz
 /.firebase/
 .codex
 firebase-debug.log
+/*.tar.gz
+/*.bundle
