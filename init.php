@@ -1,7 +1,5 @@
 <?php
 
-if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana proti neoprávněnému přístupu ke skriptům
-
 date_default_timezone_set('Europe/Prague');
 
 define('ROOT_DIR', __DIR__ . '/');

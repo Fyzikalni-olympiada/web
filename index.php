@@ -1,5 +1,4 @@
 <?php
-if (!defined("VALID_ACCESS")) { define("VALID_ACCESS", 1); }
 require_once('init.php');
 
 $route = parsuj();

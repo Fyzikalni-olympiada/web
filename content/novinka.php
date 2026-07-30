@@ -1,6 +1,4 @@
 <?php
-if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana proti neoprávněnému přístupu ke skriptům
-
 $item = $route['novinka'];
 if ($item === null) {
 	/* sem vedou i staré odkazy /novinka?id=N – přesměruje je js/fo.js */

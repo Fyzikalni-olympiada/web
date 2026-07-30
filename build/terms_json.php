@@ -4,12 +4,6 @@
  * Používá router (dev) a build skript (dist/data/terms.json).
  */
 
-if (!defined('VALID_ACCESS')) {
-    die("Neoprávněný přístup!");
-}
-
-require_once(ROOT_DIR . 'config.php');
-
 $terminy_json = [];
 foreach (data_terms(AKTUALNI_ROCNIK) as $kategorie => $terminy) {
     foreach ($terminy as $t) {

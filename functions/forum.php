@@ -1,6 +1,4 @@
 <?php
-if(!defined("VALID_ACCESS"))    {die("Neoprávněný přístup!");}
-//      Ochrana proti neoprávněnému přístupu ke skriptům
 
 /**
  * Zmrazený archiv diskusního fóra, čte data/forum.yaml.

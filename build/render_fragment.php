@@ -7,7 +7,6 @@
  * Použití: php build/render_fragment.php <soubor>
  */
 
-define('VALID_ACCESS', 1);
 require dirname(__DIR__) . '/init.php';
 
 if (empty($argv[1]) || !is_file($argv[1])) {

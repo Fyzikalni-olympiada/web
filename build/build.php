@@ -11,7 +11,6 @@
  * - kopie statických adresářů; fragmenty s PHP se předrenderují (render_fragment.php)
  */
 
-define('VALID_ACCESS', 1);
 require dirname(__DIR__) . '/init.php';
 require_once(ROOT_DIR . 'functions/forum.php');
 
@@ -148,8 +147,6 @@ foreach (glob(ROOT_DIR . 'temp/images/*.jpg') as $cached) {
     }
 }
 
-/* manifest i do temp/ pro lokální náhled (router.php) */
-file_put_contents(ROOT_DIR . 'temp/thumbs.json', json_encode($manifest, JSON_UNESCAPED_SLASHES));
 write_file($DIST . 'data/thumbs.json', json_encode($manifest, JSON_UNESCAPED_SLASHES));
 mkdir($DIST . 'temp');
 exec('cp -aT ' . escapeshellarg(ROOT_DIR . 'temp/images') . ' ' . escapeshellarg($DIST . 'temp/images'));

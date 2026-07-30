@@ -1,6 +1,4 @@
 <?php
-if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana proti neoprávněnému přístupu ke skriptům
-
 $novinky_list = array_values(array_filter(data_news(), function ($item) use ($route) {
 	return empty($item['homepage']) === $route['news_archiv'];
 }));

@@ -1,9 +1,4 @@
 <?php
-//    Ochrana proti neoprávněnému přístupu ke skriptům
-if (!defined("VALID_ACCESS")) {
-    die("Neoprávněný přístup!");
-}
-
 
 
 /** Názvy měsíců v 2. pádě */

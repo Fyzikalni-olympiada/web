@@ -1,8 +1,4 @@
 <?php
-if (!defined("VALID_ACCESS")) {
-    die("Neoprávněný přístup!");
-}
-
 /**
  * Datová vrstva: čte data/*.yaml a data/news/ (náhrada za MySQL).
  * Vše se načítá líně a drží v paměti procesu.

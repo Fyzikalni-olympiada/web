@@ -1,8 +1,4 @@
 <?php
-if(!defined("VALID_ACCESS"))	{
-	die("Neoprávněný přístup!");
-}
-//	Ochrana proti neoprávněnému přístupu ke skriptům
 
 include_once(ROOT_DIR.'functions/forum.php');
 
