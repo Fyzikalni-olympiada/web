@@ -1,6 +1,0 @@
-#sidebar .map-container {
-	display: none !important;
-}
-#sidebar .map-container + ul {
-	display: block !important;
-}
