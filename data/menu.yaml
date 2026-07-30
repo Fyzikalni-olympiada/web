@@ -68,6 +68,9 @@
   - name: České úspěchy
     title: Přehled českých úspěchů na MFO
     file: mfo/ceske-uspechy
+  - name: 53. MFO, Japonsko
+    title: Zpráva o konání 53. Mezinárodní fyzikální olympiády
+    file: mfo/53
   - name: 52. MFO, Německo
     title: Zpráva o konání 52. Mezinárodní fyzikální olympiády
     file: mfo/52
