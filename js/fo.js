@@ -1,6 +1,7 @@
 /**
  * Klientský JS statického webu FO:
  *  - přesměrování starých adres s query parametry
+ *  - zobrazit / skrýt boční panel na malých displejích
  *  - boční panel „Nejbližší termíny" z /data/terms.json
  *  - zvýraznění nejbližšího termínu na /terminy (podle data-date)
  *  - náhodná fotka v bočním panelu z /data/thumbs.json
@@ -34,6 +35,15 @@
 		location.replace('/archiv-novinek');
 		return;
 	}
+
+	/* ---------- zobrazit / skrýt boční panel (malé displeje) ---------- */
+
+	var sidebar = document.getElementById('sidebar');
+	document.querySelectorAll('[data-toggle=sidebar]').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			sidebar.classList.toggle('open');
+		});
+	});
 
 	/* ---------- pomocné ---------- */
 

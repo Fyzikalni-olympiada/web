@@ -56,10 +56,6 @@ if ($napln === 404) {
 <script src="js/bootstrap.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function() {
-		$('[data-toggle=offcanvas]').click(function() {
-			$('.row-offcanvas').toggleClass('active');
-			$('.sidebar-offcanvas').toggleClass('active');
-		});
 		if (window.location.hash) {
 			$('h3.accordion' + window.location.hash).addClass('accordion-main');
 		}
@@ -128,10 +124,10 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 
 	<hr>
 
-    <div id="main-two-columns" class="row row-offcanvas row-offcanvas-right">
+    <div id="main-two-columns" class="row">
         <div id="main-content" class="col-sm-9 col-xs-12">
 			<div class="pull-right visible-xs">
-				<button type="button" class="btn-xs" data-toggle="offcanvas">Zobrazit boční panel</button>
+				<button type="button" class="btn-xs" data-toggle="sidebar">Zobrazit boční panel</button>
 			</div>
 
 			<?php if ($napln === 404): ?>
@@ -142,9 +138,9 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 			<?php endif; ?>
         </div>
 
-		<div id="sidebar" class="col-sm-3 sidebar-offcanvas">
+		<div id="sidebar" class="col-sm-3">
 			<div class="section visible-xs">
-				<button type="button" class="btn-xs" data-toggle="offcanvas">Skrýt boční panel</button>
+				<button type="button" class="btn-xs" data-toggle="sidebar">Skrýt boční panel</button>
 			</div>
             <div class="section">
                 <div class="section-title">Nejbližší termíny</div>
@@ -241,7 +237,7 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
         <div class="clearer">&nbsp;</div>
     </div>
 
-    <div id="footer" class="row row-offcanvas row-offcanvas-right">
+    <div id="footer" class="row">
         <div class="col-sm-6 col-sm-push-6 col-lg-5 col-lg-offset-1">
             <p class="large pull-right text-right">
                 <a href="/rss.xml" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
