@@ -48,10 +48,9 @@ foreach ($rocniky as $r) {
 	if (empty($r['ucastnici'])) {
 		continue;
 	}
-	$ma_body = $ma_nyni = false;
+	$ma_body = false;
 	foreach ($r['ucastnici'] as $u) {
 		$ma_body = $ma_body || isset($u['body']);
-		$ma_nyni = $ma_nyni || isset($u['nyni']);
 	}
 	echo '
 <div class="table-responsive">
@@ -61,9 +60,7 @@ foreach ($rocniky as $r) {
   <th scope="col" width="200px">Účastník</th>'
 		. ($ma_body ? '
   <th scope="col" width="60px">Body</th>' : '') . '
-  <th scope="col" width="90px">Medaile</th>'
-		. ($ma_nyni ? '
-  <th scope="col">Nyní</th>' : '') . '
+  <th scope="col" width="90px">Medaile</th>
 </tr>';
 	foreach ($r['ucastnici'] as $u) {
 		echo '
@@ -72,9 +69,7 @@ foreach ($rocniky as $r) {
   <td>' . $u['jmeno'] . '</td>'
 			. ($ma_body ? '
   <td>' . (isset($u['body']) ? $u['body'] : '') . '</td>' : '') . '
-  <td align="center">' . (isset($u['oceneni']) ? $u['oceneni'] : '') . '</td>'
-			. ($ma_nyni ? '
-  <td>' . (isset($u['nyni']) ? $u['nyni'] : '') . '</td>' : '') . '
+  <td align="center">' . (isset($u['oceneni']) ? $u['oceneni'] : '') . '</td>
 </tr>';
 	}
 	echo '

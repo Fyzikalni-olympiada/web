@@ -250,7 +250,6 @@
     jmeno: Miroslav Hanzelka
     body: 25,90
     oceneni: bronz
-    nyni: student MFF UK
   - poradi: '161'
     jmeno: Jiří Guth Jarkovský
     body: 23,70
@@ -279,7 +278,6 @@
     jmeno: Stanislav Fořt
     body: 28,10
     oceneni: stříbro
-    nyni: University of Cambridge
   - poradi: '93'
     jmeno: Lubomír Grund
     body: 25,40
@@ -296,7 +294,6 @@
     jmeno: Stanislav Fořt
     body: 35,90
     oceneni: stříbro
-    nyni: University of Cambridge
   - poradi: '95'
     jmeno: Jakub Vošmera
     body: 35,80
@@ -321,7 +318,6 @@
     jmeno: Jáchym Sýkora
     body: 40,40
     oceneni: zlato
-    nyni: student Cambridge University
   - poradi: '116'
     jmeno: Petr Čermák
     body: 29,35
@@ -334,7 +330,6 @@
     jmeno: Petr Ryšavý
     body: 22,45
     oceneni: bronz
-    nyni: student ČVUT
   - poradi: '252'
     jmeno: Martin Bucháček
     body: 17,00
@@ -347,22 +342,18 @@
     jmeno: Jan Humplík
     body: 25,55
     oceneni: stříbro
-    nyni: Harvard university, MA
   - poradi: '104'
     jmeno: Michal Koutný
     body: 25,35
     oceneni: stříbro
-    nyni: student MFF UK
   - poradi: '118'
     jmeno: Richard Polma
     body: 23,25
     oceneni: bronz
-    nyni: student LF HK UK
   - poradi: '119'
     jmeno: Jáchym Sýkora
     body: 23,20
     oceneni: bronz
-    nyni: student Cambridge University
   - poradi: '131'
     jmeno: Petr Ryšavý
     body: 21,40
@@ -375,27 +366,22 @@
     jmeno: Jan Hermann
     body: 34,45
     oceneni: zlato
-    nyni: PGS Fritz-Haber-Institut der MPG, Berlín
   - poradi: '30'
     jmeno: Dalimil Mazáč
     body: 34,1
     oceneni: zlato
-    nyni: PGS Perimeter Institute, Waterloo
   - poradi: '87'
     jmeno: Lukáš Ledvina
     body: 27,1
     oceneni: stříbro
-    nyni: student MFF UK
   - poradi: '183'
     jmeno: Jakub Marian
     body: 18,95
     oceneni: uznání
-    nyni: student MFF UK
   - poradi: '208'
     jmeno: Marek Nečada
     body: 16,25
     oceneni: uznání
-    nyni: student MFF UK
 - mfo: 38
   rok: 2007
   misto: Írán
@@ -404,27 +390,22 @@
     jmeno: Pavel Motloch
     body: 45,2
     oceneni: zlato
-    nyni: student MFF UK
   - poradi: '27'
     jmeno: Dalimil Mazáč
     body: 44,4
     oceneni: zlato
-    nyni: student Cambridge University
   - poradi: '59'
     jmeno: Jakub Benda
     body: 39,4
     oceneni: stříbro
-    nyni: PGS MFF UK
   - poradi: '109'
     jmeno: Marek Scholle
     body: 34,3
     oceneni: bronz
-    nyni: student MFF UK
   - poradi: '122'
     jmeno: Lukáš Ledvina
     body: 33,8
     oceneni: bronz
-    nyni: student MFF UK
 - mfo: 37
   rok: 2006
   misto: Singapur
@@ -433,27 +414,22 @@
     jmeno: Marek Pechal
     body: 34,00
     oceneni: stříbro
-    nyni: student ETH Zürich, Švýcarsko
   - poradi: '90'
     jmeno: Pavel Motloch
     body: 28,00
     oceneni: bronz
-    nyni: student MFF UK
   - poradi: '109'
     jmeno: Radek Žlebčík
     body: 25,30
     oceneni: bronz
-    nyni: student MFF UK
   - poradi: '136'
     jmeno: Petr Smital
     body: 22,10
     oceneni: bronz
-    nyni: student FEKT VUT Brno
   - poradi: '188'
     jmeno: Marek Scholle
     body: 18,50
     oceneni: uznání
-    nyni: student MFF UK
 - mfo: 36
   rok: 2005
   misto: Salamanca, Španělsko
@@ -462,7 +438,6 @@
     jmeno: Pavel Motloch
     body: '?'
     oceneni: stříbro
-    nyni: student MFF UK
   - poradi: '136'
     jmeno: Petr Houštěk
     body: '?'
@@ -471,17 +446,14 @@
     jmeno: Petr Morávek
     body: '?'
     oceneni: uznání
-    nyni: student MFF UK
   - poradi: '191'
     jmeno: Pavel Kučera
     body: '?'
     oceneni: uznání
-    nyni: student FIT VUT
   - poradi: '204'
     jmeno: Petr Čermák
     body: '?'
     oceneni: uznání
-    nyni: student MFF UK
 - mfo: 35
   rok: 2004
   misto: Pohang, Korea
@@ -490,12 +462,10 @@
     jmeno: Matouš Ringel
     body: 39,6
     oceneni: zlato
-    nyni: PGS Université de Fribourg, Švýcarsko
   - poradi: ''
     jmeno: Václav Potoček
     body: '?'
     oceneni: bronz
-    nyni: student FJFI ČVUT
   - poradi: ''
     jmeno: Petr Houštěk
     body: '?'
@@ -504,12 +474,10 @@
     jmeno: Jana Matějová
     body: '?'
     oceneni: uznání
-    nyni: PGS KFKL MFF UK
   - poradi: ''
     jmeno: Petr Morávek
     body: '?'
     oceneni: uznání
-    nyni: student MFF UK
 - mfo: 34
   rok: 2003
   misto: Taipei, Taiwan
@@ -518,27 +486,22 @@
     jmeno: Václav Cviček
     body: 30,2
     oceneni: stříbro
-    nyni: PGS Caltech, California, USA
   - poradi: '74'
     jmeno: Matouš Ringel
     body: 24,4
     oceneni: bronz
-    nyni: PGS Université de Fribourg, Švýcarsko
   - poradi: '80'
     jmeno: Petr Pošta
     body: 23,8
     oceneni: bronz
-    nyni: PGS KMA MFF UK
   - poradi: '112'
     jmeno: Jaroslav Trnka
     body: 20,5
     oceneni: uznání
-    nyni: PGS Princeton University, New Jersey, USA
   - poradi: '116'
     jmeno: Jan Prachař
     body: 20,0
     oceneni: uznání
-    nyni: Intya, s.r.o.
 - mfo: 33
   rok: 2002
   misto: Bali, Indonésie
@@ -547,27 +510,22 @@
     jmeno: Václav Cviček
     body: 30,0
     oceneni: bronz
-    nyni: PGS Caltech, California, USA
   - poradi: '119'
     jmeno: Miroslav Hejna
     body: 25,7
     oceneni: bronz
-    nyni: PGS Princeton University, New Jersey, USA
   - poradi: '138'
     jmeno: Alexandr Kazda
     body: 23,9
     oceneni: uznání
-    nyni: PGS KA MFF UK
   - poradi: '162'
     jmeno: Jan Prachař
     body: 20,2
     oceneni: uznání
-    nyni: Intya, s.r.o.
   - poradi: '185'
     jmeno: David Mareček
     body: 18,25
     oceneni: uznání
-    nyni: PGS ÚFAL MFF UK
 - mfo: 32
   rok: 2001
   misto: Antalya, Turecko
@@ -576,27 +534,22 @@
     jmeno: Miroslav Hejna
     body: 38,65
     oceneni: stříbro
-    nyni: PGS Princeton University, New Jersey, USA
   - poradi: '83'
     jmeno: Norbert Požár
     body: 33,75
     oceneni: bronz
-    nyni: vědecký pracovník University of California, Los Angeles, CA, USA
   - poradi: '86'
     jmeno: Jan Pipek
     body: 33,55
     oceneni: bronz
-    nyni: programátor
   - poradi: '94'
     jmeno: Martin Beránek
     body: 32,90
     oceneni: bronz
-    nyni: PGS KFPP MFF UK
   - poradi: '108'
     jmeno: Jan Kapitán
     body: 30,65
     oceneni: bronz
-    nyni: PGS ÚJF AV ČR
 - mfo: 31
   rok: 2000
   misto: Leicester, UK
@@ -605,27 +558,22 @@
     jmeno: Jan Houštěk
     body: 34,1
     oceneni: stříbro
-    nyni: nezávislý IT profesionál
   - poradi: '28'
     jmeno: Jiří Chaloupka
     body: 31,7
     oceneni: bronz
-    nyni: vědecký pracovník PřF MU Brno
   - poradi: '101'
     jmeno: Jan Kapitán
     body: 22,7
     oceneni: uznání
-    nyni: PGS ÚJF AV ČR
   - poradi: '159'
     jmeno: Karel Kouřil
     body: 17,3
     oceneni: účast
-    nyni: PGS KFNT MFF UK
   - poradi: '174'
     jmeno: Jan Houfek
     body: 16,4
     oceneni: účast
-    nyni: Analytik ČNB
 - mfo: 30
   rok: 1999
   misto: Padova, Itálie
@@ -634,27 +582,22 @@
     jmeno: Jan Houštěk
     body: 43,9
     oceneni: zlato
-    nyni: nezávislý IT profesionál
   - poradi: '66'
     jmeno: Karel Kyrián
     body: 39,4
     oceneni: stříbro
-    nyni: PGS ÚTF MFF UK
   - poradi: '97'
     jmeno: Jaroslav Jánský
     body: 37,1
     oceneni: stříbro
-    nyni: vědecký pracovník PřF MU Brno
   - poradi: '116'
     jmeno: Lenka Zdeborová
     body: 34,3
     oceneni: bronz
-    nyni: vědecký pracovník Los Alamos National Laboratory, New Mexico, USA
   - poradi: '202'
     jmeno: Martin Zdráhal
     body: 25,1
     oceneni: uznání
-    nyni: PGS ÚČJF MFF UK
 - mfo: 29
   rok: 1998
   misto: Reykjavík, Island
@@ -663,17 +606,14 @@
     jmeno: Karel Kolář
     body: 35,4
     oceneni: bronz
-    nyni: PGS FzÚ AV ČR
   - poradi: '49'
     jmeno: Jan Houštěk
     body: 32,2
     oceneni: bronz
-    nyni: nezávislý IT profesionál
   - poradi: '59'
     jmeno: Pavel Podbrdský
     body: 31,3
     oceneni: bronz
-    nyni: PGS KMA MFF UK
   - poradi: '125'
     jmeno: Stanislav Kašný
     body: 22,9
@@ -682,7 +622,6 @@
     jmeno: Pavel Stránský
     body: 20,2
     oceneni: účast
-    nyni: PGS ÚČJF MFF UK
 - mfo: 28
   rok: 1997
   misto: Sudbury, Kanada
@@ -691,27 +630,22 @@
     jmeno: Tomáš Brauner
     body: '42'
     oceneni: zlato
-    nyni: vědecký pracovník ÚJF AV ČR
   - poradi: '33'
     jmeno: Karel Kolář
     body: '38'
     oceneni: stříbro
-    nyni: PGS FzÚ AV ČR
   - poradi: '43'
     jmeno: Jiří Houška
     body: 36,5
     oceneni: stříbro
-    nyni: PGS KFy ZČU Plzeň
   - poradi: '142'
     jmeno: Daniel Klír
     body: 25,5
     oceneni: uznání
-    nyni: vědecký pracovník, katedra fyziky FEL ČVUT
   - poradi: '159'
     jmeno: Rudolf Sýkora
     body: '23'
     oceneni: uznání
-    nyni: PGS KFKL MFF UK
 - mfo: 27
   rok: 1996
   misto: Oslo, Norsko
@@ -720,27 +654,22 @@
     jmeno: Daniel Král
     body: 37,5
     oceneni: stříbro
-    nyni: vědecký pracovník ITI MFF UK
   - poradi: '78'
     jmeno: Jiří Franta
     body: '31'
     oceneni: bronz
-    nyni: konzultalnt u McKinsey
   - poradi: '89'
     jmeno: Tomáš Brauner
     body: '30'
     oceneni: bronz
-    nyni: vědecký pracovník ÚJF AV ČR
   - poradi: '98'
     jmeno: Jiří Houška
     body: '29'
     oceneni: uznání
-    nyni: PGS KFy ZČU Plzeň
   - poradi: '120'
     jmeno: Pavel Klang
     body: 26,5
     oceneni: uznání
-    nyni: MU Brno
 - mfo: 26
   rok: 1995
   misto: Canberra, Austrálie
@@ -753,22 +682,18 @@
     jmeno: Michal Fabinger
     body: '64'
     oceneni: bronz
-    nyni: vědecký pracovník Harvard university, MA
   - poradi: '82'
     jmeno: Jindřich Kolorenč
     body: '62'
     oceneni: bronz
-    nyni: vědecký pracovník North Carolina State University, NC
   - poradi: '97'
     jmeno: Michal Beneš
     body: '57'
     oceneni: uznání
-    nyni: odborný asistent FJFI ČVUT
   - poradi: '122'
     jmeno: Radek Erban
     body: '51'
     oceneni: uznání
-    nyni: vědecký pracovník University of Oxford, UK
 - mfo: 25
   rok: 1994
   misto: Beijing, Čína
@@ -781,12 +706,10 @@
     jmeno: Michal Fabinger
     body: 24,3
     oceneni: uznání, bronz za teorii
-    nyni: vědecký pracovník Harvard university, MA
   - poradi: '53'
     jmeno: František Šanda
     body: 23,5
     oceneni: uznání, bronz za teorii
-    nyni: odborný asistent FÚ UK
   - poradi: ''
     jmeno: Jaromír Fiurášek
   - poradi: ''
@@ -799,7 +722,6 @@
     jmeno: Tomáš Kočka
     body: '?'
     oceneni: zlato
-    nyni: konzultant Adastra Corporation
   - poradi: '14'
     jmeno: Martin Beneš
     body: '?'
@@ -808,17 +730,14 @@
     jmeno: Jiří Vaníček
     body: '?'
     oceneni: stříbro
-    nyni: docent Ecole Polytechnique Fédérale de Lausanne, Švýcarsko
   - poradi: '28'
     jmeno: Jaromír Fiurášek
     body: '?'
     oceneni: stříbro
-    nyni: vědecký pracovník Université Libre de Bruxelles, Belgie
   - poradi: '97'
     jmeno: Daniel Průša
     body: '?'
     oceneni: uznání
-    nyni: vědecký pracovník CMP FEL ČVUT
 - mfo: 23
   rok: 1992
   misto: Helsinki-Espoo, Finsko
@@ -826,23 +745,18 @@
   - poradi: '21'
     jmeno: Filip Münz
     oceneni: stříbro
-    nyni: INAF Bologna
   - poradi: '32'
     jmeno: Alexander Kupčo
     oceneni: stříbro
-    nyni: vědecký pracovník FzÚ AV ČR
   - poradi: '36'
     jmeno: Tomáš Kočka
     oceneni: bronz
-    nyni: konzultant Adastra Corporation
   - poradi: '51'
     jmeno: Jiří Vaníček
     oceneni: bronz
-    nyni: docent Ecole Polytechnique Fédérale de Lausanne, Švýcarsko
   - poradi: '89'
     jmeno: Slavomír Tuleja
     oceneni: uznání
-    nyni: učitel Gymnázium Humenné
 - mfo: 22
   rok: 1991
   misto: Havana, Kuba
@@ -850,19 +764,15 @@
   - poradi: '20'
     jmeno: Filip Münz
     oceneni: stříbro
-    nyni: odborný asistent AÚ AV ČR
   - poradi: '33'
     jmeno: Karel Netočný
     oceneni: bronz
-    nyni: odborný asistent FzÚ AV ČR
   - poradi: '44'
     jmeno: Peter Langfelder
     oceneni: bronz
-    nyni: vědecký pracovník University of Waterloo, ON, Canada
   - poradi: '56'
     jmeno: Petr Tobiška
     oceneni: uznání
-    nyni: vědecký pracovník ÚFE AV ČR
   - poradi: ''
     jmeno: Eubomír Zlacký
     oceneni: neúspěšný
@@ -876,15 +786,12 @@
   - poradi: '51'
     jmeno: Karel Netočný
     oceneni: uznání
-    nyni: odborný asistent FzÚ AV ČR
   - poradi: '60'
     jmeno: Petr Tobiška
     oceneni: uznání
-    nyni: postdoc ÚFE AV ČR
   - poradi: ''
     jmeno: Vladimír Skalský
     oceneni: neúspěšný
-    nyni: "Kateřina Luterová\n  \n  neúspěšná"
 - mfo: 20
   rok: 1989
   misto: Varšava, Polsko
@@ -892,19 +799,15 @@
   - poradi: '27'
     jmeno: Arnošt Kobylka
     oceneni: stříbro
-    nyni: senior konzultant Microsoft
   - poradi: '34'
     jmeno: Miroslav Vicher
     oceneni: stříbro
-    nyni: projekt manažer Acision
   - poradi: '46'
     jmeno: Andrej Doboš
     oceneni: bronz*
-    nyni: SW vývojář, Vancouver, Kanada
   - poradi: '84'
     jmeno: Petr Duczynski
     oceneni: uznání
-    nyni: odborný asistent FIM UHK
 - mfo: 19
   rok: 1988
   misto: Bad Ischl, Rakousko
@@ -912,15 +815,12 @@
   - poradi: '21'
     jmeno: Radek Vystavěl
     oceneni: stříbro
-    nyni: odborný asistent KIT VŠMIE
   - poradi: '40'
     jmeno: Tibor Bartoš
     oceneni: bronz
-    nyni: tech. ředitel Rainside s.r.o.
   - poradi: '58'
     jmeno: David Maxera
     oceneni: bronz
-    nyni: SW vývojář Deutsche Börse Services s.r.o.
   - poradi: '66'
     jmeno: Katarína Kis-Petríková
     oceneni: uznání
@@ -931,21 +831,18 @@
   - poradi: '17'
     jmeno: Pavol Kolník
     oceneni: bronz
-    nyni: programátor VVISS
   - poradi: '37'
     jmeno: Jaroslav Hora
     oceneni: bronz
   - poradi: '44'
     jmeno: David Maxera
     oceneni: uznání
-    nyni: SW vývojář Deutsche Börse Services s.r.o.
   - poradi: '65'
     jmeno: Katarína Kis-Petríková
     oceneni: uznání
   - poradi: '68'
     jmeno: Petr Habala
     oceneni: uznání
-    nyni: docent FEL ČVUT
 - mfo: 17
   rok: 1986
   misto: Londýn-Harrow, UK
@@ -953,19 +850,15 @@
   - poradi: '15'
     jmeno: Pavol Kolník
     oceneni: bronz*
-    nyni: programátor VVISS
   - poradi: '16'
     jmeno: Tomáš Ledvinka
     oceneni: bronz
-    nyni: vědecký pracovník ÚTF MFF UK
   - poradi: '42'
     jmeno: Radek Adamec
     oceneni: uznání
-    nyni: Telefónica O2
   - poradi: '58'
     jmeno: Stanislav Meduna
     oceneni: uznání
-    nyni: programátor nxtControl GmbH, Leobersdorf
 - mfo: 16
   rok: 1985
   misto: Portorož, Slovinsko/Jugoslávie
@@ -973,15 +866,12 @@
   - poradi: '5'
     jmeno: Patrik Španěl
     oceneni: zlato
-    nyni: profesor ÚFCH JH AV ČR
   - poradi: '23'
     jmeno: Jan Lužný
     oceneni: bronz
-    nyni: DCIT, a.s.
   - poradi: '38'
     jmeno: Ivo Myslivec
     oceneni: uznání
-    nyni: výzkumný pracovník AŽD Praha s.r.o.
 - mfo: 15
   rok: 1984
   misto: Sigtuna, Švédsko
@@ -989,22 +879,18 @@
   - poradi: '5'
     jmeno: Jan Lužný
     oceneni: zlato *
-    nyni: DCIT, a.s.
   - poradi: '25'
     jmeno: Viliam Schichman
     oceneni: bronz
-    nyni: překladatel
   - poradi: '38'
     jmeno: Dagmar Kluvancová
     oceneni: uznání +
   - poradi: '41'
     jmeno: Josef Pelikán
     oceneni: uznání
-    nyni: lektor KSVI MFF UK
   - poradi: '44'
     jmeno: Patrik Španěl
     oceneni: uznání
-    nyni: profesor ÚFCHJH AV ČR
 - mfo: 14
   rok: 1983
   misto: Bukurešť, Rumunsko
@@ -1013,7 +899,6 @@
     jmeno: Jaroslav Smejkal
     body: 39,25
     oceneni: zlato
-    nyni: vědecký pracovník ÚTEF ČVUT
   - poradi: '16'
     jmeno: Daniel Kluvanec
     body: 34,00
@@ -1022,7 +907,6 @@
     jmeno: Miloš Drutarovský
     body: 30,00
     oceneni: bronz
-    nyni: docent Technická univerzita Košice
   - poradi: '38'
     jmeno: Ivo Koreň
     body: 22,00
@@ -1031,7 +915,6 @@
     jmeno: Roman Šášik
     body: 21,75
     oceneni: uznání
-    nyni: University of California, San Diego
 - mfo: 13
   rok: 1982
   misto: Malente, SRN
@@ -1042,22 +925,18 @@
   - poradi: '25'
     jmeno: Jiří Bajer
     oceneni: stříbro
-    nyni: profesor, katedra optiky UP Olomouc
   - poradi: '30'
     jmeno: Petr Tichavský
     oceneni: stříbro
-    nyni: vědecký pracovník, oddělení stochastické informatiky ÚTIA AV ČR
   - poradi: '41'
     jmeno: Daniel Kluvanec
     oceneni: bronz
   - poradi: '43'
     jmeno: Gábor Oszlányi
     oceneni: bronz
-    nyni: Ústav fyziky pevných látek a optiky, Maďarská akademie věd
   - poradi: '44'
     jmeno: Roman Šášik
     oceneni: bronz
-    nyni: University of California, San Diego
 - mfo: 12
   rok: 1981
   misto: Varna, Bulharsko
@@ -1065,18 +944,15 @@
   - poradi: '9'
     jmeno: Milan Hanajík
     oceneni: stříbro
-    nyni: docent, katedra měření FEI STU Bratislava
   - poradi: '10'
     jmeno: Petr Pavlík
     oceneni: stříbro
   - poradi: '20'
     jmeno: Jiří Matoušek
     oceneni: stříbro
-    nyni: profesor KAM MFF UK
   - poradi: '23'
     jmeno: Bořivoj Tydlitát
     oceneni: stříbro
-    nyni: IBM ČR
   - poradi: '54'
     jmeno: Petr Plecháč
     oceneni: uznání
@@ -1112,7 +988,6 @@
     jmeno: Jiří Kolafa
     body: '43'
     oceneni: stříbro
-    nyni: vědecký pracovník, Ústav fyzikální chemie VŠCHT
   - poradi: '12'
     jmeno: Petr Kučírek
     body: '40'
@@ -1121,7 +996,6 @@
     jmeno: Rupert Leitner
     body: '39'
     oceneni: stříbro
-    nyni: docent ÚČJF MFF UK
 - mfo: 9
   rok: 1976
   misto: Budapešť, Maďarsko
@@ -1129,14 +1003,12 @@
   - poradi: '13'
     jmeno: Pavol Tarina
     oceneni: stříbro
-    nyni: zmocněnec vlády SR pro informační společnost
   - poradi: '14'
     jmeno: Jiří Svoboda
     oceneni: stříbro
   - poradi: '26'
     jmeno: Ilja Turek
     oceneni: bronz
-    nyni: docent KFKL MFF UK, IPM AV ČR
   - poradi: '31'
     jmeno: Karel Kubát
     oceneni: uznání
@@ -1148,7 +1020,6 @@
     jmeno: Miroslav Lýčka
     body: '39'
     oceneni: zlato
-    nyni: ÚPT AV ČR
   - poradi: '12'
     jmeno: Jan Hula
     body: '36'
@@ -1161,7 +1032,6 @@
     jmeno: Jiří Vyskočil
     body: '23'
     oceneni: uznání
-    nyni: vědecký pracovník KTIML MFF UK
   - poradi: '41'
     jmeno: Vladislav Krásný
     body: '18'
@@ -1182,12 +1052,10 @@
     jmeno: Dobroslav Kindl
     body: '16'
     oceneni: neúspěšný
-    nyni: KMF MFF UK
   - poradi: '31'
     jmeno: Štefan Olejník
     body: '13'
     oceneni: neúspěšný
-    nyni: vedoucí Oddělení komplexních fyzikálních systémů FÚ SAV
   - poradi: '34'
     jmeno: Jaroslav Hubáček
     body: '8'
@@ -1204,17 +1072,14 @@
     jmeno: Pavel Drábek
     body: 30,5
     oceneni: uznání
-    nyni: profesor, CAM ZČU Plzeň
   - poradi: '27'
     jmeno: Jiří Dolejší
     body: 29,0
     oceneni: uznání
-    nyni: zástupce ředitele ÚČJF MFF UK
   - poradi: '31'
     jmeno: Milan Lehotský
     body: 27,5
     oceneni: uznání
-    nyni: docent, katedra informatiky PF KU Ružomberok
   - poradi: '34'
     jmeno: Libor Slezák
     body: 25,5
@@ -1227,22 +1092,18 @@
     jmeno: Karel Šafařík
     body: '48'
     oceneni: zlato
-    nyni: "člen kolaborace experimentu \tALICE, CERN"
   - poradi: '4'
     jmeno: Ivan Gabaš
     body: '45'
     oceneni: zlato
-    nyni: mítsopředseda představenstva DELTAX Systems
   - poradi: '6'
     jmeno: Andrej Kugler
     body: '44'
     oceneni: stříbro
-    nyni: vedoucí oddělení jaderné spektroskopie ÚJF AV ČR
   - poradi: '26'
     jmeno: Václav Holý
     body: '32'
     oceneni: uznání
-    nyni: profesor, KFKL MFF UK
 - mfo: 4
   rok: 1970
   misto: Moskva, SSSR
@@ -1255,12 +1116,10 @@
     jmeno: Vladimír Černý
     body: '43'
     oceneni: bronz
-    nyni: docent, katedra teoretické fyziky a didaktiky fyziky FMFI UK Bratislava
   - poradi: '15'
     jmeno: Vojtěch Hanzal
     body: '42'
     oceneni: bronz
-    nyni: zástupce vedoucí KVOF MFF UK
   - poradi: '15'
     jmeno: Jaroslav Kučera
     body: '42'
@@ -1281,12 +1140,10 @@
     jmeno: Mojmír Šob
     body: 48/48
     oceneni: zlato
-    nyni: profesor, vedoucí oddělení teoretické a fyzikální chemie, Ústav chemie PřF MU Brno
   - poradi: '4'
     jmeno: Vladimír Černý
     body: '47'
     oceneni: zlato
-    nyni: docent, katedra teoretické fyziky a didaktiky fyziky FMFI UK Bratislava
   - poradi: '6'
     jmeno: František Komín
     body: '45'
