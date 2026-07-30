@@ -125,14 +125,6 @@
   - name: 37. MFO, Singapur
     title: 37. Mezinárodní fyzikální olympiáda, Singapur 2006
     file: mfo/37
-- name: Diskuse
-  title: Diskuse nejenom o Fyzikální olympiádě
-  file: diskuse
-  children:
-  - name: Studenti
-    file: diskuse
-  - name: Učitelé
-    file: diskuse-ucitele
 - name: Ústřední komise
   title: Adresář ústřední komise (a předsedů krajských komisí) FO
   file: ukfo
@@ -259,3 +251,11 @@
     - name: Karlovy Vary 2023
       title: Celostátní kolo 64. ročníku FO, Karlovy Vary
       file: archiv/celostatni-kola/64
+- name: Diskuse
+  title: Diskuse nejenom o Fyzikální olympiádě
+  file: diskuse
+  children:
+  - name: Studenti
+    file: diskuse
+  - name: Učitelé
+    file: diskuse-ucitele
