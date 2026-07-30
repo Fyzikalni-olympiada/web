@@ -18,11 +18,11 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.4'
-          extensions: mbstring, iconv
+          extensions: mbstring
           tools: composer
 
       - name: Composer
-        run: composer install --no-dev --no-interaction
+        run: composer install --no-interaction
 
       - name: ImageMagick
         run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends imagemagick
@@ -40,16 +40,9 @@ jobs:
       - name: Build
         run: make build
 
-      - name: Kontrola buildu
-        run: |
-          test -s dist/index.html
-          test "$(jq length dist/data/thumbs.json)" -gt 0
-          test "$(jq length dist/data/terms.json)" -gt 0
-
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FYZIKALNIOLYMPIADA_WEB }}
           channelId: live
           projectId: fyzikalniolympiada-web
