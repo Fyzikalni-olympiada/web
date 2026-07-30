@@ -17,3 +17,6 @@ archiv/mfo/*/*prezentace.pdf
 /dist/
 texty/texty.tar
 texty/matematika/cd.tar.gz
+/.firebase/
+.codex
+firebase-debug.log

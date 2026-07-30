@@ -168,55 +168,55 @@ Dále si můžete stáhnout <em>výsledky řešení úloh školního kola jako n
     <th scope="row">Školní kolo</th>
     <!--td colspan="2">Zveřejníme v nejbližší době</td-->
     <td colspan="2">
-		<a href="<?php echo ROOT_WWW ?>archiv/67/fo67ef1_z.pdf" title="Zadání ve formátu PDF"><i class="pdf">pdf</i></a><br>
+		<a href="/archiv/67/fo67ef1_z.pdf" title="Zadání ve formátu PDF"><i class="pdf">pdf</i></a><br>
 		<small><?=$termin1?></small>
     </td>
     <td colspan="2">
-		<? if (!$beforeDom) :?>
-        <a href="<?php echo ROOT_WWW ?>archiv/67/fo67ef1_r.pdf"><i class="pdf">pdf</i></a>
-		<? endif; ?>
+		<?php if (!$beforeDom) :?>
+        <a href="/archiv/67/fo67ef1_r.pdf"><i class="pdf">pdf</i></a>
+		<?php endif; ?>
     </td>
 </tr>
 <tr>
     <th scope="row">Okresní kolo</th>
-	<? if ($beforeOkr) :?>
+	<?php if ($beforeOkr) :?>
     <td colspan="2">
 		<small><?=$termin2?></small>
     </td>
     <td></td>
     <td></td>
-	<? else: ?>
+	<?php else: ?>
 	<td>
-        <a href="<?php echo ROOT_WWW ?>archiv/67/fo67e2_z.pdf"><i class="pdf">pdf</i></a>
+        <a href="/archiv/67/fo67e2_z.pdf"><i class="pdf">pdf</i></a>
     </td>
 	<td>
-        <a href="<?php echo ROOT_WWW ?>archiv/67/fo67f2_z.pdf"><i class="pdf">pdf</i></a>
+        <a href="/archiv/67/fo67f2_z.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/67/fo67e2_r.pdf"><i class="pdf">pdf</i></a>
+        <a href="/archiv/67/fo67e2_r.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/67/fo67f2_r.pdf"><i class="pdf">pdf</i></a>
+        <a href="/archiv/67/fo67f2_r.pdf"><i class="pdf">pdf</i></a>
     </td>
-	<? endif; ?>
+	<?php endif; ?>
 </tr>
 <tr>
     <th scope="row">Krajské kolo E</th>
-	<? if ($beforeKra) :?>
+	<?php if ($beforeKra) :?>
     <td colspan="2">
 		<small><?=$termin3?></small>
     </td>
 	<td colspan="2"></td>
-	<? else: ?>
+	<?php else: ?>
     <td>
-        <a href="<?php echo ROOT_WWW ?>archiv/67/fo67e3_z.pdf"><i class="pdf">pdf</i></a>
+        <a href="/archiv/67/fo67e3_z.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td></td>
     <td colspan="1">
-		<a href="<?php echo ROOT_WWW ?>archiv/67/fo67e3_r.pdf"><i class="pdf">pdf</i></a>
+		<a href="/archiv/67/fo67e3_r.pdf"><i class="pdf">pdf</i></a>
     </td>
     <td></td>
-	<? endif; ?>
+	<?php endif; ?>
 </tr>
 </table>
 </div>
@@ -236,7 +236,7 @@ Vyšší kola soutěže (okresní, krajské kolo) mají v celé republice jednot
 
 </div>
 
-<h3 class="accordion<? if ($beforeOkr || $beforeKra) :?> accordion-main<? endif; ?>" id="pokyny-vyssi-kola">Pokyny pro okresní a krajské kolo</h3>
+<h3 class="accordion<?php if ($beforeOkr || $beforeKra) :?> accordion-main<?php endif; ?>" id="pokyny-vyssi-kola">Pokyny pro okresní a krajské kolo</h3>
 <div>
 <p>
 V okresním kole kategorií E a F i v krajském kole kategorie E jsou zadány čtyři teoretické úlohy. Čas na řešení úloh je 4&nbsp;hodiny čistého času. Maximální dosažitelný počet bodů z jedné úlohy je&nbsp;10. V okresním i krajském kole můžete používat Matematické, fyzikální a&nbsp;chemické tabulky pro střední školy, nebo pro základní školy a&nbsp;neprogramovatelné kalkulačky.
@@ -249,7 +249,7 @@ Za <b>úspěšného řešitele</b> se považuje každý soutěžící, který ce
 </p>
 </div>
 
-<h3 class="accordion<? if ($beforeDom) :?> accordion-main<? endif; ?>" id="pokyny">Pokyny pro domácí kolo</h3>
+<h3 class="accordion<?php if ($beforeDom) :?> accordion-main<?php endif; ?>" id="pokyny">Pokyny pro domácí kolo</h3>
 <div>
 <p>
 Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na

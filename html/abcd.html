@@ -149,7 +149,7 @@ Pozvánky do krajského kola obdrží přímo soutěžící na email, kterým se
 </div>
 </div>
 
-<h3 class="accordion<? if ($krajBeforeBCD): ?> accordion-main<? endif; ?>" id="ulohy">Úlohy školního kola</h3>
+<h3 class="accordion<?php if ($krajBeforeBCD): ?> accordion-main<?php endif; ?>" id="ulohy">Úlohy školního kola</h3>
 
 <div>
 <h4>Zadání</h4>
@@ -163,22 +163,22 @@ Pozvánky do krajského kola obdrží přímo soutěžící na email, kterým se
 </tr>
 <tr>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/67/fo67a1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="/archiv/67/fo67a1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminA?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/67/fo67b1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="/archiv/67/fo67b1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/67/fo67c1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="/archiv/67/fo67c1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?php echo ROOT_WWW ?>archiv/67/fo67d1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="/archiv/67/fo67d1_z.pdf"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
@@ -194,7 +194,7 @@ Pozvánky do krajského kola obdrží přímo soutěžící na email, kterým se
 
 <h4>Řešení</h4>
 
-<? if ($beforeBCD) : ?>
+<?php if ($beforeBCD) : ?>
 <p>
 Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
 <strong>samostatný papír</strong>, pomocné obrázky a náčrty zhotovte tužkou. Jestliže používáte
@@ -229,8 +229,8 @@ Texty úloh <strong>neopisujte</strong>, napište jen text řešení a&nbsp;udě
 <strong>každý další list</strong> napište svoje jméno, příjmení, školu, číslo úlohy a&nbsp;číslo
 strany řešení.
 </p>
-<? endif; ?>
-<? if (!$beforeA) : ?>
+<?php endif; ?>
+<?php if (!$beforeA) : ?>
 <div class="table-responsive">
 <table class="table zadani">
 <tr>
@@ -240,34 +240,34 @@ strany řešení.
     <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-<? if (!$beforeA) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67a1_r.pdf"><i class="pdf">pdf</i></a></td>
-<? else :?>
+<?php if (!$beforeA) : ?>
+	<td><a href="/archiv/67/fo67a1_r.pdf"><i class="pdf">pdf</i></a></td>
+<?php else :?>
 	<td></td>
-<? endif; ?>
-<? if (!$beforeBCD) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67b1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67c1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67d1_r.pdf"><i class="pdf">pdf</i></a></td>
-<? else :?>
+<?php endif; ?>
+<?php if (!$beforeBCD) : ?>
+	<td><a href="/archiv/67/fo67b1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="/archiv/67/fo67c1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="/archiv/67/fo67d1_r.pdf"><i class="pdf">pdf</i></a></td>
+<?php else :?>
 	<td></td>
 	<td></td>
 	<td></td>
-<? endif; ?>
+<?php endif; ?>
 </tr>
 </table>
 </div>
-<? endif; ?>
+<?php endif; ?>
 
 </div>
 
 
-<h3 class="accordion<?if ($krajBeforeBCD):?> accordion-main<? endif; ?>" id="temata">Studijní témata</h3>
+<h3 class="accordion<?php if ($krajBeforeBCD):?> accordion-main<?php endif; ?>" id="temata">Studijní témata</h3>
 <div>
 <?php include 'html/texty.html' ?>
 </div>
 
-<h3 class="accordion<?if ($krajBeforeA && !$beforeA || $krajBeforeBCD && !$beforeBCD):?> accordion-main<? endif; ?>" id="krajske-kolo">Krajské kolo</h3>
+<h3 class="accordion<?php if ($krajBeforeA && !$beforeA || $krajBeforeBCD && !$beforeBCD):?> accordion-main<?php endif; ?>" id="krajske-kolo">Krajské kolo</h3>
 
 <div>
 <p>
@@ -306,8 +306,8 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 </p>
 </div>
 
-<? if (!$krajBeforeA) : ?>
-<h3 class="accordion<?if (!$krajBeforeBCD || $krajBeforeWeekAfterA):?> accordion-main<? endif; ?>" id="ulohy-kraj">Úlohy krajského kola</h3>
+<?php if (!$krajBeforeA) : ?>
+<h3 class="accordion<?php if (!$krajBeforeBCD || $krajBeforeWeekAfterA):?> accordion-main<?php endif; ?>" id="ulohy-kraj">Úlohy krajského kola</h3>
 
 <div>
 <h4>Zadání</h4>
@@ -321,16 +321,16 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-    <td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67a2_z.pdf"><i class="pdf">pdf</i></a></td>
-<? if (!$krajBeforeBCD) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67b2_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67c2_z.pdf"><i class="pdf">pdf</i></a></td>
-    <td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67d2_z.pdf"><i class="pdf">pdf</i></a></td>
-<? else :?>
+    <td><a href="/archiv/67/fo67a2_z.pdf"><i class="pdf">pdf</i></a></td>
+<?php if (!$krajBeforeBCD) : ?>
+	<td><a href="/archiv/67/fo67b2_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="/archiv/67/fo67c2_z.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="/archiv/67/fo67d2_z.pdf"><i class="pdf">pdf</i></a></td>
+<?php else :?>
 	<td></td>
 	<td></td>
 	<td></td>
-<? endif; ?>
+<?php endif; ?>
 </tr>
 </table>
 </div>
@@ -346,16 +346,16 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67a2_r.pdf"><i class="pdf">pdf</i></a></td>
-<? if (!$krajBeforeBCD) : ?>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67b2_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67c2_r.pdf"><i class="pdf">pdf</i></a></td>
-    <td><a href="<?php echo ROOT_WWW ?>archiv/67/fo67d2_r.pdf"><i class="pdf">pdf</i></a></td>
-<? else :?>
+	<td><a href="/archiv/67/fo67a2_r.pdf"><i class="pdf">pdf</i></a></td>
+<?php if (!$krajBeforeBCD) : ?>
+	<td><a href="/archiv/67/fo67b2_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="/archiv/67/fo67c2_r.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="/archiv/67/fo67d2_r.pdf"><i class="pdf">pdf</i></a></td>
+<?php else :?>
 	<td></td>
 	<td></td>
 	<td></td>
-<? endif; ?>
+<?php endif; ?>
 </tr>
 </table>
 </div>
@@ -374,4 +374,4 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 </div>
 
 </div>
-<? endif; ?>
+<?php endif; ?>

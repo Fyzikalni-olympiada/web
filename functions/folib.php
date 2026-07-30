@@ -22,7 +22,7 @@ function datetime()
 /** URL stránky podle pathname z data/files.yaml */
 function url_for_pathname($pathname)
 {
-    return $pathname === '/' ? ROOT_WWW : ROOT_WWW . ltrim($pathname, '/');
+    return $pathname === '/' ? '/' : '/' . ltrim($pathname, '/');
 }
 
 
@@ -40,7 +40,7 @@ function odkaz($souborName, $kdo = null, $amp_entity = 1)
     if (isset($map['html/' . $souborName])) {
         return url_for_pathname($map['html/' . $souborName]);
     }
-    return ROOT_WWW;
+    return '/';
 }
 
 /* ----- Menu ----- */
@@ -59,7 +59,7 @@ function menu_target($node)
     if (!empty($node['children'])) {
         return menu_target($node['children'][0]);
     }
-    return ROOT_WWW;
+    return '/';
 }
 
 
@@ -98,8 +98,8 @@ function menu()
 				<li class="dropdown' . ($selected ? ' current-tab' : '') . ($i++ > 5 ? ' smaller' : '') . '">
 				<a href="' . $url . '" title="' . $title . '" id="diskuse-drop" role="button" class="dropdown-toggle" data-toggle="dropdown">' . $node['name'] . '<b class="caret"></b></a>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="diskuse-drop">
-					<li><a href="' . ROOT_WWW . 'diskuse">Studenti</a></li>
-					<li><a href="' . ROOT_WWW . 'diskuse-ucitele">Učitelé</a></li>
+					<li><a href="/' . 'diskuse">Studenti</a></li>
+					<li><a href="/' . 'diskuse-ucitele">Učitelé</a></li>
 				</ul>';
         } else {
             $dropdown = ($submenu = submenu($node, true));
@@ -251,8 +251,8 @@ function fotogalerie($dir, $dny = null)
         }
         echo '
 	<div class="photoContainer">
-		<a href="' . ROOT_WWW . $dir . '/photos/' . $soubor . '" title="' . $title . '">
-		<img src="' . ROOT_WWW . $dir . '/thumbnails/' . $soubor . '" alt="' . $title . '" loading="lazy" />
+		<a href="/' . $dir . '/photos/' . $soubor . '" title="' . $title . '">
+		<img src="/' . $dir . '/thumbnails/' . $soubor . '" alt="' . $title . '" loading="lazy" />
 		</a>
 	</div>';
     }

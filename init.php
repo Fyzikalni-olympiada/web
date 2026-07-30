@@ -5,7 +5,6 @@ if(!defined("VALID_ACCESS"))	{die("Neoprávněný přístup!");}				//	Ochrana p
 date_default_timezone_set('Europe/Prague');
 
 define('ROOT_DIR', __DIR__ . '/');
-define('ROOT_WWW', '/');
 
 /* Kanonická adresa webu (build); při lokálním náhledu se odvodí z requestu */
 if (PHP_SAPI === 'cli' || getenv('FO_BUILD')) {

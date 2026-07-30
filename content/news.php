@@ -30,7 +30,7 @@ foreach ($novinky_list as $item) {
 	$img = isset($item['image']) ? $item['image'] : null;
 	if ($img && $img['align'] !== 'block') {
 		echo '
-					<img src="' . ROOT_WWW . 'upload/' . $img['filename'] . '" style="margin:';
+					<img src="/' . 'upload/' . $img['filename'] . '" style="margin:';
 		echo isset($img['vspace']) ? ($img['vspace'] . "px ") : "5px ";
 		echo isset($img['hspace']) ? ($img['hspace'] . "px ") : "7px ";
 		echo ';float: ' . $img['align'] . '; ' . ($img['align'] == 'left' ? 'margin-left: 0px;' : 'margin-rigth: 0px;') . '" alt="' . $img['alt'] . '" title="' . $img['alt'] . '"/>';
@@ -39,13 +39,13 @@ foreach ($novinky_list as $item) {
 	if ($img && $img['align'] === 'block') {
 		echo '
 				<div class="center-box">
-					<img src="' . ROOT_WWW . 'upload/' . $img['filename'] . '" class="img-responsive"
+					<img src="/' . 'upload/' . $img['filename'] . '" class="img-responsive"
 					alt="' . $img['alt'] . '" title="' . $img['alt'] . '"/>
 				</div>';
 	}
 	echo '
 				<div class="post-date">
-					<a href="' . ROOT_WWW . 'novinka/' . $item['id'] . '" title="Trvalý odkaz na příspěvek" class="link">' . $hourmin . ', ' . (int) $den . '. ' . $monthz[(int) $mesic] . ' ' . $rok . '</a>
+					<a href="/' . 'novinka/' . $item['id'] . '" title="Trvalý odkaz na příspěvek" class="link">' . $hourmin . ', ' . (int) $den . '. ' . $monthz[(int) $mesic] . ' ' . $rok . '</a>
                     <span title="id=' . $item['id'] . '">&bull;</span>
                     <a href="mailto:' . $item['email'] . '" title="Autor příspěvku" class="sign">' . $item['author'] . '</a>
 				</div>
@@ -60,9 +60,9 @@ echo '
     <div class="archive-pagination archive-pagination-bottom">';
 
 if ($GLOBALS['news_archiv']) {
-	echo '<div class="left"><a href="' . ROOT_WWW . '">&#171; Novinky</a></div>';
+	echo '<div class="left"><a href="/' . '">&#171; Novinky</a></div>';
 } else {
-	echo '<div class="right"><a href="' . ROOT_WWW . 'archiv-novinek">Starší novinky &#187;</a></div>';
+	echo '<div class="right"><a href="/' . 'archiv-novinek">Starší novinky &#187;</a></div>';
 }
 
 echo '

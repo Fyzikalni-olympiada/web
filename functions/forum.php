@@ -84,7 +84,7 @@ function forum_post_html($node, $root_id)
 ';
     if ($GLOBALS['forum_thread'] === null) {
         $s .= '
-            <div class="right"><a href="' . ROOT_WWW . 'diskuse/vlakno/' . $root_id . '#p' . $node['id'] . '">#' . $node['id'] . '</a></div>';
+            <div class="right"><a href="/' . 'diskuse/vlakno/' . $root_id . '#p' . $node['id'] . '">#' . $node['id'] . '</a></div>';
     }
     $s .= '
             <div class="clearer">&nbsp;</div>
@@ -161,6 +161,6 @@ function forum_pocet_stranek($who)
 /** Cesta na stránku seznamu */
 function forum_list_url($who, $strana)
 {
-    $base = ROOT_WWW . ($who === 'ucitel' ? 'diskuse-ucitele' : 'diskuse');
+    $base = '/' . ($who === 'ucitel' ? 'diskuse-ucitele' : 'diskuse');
     return $strana > 1 ? $base . '/' . $strana : $base;
 }

@@ -43,11 +43,11 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 <link rel='manifest' href='/site.webmanifest' />
 <meta name='theme-color' content='#ffffff' />
 
-<? if ($napln == FILE_FORUM) : ?>
+<?php if ($napln == FILE_FORUM) : ?>
 <link rel='alternate' type='application/rss+xml' title='Diskuse Fyzikální olympiády' href='/rss_forum.xml' />
-<? else: ?>
+<?php else: ?>
 <link rel='alternate' type='application/rss+xml' title='Aktuality Fyzikální olympiády' href='/rss.xml' />
-<? endif; ?>
+<?php endif; ?>
 <link rel='home' href='/' />
 
 <link rel='stylesheet' type='text/css' media='screen' href='/css/bootstrap.css' />
@@ -259,8 +259,8 @@ Fyzikální olympiáda – <?= nadpis() ?>
             <p class="large pull-right text-right">
                 <a href="/rss" title="RSS kanál"><abbr title="Realy Simple Syndication - Odebírat novinky ve formátu RSS">RSS</abbr></a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
-                <a href="<?php echo ROOT_WWW ?>dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
-                <a href="<?php echo ROOT_WWW ?>dokumenty/pravidla-pro-urcovani-poradi.pdf">Pravidla pro určování pořadí</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
+                <a href="/dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
+                <a href="/dokumenty/pravidla-pro-urcovani-poradi.pdf">Pravidla pro určování pořadí</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('jine_olym.html') ?>">Další předmětové olympiády</a> <span class="text-separator">|</span>
 				<a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a>
                 <!--a href="<?php echo odkaz('odkazy.html') ?>">Odkazy</a-->
