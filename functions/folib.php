@@ -165,6 +165,60 @@ function terms_hledej($nazev, $kategorie = null, $rocnik = null)
     return $vysledek;
 }
 
+/* ----- Novinky ----- */
+
+
+
+/**
+ * HTML jedné novinky. $permalink: datum jako odkaz na /novinka/<id>;
+ * $poradi: číslovaná kotva v seznamu novinek.
+ */
+function novinka_html($item, $permalink = true, $poradi = null)
+{
+	list($rok, $mesic, $den) = explode('-', $item['date']);
+	$datum = preg_replace('~^0~', '', $item['time']) . ', ' . (int) $den . '. ' . MESICE[(int) $mesic] . ' ' . $rok;
+	$img = isset($item['image']) ? $item['image'] : null;
+
+	$s = '
+        <div class="post">
+
+            <div class="archive-post-title">' . ($poradi !== null ? '<a name="' . $poradi . '"></a>' : '') . '
+                <h3>' . $item['subject'] . '</h3>
+                <p>';
+	if ($img && $img['align'] !== 'block') {
+		$s .= '
+					<img src="/upload/' . $img['filename'] . '" style="margin:'
+			. (isset($img['vspace']) ? $img['vspace'] . 'px ' : '5px ')
+			. (isset($img['hspace']) ? $img['hspace'] . 'px ' : '7px ')
+			. ';float: ' . $img['align'] . '; ' . ($img['align'] == 'left' ? 'margin-left: 0px;' : '')
+			. '" alt="' . $img['alt'] . '" title="' . $img['alt'] . '"/>';
+	}
+	$s .= $item['body'] . '</p>';
+	if ($img && $img['align'] === 'block') {
+		$s .= '
+				<div class="center-box">
+					<img src="/upload/' . $img['filename'] . '" class="img-responsive"
+					alt="' . $img['alt'] . '" title="' . $img['alt'] . '"/>
+				</div>';
+	}
+	$s .= '
+				<div class="post-date">
+					' . ($permalink
+						? '<a href="/novinka/' . $item['id'] . '" title="Trvalý odkaz na příspěvek" class="link">' . $datum . '</a>'
+						: '<span class="link">' . $datum . '</span>') . '
+                    <span title="id=' . $item['id'] . '">&bull;</span>
+                    <a href="mailto:' . $item['email'] . '" title="Autor příspěvku" class="sign">' . $item['author'] . '</a>
+				</div>
+            </div>
+
+            <div class="clearer">&nbsp;</div>
+
+        </div>';
+	return $s;
+}
+
+
+
 /* ----- Fotogalerie (zmrazený archiv celostátních kol) ----- */
 
 
