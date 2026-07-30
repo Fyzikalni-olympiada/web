@@ -38,6 +38,27 @@ V ' . $ucasti . ' ročnících MFO s československou či českou účastí sout
 </table>
 ';
 
+/* posledních 5 držitelů zlaté medaile (data jsou řazena od nejnovějšího ročníku) */
+$zlati = array();
+foreach ($rocniky as $r) {
+	foreach (isset($r['ucastnici']) ? $r['ucastnici'] : array() as $u) {
+		$oceneni = isset($u['oceneni']) ? $u['oceneni'] : '';
+		if (trim(explode(',', $oceneni)[0], " *+") === 'zlato') {
+			$zlati[] = $u['jmeno'] . ' (' . $r['mfo'] . '. MFO, ' . $r['misto'] . ', ' . $r['rok'] . ')';
+		}
+	}
+}
+echo '
+<h3>Poslední zlaté medaile</h3>
+<ul>';
+foreach (array_slice($zlati, 0, 5) as $z) {
+	echo '
+	<li>' . $z . '</li>';
+}
+echo '
+</ul>
+';
+
 foreach ($rocniky as $r) {
 	echo '
 <h3>' . $r['mfo'] . '. MFO (' . $r['misto'] . ', ' . $r['rok'] . ')</h3>';
