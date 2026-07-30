@@ -63,12 +63,6 @@ echo '
 ';
 
 foreach ($rocniky as $r) {
-	echo '
-<h3>' . $r['mfo'] . '. MFO (' . $r['misto'] . ', ' . $r['rok'] . ')</h3>';
-	if (isset($r['logo'])) {
-		echo '
-<img src="' . $r['logo'] . '" width="200" align="right" alt="Logo ' . $r['mfo'] . '. MFO"/>';
-	}
 	$odkazy_radek = array();
 	if (isset(data_routes()['mfo/' . $r['mfo']])) {
 		$odkazy_radek[] = '<a href="/mfo/' . $r['mfo'] . '">zpráva o konání</a>';
@@ -76,10 +70,14 @@ foreach ($rocniky as $r) {
 	if (isset($r['web'])) {
 		$odkazy_radek[] = '<a href="' . $r['web'] . '" target="_blank">oficiální stránky ročníku</a>';
 	}
-	if ($odkazy_radek) {
-		echo '
-<p>' . implode(' | ', $odkazy_radek) . '</p>';
-	}
+	echo '
+<div class="mfo-rocnik">
+<div>
+<h3>' . $r['mfo'] . '. MFO (' . $r['misto'] . ', ' . $r['rok'] . ')</h3>' . ($odkazy_radek ? '
+<p>' . implode(' | ', $odkazy_radek) . '</p>' : '') . '
+</div>' . (isset($r['logo']) ? '
+<img src="' . $r['logo'] . '" alt="Logo ' . $r['mfo'] . '. MFO"/>' : '') . '
+</div>';
 	if (isset($r['poznamka'])) {
 		echo '
 <p><i>' . $r['poznamka'] . '</i></p>';
@@ -113,6 +111,5 @@ foreach ($rocniky as $r) {
 	}
 	echo '
 </table>
-</div>
-<div style="clear: both"></div>';
+</div>';
 }

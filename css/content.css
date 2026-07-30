@@ -173,6 +173,28 @@ table.zadani td br + small {
 
 
 
+/* Hlavička ročníku MFO s logem (html/mfo_czu.html) */
+.mfo-rocnik {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	border-bottom: 2px solid #d0d8dc;
+	margin-bottom: .5em;
+}
+.mfo-rocnik > div {
+	flex: 1;
+}
+.mfo-rocnik h3 {
+	margin-bottom: .2em;
+}
+.mfo-rocnik p {
+	margin: 0 0 .5em;
+}
+.mfo-rocnik img {
+	height: 72px;
+	flex-shrink: 0;
+}
+
 /* Nejbližší nadcházející termín (zvýrazňuje js/fo.js) */
 tr.aktualni td, span.aktualni {
 	font-weight: bold;
