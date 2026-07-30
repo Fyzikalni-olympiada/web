@@ -24,8 +24,10 @@ jobs:
       - name: Composer
         run: composer install --no-dev --no-interaction
 
-      # ImageMagick je na ubuntu-latest předinstalovaný; cache miniatur
-      # ušetří ~90 s generování při každém nasazení
+      - name: ImageMagick
+        run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends imagemagick
+
+      # cache miniatur ušetří ~90 s generování při každém nasazení
       - name: Cache miniatur
         uses: actions/cache@v4
         with:
@@ -36,10 +38,16 @@ jobs:
       - name: Build
         run: php -d short_open_tag=1 build/build.php
 
+      - name: Kontrola buildu
+        run: |
+          test -s dist/index.html
+          test "$(jq length dist/data/thumbs.json)" -gt 0
+          test "$(jq length dist/data/terms.json)" -gt 0
+
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FYZIKALNIOLYMPIADA_WEB }}
           channelId: live
           projectId: fyzikalniolympiada-web
