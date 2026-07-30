@@ -22,7 +22,9 @@ $DIST = ROOT_DIR . 'dist/';
  * rss_forum.xml je jednou provždy zmrazený archiv) */
 $ASSET_DIRS = ['css', 'js', 'pic', 'images', 'fonts', 'dokumenty',
                'archiv', 'texty', 'vysledky', 'tana', 'upload'];
-$ASSET_FILES = ['favicon.ico', 'robots.txt', 'rss_forum.xml'];
+$ASSET_FILES = ['favicon.ico', 'favicon.svg', 'favicon-16x16.png', 'favicon-32x32.png',
+                'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest',
+                'robots.txt', 'rss_forum.xml'];
 
 /* Nepublikované podadresáře a soubory (úspora místa) – vynechají se z kopie i miniatur */
 $NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails',
