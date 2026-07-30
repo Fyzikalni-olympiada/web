@@ -75,8 +75,7 @@ function menu($current)
     foreach (data_menu() as $node) {
         $url = menu_target($node);
         $title = isset($node['title']) ? $node['title'] : $node['name'];
-        $selected = menu_contains($node, $current)
-            || (isset($node['file']) && $node['file'] === 'diskuse' && strpos((string) $current, 'diskuse') === 0);
+        $selected = menu_contains($node, $current);
 
         $dropdown = ($submenu = submenu($node, $current));
         $strHTML .= '

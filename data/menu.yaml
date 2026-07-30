@@ -251,11 +251,9 @@
     - name: Karlovy Vary 2023
       title: Celostátní kolo 64. ročníku FO, Karlovy Vary
       file: archiv/celostatni-kola/64
-- name: Diskuse
-  title: Diskuse nejenom o Fyzikální olympiádě
-  file: diskuse
-  children:
-  - name: Studenti
+  - name: Diskuse studentů
+    title: Archiv diskusí studentů o FO
     file: diskuse
-  - name: Učitelé
+  - name: Diskuse učitelů
+    title: Archiv diskusí učitelů o FO
     file: diskuse-ucitele
