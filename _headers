@@ -1,8 +1,5 @@
-# Cache (Cloudflare Pages). Edge TTL řídí s-maxage — vyžaduje Cache Rule
-# „Eligible for cache" + „Respect origin" v dashboardu. Konkrétnější pravidla
-# níže přepisují obecné /*.
 /*
-  Cache-Control: public, max-age=0, s-maxage=86400
+  Cache-Control: public, max-age=86400
 /temp/images/*
   Cache-Control: public, max-age=2592000
 /*.jpg
@@ -18,4 +15,4 @@
 /*.pdf
   Cache-Control: public, max-age=604800
 /data/*.json
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=86400
