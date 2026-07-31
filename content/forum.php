@@ -12,6 +12,7 @@ if ($route['forum_thread'] !== null) {
 		return;
 	}
 	echo '
+<h2>' . $root['title'] . '</h2>
 <p><a href="' . forum_list_url($root['who'], 1) . '">&#171; Zpět na seznam vláken</a></p>
 
 <div id="comments">

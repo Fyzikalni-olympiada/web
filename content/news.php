@@ -1,5 +1,8 @@
 <?php
-if (!$route['news_archiv']) {
+if ($route['news_archiv']) {
+	echo '
+<h2>Archiv novinek</h2>';
+} else {
 	include ROOT_DIR . 'html/zapojeni.html';
 	echo '
 <hr class="aktuality-predel">';

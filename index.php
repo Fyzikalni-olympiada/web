@@ -128,7 +128,6 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 			<?php if ($napln === 404): ?>
 			<p style="text-align: center; font-size: 2em">Tato stránka neexistuje</p>
 			<?php else: ?>
-            <h1><?php echo $route['nadpis']; ?></h1>
             <?php include(ROOT_DIR . $napln); ?>
 			<?php endif; ?>
         </div>
