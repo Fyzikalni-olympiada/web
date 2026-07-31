@@ -292,7 +292,7 @@ function fotogalerie($dir, $dny = null)
 
 /**
  * Route podle PATH_INFO: napln (soubor k include; 404 = stránka neexistuje),
- * nadpis, pathname a parametry speciálních stránek (novinky, diskuse).
+ * nadpis (jen pro <title>), pathname a parametry speciálních stránek (novinky, diskuse).
  */
 function parsuj()
 {
@@ -314,7 +314,7 @@ function parsuj()
 	}
 	if (preg_match('~^novinka/(\d+)$~', $pathname, $m)
 			&& ($novinka = data_news_by_id((int) $m[1])) !== null) {
-		return array('nadpis' => 'Aktuality', 'napln' => 'content/novinka.php', 'novinka' => $novinka) + $route;
+		return array('nadpis' => $novinka['subject'], 'napln' => 'content/novinka.php', 'novinka' => $novinka) + $route;
 	}
 	if (preg_match('~^diskuse(-ucitele)?(?:/(\d+))?$~', $pathname, $m)) {
 		return array('nadpis' => 'Diskusní fórum', 'napln' => FILE_FORUM,
@@ -329,7 +329,7 @@ function parsuj()
 	if (isset($routes[$pathname]) && file_exists(ROOT_DIR . $routes[$pathname]['file'])) {
 		return array('nadpis' => $routes[$pathname]['title'], 'napln' => $routes[$pathname]['file']) + $route;
 	}
-	return array('nadpis' => '404', 'napln' => 404) + $route;
+	return array('nadpis' => 'Stránka nenalezena', 'napln' => 404) + $route;
 }
 
 
