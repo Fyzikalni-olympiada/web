@@ -302,7 +302,7 @@ table.zadani td br + small {
 }
 #zapojeni a.kat {
 	flex: 1;
-	min-width: 96px;
+	min-width: max-content;
 	text-align: center;
 	border: 1px solid #d0d8dc;
 	padding: 8px 4px 10px;
@@ -330,14 +330,21 @@ table.zadani td br + small {
 	font-size: .75em;
 	line-height: 1.4;
 	margin-bottom: 2px;
+	white-space: nowrap;
 }
 #zapojeni a.kat .zadani {
 	color: #2f6f9f;
 	font-size: .85em;
+	white-space: nowrap;
 }
 #zapojeni .predel {
 	flex: 0 0 2px;
 	background: #d0d8dc;
+}
+/* pod 1200 px se dlaždice zalamují a svislý předěl ZŠ/SŠ ztrácí smysl;
+ * kategorie A v nakousnutém řádku záměrně roste — je nejdůležitější */
+@media (max-width: 1199px) {
+	#zapojeni .predel {display: none}
 }
 @media (max-width: 600px) {
 	#zapojeni .cesta {
