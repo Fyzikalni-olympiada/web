@@ -1,7 +1,7 @@
 /**
  * Klientský JS statického webu FO:
  *  - přesměrování starých adres s query parametry
- *  - hamburger menu na malých displejích (boční panel je jeho součástí)
+ *  - hamburger menu na malých displejích
  *  - boční panel „Nejbližší termíny" z /data/terms.json
  *  - zvýraznění nejbližšího termínu na /terminy (podle data-date)
  *  - náhodná fotka v bočním panelu z /data/thumbs.json
@@ -51,21 +51,6 @@
 		}
 	});
 
-	/* ---------- boční panel je na mobilu součástí menu ---------- */
-
-	var sidebar = document.getElementById('sidebar');
-	var sidebarRodic = sidebar.parentNode;
-	var sidebarDalsi = sidebar.nextElementSibling;
-	var mobil = window.matchMedia('(max-width: 640px)');
-	function umistiSidebar() {
-		if (mobil.matches) {
-			hlavniMenu.appendChild(sidebar);
-		} else {
-			sidebarRodic.insertBefore(sidebar, sidebarDalsi);
-		}
-	}
-	mobil.addEventListener('change', umistiSidebar);
-	umistiSidebar();
 
 	/* ---------- pomocné ---------- */
 

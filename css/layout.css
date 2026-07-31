@@ -439,6 +439,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .navigation a {
 	text-decoration: none;
 }
+.navigation .jen-mobil {display: none}
 .navigation li.current-tab > a {color: #3E5199;}
 
 #search {position: absolute; bottom: -35px; right: 0px;}
@@ -518,8 +519,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	#main-nav > ul > li:first-child {border-top: none}
 	#main-nav > ul > li > a {display: block}
 	#main-nav .dropdown-menu {position: relative; z-index: 1000; float: none; width: 100%; box-shadow: none; border: none}
-	/* boční panel je na mobilu přesunutý do menu (js/fo.js) */
-	#main-nav #sidebar {border-top: 2px solid #d0d8dc; margin-top: 10px; padding-top: 10px}
+	#main-nav .jen-mobil {display: block}
 }
 @media (max-width: 360px) {
 	#logo img {width: 70px}
@@ -560,6 +560,16 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 @media (min-width: 768px) {
 	#sidebar {
 		border-left: 1px solid #DDD;
+	}
+}
+@media (max-width: 767px) {
+	#sidebar {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		column-gap: 24px;
+		border-top: 2px solid #d0d8dc;
+		margin-top: 16px;
+		padding-top: 10px;
 	}
 }
 
