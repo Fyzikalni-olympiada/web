@@ -429,13 +429,16 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 /* Header */
 #header {padding-top: 14px;position: relative}
 
-/* Logo */
-#logo img {float:right; width: 132px;}
+/* Logo: grid — vlevo název + vlna + odznak ročníku, vpravo znak FO přes oba řádky */
+#logo {display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: start}
+#logo > a:first-child {grid-column: 2; grid-row: 1 / span 2}
+#logo img {width: 132px;}
 #logo span {font-size: 50px; line-height: 62px; font-weight: normal; color: #000; display:block;}
 #logo a:hover {text-decoration: none; color: #000;}
-#logo .vlna {display: block; width: 100%; margin-top: 2px}
+#logo .vlna {display: block; width: 100%; max-width: 560px; margin-top: 2px}
 #logo .rocnik {
 	display: inline-block;
+	justify-self: start;
 	margin-top: 10px;
 	border: 2px solid #3E5199;
 	border-radius: 999px;
@@ -455,14 +458,25 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #search {position: absolute; bottom: -35px; right: 0px;}
 
 /* Main navigation */
-#menu-tlacitko {
-	margin: 6px 15px 0;
+.mobil-tlacitko {
+	display: none;
+	margin: 6px 0 0 15px;
 	padding: 4px 12px;
 	font-size: 1.3em;
 	background: #fff;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	color: #444;
+}
+@media (max-width: 767px) {
+	.mobil-tlacitko {display: inline-block}
+}
+#menu-tlacitko::before {content: '\2630\00a0\00a0'}
+#menu-tlacitko[aria-expanded="true"]::before {content: '\2715\00a0\00a0'}
+#menu-tlacitko[aria-expanded="true"] {
+	background: #eef2f7;
+	border-color: #3E5199;
+	color: #3E5199;
 }
 #main-nav > ul > li {margin: 0 20px; position: relative}
 #main-nav > ul > li > a {

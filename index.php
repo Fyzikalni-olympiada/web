@@ -117,7 +117,8 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 			<span class="rocnik"><b><?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník</b> &middot; <?php echo AKTUALNI_ROK ?></span>
 		</div>
 
-		<button type="button" id="menu-tlacitko" class="visible-xs" aria-expanded="false">&#9776;&nbsp;Menu</button>
+		<button type="button" id="menu-tlacitko" class="mobil-tlacitko" aria-expanded="false">Menu</button>
+		<button type="button" id="panel-tlacitko" class="mobil-tlacitko" data-toggle="sidebar">Boční panel&nbsp;&raquo;</button>
 		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">
 			<?php echo menu($route['pathname']); ?>
 		</div>
@@ -129,10 +130,6 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 
     <div id="main-two-columns" class="row">
         <div id="main-content" class="col-sm-9 col-xs-12">
-			<div class="pull-right visible-xs">
-				<button type="button" class="btn-xs" data-toggle="sidebar">Zobrazit boční panel</button>
-			</div>
-
 			<?php if ($napln === 404): ?>
 			<p style="text-align: center; font-size: 2em">Tato stránka neexistuje</p>
 			<?php else: ?>
@@ -142,9 +139,6 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
         </div>
 
 		<div id="sidebar" class="col-sm-3">
-			<div class="section visible-xs">
-				<button type="button" class="btn-xs" data-toggle="sidebar">Skrýt boční panel</button>
-			</div>
             <div class="section">
                 <div class="section-title">Nejbližší termíny</div>
                 <div class="section-content">
