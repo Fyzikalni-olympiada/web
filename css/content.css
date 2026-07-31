@@ -300,6 +300,13 @@ table.zadani td br + small {
 	margin: 1em 0 .3em;
 	flex-wrap: wrap;
 }
+/* skupiny ZŠ a SŠ se lámou jako celky — první zlom padne mezi E a D */
+#zapojeni .skupina {
+	display: flex;
+	gap: 6px;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+}
 #zapojeni a.kat {
 	flex: 1;
 	min-width: max-content;
@@ -341,10 +348,12 @@ table.zadani td br + small {
 	flex: 0 0 2px;
 	background: #d0d8dc;
 }
-/* pod 1200 px se dlaždice zalamují a svislý předěl ZŠ/SŠ ztrácí smysl;
- * kategorie A v nakousnutém řádku záměrně roste — je nejdůležitější */
+/* pod 1200 px se skupiny lámou pod sebe: svislý předěl ZŠ/SŠ ztrácí smysl
+ * a napřed jdou SŠ kategorie (D–A); kategorie A v nakousnutém řádku
+ * záměrně roste — je nejdůležitější */
 @media (max-width: 1199px) {
 	#zapojeni .predel {display: none}
+	#zapojeni .skupina:last-child {order: -1}
 }
 @media (max-width: 600px) {
 	#zapojeni .cesta {
