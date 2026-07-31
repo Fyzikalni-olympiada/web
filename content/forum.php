@@ -12,7 +12,7 @@ if ($route['forum_thread'] !== null) {
 		return;
 	}
 	echo '
-<h2>' . $root['title'] . '</h2>' . $uzavreno . '
+<h1>' . $root['title'] . '</h1>' . $uzavreno . '
 <p><a href="' . forum_list_url($root['who'], 1) . '">&#171; Zpět na seznam vláken</a></p>
 
 <div id="comments">
@@ -35,7 +35,7 @@ $kdo_forum = $route['forum_who'];
 $strana = $route['forum_page'];
 
 echo '
-	<h2>Diskusní fórum pro ' . ($kdo_forum === 'ucitel' ? 'učitele' : 'studenty') . '</h2>' . $uzavreno;
+	<h1>Diskusní fórum pro ' . ($kdo_forum === 'ucitel' ? 'učitele' : 'studenty') . '</h1>' . $uzavreno;
 
 $pocet_stranek = forum_pocet_stranek($kdo_forum);
 

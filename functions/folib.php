@@ -165,7 +165,8 @@ function termin($kategorie, $nazev)
 
 
 /**
- * HTML jedné novinky. $permalink: datum jako odkaz na /novinka/<id>;
+ * HTML jedné novinky. $permalink: datum jako odkaz na /novinka/<id>
+ * (false = samostatná stránka novinky, titulek je pak h1);
  * $poradi: číslovaná kotva v seznamu novinek.
  */
 function novinka_html($item, $permalink = true, $poradi = null)
@@ -173,12 +174,13 @@ function novinka_html($item, $permalink = true, $poradi = null)
 	list($rok, $mesic, $den) = explode('-', $item['date']);
 	$datum = preg_replace('~^0~', '', $item['time']) . ', ' . (int) $den . '. ' . MESICE[(int) $mesic] . ' ' . $rok;
 	$img = isset($item['image']) ? $item['image'] : null;
+	$h = $permalink ? 'h3' : 'h1';
 
 	$s = '
         <div class="post">
 
             <div class="archive-post-title">' . ($poradi !== null ? '<a name="' . $poradi . '"></a>' : '') . '
-                <h3>' . $item['subject'] . '</h3>
+                <' . $h . '>' . $item['subject'] . '</' . $h . '>
                 <p>';
 	if ($img && $img['align'] !== 'block') {
 		$s .= '

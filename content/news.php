@@ -1,7 +1,7 @@
 <?php
 if ($route['news_archiv']) {
 	echo '
-<h2>' . $route['nadpis'] . '</h2>';
+<h1>' . $route['nadpis'] . '</h1>';
 } else {
 	include ROOT_DIR . 'html/zapojeni.html';
 	echo '
