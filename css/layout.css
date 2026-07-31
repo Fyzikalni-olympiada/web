@@ -439,10 +439,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #logo .rocnik {
 	display: inline-block;
 	justify-self: start;
-	margin-top: 10px;
-	border: 2px solid #3E5199;
-	border-radius: 999px;
-	padding: 2px 14px;
+	margin-top: 8px;
 	font-size: 17px;
 	font-weight: bold;
 	color: #3E5199;
