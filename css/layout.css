@@ -430,12 +430,11 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #header {padding-top: 14px;position: relative}
 
 /* Logo: grid — vlevo název + vlna + odznak ročníku, vpravo znak FO přes oba řádky */
-#logo {display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: start}
+#logo {display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr; column-gap: 12px; align-items: start}
 #logo > a:first-child {grid-column: 2; grid-row: 1 / span 2}
 #logo img {width: 132px;}
 #logo span {font-size: 50px; line-height: 62px; font-weight: normal; color: #000; display:block;}
 #logo a:hover {text-decoration: none; color: #000;}
-#logo .vlna {display: block; width: 100%; max-width: 560px; margin-top: 2px}
 #logo .rocnik {
 	display: inline-block;
 	justify-self: start;
