@@ -1,6 +1,6 @@
 <?php
 
-echo '
+$uzavreno = '
 <p><strong>Diskusní fórum je uzavřeno a slouží už jen jako archiv starších příspěvků.</strong>
 Máte-li dotaz nebo připomínku, napište nám na <a href="mailto:info@fyzikalniolympiada.cz">info@fyzikalniolympiada.cz</a>.</p>';
 
@@ -12,7 +12,7 @@ if ($route['forum_thread'] !== null) {
 		return;
 	}
 	echo '
-<h2>' . $root['title'] . '</h2>
+<h2>' . $root['title'] . '</h2>' . $uzavreno . '
 <p><a href="' . forum_list_url($root['who'], 1) . '">&#171; Zpět na seznam vláken</a></p>
 
 <div id="comments">
@@ -35,7 +35,7 @@ $kdo_forum = $route['forum_who'];
 $strana = $route['forum_page'];
 
 echo '
-	<h2>Diskusní fórum pro ' . ($kdo_forum === 'ucitel' ? 'učitele' : 'studenty') . '</h2>';
+	<h2>Diskusní fórum pro ' . ($kdo_forum === 'ucitel' ? 'učitele' : 'studenty') . '</h2>' . $uzavreno;
 
 $pocet_stranek = forum_pocet_stranek($kdo_forum);
 
