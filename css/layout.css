@@ -565,12 +565,15 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 @media (max-width: 767px) {
 	#sidebar {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
 		column-gap: 24px;
 		border-top: 2px solid #d0d8dc;
 		margin-top: 16px;
 		padding-top: 10px;
 	}
+}
+@media (max-width: 640px) {
+	#sidebar .section-kraje {display: none}
 }
 
 
