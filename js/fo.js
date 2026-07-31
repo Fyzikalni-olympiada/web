@@ -1,7 +1,7 @@
 /**
  * Klientský JS statického webu FO:
  *  - přesměrování starých adres s query parametry
- *  - zobrazit / skrýt boční panel na malých displejích
+ *  - hamburger menu na malých displejích (boční panel je jeho součástí)
  *  - boční panel „Nejbližší termíny" z /data/terms.json
  *  - zvýraznění nejbližšího termínu na /terminy (podle data-date)
  *  - náhodná fotka v bočním panelu z /data/thumbs.json
@@ -39,46 +39,33 @@
 	/* ---------- hamburger hlavního menu (malé displeje) ---------- */
 
 	var menuTlacitko = document.getElementById('menu-tlacitko');
+	var hlavniMenu = document.getElementById('main-nav');
 	menuTlacitko.addEventListener('click', function () {
-		var otevreno = document.getElementById('main-nav').classList.toggle('open');
+		var otevreno = hlavniMenu.classList.toggle('open');
 		menuTlacitko.setAttribute('aria-expanded', otevreno);
 	});
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape' && hlavniMenu.classList.contains('open')) {
+			hlavniMenu.classList.remove('open');
+			menuTlacitko.setAttribute('aria-expanded', 'false');
+		}
+	});
 
-	/* ---------- zobrazit / skrýt boční panel (malé displeje) ---------- */
+	/* ---------- boční panel je na mobilu součástí menu ---------- */
 
 	var sidebar = document.getElementById('sidebar');
-	var zaclona = document.createElement('div');
-	zaclona.id = 'sidebar-zaclona';
-	document.body.appendChild(zaclona);
-
-	function sidebarPrepni(otevrit) {
-		sidebar.classList.toggle('open', otevrit);
-		zaclona.classList.toggle('open', otevrit);
+	var sidebarRodic = sidebar.parentNode;
+	var sidebarDalsi = sidebar.nextElementSibling;
+	var mobil = window.matchMedia('(max-width: 640px)');
+	function umistiSidebar() {
+		if (mobil.matches) {
+			hlavniMenu.appendChild(sidebar);
+		} else {
+			sidebarRodic.insertBefore(sidebar, sidebarDalsi);
+		}
 	}
-	document.querySelectorAll('[data-toggle=sidebar]').forEach(function (btn) {
-		btn.addEventListener('click', function () {
-			sidebarPrepni(!sidebar.classList.contains('open'));
-		});
-	});
-	zaclona.addEventListener('click', function () {
-		sidebarPrepni(false);
-	});
-	document.addEventListener('keydown', function (e) {
-		if (e.key === 'Escape') {
-			sidebarPrepni(false);
-		}
-	});
-	/* swipe doprava panel zavře */
-	var swipeX = null;
-	sidebar.addEventListener('touchstart', function (e) {
-		swipeX = e.touches[0].clientX;
-	}, { passive: true });
-	sidebar.addEventListener('touchend', function (e) {
-		if (swipeX !== null && e.changedTouches[0].clientX - swipeX > 60) {
-			sidebarPrepni(false);
-		}
-		swipeX = null;
-	}, { passive: true });
+	mobil.addEventListener('change', umistiSidebar);
+	umistiSidebar();
 
 	/* ---------- pomocné ---------- */
 

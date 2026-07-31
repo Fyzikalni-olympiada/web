@@ -111,10 +111,9 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 			<a href="/"><img src="/pic/logo-fo.svg" alt="" /> </a>
 			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
 			<span class="rocnik"><b><?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník</b> &middot; <?php echo AKTUALNI_ROK ?></span>
+			<button type="button" id="menu-tlacitko" aria-label="Menu" aria-expanded="false"></button>
 		</div>
 
-		<button type="button" id="menu-tlacitko" class="mobil-tlacitko" aria-expanded="false">Menu</button>
-		<button type="button" id="panel-tlacitko" class="mobil-tlacitko" data-toggle="sidebar">Boční panel&nbsp;&raquo;</button>
 		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">
 			<?php echo menu($route['pathname']); ?>
 		</div>
