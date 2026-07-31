@@ -14,6 +14,11 @@ $kdy = function ($kategorie, $nazev, $s_mistem = false) {
 	}
 	return $s;
 };
+/* datum pro zvýraznění nejbližšího kroku (js/fo.js) */
+$datum = function ($kategorie, $nazev) {
+	$t = termin($kategorie, $nazev);
+	return $t ? ' data-date="' . $t['date'] . '"' : '';
+};
 ?>
 <div id="zapojeni">
 <h1>Jak se zapojit do Fyzikální olympiády?</h1>
@@ -27,25 +32,25 @@ $kdy = function ($kategorie, $nazev, $s_mistem = false) {
 		<div class="krok aktualni">
 			<div class="tecka">1</div>
 			<div class="nazev">Školní kolo</div>
-			<div class="kdy">termíny podle kategorie viz níže</div>
+			<div class="kdy"><span<?= $datum('A', 'školní') ?>>A <?= $kdy('A', 'školní') ?></span> &middot; <span<?= $datum('BCD', 'školní') ?>>B&ndash;D <?= $kdy('BCD', 'školní') ?></span></div>
 			<div class="pozn">úlohy řešíš doma, registruješ se v&nbsp;<a href="https://osmo.fyzikalniolympiada.cz/">Osmo</a> a řešení odevzdáš učiteli</div>
 		</div>
 		<div class="krok">
 			<div class="tecka">2</div>
 			<div class="nazev">Krajské kolo</div>
-			<div class="kdy">A <?= $kdy('A', 'krajské') ?> &middot; B&ndash;D <?= $kdy('BCD', 'krajské') ?></div>
+			<div class="kdy"><span<?= $datum('A', 'krajské') ?>>A <?= $kdy('A', 'krajské') ?></span> &middot; <span<?= $datum('BCD', 'krajské') ?>>B&ndash;D <?= $kdy('BCD', 'krajské') ?></span></div>
 			<div class="pozn">soutěž na jednom místě v&nbsp;kraji</div>
 		</div>
 		<div class="krok vedlejsi">
 			<div class="tecka">3</div>
 			<div class="nazev">Ústřední kolo</div>
-			<div class="kdy"><?= $kdy('A', 'ústřední', true) ?></div>
+			<div class="kdy"><span<?= $datum('A', 'ústřední') ?>><?= $kdy('A', 'ústřední', true) ?></span></div>
 			<div class="pozn">50 nejlepších kategorie A</div>
 		</div>
 		<div class="krok vedlejsi">
 			<div class="tecka">4</div>
 			<div class="nazev">Mezinárodní FO</div>
-			<div class="kdy"><?= $kdy('A', 'Mezinárodní', true) ?></div>
+			<div class="kdy"><span<?= $datum('A', 'Mezinárodní') ?>><?= $kdy('A', 'Mezinárodní', true) ?></span></div>
 			<div class="pozn">5 reprezentantů ČR</div>
 		</div>
 	</div>
@@ -62,19 +67,19 @@ $kdy = function ($kategorie, $nazev, $s_mistem = false) {
 		<div class="krok aktualni">
 			<div class="tecka">1</div>
 			<div class="nazev">Školní kolo</div>
-			<div class="kdy">termíny podle kategorie viz níže</div>
+			<div class="kdy"><span<?= $datum('EF', 'školní') ?>>E, F <?= $kdy('EF', 'školní') ?></span> &middot; <span<?= $datum('G', 'školní') ?>>G <?= $kdy('G', 'školní') ?></span></div>
 			<div class="pozn">úlohy řešíš doma, odevzdáš učiteli</div>
 		</div>
 		<div class="krok">
 			<div class="tecka">2</div>
 			<div class="nazev">Okresní kolo</div>
-			<div class="kdy">E, F <?= $kdy('EF', 'okresní') ?></div>
+			<div class="kdy"><span<?= $datum('EF', 'okresní') ?>>E, F <?= $kdy('EF', 'okresní') ?></span></div>
 			<div class="pozn">soutěž na jednom místě v&nbsp;okrese</div>
 		</div>
 		<div class="krok vedlejsi">
 			<div class="tecka">3</div>
 			<div class="nazev">Krajské kolo</div>
-			<div class="kdy"><?= $kdy('EF', 'krajské kolo E') ?></div>
+			<div class="kdy"><span<?= $datum('EF', 'krajské kolo E') ?>><?= $kdy('EF', 'krajské kolo E') ?></span></div>
 			<div class="pozn">jen kategorie E</div>
 		</div>
 	</div>

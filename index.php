@@ -133,20 +133,8 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
         </div>
 
 		<div id="sidebar" class="col-sm-3">
-            <div>
-            <div class="section">
-                <div class="section-title">Nejbližší termíny</div>
-                <div class="section-content">
-                    <div id="nejblizsi-terminy"><!-- plní js/fo.js z /data/terms.json --></div>
-					<p class="text-center">
-						<a href="<?php echo odkaz('terminy.html') ?>">Všechny termíny</a>
-					</p>
-                </div>
-            </div>
-
             <div class="section">
                 <div class="section-title-image" id="nahodna-fotka"><!-- plní js/fo.js z /data/thumbs.json --></div>
-            </div>
             </div>
 
             <div class="section section-kraje">

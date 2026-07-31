@@ -286,6 +286,29 @@ table.zadani td br + small {
 	color: #8aa8bd;
 	border-style: dashed;
 }
+/* nejbližší nadcházející krok (označuje js/fo.js podle data) */
+#zapojeni .krok .stitek {
+	position: absolute;
+	top: -17px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: #3c7a12;
+	font-size: .7em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+#zapojeni .krok.nadchazi .tecka {
+	background: #94CC5F;
+	border-color: #6fae3a;
+	border-style: solid;
+	color: #fff;
+}
+#zapojeni .kdy .pristi {
+	color: #3c7a12;
+	font-weight: bold;
+}
 #zapojeni .krok .nazev {
 	font-weight: bold;
 	font-size: .95em;

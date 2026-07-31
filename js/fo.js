@@ -2,7 +2,7 @@
  * Klientský JS statického webu FO:
  *  - přesměrování starých adres s query parametry
  *  - hamburger menu na malých displejích
- *  - boční panel „Nejbližší termíny" z /data/terms.json
+ *  - zvýraznění nejbližšího kroku v „Jak se zapojit" na homepage
  *  - zvýraznění nejbližšího termínu na /terminy (podle data-date)
  *  - náhodná fotka v bočním panelu z /data/thumbs.json
  */
@@ -61,39 +61,30 @@
 			+ String(d.getDate()).padStart(2, '0');
 	}
 
-	/* ---------- nejbližší termíny (boční panel) ---------- */
+	/* ---------- nejbližší krok v „Jak se zapojit" (homepage) ---------- */
 
-	var terminyBox = document.getElementById('nejblizsi-terminy');
-	if (terminyBox) {
-		fetch('/data/terms.json').then(function (r) { return r.json(); }).then(function (terminy) {
-			var skupiny = [
-				['Kategorie A (4.&nbsp;ročník SŠ)', ['spolecne', 'A']],
-				['Kategorie B&ndash;D (1.&ndash;3.&nbsp;ročník SŠ)', ['spolecne', 'BCD']],
-				['Kategorie E, F (8. a&nbsp;9. třída ZŠ)', ['spolecne', 'EF']],
-				['Archimediáda (7.&nbsp;třída ZŠ)', ['G']]
-			];
-			var od = dnes();
-			var html = '';
-			skupiny.forEach(function (skupina) {
-				var nejblizsi = null;
-				terminy.forEach(function (t) {
-					if (skupina[1].indexOf(t.kategorie) === -1 || !t.date || t.date < od) {
-						return;
-					}
-					if (nejblizsi === null || t.date < nejblizsi.date) {
-						nejblizsi = t;
-					}
-				});
-				if (nejblizsi !== null) {
-					html += '<h6>' + skupina[0] + '</h6>'
-						+ '<div class="left">' + nejblizsi.nazev + '</div>'
-						+ '<div class="right">' + nejblizsi.termin + '</div>'
-						+ '<div class="clearer">&nbsp;</div>';
-				}
-			});
-			terminyBox.innerHTML = html;
+	document.querySelectorAll('#zapojeni .cesta').forEach(function (cesta) {
+		var pristi = null;
+		cesta.querySelectorAll('.kdy [data-date]').forEach(function (el) {
+			var date = el.getAttribute('data-date');
+			if (date >= dnes() && (pristi === null || date < pristi.getAttribute('data-date'))) {
+				pristi = el;
+			}
 		});
-	}
+		if (pristi === null) {
+			return;
+		}
+		cesta.querySelectorAll('.krok').forEach(function (k) {
+			k.classList.remove('aktualni');
+		});
+		pristi.classList.add('pristi');
+		var krok = pristi.closest('.krok');
+		krok.classList.add('nadchazi');
+		var stitek = document.createElement('div');
+		stitek.className = 'stitek';
+		stitek.textContent = 'nejblíž';
+		krok.insertBefore(stitek, krok.firstChild);
+	});
 
 	/* ---------- zvýraznění nejbližšího termínu na /terminy ---------- */
 
