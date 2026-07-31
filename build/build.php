@@ -91,6 +91,15 @@ foreach ($pages as $name) {
 }
 write_file($DIST . '404.html', render_page('/tato-stranka-neexistuje'));
 
+/* stránky s id 404 (vlákno, novinka): soubor 404.html by Pages braly
+ * jako chybovou stránku celé sekce */
+foreach ($pages as $name) {
+    if (substr($name, -4) === '/404') {
+        write_file($DIST . $name . '/index.html', file_get_contents($DIST . $name . '.html'));
+        unlink($DIST . $name . '.html');
+    }
+}
+
 /* ---------- 2. rss.xml, terms.json ---------- */
 
 write_file($DIST . 'rss.xml', capture(ROOT_DIR . 'rss.php'));
