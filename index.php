@@ -153,25 +153,12 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
                 <div class="section-content">
 					<div class="visible-md visible-lg map-container">
 						<div class="map-inner">
-							<?php include 'html/stranky_regionu.html' ?>
+							<?php include 'html/kraje_mapa.html' ?>
 						</div>
 					</div>
-                    <ul class="nice-list visible-sm visible-xs">
-                        <li><a href="http://praha.fyzikalniolympiada.cz/" title="Pražské stránky">Praha</a></li>
-                        <li><a href="http://www.pf.jcu.cz/structure/departments/kaft/pro-verejnost/fyzikalni-olympiada/" title="Stránky jihočeského kraje">Jihočeský kraj</a></li>
-                        <li><a href="https://www.chces-soutezit.cz/souteze/detail?soutez_id=256" title="Stránky jihomoravského kraje">Jihomoravský kraj</a></li>
-                        <li><a href="http://kvary.fyzikalniolympiada.cz/" title="Stránky karlovarského kraje">Karlovarský kraj</a></li>
-                        <li><a href="http://vysocina.fyzikalniolympiada.cz/" title="Stránky kraje Vysočina">Kraj Vysočina</a></li>
-                        <li><a href="https://www.gjkt.cz/fyzikalni-olympiada/" title="Stránky královéhradeckého kraje">Královéhradecký kraj</a></li>
-                        <li><a href="https://fo.randovka.cz/" title="Stránky libereckého kraje">Liberecký kraj</a></li>
-                        <li><a href="http://www.svcoo.cz/souteze-msmt-fyzika" title="Stránky moravskoslezského kraje">Moravskoslezský kraj</a></li>
-                        <li><a href="http://www.ktf.upol.cz/fo/" title="Stránky olomouckého kraje">Olomoucký kraj</a></li>
-                        <li><a href="https://souteze.ccvpardubice.cz/" title="Stránky pardubického kraje">Pardubický kraj</a></li>
-                        <li><a href="http://kof.zcu.cz/fo/" title="Stránky plzeňského kraje">Plzeňský kraj</a></li>
-                        <li><a href="http://fo.czechian.net/" title="Stránky středočeského kraje">Středočeský kraj</a></li>
-                        <li><a href="https://www.ddmul.cz/souteze-msmt/477-fyzikalni-olympiada" title="Stránky ústeckého kraje">Ústecký kraj</a></li>
-                        <li><a href="https://www.guh.cz/fyzikalni-olympiada/" title="Stránky zlínského kraje">Zlínský kraj</a></li>
-                    </ul>
+					<div class="visible-sm visible-xs">
+						<?php include 'html/kraje_seznam.html' ?>
+					</div>
                 </div>
             </div>
 

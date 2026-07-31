@@ -124,6 +124,16 @@ i.html {
 	width: 470px;
 	height: 269px;
 }
+/* na displeje, kam se 470px mapa nevejde, stačí seznam pod ní */
+@media (max-width: 640px) {
+	#main-content .mapa {display: none}
+}
+.kraje-sloupce {
+	max-width: 40em;
+	columns: 2 14em;
+	column-gap: 40px;
+	margin-top: 1em;
+}
 .mapa img {
 	position: absolute;
 }
