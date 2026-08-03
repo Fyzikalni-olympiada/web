@@ -224,8 +224,9 @@ table.zadani td br + small {
 	color: #fff;
 	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
 	font-size: .72em;
-	padding: 1px 8px;
-	border-radius: 9px;
+	line-height: 1;
+	padding: 4px 8px;
+	border-radius: 10px;
 	margin: 2px 0 2px 8px;
 }
 
