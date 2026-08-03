@@ -16,6 +16,9 @@
   - name: Termíny
     title: Přehled termínů aktuálního ročníku FO
     file: terminy
+  - name: Literatura
+    title: Literatura vhodná jako příprava pro FO
+    file: literatura
 - name: Studijní texty
   title: Studijní texty z Knihovničky fyzikální olympiády
   file: studijni-texty
@@ -41,21 +44,6 @@
   - name: Fotogalerie
     title: Fotky ze soustředění na chatě Táňa
     file: Tana/fotky
-- name: Příprava
-  title: Příprava pro úspěšnou účast ve Fyzikální olympiádě
-  children:
-  - name: Studijní texty
-    title: Studijní texty ke studijním tématům aktuálního ročníku FO
-    file: studijni-texty
-  - name: Soustředění Táňa
-    title: Celostátní soustředění Táňa pro úspěšné řešitele kategorií B a C
-    file: Tana
-  - name: Korespondenční semináře
-    title: Korespondenční semináře s matematicko-fyzikálním zameřením
-    file: korespondencni-seminare
-  - name: Literatura
-    title: Literatura vhodná jako příprava pro FO
-    file: literatura
 - name: Mezinárodní soutěž
   title: Mezinárodní fyzikální olympiáda
   children:

@@ -188,6 +188,7 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
                 <a href="<?php echo odkaz('cojefo.html') ?>">Co je FO?</a> <span class="text-separator">|</span>
                 <a href="/dokumenty/organizacni-rad-fo.pdf">Organizační řád FO</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
                 <a href="/dokumenty/pravidla-pro-urcovani-poradi.pdf">Pravidla pro určování pořadí</a>&nbsp;(<code>pdf</code>) <span class="text-separator">|</span>
+                <a href="<?php echo odkaz('koresem.html') ?>">Korespondenční semináře</a> <span class="text-separator">|</span>
                 <a href="<?php echo odkaz('jine_olym.html') ?>">Další předmětové olympiády</a> <span class="text-separator">|</span>
 				<a href="<?php echo odkaz('nadace.html') ?>">Praemium Bohemiae</a>
                 <!--a href="<?php echo odkaz('odkazy.html') ?>">Odkazy</a-->
