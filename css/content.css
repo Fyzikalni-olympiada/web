@@ -197,6 +197,10 @@ table.zadani td br + small {
 	align-items: center;
 	justify-content: center;
 }
+/* dlouhý e-mail nesmí roztáhnout sloupec přes okraj karty */
+.vizitka > div {
+	min-width: 0;
+}
 .vizitka b {
 	display: block;
 }
@@ -207,6 +211,7 @@ table.zadani td br + small {
 }
 .vizitka .mail {
 	font-size: .85em;
+	overflow-wrap: anywhere;
 }
 .vizitka .kde {
 	font-size: .8em;
