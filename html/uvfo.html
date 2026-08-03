@@ -1,482 +1,118 @@
-<h1>Ústřední komise Fyzikální olympiády (ÚK FO)</h1>
-<div class="ukfo">
+<h1>Ústřední komise Fyzikální olympiády (ÚK FO)</h1>
+<?php
+$predsednictvo = [
+	['foto' => 'kriz', 'jmeno' => 'doc. RNDr. Jan Kříž, PhD.', 'role' => 'předseda',
+		'mail' => 'jan.kriz@uhk.cz', 'kde' => 'Katedra fyziky, PřF Univerzita Hradec Králové'],
+	['foto' => 'studnicka', 'jmeno' => 'RNDr. Filip Studnička, Ph.D.',
+		'role' => 'místopředseda, předseda úlohové komise pro kategorie A, B, C, D',
+		'mail' => 'filip.studnicka@uhk.cz', 'kde' => 'Katedra fyziky, PřF Univerzita Hradec Králové'],
+	['foto' => 'slegr', 'jmeno' => 'RNDr. Jan Šlégr, Ph.D.', 'role' => 'tajemník',
+		'kde' => 'Katedra fyziky, PřF Univerzita Hradec Králové'],
+	['foto' => 'richterek', 'jmeno' => 'Mgr. Lukáš Richterek, PhD.',
+		'role' => 'předseda úlohové komise pro kategorie E, F, G',
+		'mail' => 'lukas.richterek@upol.cz',
+		'kde' => 'Katedra experimentální fyziky, PřF Univerzity Palackého v Olomouci · 585 634 104'],
+];
 
-<h3>Předsednictvo</h3>
+$clenove = [
+	['foto' => 'blazek', 'jmeno' => 'doc. RNDr. Josef Blažek, CSc.', 'mail' => 'bla@pf.jcu.cz',
+		'kde' => 'Katedra fyziky a aplikované techniky PF Jihočeské univerzity v Českých Budějovicích'],
+	['foto' => 'gottwald', 'jmeno' => 'RNDr. Stanislav Gottwald', 'mail' => 'stanislav.gottwald@gymspit.cz',
+		'kde' => 'Gymnázium Špitálská · 283 891 459 linka 32'],
+	['foto' => 'houstek', 'jmeno' => 'Mgr. Jan Houštěk', 'mail' => 'jan@houstek.net',
+		'kde' => 'Pod Harfou 938/38, 190 00 Praha 9 – Vysočany'],
+	['foto' => 'jaresova', 'jmeno' => 'PhDr. Miroslava Jarešová, Ph.D.',
+		'kde' => 'SPŠ Chrudim · 702 286 652'],
+	['foto' => 'jiru', 'jmeno' => 'RNDr. Josef Jírů', 'mail' => 'josef.jiru@email.cz',
+		'kde' => 'Gymnázium a Obchodní akademie Pelhřimov'],
+	['foto' => 'koudelkova', 'jmeno' => 'RNDr. Věra Koudelková, Ph.D.',
+		'kde' => 'Katedra didaktiky fyziky MFF Univerzity Karlovy'],
+	['foto' => 'krizova', 'jmeno' => 'RNDr. Michaela Křížová, Ph.D.', 'mail' => 'michaela.krizova@uhk.cz',
+		'kde' => 'Katedra fyziky, PřF Univerzita Hradec Králové'],
+	['foto' => 'novotny', 'jmeno' => 'doc. RNDr. Dušan Novotný, CSc.',
+		'kde' => 'Přírodovědecká fakulta Univerzity J. E. Purkyně v Ústí nad Labem'],
+	['foto' => 'polma', 'jmeno' => 'MUDr. et MDDr. Richard Polma', 'mail' => 'risa.student@seznam.cz'],
+	['foto' => 'prachar', 'jmeno' => 'RNDr. Jan Prachař', 'mail' => 'jan.prachar@fyzikalniolympiada.cz'],
+	['foto' => 'randa', 'jmeno' => 'RNDr. Miroslav Randa, Ph.D.', 'mail' => 'randam@kmt.zcu.cz',
+		'kde' => 'Fakulta pedagogická Západočeské univerzity v Plzni · 377 636 303'],
+	['foto' => 'rosicka', 'jmeno' => 'Kateřina Rosická',
+		'kde' => 'studentka fyziky MFF Univerzity Karlovy'],
+	['foto' => 'vybiral', 'jmeno' => 'prof. Ing. Bohumil Vybíral, CSc.', 'mail' => 'bohumil.vybiral@uhk.cz',
+		'kde' => 'emeritní profesor PřF UHK'],
+	['foto' => 'zivotsky', 'jmeno' => 'prof. Ing. Ondřej Životský, Ph.D.',
+		'kde' => 'VŠB – Technická univerzita Ostrava'],
+];
 
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/kriz.jpg" alt="Jan Kříž">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>doc. RNDr. Jan Kříž, PhD.</strong> <br />
-<em>předseda</em><br />
-<a href="mailto:jan.kriz@uhk.cz">jan.kriz@uhk.cz</a><br>
-Katedra fyziky, PřF Univerzita Hradec Králové
-</p>
-</div>
-</div>
-<hr>
+$krajsti = [
+	['foto' => 'ledvina', 'jmeno' => 'Mgr. Lukáš Ledvina', 'kraj' => 'Praha',
+		'mail' => 'lukas.ledvina@fyzikalniolympiada.cz',
+		'kde' => 'MFF Univerzity Karlovy, V Holešovičkách 2, 180 00 Praha 8'],
+	['foto' => 'kulich', 'jmeno' => 'RNDr. Vladimír Kulich', 'kraj' => 'Středočeský kraj',
+		'mail' => 'kulich.gymslany@centrum.cz',
+		'kde' => 'Gymnázium Třebízského, Smetanovo náměstí 1310, 274 01 Slaný'],
+	['foto' => 'krizp', 'jmeno' => 'RNDr. Pavel Kříž, Ph.D.', 'kraj' => 'Jihočeský kraj',
+		'mail' => 'kriz@pf.jcu.cz',
+		'kde' => 'Katedra fyziky a aplikované techniky PF Jihočeské univerzity, Jeronýmova 10, 371 15 České Budějovice · 387 773 057'],
+	['foto' => 'kielbusova', 'jmeno' => 'PhDr. Zdeňka Kielbusová', 'kraj' => 'Plzeňský kraj',
+		'mail' => 'kielbus@kmt.zcu.cz',
+		'kde' => 'FPE ZČU v Plzni, Klatovská 51, 301 00 Plzeň · 377 636 312'],
+	['jmeno' => 'Mgr. Gabriela Zalubilová', 'kraj' => 'Karlovarský kraj',
+		'mail' => 'gabriela.zalubilova@gymso.cz',
+		'kde' => 'Gymnázium Sokolov, Husitská 2053, 356 01 Sokolov · 354 229 326'],
+	['foto' => 'vlasakova', 'jmeno' => 'Mgr. Jana Vlasáková', 'kraj' => 'Ústecký kraj',
+		'mail' => 'vlasakova@gymrumburk.cz',
+		'kde' => 'Gymnázium Rumburk, Komenského 10, 408 01 Rumburk'],
+	['foto' => 'pulicek', 'jmeno' => 'Mgr. Jindřich Pulíček', 'kraj' => 'Liberecký kraj',
+		'mail' => 'pulicek@randovka.cz',
+		'kde' => 'Gymnázium Dr. Antona Randy, Dr. Randy 13, 466 01 Jablonec nad Nisou · 775 389 661'],
+	['jmeno' => 'Mgr. Jiří Kratochvíl', 'kraj' => 'Královéhradecký kraj',
+		'mail' => 'kratochvil@gjkt.cz',
+		'kde' => 'Gymnázium J. K. Tyla, Tylovo nábřeží 682, 500 02 Hradec Králové · 702 292 424'],
+	['foto' => 'vicha', 'jmeno' => 'RNDr. Vladimír Vícha', 'kraj' => 'Pardubický kraj',
+		'mail' => 'vlada.vicha@seznam.cz',
+		'kde' => 'Gymnázium, Dašická 1083, 530 03 Pardubice · 466 650 715 linka 41'],
+	['foto' => 'karel', 'jmeno' => 'Mgr. Ladislav Karel', 'kraj' => 'Kraj Vysočina',
+		'mail' => 'ladislavkarel@gymnaziumjihlava.cz',
+		'kde' => 'Gymnázium Jihlava, Jana Masaryka 1, 586 01 Jihlava · 567 579 759'],
+	['foto' => 'rehak', 'jmeno' => 'Mgr. Pavel Řehák', 'kraj' => 'Jihomoravský kraj',
+		'mail' => 'fo@jaroska.cz',
+		'kde' => 'Gymnázium tř. Kpt. Jaroše 14, 658 70 Brno · 545 321 282'],
+	['foto' => 'richterek', 'jmeno' => 'Mgr. Lukáš Richterek, PhD.', 'kraj' => 'Olomoucký kraj',
+		'mail' => 'lukas.richterek@upol.cz',
+		'kde' => 'Katedra experimentální fyziky, PřF UP Olomouc, Třída 17. listopadu 1192/12, 771 46 Olomouc · 585 634 104'],
+	['foto' => 'horakova', 'jmeno' => 'RNDr. Radmila Horáková', 'kraj' => 'Moravskoslezský kraj',
+		'mail' => 'rhorakova@gmk.cz',
+		'kde' => 'Gymnázium Mikuláše Koperníka, Bílovec, 17. listopadu 526, 743 01 Bílovec · 556 414 464'],
+	['foto' => 'manaskova', 'jmeno' => 'Mgr. Miroslava Maňásková', 'kraj' => 'Zlínský kraj',
+		'mail' => 'manaskova@guh.cz',
+		'kde' => 'G Uherské Hradiště, Velehradská třída 218, 686 17 Uherské Hradiště · 572 434 120'],
+];
 
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/studnicka.jpg" alt="Filip Studnička">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Filip Studnička, Ph.D.</strong><br>
-<em>místopředseda</em><br />
-<em>předseda úlohové komise pro kategorie A, B, C, D</em><br />
-<a href="mailto:filip.studnicka@uhk.cz">filip.studnicka@uhk.cz</a><br>
-Katedra fyziky, PřF Univerzita Hradec Králové
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/slegr.jpg" alt="Jan Šlégr">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Jan Šlégr, Ph.D.</strong><br>
-<em>tajemník</em><br />
-Katedra fyziky, PřF Univerzita Hradec Králové
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/richterek.jpg" alt="Lukáš Richterek">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Lukáš Richterek, PhD.</strong><br />
-<em>předseda úlohové komise pro kategorie E, F, G</em><br />
-<a href="mailto:lukas.richterek@upol.cz">lukas.richterek@upol.cz</a><br>
-Katedra experimentální fyziky, PřF Univerzity Palackého v Olomouci<br>
-585 634 104
-</p>
-</div>
-</div>
-<hr>
-
-<h3>Členové</h3>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/blazek.jpg" alt="Josef Blažek">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Doc. RNDr. Josef Blažek, CSc.</strong><br />
-<a href="mailto:bla@pf.jcu.cz">bla@pf.jcu.cz</a><br>
-Katedra fyziky a aplikované techniky
-Pedagogické fakulty Jihočeské univerzity
-v Českých Budějovicích
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/houstek.jpg" alt="Jan Houštěk">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Jan Houštěk</strong><br />
-<a href="mailto:jan@houstek.net">jan@houstek.net</a><br>
-Pod Harfou 938/38, 190 00 Praha 9 &ndash; Vysočany
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/gottwald.jpg" alt="Stanislav Gottwald" style="max-width: 200px">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Stanislav Gottwald</strong><br />
-<a href="mailto:stanislav.gottwald@gymspit.cz">stanislav.gottwald@gymspit.cz</a><br>
-Gymnazium Špitálská<br />
-283&nbsp;891&nbsp;459 linka&nbsp;32
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/jaresova.jpg" alt="Miroslava Jarešová">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>PhDr. Miroslava Jarešová, Ph.D.</strong><br />
-SPŠ Chrudim<br>
-702 286 652
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/jiru.jpg" alt="Josef Jírů">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Josef Jírů</strong><br />
-<a href="mailto:josef.jiru@email.cz">josef.jiru@email.cz</a><br>
-Gymnázium a Obchodní akademie Pelhřimov
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/koudelkova.jpg" alt="Věra Koudelková" style="max-width: 200px">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Věra Koudelková, Ph.D.</strong><br />
-Katedra didaktiky fyziky Matematicko-fyzikální fakulty Univerzity Karlovy
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/krizova.jpg" alt="Michaela Křížová" style="max-width: 200px">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Michaela Křížová, Ph.D.</strong><br />
-<a href="mailto:michaela.krizova@uhk.cz">michaela.krizova@uhk.cz</a><br>
-Katedra fyziky, PřF Univerzita Hradec Králové
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/novotny.jpg" alt="Dušan Novotný">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>doc. RNDr. Dušan Novotný, CSc,</strong><br />
-Přírodovědecká fakulta Univerzity J. E.  Purkyně v Ústí nad Labem
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/polma.jpg" alt="Richard Polma">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>MUDr. et MDDr. Richard Polma</strong><br />
-<a href="mailto:risa.student@seznam.cz">risa.student@seznam.cz</a>
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/prachar.jpg" alt="Jan Prachař" style="max-width: 200px">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Jan Prachař</strong><br />
-<a href="mailto:jan.prachar@fyzikalniolympiada.cz">jan.prachar@fyzikalniolympiada.cz</a>
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/randa.jpg" alt="Miroslav Randa">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Miroslav Randa, Ph.D.</strong><br />
-<a href="mailto:randam@kmt.zcu.cz">randam@kmt.zcu.cz</a><br>
-Fakulta pedagogická Západočeské univerzity v Plzni<br />
-377 636 303
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/rosicka.jpg" alt="Kateřina Rosická" style="max-width: 200px">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Kateřina Rosická</strong><br />
-studentka fyziky Matematicko-fyzikální fakulty Univerzity Karlovy
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/vybiral.jpg" alt="Bohumil Vybíral">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Prof. Ing. Bohumil Vybíral, CSc.</strong><br />
-<a href="mailto:bohumil.vybiral@uhk.cz">bohumil.vybiral@uhk.cz</a><br>
-emeritní profesor PřF UHK
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/zivotsky.jpg" alt="Ondřej Životský" style="max-width: 200px">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>prof. Ing. Ondřej Životský, Ph.D.</strong><br />
-VŠB – Technická Univerzita Ostrava
-</p>
-</div>
-</div>
-<hr>
-
-
-<h3>Předsedové krajských komisí</h3>
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/ledvina.jpg" alt="Lukáš Ledvina">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Lukáš Ledvina</strong> (Praha)<br>
-<a href="mailto:lukas.ledvina@fyzikalniolympiada.cz">lukas.ledvina@fyzikalniolympiada.cz</a><br>
-Matematicko-fyzikální fakulta, 
-Univerzita Karlova v Praze, 
-V&nbsp;Holešovičkách&nbsp;2, 180&nbsp;00 Praha&nbsp;8
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/kulich.jpg" alt="Vladimír Kulich">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Vladimír Kulich</strong> (Středočeský kraj)<br />		
-<a href="mailto:kulich.gymslany@centrum.cz">kulich.gymslany@centrum.cz</a><br>
-Gymnázium Třebízského,
-Smetanovo náměstí 1310,
-274 01 Slaný
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/krizp.jpg" alt="Pavel Kříž">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Pavel Kříž, Ph.D.</strong> (Jihočeský kraj)<br>
-<a href="mailto:kriz@pf.jcu.cz">kriz@pf.jcu.cz</a><br>
-Katedra fyziky a aplikované techniky,
-Pedagogická fakulta,
-Jihočeská univerzita v Českých Budějovicích,
-Jeronýmova 10,
-371 15 České Budějovice<br>
-387 773 057
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/kielbusova.jpg" alt="Zdeňka Kielbusová">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>PhDr. Zdeňka Kielbusová</strong> (Plzeňský kraj)<br />   
-<a href="mailto:kielbus@kmt.zcu.cz">kielbus@kmt.zcu.cz</a><br>
-FPE ZČU v Plzni, Klatovská 51, 301 00 Plzeň<br>
-377 636 312
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<!--img src="/pic/ukfo/zalubilova.jpg" alt="Gabriela Zalubilová"-->
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Gabriela Zalubilová</strong> (Karlovarský kraj)<br />
-<a href="mailto:gabriela.zalubilova@gymso.cz">gabriela.zalubilova@gymso.cz</a><br>
-Gymnázium Sokolov, Husitská 2053, 356 01 Sokolov<br>
-354 229 326
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/vlasakova.jpg" alt="Jana Vlasáková">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-	<strong>Mgr. Jana Vlasáková</strong> (Ústecký kraj)<br>
-	<a href="mailto:vlasakova@gymrumburk.cz">vlasakova@gymrumburk.cz</a><br>
-	Gymnázium Rumburk, Komenského 10, 408 01 Rumburk<br>
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/pulicek.jpg" alt="Jindřich Pulíček">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Jindřich Pulíček</strong> (Liberecký kraj)<br />
-<a href="mailto:pulicek@randovka.cz">pulicek@randovka.cz</a><br>
-Gymnázium Dr. Antona Randy, Dr. Randy 13, 466 01 Jablonec nad Nisou<br>
-775 389 661
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<!--img src="/pic/ukfo/sada.jpg" alt="Václav Šáda"-->
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Jiří Kratochvíl</strong> (Královéhradecký kraj)<br />
-<a href="mailto:kratochvil@gjkt.cz">kratochvil@gjkt.cz</a><br>
-Gymnázium J. K. Tyla, Tylovo nábřeží 682, 500 02 Hradec Králové<br>
-702 292 424
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/vicha.jpg" alt="Vladimír Vícha">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Vladimír Vícha</strong> (Pardubický kraj)<br />		
-<a href="mailto:vlada.vicha@seznam.cz">vlada.vicha@seznam.cz</a><br>
-Gymnázium, Dašická 1083, 530 03 Pardubice<br>
-466 650 715 linka 41
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/karel.jpg" alt="Ladislav Karel">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Ladislav Karel</strong> (Kraj Vysočina)<br />
-<a href="mailto:ladislavkarel@gymnaziumjihlava.cz">ladislavkarel@gymnaziumjihlava.cz</a><br>
-Gymnázium Jihlava, Jana Masaryka 1, 586 01 Jihlava<br>
-567 579 759
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/rehak.jpg" alt="Pavel Řehák">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Pavel Řehák</strong> (Jihomoravský kraj)<br />
-<a href="mailto:fo@jaroska.cz">fo@jaroska.cz</a><br>
-Gymnázium tř. Kpt. Jaroše 14
-658 70 Brno<br>
-545 321 282
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/richterek.jpg" alt="Lukáš Richterek">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Lukáš Richterek, PhD.</strong> (Olomoucký kraj)<br />
-<a href="mailto:lukas.richterek@upol.cz">lukas.richterek@upol.cz</a><br>
-Katedra experimentální fyziky, PřF UP Olomouc, Třída 17. listopadu 1192/12, 771 46 Olomouc<br>
-585 634 104
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/horakova.jpg" alt="Radmila Horáková">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>RNDr. Radmila Horáková</strong> (Moravskoslezský kraj)<br />
-<a href="mailto:rhorakova@gmk.cz">rhorakova@gmk.cz</a><br>
-Gymnázium Mikuláše Koperníka, Bílovec, 17. listopadu 526, 743 01 Bílovec<br>
-556 414 464
-</p>
-</div>
-</div>
-<hr>
-
-<div class="row">
-<div class="col-xs-4 col-sm-5 col-md-4 col-lg-3">
-	<img src="/pic/ukfo/manaskova.jpg" alt="Miroslava Maňásková">
-</div>
-<div class="col-xs-8 col-sm-7 col-md-8 col-lg-9">
-<p>
-<strong>Mgr. Miroslava Maňásková</strong> (Zlínský kraj)<br>
-<a href="mailto:manaskova@guh.cz">manaskova@guh.cz</a><br>
-G Uherské Hradiště,
-Velehradská třída 218, 
-686 17 Uherské Hradiště<br>
-572 434 120
-</p>
-</div>
-</div>
-
-</div>
+/* iniciály pro vizitku bez fotky (vynechá tituly — slova končící tečkou) */
+$inicialy = function ($jmeno) {
+	preg_match_all('/(?<=^|\s)(\p{Lu})\p{L}+(?=\s|$)/u', $jmeno, $m);
+	return implode('', $m[1]);
+};
+?>
+<?php foreach ([['Předsednictvo', $predsednictvo], ['Členové', $clenove],
+	['Předsedové krajských komisí', $krajsti]] as [$nadpis, $lide]) : ?>
+<h3><?= $nadpis ?></h3>
+<div class="vizitky">
+<?php foreach ($lide as $o) : ?>
+	<div class="vizitka">
+	<?php if (isset($o['foto'])) : ?>
+		<img src="/pic/ukfo/<?= $o['foto'] ?>.jpg" alt="<?= $o['jmeno'] ?>">
+	<?php else : ?>
+		<div class="bez-fotky"><?= $inicialy($o['jmeno']) ?></div>
+	<?php endif ?>
+	<div>
+		<?php if (isset($o['kraj'])) : ?><span class="kraj"><?= $o['kraj'] ?></span><?php endif ?>
+		<b><?= $o['jmeno'] ?></b>
+		<?php if (isset($o['role'])) : ?><div class="role"><?= $o['role'] ?></div><?php endif ?>
+		<?php if (isset($o['mail'])) : ?><div class="mail"><a href="mailto:<?= $o['mail'] ?>"><?= $o['mail'] ?></a></div><?php endif ?>
+		<?php if (isset($o['kde'])) : ?><div class="kde"><?= $o['kde'] ?></div><?php endif ?>
+	</div>
+	</div>
+<?php endforeach ?>
+</div>
+<?php endforeach ?>
