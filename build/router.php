@@ -2,7 +2,7 @@
 /**
  * Router pro lokální náhled: php -S localhost:8000 build/router.php
  * Statické soubory servíruje přímo, hezké adresy směruje na index.php,
- * /data/terms.json generuje za běhu, /data/thumbs.json čte z posledního buildu.
+ * /data/terms.json a /rss.xml generuje za běhu.
  */
 
 require dirname(__DIR__) . '/init.php';
@@ -17,13 +17,6 @@ if (str_ends_with($path, '.php')) {
 
 if ($path === '/data/terms.json') {
     require __DIR__ . '/terms_json.php';
-    return true;
-}
-
-if ($path === '/data/thumbs.json') {
-    header('Content-Type: application/json; charset=utf-8');
-    echo is_file(ROOT_DIR . 'dist/data/thumbs.json')
-        ? file_get_contents(ROOT_DIR . 'dist/data/thumbs.json') : '[]';
     return true;
 }
 

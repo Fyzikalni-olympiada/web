@@ -7,7 +7,6 @@
  * - stránky z data/files.yaml -> dist/<pathname>.html (hosting servíruje bez přípony)
  * - novinky (/novinka/<id>, /archiv-novinek), diskuse (seznamy + vlákna), 404
  * - rss.xml, data/terms.json
- * - miniatury pro náhodnou fotku (ImageMagick, cache v temp/images) + data/thumbs.json
  * - kopie statických adresářů; fragmenty s PHP se předrenderují (render_fragment.php)
  */
 
@@ -23,15 +22,9 @@ $ASSET_FILES = ['favicon.ico', 'favicon.svg', 'favicon-16x16.png', 'favicon-32x3
                 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest',
                 'robots.txt', 'rss_forum.xml', '_redirects', '_headers'];
 
-/* Nepublikované podadresáře a soubory (úspora místa) – vynechají se z kopie i miniatur */
+/* Nepublikované podadresáře a soubory (úspora místa) */
 $NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails',
                  'texty/texty.tar', 'texty/matematika/cd.tar.gz'];
-
-/* Náhodná fotka: stejná pravidla jako staré rand_thumb() */
-$THUMB_EXCLUDE = ['temp', 'thumbnails', 'pic', 'images', 'kvary', 'upload',
-                  'dist', 'vendor', '.git'];
-$THUMB_MIN_BYTES = 27 * 1024;
-$THUMB_SIZE = 260;
 
 $t0 = microtime(true);
 $selhani = 0;
@@ -105,59 +98,7 @@ foreach ($pages as $name) {
 write_file($DIST . 'rss.xml', capture(ROOT_DIR . 'rss.php'));
 write_file($DIST . 'data/terms.json', capture(__DIR__ . '/terms_json.php'));
 
-/* ---------- 3. miniatury a thumbs.json ---------- */
-
-if (!is_dir(ROOT_DIR . 'temp/images')) {
-    mkdir(ROOT_DIR . 'temp/images', 0777, true);
-}
-
-$iter = new RecursiveIteratorIterator(
-    new RecursiveCallbackFilterIterator(
-        new RecursiveDirectoryIterator(ROOT_DIR, FilesystemIterator::SKIP_DOTS),
-        function ($file) use ($THUMB_EXCLUDE) {
-            return !in_array($file->getFilename(), $THUMB_EXCLUDE);
-        }
-    )
-);
-$manifest = [];
-$converted = 0;
-foreach ($iter as $file) {
-    if (strtolower($file->getExtension()) !== 'jpg' || $file->getSize() <= $THUMB_MIN_BYTES) {
-        continue;
-    }
-    $rel = substr($file->getPathname(), strlen(ROOT_DIR));
-    foreach ($NEPUBLIKOVAT as $prefix) {
-        if (strpos($rel, $prefix . '/') === 0) {
-            continue 2;
-        }
-    }
-    $thumb_rel = 'temp/images/' . md5($rel) . '.jpg';
-    if (!is_file(ROOT_DIR . $thumb_rel)) {
-        exec('convert ' . escapeshellarg($file->getPathname())
-            . ' -resize ' . $THUMB_SIZE . 'x' . $THUMB_SIZE
-            . ' -quality 95 ' . escapeshellarg(ROOT_DIR . $thumb_rel), $o, $rc);
-        if ($rc !== 0) {
-            fwrite(STDERR, "! miniatura selhala: $rel\n");
-            $selhani++;
-            continue;
-        }
-        $converted++;
-    }
-    $manifest[] = ['thumb' => '/' . $thumb_rel, 'full' => '/' . $rel];
-}
-/* smaž z cache miniatury, které už manifest neobsahuje */
-$platne = array_flip(array_column($manifest, 'thumb'));
-foreach (glob(ROOT_DIR . 'temp/images/*.jpg') as $cached) {
-    if (!isset($platne['/temp/images/' . basename($cached)])) {
-        unlink($cached);
-    }
-}
-
-write_file($DIST . 'data/thumbs.json', json_encode($manifest, JSON_UNESCAPED_SLASHES));
-mkdir($DIST . 'temp');
-exec('cp -aT ' . escapeshellarg(ROOT_DIR . 'temp/images') . ' ' . escapeshellarg($DIST . 'temp/images'));
-
-/* ---------- 4. statické soubory ---------- */
+/* ---------- 3. statické soubory ---------- */
 
 foreach ($ASSET_DIRS as $dir) {
     /* -T: slij do cílového adresáře i když už existuje (vyrenderované stránky) */
@@ -170,7 +111,7 @@ foreach ($NEPUBLIKOVAT as $prefix) {
     exec('rm -rf ' . escapeshellarg($DIST . $prefix));
 }
 
-/* ---------- 5. fragmenty s PHP se předrenderují ---------- */
+/* ---------- 4. fragmenty s PHP se předrenderují ---------- */
 
 /* Jen <?php / <?= (bez short_open_tag, aby <?xml zůstalo netknuté).
  * Podproces kvůli izolaci: některé fragmenty deklarují stejné funkce. */
@@ -192,11 +133,10 @@ foreach ($fragments as $src) {
 
 /* ---------- hotovo ---------- */
 
-printf("stránek: %d, miniatur: %d (nových %d), fragmentů: %d, za %.1f s\n",
-    count($pages) + 1, count($manifest), $converted, count($fragments),
-    microtime(true) - $t0);
+printf("stránek: %d, fragmentů: %d, za %.1f s\n",
+    count($pages) + 1, count($fragments), microtime(true) - $t0);
 
-if ($selhani > 0 || count($manifest) === 0) {
+if ($selhani > 0) {
     fwrite(STDERR, "build selhal: $selhani chyb\n");
     exit(1);
 }

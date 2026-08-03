@@ -29,7 +29,7 @@ GitHub Actions web sestaví a nasadí.
 
 **Nový ročník:** upravit `config.php`, založit `data/terms/<ročník>.yaml`.
 
-Klientský JS (`js/fo.js`) řeší věci závislé na datu – „Nejbližší termíny"
-v bočním panelu (z `/data/terms.json`), zvýraznění na `/terminy`, náhodnou
-fotku (z `/data/thumbs.json`) a přesměrování starých adres s query
-parametry. Web se proto nemusí přestavovat, když jen plyne čas.
+Klientský JS (`js/fo.js`) řeší věci závislé na datu – zvýraznění
+nejbližšího kroku na homepage a termínu na `/terminy` – a přesměrování
+starých adres s query parametry. Web se proto nemusí přestavovat,
+když jen plyne čas.

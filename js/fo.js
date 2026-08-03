@@ -4,7 +4,6 @@
  *  - hamburger menu na malých displejích
  *  - zvýraznění nejbližšího kroku v „Jak se zapojit" na homepage
  *  - zvýraznění nejbližšího termínu na /terminy (podle data-date)
- *  - náhodná fotka v bočním panelu z /data/thumbs.json
  */
 (function () {
 	'use strict';
@@ -98,26 +97,4 @@
 			}
 		}
 	});
-
-	/* ---------- náhodná fotka ---------- */
-
-	var fotkaBox = document.getElementById('nahodna-fotka');
-	if (fotkaBox) {
-		fetch('/data/thumbs.json').then(function (r) { return r.json(); }).then(function (fotky) {
-			if (!fotky.length) {
-				return;
-			}
-			var html = '';
-			for (var i = 0; i < 5 && fotky.length; i++) {
-				var f = fotky.splice(Math.floor(Math.random() * fotky.length), 1)[0];
-				html += '<a href="' + f.full + '"' + (i === 0 ? '' : ' style="display: none;"')
-					+ '><img src="' + f.thumb + '" alt="Ze života Fyzikální olympiády"/></a>';
-			}
-			fotkaBox.innerHTML = html;
-			if (window.jQuery && jQuery.fn.prettyPhoto) {
-				jQuery('#sidebar .section-title-image a').attr('rel', 'gallery[]')
-					.prettyPhoto({ social_tools: false });
-			}
-		});
-	}
 })();

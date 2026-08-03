@@ -24,24 +24,12 @@ jobs:
       - name: Composer
         run: composer install --no-interaction
 
-      - name: ImageMagick
-        run: sudo apt-get update -q && sudo apt-get install -y -q --no-install-recommends imagemagick
-
-      # cache miniatur ušetří generování při každém nasazení;
-      # klíč je vždy nový, aby se cache po každém buildu uložila aktualizovaná
-      # (při shodě klíče actions/cache nikdy neukládá)
-      - name: Cache miniatur
-        uses: actions/cache@v5
-        with:
-          path: temp/images
-          key: thumbs-${{ github.run_id }}
-          restore-keys: thumbs-
-
       - name: Build
         run: make build
 
-      # manifest hashů nasazených souborů pro purge změněných URL
-      # (stejný vzor vždy-nového klíče jako u miniatur)
+      # manifest hashů nasazených souborů pro purge změněných URL;
+      # klíč je vždy nový, aby se cache po každém buildu uložila aktualizovaná
+      # (při shodě klíče actions/cache nikdy neukládá)
       - name: Cache manifestu nasazení
         uses: actions/cache@v5
         with:

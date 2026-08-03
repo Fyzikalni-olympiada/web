@@ -49,10 +49,8 @@ if ($napln === 404) {
 <link rel='stylesheet' type='text/css' media='all' href='/css/content.css' />
 <link rel='stylesheet' type='text/css' media='print' href='/css/print.css' />
 <link rel="stylesheet" type="text/css" media='screen' href="/css/jquery.lightbox-0.5.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="/css/prettyPhoto.css" title="prettyPhoto main stylesheet" charset="utf-8" />
 
 <script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function() {
@@ -124,7 +122,7 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 	<hr>
 
     <div id="main-two-columns" class="row">
-        <div id="main-content" class="col-sm-9 col-xs-12">
+        <div id="main-content" class="col-xs-12">
 			<?php if ($napln === 404): ?>
 			<h1 style="text-align: center">Tato stránka neexistuje</h1>
 			<?php else: ?>
@@ -132,12 +130,6 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 			<?php endif; ?>
         </div>
 
-		<div id="sidebar" class="col-sm-3">
-            <div class="section">
-                <div class="section-title-image" id="nahodna-fotka"><!-- plní js/fo.js z /data/thumbs.json --></div>
-            </div>
-
-        </div>
         <div class="clearer">&nbsp;</div>
     </div>
 
