@@ -226,7 +226,7 @@ table.zadani td br + small {
 }
 #zapojeni .btn-fo {
 	display: inline-block;
-	background: #2f6f9f;
+	background: #4a5865;
 	color: #fff;
 	padding: 5px 12px;
 	border-radius: 3px;
@@ -236,7 +236,7 @@ table.zadani td br + small {
 	white-space: nowrap;
 }
 #zapojeni .btn-fo:hover {
-	background: #245a80;
+	background: #37424d;
 }
 #zapojeni .cesta {
 	display: flex;
@@ -270,20 +270,20 @@ table.zadani td br + small {
 	line-height: 32px;
 	border-radius: 50%;
 	background: #fff;
-	border: 3px solid #2f6f9f;
-	color: #2f6f9f;
+	border: 3px solid #4a5865;
+	color: #4a5865;
 	font-weight: bold;
 	margin: 0 auto 8px;
 	position: relative;
 	z-index: 1;
 }
 #zapojeni .krok.aktualni .tecka {
-	background: #2f6f9f;
+	background: #4a5865;
 	color: #fff;
 }
 #zapojeni .krok.vedlejsi .tecka {
-	border-color: #8aa8bd;
-	color: #8aa8bd;
+	border-color: #a3adb8;
+	color: #a3adb8;
 	border-style: dashed;
 }
 /* nejbližší nadcházející krok (označuje js/fo.js podle data) */
@@ -350,13 +350,13 @@ table.zadani td br + small {
 	color: #333;
 }
 #zapojeni a.kat:hover {
-	border-color: #2f6f9f;
-	background: #f2f7fa;
+	border-color: #4a5865;
+	background: #f4f6f8;
 }
 #zapojeni a.kat b {
 	display: block;
 	font-size: 1.5em;
-	color: #2f6f9f;
+	color: #4a5865;
 }
 #zapojeni a.kat small {
 	color: #777;
@@ -372,7 +372,7 @@ table.zadani td br + small {
 	white-space: nowrap;
 }
 #zapojeni a.kat .zadani {
-	color: #2f6f9f;
+	color: #446;
 	font-size: .85em;
 	white-space: nowrap;
 }
