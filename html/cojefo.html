@@ -74,19 +74,32 @@ Na vzniku fyzikální olympiády v&nbsp;bývalém Československu a&nbsp;na jej�
 Zakládal ji nejen jako vrcholovou soutěž středoškoláků, ale jako promyšlený systém, který si klade za cíl vyhledávat a&nbsp;pěstovat talenty na fyziku. Myšlenkou FO se začal zabývat již od roku&nbsp;1954 (jistým vzorem mu byla již tehdy probíhající matematická olympiáda), zpočátku však nenašel dost potřebných spolupracovníků a&nbsp;tak první pokusné soutěže FO probíhaly až roce&nbsp;1958 pro tehdejší kraje Olomoucký a&nbsp;Brněnský. V&nbsp;celostátním měřítku začala FO probíhat od školního roku&nbsp;1959/60 již ve všech tehdejších středoškolských kategoriích&nbsp;A,&nbsp;B,&nbsp;C. Později se pod jeho vedením rozšířila i&nbsp;na dvě kategorie pro základní školy.
 </p>
 <p>
-Roku&nbsp;1966 společně s&nbsp;prof.&nbsp;Cz.&nbsp;Ścislowským z&nbsp;Polska a&nbsp;R.&nbsp;Kunfálim z&nbsp;Maďarska inicioval vznik <em>Mezinárodní fyzikální olympiády</em>&nbsp;(MFO). Světové společenství fyziků (<em>Mezinárodní unie pro čistou aplikovanou fyziku</em>) ocenilo jeho podíl na vzniku&nbsp;MFO udělením medaile u&nbsp;příležitosti 24.&nbsp;ročníku Mezinárodní fyzikální olympiády v&nbsp;roce&nbsp;1993 v&nbsp;USA (bohužel in&nbsp;memoriam). První MFO se konala v&nbsp;roce&nbsp;1967 v&nbsp;Polsku (jen za účasti východoevropských zemí), třetí MFO v&nbsp;roce&nbsp;1969 byla v&nbsp;Brně, desátá v&nbsp;roce&nbsp;1977 v&nbsp;Hradci Králové. Brzo se k&nbsp;východoevropským zemím připojili i&nbsp;státy západní&nbsp;&ndash; Francie&nbsp;(1972), Spolková republika Německo&nbsp;(1974), Švédsko&nbsp;(1976) atd. Dnes se této mezinárodní soutěže zúčastňují řešitelé ze všech pěti kontinentů světa. Například 56.&nbsp;MFO v&nbsp;Kolumbii&nbsp;(2026) se zúčastnilo 381&nbsp;studentů z&nbsp;87&nbsp;zemí a&nbsp;teritorií. Naši studenti se ve světové konkurenci pravidelně umísťují v&nbsp;první čtvrtině pořadí zúčastněných zemí. Za dobu existence České republiky se Mezinárodních
+Roku&nbsp;1966 společně s&nbsp;prof.&nbsp;Cz.&nbsp;Ścislowským z&nbsp;Polska a&nbsp;R.&nbsp;Kunfálim z&nbsp;Maďarska inicioval vznik <em>Mezinárodní fyzikální olympiády</em>&nbsp;(MFO). Světové společenství fyziků (<em>Mezinárodní unie pro čistou aplikovanou fyziku</em>) ocenilo jeho podíl na vzniku&nbsp;MFO udělením medaile u&nbsp;příležitosti 24.&nbsp;ročníku Mezinárodní fyzikální olympiády v&nbsp;roce&nbsp;1993 v&nbsp;USA (bohužel in&nbsp;memoriam). První MFO se konala v&nbsp;roce&nbsp;1967 v&nbsp;Polsku (jen za účasti východoevropských zemí), třetí MFO v&nbsp;roce&nbsp;1969 byla v&nbsp;Brně, desátá v&nbsp;roce&nbsp;1977 v&nbsp;Hradci Králové. Brzo se k&nbsp;východoevropským zemím připojili i&nbsp;státy západní&nbsp;&ndash; Francie&nbsp;(1972), Spolková republika Německo&nbsp;(1974), Švédsko&nbsp;(1976) atd. <?php
+/* statistika české účasti na MFO od vzniku ČR, počítá se z data/mfo-uspechy.yaml */
+$ucastniku = $zlato = $stribro = $bronz = $uznani = 0;
+$posledniRok = 1993;
+foreach (data_mfo_uspechy() as $rocnikMfo) {
+    if ($rocnikMfo['rok'] < 1993 || empty($rocnikMfo['ucastnici'])) {
+        continue;
+    }
+    $posledniRok = max($posledniRok, $rocnikMfo['rok']);
+    foreach ($rocnikMfo['ucastnici'] as $ucastnik) {
+        $ucastniku++;
+        $oceneni = isset($ucastnik['oceneni']) ? $ucastnik['oceneni'] : '';
+        if (strpos($oceneni, 'zlato') === 0) $zlato++;
+        elseif (strpos($oceneni, 'stříbro') === 0) $stribro++;
+        elseif (strpos($oceneni, 'bronz') === 0) $bronz++;
+        elseif (strpos($oceneni, 'uznání') === 0) $uznani++;
+    }
+}
+?>
+Dnes se této mezinárodní soutěže zúčastňují řešitelé ze všech pěti kontinentů světa. Například 56.&nbsp;MFO v&nbsp;Kolumbii&nbsp;(2026) se zúčastnilo 381&nbsp;studentů z&nbsp;87&nbsp;zemí a&nbsp;teritorií. Naši studenti se ve světové konkurenci pravidelně umísťují v&nbsp;první čtvrtině pořadí zúčastněných zemí. Za dobu existence České republiky se Mezinárodních
 fyzikálních olympiád zúčastnilo celkem
-<!-- -->
-160&nbsp;soutěžících, kteří získali deset
-<!-- -->
-zlatých medailí: Tomáš Kočka a&nbsp;Martin Beneš v&nbsp;USA&nbsp;(1993), Tomáš Brauner v&nbsp;Kanadě&nbsp;(1997), Jan Houštěk v&nbsp;Itálii&nbsp;(1999), Matouš Ringel v&nbsp;Korei&nbsp;(2004), Pavel Motloch v&nbsp;Íránu&nbsp;(2007), Dalimil Mazáč v&nbsp;Íránu&nbsp;(2007) a&nbsp;ve Vietnamu&nbsp;(2008), Jan Hermann ve Vietnamu&nbsp;(2008) a&nbsp;Jáchym Sýkora v&nbsp;Chorvatsku&nbsp;(2010). Dále naši soutěžící za tuto dobu
-<!-- -->
-třiceti čtyř let
-<!-- -->
+<?php echo $ucastniku ?>&nbsp;soutěžících, kteří získali <?php echo $zlato ?>&nbsp;zlatých
+medailí: Tomáš Kočka a&nbsp;Martin Beneš v&nbsp;USA&nbsp;(1993), Tomáš Brauner v&nbsp;Kanadě&nbsp;(1997), Jan Houštěk v&nbsp;Itálii&nbsp;(1999), Matouš Ringel v&nbsp;Korei&nbsp;(2004), Pavel Motloch v&nbsp;Íránu&nbsp;(2007), Dalimil Mazáč v&nbsp;Íránu&nbsp;(2007) a&nbsp;ve Vietnamu&nbsp;(2008), Jan Hermann ve Vietnamu&nbsp;(2008) a&nbsp;Jáchym Sýkora v&nbsp;Chorvatsku&nbsp;(2010). Dále naši soutěžící za tuto dobu
+<?php echo $posledniRok - 1993 + 1 ?>&nbsp;let
 obdrželi
-<!-- -->
-38&nbsp;stříbrných medailí, 65&nbsp;bronzových medailí a&nbsp;40&nbsp;soutěžících získalo čestné uznání.
-<!-- -->
+<?php echo $stribro ?>&nbsp;stříbrných medailí, <?php echo $bronz ?>&nbsp;bronzových medailí a&nbsp;<?php echo $uznani ?>&nbsp;soutěžících získalo čestné uznání.
 V&nbsp;roce&nbsp;2003 byla ustavena <em>Světová federace fyzikálních soutěží</em>, jejíž první kongres se uskutečnil u&nbsp;příležitosti 33.&nbsp;ročníku&nbsp;MFO v&nbsp;Indonésii za účasti nositele Nobelovy ceny za fyziku prof.&nbsp;Claude Coen-Tannoudji. Členy federace je 66&nbsp;národních i&nbsp;mezinárodních fyzikálních soutěží, včetně tří soutěží existujících v&nbsp;České republice.
 </p>
 <p>
