@@ -399,6 +399,68 @@ table.zadani td br + small {
 	}
 	#zapojeni .gymnazia {display: none}
 }
+/* Výsledkové listiny jako tlačítka (html/abcd.html) */
+.vysledky-rada {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin: 14px 0;
+}
+.vysledky-rada a {
+	flex: 1;
+	min-width: 10em;
+	text-align: center;
+	background: #4a5865;
+	color: #fff;
+	padding: 10px 12px;
+	border-radius: 3px;
+	text-decoration: none;
+	font-weight: bold;
+}
+.vysledky-rada a:hover {
+	background: #37424d;
+	text-decoration: none;
+}
+.vysledky-rada small {
+	display: block;
+	font-weight: normal;
+	font-size: .8em;
+	opacity: .8;
+}
+
+/* Stránka s bočním obsahem (html/abcd.html) */
+.s-tocem {
+	display: grid;
+	grid-template-columns: 1fr 210px;
+	gap: 36px;
+	align-items: start;
+}
+.s-tocem h3 {
+	border-bottom: 2px solid #d0d8dc;
+	padding-bottom: 4px;
+}
+.obsah-toc {
+	position: sticky;
+	top: 12px;
+	border-left: 2px solid #d0d8dc;
+	padding-left: 14px;
+	font-size: .9em;
+}
+.obsah-toc a {
+	display: block;
+	margin: 8px 0;
+}
+.obsah-toc a.akt {
+	border-left: 3px solid #3E5199;
+	margin-left: -17px;
+	padding-left: 14px;
+	font-weight: bold;
+}
+@media (max-width: 900px) {
+	.s-tocem {display: block}
+	.obsah-toc {display: none}
+}
+
 hr.aktuality-predel {
 	margin: 30px 0 25px;
 	border-top: 2px solid #d0d8dc;

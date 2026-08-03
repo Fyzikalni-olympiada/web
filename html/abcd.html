@@ -12,7 +12,9 @@ $krajTerminA = $krajA['termin'];     $krajBeforeA = $krajA['date'] > date('Y-m-d
 $krajTerminBCD = $krajBCD['termin']; $krajBeforeBCD = $krajBCD['date'] > date('Y-m-d');
 $krajBeforeWeekAfterA = $krajA['date'] > date('Y-m-d', strtotime("-1 week"));
 ?>
-<h3 class="accordion" id="organizace">Jak se zapojit</h3>
+<div class="s-tocem">
+<div>
+<h3 id="organizace">Jak se zapojit</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -123,7 +125,7 @@ Pozvánky do krajského kola obdrží přímo soutěžící na email, kterým se
 </div>
 </div>
 
-<h3 class="accordion<?php if ($krajBeforeBCD): ?> accordion-main<?php endif; ?>" id="ulohy">Úlohy školního kola</h3>
+<h3 id="ulohy">Úlohy školního kola</h3>
 
 <div>
 <h4>Zadání</h4>
@@ -236,7 +238,7 @@ strany řešení.
 </div>
 
 
-<h3 class="accordion<?php if ($krajBeforeBCD):?> accordion-main<?php endif; ?>" id="temata">Studijní témata</h3>
+<h3 id="temata">Studijní témata</h3>
 <div>
 <?php include 'html/texty.html' ?>
 <p>
@@ -246,7 +248,7 @@ v&nbsp;<a href="<?php echo odkaz("texty_arch.html"); ?>" title="archiv studijní
 
 </div>
 
-<h3 class="accordion<?php if ($krajBeforeA && !$beforeA || $krajBeforeBCD && !$beforeBCD):?> accordion-main<?php endif; ?>" id="krajske-kolo">Krajské kolo</h3>
+<h3 id="krajske-kolo">Krajské kolo</h3>
 
 <div>
 <p>
@@ -286,7 +288,7 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 </div>
 
 <?php if (!$krajBeforeA) : ?>
-<h3 class="accordion<?php if (!$krajBeforeBCD || $krajBeforeWeekAfterA):?> accordion-main<?php endif; ?>" id="ulohy-kraj">Úlohy krajského kola</h3>
+<h3 id="ulohy-kraj">Úlohy krajského kola</h3>
 
 <div>
 <h4>Zadání</h4>
@@ -339,18 +341,26 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 </table>
 </div>
 
-<h4>Výsledky</h4>
-
-<div class="table-responsive">
-<table class="table zadani">
-<tr>
-	<td><a href="https://osmo.fyzikalniolympiada.cz/public/kolo/98/vysledky">Kategorie A</a></td>
-	<td><a href="https://osmo.fyzikalniolympiada.cz/public/kolo/99/vysledky">Kategorie B</a></td>
-	<td><a href="https://osmo.fyzikalniolympiada.cz/public/kolo/100/vysledky">Kategorie C</a></td>
-	<td><a href="https://osmo.fyzikalniolympiada.cz/public/kolo/101/vysledky">Kategorie D</a></td>
-</tr>
-</table>
 </div>
 
+<h3 id="vysledky">Výsledky krajského kola</h3>
+
+<div class="vysledky-rada">
+	<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/98/vysledky">Kategorie A<small>výsledková listina</small></a>
+	<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/99/vysledky">Kategorie B<small>výsledková listina</small></a>
+	<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/100/vysledky">Kategorie C<small>výsledková listina</small></a>
+	<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/101/vysledky">Kategorie D<small>výsledková listina</small></a>
 </div>
 <?php endif; ?>
+</div>
+<nav class="obsah-toc">
+	<a href="/stredni-skoly#organizace">Jak se zapojit</a>
+	<a href="/stredni-skoly#ulohy">Úlohy školního kola</a>
+	<a href="/stredni-skoly#temata">Studijní témata</a>
+	<a href="/stredni-skoly#krajske-kolo">Krajské kolo</a>
+<?php if (!$krajBeforeA) : ?>
+	<a href="/stredni-skoly#ulohy-kraj">Úlohy krajského kola</a>
+	<a href="/stredni-skoly#vysledky">Výsledky krajského kola</a>
+<?php endif; ?>
+</nav>
+</div>

@@ -85,6 +85,32 @@
 		krok.insertBefore(stitek, krok.firstChild);
 	});
 
+	/* ---------- aktivní položka bočního obsahu ---------- */
+
+	var toc = document.querySelector('.obsah-toc');
+	if (toc) {
+		var odkazy = toc.querySelectorAll('a[href*="#"]');
+		var cile = Array.prototype.map.call(odkazy, function (a) {
+			return document.getElementById(a.getAttribute('href').split('#')[1]);
+		});
+		var oznac = function () {
+			var akt = 0;
+			cile.forEach(function (c, i) {
+				if (c && c.getBoundingClientRect().top <= 120) {
+					akt = i;
+				}
+			});
+			if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 5) {
+				akt = odkazy.length - 1;
+			}
+			odkazy.forEach(function (a, i) {
+				a.classList.toggle('akt', i === akt);
+			});
+		};
+		document.addEventListener('scroll', oznac, { passive: true });
+		oznac();
+	}
+
 	/* ---------- zvýraznění nejbližšího termínu na /terminy ---------- */
 
 	document.querySelectorAll('.terminy').forEach(function (blok) {
