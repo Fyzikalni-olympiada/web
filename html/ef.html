@@ -9,8 +9,10 @@ $termin1 = $skolni['termin'];  $beforeDom = $skolni['date'] >= date('Y-m-d');
 $termin2 = $okresni['termin']; $beforeOkr = $okresni['date'] > date('Y-m-d');
 $termin3 = $krajske['termin']; $beforeKra = $krajske['date'] > date('Y-m-d');
 ?>
+<div class="s-tocem">
+<div>
 
-<h3 class="accordion" id="organizace">Organizace</h3>
+<h3 id="organizace">Organizace</h3>
 
 <div>
 <ul class="nav nav-tabs">
@@ -123,7 +125,7 @@ Po ukončení každé soutěže jsou soutěžící seznámeni se správným ře�
 </div>
 </div>
 
-<h3 class="accordion accordion-main" id="ulohy">Úlohy</h3>
+<h3 id="ulohy">Úlohy</h3>
 <div>
 <!--p><i>Připravujeme</i></p-->
 
@@ -213,7 +215,7 @@ Vyšší kola soutěže (okresní, krajské kolo) mají v celé republice jednot
 
 </div>
 
-<h3 class="accordion<?php if ($beforeOkr || $beforeKra) :?> accordion-main<?php endif; ?>" id="pokyny-vyssi-kola">Pokyny pro okresní a krajské kolo</h3>
+<h3 id="pokyny-vyssi-kola">Pokyny pro okresní a krajské kolo</h3>
 <div>
 <p>
 V okresním kole kategorií E a F i v krajském kole kategorie E jsou zadány čtyři teoretické úlohy. Čas na řešení úloh je 4&nbsp;hodiny čistého času. Maximální dosažitelný počet bodů z jedné úlohy je&nbsp;10. V okresním i krajském kole můžete používat Matematické, fyzikální a&nbsp;chemické tabulky pro střední školy, nebo pro základní školy a&nbsp;neprogramovatelné kalkulačky.
@@ -226,7 +228,7 @@ Za <b>úspěšného řešitele</b> se považuje každý soutěžící, který ce
 </p>
 </div>
 
-<h3 class="accordion<?php if ($beforeDom) :?> accordion-main<?php endif; ?>" id="pokyny">Pokyny pro domácí kolo</h3>
+<h3 id="pokyny">Pokyny pro domácí kolo</h3>
 <div>
 <p>
 Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
@@ -270,7 +272,7 @@ Na každý další list napište své jméno, příjmení, školu a číslo ře�
 </div>
 
 
-<h3 class="accordion" id="rady">Několik rad, jak řešit fyzikální úlohy</h3>
+<h3 id="rady">Několik rad, jak řešit fyzikální úlohy</h3>
 <div>
 <ol>
 	<li>Pečlivě
@@ -339,4 +341,13 @@ hodnoty veličin, ale také porovnává získané výsledky se skutečností
 či tabelárními hodnotami. V posledních letech zadáváme i takové úlohy,
 pro jejichž řešení je vhodné otevřít vhodné internetové stránky.
 </p>
+</div>
+</div>
+<nav class="obsah-toc">
+	<a href="/zakladni-skoly#organizace">Organizace</a>
+	<a href="/zakladni-skoly#ulohy">Úlohy</a>
+	<a href="/zakladni-skoly#pokyny-vyssi-kola">Pokyny pro okresní a krajské kolo</a>
+	<a href="/zakladni-skoly#pokyny">Pokyny pro domácí kolo</a>
+	<a href="/zakladni-skoly#rady">Několik rad, jak řešit úlohy</a>
+</nav>
 </div>
