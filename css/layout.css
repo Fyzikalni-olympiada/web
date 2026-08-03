@@ -330,11 +330,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	border-bottom: 2px solid #DDD;
 	margin-bottom: 24px;
 }
-.archive-pagination-bottom {
-	border-top: 2px solid #DDD;
-	margin-top: 24px;
-}
-
 .archive-post-date {
 	background: #F5F5F5;
 	border-bottom: 1px solid #C5C5C5;
@@ -602,6 +597,45 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 }
 /* Footer */
 
+/* Partneři: pás nad patičkou */
+#partneri {
+	display: flex;
+	align-items: center;
+	gap: 16px 30px;
+	flex-wrap: wrap;
+	border-top: 1px solid #DDD;
+	margin-top: 32px;
+	padding: 12px 0px 8px;
+}
+#partneri .nadpis {
+	flex-basis: 100%;
+	color: #7A7A7A;
+	font: bold 1.1em sans-serif;
+}
+#partneri ul {
+	display: flex;
+	align-items: center;
+	gap: 16px 30px;
+	flex-wrap: wrap;
+	flex: 1;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#partneri li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0;
+	font-size: 0.85em;
+	color: #777;
+}
+#partneri img, #partneri svg {
+	height: 48px;
+	width: auto;
+}
+
 #footer {
 	border-top: 1px solid #DDD;
 	color: #777;
@@ -676,9 +710,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	-ms-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
-#sidebar .cscas {
-	width: 220px; height: 52px; float: right; margin-top: 1em;
-}
 @media (max-width: 1199px) {
 	#sidebar .map-inner {
 		left: -128px;
@@ -690,9 +721,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	}
 	#sidebar .map-inner:hover {
 		left: -253px;
-	}
-	#sidebar .cscas {
-		width: 110px; height: 26px;
 	}
 }
 
