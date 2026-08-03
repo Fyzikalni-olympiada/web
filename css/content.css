@@ -142,6 +142,11 @@ table.zadani td {
     text-align: center;
 	vertical-align: middle !important;
 }
+/* bootstrapí nowrap v .table-responsive by rozbil fixní sloupce studijních textů */
+.table-responsive > .table.zadani > tbody > tr > td,
+.table-responsive > .table.zadani > thead > tr > th {
+	white-space: normal;
+}
 table.zadani td br + small {
 	display: block;
 	margin-top: 5px;
