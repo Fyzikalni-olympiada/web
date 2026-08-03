@@ -137,20 +137,6 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
                 <div class="section-title-image" id="nahodna-fotka"><!-- plní js/fo.js z /data/thumbs.json --></div>
             </div>
 
-            <div class="section section-kraje">
-                <div class="section-title">Krajské stránky</div>
-                <div class="section-content">
-					<div class="visible-md visible-lg map-container">
-						<div class="map-inner">
-							<?php include 'html/kraje_mapa.html' ?>
-						</div>
-					</div>
-					<div class="visible-sm visible-xs">
-						<?php include 'html/kraje_seznam.html' ?>
-					</div>
-                </div>
-            </div>
-
         </div>
         <div class="clearer">&nbsp;</div>
     </div>

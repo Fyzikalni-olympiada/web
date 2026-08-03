@@ -88,8 +88,8 @@ function menu($current)
     }
     $strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády"
 		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">Osmo</a></li>';
-    $strHTML .= '<li class="jen-mobil"><a title="Webové stránky krajských komisí"
-		href="/stranky-regionu">Krajské stránky</a></li>';
+    $strHTML .= '<li><a title="Webové stránky krajských komisí" href="/stranky-regionu">
+		<img src="/pic/mapa-ikona.svg" class="ikona-mapa" alt="" />Krajské stránky</a></li>';
     $strHTML .= '
                 </ul>';
 
