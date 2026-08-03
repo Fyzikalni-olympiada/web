@@ -22,37 +22,30 @@ $termin3 = $krajske['termin']; $beforeKra = $krajske['date'] > date('Y-m-d');
 </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="organizace-student">
-<p>
-Kategorie E je určena žákům 9. tříd, kategorie F je určena žákům 8. tříd základních škol a jim věkově odpovídajícím žákům tříd nižšího gymnázia.
-
-</p>
-<p>
-V <strong>prvním (školním) kole</strong> máte za úkol vyřešit sedm úloh.
-Řešení odevzdejte svému učiteli fyziky v těchto termínech: úlohu první až třetí zpravidla do konce
-listopadu, úlohu čtvrtou až sedmou nejpozději
-<strong><?php echo $termin1 ?></strong>,
-kdy končí první kolo soutěže. Řešení úloh opraví váš učitel fyziky. Pro každou úlohu je stanoveno 10 bodů. Plný počet bodů dostává řešitel, jestliže je úloha řešena zcela bez chyb. Řešení je nevyhovující, chybí-li slovní výklad, nebo je-li neúplný, takže z něho nelze vyvodit myšlenkový postup podaného řešení.
-</p>
-<p>
-<b>Úspěšný řešitel prvního kola</b> jste v případě, že dostanete alespoň 5 bodů v pěti úlohách a budete řešit experimentální úlohu. Pozvání do druhého kola soutěže, ve kterém se dozvíte o místě a času konání, dostanete od svého učitele.
-</p>
-<p>
-<strong>Druhé (okresní) kolo</strong> se uskuteční <strong><?php echo v($termin2) ?></strong>.
-Ve druhém kole je vaším úkolem vyřešit čtyři teoretické úlohy. Úspěšným řešitelem druhého kola se stanete, pokud vyřešíte alespoň dvě úlohy s bodovým hodnocením alespoň 5 bodů z&nbsp;10 a dosáhnete přitom nejmenšího počtu celkem 14 bodů. Všichni úspěšní řešitelé dostanete pochvalné uznání, nejlepší řešitelé budou odměněni.
-</p>
-<p><strong><?php echo ucfirst(v($termin3)) ?></strong>
-budou uspořádána <strong>třetí (krajská) kola</strong> soutěže v kategorii E, a to ve vybraných místech. Do třetího kola jsou vybráni nejlepší účastníci druhého kola. Pozvání do třetího kola dostanete od svého učitele. Všichni úspěšní řešitelé třetího kola obdržíte pochvalná uznání a nejlepší soutěžící budou odměněni.
-</p>
-<p>
-Okresní i krajské kolo probíhá v celé České republice v týž den a soutěž začíná zpravidla v&nbsp;9&nbsp;h.
-</p>
-<p>
-Po ukončení každého kola budete seznámeni se správným řešením úloh, buďto od svého učitele fyziky,
-nebo ho najdte na těchto stránkách. Každá krajská komise zřizuje svou <a href="<?php echo odkaz('stranky_regionu.html'); ?>" title="Webové stránky krajských komisí">webovskou stránku</a>, kde můžete najít další informace i&nbsp;výsledky soutěže. 
-</p>
-<p>
-Přejeme vám, abyste při řešení úloh Fyzikální olympiády strávili pěkné chvíle, aby vás úlohy zaujaly, a tím aby se prohloubil váš dobrý vztah k fyzice.
-</p>
+<h4>Ahoj řešiteli, řešitelko!</h4>
+<ol class="kroky">
+	<li><b>Zjisti, do které kategorie patříš.</b><br>
+	Chodíš do 8.&nbsp;třídy (nebo tercie)? Jsi kategorie&nbsp;F. Devátá třída (kvarta) je kategorie&nbsp;E.
+	Zadání úloh najdeš <a href="/zakladni-skoly#ulohy">kousek níž na této stránce</a>.</li>
+	<li><b>Řeš úlohy doma.</b> Máš na to skoro celý školní rok.<br>
+	Úloh je sedm. První tři odevzdej zpravidla do konce listopadu, všechny pak nejpozději
+	<strong><?=$termin1?></strong>. A&nbsp;hlavně: <b>nemusíš vyřešit všechny</b> &mdash; stačí, když v&nbsp;pěti
+	úlohách dostaneš aspoň 5&nbsp;bodů z&nbsp;10 a&nbsp;zkusíš experimentální úlohu (počítá se i&nbsp;pokus,
+	který nevyjde).</li>
+	<li><b>Řešení odevzdej svému učiteli fyziky.</b><br>
+	Učitel úlohy opraví a&nbsp;oboduje. Když si nebudeš s&nbsp;něčím vědět rady, klidně se ho zeptej
+	&mdash; poradit se je dovolené.</li>
+	<li><b>Povedlo se? Jedeš na okresní kolo.</b><br>
+	Pozvánku ti předá učitel. Okresní kolo se píše <strong><?php echo v($termin2) ?></strong>, všude
+	v&nbsp;republice ve stejný den (začíná se v&nbsp;9&nbsp;hodin). Řeší se čtyři úlohy podobné těm
+	školním. Nejlepší řešitelé dostanou odměny.</li>
+	<li><b>A ti úplně nejlepší deváťáci jedou dál.</b><br>
+	Kategorie&nbsp;E má ještě krajské kolo, <strong><?php echo v($termin3) ?></strong>. Pozvánku zase
+	dostaneš od učitele.</li>
+</ol>
+<p class="tip"><b>Tip:</b> Úlohy v&nbsp;okresním kole bývají podobné těm ze školního kola. Kdo je
+vyřeší poctivě sám, má v&nbsp;okrese velkou výhodu. Správná řešení najdeš po každém kole tady na
+webu nebo u&nbsp;svého učitele.</p>
 </div>
 
 <div id="organizace-ucitel" class="tab-pane">
