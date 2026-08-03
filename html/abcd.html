@@ -25,53 +25,28 @@ $krajBeforeWeekAfterA = $krajA['date'] > date('Y-m-d', strtotime("-1 week"));
 
 <div class="tab-pane active" id="organizace-student">
 <h4>Milí studenti!</h4>
-<p>
-Středoškolské kategorie&nbsp;A,&nbsp;B,&nbsp;C,&nbsp;D mají školní a&nbsp;krajské kolo.
-Kategorie&nbsp;A navíc vrcholí <a href="<?php echo odkaz("celost.html"); ?>" title="ústřední kolo">ústředním kolem</a>.
-Pokud se na to cítíte, můžete se kategorie A zúčastnit, i když nejste v posledním ročníku střední školy.
-</p>
-<p>
-Ve&nbsp;<b>školním kole</b> máte za úkol řešit 7&nbsp;úloh a&nbsp;prostudovat
-fyzikální <a href="/studijni-texty" title="studijní témata">studijní
-téma</a>. Jeho úkolem je vás jednak seznámit s&nbsp;typem úloh, které se
-v&nbsp;dané kategorii mohou v&nbsp;dalších kolech vyskytnout, a&nbsp;také
-procvičit schopnost tyto úlohy řešit.
-</p>
-<p>
-Do souteže se <b>přihlásíte</b> prostřednictvím <a
-	href="https://osmo.fyzikalniolympiada.cz/">Osmo</a>. Prosíme, abyste si v
-Osmo založili účet, pokud ho již nemáte z loňského roku. Poté se přihlaste do
-správné kategorie. Věnujte pozornost, abyste správně vybrali svoji školu. Pokud
-svoji školu nenajdete, nebo narazíte na jiný problém, napište na
-osmo@fyzikalniolympiada.cz.
-</p>
-<p>
-Do Osmo nahrajte svá řešení školního kola. Stačí papíry nafotit mobilem a fotky
-potom vložit ke správné úloze.
-</p>
-<p>
-Vypracovaná řešení odevzdejte svému učiteli fyziky, který je opraví
-a&nbsp;oklasifikuje. Za každou úlohu můžete získat maximálně 10&nbsp;bodů.
-Řešení je vyhovující, pokud získáte za úlohu alespoň 5&nbsp;bodů.
-</p>
-
-<p>
-Termín odevzdání řešení pro kategorii&nbsp;A je <strong><?=$terminA?></strong>,
-v&nbsp;kategoriích&nbsp;B,&nbsp;C,&nbsp;D <strong><?=$terminBCD?></strong>.
-</p>
-<p>
-<b>Úspěšní řešitelé</b> prvního kola jsou ti z&nbsp;vás, kteří vyřeší alespoň
-pět úloh za pět bodů a&nbsp;řešili (i&nbsp;třeba neúspěšně) zadanou experimentální úlohu.
-O&nbsp;postupu do krajského kola a&nbsp;místě jeho konání se dozvíte emailem
-(který máte v Osmo), příp. prostřednictvím svého učitele fyziky.
-</p>
-<p>
-<em>Nepodceňujte řešení školního kola! Úlohy ve druhém kole soutěže jsou velmi
-často podobné těm z&nbsp;kola prvního. Proto se velmi nedoporučuje opisovat řešení
-od kamaráda. Může se totiž stát, že budete úlohami ve druhém kole zaskočeni,
-vyvarovat se tomu můžete tím, že vyřešíte poctivě úlohy školního kola.
-Neopomeňte si také prostudovat studijní téma. V&nbsp;každém kole se vždy jedna
-úloha týká studijního tématu.</em> </p>
+<ol class="kroky">
+	<li><b>Zjisti si svou kategorii a stáhni zadání.</b><br>
+	Kategorie se řídí ročníkem: D (1.), C (2.), B (3.), A (4.&nbsp;ročník) &mdash; áčko můžeš zkusit
+	i&nbsp;dřív, vrcholí <a href="<?php echo odkaz("celost.html"); ?>" title="ústřední kolo">ústředním kolem</a>.
+	Zadání školního kola najdeš <a href="/stredni-skoly#ulohy">níž na této stránce</a>.</li>
+	<li><b>Zaregistruj se v&nbsp;Osmo.</b><br>
+	<a href="https://osmo.fyzikalniolympiada.cz/">Osmo</a> je odevzdávací systém FO. Založ si účet
+	(přihlašovací jméno je tvůj e-mail, přijde ti ověřovací zpráva), vyber svoji kategorii a&nbsp;hlavně
+	správnou školu. Když něco nejde, napiš na osmo@fyzikalniolympiada.cz.</li>
+	<li><b>Řeš. Nemusíš všechno.</b><br>
+	Školní kolo má 7&nbsp;úloh a&nbsp;jedno <a href="/studijni-texty" title="studijní témata">studijní
+	téma</a>. Za úlohu je až 10&nbsp;bodů; úspěšným řešitelem se staneš, když aspoň v&nbsp;pěti úlohách
+	získáš 5+ bodů a&nbsp;pustíš se do experimentální úlohy (i&nbsp;nepovedený pokus se počítá).</li>
+	<li><b>Odevzdej do termínu.</b><br>
+	Řešení nafoť mobilem (nebo ulož do PDF) a&nbsp;nahraj do Osmo &mdash; do termínu ho můžeš klidně
+	nahradit lepší verzí. Papíry odevzdej svému učiteli fyziky, který je opraví. Termín: kategorie&nbsp;A
+	<strong><?=$terminA?></strong>, B&ndash;D <strong><?=$terminBCD?></strong>.</li>
+	<li><b>Čekej na pozvánku.</b><br>
+	Pokud postoupíš, pozvánka do krajského kola ti přijde e-mailem (tím z&nbsp;Osmo), případně přes učitele.</li>
+</ol>
+<p class="tip"><b>Tip:</b> Úlohy krajského kola bývají podobné těm školním a&nbsp;jedna se vždy týká
+studijního tématu. Kdo školní kolo poctivě vyřeší sám, má v&nbsp;kraji obrovskou výhodu.</p>
 </div>
 
 <div id="organizace-ucitel" class="tab-pane">

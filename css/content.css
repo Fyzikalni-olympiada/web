@@ -399,6 +399,41 @@ table.zadani td br + small {
 	}
 	#zapojeni .gymnazia {display: none}
 }
+/* Číslované kroky zapojení (html/abcd.html) */
+ol.kroky {
+	counter-reset: krok;
+	list-style: none !important;
+	margin: 0 0 1em;
+	padding: 0;
+}
+ol.kroky > li {
+	list-style: none !important;
+	counter-increment: krok;
+	position: relative;
+	padding: 0 0 14px 52px;
+}
+ol.kroky > li::before {
+	content: counter(krok);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: #4a5865;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	line-height: 34px;
+	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
+}
+.tip {
+	background: #eef4e5;
+	border: 1px solid #c9deb0;
+	border-radius: 4px;
+	padding: 10px 14px;
+}
+
 /* Výsledkové listiny jako tlačítka (html/abcd.html) */
 .vysledky-rada {
 	display: flex;
