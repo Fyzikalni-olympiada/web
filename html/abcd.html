@@ -146,41 +146,8 @@ Pozvánky do krajského kola obdrží přímo soutěžící na e-mail, kterým s
 
 <h4>Řešení</h4>
 
-<?php if ($beforeBCD) : ?>
-<p>
-Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>. Každou úlohu vypracujte na
-<strong>samostatný papír</strong>, pomocné obrázky a náčrty zhotovte tužkou. Jestliže používáte
-kalkulačku, nezapomeňte na <a href="/diskuse?forum_id=1739&sort=vlakno">správné
-	zaokrouhlení výsledků</a>.  </p>
-<p>
-Na první list řešení každé úlohy napište záhlaví:
-</p>
-<table style="border : 0px none; background-color : transparent;">
-<tr>
-	<td colspan="3" style="border : 0px none">Jméno a příjmení:</td>
-</tr>
-<tr>
-	<td style="border : 0px none">Třída:</td>
-	<td style="border : 0px none">Zaměření:</td>
-	<td style="border : 0px none">Kategorie:</td>
-</tr>
-<tr>
-	<td colspan="3" style="border : 0px none">Škola:</td>
-</tr>
-<tr>
-	<td style="border : 0px none">Učitel fyziky:</td>
-	<td style="border : 0px none">Posudek:</td>
-	<td style="border : 0px none">Posuzovali:</td>
-</tr>
-<tr>
-	<td colspan="3" style="border : 0px none">Úloha č.:</td>
-</tr>
-</table>
-<p>
-Texty úloh <strong>neopisujte</strong>, napište jen text řešení a&nbsp;udělejte legendu označení. Na
-<strong>každý další list</strong> napište svoje jméno, příjmení, školu, číslo úlohy a&nbsp;číslo
-strany řešení.
-</p>
+<?php if ($beforeA) : ?>
+<p>Řešení zveřejníme po termínech odevzdání jednotlivých kategorií.</p>
 <?php endif; ?>
 <?php if (!$beforeA) : ?>
 <div class="table-responsive">
@@ -211,6 +178,53 @@ strany řešení.
 </div>
 <?php endif; ?>
 
+</div>
+
+
+<h3 id="pokyny">Pokyny pro školní kolo</h3>
+<div>
+<p>
+Řešení pište úhledně a čitelně na <strong>listy formátu A4</strong>, každou úlohu
+na <strong>samostatný papír</strong>; obrázky a náčrty stačí tužkou. Texty úloh
+neopisujte &mdash; uveďte jen stručný zápis se zavedeným označením veličin. Na
+každý další list napište své jméno, školu, číslo úlohy a číslo strany.
+</p>
+<p>
+Na první list řešení každé úlohy napište záhlaví:
+</p>
+<table style="border : 0px none; background-color : transparent;">
+<tr>
+	<td colspan="3" style="border : 0px none">Jméno a příjmení:</td>
+</tr>
+<tr>
+	<td style="border : 0px none">Třída:</td>
+	<td style="border : 0px none">Zaměření:</td>
+	<td style="border : 0px none">Kategorie:</td>
+</tr>
+<tr>
+	<td colspan="3" style="border : 0px none">Škola:</td>
+</tr>
+<tr>
+	<td style="border : 0px none">Učitel fyziky:</td>
+	<td style="border : 0px none">Posudek:</td>
+	<td style="border : 0px none">Posuzovali:</td>
+</tr>
+<tr>
+	<td colspan="3" style="border : 0px none">Úloha č.:</td>
+</tr>
+</table>
+<p>
+Z protokolu musí být zřejmý myšlenkový postup &mdash; správný výsledek bez
+výkladu nestačí. Úlohy řešte nejprve obecně a číselné hodnoty dosazujte až do
+výsledného vztahu; na obecném řešení snadno provedete jednotkovou kontrolu.
+</p>
+<p>
+Výsledek zaokrouhlujte podle přesnosti vstupních údajů: platných číslic může mít
+nejvýše tolik, kolik jich má nejméně přesný údaj v zadání, a třeba rozdíl
+dvou blízkých hodnot přesnost dále snižuje. Mezivýsledky proto nezaokrouhlujte
+a zaokrouhlete až konečný výsledek. Podrobněji
+v <a href="/diskuse/vlakno/1738">diskusi o zaokrouhlování</a>.
+</p>
 </div>
 
 
@@ -328,15 +342,40 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
 	<a href="https://osmo.fyzikalniolympiada.cz/public/kolo/101/vysledky">Kategorie D<small>výsledková listina</small></a>
 </div>
 <?php endif; ?>
+
+<h3 id="rady">Několik rad k řešení</h3>
+<div>
+<p>
+Úlohy FO jsou na rozdíl od většiny školních úloh problémové &mdash; nevystačíte
+s dosazením do jednoho vzorce. K řešení patří rozmyslet si, za jakých
+zjednodušujících předpokladů lze úlohu vůbec řešit, a na konci zvážit, co zvolený
+model znamená pro platnost výsledku.
+</p>
+<ul>
+	<li>Řešte obecně, jednotková kontrola výsledného vztahu odhalí většinu chyb.</li>
+	<li>Výsledek konfrontujte s odhadem, mezními případy nebo skutečností;
+	někdy pomůže grafické řešení či kontrolní experiment.</li>
+	<li>Nevynechávejte diskusi řešení a zformulujte odpověď na otázku ze
+	zadání &mdash; samotná číselná hodnota odpovědí být nemusí.</li>
+	<li>Některé úlohy vyžadují spojit poznatky z několika partií fyziky nebo si
+	informace dohledat &mdash; je to záměr, ne chyba zadání.</li>
+	<li>Jedna úloha školního i krajského kola vychází ze
+	<a href="/studijni-texty">studijního tématu</a> &mdash; vyplatí se prostudovat
+	celý text včetně úloh v něm.</li>
+</ul>
+</div>
+
 </div>
 <nav class="obsah-toc">
 	<a href="/stredni-skoly#organizace">Jak se zapojit</a>
 	<a href="/stredni-skoly#ulohy">Úlohy školního kola</a>
+	<a href="/stredni-skoly#pokyny">Pokyny pro školní kolo</a>
 	<a href="/stredni-skoly#temata">Studijní témata</a>
 	<a href="/stredni-skoly#krajske-kolo">Krajské kolo</a>
 <?php if (!$krajBeforeA) : ?>
 	<a href="/stredni-skoly#ulohy-kraj">Úlohy krajského kola</a>
 	<a href="/stredni-skoly#vysledky">Výsledky krajského kola</a>
 <?php endif; ?>
+	<a href="/stredni-skoly#rady">Několik rad k řešení</a>
 </nav>
 </div>
