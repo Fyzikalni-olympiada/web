@@ -79,7 +79,7 @@ function menu($current)
 
         $dropdown = ($submenu = submenu($node, $current));
         $strHTML .= '
-			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 5 ? ' smaller' : '') . '">
+			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 4 ? ' smaller' : '') . '">
 			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
         if ($dropdown) {
             $strHTML .= $submenu;
