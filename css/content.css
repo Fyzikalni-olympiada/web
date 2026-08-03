@@ -390,6 +390,8 @@ table.zadani td br + small {
 @media (max-width: 600px) {
 	#zapojeni .cesta {
 		overflow-x: auto;
+		padding-top: 17px;
+		margin-top: .6em;
 		padding-bottom: 6px;
 	}
 	#zapojeni .krok {
