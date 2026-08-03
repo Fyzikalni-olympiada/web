@@ -423,6 +423,8 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	text-decoration: none;
 }
 .navigation .ikona-mapa {height: 0.85em; width: auto; margin-right: 7px; vertical-align: baseline}
+.navigation .ikona-mapa path {fill: transparent; transition: fill 0.2s}
+.navigation a:hover .ikona-mapa path {fill: #3E5199}
 .navigation li.current-tab > a {color: #3E5199;}
 
 #search {position: absolute; bottom: -35px; right: 0px;}
