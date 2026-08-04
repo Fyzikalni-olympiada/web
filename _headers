@@ -14,6 +14,8 @@
   Cache-Control: public, max-age=604800
 /*.pdf
   Cache-Control: public, max-age=604800
+/fonts/*
+  Cache-Control: public, max-age=2592000
 /data/*.json
   Cache-Control: public, max-age=86400
 # rozcestník indexu odkazuje na hashované fragmenty, po deployi nesmí zůstat starý

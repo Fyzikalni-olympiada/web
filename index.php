@@ -43,6 +43,9 @@ if ($napln === 404) {
 <?php endif; ?>
 <link rel='home' href='/' />
 
+<link rel="preload" href="/fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/space-grotesk-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+
 <link rel='stylesheet' type='text/css' media='screen' href='<?= asset('/css/bootstrap.css') ?>' />
 <link rel='stylesheet' type='text/css' media='screen,projection,tv' href='<?= asset('/css/layout.css') ?>' />
 <link rel='stylesheet' type='text/css' media='all' href='<?= asset('/css/content.css') ?>' />
