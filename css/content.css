@@ -138,6 +138,10 @@ i.html {
 	column-gap: 40px;
 	margin-top: 1em;
 }
+/* kraje bez funkčního webu */
+.kraje-sloupce .bez-webu {
+	color: #999;
+}
 
 table.zadani td {
     text-align: center;
