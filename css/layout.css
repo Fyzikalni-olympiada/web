@@ -461,6 +461,24 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #main-nav > ul > li > a:hover,
 #main-nav > ul > li.current-tab > a {border-bottom: 2px solid #3E5199/*#94CC5F*/;}
 #main-nav .dropdown-menu {font-size: 1.2em;}
+/* animace rozbalení submenu (stejně jako hamburger níže) + otočení šipky */
+#main-nav .dropdown-menu {
+	opacity: 0;
+	translate: 0 -8px;
+	transition: opacity 0.2s ease-out, translate 0.2s ease-out, display 0.2s allow-discrete;
+}
+#main-nav .open > .dropdown-menu {
+	opacity: 1;
+	translate: 0 0;
+}
+@starting-style {
+	#main-nav .open > .dropdown-menu {
+		opacity: 0;
+		translate: 0 -8px;
+	}
+}
+#main-nav .caret {transition: rotate 0.2s ease-out}
+#main-nav .open > a .caret {rotate: 180deg}
 @media (max-width: 1199px) {
 	#logo span {font-size: 55px}
 	#logo small {padding-left: 9em;}
