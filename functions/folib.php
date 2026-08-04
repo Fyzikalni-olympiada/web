@@ -101,8 +101,9 @@ function menu($current)
     $strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády"
 		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">' . menu_ikona(['ikona' => 'vir']) . 'Osmo</a></li>';
     /* inline SVG, aby šla mapka při hoveru vyplnit přes CSS */
-    $strHTML .= '<li><a title="Webové stránky krajských komisí" href="/stranky-regionu">
-		' . str_replace('<svg ', '<svg class="ikona-mapa" ', file_get_contents(__DIR__ . '/../pic/mapa-ikona.svg')) . 'Krajské stránky</a></li>';
+    $strHTML .= '<li><a title="Webové stránky krajských komisí" href="/stranky-regionu">'
+        . str_replace('<svg ', '<svg class="ikona-mapa" ', trim(file_get_contents(__DIR__ . '/../pic/mapa-ikona.svg')))
+        . 'Krajské stránky</a></li>';
     $strHTML .= '
                 </ul>';
 
