@@ -111,6 +111,26 @@
 		oznac();
 	}
 
+	/* ---------- filtr studijních textů podle kategorie ---------- */
+
+	var filtr = document.querySelector('.tx-filtr');
+	if (filtr) {
+		filtr.addEventListener('click', function (e) {
+			var volba = e.target.closest('a');
+			if (!volba) {
+				return;
+			}
+			e.preventDefault();
+			filtr.querySelectorAll('a').forEach(function (a) {
+				a.classList.toggle('akt', a === volba);
+			});
+			var kat = volba.getAttribute('data-kat');
+			document.querySelectorAll('.tx-radek[data-kat]').forEach(function (r) {
+				r.style.display = kat === '*' || r.getAttribute('data-kat') === kat ? '' : 'none';
+			});
+		});
+	}
+
 	/* ---------- zvýraznění nejbližšího termínu na /terminy ---------- */
 
 	document.querySelectorAll('.terminy').forEach(function (blok) {

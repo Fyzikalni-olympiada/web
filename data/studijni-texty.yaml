@@ -1,0 +1,327 @@
+# Studijní texty z Knihovničky FO a matematické kapitoly – zdroj pro /studijni-texty
+# pozn: volitelný HTML popisek pod autorem (může obsahovat odkazy); kotva: id řádku
+knihovnicka:
+- autor: Šedivý, P.
+  nazev: Obvody střídavého proudu s lineárními jednobrany a dvojbrany
+  kategorie: B
+  pdf: /texty/stpr1.pdf
+  ps: /texty/stpr1.ps.gz
+- autor: Šedivý, P.
+  nazev: Pokusy s operačními zesilovači
+  kategorie: B
+  pdf: /texty/opzes.pdf
+  ps: /texty/opzes.ps.gz
+- autor: Chytilová, M.
+  nazev: Archimedův zákon
+  kategorie: D
+  pdf: /texty/arch_zak.pdf
+  ps: /texty/arch_zak.ps.gz
+- autor: Kuběna, J.
+  nazev: Elektromagnetické vlny
+- autor: Šedivý, P.
+  nazev: Ohyb světla
+  kategorie: A
+  pdf: /texty/difrakce.pdf
+  ps: /texty/difrakce.ps.gz
+- autor: Vybíral, B.
+  nazev: Statika tuhého tělesa
+  pdf: /texty/statika.pdf
+  ps: /texty/statika.ps.gz
+- autor: Šedivý, P. – Volf, I.
+  nazev: Pohyby tělesa v odporujícím prostředí
+  kategorie: B
+  pdf: /texty/odpor.pdf
+  ps: /texty/odpor.ps.gz
+- autor: Šedivý, P. – Volf, I.
+  nazev: Rovnoměrně zrychlené a zpomalené pohyby
+  kategorie: D
+  pdf: /texty/zrych.pdf
+  ps: /texty/zrych.ps.gz
+- autor: Kuběna, J.
+  nazev: Základy optického zobrazování v době počítačů
+- autor: Horáková, R. – Šedivý, P.
+  nazev: Kruhový děj s ideálním plynem
+  kategorie: C
+  pdf: /texty/kruhdej.pdf
+  ps: /texty/kruhdej.ps.gz
+- autor: Vybíral, B.
+  nazev: Kinematika a dynamika tuhého tělesa
+  kategorie: A
+  pdf: /texty/dynamika.pdf
+  ps: /texty/dynamika.ps.gz
+- autor: Kuběna, J.
+  nazev: Newtonova mechanika v době počítačů
+- autor: Horáková, R.
+  nazev: Pohyb soustavy těles spojených vláknem
+  kategorie: C
+  pdf: /texty/pohyb.pdf
+  ps: /texty/pohyb.ps.gz
+- autor: Jírů, J.
+  nazev: Moment setrvačnosti
+  kategorie: C
+  pdf: /texty/mom-setrv.pdf
+- autor: Vybíral, B.
+  nazev: Setrvačníky a jejich aplikace
+  kategorie: A
+  pdf: /texty/setrv.pdf
+  ps: /texty/setrv.ps.gz
+- autor: Šedivý, P. – Volf, I.
+  nazev: Dopravní kinematika a grafy
+  kategorie: D
+  pdf: /texty/dopkin.pdf
+  ps: /texty/dopkin.ps.gz
+- autor: Šedivý, P.
+  nazev: Modelování pohybů numerickými metodami
+  kategorie: B
+  pdf: /texty/modelov0.pdf
+  ps: /texty/modelov0.ps.gz
+  pozn: <a href="/texty/model.zip">zdrojové soubory</a> pro Famulus z tohoto textu
+- autor: Šedivý, P.
+  nazev: Modelování fyzikálních dějů numerickými metodami
+  kotva: modelov
+  pdf: /texty/modelov.pdf
+  ps: /texty/modelov.ps.gz
+  pozn: <ul><li><a href="/texty/modely.zip">zdrojové soubory modelů</a> (1,7 MB) v systému Coach</li><li><a href="/texty/install/SETUPEX.EXE">instalační
+    soubor</a> (9,8 MB) systému Coach 5 pro Windows XP</li><li><a href="/texty/install/coachcz.zip">soubory pro
+    počeštění programu</a> Coach 5</li><li><a href="/texty/Jazyk_Coach.pdf">popis jazyka Coach</a> (pdf soubor)</li></ul>
+- autor: Vybíral, B.
+  nazev: Elektrostatika
+  kategorie: A
+  pdf: /texty/elstat.pdf
+  ps: /texty/elstat.ps.gz
+- autor: Vybíral, B.
+  nazev: Magnetické pole ve vakuu
+  kategorie: A
+  pdf: /texty/magnet.pdf
+  ps: /texty/magnet.ps.gz
+- autor: Šedivý, P. – Volf, I.
+  nazev: Pohyb tělesa po eliptické trajektorii v radiálním gravitačním poli
+  kategorie: C
+  pdf: /texty/druzice.pdf
+  ps: /texty/druzice.ps.gz
+- autor: Šedivý, P. – Volf, I. – Horáková, R.
+  nazev: Harmonické kmity mechanických soustav
+  kategorie: B
+  pdf: /texty/kmity.pdf
+  ps: /texty/kmity.ps.gz
+- autor: Šedivý, P. – Volf, I.
+  nazev: Práce – výkon – energie
+  kategorie: D
+  pdf: /texty/prace.pdf
+  ps: /texty/prace.ps.gz
+- autor: Vybíral, B. – Zdeborová, L.
+  nazev: Odporové síly
+  kategorie: B
+  pdf: /texty/odpsil.pdf
+  ps: /texty/odpsil.ps.gz
+- autor: Vybíral, B.
+  nazev: Magnetické pole v látce
+  kategorie: A
+  pdf: /texty/magvll.pdf
+  ps: /texty/magvll.ps.gz
+- autor: Šedivý, P.
+  nazev: Teplotní závislosti fyzikálních veličin
+  kategorie: C
+  pdf: /texty/teplota.pdf
+  ps: /texty/teplota.ps.gz
+- autor: Vybíral, B.
+  nazev: Zpracování dat fyzikálních měření
+  pdf: /texty/mereni.pdf
+  ps: /texty/mereni.ps.gz
+- autor: Vybíral, B. – Zdeborová, L.
+  nazev: Pohyb tělesa s vlivem odporových sil
+  kategorie: A
+  pdf: /texty/odpory.pdf
+  ps: /texty/odpory.ps.gz
+- autor: Polák, Z. – Šedivý, P.
+  nazev: Vrhy
+  kategorie: D
+  pdf: /texty/vrhy.pdf
+  ps: /texty/vrhy.ps.gz
+- autor: Vybíral, B.
+  nazev: Mechanika ideálních kapalin
+  kategorie: C
+  pdf: /texty/kapaliny.pdf
+  ps: /texty/kapaliny.ps.gz
+- autor: Jarešová, M.
+  nazev: Elektrické obvody (Stejnosměrný proud)
+  kategorie: B
+  pdf: /texty/elobvody.pdf
+  ps: /texty/elobvody.ps.gz
+- autor: Vybíral, B.
+  nazev: Elektromagnetická indukce
+  kategorie: A
+  pdf: /texty/indukce.pdf
+  ps: /texty/indukce.ps.gz
+- autor: Šedivý, P.
+  nazev: Kapitoly ze speciální teorie relativity
+  kategorie: A
+  pdf: /texty/str.pdf
+  ps: /texty/str.ps.gz
+- autor: Šedivý, P.
+  nazev: Kapitoly ze speciální teorie relativity (2. vydání)
+  kategorie: A
+  pdf: /texty/str2.pdf
+  ps: /texty/str2.ps.gz
+  pozn: Text se od prvního vydání liší ve zpracování dynamiky. Opouští se pojem relativistická hmotnost a vychází
+    se ze vztahu pro výpočet relativistické hybnosti, jak je obvyklé v novějších učebnicích. Oba přístupy k výkladu
+    dynamiky mají své příznivce. První vydání tohoto studijního textu lépe navazuje na učebnce fyziky používané
+    v současnosti na středních školách, které s pojmem relativistická hmotnost pracují, druhé vydání lépe odpovídá
+    tomu, s čím se studenti setkají po příchodu na vysoké školy.
+- autor: Prachař, J. – Trnka, J.
+  nazev: Úlohy z mechaniky I (Jednoduché soustavy spojené vláknem)
+  kategorie: D
+  pdf: /texty/ulohy1.pdf
+  ps: /texty/ulohy1.ps.gz
+- autor: Prachař, J. – Trnka, J.
+  nazev: Úlohy z mechaniky II (Otáčení tuhého tělesa)
+  kategorie: C
+  pdf: /texty/ulohy2.pdf
+  ps: /texty/ulohy2.ps.gz
+- autor: Prachař, J.
+  nazev: Úlohy z mechaniky III (Zákony zachování)
+  kategorie: C
+  pdf: /texty/ulohy3.pdf
+  ps: /texty/ulohy3.ps.gz
+  pozn: <em>pracovní verze</em>
+- autor: Vybíral, B.
+  nazev: Mechanika ideálních plynů
+  kategorie: B
+  pdf: /texty/plyny.pdf
+  ps: /texty/plyny.ps.gz
+- autor: Vybíral, B.
+  nazev: Aplikovaná mechanika tekutin (turbíny, rakety, letadla)
+  kategorie: B
+  pdf: /texty/aplikace.pdf
+  ps: /texty/aplikace.ps.gz
+- autor: Vybíral, B.
+  nazev: Mechanika pružného tělesa
+  kategorie: A
+  pdf: /texty/pruznost.pdf
+  ps: /texty/pruznost.ps.gz
+- autor: Trnka, J.
+  nazev: Zobrazení čočkami
+  kategorie: A
+  pdf: /texty/cocky.pdf
+  ps: /texty/cocky.ps.gz
+- autor: Jírů, J.
+  nazev: Diferenciální počet ve fyzice
+  pdf: /texty/dif.pdf
+  ps: /texty/dif.ps.gz
+- autor: Volf, I. – Jarešová, M.
+  nazev: Fyzika je kolem nás (Pohyb a síla)
+  kategorie: D
+  pdf: /texty/fyzika1.pdf
+  ps: /texty/fyzika1.ps.gz
+- autor: Volf, I. – Jarešová, M.
+  nazev: Fyzika je kolem nás (Práce – výkon – energie)
+  kategorie: D
+  pdf: /texty/fyzika2.pdf
+  ps: /texty/fyzika2.ps.gz
+- autor: Volf, I. – Jarešová, M.
+  nazev: Fyzika je kolem nás (Poloha a její změny)
+  kategorie: D
+  pdf: /texty/fyzika3.pdf
+  ps: /texty/fyzika3.ps.gz
+- autor: Volf, I. – Jarešová, M.
+  nazev: Fyzika je kolem nás (Hydrostatika a aerostatika)
+  kategorie: C
+  pdf: /texty/fyzika4.pdf
+  ps: /texty/fyzika4.ps.gz
+- autor: Volf, I. – Jarešová, M.
+  nazev: Fyzika je kolem nás (Pohyby těles v planetární soustavě)
+  kategorie: D
+  pdf: /texty/fyzika5.pdf
+  ps: /texty/fyzika5.ps.gz
+- autor: Jarešová, M. – Volf, I.
+  nazev: Fyzika je kolem nás (Síla a tuhé těleso)
+  kategorie: D
+  pdf: /texty/fyzika6.pdf
+  ps: /texty/fyzika6.ps.gz
+- autor: Volf, I. – Jarešová, M.
+  nazev: Fyzika je kolem nás (Komplexní úlohy)
+  kategorie: C
+  pdf: /texty/fyzika7.pdf
+  ps: /texty/fyzika7.ps.gz
+  pozn: <ul><li><a href="/texty/fyzika7-valeni.zip">archiv s modely na valivý pohyb a text o cyklických křivkách</a>
+    (2,3 MB)</li></ul>
+- autor: Volf, I. – Jarešová, M.
+  nazev: Fyzika je kolem nás (Molekulová fyzika a termika)
+  kategorie: C
+  pdf: /texty/fyzika8.pdf
+  ps: /texty/fyzika8.ps.gz
+- autor: Volf, I. – Jarešová, M. – Ouhrabka, M.
+  nazev: Přenos tepla
+  kategorie: C
+  pdf: /texty/texttz.pdf
+  ps: /texty/texttz.ps.gz
+- autor: Vícha, V. – Volf, I.
+  nazev: Laboratorní práce z fyziky pro FO
+  kategorie: D
+  pdf: /texty/experim.pdf
+- autor: Vybíral, B. – Šedivý, P.
+  nazev: Mechanika rovinného pohybu tuhého tělesa
+  kategorie: A
+  pdf: /texty/r_pohyb.pdf
+  ps: /texty/r_pohyb.ps.gz
+- autor: Jírů, J.
+  nazev: Hybnost a energie při vzájemném působení těles
+  kategorie: D
+  pdf: /texty/hybnost.pdf
+  ps: /texty/hybnost.ps.gz
+- autor: Kapoun, M.
+  nazev: Aproximace ve fyzikálních úlohách
+  kategorie: B
+  pdf: /texty/aproxim.pdf
+  ps: /texty/aproxim.ps.gz
+- autor: Kapoun, M.
+  nazev: Atomy
+  kategorie: A
+  pdf: /texty/atomy.pdf
+  ps: /texty/atomy.ps.gz
+- autor: Volf, I. – Šedivý, P.
+  nazev: Pohyb, síly a sportovní aktivity I. (Zimní sporty na sněhu a ledu)
+  kategorie: C
+  pdf: /texty/zimni_s.pdf
+  ps: /texty/zimni_s.ps.gz
+- autor: Wagner, V. – Vícha, V. – Janout, Z.
+  nazev: Hranice Mendělejevovy tabulky
+  kategorie: A
+  pdf: /texty/supertezke.pdf
+- autor: Horáková, R.
+  nazev: Archimedův zákon (Řešení úloh)
+  kategorie: C
+  pdf: /texty/arch_res.pdf
+- autor: Volf, I.
+  nazev: Teplo a jeho přenos (pracovní verze)
+  kategorie: C
+  pdf: /texty/termika.pdf
+matematika:
+- autor: Miroslava Jarešová – Ivo Volf
+  nazev: Funkce ve fyzice
+  pdf: /texty/matematika/funkce.pdf
+  ps: /texty/matematika/funkce.ps.gz
+- autor: Miroslava Jarešová – Ivo Volf
+  nazev: Diferenciální počet ve fyzice
+  pdf: /texty/matematika/difpoc.pdf
+  ps: /texty/matematika/difpoc.ps.gz
+- autor: Miroslava Jarešová – Ivo Volf
+  nazev: Integrální počet ve fyzice
+  pdf: /texty/matematika/intpoc.pdf
+  ps: /texty/matematika/intpoc.ps.gz
+- autor: Miroslava Jarešová – Bohumil Vybíral
+  nazev: Diferenciální rovnice
+  pdf: /texty/matematika/difro.pdf
+  ps: /texty/matematika/difro.ps.gz
+- autor: Miroslava Jarešová – Ivo Volf
+  nazev: Skaláry, vektory,...
+  pdf: /texty/matematika/vektory.pdf
+  ps: /texty/matematika/vektory.ps.gz
+- autor: Miroslava Jarešová – Ivo Volf
+  nazev: Souřadnice ve fyzice
+  pdf: /texty/matematika/sourad.pdf
+  ps: /texty/matematika/sourad.ps.gz
+- autor: Miroslava Jarešová – Ivo Volf
+  nazev: Matematika křivek
+  pdf: /texty/matematika/mkrivek.pdf
+  ps: /texty/matematika/mkrivek.ps.gz

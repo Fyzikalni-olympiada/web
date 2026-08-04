@@ -152,21 +152,86 @@ table.zadani td br + small {
 	margin-top: 5px;
 }
 
-.texty-arch td {
-	position: relative;
+/* Studijní texty (html/texty_arch.html); filtr obsluhuje js/fo.js */
+.tx-filtr {
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+	margin: 0 0 14px;
+	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
 }
-.texty-arch td strong {
-	font-size: 1.5em;
-	display: block;
-	font-weight: normal;
+.tx-filtr a {
+	border: 1px solid #d0d8dc;
+	border-radius: 15px;
+	padding: 7px 14px;
+	font-size: .85em;
+	line-height: 1;
 }
-.texty-arch td .cat {
-	font-size: 0.9em;
-	font-style: italic;
-	display: block;
-	position: absolute;
-	top: 8px;
-	right: 8px;
+.tx-filtr a:hover {
+	text-decoration: none;
+	border-color: #4a5865;
+}
+.tx-filtr a.akt {
+	background: #4a5865;
+	color: #fff;
+	border-color: #4a5865;
+}
+.tx-radky {
+	border-top: 1px solid #e3e8eb;
+	margin-bottom: 1.5em;
+}
+.tx-radek {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	padding: 8px 4px;
+	border-bottom: 1px solid #e3e8eb;
+}
+.tx-radek .info {
+	flex: 1;
+}
+.tx-radek .autor {
+	color: #777;
+	font-size: .85em;
+}
+.tx-radek .pozn {
+	font-size: .85em;
+	color: #777;
+}
+.tx-radek .pozn ul {
+	margin: 2px 0 0;
+	padding-left: 1.3em;
+}
+.tx-radek .kat {
+	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
+	font-size: .72em;
+	line-height: 1;
+	background: #4a5865;
+	color: #fff;
+	/* jen verzálky bez diakritiky: optický střed chce o px víc paddingu nahoře */
+	padding: 5px 8px 3px;
+	border-radius: 10px;
+	white-space: nowrap;
+}
+.tx-radek i.pdf {
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+}
+/* ps verze je jen doplněk, ikona schválně menší */
+.tx-radek i.ps {
+	width: 20px;
+	height: 20px;
+	background-size: 20px 20px;
+}
+/* zástupný sloupec, ať jsou pdf ikony pod sebou i bez ps verze */
+.tx-radek .bez-ps {
+	width: 20px;
+}
+.tx-radek .jen-tiskem {
+	color: #999;
+	font-size: .8em;
+	white-space: nowrap;
 }
 
 /* Vizitky ÚK FO (html/uvfo.html) */

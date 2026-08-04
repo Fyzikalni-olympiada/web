@@ -134,6 +134,13 @@ function data_celostatni_kola()
 
 
 
+function data_studijni_texty()
+{
+    return Yaml::parseFile(ROOT_DIR . 'data/studijni-texty.yaml');
+}
+
+
+
 /** @return array[] kořenové příspěvky fóra (vnořené odpovědi v 'children') */
 function data_forum()
 {
