@@ -5,10 +5,21 @@
 <div id="vysledky" data-pagefind-ignore></div>
 <script>
 window.addEventListener('DOMContentLoaded', function () {
+	/* index ukazuje na soubory (…/stranka.html), web používá adresy bez přípony */
+	var hezkaUrl = function (url) {
+		return url.replace(/index\.html(#|$)/, '$1').replace(/\.html(#|$)/, '$1');
+	};
 	var ui = new PagefindUI({
 		element: '#vysledky',
 		showImages: false,
 		showSubResults: true,
+		processResult: function (result) {
+			result.url = hezkaUrl(result.url);
+			(result.sub_results || []).forEach(function (sub) {
+				sub.url = hezkaUrl(sub.url);
+			});
+			return result;
+		},
 		translations: {
 			placeholder: 'Vyhledávání',
 			clear_search: 'Smazat',
