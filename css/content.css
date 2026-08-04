@@ -362,6 +362,8 @@ table.zadani td br + small {
 }
 .btn-fo:hover {
 	background: #37424d;
+	color: #fff;
+	text-decoration: none;
 }
 /* podnadpis kategorie uvnitř osa-bloku (/terminy) */
 .osa-podnadpis {
