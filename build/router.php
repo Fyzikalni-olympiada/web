@@ -25,6 +25,11 @@ if ($path === '/rss.xml') {
     return true;
 }
 
+if ($path === '/terminy.ics') {
+    require ROOT_DIR . 'ics.php';
+    return true;
+}
+
 /* existující soubor (assety, archiv, …) servíruj přímo */
 if ($path !== '/' && is_file(ROOT_DIR . ltrim($path, '/'))) {
     return false;

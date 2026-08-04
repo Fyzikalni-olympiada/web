@@ -254,7 +254,8 @@ table.zadani td br + small {
 	flex-shrink: 0;
 }
 
-/* Jak se zapojit do FO (homepage, html/zapojeni.html) */
+/* Jak se zapojit do FO (homepage, html/zapojeni.html);
+ * osy .cesta/.krok sdílí i /terminy (html/terminy.html) */
 #zapojeni .osa-blok {
 	border: 1px solid #d0d8dc;
 	background: #fbfcfd;
@@ -291,18 +292,18 @@ table.zadani td br + small {
 #zapojeni .btn-fo:hover {
 	background: #37424d;
 }
-#zapojeni .cesta {
+.cesta {
 	display: flex;
 	margin: 1.6em 0 .6em;
 	text-align: center;
 }
-#zapojeni .krok {
+.krok {
 	flex: 1;
 	position: relative;
 	padding: 0 6px;
 	min-width: 100px;
 }
-#zapojeni .krok::before {
+.krok::before {
 	content: '';
 	position: absolute;
 	top: 17px;
@@ -311,13 +312,13 @@ table.zadani td br + small {
 	height: 3px;
 	background: #c9d6de;
 }
-#zapojeni .krok:first-child::before {
+.krok:first-child::before {
 	display: none;
 }
-#zapojeni .krok.vedlejsi::before {
+.krok.vedlejsi::before {
 	background: repeating-linear-gradient(90deg, #c9d6de 0 6px, transparent 6px 12px);
 }
-#zapojeni .tecka {
+.tecka {
 	width: 36px;
 	height: 36px;
 	line-height: 32px;
@@ -330,17 +331,17 @@ table.zadani td br + small {
 	position: relative;
 	z-index: 1;
 }
-#zapojeni .krok.aktualni .tecka {
+.krok.aktualni .tecka {
 	background: #4a5865;
 	color: #fff;
 }
-#zapojeni .krok.vedlejsi .tecka {
+.krok.vedlejsi .tecka {
 	border-color: #a3adb8;
 	color: #a3adb8;
 	border-style: dashed;
 }
 /* nejbližší nadcházející krok (označuje js/fo.js podle data) */
-#zapojeni .krok .stitek {
+.krok .stitek {
 	position: absolute;
 	top: -17px;
 	left: 0;
@@ -352,25 +353,25 @@ table.zadani td br + small {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
-#zapojeni .krok.nadchazi .tecka {
+.krok.nadchazi .tecka {
 	background: #94CC5F;
 	border-color: #6fae3a;
 	border-style: solid;
 	color: #fff;
 }
-#zapojeni .kdy .pristi {
+.kdy .pristi {
 	color: #3c7a12;
 	font-weight: bold;
 }
-#zapojeni .krok .nazev {
+.krok .nazev {
 	font-weight: bold;
 	font-size: .95em;
 }
-#zapojeni .krok .kdy {
+.krok .kdy {
 	color: #777;
 	font-size: .85em;
 }
-#zapojeni .krok .pozn {
+.krok .pozn {
 	font-size: .8em;
 	color: #999;
 }
@@ -441,13 +442,13 @@ table.zadani td br + small {
 	#zapojeni .skupina:last-child {order: -1}
 }
 @media (max-width: 600px) {
-	#zapojeni .cesta {
+	.cesta {
 		overflow-x: auto;
 		padding-top: 17px;
 		margin-top: .6em;
 		padding-bottom: 6px;
 	}
-	#zapojeni .krok {
+	.krok {
 		min-width: 150px;
 	}
 	#zapojeni .gymnazia {display: none}

@@ -1,6 +1,5 @@
 <h1>Termíny <?php echo AKTUALNI_ROCNIK ?>. ročníku Fyzikální olympiády <?php echo AKTUALNI_ROK ?></h1>
 
-
 <?php
 echo '<p>Termíny odevzdání úloh domácího kola jsou jen <strong>orientační</strong>. Závazné termíny v&nbsp;jednotlivých krajích vyhlašují krajské komise a&nbsp;najdete je na jejich <a href="' . odkaz('stranky_regionu.html') . '" title="Webové stránky krajských komisí">webových stránkách</a>.</p>';
 
@@ -10,29 +9,32 @@ echo '
 foreach (terms_kategorie('spolecne') as $row) {
 	echo '<span data-date="' . $row['date'] . '">' . mb_ucfirst($row['nazev']) . ' &ndash; ' . $row['termin'] . '</span><br />';
 }
-echo '
+echo 'Termíny si můžete <a href="/terminy.ics">stáhnout do kalendáře</a> (<code>ics</code>).
 </p>';
 
+/* Osy po kategoriích (styl sdílený s „Jak se zapojit" na homepage);
+ * nejbližší nadcházející krok každé osy zvýrazní js/fo.js */
 foreach (array(
 	'A' => 'Kategorie A &ndash; střední školy',
 	'BCD' => 'Kategorie B, C, D &ndash; střední školy',
 	'EF' => 'Kategorie E, F &ndash; základní školy',
 	'G' => 'Kategorie G &ndash; základní školy',
 ) as $kategorie => $nadpis_kat) {
-	echo '<h3>' . $nadpis_kat . '</h3>';
-
-	echo '
-	<table class="table terminy">';
+	echo '<h3>' . $nadpis_kat . '</h3>
+	<div class="cesta">';
+	$i = 1;
 	foreach (terms_kategorie($kategorie) as $row) {
+		$vedlejsi = mb_stripos($row['nazev'], 'kolo') === false;
 		echo '
-	<tr data-date="' . $row['date'] . '">
-		<td width="30%">' . mb_ucfirst($row['nazev']) . '</td>
-		<td width="30%">' . $row['termin'] . '</td>
-		<td width="20%">' . (isset($row['misto']) ? $row['misto'] : '') . '</td>
-	</tr>';
+		<div class="krok' . ($vedlejsi ? ' vedlejsi' : '') . '">
+			<div class="tecka">' . $i++ . '</div>
+			<div class="nazev">' . mb_ucfirst($row['nazev']) . '</div>
+			<div class="kdy"><span data-date="' . $row['date'] . '">' . $row['termin'] . '</span></div>' .
+			(isset($row['misto']) ? '
+			<div class="pozn">' . $row['misto'] . '</div>' : '') . '
+		</div>';
 	}
 	echo '
-	</table>
-	';
+	</div>';
 }
 ?>

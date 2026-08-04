@@ -60,9 +60,9 @@
 			+ String(d.getDate()).padStart(2, '0');
 	}
 
-	/* ---------- nejbližší krok v „Jak se zapojit" (homepage) ---------- */
+	/* ---------- nejbližší krok na osách (homepage, /terminy) ---------- */
 
-	document.querySelectorAll('#zapojeni .cesta').forEach(function (cesta) {
+	document.querySelectorAll('.cesta').forEach(function (cesta) {
 		var pristi = null;
 		cesta.querySelectorAll('.kdy [data-date]').forEach(function (el) {
 			var date = el.getAttribute('data-date');
