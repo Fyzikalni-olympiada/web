@@ -44,14 +44,14 @@ if ($napln === 404) {
 <?php endif; ?>
 <link rel='home' href='/' />
 
-<link rel='stylesheet' type='text/css' media='screen' href='/css/bootstrap.css' />
-<link rel='stylesheet' type='text/css' media='screen,projection,tv' href='/css/layout.css' />
-<link rel='stylesheet' type='text/css' media='all' href='/css/content.css' />
-<link rel='stylesheet' type='text/css' media='print' href='/css/print.css' />
-<link rel="stylesheet" type="text/css" media='screen' href="/css/jquery.lightbox-0.5.css" />
+<link rel='stylesheet' type='text/css' media='screen' href='<?= asset('/css/bootstrap.css') ?>' />
+<link rel='stylesheet' type='text/css' media='screen,projection,tv' href='<?= asset('/css/layout.css') ?>' />
+<link rel='stylesheet' type='text/css' media='all' href='<?= asset('/css/content.css') ?>' />
+<link rel='stylesheet' type='text/css' media='print' href='<?= asset('/css/print.css') ?>' />
+<link rel="stylesheet" type="text/css" media='screen' href="<?= asset('/css/jquery.lightbox-0.5.css') ?>" />
 
-<script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="<?= asset('/js/jquery.js') ?>" type="text/javascript"></script>
+<script src="<?= asset('/js/bootstrap.js') ?>" type="text/javascript"></script>
 <script type="text/javascript">
     $(function() {
 		if (window.location.hash) {
@@ -210,6 +210,6 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
         </div>
     </div>
 </div>
-<script src="/js/fo.js" type="text/javascript"></script>
+<script src="<?= asset('/js/fo.js') ?>" type="text/javascript"></script>
 </body>
 </html>

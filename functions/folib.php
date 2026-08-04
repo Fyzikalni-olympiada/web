@@ -66,6 +66,15 @@ function menu_contains($node, $pathname)
 
 
 
+/** Cesta k css/js s verzí podle obsahu — po změně souboru si prohlížeče stáhnou novou
+ *  (Cloudflare query string v cache klíči ignoruje, CDN to nerozbije) */
+function asset($cesta)
+{
+    return $cesta . '?v=' . substr(md5_file(ROOT_DIR . ltrim($cesta, '/')), 0, 8);
+}
+
+
+
 /** Inline SVG ikona položky menu (pic/menu/*.svg), ať jde stylovat přes CSS */
 function menu_ikona($node)
 {
