@@ -441,7 +441,17 @@ table.zadani td br + small {
 	#zapojeni .predel {display: none}
 	#zapojeni .skupina:last-child {order: -1}
 }
-@media (max-width: 600px) {
+/* odkaz na ics export v nadpisu kategorie (/terminy) */
+.ics-odkaz {
+	float: right;
+	font-size: .6em;
+	font-weight: normal;
+	margin-top: .5em;
+}
+
+/* užší displeje: kroky os se nesmí mačkat (dlouhé názvy by se překrývaly),
+ * radši ať osa jede do stran — scrollbar se objeví, jen když je potřeba */
+@media (max-width: 900px) {
 	.cesta {
 		overflow-x: auto;
 		padding-top: 17px;
@@ -451,6 +461,8 @@ table.zadani td br + small {
 	.krok {
 		min-width: 150px;
 	}
+}
+@media (max-width: 600px) {
 	#zapojeni .gymnazia {display: none}
 }
 /* Číslované kroky zapojení (html/abcd.html) */

@@ -20,7 +20,9 @@ foreach (array(
 	'EF' => 'Kategorie E, F &ndash; základní školy',
 	'G' => 'Kategorie G &ndash; základní školy',
 ) as $kategorie => $nadpis_kat) {
-	echo '<h3>' . $nadpis_kat . '</h3>
+	$ics = $kategorie === 'G' ? ''
+		: '<a class="ics-odkaz" href="/terminy-' . strtolower($kategorie) . '.ics">do kalendáře (ics)</a>';
+	echo '<h3>' . $ics . $nadpis_kat . '</h3>
 	<div class="cesta">';
 	$i = 1;
 	foreach (terms_kategorie($kategorie) as $row) {

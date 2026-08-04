@@ -1,22 +1,26 @@
 <?php
-/* Termíny aktuálního ročníku jako iCalendar (/terminy.ics).
- * Rozsah události se parsuje z lidského textu termínu ("3.–6. února 2026",
- * "duben 2026", …); když se to nepovede, použije se pole date. Celodenní
- * události, DTEND je podle RFC 5545 exkluzivní (den po konci). */
+/* Termíny aktuálního ročníku jako iCalendar (/terminy.ics, /terminy-<kat>.ics).
+ * $GLOBALS['ICS_KATEGORIE'] omezí výběr na jednu kategorii (+ společné termíny).
+ * Rozsah události se parsuje z lidského textu termínu ("3.–6. února 2026");
+ * termíny bez konkrétního data ("duben 2026") se vynechávají. Celodenní
+ * události, DTEND je podle RFC 5545 exkluzivní (den po konci).
+ * Soubor se při buildu spouští opakovaně, proto jsou deklarace hlídané. */
 
 include_once('init.php');
 
-const ICS_MESICE = array(
+if (!defined('ICS_MESICE')) {
+define('ICS_MESICE', array(
 	'ledna' => 1, 'února' => 2, 'března' => 3, 'dubna' => 4, 'května' => 5,
 	'června' => 6, 'července' => 7, 'srpna' => 8, 'září' => 9, 'října' => 10,
 	'listopadu' => 11, 'prosince' => 12,
 	'leden' => 1, 'únor' => 2, 'březen' => 3, 'duben' => 4, 'květen' => 5,
 	'červen' => 6, 'červenec' => 7, 'srpen' => 8, 'říjen' => 10,
 	'listopad' => 11, 'prosinec' => 12,
-);
+));
 
-/** [začátek, konec] jako [rok, měsíc, den] podle textu termínu, jinak null */
-function ics_rozsah($termin, $rok_fallback)
+/** [začátek, konec] jako [rok, měsíc, den] podle textu termínu;
+ *  null = termín bez konkrétního data (do kalendáře nepatří) */
+function ics_rozsah($termin)
 {
 	$t = str_replace(array("\u{a0}", '&nbsp;'), ' ', $termin);
 	$t = preg_replace('~^(pondělí|úterý|středa|čtvrtek|pátek|sobota|neděle)\s+~u', '', trim($t));
@@ -42,11 +46,6 @@ function ics_rozsah($termin, $rok_fallback)
 		$d = array($x[3], $x[2], $x[1]);
 		return array($d, $d);
 	}
-	/* "duben 2026" — celý měsíc */
-	if (preg_match('~^' . $m . '\s*(\d{4})$~u', $t, $x)) {
-		$mes = ICS_MESICE[$x[1]];
-		return array(array($x[2], $mes, 1), array($x[2], $mes, cal_days_in_month(CAL_GREGORIAN, $mes, (int)$x[2])));
-	}
 	return null;
 }
 
@@ -54,22 +53,28 @@ function ics_datum($d)
 {
 	return sprintf('%04d%02d%02d', $d[0], $d[1], $d[2]);
 }
+} /* konec hlídaných deklarací */
+
+$jen_kategorie = isset($GLOBALS['ICS_KATEGORIE']) ? $GLOBALS['ICS_KATEGORIE'] : null;
 
 $radky = array(
 	'BEGIN:VCALENDAR',
 	'VERSION:2.0',
 	'PRODID:-//Fyzikální olympiáda//terminy//CS',
 	'CALSCALE:GREGORIAN',
-	'X-WR-CALNAME:Fyzikální olympiáda – ' . AKTUALNI_ROCNIK . '. ročník',
+	'X-WR-CALNAME:Fyzikální olympiáda – ' . AKTUALNI_ROCNIK . '. ročník'
+		. ($jen_kategorie ? ', kategorie ' . preg_replace('~(?<=\w)(?=\w)~', ', ', $jen_kategorie) : ''),
 );
 
 foreach (data_terms(AKTUALNI_ROCNIK) as $kategorie => $terminy) {
+	if ($jen_kategorie !== null && $kategorie !== 'spolecne' && $kategorie !== $jen_kategorie) {
+		continue;
+	}
 	$kat = $kategorie === 'spolecne' ? '' : ' (kat. ' . preg_replace('~(?<=\w)(?=\w)~', ', ', $kategorie) . ')';
 	foreach ($terminy as $i => $row) {
-		$rozsah = ics_rozsah($row['termin'], null);
+		$rozsah = ics_rozsah($row['termin']);
 		if ($rozsah === null) {
-			$d = explode('-', $row['date']);
-			$rozsah = array($d, $d);
+			continue;
 		}
 		$konec = new DateTime(ics_datum($rozsah[1]));
 		$konec->modify('+1 day');

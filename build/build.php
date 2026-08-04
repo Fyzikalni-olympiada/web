@@ -96,7 +96,12 @@ foreach ($pages as $name) {
 /* ---------- 2. rss.xml, terms.json ---------- */
 
 write_file($DIST . 'rss.xml', capture(ROOT_DIR . 'rss.php'));
-write_file($DIST . 'terminy.ics', capture(ROOT_DIR . 'ics.php'));
+foreach (array('' => 'terminy.ics', 'A' => 'terminy-a.ics',
+        'BCD' => 'terminy-bcd.ics', 'EF' => 'terminy-ef.ics') as $kat => $ics) {
+    $GLOBALS['ICS_KATEGORIE'] = $kat === '' ? null : $kat;
+    write_file($DIST . $ics, capture(ROOT_DIR . 'ics.php'));
+}
+unset($GLOBALS['ICS_KATEGORIE']);
 write_file($DIST . 'data/terms.json', capture(__DIR__ . '/terms_json.php'));
 
 /* ---------- 3. statické soubory ---------- */

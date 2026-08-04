@@ -25,7 +25,8 @@ if ($path === '/rss.xml') {
     return true;
 }
 
-if ($path === '/terminy.ics') {
+if (preg_match('~^/terminy(?:-(a|bcd|ef))?\.ics$~', $path, $m)) {
+    $GLOBALS['ICS_KATEGORIE'] = isset($m[1]) ? strtoupper($m[1]) : null;
     require ROOT_DIR . 'ics.php';
     return true;
 }
