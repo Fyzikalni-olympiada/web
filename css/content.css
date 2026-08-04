@@ -549,6 +549,80 @@ ol.kroky > li::before {
 	.obsah-toc {display: none}
 }
 
+/* Časová osa celostátních kol (html/celost_arch.html) */
+.ck-osa {
+	position: relative;
+	padding-left: 90px;
+}
+.ck-osa::before {
+	content: '';
+	position: absolute;
+	left: 62px;
+	top: 6px;
+	bottom: 6px;
+	width: 3px;
+	background: #c9d6de;
+}
+.ck-bod {
+	position: relative;
+	padding: 0 0 20px;
+}
+.ck-bod::before {
+	content: '';
+	position: absolute;
+	left: -33px;
+	top: 4px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #fff;
+	border: 3px solid #4a5865;
+}
+.ck-bod .rok {
+	position: absolute;
+	left: -92px;
+	top: 2px;
+	width: 44px;
+	text-align: right;
+	font-weight: bold;
+	color: #4a5865;
+}
+.ck-bod b {
+	font-size: 1.1em;
+}
+.ck-bod > small {
+	color: #999;
+	margin-left: 6px;
+}
+.ck-bod .odkazy {
+	font-size: .9em;
+	margin-top: 2px;
+}
+.ck-bod .odkazy a {
+	margin-right: 14px;
+	white-space: nowrap;
+}
+.ck-bod .odkazy a::before {
+	content: '» ';
+	color: #a3adb8;
+}
+/* kola bez odkazů */
+.ck-bod.bez::before {
+	border-color: #a3adb8;
+	border-style: dashed;
+}
+.ck-bod.bez b {
+	color: #888;
+	font-weight: normal;
+}
+@media (max-width: 600px) {
+	.ck-osa {padding-left: 72px}
+	.ck-osa::before {left: 50px}
+	.ck-bod::before {left: -27px}
+	.ck-bod .rok {left: -74px; width: 38px; font-size: .95em}
+	.ck-bod .odkazy a {white-space: normal; display: inline-block}
+}
+
 hr.aktuality-predel {
 	margin: 30px 0 25px;
 	border-top: 2px solid #d0d8dc;

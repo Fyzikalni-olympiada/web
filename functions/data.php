@@ -127,6 +127,13 @@ function data_mfo_uspechy()
 
 
 
+function data_celostatni_kola()
+{
+    return Yaml::parseFile(ROOT_DIR . 'data/celostatni-kola.yaml');
+}
+
+
+
 /** @return array[] kořenové příspěvky fóra (vnořené odpovědi v 'children') */
 function data_forum()
 {
