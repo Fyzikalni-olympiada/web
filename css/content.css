@@ -55,19 +55,15 @@ p > a > i.pdf, p > a > i.ps, p > a >  i.pdfi, p > a > i.html {
 
 i.pdf {
 	background-image: url(../pic/pdficon.svg);
-	background-image: /*\**/url(../pic/pdficon.png)\9;
 }
 i.pdfi {
 	background-image: url(../pic/pdfiicon.svg);
-	background-image: /*\**/url(../pic/pdfiicon.png)\9;
 }
 i.ps {
 	background-image: url(../pic/psicon.svg);
-	background-image: /*\**/url(../pic/psicon.png)\9;
 }
 i.html {
 	background-image: url(../pic/htmlicon.svg);
-	background-image: /*\**/url(../pic/htmlicon.png)\9;
 }
 
 #zadani dl {

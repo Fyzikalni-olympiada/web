@@ -430,6 +430,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .navigation li.current-tab > a {color: #3E5199;}
 
 #search {position: absolute; bottom: -35px; right: 0px;}
+#search .ikona-lupa {width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; vertical-align: -2px}
 
 /* Main navigation */
 /* Hamburger (jen malé displeje): kulaté tlačítko pod ročníkem, otevírá menu */
