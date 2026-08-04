@@ -47,31 +47,6 @@ if ($napln === 404) {
 <link rel='stylesheet' type='text/css' media='screen,projection,tv' href='<?= asset('/css/layout.css') ?>' />
 <link rel='stylesheet' type='text/css' media='all' href='<?= asset('/css/content.css') ?>' />
 <link rel='stylesheet' type='text/css' media='print' href='<?= asset('/css/print.css') ?>' />
-<link rel="stylesheet" type="text/css" media='screen' href="<?= asset('/css/jquery.lightbox-0.5.css') ?>" />
-
-<script src="<?= asset('/js/jquery.js') ?>" type="text/javascript"></script>
-<script src="<?= asset('/js/bootstrap.js') ?>" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function() {
-		if (window.location.hash) {
-			$('h3.accordion' + window.location.hash).addClass('accordion-main');
-		}
-
-		var $panels = $('h3.accordion');
-		$panels.not('.accordion-main').addClass('off').next().hide();
-		$panels.click(function () {
-			if ($(this).is('.off')) {
-				$(this).toggleClass('off').next().slideToggle();
-			} else {
-				var $that = $(this);
-				$(this).next().slideToggle(function () {
-					$that.addClass('off');
-				});
-			}
-		});
-    });
-</script>
-
 
 <title>
 Fyzikální olympiáda – <?= $route['nadpis'] ?>

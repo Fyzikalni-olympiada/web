@@ -262,24 +262,6 @@ function fotogalerie($dir, $dny = null)
     }
 
     echo '
-<script src="js/jquery.lightbox-0.5.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function() {
-        $(\'.photoContainer a\').lightBox({
-            fixedNavigation: true,
-            imageLoading: \'pic/lightboxes/lightbox-ico-loading.gif\',
-            imageBtnPrev: \'pic/lightboxes/lightbox-btn-prev.gif\',
-            imageBtnNext: \'pic/lightboxes/lightbox-btn-next.gif\',
-            imageBtnClose: \'pic/lightboxes/lightbox-btn-close.gif\',
-            imageBlank: \'pic/lightboxes/lightbox-blank.gif\',
-            containerBorderSize: 10,
-            containerResizeSpeed: 400,
-            txtImage: \'Obrázek\',
-            txtOf: \'z\'
-        });
-    });
-</script>
-
 <div id="photoGallery">';
 
     $nahledy = array_flip(scandir(ROOT_DIR . $dir . '/thumbnails'));

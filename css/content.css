@@ -110,6 +110,28 @@ i.html {
 #photoGallery div.photoContainer a:hover {
 	background:#d0d8dc;
 }
+/* náhled fotky přes celou obrazovku (js/fo.js); klik na fotku = další */
+dialog.lightbox {
+	border: none;
+	padding: 10px;
+	max-width: 94vw;
+	max-height: 94vh;
+}
+dialog.lightbox::backdrop {
+	background: rgba(0, 0, 0, 0.75);
+}
+dialog.lightbox img {
+	display: block;
+	max-width: 90vw;
+	max-height: 86vh;
+	cursor: pointer;
+}
+dialog.lightbox .popisek {
+	font-size: .9em;
+	color: #555;
+	padding-top: 6px;
+	text-align: center;
+}
 
 /* Klikací mapa krajů (html/kraje_mapa.html) */
 .mapa-kraju {

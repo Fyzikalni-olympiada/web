@@ -1,9 +1,10 @@
 /**
- * Klientský JS statického webu FO:
+ * Klientský JS statického webu FO (jediný skript, bez závislostí):
  *  - přesměrování starých adres s query parametry
- *  - hamburger menu na malých displejích
- *  - zvýraznění nejbližšího kroku v „Jak se zapojit" na homepage
- *  - zvýraznění nejbližšího termínu na /terminy (podle data-date)
+ *  - hamburger menu a rozbalovací submenu
+ *  - taby, accordion, fotogalerie (dřív bootstrap.js / jquery.lightbox)
+ *  - zvýraznění nejbližšího kroku na osách (homepage, /terminy)
+ *  - filtr studijních textů
  */
 (function () {
 	'use strict';
@@ -48,7 +49,114 @@
 			hlavniMenu.classList.remove('open');
 			menuTlacitko.setAttribute('aria-expanded', 'false');
 		}
+		if (e.key === 'Escape') {
+			zavriSubmenu();
+		}
 	});
+
+	/* ---------- rozbalovací submenu (dřív bootstrap.js) ---------- */
+
+	function zavriSubmenu() {
+		document.querySelectorAll('#main-nav .open').forEach(function (li) {
+			li.classList.remove('open');
+		});
+	}
+
+	document.querySelectorAll('#main-nav .dropdown-toggle').forEach(function (odkaz) {
+		odkaz.addEventListener('click', function (e) {
+			e.preventDefault();
+			var li = odkaz.parentElement;
+			var otevrit = !li.classList.contains('open');
+			zavriSubmenu();
+			if (otevrit) {
+				li.classList.add('open');
+			}
+		});
+	});
+	document.addEventListener('click', function (e) {
+		if (!e.target.closest('.dropdown-toggle')) {
+			zavriSubmenu();
+		}
+	});
+
+	/* ---------- taby (dřív bootstrap.js) ---------- */
+
+	document.querySelectorAll('.nav-tabs a[data-toggle="tab"]').forEach(function (odkaz) {
+		odkaz.addEventListener('click', function (e) {
+			e.preventDefault();
+			var pane = document.querySelector(odkaz.getAttribute('href'));
+			odkaz.closest('.nav-tabs').querySelectorAll('li').forEach(function (li) {
+				li.classList.toggle('active', li === odkaz.parentElement);
+			});
+			pane.parentElement.querySelectorAll(':scope > .tab-pane').forEach(function (p) {
+				p.classList.toggle('active', p === pane);
+			});
+		});
+	});
+
+	/* ---------- accordion (/ustredni-kolo, dřív jQuery v hlavičce) ---------- */
+
+	var panely = document.querySelectorAll('h3.accordion');
+	if (panely.length) {
+		if (location.hash) {
+			var oteviranyPanel = document.querySelector('h3.accordion' + location.hash);
+			if (oteviranyPanel) {
+				oteviranyPanel.classList.add('accordion-main');
+			}
+		}
+		panely.forEach(function (panel) {
+			if (!panel.classList.contains('accordion-main')) {
+				panel.classList.add('off');
+				panel.nextElementSibling.style.display = 'none';
+			}
+			panel.addEventListener('click', function () {
+				var skryty = panel.classList.toggle('off');
+				panel.nextElementSibling.style.display = skryty ? 'none' : '';
+			});
+		});
+	}
+
+	/* ---------- fotogalerie: nativní dialog (dřív jquery.lightbox) ---------- */
+
+	var galerie = document.querySelectorAll('#photoGallery .photoContainer a');
+	if (galerie.length) {
+		var dialog = document.createElement('dialog');
+		dialog.className = 'lightbox';
+		dialog.innerHTML = '<img alt=""><div class="popisek"></div>';
+		document.body.appendChild(dialog);
+		var obrazek = dialog.querySelector('img');
+		var aktualni = 0;
+		var ukaz = function (i) {
+			aktualni = (i + galerie.length) % galerie.length;
+			obrazek.src = galerie[aktualni].getAttribute('href');
+			dialog.querySelector('.popisek').innerHTML = galerie[aktualni].getAttribute('title') || '';
+		};
+		galerie.forEach(function (odkaz, i) {
+			odkaz.addEventListener('click', function (e) {
+				e.preventDefault();
+				ukaz(i);
+				dialog.showModal();
+			});
+		});
+		obrazek.addEventListener('click', function () {
+			ukaz(aktualni + 1);
+		});
+		dialog.addEventListener('click', function (e) {
+			if (e.target !== obrazek) {
+				dialog.close();
+			}
+		});
+		document.addEventListener('keydown', function (e) {
+			if (!dialog.open) {
+				return;
+			}
+			if (e.key === 'ArrowRight') {
+				ukaz(aktualni + 1);
+			} else if (e.key === 'ArrowLeft') {
+				ukaz(aktualni - 1);
+			}
+		});
+	}
 
 
 	/* ---------- pomocné ---------- */
