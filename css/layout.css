@@ -423,11 +423,10 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	text-decoration: none;
 }
 .navigation .ikona-mapa, .navigation .ikona-menu {height: 0.85em; width: auto; margin-right: 7px; vertical-align: baseline}
-.navigation .ikona-mapa path {fill: transparent; transition: fill 0.2s}
-.navigation a:hover .ikona-mapa path {fill: #3E5199}
-/* ikony s vnitřní kresbou se při hoveru invertují: modrá výplň, bílé linky */
-.navigation .ikona-menu * {fill: transparent; transition: fill 0.2s, stroke 0.2s}
-.navigation a:hover .ikona-menu * {fill: #3E5199; stroke: #fff}
+/* ikony se při hoveru vyplní světlým tintem; vnitřní kresba (.detail) zůstává bez výplně */
+.navigation .ikona-mapa path, .navigation .ikona-menu * {fill: transparent; transition: fill 0.2s}
+.navigation a:hover .ikona-mapa path, .navigation a:hover .ikona-menu * {fill: #ccd5ee}
+.navigation a:hover .ikona-menu .detail {fill: transparent}
 .navigation li.current-tab > a {color: #3E5199;}
 
 #search {position: absolute; bottom: -35px; right: 0px;}
