@@ -64,6 +64,8 @@ h4,h5,h6 {font-weight: bold;}
 
 h1, h2 {font-size: 1.8em;}
 h3 {font-size: 1.45em;}
+/* nadpisy sdílí font nápisu u loga */
+h1, h2, h3 {font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif; font-weight: 700;}
 h4 {font-size: 1.25em;}
 h5 {font-size: 1.1em;}
 h6 {font-size: 1em;}
@@ -434,6 +436,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #logo span {font-size: 50px; line-height: 62px; font-family: "Space Grotesk", "DejaVu Sans", sans-serif; font-weight: 700; color: #000; display:block;}
 #logo a:hover {text-decoration: none; color: #000;}
 #logo .rocnik {font-size: 19px; color: #222}
+#logo .rocnik b {font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif}
 
 /* Navigation */
 .navigation a {

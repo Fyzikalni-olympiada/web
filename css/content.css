@@ -181,7 +181,7 @@ table.zadani td br + small {
 	gap: 6px;
 	flex-wrap: wrap;
 	margin: 0 0 14px;
-	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 }
 .tx-filtr a {
 	border: 1px solid #d0d8dc;
@@ -226,7 +226,7 @@ table.zadani td br + small {
 	padding-left: 1.3em;
 }
 .tx-radek .kat {
-	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	font-size: .72em;
 	line-height: 1;
 	background: #4a5865;
@@ -310,7 +310,7 @@ table.zadani td br + small {
 	float: right;
 	background: #4a5865;
 	color: #fff;
-	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	font-size: .72em;
 	line-height: 1;
 	padding: 4px 8px;
@@ -368,6 +368,7 @@ table.zadani td br + small {
 	grid-row: 1 / span 2;
 }
 .btn-fo {
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	display: inline-block;
 	background: #4a5865;
 	color: #fff;
@@ -424,6 +425,7 @@ table.zadani td br + small {
 	background: repeating-linear-gradient(90deg, #c9d6de 0 6px, transparent 6px 12px);
 }
 .tecka {
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	width: 36px;
 	height: 36px;
 	line-height: 32px;
@@ -513,6 +515,7 @@ table.zadani td br + small {
 	background: #f4f6f8;
 }
 #zapojeni a.kat b {
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	display: block;
 	font-size: 1.5em;
 	color: #4a5865;
@@ -689,6 +692,7 @@ ol.kroky > li::before {
 	border: 3px solid #4a5865;
 }
 .ck-bod .rok {
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	position: absolute;
 	left: -92px;
 	top: 2px;
