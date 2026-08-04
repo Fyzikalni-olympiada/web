@@ -326,29 +326,30 @@ table.zadani td br + small {
 
 /* Jak se zapojit do FO (homepage, html/zapojeni.html);
  * osy .cesta/.krok sdílí i /terminy (html/terminy.html) */
-#zapojeni .osa-blok {
+.osa-blok {
 	border: 1px solid #d0d8dc;
 	background: #fbfcfd;
 	padding: 12px 12px;
 	margin-bottom: 12px;
 }
-#zapojeni .osa-hlavicka {
+.osa-hlavicka {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	column-gap: .6em;
 	align-items: start;
 }
-#zapojeni .osa-hlavicka h3 {
+.osa-hlavicka h3 {
 	margin: 4px 0 0;
 }
-#zapojeni .osa-hlavicka small {
+.osa-hlavicka small {
 	color: #777;
+	grid-column: 1;
 }
-#zapojeni .osa-hlavicka .btn-fo {
+.osa-hlavicka .btn-fo {
 	grid-column: 2;
 	grid-row: 1 / span 2;
 }
-#zapojeni .btn-fo {
+.btn-fo {
 	display: inline-block;
 	background: #4a5865;
 	color: #fff;
@@ -359,8 +360,22 @@ table.zadani td br + small {
 	font-size: .9em;
 	white-space: nowrap;
 }
-#zapojeni .btn-fo:hover {
+.btn-fo:hover {
 	background: #37424d;
+}
+/* podnadpis kategorie uvnitř osa-bloku (/terminy) */
+.osa-podnadpis {
+	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
+	color: #4a5865;
+	border-bottom: 1px solid #e3e8eb;
+	padding-bottom: 2px;
+	margin: 14px 0 0;
+}
+.osa-podnadpis .btn-fo {
+	float: right;
+	font-size: .78em;
+	padding: 3px 10px;
+	margin-top: -2px;
 }
 .cesta {
 	display: flex;
@@ -511,14 +526,6 @@ table.zadani td br + small {
 	#zapojeni .predel {display: none}
 	#zapojeni .skupina:last-child {order: -1}
 }
-/* odkaz na ics export v nadpisu kategorie (/terminy) */
-.ics-odkaz {
-	float: right;
-	font-size: .6em;
-	font-weight: normal;
-	margin-top: .5em;
-}
-
 /* užší displeje: kroky os se nesmí mačkat (dlouhé názvy by se překrývaly),
  * radši ať osa jede do stran — scrollbar se objeví, jen když je potřeba */
 @media (max-width: 900px) {

@@ -9,20 +9,20 @@ echo '
 foreach (terms_kategorie('spolecne') as $row) {
 	echo '<span data-date="' . $row['date'] . '">' . mb_ucfirst($row['nazev']) . ' &ndash; ' . $row['termin'] . '</span><br />';
 }
-echo 'Termíny si můžete <a href="/terminy.ics">stáhnout do kalendáře</a> (<code>ics</code>).
+echo 'Všechny termíny si můžete <a href="/terminy.ics">stáhnout do kalendáře</a> (<code>ics</code>).
 </p>';
 
-/* Osy po kategoriích (styl sdílený s „Jak se zapojit" na homepage);
- * nejbližší nadcházející krok každé osy zvýrazní js/fo.js */
-foreach (array(
-	'A' => 'Kategorie A &ndash; střední školy',
-	'BCD' => 'Kategorie B, C, D &ndash; střední školy',
-	'EF' => 'Kategorie E, F &ndash; základní školy',
-	'G' => 'Kategorie G &ndash; základní školy',
-) as $kategorie => $nadpis_kat) {
-	$ics = $kategorie === 'G' ? ''
-		: '<a class="ics-odkaz" href="/terminy-' . strtolower($kategorie) . '.ics">do kalendáře (ics)</a>';
-	echo '<h3>' . $ics . $nadpis_kat . '</h3>
+/* zkrácený termín: bez roku (je v nadpisu), den v týdnu dvěma písmeny */
+$kdy = function ($termin) {
+	$s = preg_replace('~\s*\d{4}~u', '', $termin);
+	$s = strtr($s, array('pondělí' => 'po', 'úterý' => 'út', 'středa' => 'st',
+		'čtvrtek' => 'čt', 'pátek' => 'pá', 'sobota' => 'so', 'neděle' => 'ne'));
+	return trim($s);
+};
+
+/* osa jedné kategorie; nejbližší krok zvýrazní js/fo.js */
+$osa = function ($kategorie) use ($kdy) {
+	echo '
 	<div class="cesta">';
 	$i = 1;
 	foreach (terms_kategorie($kategorie) as $row) {
@@ -31,12 +31,37 @@ foreach (array(
 		<div class="krok' . ($vedlejsi ? ' vedlejsi' : '') . '">
 			<div class="tecka">' . $i++ . '</div>
 			<div class="nazev">' . mb_ucfirst($row['nazev']) . '</div>
-			<div class="kdy"><span data-date="' . $row['date'] . '">' . $row['termin'] . '</span></div>' .
+			<div class="kdy"><span data-date="' . $row['date'] . '">' . $kdy($row['termin']) . '</span></div>' .
 			(isset($row['misto']) ? '
 			<div class="pozn">' . $row['misto'] . '</div>' : '') . '
 		</div>';
 	}
 	echo '
 	</div>';
-}
+};
+
+/* podnadpis kategorie, volitelně s exportem do kalendáře */
+$podnadpis = function ($nazev, $ics = null) {
+	echo '
+	<div class="osa-podnadpis">' . $nazev
+		. ($ics ? '<a class="btn-fo" href="/terminy-' . $ics . '.ics">do kalendáře</a>' : '') . '</div>';
+};
 ?>
+
+<div class="osa-blok">
+	<div class="osa-hlavicka">
+		<h3>Střední školy</h3>
+		<small>kategorie A, B, C a&nbsp;D</small>
+	</div>
+	<?php $podnadpis('Kategorie A', 'a'); $osa('A'); ?>
+	<?php $podnadpis('Kategorie B, C, D', 'bcd'); $osa('BCD'); ?>
+</div>
+
+<div class="osa-blok">
+	<div class="osa-hlavicka">
+		<h3>Základní školy</h3>
+		<small>kategorie E, F a&nbsp;G (Archimediáda)</small>
+	</div>
+	<?php $podnadpis('Kategorie E, F', 'ef'); $osa('EF'); ?>
+	<?php $podnadpis('Kategorie G'); $osa('G'); ?>
+</div>
