@@ -115,27 +115,28 @@ i.html {
 	background:#d0d8dc;
 }
 
-.mapa {
-	position: relative;
-	width: 470px;
-	height: 269px;
+/* Klikací mapa krajů (html/kraje_mapa.html) */
+.mapa-kraju {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 10px 0;
 }
-/* na displeje, kam se 470px mapa nevejde, stačí seznam pod ní */
-@media (max-width: 640px) {
-	#main-content .mapa {display: none}
+.mapa-kraju path {
+	fill: #dfe6ec;
+	stroke: #fff;
+	stroke-width: 1.2;
+	stroke-linejoin: round;
+	transition: fill 0.15s;
+}
+.mapa-kraju a:hover path {
+	fill: #4a5865;
 }
 .kraje-sloupce {
 	max-width: 40em;
 	columns: 2 14em;
 	column-gap: 40px;
 	margin-top: 1em;
-}
-.mapa img {
-	position: absolute;
-}
-
-.mapa .kraj {
-	display: none;
 }
 
 table.zadani td {
