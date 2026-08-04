@@ -1,6 +1,7 @@
 /:
   file: content/news.php
   title: Jak se zapojit
+  description: "Oficiální stránky Fyzikální olympiády. Soutěž ve fyzice pro žáky základních a středních škol – zadání úloh, termíny kol, výsledky a studijní texty."
 Tana:
   file: tana/index.html
   title: Celostátní soustředění, Chata Táňa
@@ -40,6 +41,7 @@ Tana/ucastnici:
 archimediada:
   file: html/g.html
   title: Kategorie G
+  description: "Archimediáda – kategorie G Fyzikální olympiády pro 7. třídu základních škol: jak se zapojit, zadání úloh a pokyny."
 archiv/61/vysledky-krajskeho-kola:
   file: archiv/61/bcd2_vysledky.html
   title: Archiv krajských kol
@@ -160,6 +162,7 @@ cena-praemium-bohemiae/2011:
 co-je-fo:
   file: html/cojefo.html
   title: Co je Fyzikální olympiáda
+  description: "Co je Fyzikální olympiáda – organizace a kategorie soutěže, historie od roku 1959 a české úspěchy na mezinárodních fyzikálních olympiádách."
 diskuse:
   file: content/forum.php
   title: Diskusní fórum
@@ -250,24 +253,31 @@ pripravne-soustredeni:
 stranky-regionu:
   file: html/stranky_regionu.html
   title: Stránky krajských komisí
+  description: "Webové stránky krajských komisí Fyzikální olympiády – klikací mapa a seznam krajů."
 stredni-skoly:
   file: html/abcd.html
   title: Kategorie ABCD
+  description: "Kategorie A, B, C a D Fyzikální olympiády pro střední školy – jak se zapojit, zadání a řešení úloh školního i krajského kola, studijní témata a výsledky."
 studijni-texty:
   file: html/texty_arch.html
   title: Studijní texty
+  description: "Studijní texty ke studijním tématům aktuálního ročníku a kompletní Knihovnička Fyzikální olympiády ke stažení v PDF."
 terminy:
   file: html/terminy.html
   title: Termíny
+  description: "Přehled termínů všech kol aktuálního ročníku Fyzikální olympiády po kategoriích, včetně exportu do kalendáře."
 ukfo:
   file: html/uvfo.html
   title: Ústřední komise FO
+  description: "Kontakty na Ústřední komisi Fyzikální olympiády a na předsedy krajských komisí."
 ustredni-kolo:
   file: html/celost.html
   title: Celostátní kolo
+  description: "Ústřední (celostátní) kolo kategorie A Fyzikální olympiády – organizace, zadání úloh a výsledky."
 vyhledavani:
   file: html/search.html
   title: Vyhledávání
 zakladni-skoly:
   file: html/ef.html
   title: Kategorie EF
+  description: "Kategorie E a F Fyzikální olympiády pro 8. a 9. třídu ZŠ – jak se zapojit, zadání úloh, pokyny pro školní, okresní a krajské kolo a rady k řešení."

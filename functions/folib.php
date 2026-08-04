@@ -308,6 +308,7 @@ function parsuj()
 
 	$route = array(
 		'pathname' => $pathname,
+		'popis' => null,  /* obsah <meta name="description"> */
 		'news_archiv' => false,
 		'novinka' => null,
 		'forum_who' => null,
@@ -321,7 +322,8 @@ function parsuj()
 	}
 	if (preg_match('~^novinka/(\d+)$~', $pathname, $m)
 			&& ($novinka = data_news_by_id((int) $m[1])) !== null) {
-		return array('nadpis' => $novinka['subject'], 'napln' => 'content/novinka.php', 'novinka' => $novinka) + $route;
+		return array('nadpis' => $novinka['subject'], 'napln' => 'content/novinka.php',
+			'popis' => zkrat_popis($novinka['body']), 'novinka' => $novinka) + $route;
 	}
 	if (preg_match('~^diskuse(-ucitele)?(?:/(\d+))?$~', $pathname, $m)) {
 		return array('nadpis' => 'Diskusní fórum', 'napln' => FILE_FORUM,
@@ -334,9 +336,24 @@ function parsuj()
 
 	$routes = data_routes();
 	if (isset($routes[$pathname]) && file_exists(ROOT_DIR . $routes[$pathname]['file'])) {
-		return array('nadpis' => $routes[$pathname]['title'], 'napln' => $routes[$pathname]['file']) + $route;
+		return array('nadpis' => $routes[$pathname]['title'], 'napln' => $routes[$pathname]['file'],
+			'popis' => isset($routes[$pathname]['description']) ? $routes[$pathname]['description'] : null) + $route;
 	}
 	return array('nadpis' => 'Stránka nenalezena', 'napln' => 404) + $route;
+}
+
+
+
+/** Prostý text pro meta description – z HTML, oříznutý na hranici slova */
+function zkrat_popis($html, $limit = 155)
+{
+	$text = trim(preg_replace('~\s+~u', ' ',
+		html_entity_decode(strip_tags($html), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+	$text = str_replace("\u{a0}", ' ', $text);
+	if (mb_strlen($text) > $limit) {
+		$text = preg_replace('~\s+\S*$~u', '', mb_substr($text, 0, $limit)) . '…';
+	}
+	return $text;
 }
 
 

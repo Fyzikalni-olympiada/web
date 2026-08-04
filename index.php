@@ -49,8 +49,19 @@ if ($napln === 404) {
 <link rel='stylesheet' type='text/css' media='print' href='<?= asset('/css/print.css') ?>' />
 
 <title>
-Fyzikální olympiáda – <?= $route['nadpis'] ?>
+<?= $route['pathname'] === '/' ? 'Fyzikální olympiáda – soutěž ve fyzice pro ZŠ a SŠ'
+	: 'Fyzikální olympiáda – ' . $route['nadpis'] ?>
 </title>
+<?php if ($route['popis']) : ?>
+<meta name="description" content="<?= htmlspecialchars($route['popis']) ?>">
+<?php endif; ?>
+<?php if ($route['pathname'] === '/') : ?>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Fyzikální olympiáda",
+"url":"<?= BASE_URL ?>","logo":"<?= rtrim(BASE_URL, '/') ?>/pic/logo-fo.svg",
+"sameAs":["https://www.facebook.com/fyzikalniolympiada"]}
+</script>
+<?php endif; ?>
 </head>
 <body id="fo-cuni-cz">
 <div class="container">
