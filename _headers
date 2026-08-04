@@ -16,3 +16,6 @@
   Cache-Control: public, max-age=604800
 /data/*.json
   Cache-Control: public, max-age=86400
+# rozcestník indexu odkazuje na hashované fragmenty, po deployi nesmí zůstat starý
+/pagefind/pagefind-entry.json
+  Cache-Control: public, max-age=300

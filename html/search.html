@@ -1,2 +1,29 @@
-<h1>Výsledky vyhledávání</h1>
-<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+<h1>Vyhledávání</h1>
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+<script src="/pagefind/pagefind-ui.js"></script>
+<div id="vysledky" data-pagefind-ignore></div>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+	var ui = new PagefindUI({
+		element: '#vysledky',
+		showImages: false,
+		showSubResults: true,
+		translations: {
+			placeholder: 'Vyhledávání',
+			clear_search: 'Smazat',
+			load_more: 'Načíst další výsledky',
+			zero_results: 'Pro „[SEARCH_TERM]" nebylo nic nalezeno',
+			many_results: '[COUNT] výsledků pro „[SEARCH_TERM]"',
+			one_result: '[COUNT] výsledek pro „[SEARCH_TERM]"',
+			alt_search: 'Pro „[SEARCH_TERM]" nebylo nic nalezeno, zobrazuji výsledky pro „[DIFFERENT_TERM]"',
+			search_suggestion: 'Pro „[SEARCH_TERM]" nebylo nic nalezeno, zkuste jedno z: ',
+			searching: 'Hledám „[SEARCH_TERM]"…'
+		}
+	});
+	var q = new URLSearchParams(location.search).get('q');
+	if (q) {
+		ui.triggerSearch(q);
+	}
+});
+</script>

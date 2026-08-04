@@ -24,7 +24,7 @@ jobs:
       - name: Composer
         run: composer install --no-interaction
 
-      - name: Build
+      - name: Build (včetně pagefind indexu)
         run: make build
 
       # manifest hashů nasazených souborů pro purge změněných URL;

@@ -31,6 +31,16 @@ if (preg_match('~^/terminy(?:-(a|bcd|ef))?\.ics$~', $path, $m)) {
     return true;
 }
 
+/* vyhledávací index generuje pagefind do dist/, mimo kořen repozitáře */
+if (strpos($path, '/pagefind/') === 0 && is_file(__DIR__ . '/../dist' . $path)) {
+    $typy = ['js' => 'text/javascript', 'css' => 'text/css', 'json' => 'application/json',
+        'wasm' => 'application/wasm'];
+    $pripona = pathinfo($path, PATHINFO_EXTENSION);
+    header('Content-Type: ' . (isset($typy[$pripona]) ? $typy[$pripona] : 'application/octet-stream'));
+    readfile(__DIR__ . '/../dist' . $path);
+    return true;
+}
+
 /* existující soubor (assety, archiv, …) servíruj přímo */
 if ($path !== '/' && is_file(ROOT_DIR . ltrim($path, '/'))) {
     return false;

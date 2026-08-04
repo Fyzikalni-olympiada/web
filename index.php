@@ -72,18 +72,6 @@ if ($napln === 404) {
     });
 </script>
 
-<script>
-  (function() {
-    var cx = '010018104406474741832:8azmff_xpkm';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
 
 <title>
 Fyzikální olympiáda – <?= $route['nadpis'] ?>
@@ -121,7 +109,7 @@ Fyzikální olympiáda – <?= $route['nadpis'] ?>
 	<hr>
 
     <div id="main-two-columns" class="row">
-        <div id="main-content" class="col-xs-12">
+        <div id="main-content" class="col-xs-12" data-pagefind-body>
 			<?php if ($napln === 404): ?>
 			<h1 style="text-align: center">Tato stránka neexistuje</h1>
 			<?php else: ?>
