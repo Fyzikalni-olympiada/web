@@ -1,5 +1,6 @@
 - name: Soutěžní kola
   title: Soutěžní kola aktuálního ročníku Fyzikální olympiády
+  ikona: pohar
   children:
   - name: Střední školy
     title: Kategorie A, B, C a D pro střední školy
@@ -21,9 +22,11 @@
     file: literatura
 - name: Studijní texty
   title: Studijní texty z Knihovničky fyzikální olympiády
+  ikona: kniha
   file: studijni-texty
 - name: Táňa
   title: Celostátní soustředění Táňa pro úspěšné řešitele kategorií B a C
+  ikona: hory
   file: Tana
   children:
   - name: Aktuální soustředění
@@ -46,6 +49,7 @@
     file: Tana/fotky
 - name: Mezinárodní soutěž
   title: Mezinárodní fyzikální olympiáda
+  ikona: globus
   children:
   - name: Přípravné soustředění
     title: Přípravné a výběrové soustředění pro Mezinárodní fyzikální olympiádu

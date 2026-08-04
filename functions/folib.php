@@ -66,6 +66,18 @@ function menu_contains($node, $pathname)
 
 
 
+/** Inline SVG ikona položky menu (pic/menu/*.svg), ať jde stylovat přes CSS */
+function menu_ikona($node)
+{
+    if (!isset($node['ikona'])) {
+        return '';
+    }
+    $svg = file_get_contents(__DIR__ . '/../pic/menu/' . $node['ikona'] . '.svg');
+    return str_replace('<svg ', '<svg class="ikona-menu" ', trim($svg));
+}
+
+
+
 function menu($current)
 {
     $strHTML = '
@@ -80,14 +92,14 @@ function menu($current)
         $dropdown = ($submenu = submenu($node, $current));
         $strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 4 ? ' smaller' : '') . '">
-			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
+			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . menu_ikona($node) . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
         if ($dropdown) {
             $strHTML .= $submenu;
         }
         $strHTML .= ' </li>';
     }
     $strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády"
-		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">Osmo</a></li>';
+		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">' . menu_ikona(['ikona' => 'vir']) . 'Osmo</a></li>';
     /* inline SVG, aby šla mapka při hoveru vyplnit přes CSS */
     $strHTML .= '<li><a title="Webové stránky krajských komisí" href="/stranky-regionu">
 		' . str_replace('<svg ', '<svg class="ikona-mapa" ', file_get_contents(__DIR__ . '/../pic/mapa-ikona.svg')) . 'Krajské stránky</a></li>';
