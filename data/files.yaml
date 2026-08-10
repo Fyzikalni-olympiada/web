@@ -8,11 +8,8 @@ Tana:
 Tana/fotky:
   file: tana/foto.html
   title: Celostátní soustředění, Chata Táňa
-Tana/fotky/2000-i:
-  file: tana/photos_2000/index_I.html
-  title: Celostátní soustředění, Chata Táňa
-Tana/fotky/2000-ii:
-  file: tana/photos_2000/index_II.html
+Tana/fotky/2000:
+  file: tana/photos_2000/index.html
   title: Celostátní soustředění, Chata Táňa
 Tana/fotky/2001:
   file: tana/photos_2001/index.html

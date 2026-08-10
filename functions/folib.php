@@ -270,14 +270,16 @@ function fotogalerie($dir, $dny = null)
         if (!isset($nahledy[$soubor])) {
             continue;
         }
-        if ($dny !== null) { // názvy DD_HHMMSS…
-            $title = isset($dny[substr($soubor, 0, 2)]) ? $dny[substr($soubor, 0, 2)] : '';
-            $title .= ', ' . substr($soubor, 3, 2) . ':' . substr($soubor, 5, 2) . ':' . substr($soubor, 7, 2);
-        } else { // názvy YYYYMMDD…
-            $title = ltrim(substr($soubor, 6, 2), '0') . '. ' . ltrim(substr($soubor, 4, 2), '0') . '. ' . substr($soubor, 0, 4);
+        /* titulek podle data v názvu souboru; když v názvu datum není, zbývá jen popisek */
+        if ($dny !== null && preg_match('~^(\d\d)_(\d\d)(\d\d)(\d\d)~', $soubor, $m)) { // DD_HHMMSS…
+            $title = (isset($dny[$m[1]]) ? $dny[$m[1]] : '') . ', ' . $m[2] . ':' . $m[3] . ':' . $m[4];
+        } elseif (preg_match('~((?:19|20)\d\d)(\d\d)(\d\d)~', $soubor, $m)) { // …YYYYMMDD…
+            $title = ltrim($m[3], '0') . '. ' . ltrim($m[2], '0') . '. ' . $m[1];
+        } else {
+            $title = '';
         }
         if (!empty($popisky[$soubor])) {
-            $title .= ' &ndash; ' . $popisky[$soubor];
+            $title = ($title !== '' ? $title . ' &ndash; ' : '') . $popisky[$soubor];
         }
         echo '
 	<div class="photoContainer">

@@ -1,4 +1,6 @@
 # Přesměrování starých URL (Cloudflare Pages); ekvivalent redirects ve firebase.json
+/Tana/fotky/2000-i /Tana/fotky/2000 301
+/Tana/fotky/2000-ii /Tana/fotky/2000 301
 /zajimavosti/korespondencni-seminare /korespondencni-seminare 301
 /zajimavosti/jine-olympiady /jine-olympiady 301
 /zajimavosti/odkazy /odkazy 301
