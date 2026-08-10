@@ -119,9 +119,11 @@
     file: mfo/37
 - name: Ústřední komise
   title: Adresář ústřední komise (a předsedů krajských komisí) FO
+  ikona: komise
   file: ukfo
 - name: Archiv
   title: Archiv úloh a celostátních kol
+  ikona: archiv
   children:
   - name: Zadání a řešení
     title: Archiv zadání a řešení soutěžních úloh FO
