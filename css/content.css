@@ -161,6 +161,10 @@ dialog.lightbox .popisek {
 	color: #999;
 }
 
+/* hlavičky „Kategorie A" ve fontu značky */
+table.zadani th {
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
+}
 table.zadani td {
     text-align: center;
 	vertical-align: middle !important;
@@ -386,7 +390,7 @@ table.zadani td br + small {
 }
 /* podnadpis kategorie uvnitř osa-bloku (/terminy) */
 .osa-podnadpis {
-	font-family: "DejaVu Sans", "Lucida Sans", sans-serif;
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	color: #4a5865;
 	border-bottom: 1px solid #e3e8eb;
 	padding-bottom: 2px;
@@ -608,6 +612,7 @@ ol.kroky > li::before {
 	margin: 14px 0;
 }
 .vysledky-rada a {
+	font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif;
 	flex: 1;
 	min-width: 10em;
 	text-align: center;
