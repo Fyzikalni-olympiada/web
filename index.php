@@ -85,7 +85,7 @@ if ($napln === 404) {
 			<a href="/"><img src="/pic/logo-fo.svg" alt="" /> </a>
 			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
 			<span class="rocnik"><b><?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník</b> &middot; <?php echo AKTUALNI_ROK ?></span>
-			<button type="button" id="menu-tlacitko" aria-label="Menu" aria-expanded="false"></button>
+			<button type="button" id="menu-tlacitko" aria-expanded="false"><span class="linky" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
 		</div>
 
 		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">

@@ -457,26 +457,36 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #search .ikona-lupa {width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; vertical-align: -2px}
 
 /* Main navigation */
-/* Hamburger (jen malé displeje): kulaté tlačítko pod ročníkem, otevírá menu */
+/* Hamburger (jen malé displeje): tlačítko s popiskem pod ročníkem, otevírá menu */
 #menu-tlacitko {
 	display: none;
-	width: 46px;
-	height: 46px;
+	height: 42px;
 	margin-top: 10px;
-	padding: 0;
-	border: none;
-	border-radius: 50%;
+	padding: 0 14px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: #fff;
+	color: #333;
+	font-size: 15px;
+	align-items: center;
+	gap: 9px;
+	cursor: pointer;
+	transition: background 0.25s;
+}
+#menu-tlacitko[aria-expanded="true"] {background: #eee}
+/* tři linky se při otevření plynule složí do křížku */
+#menu-tlacitko .linky {display: block; width: 17px}
+#menu-tlacitko .linky span {
+	display: block;
+	height: 2.4px;
+	margin: 3.2px 0;
+	border-radius: 2px;
 	background: #3E5199;
-	color: #fff;
-	font-size: 20px;
-	transition: background 0.25s, rotate 0.25s;
+	transition: translate 0.25s, rotate 0.25s, opacity 0.25s;
 }
-#menu-tlacitko::before {content: '\2630'}
-#menu-tlacitko[aria-expanded="true"] {
-	background: #26365f;
-	rotate: 90deg;
-}
-#menu-tlacitko[aria-expanded="true"]::before {content: '\2715'}
+#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(1) {translate: 0 5.6px; rotate: 45deg}
+#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(2) {opacity: 0}
+#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(3) {translate: 0 -5.6px; rotate: -45deg}
 #main-nav > ul > li {margin: 0 20px; position: relative}
 #main-nav > ul > li > a {
 	font-size: 1.6em;
@@ -526,7 +536,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 }
 @media (max-width: 640px) {
 	#logo img {width: 90px}
-	#menu-tlacitko {display: block}
+	#menu-tlacitko {display: inline-flex}
 	#main-nav {
 		display: none;
 		opacity: 0;
