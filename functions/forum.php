@@ -64,7 +64,7 @@ function forum_post_html($node, $permalink_root_id = null)
 
         <div class="post-date">
 
-            <div class="left"><img src="images/sample-gravatar.gif" height="14" width="14" alt="" />
+            <div class="left"><img src="/pic/sample-gravatar.gif" height="14" width="14" alt="" />
                 <span class="loud">' . $s_email . '</span>
                 &ndash; ' . forum_datum_cas($node['posted']) . '</div>
 ';

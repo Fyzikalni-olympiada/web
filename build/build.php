@@ -15,9 +15,10 @@ require dirname(__DIR__) . '/init.php';
 $DIST = ROOT_DIR . 'dist/';
 
 /* Adresáře a soubory kopírované tak, jak jsou (kvary se nenasazuje;
- * rss_forum.xml je jednou provždy zmrazený archiv) */
-$ASSET_DIRS = ['css', 'js', 'pic', 'images', 'fonts', 'dokumenty',
-               'archiv', 'texty', 'vysledky', 'tana', 'upload'];
+ * rss_forum.xml je jednou provždy zmrazený archiv). Malé assety žijí
+ * v assets/, do dist i URL jdou bez tohoto prefixu. */
+$ASSETY_MALE = ['css', 'js', 'pic', 'fonts'];
+$OBSAH_DIRS = ['dokumenty', 'archiv', 'texty', 'vysledky', 'tana', 'upload'];
 $ASSET_FILES = ['favicon.ico', 'favicon.svg', 'favicon-16x16.png', 'favicon-32x32.png',
                 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest',
                 'robots.txt', 'rss_forum.xml', '_redirects', '_headers'];
@@ -106,12 +107,15 @@ write_file($DIST . 'data/terms.json', capture(__DIR__ . '/terms_json.php'));
 
 /* ---------- 3. statické soubory ---------- */
 
-foreach ($ASSET_DIRS as $dir) {
+foreach ($ASSETY_MALE as $dir) {
+    exec('cp -aT ' . escapeshellarg(ROOT_DIR . 'assets/' . $dir) . ' ' . escapeshellarg($DIST . $dir));
+}
+foreach ($OBSAH_DIRS as $dir) {
     /* -T: slij do cílového adresáře i když už existuje (vyrenderované stránky) */
     exec('cp -aT ' . escapeshellarg(ROOT_DIR . $dir) . ' ' . escapeshellarg($DIST . $dir));
 }
 foreach ($ASSET_FILES as $file) {
-    copy(ROOT_DIR . $file, $DIST . $file);
+    copy(ROOT_DIR . 'assets/' . $file, $DIST . $file);
 }
 foreach ($NEPUBLIKOVAT as $prefix) {
     exec('rm -rf ' . escapeshellarg($DIST . $prefix));
@@ -124,7 +128,7 @@ foreach ($NEPUBLIKOVAT as $prefix) {
 $fragments = [];
 exec('grep -rlE "<\?(php|=)" ' . implode(' ', array_map(function ($d) {
     return escapeshellarg(ROOT_DIR . $d);
-}, $ASSET_DIRS)) . ' --include="*.html"', $fragments);
+}, $OBSAH_DIRS)) . ' --include="*.html"', $fragments);
 foreach ($fragments as $src) {
     exec(PHP_BINARY . ' ' . escapeshellarg(__DIR__ . '/render_fragment.php') . ' '
         . escapeshellarg($src), $out, $rc);

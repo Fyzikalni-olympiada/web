@@ -82,10 +82,6 @@ a {
 }
 a:hover {text-decoration: underline;}
 
-a.feed {
-	background: url('../images/icon-feed.gif') no-repeat left center;
-	padding-left: 18px;
-}
 a.more {
 	color: #579;
 	font-weight: bold;
@@ -387,7 +383,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .comment-list ul.children ul.children {margin-left: 15px;}
 
 .comment-list ul.children li {
-	background: url('../images/comment-reply.gif') no-repeat left top;
+	background: url('../pic/comment-reply.gif') no-repeat left top;
 	margin: 0;
 	padding: 10px 0 0 15px;
 }

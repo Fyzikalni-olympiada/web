@@ -70,7 +70,7 @@ function menu_contains($node, $pathname)
  *  (Cloudflare query string v cache klíči ignoruje, CDN to nerozbije) */
 function asset($cesta)
 {
-    return $cesta . '?v=' . substr(md5_file(ROOT_DIR . ltrim($cesta, '/')), 0, 8);
+    return $cesta . '?v=' . substr(md5_file(ROOT_DIR . 'assets/' . ltrim($cesta, '/')), 0, 8);
 }
 
 
@@ -81,7 +81,7 @@ function menu_ikona($node)
     if (!isset($node['ikona'])) {
         return '';
     }
-    $svg = file_get_contents(__DIR__ . '/../pic/menu/' . $node['ikona'] . '.svg');
+    $svg = file_get_contents(__DIR__ . '/../assets/pic/menu/' . $node['ikona'] . '.svg');
     return str_replace('<svg ', '<svg class="ikona-menu" ', trim($svg));
 }
 
@@ -111,7 +111,7 @@ function menu($current)
 		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">' . menu_ikona(['ikona' => 'vir']) . 'Osmo</a></li>';
     /* inline SVG, aby šla mapka při hoveru vyplnit přes CSS */
     $strHTML .= '<li><a title="Webové stránky krajských komisí" href="/stranky-regionu">'
-        . str_replace('<svg ', '<svg class="ikona-mapa" ', trim(file_get_contents(__DIR__ . '/../pic/mapa-ikona.svg')))
+        . str_replace('<svg ', '<svg class="ikona-mapa" ', trim(file_get_contents(__DIR__ . '/../assets/pic/mapa-ikona.svg')))
         . 'Krajské stránky</a></li>';
     $strHTML .= '
                 </ul>';

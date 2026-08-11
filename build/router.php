@@ -31,14 +31,27 @@ if (preg_match('~^/terminy(?:-(a|bcd|ef))?\.ics$~', $path, $m)) {
     return true;
 }
 
+/* Odešle soubor s content-type podle přípony (closure: router běží opakovaně v jednom procesu) */
+$servuj = function ($soubor) {
+    $typy = ['js' => 'text/javascript', 'css' => 'text/css', 'json' => 'application/json',
+        'wasm' => 'application/wasm', 'svg' => 'image/svg+xml', 'png' => 'image/png',
+        'jpg' => 'image/jpeg', 'gif' => 'image/gif', 'ico' => 'image/x-icon',
+        'woff2' => 'font/woff2', 'xml' => 'text/xml', 'txt' => 'text/plain',
+        'webmanifest' => 'application/manifest+json'];
+    $pripona = strtolower(pathinfo($soubor, PATHINFO_EXTENSION));
+    header('Content-Type: ' . (isset($typy[$pripona]) ? $typy[$pripona] : 'application/octet-stream'));
+    readfile($soubor);
+    return true;
+};
+
 /* vyhledávací index generuje pagefind do dist/, mimo kořen repozitáře */
 if (strpos($path, '/pagefind/') === 0 && is_file(__DIR__ . '/../dist' . $path)) {
-    $typy = ['js' => 'text/javascript', 'css' => 'text/css', 'json' => 'application/json',
-        'wasm' => 'application/wasm'];
-    $pripona = pathinfo($path, PATHINFO_EXTENSION);
-    header('Content-Type: ' . (isset($typy[$pripona]) ? $typy[$pripona] : 'application/octet-stream'));
-    readfile(__DIR__ . '/../dist' . $path);
-    return true;
+    return $servuj(__DIR__ . '/../dist' . $path);
+}
+
+/* malé assety (css, js, pic, fonts, favicony, …) žijí v assets/, URL je bez prefixu */
+if ($path !== '/' && strpos($path, '..') === false && is_file(ROOT_DIR . 'assets' . $path)) {
+    return $servuj(ROOT_DIR . 'assets' . $path);
 }
 
 /* existující soubor (assety, archiv, …) servíruj přímo */
