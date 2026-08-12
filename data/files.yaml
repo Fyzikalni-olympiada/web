@@ -9,22 +9,22 @@ Tana/fotky:
   file: tana/foto.html
   title: Celostátní soustředění, Chata Táňa
 Tana/fotky/2000:
-  file: tana/photos_2000/index.html
+  file: tana/fotogalerie.html
   title: Celostátní soustředění, Chata Táňa
 Tana/fotky/2001:
-  file: tana/photos_2001/index.html
+  file: tana/fotogalerie.html
   title: Celostátní soustředění, Chata Táňa
 Tana/fotky/2002:
-  file: tana/photos_2002/index.html
+  file: tana/fotogalerie.html
   title: Celostátní soustředění, Chata Táňa
 Tana/fotky/2007:
-  file: tana/photos_2007/index.html
+  file: tana/fotogalerie.html
   title: Celostátní soustředění, Chata Táňa
 Tana/fotky/2008:
-  file: tana/photos_2008/index.html
+  file: tana/fotogalerie.html
   title: Celostátní soustředění, Chata Táňa
 Tana/fotky/2021:
-  file: tana/photos_2021/index.html
+  file: tana/fotogalerie.html
   title: Celostátní soustředění, Chata Táňa
 Tana/historie:
   file: tana/historie.html
@@ -36,7 +36,7 @@ Tana/ucastnici:
   file: tana/ucastnici.html
   title: Celostátní soustředění, Chata Táňa
 archimediada:
-  file: html/g.html
+  file: g.html
   title: Kategorie G
   description: "Archimediáda – kategorie G Fyzikální olympiády pro 7. třídu základních škol: jak se zapojit, zadání úloh a pokyny."
 archiv/61/vysledky-krajskeho-kola:
@@ -46,7 +46,7 @@ archiv/62/A/vysledky-krajskeho-kola:
   file: archiv/62/a2_vysledky.html
   title: Archiv krajských kol
 archiv/celostatni-kola:
-  file: html/celost_arch.html
+  file: celost_arch.html
   title: Archiv celostátních kol
 archiv/celostatni-kola/41:
   file: archiv/celost/41.html
@@ -145,10 +145,10 @@ archiv/rocnik-50/simulace:
   file: archiv/50/fo50-simulace.html
   title: Simulace
 archiv/zadani-a-reseni:
-  file: html/archiv.html
+  file: archiv.html
   title: Archiv zadání a řešení
 cena-praemium-bohemiae:
-  file: html/nadace.html
+  file: nadace.html
   title: Praemium Bohemiae
 cena-praemium-bohemiae/2010:
   file: archiv/nadace/2010.html
@@ -157,7 +157,7 @@ cena-praemium-bohemiae/2011:
   file: archiv/nadace/2011.html
   title: Praemium Bohemiae
 co-je-fo:
-  file: html/cojefo.html
+  file: cojefo.html
   title: Co je Fyzikální olympiáda
   description: "Co je Fyzikální olympiáda – organizace a kategorie soutěže, historie od roku 1959 a české úspěchy na mezinárodních fyzikálních olympiádách."
 diskuse:
@@ -167,16 +167,16 @@ efo/2:
   file: archiv/efo/2.html
   title: Evropská fyzikální olympiáda
 jine-olympiady:
-  file: html/jine_olym.html
+  file: jine_olym.html
   title: Jiné olympiády
 kkfo:
-  file: html/rvfo.html
+  file: rvfo.html
   title: Krajské komise FO
 korespondencni-seminare:
-  file: html/koresem.html
+  file: koresem.html
   title: Korespondenční semináře
 literatura:
-  file: html/literatura.html
+  file: literatura.html
   title: Literatura
 mfo/37:
   file: archiv/mfo/37.html
@@ -236,45 +236,45 @@ mfo/56:
   file: archiv/mfo/56.html
   title: 56. Mezinárodní fyzikální olympiáda
 mfo/ceske-uspechy:
-  file: html/mfo_czu.html
+  file: mfo_czu.html
   title: České úspěchy na MFO
 novinka:
   file: src/content/novinka.php
   title: Novinka
 odkazy:
-  file: html/odkazy.html
+  file: odkazy.html
   title: Odkazy
 pripravne-soustredeni:
-  file: html/vyberko.html
+  file: vyberko.html
   title: Přípravné soustředění
 stranky-regionu:
-  file: html/stranky_regionu.html
+  file: stranky_regionu.html
   title: Stránky krajských komisí
   description: "Webové stránky krajských komisí Fyzikální olympiády – klikací mapa a seznam krajů."
 stredni-skoly:
-  file: html/abcd.html
+  file: abcd.html
   title: Kategorie ABCD
   description: "Kategorie A, B, C a D Fyzikální olympiády pro střední školy – jak se zapojit, zadání a řešení úloh školního i krajského kola, studijní témata a výsledky."
 studijni-texty:
-  file: html/texty_arch.html
+  file: texty_arch.html
   title: Studijní texty
   description: "Studijní texty ke studijním tématům aktuálního ročníku a kompletní Knihovnička Fyzikální olympiády ke stažení v PDF."
 terminy:
-  file: html/terminy.html
+  file: terminy.html
   title: Termíny
   description: "Přehled termínů všech kol aktuálního ročníku Fyzikální olympiády po kategoriích, včetně exportu do kalendáře."
 ukfo:
-  file: html/uvfo.html
+  file: uvfo.html
   title: Ústřední komise FO
   description: "Kontakty na Ústřední komisi Fyzikální olympiády a na předsedy krajských komisí."
 ustredni-kolo:
-  file: html/celost.html
+  file: celost.html
   title: Celostátní kolo
   description: "Ústřední (celostátní) kolo kategorie A Fyzikální olympiády – organizace, zadání úloh a výsledky."
 vyhledavani:
-  file: html/search.html
+  file: search.html
   title: Vyhledávání
 zakladni-skoly:
-  file: html/ef.html
+  file: ef.html
   title: Kategorie EF
   description: "Kategorie E a F Fyzikální olympiády pro 8. a 9. třídu ZŠ – jak se zapojit, zadání úloh, pokyny pro školní, okresní a krajské kolo a rady k řešení."

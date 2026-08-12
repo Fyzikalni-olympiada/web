@@ -9,11 +9,11 @@ Cloudflare Pages (push do masteru → GitHub Actions).
 | Co | Kde |
 |---|---|
 | PHP kód | `src/` – šablona webu (`index.php`), RSS, ICS, `functions/`, `content/` |
-| Šablony stránek | `html/*.html` |
+| Šablony stránek | `html/` (vč. `html/archiv/`, `html/tana/`) |
 | Build a dev server | `build/` (`build.php`, `router.php`, `purge.sh`) |
 | Malé assety | `assets/` – `css/`, `js/`, `pic/`, `fonts/`, favicony, `_redirects`, `_headers` |
 | Data | `data/*.yaml` + `data/news/` |
-| Velký obsah (v URL) | `archiv/`, `texty/`, `tana/`, `dokumenty/`, `vysledky/` |
+| Velký obsah (v URL bez prefixu) | `files/` – `archiv/`, `texty/`, `tana/` (fotky), `dokumenty/`, `vysledky/` |
 
 ## Struktura obsahu
 
@@ -28,7 +28,7 @@ Cloudflare Pages (push do masteru → GitHub Actions).
 | Studijní texty | `data/studijni-texty.yaml` |
 | Diskuse (archiv) | `data/forum.yaml` (zmrazené) |
 | Ročník | `src/config.php` (`AKTUALNI_ROCNIK`, `AKTUALNI_ROK`) |
-| Fotogalerie Táni | `tana/photos_<rok>/` – `photos/` + `thumbnails/` (+ `popisky.csv`); rozcestník se generuje sám |
+| Fotogalerie Táni | `files/tana/photos_<rok>/` – `photos/` + `thumbnails/` (+ `popisky.csv`); rozcestník se generuje sám |
 
 ## Postupy
 

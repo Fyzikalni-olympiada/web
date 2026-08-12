@@ -1,0 +1,8 @@
+<?php $rok = substr($route['pathname'], strlen('Tana/fotky/')); ?>
+<h1>Táňa <?= $rok ?></h1>
+
+<p>
+<a href="<?= odkaz('tana/foto.html') ?>">&laquo; Zpět na přehled ročníků</a>
+</p>
+
+<?php fotogalerie('tana/photos_' . $rok) ?>

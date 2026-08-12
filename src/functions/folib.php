@@ -20,13 +20,7 @@ function url_for_pathname($pathname)
 function odkaz($souborName)
 {
     $map = data_pathname_by_file();
-    if (isset($map[$souborName])) {
-        return url_for_pathname($map[$souborName]);
-    }
-    if (isset($map['html/' . $souborName])) {
-        return url_for_pathname($map['html/' . $souborName]);
-    }
-    return '/';
+    return isset($map[$souborName]) ? url_for_pathname($map[$souborName]) : '/';
 }
 
 /* ----- Menu ----- */
@@ -252,7 +246,8 @@ function novinka_html($item, $permalink = true, $poradi = null)
 function fotogalerie($dir, $dny = null)
 {
     $popisky = array();
-    $csv = ROOT_DIR . $dir . '/popisky.csv';
+    $zdroj = ROOT_DIR . soubor_obsahu($dir);
+    $csv = $zdroj . '/popisky.csv';
     if (is_file($csv)) {
         $handle = fopen($csv, 'r');
         while (($data = fgetcsv($handle, 0, ';')) !== false) {
@@ -264,8 +259,8 @@ function fotogalerie($dir, $dny = null)
     echo '
 <div id="photoGallery">';
 
-    $nahledy = array_flip(scandir(ROOT_DIR . $dir . '/thumbnails'));
-    foreach (glob(ROOT_DIR . $dir . '/photos/*') as $foto) {
+    $nahledy = array_flip(scandir($zdroj . '/thumbnails'));
+    foreach (glob($zdroj . '/photos/*') as $foto) {
         $soubor = basename($foto);
         if (!isset($nahledy[$soubor])) {
             continue;
@@ -337,11 +332,26 @@ function parsuj()
 	}
 
 	$routes = data_routes();
-	if (isset($routes[$pathname]) && file_exists(ROOT_DIR . $routes[$pathname]['file'])) {
-		return array('nadpis' => $routes[$pathname]['title'], 'napln' => $routes[$pathname]['file'],
+	$napln = isset($routes[$pathname]) ? soubor_obsahu($routes[$pathname]['file']) : null;
+	if ($napln !== null && file_exists(ROOT_DIR . $napln)) {
+		return array('nadpis' => $routes[$pathname]['title'], 'napln' => $napln,
 			'popis' => isset($routes[$pathname]['description']) ? $routes[$pathname]['description'] : null) + $route;
 	}
 	return array('nadpis' => 'Stránka nenalezena', 'napln' => 404) + $route;
+}
+
+
+
+/** Data používají logické cesty (archiv/…, tana/…); šablony leží v html/, obsah ve files/ */
+function soubor_obsahu($cesta)
+{
+	if (file_exists(ROOT_DIR . $cesta)) {
+		return $cesta;
+	}
+	if (file_exists(ROOT_DIR . 'files/' . $cesta)) {
+		return 'files/' . $cesta;
+	}
+	return 'html/' . $cesta;
 }
 
 

@@ -49,12 +49,14 @@ if (strpos($path, '/pagefind/') === 0 && is_file(__DIR__ . '/../dist' . $path)) 
     return $servuj(__DIR__ . '/../dist' . $path);
 }
 
-/* malé assety (css, js, pic, fonts, favicony, …) žijí v assets/, URL je bez prefixu */
-if ($path !== '/' && strpos($path, '..') === false && is_file(ROOT_DIR . 'assets' . $path)) {
-    return $servuj(ROOT_DIR . 'assets' . $path);
+/* obsah žije ve files/, malé assety v assets/; URL jsou bez prefixu */
+foreach (['files', 'assets'] as $koren) {
+    if ($path !== '/' && strpos($path, '..') === false && is_file(ROOT_DIR . $koren . $path)) {
+        return $servuj(ROOT_DIR . $koren . $path);
+    }
 }
 
-/* existující soubor (assety, archiv, …) servíruj přímo */
+/* soubor existující přímo v kořeni (data/news, kvary) servíruj beze změny */
 if ($path !== '/' && is_file(ROOT_DIR . ltrim($path, '/'))) {
     return false;
 }

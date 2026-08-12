@@ -7,13 +7,13 @@ href="mailto:webmaster@fyzikalniolympiada.cz">napište nám</a>.
 
 <div class="roky">
 <?php
-$adresare = glob(ROOT_DIR . 'tana/photos_*', GLOB_ONLYDIR);
+$adresare = glob(ROOT_DIR . soubor_obsahu('tana') . '/photos_*', GLOB_ONLYDIR);
 rsort($adresare);
 foreach ($adresare as $adresar) {
 	$rok = substr(basename($adresar), 7);
 	$nahledy = glob($adresar . '/thumbnails/*');
 	echo '
-	<a class="rok-dlazdice" href="' . odkaz('tana/photos_' . $rok . '/index.html') . '">
+	<a class="rok-dlazdice" href="' . url_for_pathname('Tana/fotky/' . $rok) . '">
 		<img src="/tana/photos_' . $rok . '/thumbnails/' . basename($nahledy[0]) . '" alt="" loading="lazy">
 		<span class="rok">' . $rok . '<small>' . count($nahledy) . ' fotek</small></span>
 	</a>';

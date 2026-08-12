@@ -18,7 +18,6 @@ $DIST = ROOT_DIR . 'dist/';
  * rss_forum.xml je jednou provždy zmrazený archiv). Malé assety žijí
  * v assets/, do dist i URL jdou bez tohoto prefixu. */
 $ASSETY_MALE = ['css', 'js', 'pic', 'fonts'];
-$OBSAH_DIRS = ['dokumenty', 'archiv', 'texty', 'vysledky', 'tana'];
 $ASSET_FILES = ['favicon.ico', 'favicon.svg', 'favicon-16x16.png', 'favicon-32x32.png',
                 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest',
                 'robots.txt', 'rss_forum.xml', '_redirects', '_headers'];
@@ -110,10 +109,8 @@ write_file($DIST . 'data/terms.json', capture(__DIR__ . '/terms_json.php'));
 foreach ($ASSETY_MALE as $dir) {
     exec('cp -aT ' . escapeshellarg(ROOT_DIR . 'assets/' . $dir) . ' ' . escapeshellarg($DIST . $dir));
 }
-foreach ($OBSAH_DIRS as $dir) {
-    /* -T: slij do cílového adresáře i když už existuje (vyrenderované stránky) */
-    exec('cp -aT ' . escapeshellarg(ROOT_DIR . $dir) . ' ' . escapeshellarg($DIST . $dir));
-}
+/* veškerý publikovaný obsah; -T slévá files/* do dist vedle vyrenderovaných stránek */
+exec('cp -aT ' . escapeshellarg(ROOT_DIR . 'files') . ' ' . escapeshellarg($DIST));
 foreach ($ASSET_FILES as $file) {
     copy(ROOT_DIR . 'assets/' . $file, $DIST . $file);
 }
@@ -130,14 +127,12 @@ foreach ($NEPUBLIKOVAT as $prefix) {
 /* Jen <?php / <?= (bez short_open_tag, aby <?xml zůstalo netknuté).
  * Podproces kvůli izolaci: některé fragmenty deklarují stejné funkce. */
 $fragments = [];
-exec('grep -rlE "<\?(php|=)" ' . implode(' ', array_map(function ($d) {
-    return escapeshellarg(ROOT_DIR . $d);
-}, $OBSAH_DIRS)) . ' --include="*.html"', $fragments);
+exec('grep -rlE "<\?(php|=)" ' . escapeshellarg(ROOT_DIR . 'files') . ' --include="*.html"', $fragments);
 foreach ($fragments as $src) {
     exec(PHP_BINARY . ' ' . escapeshellarg(__DIR__ . '/render_fragment.php') . ' '
         . escapeshellarg($src), $out, $rc);
     if ($rc === 0) {
-        file_put_contents($DIST . substr($src, strlen(ROOT_DIR)), implode("\n", $out));
+        file_put_contents($DIST . substr($src, strlen(ROOT_DIR . 'files/')), implode("\n", $out));
     } else {
         fwrite(STDERR, "! fragment selhal: $src\n");
         $selhani++;
