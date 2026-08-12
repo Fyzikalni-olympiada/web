@@ -10,7 +10,7 @@
  * - kopie statických adresářů; fragmenty s PHP se předrenderují (render_fragment.php)
  */
 
-require dirname(__DIR__) . '/init.php';
+require dirname(__DIR__) . '/src/init.php';
 
 $DIST = ROOT_DIR . 'dist/';
 
@@ -56,7 +56,7 @@ function capture($file)
 function render_page($path_info)
 {
     $_SERVER['PATH_INFO'] = $path_info;
-    return capture(ROOT_DIR . 'index.php');
+    return capture(ROOT_DIR . 'src/index.php');
 }
 
 
@@ -96,11 +96,11 @@ foreach ($pages as $name) {
 
 /* ---------- 2. rss.xml, terms.json ---------- */
 
-write_file($DIST . 'rss.xml', capture(ROOT_DIR . 'rss.php'));
+write_file($DIST . 'rss.xml', capture(ROOT_DIR . 'src/rss.php'));
 foreach (array('' => 'terminy.ics', 'A' => 'terminy-a.ics',
         'BCD' => 'terminy-bcd.ics', 'EF' => 'terminy-ef.ics') as $kat => $ics) {
     $GLOBALS['ICS_KATEGORIE'] = $kat === '' ? null : $kat;
-    write_file($DIST . $ics, capture(ROOT_DIR . 'ics.php'));
+    write_file($DIST . $ics, capture(ROOT_DIR . 'src/ics.php'));
 }
 unset($GLOBALS['ICS_KATEGORIE']);
 write_file($DIST . 'data/terms.json', capture(__DIR__ . '/terms_json.php'));

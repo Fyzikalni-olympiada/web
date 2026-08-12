@@ -1,5 +1,5 @@
 /:
-  file: content/news.php
+  file: src/content/news.php
   title: Jak se zapojit
   description: "Oficiální stránky Fyzikální olympiády. Soutěž ve fyzice pro žáky základních a středních škol – zadání úloh, termíny kol, výsledky a studijní texty."
 Tana:
@@ -161,7 +161,7 @@ co-je-fo:
   title: Co je Fyzikální olympiáda
   description: "Co je Fyzikální olympiáda – organizace a kategorie soutěže, historie od roku 1959 a české úspěchy na mezinárodních fyzikálních olympiádách."
 diskuse:
-  file: content/forum.php
+  file: src/content/forum.php
   title: Diskusní fórum
 efo/2:
   file: archiv/efo/2.html
@@ -239,7 +239,7 @@ mfo/ceske-uspechy:
   file: html/mfo_czu.html
   title: České úspěchy na MFO
 novinka:
-  file: content/novinka.php
+  file: src/content/novinka.php
   title: Novinka
 odkazy:
   file: html/odkazy.html

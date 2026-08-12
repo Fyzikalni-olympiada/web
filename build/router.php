@@ -5,7 +5,7 @@
  * /data/terms.json a /rss.xml generuje za běhu.
  */
 
-require dirname(__DIR__) . '/init.php';
+require dirname(__DIR__) . '/src/init.php';
 
 $path = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
@@ -21,13 +21,13 @@ if ($path === '/data/terms.json') {
 }
 
 if ($path === '/rss.xml') {
-    require ROOT_DIR . 'rss.php';
+    require ROOT_DIR . 'src/rss.php';
     return true;
 }
 
 if (preg_match('~^/terminy(?:-(a|bcd|ef))?\.ics$~', $path, $m)) {
     $GLOBALS['ICS_KATEGORIE'] = isset($m[1]) ? strtoupper($m[1]) : null;
-    require ROOT_DIR . 'ics.php';
+    require ROOT_DIR . 'src/ics.php';
     return true;
 }
 
@@ -61,5 +61,5 @@ if ($path !== '/' && is_file(ROOT_DIR . ltrim($path, '/'))) {
 
 /* hezké adresy → index.php s PATH_INFO */
 $_SERVER['PATH_INFO'] = $path;
-require ROOT_DIR . 'index.php';
+require ROOT_DIR . 'src/index.php';
 return true;

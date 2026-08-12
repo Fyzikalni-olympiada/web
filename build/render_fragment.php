@@ -7,7 +7,7 @@
  * Použití: php build/render_fragment.php <soubor>
  */
 
-require dirname(__DIR__) . '/init.php';
+require dirname(__DIR__) . '/src/init.php';
 
 if (empty($argv[1]) || !is_file($argv[1])) {
     fwrite(STDERR, "chybí soubor\n");
