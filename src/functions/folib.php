@@ -207,7 +207,7 @@ function novinka_html($item, $permalink = true, $poradi = null)
                 <p>';
 	if ($img && $img['align'] !== 'block') {
 		$s .= '
-					<img src="/upload/' . $img['filename'] . '" style="margin:'
+					<img src="/data/news/' . $img['filename'] . '" style="margin:'
 			. (isset($img['vspace']) ? $img['vspace'] . 'px ' : '5px ')
 			. (isset($img['hspace']) ? $img['hspace'] . 'px ' : '7px ')
 			. ';float: ' . $img['align'] . '; ' . ($img['align'] == 'left' ? 'margin-left: 0px;' : '')
@@ -217,7 +217,7 @@ function novinka_html($item, $permalink = true, $poradi = null)
 	if ($img && $img['align'] === 'block') {
 		$s .= '
 				<div class="center-box">
-					<img src="/upload/' . $img['filename'] . '" class="img-responsive"
+					<img src="/data/news/' . $img['filename'] . '" class="img-responsive"
 					alt="' . $img['alt'] . '" title="' . $img['alt'] . '"/>
 				</div>';
 	}

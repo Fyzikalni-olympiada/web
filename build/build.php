@@ -18,7 +18,7 @@ $DIST = ROOT_DIR . 'dist/';
  * rss_forum.xml je jednou provždy zmrazený archiv). Malé assety žijí
  * v assets/, do dist i URL jdou bez tohoto prefixu. */
 $ASSETY_MALE = ['css', 'js', 'pic', 'fonts'];
-$OBSAH_DIRS = ['dokumenty', 'archiv', 'texty', 'vysledky', 'tana', 'upload'];
+$OBSAH_DIRS = ['dokumenty', 'archiv', 'texty', 'vysledky', 'tana'];
 $ASSET_FILES = ['favicon.ico', 'favicon.svg', 'favicon-16x16.png', 'favicon-32x32.png',
                 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'site.webmanifest',
                 'robots.txt', 'rss_forum.xml', '_redirects', '_headers'];
@@ -116,6 +116,10 @@ foreach ($OBSAH_DIRS as $dir) {
 }
 foreach ($ASSET_FILES as $file) {
     copy(ROOT_DIR . 'assets/' . $file, $DIST . $file);
+}
+/* obrázky novinek leží vedle novinek v data/news/ a publikují se odtamtud */
+foreach (glob(ROOT_DIR . 'data/news/*.{jpg,png,gif}', GLOB_BRACE) as $obrazek) {
+    copy($obrazek, $DIST . 'data/news/' . basename($obrazek));
 }
 foreach ($NEPUBLIKOVAT as $prefix) {
     exec('rm -rf ' . escapeshellarg($DIST . $prefix));
