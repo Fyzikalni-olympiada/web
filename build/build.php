@@ -7,7 +7,7 @@
  * - stránky z data/files.yaml -> dist/<pathname>.html (hosting servíruje bez přípony)
  * - novinky (/novinka/<id>, /archiv-novinek), diskuse (seznamy + vlákna), 404
  * - rss.xml, data/terms.json
- * - kopie statických adresářů; fragmenty s PHP se předrenderují (render_fragment.php)
+ * - kopie statických adresářů
  */
 
 require dirname(__DIR__) . '/src/init.php';
@@ -27,7 +27,6 @@ $NEPUBLIKOVAT = ['archiv/celost/63/photos', 'archiv/celost/63/thumbnails',
                  'texty/texty.tar', 'texty/matematika/cd.tar.gz'];
 
 $t0 = microtime(true);
-$selhani = 0;
 
 
 
@@ -122,30 +121,6 @@ foreach ($NEPUBLIKOVAT as $prefix) {
     exec('rm -rf ' . escapeshellarg($DIST . $prefix));
 }
 
-/* ---------- 4. fragmenty s PHP se předrenderují ---------- */
-
-/* Jen <?php / <?= (bez short_open_tag, aby <?xml zůstalo netknuté).
- * Podproces kvůli izolaci: některé fragmenty deklarují stejné funkce. */
-$fragments = [];
-exec('grep -rlE "<\?(php|=)" ' . escapeshellarg(ROOT_DIR . 'files') . ' --include="*.html"', $fragments);
-foreach ($fragments as $src) {
-    exec(PHP_BINARY . ' ' . escapeshellarg(__DIR__ . '/render_fragment.php') . ' '
-        . escapeshellarg($src), $out, $rc);
-    if ($rc === 0) {
-        file_put_contents($DIST . substr($src, strlen(ROOT_DIR . 'files/')), implode("\n", $out));
-    } else {
-        fwrite(STDERR, "! fragment selhal: $src\n");
-        $selhani++;
-    }
-    $out = [];
-}
-
 /* ---------- hotovo ---------- */
 
-printf("stránek: %d, fragmentů: %d, za %.1f s\n",
-    count($pages) + 1, count($fragments), microtime(true) - $t0);
-
-if ($selhani > 0) {
-    fwrite(STDERR, "build selhal: $selhani chyb\n");
-    exit(1);
-}
+printf("stránek: %d, za %.1f s\n", count($pages) + 1, microtime(true) - $t0);
