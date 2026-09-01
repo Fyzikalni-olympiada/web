@@ -114,6 +114,7 @@ foreach ($ASSET_FILES as $file) {
     copy(ROOT_DIR . 'assets/' . $file, $DIST . $file);
 }
 /* obrázky novinek leží vedle novinek v data/news/ a publikují se odtamtud */
+mkdir($DIST . 'data/news', 0777, true);
 foreach (glob(ROOT_DIR . 'data/news/*.{jpg,png,gif}', GLOB_BRACE) as $obrazek) {
     copy($obrazek, $DIST . 'data/news/' . basename($obrazek));
 }

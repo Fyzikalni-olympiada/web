@@ -44,10 +44,11 @@ function menu_target($node)
 
 
 
-/** Je aktuální stránka v podstromu položky? */
+/** Je aktuální stránka v podstromu položky? (cíl položky, nebo jeho podstránka) */
 function menu_contains($node, $pathname)
 {
-    if (isset($node['file']) && $node['file'] === $pathname) {
+    if (isset($node['file'])
+            && ($node['file'] === $pathname || str_starts_with($pathname, $node['file'] . '/'))) {
         return true;
     }
     foreach (isset($node['children']) ? $node['children'] : [] as $child) {
@@ -86,7 +87,6 @@ function menu($current)
     $strHTML = '
                 <ul class="tabbed">';
 
-    $i = 1;
     foreach (data_menu() as $node) {
         $url = menu_target($node);
         $title = isset($node['title']) ? $node['title'] : $node['name'];
@@ -94,19 +94,13 @@ function menu($current)
 
         $dropdown = ($submenu = submenu($node, $current));
         $strHTML .= '
-			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . ($i++ > 4 ? ' smaller' : '') . '">
-			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . menu_ikona($node) . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
+			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . '">
+			<a href="' . $url . '" title="' . $title . '"' . (isset($node['href']) ? ' target="_blank"' : '') . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . menu_ikona($node) . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
         if ($dropdown) {
             $strHTML .= $submenu;
         }
         $strHTML .= ' </li>';
     }
-    $strHTML .= '<li><a title="Odevzdávací systém Fyzikální olympiády"
-		target="_blank" href="https://osmo.fyzikalniolympiada.cz/">' . menu_ikona(['ikona' => 'vir']) . 'Osmo</a></li>';
-    /* inline SVG, aby šla mapka při hoveru vyplnit přes CSS */
-    $strHTML .= '<li><a title="Webové stránky krajských komisí" href="/stranky-regionu">'
-        . str_replace('<svg ', '<svg class="ikona-mapa" ', trim(file_get_contents(__DIR__ . '/../../assets/pic/mapa-ikona.svg')))
-        . 'Krajské stránky</a></li>';
     $strHTML .= '
                 </ul>';
 
@@ -126,10 +120,10 @@ function submenu($node, $current)
     foreach ($node['children'] as $child) {
         $url = menu_target($child);
         $title = isset($child['title']) ? $child['title'] : $child['name'];
-        $selected = (isset($child['file']) && $child['file'] === $current) ? ' class="current-tab"' : '';
+        $selected = menu_contains($child, $current) ? ' class="current-tab"' : '';
 
         $strHTML .= '
-				<li' . $selected . '><a href="' . $url . '" title="' . $title . '"' . $selected . '>' . $child['name'] . '</a></li>';
+				<li' . $selected . '><a href="' . $url . '" title="' . $title . '"' . (isset($child['href']) ? ' target="_blank"' : '') . $selected . '>' . $child['name'] . '</a></li>';
     }
     $strHTML .= '
                 </ul>';
