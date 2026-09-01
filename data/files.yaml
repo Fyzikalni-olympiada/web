@@ -178,6 +178,10 @@ korespondencni-seminare:
 literatura:
   file: literatura.html
   title: Literatura
+mfo:
+  file: mfo.html
+  title: Mezinárodní fyzikální olympiáda
+  description: "Mezinárodní fyzikální olympiáda – co je MFO, jak se vybírá česká reprezentace a přehled českých úspěchů včetně výsledků jednotlivých ročníků."
 mfo/37:
   file: archiv/mfo/37.html
   title: 37. Mezinárodní fyzikální olympiáda
@@ -235,9 +239,6 @@ mfo/55:
 mfo/56:
   file: archiv/mfo/56.html
   title: 56. Mezinárodní fyzikální olympiáda
-mfo/ceske-uspechy:
-  file: mfo_czu.html
-  title: České úspěchy na MFO
 novinka:
   file: src/content/novinka.php
   title: Novinka

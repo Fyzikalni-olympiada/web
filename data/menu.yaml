@@ -20,13 +20,8 @@
     file: ustredni-kolo
   - name: Mezinárodní FO
     title: Mezinárodní fyzikální olympiáda – české úspěchy a zprávy z ročníků
-    file: mfo/ceske-uspechy
-    children: [{file: pripravne-soustredeni}, {file: efo/2},
-               {file: mfo/37}, {file: mfo/38}, {file: mfo/39}, {file: mfo/40},
-               {file: mfo/41}, {file: mfo/42}, {file: mfo/43}, {file: mfo/44},
-               {file: mfo/45}, {file: mfo/46}, {file: mfo/47}, {file: mfo/48},
-               {file: mfo/49}, {file: mfo/50}, {file: mfo/52}, {file: mfo/53},
-               {file: mfo/54}, {file: mfo/55}, {file: mfo/56}]
+    file: mfo
+    children: [{file: pripravne-soustredeni}, {file: efo/2}]
   - name: Termíny
     title: Přehled termínů aktuálního ročníku FO
     file: terminy
