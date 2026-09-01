@@ -69,14 +69,14 @@ if ($napln === 404) {
 <body id="fo-cuni-cz">
 <div class="container">
     <div id="header" class="row">
-		<div class="col-xs-12 col-lg-5" id="logo">
+		<div class="col-xs-6 col-sm-5" id="logo">
 			<a href="/"><img src="/pic/logo-fo.svg" alt="" /> </a>
 			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
 			<span class="rocnik"><b><?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník</b> &middot; <?php echo AKTUALNI_ROK ?></span>
 			<button type="button" id="menu-tlacitko" aria-expanded="false"><span class="linky" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
 		</div>
 
-		<div class="col-xs-12 col-lg-7 navigation" id="main-nav">
+		<div class="col-xs-6 col-sm-7 navigation" id="main-nav">
 			<?php echo menu($route['pathname']); ?>
 			<form class="search-mobil" role="search" action="/vyhledavani">
 			<label class="sr-only" for="q-mobil">Vyhledávání</label>

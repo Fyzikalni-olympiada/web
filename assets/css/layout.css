@@ -411,7 +411,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #header {padding-top: 14px;position: relative}
 
 /* Logo: grid — vlevo název + vlna + odznak ročníku, vpravo znak FO přes oba řádky */
-#logo img {float:right; width: 132px;}
+#logo img {float:right; width: 132px; margin-left: 12px}
 /* Space Grotesk (SIL OFL, self-hostovaný) jen pro nápis u loga */
 @font-face {
 	font-family: "Space Grotesk";
@@ -521,28 +521,29 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #main-nav .caret {transition: rotate 0.2s ease-out}
 #main-nav .open > a .caret {rotate: 180deg}
 @media (max-width: 1199px) {
-	#logo span {font-size: 55px}
-	#logo small {padding-left: 9em;}
-	#main-nav {margin-top: 20px}
+	#logo img {width: 105px}
+	#logo span {font-size: 40px; line-height: 50px}
 	#main-nav > ul > li {margin: 0 18px;}
 	#main-nav > ul > li > a {line-height: 46px;}
 }
 @media (max-width: 991px) {
-	#logo span {font-size: 45px; line-height: 50px}
-	#logo small {padding-left: 7em;}
+	#logo img {width: 95px}
+	#logo span {font-size: 32px; line-height: 40px}
+	#logo .rocnik {font-size: 15px}
 	#main-nav > ul > li {margin: 0 16px;}
-	#main-nav > ul > li > a {line-height: 40px}
+	#main-nav > ul > li > a {font-size: 1.3em; line-height: 36px}
 }
 @media (max-width: 767px) {
-	#logo img {width: 120px}
-	#logo span {font-size: 40px; line-height: 45px}
-	#logo small {font-size: 17px; padding-left: 0}
 	#main-nav > ul > li {margin: 0 12px;}
-	#main-nav > ul > li > a {font-size: 1.4em; line-height: 36px;}
+	#main-nav > ul > li > a {font-size: 1.2em; line-height: 32px}
 }
 @media (max-width: 640px) {
+	#logo {width: 100%}
 	#logo img {width: 90px}
+	#logo span {font-size: 40px; line-height: 45px}
+	#logo .rocnik {font-size: 19px}
 	#menu-tlacitko {display: inline-flex}
+	#main-nav {width: 100%}
 	#main-nav {
 		display: none;
 		opacity: 0;
