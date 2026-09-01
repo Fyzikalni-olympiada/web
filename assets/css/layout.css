@@ -493,6 +493,11 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #menu-tlacitko[aria-expanded="true"] .linky span:nth-child(1) {translate: 0 5.6px; rotate: 45deg}
 #menu-tlacitko[aria-expanded="true"] .linky span:nth-child(2) {opacity: 0}
 #menu-tlacitko[aria-expanded="true"] .linky span:nth-child(3) {translate: 0 -5.6px; rotate: -45deg}
+#main-nav > ul {display: grid; grid-template-columns: repeat(2, max-content)}
+@media (min-width: 992px) {
+	#main-nav > ul {grid-template-columns: repeat(3, max-content)}
+}
+#main-nav > ul > li:last-child {grid-column: 1 / -1}
 #main-nav > ul > li {margin: 0 20px; position: relative}
 #main-nav > ul > li > a {
 	font-size: 1.6em;
@@ -523,18 +528,17 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 @media (max-width: 1199px) {
 	#logo img {width: 105px}
 	#logo span {font-size: 40px; line-height: 50px}
-	#main-nav > ul > li {margin: 0 18px;}
-	#main-nav > ul > li > a {line-height: 46px;}
+	#main-nav > ul > li {margin: 0 28px 0 0;}
 }
 @media (max-width: 991px) {
 	#logo img {width: 95px}
 	#logo span {font-size: 32px; line-height: 40px}
 	#logo .rocnik {font-size: 15px}
-	#main-nav > ul > li {margin: 0 16px;}
+	#main-nav > ul > li {margin: 0 36px 0 0;}
 	#main-nav > ul > li > a {font-size: 1.3em; line-height: 36px}
 }
 @media (max-width: 767px) {
-	#main-nav > ul > li {margin: 0 12px;}
+	#main-nav > ul > li {margin: 0 16px 0 0;}
 	#main-nav > ul > li > a {font-size: 1.2em; line-height: 32px}
 }
 @media (max-width: 640px) {
@@ -561,6 +565,7 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 			translate: 0 -10px;
 		}
 	}
+	#main-nav > ul {display: block}
 	#main-nav > ul > li {display: block; margin: 0; border-top: 1px solid #eee}
 	#main-nav > ul > li:first-child {border-top: none}
 	#main-nav > ul > li > a {display: block}

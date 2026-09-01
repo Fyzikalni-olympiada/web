@@ -30,6 +30,10 @@
   - name: Termíny
     title: Přehled termínů aktuálního ročníku FO
     file: terminy
+- name: Osmo
+  title: Odevzdávací systém Fyzikální olympiády
+  ikona: vir
+  href: https://osmo.fyzikalniolympiada.cz/
 - name: Výsledky
   title: Výsledkové listiny v odevzdávacím systému Osmo
   ikona: vysledky
@@ -78,7 +82,3 @@
   title: Webové stránky krajských komisí
   ikona: mapa
   file: stranky-regionu
-- name: Osmo
-  title: Odevzdávací systém Fyzikální olympiády
-  ikona: vir
-  href: https://osmo.fyzikalniolympiada.cz/
