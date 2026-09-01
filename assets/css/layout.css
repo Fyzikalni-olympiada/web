@@ -425,13 +425,16 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 #sekce-nav {margin: 18px 0 20px; background-color: #f8f8f8; border: 1px solid #e7e7e7; border-radius: 4px; display: flex; flex-wrap: wrap; align-items: center}
 #sekce-nav ul {list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; flex: 1; align-self: stretch}
 #sekce-nav li {display: flex}
-#sekce-nav a {display: flex; align-items: center; padding: 11px 15px; color: #777; text-decoration: none; transition: color 0.2s}
-#sekce-nav a:hover {color: #333}
+#sekce-nav ul a {display: flex; align-items: center; padding: 11px 15px; color: #777; text-decoration: none; transition: color 0.2s}
+#sekce-nav ul a:hover {color: #333}
 #sekce-nav .active > a {color: #555; background-color: #e7e7e7}
-#search {margin-left: auto; padding: 5px 8px}
+#nav-vpravo {margin-left: auto; display: flex; align-items: center; padding: 5px 8px; gap: 8px}
+/* při zalomených položkách (třídu přidává fo.js) se skládá pod sebe */
+#sekce-nav.zalomeny #nav-vpravo {flex-direction: column; align-items: stretch}
+#sekce-nav.zalomeny #prihlaseni {text-align: center}
 #search .form-control {width: 170px}
 @media (max-width: 991px) {
-	#sekce-nav a {padding: 8px 12px}
+	#sekce-nav ul a {padding: 8px 12px}
 	#search .form-control {width: 140px}
 }
 /* na mobilu se lišta nezobrazuje: submenu aktivní sekce je v menu rozbalené rovnou */

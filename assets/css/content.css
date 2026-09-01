@@ -426,7 +426,8 @@ table.zadani td br + small {
 	font-size: .9em;
 	white-space: nowrap;
 }
-.btn-fo:hover {
+.btn-fo:hover,
+.btn-fo:focus {
 	background: #37424d;
 	color: #fff;
 	text-decoration: none;

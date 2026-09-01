@@ -73,6 +73,8 @@ if ($napln === 404) {
 
 	<nav id="sekce-nav">
 		<?= navbar($route['pathname']) ?>
+		<div id="nav-vpravo">
+		<a class="btn-fo" id="prihlaseni" href="https://osmo.fyzikalniolympiada.cz/acct/login" title="Přihlášení do odevzdávacího systému Osmo">Přihlášení</a>
 		<form id="search" role="search" action="/vyhledavani">
 		<label class="sr-only" for="q">Vyhledávání</label>
 		  <div class="input-group">
@@ -84,6 +86,7 @@ if ($napln === 404) {
 			</span>
 		  </div>
 		</form>
+		</div>
 	</nav>
 
     <div id="main-two-columns" class="row">

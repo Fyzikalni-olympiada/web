@@ -35,6 +35,18 @@
 		return;
 	}
 
+	/* ---------- zalomený navbar: přihlášení a vyhledávání pod sebe ---------- */
+
+	var sekceNav = document.getElementById('sekce-nav');
+	var sekceUl = sekceNav && sekceNav.querySelector('ul');
+	if (sekceUl) {
+		var srovnejNavbar = function () {
+			sekceNav.classList.toggle('zalomeny', sekceUl.offsetHeight > 60);
+		};
+		window.addEventListener('resize', srovnejNavbar);
+		srovnejNavbar();
+	}
+
 	/* ---------- taby (dřív bootstrap.js) ---------- */
 
 	document.querySelectorAll('.nav-tabs a[data-toggle="tab"]').forEach(function (odkaz) {
