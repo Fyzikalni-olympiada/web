@@ -445,8 +445,22 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 .navigation a:hover .ikona-menu .detail {fill: transparent}
 .navigation li.current-tab > a {color: #3E5199;}
 
-#search {position: absolute; bottom: -35px; right: 0px;}
-#search .ikona-lupa {width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; vertical-align: -2px}
+/* Lišta s podpoložkami aktivní sekce a vyhledáváním (vzhledem podle Osmo) */
+#sekce-nav {margin: 18px 0 20px; background-color: #f8f8f8; border: 1px solid #e7e7e7; border-radius: 4px; display: flex; flex-wrap: wrap; align-items: center}
+#sekce-nav ul {list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; flex: 1; align-self: stretch}
+#sekce-nav li {display: flex}
+#sekce-nav a {display: flex; align-items: center; padding: 11px 15px; color: #777; text-decoration: none; transition: color 0.2s}
+#sekce-nav a:hover {color: #333}
+#sekce-nav .active > a {color: #555; background-color: #e7e7e7}
+#search {margin-left: auto; padding: 5px 8px}
+#search .form-control {width: 170px}
+@media (max-width: 991px) {
+	#sekce-nav a {padding: 8px 12px}
+	#search .form-control {width: 140px}
+}
+
+.ikona-lupa {width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; vertical-align: -2px}
+.search-mobil {display: none}
 
 /* Main navigation */
 /* Hamburger (jen malé displeje): tlačítko s popiskem pod ročníkem, otevírá menu */
@@ -550,11 +564,16 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	#main-nav > ul > li:first-child {border-top: none}
 	#main-nav > ul > li > a {display: block}
 	#main-nav .dropdown-menu {position: relative; z-index: 1000; float: none; width: 100%; box-shadow: none; border: none}
+	/* navbar se na mobilu nezobrazuje: submenu aktivní sekce je rozbalené rovnou,
+	 * vyhledávání je na konci menu */
+	#sekce-nav {display: none}
+	#main-nav li.current-tab > .dropdown-menu {display: block; opacity: 1; translate: 0 0}
+	#main-nav li.current-tab > a .caret {rotate: 180deg}
+	.search-mobil {display: block; margin: 12px 0 4px}
 }
 @media (max-width: 360px) {
 	#logo img {width: 70px}
 	#logo span {font-size: 36px;}
-	#search {width: 67%}
 }
 
 

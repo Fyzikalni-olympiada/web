@@ -109,6 +109,35 @@ function menu($current)
 
 
 
+/** Podpoložky aktivní položky menu pro lištu pod hlavičkou; bez aktivní položky prázdné */
+function navbar($current)
+{
+    $aktivni = null;
+    foreach (data_menu() as $node) {
+        if (!empty($node['children']) && menu_contains($node, $current)) {
+            $aktivni = $node;
+            break;
+        }
+    }
+    if ($aktivni === null) {
+        if ($current !== '/') {
+            return '';
+        }
+        $aktivni = data_menu()[0]; // homepage ukazuje podpoložky první položky (Soutěž)
+    }
+
+    $strHTML = '
+		<ul>';
+    foreach ($aktivni['children'] as $child) {
+        $strHTML .= '
+			<li' . (menu_contains($child, $current) ? ' class="active"' : '') . '><a href="' . menu_target($child) . '" title="' . (isset($child['title']) ? $child['title'] : $child['name']) . '"' . (isset($child['href']) ? ' target="_blank"' : '') . '>' . $child['name'] . '</a></li>';
+    }
+    return $strHTML . '
+		</ul>';
+}
+
+
+
 function submenu($node, $current)
 {
     if (empty($node['children'])) {
