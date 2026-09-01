@@ -1,7 +1,6 @@
 /**
- * Klientský JS statického webu FO (jediný skript, bez závislostí):
+ * Klientský JS statického webu FO (bez závislostí; menu má vlastní menu.js):
  *  - přesměrování starých adres s query parametry
- *  - hamburger menu a rozbalovací submenu
  *  - taby, accordion, fotogalerie (dřív bootstrap.js / jquery.lightbox)
  *  - zvýraznění nejbližšího kroku na osách (homepage, /terminy)
  *  - filtr studijních textů
@@ -35,49 +34,6 @@
 		location.replace('/archiv-novinek');
 		return;
 	}
-
-	/* ---------- hamburger hlavního menu (malé displeje) ---------- */
-
-	var menuTlacitko = document.getElementById('menu-tlacitko');
-	var hlavniMenu = document.getElementById('main-nav');
-	menuTlacitko.addEventListener('click', function () {
-		var otevreno = hlavniMenu.classList.toggle('open');
-		menuTlacitko.setAttribute('aria-expanded', otevreno);
-	});
-	document.addEventListener('keydown', function (e) {
-		if (e.key === 'Escape' && hlavniMenu.classList.contains('open')) {
-			hlavniMenu.classList.remove('open');
-			menuTlacitko.setAttribute('aria-expanded', 'false');
-		}
-		if (e.key === 'Escape') {
-			zavriSubmenu();
-		}
-	});
-
-	/* ---------- rozbalovací submenu (dřív bootstrap.js) ---------- */
-
-	function zavriSubmenu() {
-		document.querySelectorAll('#main-nav .open').forEach(function (li) {
-			li.classList.remove('open');
-		});
-	}
-
-	document.querySelectorAll('#main-nav .dropdown-toggle').forEach(function (odkaz) {
-		odkaz.addEventListener('click', function (e) {
-			e.preventDefault();
-			var li = odkaz.parentElement;
-			var otevrit = !li.classList.contains('open');
-			zavriSubmenu();
-			if (otevrit) {
-				li.classList.add('open');
-			}
-		});
-	});
-	document.addEventListener('click', function (e) {
-		if (!e.target.closest('.dropdown-toggle')) {
-			zavriSubmenu();
-		}
-	});
 
 	/* ---------- taby (dřív bootstrap.js) ---------- */
 

@@ -47,6 +47,7 @@ if ($napln === 404) {
 <link rel="preload" href="/fonts/space-grotesk-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel='stylesheet' type='text/css' media='screen' href='<?= asset('/css/bootstrap.css') ?>' />
+<link rel='stylesheet' type='text/css' media='screen' href='<?= asset('/css/header.css') ?>' />
 <link rel='stylesheet' type='text/css' media='screen,projection,tv' href='<?= asset('/css/layout.css') ?>' />
 <link rel='stylesheet' type='text/css' media='all' href='<?= asset('/css/content.css') ?>' />
 <link rel='stylesheet' type='text/css' media='print' href='<?= asset('/css/print.css') ?>' />
@@ -68,31 +69,7 @@ if ($napln === 404) {
 </head>
 <body id="fo-cuni-cz">
 <div class="container">
-    <div id="header" class="row">
-		<div class="col-xs-6 col-sm-5" id="logo">
-			<a href="/"><img src="/pic/logo-fo.svg" alt="" /> </a>
-			<a href="/"><span>FYZIKÁLNÍ OLYMPIÁDA</span></a>
-			<span class="rocnik"><b><?php echo AKTUALNI_ROCNIK ?>.&nbsp;ročník</b> &middot; <?php echo AKTUALNI_ROK ?></span>
-			<button type="button" id="menu-tlacitko" aria-expanded="false"><span class="linky" aria-hidden="true"><span></span><span></span><span></span></span>Menu</button>
-		</div>
-
-		<div class="col-xs-6 col-sm-7 navigation" id="main-nav">
-			<?php echo menu($route['pathname']); ?>
-			<form class="search-mobil" role="search" action="/vyhledavani">
-			<label class="sr-only" for="q-mobil">Vyhledávání</label>
-			  <div class="input-group">
-				<input class="form-control" placeholder="Vyhledávání" type="text" name="q" id="q-mobil" autocomplete="off" />
-				<span class="input-group-btn">
-				<button class="btn btn-default" type="submit">
-					<svg class="ikona-lupa" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.3 15.3 21 21"/></svg>
-				</button>
-				</span>
-			  </div>
-			</form>
-		</div>
-
-		<div class="clearfix"></div>
-    </div>
+<?php $menu_aktivni = $route['pathname']; include(__DIR__ . '/header.php'); ?>
 
 	<nav id="sekce-nav">
 		<?= navbar($route['pathname']) ?>
@@ -198,6 +175,7 @@ if ($napln === 404) {
         </div>
     </div>
 </div>
+<script src="<?= asset('/js/menu.js') ?>" type="text/javascript"></script>
 <script src="<?= asset('/js/fo.js') ?>" type="text/javascript"></script>
 </body>
 </html>

@@ -51,6 +51,9 @@ function menu_contains($node, $pathname)
             && ($node['file'] === $pathname || str_starts_with($pathname, $node['file'] . '/'))) {
         return true;
     }
+    if (isset($node['href']) && $node['href'] === $pathname) {
+        return true; // hlavička pro Osmo se generuje s aktivní externí položkou
+    }
     foreach (isset($node['children']) ? $node['children'] : [] as $child) {
         if (menu_contains($child, $pathname)) {
             return true;
@@ -95,7 +98,7 @@ function menu($current)
         $dropdown = ($submenu = submenu($node, $current));
         $strHTML .= '
 			<li class="' . ($selected ? 'current-tab' : ($dropdown ? 'dropdown' : '')) . '">
-			<a href="' . $url . '" title="' . $title . '"' . (isset($node['href']) ? ' target="_blank"' : '') . ($dropdown ? ' role="button" class="dropdown-toggle" data-toggle="dropdown"' : '') . '>' . menu_ikona($node) . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
+			<a href="' . $url . '" title="' . $title . '"' . ($dropdown ? ' role="button" class="dropdown-toggle"' : '') . '>' . menu_ikona($node) . $node['name'] . ($dropdown ? '<b class="caret"></b>' : '') . '</a>';
         if ($dropdown) {
             $strHTML .= $submenu;
         }
@@ -130,7 +133,7 @@ function navbar($current)
 		<ul>';
     foreach ($aktivni['children'] as $child) {
         $strHTML .= '
-			<li' . (menu_contains($child, $current) ? ' class="active"' : '') . '><a href="' . menu_target($child) . '" title="' . (isset($child['title']) ? $child['title'] : $child['name']) . '"' . (isset($child['href']) ? ' target="_blank"' : '') . '>' . $child['name'] . '</a></li>';
+			<li' . (menu_contains($child, $current) ? ' class="active"' : '') . '><a href="' . menu_target($child) . '" title="' . (isset($child['title']) ? $child['title'] : $child['name']) . '">' . $child['name'] . '</a></li>';
     }
     return $strHTML . '
 		</ul>';
@@ -152,7 +155,7 @@ function submenu($node, $current)
         $selected = menu_contains($child, $current) ? ' class="current-tab"' : '';
 
         $strHTML .= '
-				<li' . $selected . '><a href="' . $url . '" title="' . $title . '"' . (isset($child['href']) ? ' target="_blank"' : '') . $selected . '>' . $child['name'] . '</a></li>';
+				<li' . $selected . '><a href="' . $url . '" title="' . $title . '"' . $selected . '>' . $child['name'] . '</a></li>';
     }
     $strHTML .= '
                 </ul>';

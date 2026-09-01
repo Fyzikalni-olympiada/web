@@ -1,0 +1,205 @@
+/* Hlavička webu: logo, hlavní menu, hamburger. Sdílí ji i Osmo
+ * (make update-fo-header v mo-submit), proto je v samostatném souboru
+ * a spoléhá jen na bootstrap grid a fonty deklarované jinde. */
+
+ul.tabbed {margin: 0; padding: 0}
+ul.tabbed > li {display: inline-block; list-style: none; margin-top: 0}
+
+/* základ písma napevno — hostitelé (FO web, Osmo) mají různé výchozí fonty */
+#header {padding-top: 14px; position: relative; font-family: "DejaVu Sans", "Lucida Sans", sans-serif; font-size: 16px; line-height: 1.5}
+
+#logo img {float: right; width: 132px; margin-left: 12px}
+#logo a > span {font-size: 50px; line-height: 62px; font-family: "Space Grotesk", "DejaVu Sans", sans-serif; font-weight: 700; color: #000; display: block;}
+#logo a:hover {text-decoration: none; color: #000;}
+#logo .rocnik {font-size: 19px; color: #222}
+#logo .rocnik b {font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif}
+
+.navigation a {color: #459; text-decoration: none}
+.navigation a:hover {color: #039; text-decoration: none}
+.navigation .ikona-menu {height: 0.85em; width: auto; margin-right: 7px; vertical-align: baseline}
+/* ikony se při hoveru vyplní světlým tintem; vnitřní kresba (.detail) zůstává bez výplně */
+.navigation .ikona-menu * {fill: transparent; transition: fill 0.2s}
+.navigation a:hover .ikona-menu * {fill: #ccd5ee}
+.navigation a:hover .ikona-menu .detail {fill: transparent}
+.navigation li.current-tab > a {color: #3E5199;}
+/* odkazy do Osmo značí malý vir (samotné Osmo ho má už jako ikonu) */
+#main-nav a[href^="https://osmo"]::after {
+	content: "";
+	display: inline-block;
+	width: 0.72em;
+	height: 0.72em;
+	margin-left: 5px;
+	opacity: 0.75;
+	background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%233E5199%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%229%22%2F%3E%3Ccircle%20class%3D%22detail%22%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222.2%22%2F%3E%3Cpath%20class%3D%22detail%22%20d%3D%22M12.2%209.8C9%209.5%207%2011.5%206.6%2015.6%22%2F%3E%3Cpath%20class%3D%22detail%22%20d%3D%22M10%2013.3C11.6%2016.1%2014.4%2016.8%2017.9%2014.9%22%2F%3E%3Cpath%20class%3D%22detail%22%20d%3D%22M13.9%2012.9C15.5%2010.1%2014.6%207.4%2011.4%205.4%22%2F%3E%0A%3C%2Fsvg%3E") no-repeat center / contain;
+}
+#main-nav a[href="https://osmo.fyzikalniolympiada.cz/"]::after {content: none}
+
+/* badge odevzdávacího systému (hlavička pro Osmo, místo ročníku) */
+#logo .osmo-badge a {color: #3E5199}
+#logo .osmo-badge b {font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif; font-size: 22px; text-transform: uppercase}
+#logo .osmo-badge .ikona-vir {height: 0.9em; width: auto; margin-right: 4px; vertical-align: -2px}
+
+.ikona-lupa {width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; vertical-align: -2px}
+.search-mobil {display: none}
+
+/* Hamburger (jen malé displeje): tlačítko s popiskem pod ročníkem, otevírá menu */
+#menu-tlacitko {
+	display: none;
+	height: 42px;
+	margin-top: 10px;
+	padding: 0 14px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: #fff;
+	color: #333;
+	font-size: 15px;
+	align-items: center;
+	gap: 9px;
+	cursor: pointer;
+	transition: background 0.25s;
+}
+#menu-tlacitko[aria-expanded="true"] {background: #eee}
+/* tři linky se při otevření plynule složí do křížku */
+#menu-tlacitko .linky {display: block; width: 17px}
+#menu-tlacitko .linky span {
+	display: block;
+	height: 2.4px;
+	margin: 3.2px 0;
+	border-radius: 2px;
+	background: #3E5199;
+	transition: translate 0.25s, rotate 0.25s, opacity 0.25s;
+}
+#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(1) {translate: 0 5.6px; rotate: 45deg}
+#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(2) {opacity: 0}
+#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(3) {translate: 0 -5.6px; rotate: -45deg}
+
+/* dropdown a caret (nespoléhá na bootstrap hostitele — Osmo má ořezaný) */
+#main-nav .caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 2px;
+	vertical-align: middle;
+	border-top: 4px solid #000;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+#main-nav .dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1030; /* nad sticky navbarem Osmo (1020) */
+	display: none;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 3px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	background-clip: padding-box;
+}
+#main-nav .dropdown-menu > li > a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	line-height: 1.428571429;
+	color: #333;
+	white-space: nowrap;
+}
+#main-nav .dropdown-menu > li > a:hover {background-color: #e8edff}
+#main-nav .open > .dropdown-menu {display: block}
+
+#main-nav > ul {display: grid; grid-template-columns: repeat(2, max-content)}
+@media (min-width: 992px) {
+	#main-nav > ul {grid-template-columns: repeat(3, max-content)}
+}
+#main-nav > ul > li:last-child {grid-column: 1 / -1}
+#main-nav > ul > li {margin: 0 20px; position: relative}
+#main-nav > ul > li > a {
+	font-size: 1.6em;
+	line-height: 52px;
+	padding-bottom: 2px;
+}
+#main-nav > ul > li > a:hover,
+#main-nav > ul > li.current-tab > a {border-bottom: 2px solid #3E5199}
+#main-nav .dropdown-menu {font-size: 1.2em;}
+/* animace rozbalení submenu (stejně jako hamburger níže) + otočení šipky */
+#main-nav .dropdown-menu {
+	opacity: 0;
+	translate: 0 -8px;
+	transition: opacity 0.2s ease-out, translate 0.2s ease-out, display 0.2s allow-discrete;
+}
+#main-nav .open > .dropdown-menu {
+	opacity: 1;
+	translate: 0 0;
+}
+@starting-style {
+	#main-nav .open > .dropdown-menu {
+		opacity: 0;
+		translate: 0 -8px;
+	}
+}
+#main-nav .caret {transition: rotate 0.2s ease-out}
+#main-nav .open > a .caret {rotate: 180deg}
+
+@media (max-width: 1199px) {
+	#logo img {width: 105px}
+	#logo a > span {font-size: 40px; line-height: 50px}
+	#main-nav > ul > li {margin: 0 28px 0 0;}
+}
+@media (max-width: 991px) {
+	#logo img {width: 95px}
+	#logo a > span {font-size: 32px; line-height: 40px}
+	#logo .rocnik {font-size: 15px}
+	/* na popisek není vedle loga místo; OSMO ho vynahradí velikostí */
+	#logo .osmo-badge .popisek {display: none}
+	#logo .osmo-badge a {font-size: 28px}
+	#logo .osmo-badge b {font-size: 28px}
+	#main-nav > ul > li {margin: 0 36px 0 0;}
+	#main-nav > ul > li > a {font-size: 1.3em; line-height: 36px}
+}
+@media (max-width: 767px) {
+	#main-nav > ul > li {margin: 0 16px 0 0;}
+	#main-nav > ul > li > a {font-size: 1.2em; line-height: 32px}
+}
+@media (max-width: 640px) {
+	#logo {width: 100%}
+	#logo img {width: 90px}
+	#logo a > span {font-size: 40px; line-height: 45px}
+	#logo .rocnik {font-size: 19px}
+	#logo .osmo-badge .popisek {display: inline} /* na plné šířce se popisek vejde */
+	#menu-tlacitko {display: flex; width: fit-content}
+	#main-nav {width: 100%}
+	#main-nav {
+		display: none;
+		opacity: 0;
+		translate: 0 -10px;
+		transition: opacity 0.25s ease-out, translate 0.25s ease-out, display 0.25s allow-discrete;
+	}
+	#main-nav.open {
+		display: block;
+		opacity: 1;
+		translate: 0 0;
+	}
+	@starting-style {
+		#main-nav.open {
+			opacity: 0;
+			translate: 0 -10px;
+		}
+	}
+	#main-nav > ul {display: block}
+	#main-nav > ul > li {display: block; margin: 0; border-top: 1px solid #eee}
+	#main-nav > ul > li:first-child {border-top: none}
+	#main-nav > ul > li > a {display: block}
+	#main-nav .dropdown-menu {position: relative; z-index: 1030; float: none; width: 100%; box-shadow: none; border: none}
+	/* submenu aktivní sekce je ve sbaleném menu rozbalené rovnou, vyhledávání na jeho konci */
+	#main-nav li.current-tab > .dropdown-menu {display: block; opacity: 1; translate: 0 0}
+	#main-nav li.current-tab > a .caret {rotate: 180deg}
+	.search-mobil {display: block; margin: 12px 0 4px}
+}
+@media (max-width: 360px) {
+	#logo img {width: 70px}
+	#logo a > span {font-size: 36px;}
+}

@@ -134,16 +134,10 @@ dd {margin-left: 1.5em;}
 
 /* Special lists */
 
-ul.plain-list li, ul.nice-list li, ul.tabbed > li {
+ul.plain-list li, ul.nice-list li {
 	list-style: none;
 	margin-top: 0;
 }
-
-ul.tabbed {
-	margin: 0;
-	padding: 0;
-}
-ul.tabbed > li {display: inline-block;}
 
 ul.plain-list {margin: 0;}
 
@@ -407,12 +401,9 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
    Layout
 ------------------------------------------------------------------- */
 
-/* Header */
-#header {padding-top: 14px;position: relative}
+/* Header: viz header.css (sdílený s Osmo) */
 
-/* Logo: grid — vlevo název + vlna + odznak ročníku, vpravo znak FO přes oba řádky */
-#logo img {float:right; width: 132px; margin-left: 12px}
-/* Space Grotesk (SIL OFL, self-hostovaný) jen pro nápis u loga */
+/* Space Grotesk (SIL OFL, self-hostovaný) */
 @font-face {
 	font-family: "Space Grotesk";
 	font-style: normal;
@@ -429,21 +420,6 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	src: url(../fonts/space-grotesk-700-latin-ext.woff2) format("woff2");
 	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-#logo span {font-size: 50px; line-height: 62px; font-family: "Space Grotesk", "DejaVu Sans", sans-serif; font-weight: 700; color: #000; display:block;}
-#logo a:hover {text-decoration: none; color: #000;}
-#logo .rocnik {font-size: 19px; color: #222}
-#logo .rocnik b {font-family: "Space Grotesk", "DejaVu Sans", "Lucida Sans", sans-serif}
-
-/* Navigation */
-.navigation a {
-	text-decoration: none;
-}
-.navigation .ikona-menu {height: 0.85em; width: auto; margin-right: 7px; vertical-align: baseline}
-/* ikony se při hoveru vyplní světlým tintem; vnitřní kresba (.detail) zůstává bez výplně */
-.navigation .ikona-menu * {fill: transparent; transition: fill 0.2s}
-.navigation a:hover .ikona-menu * {fill: #ccd5ee}
-.navigation a:hover .ikona-menu .detail {fill: transparent}
-.navigation li.current-tab > a {color: #3E5199;}
 
 /* Lišta s podpoložkami aktivní sekce a vyhledáváním (vzhledem podle Osmo) */
 #sekce-nav {margin: 18px 0 20px; background-color: #f8f8f8; border: 1px solid #e7e7e7; border-radius: 4px; display: flex; flex-wrap: wrap; align-items: center}
@@ -458,128 +434,9 @@ img.alignright, img.right {margin: 0 0 1em 1.5em;}
 	#sekce-nav a {padding: 8px 12px}
 	#search .form-control {width: 140px}
 }
-
-.ikona-lupa {width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; vertical-align: -2px}
-.search-mobil {display: none}
-
-/* Main navigation */
-/* Hamburger (jen malé displeje): tlačítko s popiskem pod ročníkem, otevírá menu */
-#menu-tlacitko {
-	display: none;
-	height: 42px;
-	margin-top: 10px;
-	padding: 0 14px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	background: #fff;
-	color: #333;
-	font-size: 15px;
-	align-items: center;
-	gap: 9px;
-	cursor: pointer;
-	transition: background 0.25s;
-}
-#menu-tlacitko[aria-expanded="true"] {background: #eee}
-/* tři linky se při otevření plynule složí do křížku */
-#menu-tlacitko .linky {display: block; width: 17px}
-#menu-tlacitko .linky span {
-	display: block;
-	height: 2.4px;
-	margin: 3.2px 0;
-	border-radius: 2px;
-	background: #3E5199;
-	transition: translate 0.25s, rotate 0.25s, opacity 0.25s;
-}
-#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(1) {translate: 0 5.6px; rotate: 45deg}
-#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(2) {opacity: 0}
-#menu-tlacitko[aria-expanded="true"] .linky span:nth-child(3) {translate: 0 -5.6px; rotate: -45deg}
-#main-nav > ul {display: grid; grid-template-columns: repeat(2, max-content)}
-@media (min-width: 992px) {
-	#main-nav > ul {grid-template-columns: repeat(3, max-content)}
-}
-#main-nav > ul > li:last-child {grid-column: 1 / -1}
-#main-nav > ul > li {margin: 0 20px; position: relative}
-#main-nav > ul > li > a {
-	font-size: 1.6em;
-	line-height: 52px;
-	padding-bottom: 2px;
-}
-#main-nav > ul > li > a:hover,
-#main-nav > ul > li.current-tab > a {border-bottom: 2px solid #3E5199/*#94CC5F*/;}
-#main-nav .dropdown-menu {font-size: 1.2em;}
-/* animace rozbalení submenu (stejně jako hamburger níže) + otočení šipky */
-#main-nav .dropdown-menu {
-	opacity: 0;
-	translate: 0 -8px;
-	transition: opacity 0.2s ease-out, translate 0.2s ease-out, display 0.2s allow-discrete;
-}
-#main-nav .open > .dropdown-menu {
-	opacity: 1;
-	translate: 0 0;
-}
-@starting-style {
-	#main-nav .open > .dropdown-menu {
-		opacity: 0;
-		translate: 0 -8px;
-	}
-}
-#main-nav .caret {transition: rotate 0.2s ease-out}
-#main-nav .open > a .caret {rotate: 180deg}
-@media (max-width: 1199px) {
-	#logo img {width: 105px}
-	#logo span {font-size: 40px; line-height: 50px}
-	#main-nav > ul > li {margin: 0 28px 0 0;}
-}
-@media (max-width: 991px) {
-	#logo img {width: 95px}
-	#logo span {font-size: 32px; line-height: 40px}
-	#logo .rocnik {font-size: 15px}
-	#main-nav > ul > li {margin: 0 36px 0 0;}
-	#main-nav > ul > li > a {font-size: 1.3em; line-height: 36px}
-}
-@media (max-width: 767px) {
-	#main-nav > ul > li {margin: 0 16px 0 0;}
-	#main-nav > ul > li > a {font-size: 1.2em; line-height: 32px}
-}
+/* na mobilu se lišta nezobrazuje: submenu aktivní sekce je v menu rozbalené rovnou */
 @media (max-width: 640px) {
-	#logo {width: 100%}
-	#logo img {width: 90px}
-	#logo span {font-size: 40px; line-height: 45px}
-	#logo .rocnik {font-size: 19px}
-	#menu-tlacitko {display: inline-flex}
-	#main-nav {width: 100%}
-	#main-nav {
-		display: none;
-		opacity: 0;
-		translate: 0 -10px;
-		transition: opacity 0.25s ease-out, translate 0.25s ease-out, display 0.25s allow-discrete;
-	}
-	#main-nav.open {
-		display: block;
-		opacity: 1;
-		translate: 0 0;
-	}
-	@starting-style {
-		#main-nav.open {
-			opacity: 0;
-			translate: 0 -10px;
-		}
-	}
-	#main-nav > ul {display: block}
-	#main-nav > ul > li {display: block; margin: 0; border-top: 1px solid #eee}
-	#main-nav > ul > li:first-child {border-top: none}
-	#main-nav > ul > li > a {display: block}
-	#main-nav .dropdown-menu {position: relative; z-index: 1000; float: none; width: 100%; box-shadow: none; border: none}
-	/* navbar se na mobilu nezobrazuje: submenu aktivní sekce je rozbalené rovnou,
-	 * vyhledávání je na konci menu */
 	#sekce-nav {display: none}
-	#main-nav li.current-tab > .dropdown-menu {display: block; opacity: 1; translate: 0 0}
-	#main-nav li.current-tab > a .caret {rotate: 180deg}
-	.search-mobil {display: block; margin: 12px 0 4px}
-}
-@media (max-width: 360px) {
-	#logo img {width: 70px}
-	#logo span {font-size: 36px;}
 }
 
 

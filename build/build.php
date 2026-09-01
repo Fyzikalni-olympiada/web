@@ -92,6 +92,17 @@ foreach ($pages as $name) {
     }
 }
 
+/* hlavička pro Osmo: aktivní položka Osmo, badge místo ročníku, odkazy absolutní */
+$menu_aktivni = 'https://osmo.fyzikalniolympiada.cz/';
+$hlavicka_osmo = true;
+ob_start();
+include ROOT_DIR . 'src/header.php'; // ne capture() — musí vidět $menu_aktivni
+write_file($DIST . 'header.html', str_replace(
+    ['href="/', 'src="/', 'action="/'],
+    ['href="' . BASE_URL, 'src="' . BASE_URL, 'action="' . BASE_URL],
+    ob_get_clean()
+));
+
 /* ---------- 2. rss.xml, terms.json ---------- */
 
 write_file($DIST . 'rss.xml', capture(ROOT_DIR . 'src/rss.php'));

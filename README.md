@@ -43,6 +43,11 @@ GitHub Actions web sestaví a nasadí.
 
 **Nový ročník:** upravit `src/config.php`, založit `data/terms/<ročník>.yaml`.
 
+**Hlavička pro Osmo:** build generuje `dist/header.html` (+ sdílené
+`css/header.css` a `js/menu.js`); Osmo si je stahuje přes `make
+update-fo-header` v repu mo-submit. Po změně menu tam stačí spustit
+target a nasadit.
+
 Jediný klientský skript je `assets/js/fo.js` (bez závislostí): věci
 závislé na datu (zvýraznění nejbližšího termínu na osách), menu, taby,
 accordion, fotogalerie, filtr studijních textů a přesměrování starých
