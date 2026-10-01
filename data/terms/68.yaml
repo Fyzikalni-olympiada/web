@@ -1,0 +1,43 @@
+spolecne:
+- nazev: zahájení nového ročníku
+  termin: 1. 10. 2026
+  date: 2026-10-12
+A:
+- nazev: školní kolo
+  termin: do 4. ledna 2027
+  date: 2027-01-04
+- nazev: krajské kolo
+  termin: středa 20. ledna 2027
+  date: 2027-01-20
+- nazev: ústřední kolo
+  termin: 9.–12. února 2027
+  date: 2027-02-13
+- nazev: 57. Mezinárodní FO
+  termin: červenec 2027
+  date: 2027-08-31
+  misto: Saúdská Arábie
+BCD:
+- nazev: školní kolo
+  termin: do 26. března 2027
+  date: 2027-03-26
+- nazev: krajské kolo
+  termin: středa 21. dubna 2027
+  date: 2027-04-21
+EF:
+- nazev: školní kolo
+  termin: do 19. února 2027
+  date: 2027-02-19
+- nazev: okresní kolo
+  termin: pondělí 15. března 2027
+  date: 2027-03-15
+- nazev: krajské kolo E
+  termin: středa 31. března 2027
+  date: 2027-03-31
+G:
+- nazev: školní kolo
+  termin: do 31. března 2027
+  date: 2027-03-31
+- nazev: okresní kolo
+  termin: 5. dubna – 28. května 2027
+  date: 2027-05-28
+  misto: přesné datum určují OKFO

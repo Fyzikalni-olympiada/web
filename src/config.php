@@ -1,4 +1,4 @@
 <?php
 /* Konfigurace ročníku – při změně je potřeba web znovu sestavit a nasadit */
-define('AKTUALNI_ROCNIK', 67);
-define('AKTUALNI_ROK', '2025/2026');
+define('AKTUALNI_ROCNIK', 68);
+define('AKTUALNI_ROK', '2026/2027');
