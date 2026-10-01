@@ -64,6 +64,14 @@ function menu_contains($node, $pathname)
 
 
 
+/** Odkaz na pdf v archivu aktuálního ročníku: zadani('a1_z') */
+function zadani($kod)
+{
+    return '/archiv/' . AKTUALNI_ROCNIK . '/fo' . AKTUALNI_ROCNIK . $kod . '.pdf';
+}
+
+
+
 /** Cesta k css/js s verzí podle obsahu — po změně souboru si prohlížeče stáhnou novou
  *  (Cloudflare query string v cache klíči ignoruje, CDN to nerozbije) */
 function asset($cesta)

@@ -115,22 +115,22 @@ Pozvánky do krajského kola obdrží přímo soutěžící na e-mail, kterým s
 </tr>
 <tr>
 	<td>
-		<a href="/archiv/67/fo67a1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?= zadani('a1_z') ?>"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminA?></small>
 	</td>
 	<td>
-		<a href="/archiv/67/fo67b1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?= zadani('b1_z') ?>"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="/archiv/67/fo67c1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?= zadani('c1_z') ?>"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="/archiv/67/fo67d1_z.pdf"><i class="pdf">pdf</i></a>
+		<a href="<?= zadani('d1_z') ?>"><i class="pdf">pdf</i></a>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
@@ -160,14 +160,14 @@ Pozvánky do krajského kola obdrží přímo soutěžící na e-mail, kterým s
 </tr>
 <tr>
 <?php if (!$beforeA) : ?>
-	<td><a href="/archiv/67/fo67a1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('a1_r') ?>"><i class="pdf">pdf</i></a></td>
 <?php else :?>
 	<td></td>
 <?php endif; ?>
 <?php if (!$beforeBCD) : ?>
-	<td><a href="/archiv/67/fo67b1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="/archiv/67/fo67c1_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="/archiv/67/fo67d1_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('b1_r') ?>"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('c1_r') ?>"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('d1_r') ?>"><i class="pdf">pdf</i></a></td>
 <?php else :?>
 	<td></td>
 	<td></td>
@@ -294,11 +294,11 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-    <td><a href="/archiv/67/fo67a2_z.pdf"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?= zadani('a2_z') ?>"><i class="pdf">pdf</i></a></td>
 <?php if (!$krajBeforeBCD) : ?>
-	<td><a href="/archiv/67/fo67b2_z.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="/archiv/67/fo67c2_z.pdf"><i class="pdf">pdf</i></a></td>
-    <td><a href="/archiv/67/fo67d2_z.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('b2_z') ?>"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('c2_z') ?>"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?= zadani('d2_z') ?>"><i class="pdf">pdf</i></a></td>
 <?php else :?>
 	<td></td>
 	<td></td>
@@ -319,11 +319,11 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-	<td><a href="/archiv/67/fo67a2_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('a2_r') ?>"><i class="pdf">pdf</i></a></td>
 <?php if (!$krajBeforeBCD) : ?>
-	<td><a href="/archiv/67/fo67b2_r.pdf"><i class="pdf">pdf</i></a></td>
-	<td><a href="/archiv/67/fo67c2_r.pdf"><i class="pdf">pdf</i></a></td>
-    <td><a href="/archiv/67/fo67d2_r.pdf"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('b2_r') ?>"><i class="pdf">pdf</i></a></td>
+	<td><a href="<?= zadani('c2_r') ?>"><i class="pdf">pdf</i></a></td>
+    <td><a href="<?= zadani('d2_r') ?>"><i class="pdf">pdf</i></a></td>
 <?php else :?>
 	<td></td>
 	<td></td>
