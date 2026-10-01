@@ -115,22 +115,22 @@ Pozvánky do krajského kola obdrží přímo soutěžící na e-mail, kterým s
 </tr>
 <tr>
 	<td>
-		<a href="<?= zadani('a1_z') ?>"><i class="pdf">pdf</i></a>
+		<?= zadani_odkaz('a1_z') ?>
 		<br>
 		<small><?=$terminA?></small>
 	</td>
 	<td>
-		<a href="<?= zadani('b1_z') ?>"><i class="pdf">pdf</i></a>
+		<?= zadani_odkaz('b1_z') ?>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?= zadani('c1_z') ?>"><i class="pdf">pdf</i></a>
+		<?= zadani_odkaz('c1_z') ?>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
 	<td>
-		<a href="<?= zadani('d1_z') ?>"><i class="pdf">pdf</i></a>
+		<?= zadani_odkaz('d1_z') ?>
 		<br>
 		<small><?=$terminBCD?></small>
 	</td>
@@ -160,14 +160,14 @@ Pozvánky do krajského kola obdrží přímo soutěžící na e-mail, kterým s
 </tr>
 <tr>
 <?php if (!$beforeA) : ?>
-	<td><a href="<?= zadani('a1_r') ?>"><i class="pdf">pdf</i></a></td>
+	<td><?= zadani_odkaz('a1_r') ?></td>
 <?php else :?>
 	<td></td>
 <?php endif; ?>
 <?php if (!$beforeBCD) : ?>
-	<td><a href="<?= zadani('b1_r') ?>"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?= zadani('c1_r') ?>"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?= zadani('d1_r') ?>"><i class="pdf">pdf</i></a></td>
+	<td><?= zadani_odkaz('b1_r') ?></td>
+	<td><?= zadani_odkaz('c1_r') ?></td>
+	<td><?= zadani_odkaz('d1_r') ?></td>
 <?php else :?>
 	<td></td>
 	<td></td>
@@ -294,11 +294,11 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-    <td><a href="<?= zadani('a2_z') ?>"><i class="pdf">pdf</i></a></td>
+    <td><?= zadani_odkaz('a2_z') ?></td>
 <?php if (!$krajBeforeBCD) : ?>
-	<td><a href="<?= zadani('b2_z') ?>"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?= zadani('c2_z') ?>"><i class="pdf">pdf</i></a></td>
-    <td><a href="<?= zadani('d2_z') ?>"><i class="pdf">pdf</i></a></td>
+	<td><?= zadani_odkaz('b2_z') ?></td>
+	<td><?= zadani_odkaz('c2_z') ?></td>
+    <td><?= zadani_odkaz('d2_z') ?></td>
 <?php else :?>
 	<td></td>
 	<td></td>
@@ -319,11 +319,11 @@ Z&nbsp;nejúspěšnějších účastníků druhého kola kategorie&nbsp;A bude v
         <th scope="col">Kategorie D</th>
 </tr>
 <tr>
-	<td><a href="<?= zadani('a2_r') ?>"><i class="pdf">pdf</i></a></td>
+	<td><?= zadani_odkaz('a2_r') ?></td>
 <?php if (!$krajBeforeBCD) : ?>
-	<td><a href="<?= zadani('b2_r') ?>"><i class="pdf">pdf</i></a></td>
-	<td><a href="<?= zadani('c2_r') ?>"><i class="pdf">pdf</i></a></td>
-    <td><a href="<?= zadani('d2_r') ?>"><i class="pdf">pdf</i></a></td>
+	<td><?= zadani_odkaz('b2_r') ?></td>
+	<td><?= zadani_odkaz('c2_r') ?></td>
+    <td><?= zadani_odkaz('d2_r') ?></td>
 <?php else :?>
 	<td></td>
 	<td></td>

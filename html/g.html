@@ -107,14 +107,14 @@ O zařazení řešitelů do druhého kola soutěže rozhodne okresní komise FO,
     <th>Školní kolo</th>
     <td>
         <!--Zveřejníme v&nbsp;nejbližší době.-->
-		<a href="<?= zadani('g1_z') ?>" title="Zadání úloh školního kola ve formátu pdf"><i class="pdf">pdf</i></a><br>
+		<?= zadani_odkaz('g1_z') ?><br>
 		<small><?=$termin1?></small>
     </td>
     <td>
 		<?php if ($beforeDom) :?>
 		Zveřejníme po termínu odevzdání
 		<?php else : ?>
-        <a href="<?= zadani('g1_r') ?>"><i class="pdf">pdf</i></a>
+        <?= zadani_odkaz('g1_r') ?>
 		<?php endif; ?>
     </td>
 </tr>

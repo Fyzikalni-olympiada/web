@@ -31,7 +31,7 @@ p img.icon {
     display: inline;
 }
 
-i.pdf, i.ps, i.pdfi, i.html {
+i.pdf, i.ps, i.pdfi, i.html, i.doplnime {
 	display: inline-block;
 	width: 64px;
 	height: 64px;
@@ -55,6 +55,10 @@ p > a > i.pdf, p > a > i.ps, p > a >  i.pdfi, p > a > i.html {
 
 i.pdf {
 	background-image: url(../pic/pdficon.svg);
+}
+i.doplnime {
+	background-image: url(../pic/doplnime.svg);
+	cursor: help;
 }
 i.pdfi {
 	background-image: url(../pic/pdfiicon.svg);

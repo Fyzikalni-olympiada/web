@@ -72,6 +72,18 @@ function zadani($kod)
 
 
 
+/** Pdf ikonka s odkazem na zadání; dokud pdf v archivu není, ikonka „bude doplněno" */
+function zadani_odkaz($kod)
+{
+    $url = zadani($kod);
+    if (!is_file(ROOT_DIR . 'files' . $url)) {
+        return '<i class="doplnime" title="bude doplněno">bude doplněno</i>';
+    }
+    return '<a href="' . $url . '"><i class="pdf">pdf</i></a>';
+}
+
+
+
 /** Cesta k css/js s verzí podle obsahu — po změně souboru si prohlížeče stáhnou novou
  *  (Cloudflare query string v cache klíči ignoruje, CDN to nerozbije) */
 function asset($cesta)

@@ -140,12 +140,12 @@ Vyber si z&nbsp;nich sedm, které vyřešíš.
     <th scope="row">Školní kolo</th>
     <!--td colspan="2">Zveřejníme v nejbližší době</td-->
     <td colspan="2">
-		<a href="<?= zadani('ef1_z') ?>" title="Zadání ve formátu PDF"><i class="pdf">pdf</i></a><br>
+		<?= zadani_odkaz('ef1_z') ?><br>
 		<small><?=$termin1?></small>
     </td>
     <td colspan="2">
 		<?php if (!$beforeDom) :?>
-        <a href="<?= zadani('ef1_r') ?>"><i class="pdf">pdf</i></a>
+        <?= zadani_odkaz('ef1_r') ?>
 		<?php endif; ?>
     </td>
 </tr>
@@ -159,16 +159,16 @@ Vyber si z&nbsp;nich sedm, které vyřešíš.
     <td></td>
 	<?php else: ?>
 	<td>
-        <a href="<?= zadani('e2_z') ?>"><i class="pdf">pdf</i></a>
+        <?= zadani_odkaz('e2_z') ?>
     </td>
 	<td>
-        <a href="<?= zadani('f2_z') ?>"><i class="pdf">pdf</i></a>
+        <?= zadani_odkaz('f2_z') ?>
     </td>
     <td>
-        <a href="<?= zadani('e2_r') ?>"><i class="pdf">pdf</i></a>
+        <?= zadani_odkaz('e2_r') ?>
     </td>
     <td>
-        <a href="<?= zadani('f2_r') ?>"><i class="pdf">pdf</i></a>
+        <?= zadani_odkaz('f2_r') ?>
     </td>
 	<?php endif; ?>
 </tr>
@@ -181,11 +181,11 @@ Vyber si z&nbsp;nich sedm, které vyřešíš.
 	<td colspan="2"></td>
 	<?php else: ?>
     <td>
-        <a href="<?= zadani('e3_z') ?>"><i class="pdf">pdf</i></a>
+        <?= zadani_odkaz('e3_z') ?>
     </td>
     <td></td>
     <td colspan="1">
-		<a href="<?= zadani('e3_r') ?>"><i class="pdf">pdf</i></a>
+		<?= zadani_odkaz('e3_r') ?>
     </td>
     <td></td>
 	<?php endif; ?>
