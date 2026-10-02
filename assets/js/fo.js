@@ -139,26 +139,33 @@
 	/* ---------- nejbližší krok na osách (homepage, /terminy) ---------- */
 
 	document.querySelectorAll('.cesta').forEach(function (cesta) {
-		var pristi = null;
+		/* nejbližší krok za každou kategorii na ose (data-kat) */
+		var pristi = {};
 		cesta.querySelectorAll('.kdy [data-date]').forEach(function (el) {
 			var date = el.getAttribute('data-date');
-			if (date >= dnes() && (pristi === null || date < pristi.getAttribute('data-date'))) {
-				pristi = el;
+			var kat = el.getAttribute('data-kat') || '';
+			if (date >= dnes() && (!pristi[kat] || date < pristi[kat].getAttribute('data-date'))) {
+				pristi[kat] = el;
 			}
 		});
-		if (pristi === null) {
+		if (!Object.keys(pristi).length) {
 			return;
 		}
 		cesta.querySelectorAll('.krok').forEach(function (k) {
 			k.classList.remove('aktualni');
 		});
-		pristi.classList.add('pristi');
-		var krok = pristi.closest('.krok');
-		krok.classList.add('nadchazi');
-		var stitek = document.createElement('div');
-		stitek.className = 'stitek';
-		stitek.textContent = 'nejblíž';
-		krok.insertBefore(stitek, krok.firstChild);
+		Object.keys(pristi).forEach(function (kat) {
+			var el = pristi[kat];
+			el.classList.add('pristi');
+			var krok = el.closest('.krok');
+			krok.classList.add('nadchazi');
+			if (!krok.querySelector('.stitek')) {
+				var stitek = document.createElement('div');
+				stitek.className = 'stitek';
+				stitek.textContent = 'nejblíž';
+				krok.insertBefore(stitek, krok.firstChild);
+			}
+		});
 	});
 
 	/* ---------- aktivní položka bočního obsahu ---------- */

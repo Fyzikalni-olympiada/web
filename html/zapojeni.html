@@ -13,10 +13,10 @@ $kdy = function ($kategorie, $nazev, $s_mistem = false) {
 	}
 	return $s;
 };
-/* datum pro zvýraznění nejbližšího kroku (js/fo.js) */
+/* datum pro zvýraznění nejbližšího kroku každé kategorie (js/fo.js) */
 $datum = function ($kategorie, $nazev) {
 	$t = termin($kategorie, $nazev);
-	return $t ? ' data-date="' . $t['date'] . '"' : '';
+	return $t ? ' data-date="' . $t['date'] . '" data-kat="' . $kategorie . '"' : '';
 };
 ?>
 <div id="zapojeni">
@@ -31,13 +31,13 @@ $datum = function ($kategorie, $nazev) {
 		<div class="krok aktualni">
 			<div class="tecka">1</div>
 			<div class="nazev">Školní kolo</div>
-			<div class="kdy"><span<?= $datum('A', 'školní') ?>>A <?= $kdy('A', 'školní') ?></span> &middot; <span<?= $datum('BCD', 'školní') ?>>B&ndash;D <?= $kdy('BCD', 'školní') ?></span></div>
+			<div class="kdy"><span<?= $datum('A', 'školní') ?>>A <?= $kdy('A', 'školní') ?></span><span<?= $datum('BCD', 'školní') ?>>B&ndash;D <?= $kdy('BCD', 'školní') ?></span></div>
 			<div class="pozn">úlohy řešíš doma, registruješ se v&nbsp;<a href="https://osmo.fyzikalniolympiada.cz/">Osmo</a> a řešení odevzdáš učiteli</div>
 		</div>
 		<div class="krok">
 			<div class="tecka">2</div>
 			<div class="nazev">Krajské kolo</div>
-			<div class="kdy"><span<?= $datum('A', 'krajské') ?>>A <?= $kdy('A', 'krajské') ?></span> &middot; <span<?= $datum('BCD', 'krajské') ?>>B&ndash;D <?= $kdy('BCD', 'krajské') ?></span></div>
+			<div class="kdy"><span<?= $datum('A', 'krajské') ?>>A <?= $kdy('A', 'krajské') ?></span><span<?= $datum('BCD', 'krajské') ?>>B&ndash;D <?= $kdy('BCD', 'krajské') ?></span></div>
 			<div class="pozn">soutěž na jednom místě v&nbsp;kraji</div>
 		</div>
 		<div class="krok vedlejsi">
@@ -66,7 +66,7 @@ $datum = function ($kategorie, $nazev) {
 		<div class="krok aktualni">
 			<div class="tecka">1</div>
 			<div class="nazev">Školní kolo</div>
-			<div class="kdy"><span<?= $datum('EF', 'školní') ?>>E, F <?= $kdy('EF', 'školní') ?></span> &middot; <span<?= $datum('G', 'školní') ?>>G <?= $kdy('G', 'školní') ?></span></div>
+			<div class="kdy"><span<?= $datum('EF', 'školní') ?>>E, F <?= $kdy('EF', 'školní') ?></span><span<?= $datum('G', 'školní') ?>>G <?= $kdy('G', 'školní') ?></span></div>
 			<div class="pozn">úlohy řešíš doma, odevzdáš učiteli</div>
 		</div>
 		<div class="krok">

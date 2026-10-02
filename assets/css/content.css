@@ -530,6 +530,7 @@ table.zadani td br + small {
 	color: #777;
 	font-size: .85em;
 }
+#zapojeni .kdy span {display: block}
 .krok .pozn {
 	font-size: .8em;
 	color: #999;
