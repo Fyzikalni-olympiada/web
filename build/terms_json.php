@@ -1,7 +1,8 @@
 <?php
 /**
- * Vypíše termíny aktuálního ročníku jako JSON pro js/fo.js.
- * Používá router (dev) a build skript (dist/data/terms.json).
+ * Veřejný JSON s termíny aktuálního ročníku (/data/terms.json),
+ * vedle něj se publikuje i zdrojový YAML (/data/terms.yaml).
+ * Používá router (dev) a build skript.
  */
 
 $terminy_json = [];
@@ -10,12 +11,16 @@ foreach (data_terms(AKTUALNI_ROCNIK) as $kategorie => $terminy) {
         if (empty($t['date'])) {
             continue;
         }
-        $terminy_json[] = [
+        $polozka = [
             'kategorie' => $kategorie,
             'nazev' => $t['nazev'],
             'termin' => $t['termin'],
             'date' => $t['date'],
         ];
+        if (isset($t['misto'])) {
+            $polozka['misto'] = $t['misto'];
+        }
+        $terminy_json[] = $polozka;
     }
 }
 

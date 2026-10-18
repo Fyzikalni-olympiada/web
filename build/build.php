@@ -113,6 +113,7 @@ foreach (array('' => 'terminy.ics', 'A' => 'terminy-a.ics',
 }
 unset($GLOBALS['ICS_KATEGORIE']);
 write_file($DIST . 'data/terms.json', capture(__DIR__ . '/terms_json.php'));
+copy(ROOT_DIR . 'data/terms/' . AKTUALNI_ROCNIK . '.yaml', $DIST . 'data/terms.yaml');
 
 /* ---------- 3. statické soubory ---------- */
 

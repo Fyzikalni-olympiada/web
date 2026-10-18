@@ -20,6 +20,12 @@ if ($path === '/data/terms.json') {
     return true;
 }
 
+if ($path === '/data/terms.yaml') {
+    header('Content-Type: text/yaml; charset=utf-8');
+    readfile(ROOT_DIR . 'data/terms/' . AKTUALNI_ROCNIK . '.yaml');
+    return true;
+}
+
 if ($path === '/rss.xml') {
     require ROOT_DIR . 'src/rss.php';
     return true;
