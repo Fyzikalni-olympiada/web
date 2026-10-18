@@ -26,6 +26,19 @@ if ($path === '/data/terms.yaml') {
     return true;
 }
 
+if ($path === '/data/ulohy.json' || $path === '/data/ulohy.yaml') {
+    require __DIR__ . '/ulohy.php';
+    $ulohy = ulohy_rocniku(AKTUALNI_ROCNIK);
+    if (substr($path, -4) === 'json') {
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode($ulohy, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    } else {
+        header('Content-Type: text/yaml; charset=utf-8');
+        echo ulohy_yaml($ulohy);
+    }
+    return true;
+}
+
 if ($path === '/rss.xml') {
     require ROOT_DIR . 'src/rss.php';
     return true;

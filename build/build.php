@@ -115,6 +115,11 @@ unset($GLOBALS['ICS_KATEGORIE']);
 write_file($DIST . 'data/terms.json', capture(__DIR__ . '/terms_json.php'));
 copy(ROOT_DIR . 'data/terms/' . AKTUALNI_ROCNIK . '.yaml', $DIST . 'data/terms.yaml');
 
+require __DIR__ . '/ulohy.php';
+$ulohy = ulohy_rocniku(AKTUALNI_ROCNIK);
+write_file($DIST . 'data/ulohy.json', json_encode($ulohy, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+write_file($DIST . 'data/ulohy.yaml', ulohy_yaml($ulohy));
+
 /* ---------- 3. statické soubory ---------- */
 
 foreach ($ASSETY_MALE as $dir) {

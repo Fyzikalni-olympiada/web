@@ -22,6 +22,7 @@ Cloudflare Pages (push do masteru → GitHub Actions).
 | Stránky (routy) | `data/files.yaml` – pathname → soubor, titulek, description |
 | Menu | `data/menu.yaml` (`ikona:` odkazuje do `assets/pic/menu/`) |
 | Termíny | `data/terms/<ročník>.yaml` – kategorie `spolecne`, `A`, `BCD`, `EF`, `G`; aktuální ročník se publikuje na `/data/terms.json` a `/data/terms.yaml` |
+| Úlohy | kódy a názvy se při buildu parsují přes `pdftotext` ze zadání v archivu a publikují na `/data/ulohy.json` a `/data/ulohy.yaml` |
 | Novinky | `data/news/*.html` – YAML hlavička + HTML tělo; obrázek novinky je soubor stejného jména vedle (publikuje se pod `/data/news/`) |
 | České úspěchy na MFO | `data/mfo-uspechy.yaml` (počítá se z něj i statistika na `/co-je-fo`) |
 | Celostátní kola | `data/celostatni-kola.yaml` |

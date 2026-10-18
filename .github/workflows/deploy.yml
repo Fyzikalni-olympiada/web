@@ -24,6 +24,9 @@ jobs:
       - name: Composer
         run: composer install --no-interaction
 
+      - name: Poppler (pdftotext pro parsování zadání)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
       - name: Build (včetně pagefind indexu)
         run: make build
 
