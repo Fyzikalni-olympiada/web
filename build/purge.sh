@@ -9,6 +9,10 @@ if [ -z "${CLOUDFLARE_ZONE_ID:-}" ]; then
 	exit 0
 fi
 
+# the new build activates on Pages a moment after the deploy finishes;
+# purging too early risks re-caching the old version
+sleep 30
+
 WEB=https://fyzikalniolympiada.cz
 MANIFEST=temp/manifest.txt
 NOVY=$(mktemp)
