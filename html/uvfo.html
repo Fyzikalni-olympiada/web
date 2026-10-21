@@ -2,7 +2,7 @@
 <?php
 $predsednictvo = [
 	['foto' => 'kriz', 'jmeno' => 'doc. RNDr. Jan Kříž, PhD.', 'role' => 'předseda',
-		'mail' => 'jan.kriz@uhk.cz', 'kde' => 'Katedra fyziky, PřF Univerzita Hradec Králové'],
+		'kde' => 'Katedra fyziky, PřF Univerzita Hradec Králové', 'zesnuly' => true],
 	['foto' => 'studnicka', 'jmeno' => 'RNDr. Filip Studnička, Ph.D.',
 		'role' => 'místopředseda, předseda úlohové komise pro kategorie A, B, C, D',
 		'mail' => 'filip.studnicka@uhk.cz', 'kde' => 'Katedra fyziky, PřF Univerzita Hradec Králové'],
@@ -98,7 +98,8 @@ $inicialy = function ($jmeno) {
 <h3><?= $nadpis ?></h3>
 <div class="vizitky">
 <?php foreach ($lide as $o) : ?>
-	<div class="vizitka">
+	<div class="vizitka<?= !empty($o['zesnuly']) ? ' smutek' : '' ?>">
+	<?php if (!empty($o['zesnuly'])) : ?><span class="stuzka" title="zesnulý"></span><?php endif ?>
 	<?php if (isset($o['foto'])) : ?>
 		<img src="/pic/ukfo/<?= $o['foto'] ?>.jpg" alt="<?= $o['jmeno'] ?>">
 	<?php else : ?>

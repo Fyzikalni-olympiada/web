@@ -322,6 +322,17 @@ table.zadani td br + small {
 	background: #fbfcfd;
 	padding: 12px;
 }
+/* mourning ribbon across the top-right corner */
+.vizitka.smutek {position: relative; overflow: hidden}
+.vizitka.smutek .stuzka {
+	position: absolute;
+	top: 14px;
+	right: -36px;
+	width: 130px;
+	height: 15px;
+	background: #1a1a1a;
+	transform: rotate(45deg);
+}
 .vizitka img, .vizitka .bez-fotky {
 	width: 88px;
 	height: 88px;
