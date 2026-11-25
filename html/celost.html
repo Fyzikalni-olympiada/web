@@ -4,9 +4,15 @@
 $uk = termin('A', 'ústřední kolo');
 $termin = $uk ? $uk['termin'] : AKTUALNI_ROK;
 $misto = isset($uk['misto']) ? $uk['misto'] : 'České republiky';
-$mfo = termin('A', 'Mezinárodní FO');
-$terminMFO = $mfo ? $mfo['termin'] : 'červenec ' . AKTUALNI_ROK;
-$mistoMFO = isset($mfo['misto']) ? $mfo['misto'] : 'světa';
+$mfo = termin('A', 'FO'); // final international competition (Mezinárodní/Evropská FO)
+$nazevMFO = $mfo ? strtr($mfo['nazev'], array(
+	'Mezinárodní FO' => 'Mezinárodní fyzikální olympiády',
+	'Evropská FO' => 'Evropské fyzikální olympiády',
+)) : (AKTUALNI_ROCNIK - 11) . '. Mezinárodní fyzikální olympiády';
+$casti = array();
+if ($mfo && preg_match('~\d~', $mfo['termin'])) $casti[] = $mfo['termin'];
+if (isset($mfo['misto'])) $casti[] = $mfo['misto'];
+$kdyKdeMFO = implode(', ', $casti);
 ?>
 
 <h3 class="accordion" id="organizace">Organizace</h3>
@@ -43,7 +49,7 @@ Soutěžící, kteří se stali vítězi, obdrží diplom vítěze. Soutěžíc�
 </p>
 <p>
 Z&nbsp;vítězů ústředního kola bude na základě výsledků na <a href="/pripravne-soustredeni">výběrovém soustředění</a> uspořádaném ÚK&nbsp;FO proveden výběr 5&nbsp;účastníků (a jednoho náhradníka)
-<strong><?php echo AKTUALNI_ROCNIK - 11 ?>.&nbsp;Mezinárodní fyzikální olympiády</strong> (<?php echo $terminMFO ?>, <?php echo $mistoMFO ?>).
+<strong><?php echo preg_replace('~^(\d+\.) ~', '$1&nbsp;', $nazevMFO) ?></strong><?php echo $kdyKdeMFO ? ' (' . $kdyKdeMFO . ')' : '' ?>.
 </p>
 </div>
 
